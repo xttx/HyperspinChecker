@@ -1,0 +1,10 @@
+in "database-xml-delete"-click index sometimes out of range, parametre name: index
+
+
+HowTo: Cut a video directly with ffmpeg, without re-encoding
+You only need the -ss and -t options. -ss is the starttime and -t the duration, so if you want 10 seconds from a video starting from minute one, you would use this.
+ 
+ffmpeg -i INFILE.mp4 -vcodec copy -acodec copy -ss 00:01:00.000 -t 00:00:10.000 OUTFILE.mp4
+
+You can use seconds or hh:mm:ss[.xxx] as arguments for the start time and duration, i prefer the second option.
+ The options -vcodec copy and -acodec copy are used to only cut the video and disable the re-encoding, this really speed things up. ;) 

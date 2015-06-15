@@ -1,0 +1,801 @@
+11:3:25 - checking folder: H:\NoIntro\Nintendo - Nintendo Entertainment System_(20111027) - копия\4 Nin Uchi Mahjong
+11:3:25 - checking folder: H:\NoIntro\Nintendo - Nintendo Entertainment System_(20111027) - копия\4 nin uchi mahjong\10-Yard Fight (USA, Europe)
+11:3:25 - checking folder: H:\NoIntro\Nintendo - Nintendo Entertainment System_(20111027) - копия\4 nin uchi mahjong\1942 (Japan, USA)
+11:3:25 - checking folder: H:\NoIntro\Nintendo - Nintendo Entertainment System_(20111027) - копия\4 nin uchi mahjong\3-D WorldRunner (USA)
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\2005 Minigame Multicart (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\3-D Tic-Tac-Toe (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\32 in 1 Game Cartridge (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\A-Team, The (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\A-VCS-tec Challenge (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Acid Drop (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Actionauts (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Activision Decathlon, The (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Adventure (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Adventures of TRON (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Air Raid (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Air Raiders (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Air-Sea Battle (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Airlock (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Alfred Challenge (France) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Alien (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Alien Greed (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Alien Greed 2 (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Alien Greed 3 (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Allia Quest (France) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Alligator People, The (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Alpha Beam with Ernie (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Amidar (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Aquaventure (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Armor Ambush (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Artillery Duel (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\AStar (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Asterix (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Asteroid Fire (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Asteroids (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Astroblast (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Astrowar (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Atari Video Cube (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Atlantis (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Atlantis II (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Atom Smasher (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\AVGN K.O. Boxing (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bachelor Party (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bachelorette Party (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Backfire (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Backgammon (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bank Heist (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Barnstorming (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Base Attack (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Basic Math (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\BASIC Programming (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Basketball (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Battlezone (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Beamrider (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Beany Bopper (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Beat 'Em & Eat 'Em (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bee-Ball (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Berenstain Bears (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bermuda Triangle (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Berzerk (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Big Bird's Egg Catch (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bionic Breakthrough (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Blackjack (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\BLiP Football (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bloody Human Freeway (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Blueprint (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\BMX Air Master (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bobby Is Going Home (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Boggle (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Boing! (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Boulder Dash (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bowling (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Boxing (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Brain Games (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Breakout (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bridge (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Buck Rogers - Planet of Zoom (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bugs (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bugs Bunny (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bump 'n' Jump (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Bumper Bash (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\BurgerTime (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Burning Desire (Australia).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cabbage Patch Kids - Adventures in the Park (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cakewalk (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\California Games (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Canyon Bomber (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Carnival (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Casino (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cat Trax (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cathouse Blues (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cave In (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Centipede (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Challenge (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Challenge of.... Nexar, The (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Championship Soccer (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Chase the Chuckwagon (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Checkers (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cheese (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\China Syndrome (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Chopper Command (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Chuck Norris Superkicks (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Circus Atari (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Climber 5 (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Coco Nuts (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Codebreaker (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Colony 7 (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Combat (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Combat Two (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Commando (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Commando Raid (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Communist Mutants from Space (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\CompuMate (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Computer Chess (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Condor Attack (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Confrontation (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Congo Bongo (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Conquest of Mars (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cookie Monster Munch (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cosmic Ark (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cosmic Commuter (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cosmic Creeps (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cosmic Invaders (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cosmic Swarm (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crack'ed (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crackpots (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crash Dive (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crazy Balloon (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crazy Climber (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crazy Valet (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Criminal Persuit (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cross Force (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crossbow (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crypts of Chaos (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Crystal Castles (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cubicolor (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Cubis (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Custer's Revenge (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dancing Plate (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dark Cavern (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dark Chambers (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dark Mage (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Deadly Duck (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Death Trap (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Defender (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Demolition Herby (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Demon Attack (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Demons to Diamonds (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Desert Falcon (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dice Puzzle (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dig Dug (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dodge 'Em (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dolphin (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Donald Duck's Speedboat (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Donkey Kong (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Donkey Kong Junior (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Double Dragon (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Double Dunk (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dragon Defender (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dragonfire (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dragonstomper (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dragster (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Duck Attack (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dukes of Hazzard (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dukes of Hazzard (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dumbo's Flying Circus (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Dungeon (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\E.T. - The Extra-Terrestrial (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Earth Dies Screaming, The (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Edtris 2600 (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Eggomania (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Elevators Amiss (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Eli's Ladder (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Elk Attack (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Encaved (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Encounter at L-5 (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Enduro (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Enigma Machine (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Entity, The (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Entombed (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Escape from the Mindmaster (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Espial (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Euchre (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Evil Magician Returns (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Exocet (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Extra Terrestrials (Canada).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fall Down (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fantastic Voyage (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Farmyard Fun (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fast Eddie (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fast Food (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fatal Run (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fathom (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Final Approach (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fire Fighter (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fire Fly (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fireball (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Firebug (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Fishing Derby (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Flag Capture (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\FlapPing (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Flash Gordon (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Football (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Forest (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Four-Play (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Frankenstein's Monster (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Freeway (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Frisco (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Frog Pond (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Frogger (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Frogger II - Threeedeep! (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Frogs and Flies (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Front Line (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Frostbite (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Funky Fish (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\G.I. Joe - Cobra Strike (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Galaxian (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gamma-Attack (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gangster Alley (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Garfield (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gas Hog (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gauntlet (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\General Re-Treat (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ghost Manor (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ghostbusters (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ghostbusters II (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gigolo (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gingerbread Man (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Glacier Patrol (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Glib - Video Word Game (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Go Fish! (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Go Go Home Monster (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Golf (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gopher (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gorf (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\GoSub (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Grand Prix (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gravitar (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gremlins (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Grover's Music Maker (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Guardian (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gunfight (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Gyruss (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\H.E.R.O. (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Halloween (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Halo 2600 (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Hangman (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Harem (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Haunted House (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Holey Moley (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Home Run (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Human Cannonball (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Hunchy II (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Hunt & Score (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\I Project (Europe) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ice Hockey (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ikari Warriors (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Immies & Aggies (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Inca Gold - Spider Monster (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Incoming! (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Indy 500 (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Infiltrate (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Innerspace (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\International Soccer (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\INV (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\INV+ (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\IQ 180 (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ixion (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\James Bond 007 (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Jammed (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Jawbreaker (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Journey Escape (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Joust (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\JoustPong (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Jr. Pac-Man (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Jungle Fever (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Jungle Hunt (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Juno First (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\K.O. Cruiser (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Kabobber (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Kaboom! (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Kamikaze Saucers (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Kangaroo (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Karate (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Keystone Kapers (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Killer Satellites (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\King Kong (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Klax (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Knight on the Town (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Kool-Aid Man (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Krull (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Kung-Fu Master (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lady Bug (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lady in Wading (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Laser Blast (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Laser Gates (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lasercade (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Last Starfighter, The (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lead (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lilly Adventure (Europe).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lochjaw (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lock 'n' Chase (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\London Blitz (USA).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Looping (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lord of the Rings, The - Fellowship of the Ring (USA) (Unl).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lord of the Rings, The - Journey to Rivendell (USA) (Proto).zip
+13:57:45 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Lost Luggage (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\M.A.D. (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\M.A.S.H (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\MagiCard (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Malagai (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mangia' (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Marauder (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Marble Craze (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Marine Wars (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mario Bros. (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Master Builder (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Masters of the Universe - The Power of He-Man (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Math Gran Prix (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Maze Craze - A Game of Cops 'n Robbers (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Medieval Mayhem (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mega Force (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\MegaBoy (Brazil).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\MegaMania - A Space Nightmare (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Meltdown (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mental Kombat (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Merlin's Walls (France) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Meteoroids (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Midnight Magic (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Millipede (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mind Maze (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mine Sweeper (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Miner 2049er - Starring Bounty Bob (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Miner 2049er Volume II (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mines of Minos (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Miniature Golf (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Missile Command (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Missile Control (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mission 3,000 A.D. (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mission Survive (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mogul Maniac (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mondo Pong (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Montezuma's Revenge - Featuring Panama Joe (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Moon Patrol (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Moonsweeper (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Motocross (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Motocross Racer (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\MotoRodeo (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mountain King (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mouse Trap (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mr. Do! (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mr. Do!'s Castle (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mr. Postman (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ms. Pac-Man (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Music Machine, The (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\My Golf (Australia).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Mysterious Thief, A (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Name This Game (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Night Driver (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Nightmare (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\No Escape! (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Nuts (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Obelix (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Off the Wall (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Off Your Rocker (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Official Frogger, The (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Oink! (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Okie Dokie (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Omega Race (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Open Sesame (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Oscar's Trash Race (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Othello (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Out of Control (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Outlaw (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Oystron (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pac-Man (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pac-Man 4K (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Panda Chase (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Parachute (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Party Mix (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Peek-A-Boo (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pengo (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pepsi Invaders - Coke Wins (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pesco (France) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pete Rose Baseball (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Phantom II - Pirate (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Phantom Tank (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pharaoh's Curse (Germany).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Phaser Patrol (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Philly Flasher (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Phoenix (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pick 'n' Pile (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pick Up (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Picnic (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Piece o' Cake (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pigs in Space - Starring Miss Piggy (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pirate Special Edition (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pitfall II - Lost Caverns (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pitfall! - Pitfall Harry's Jungle Adventure (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pizza Chef (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Planet of the Apes (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Planet Patrol (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Plaque Attack (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pleiades (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Poker Squares (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Polaris (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pole Position (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Polo (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pooyan (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Popeye (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Porky's (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Power Off! (France) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pressure Cooker (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Pressure Gauge (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Private Eye (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Q-bert (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Q-bert's Qubes (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Qb (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Quadrun (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Quest for Quintana Roo (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Quick Step! (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Rabbit Transit (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Racing Car (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Racquetball (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Radar Lock (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Raft Rider (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Raiders of the Lost Ark (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Rainbow Invaders (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ram It (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Rampage! (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Raster Fahndung (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Reactor (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\RealSports Baseball (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\RealSports Basketball (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\RealSports Boxing (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\RealSports Football (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\RealSports Soccer (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\RealSports Tennis (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\RealSports Volleyball (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Reindeer Rescue (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Rescue Bira Bira (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Rescue Terra I (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Revenge of the Apes (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Revenge of the Beefsteak Tomatoes (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Riddle of the Sphinx (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\River Patrol (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\River Raid (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\River Raid II (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Road Runner (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Robin Hood (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Robot Tank (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Roc 'n Rope (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Rocky & Bullwinkle (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Room of Doom (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Rubik's Cube 3-D (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Rush Hour (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Saboteur (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Save Mary! (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Save Our Ship (Germany).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Save the Whales (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\SCSIcide (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sea Battle (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sea Monster (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Seahawk (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Seaquest (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Seawolf (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Secret Agent (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Secret Quest (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sentinel (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Shootin' Gallery (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Shooting Arcade (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Shuttle Orbiter (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sinistar (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sir Lancelot (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Skate Boardin' (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Skeet Shoot (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Skeleton (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Skeleton+ (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ski Hunt (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ski Run (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Skiing (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Skindiver (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sky Alien (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sky Diver (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sky Jinks (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sky Skipper (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Slot Machine (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Slot Racers (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Smurf - Rescue in Gargamel's Castle (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Smurfs Save the Day (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Snail Against Squirrel (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sneak 'n Peek (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Snoopy and the Red Baron (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Snow White and the Seven Dwarfs (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Solar Fox (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Solar Plexus (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Solar Storm (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Solaris (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sorcerer (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sorcerer's Apprentice (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Attack (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Battle (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Cavern (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Instigators (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Invaders (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Jockey (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Shuttle - A Journey Into Space (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Treat (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Treat Deluxe (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space Tunnel (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Space War (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Spacechase (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\SpaceMaster X-7 (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Spectracube Invasion (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Spider Fighter (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Spider-Man (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Spike's Peak (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Spinning Fireball (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Spitfire Attack (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Springer (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sprint Master (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Spy Hunter (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Squeeze Box (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Squish 'Em (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sssnake (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Stampede (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Fire (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Fox (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Raiders (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Ship (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Strike (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Trek - Strategic Operations Simulator (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Voyager (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Wars - Jedi Arena (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Wars - Return of the Jedi - Death Star Battle (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Wars - Return of the Jedi - Ewok Adventure (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Wars - The Arcade Game (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Star Wars - The Empire Strikes Back (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Stargate (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Stargunner (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\StarMaster (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Steeplechase (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Steeplechase (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Stell-A-Sketch (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Stellar Track (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Stone Age (Brazil).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Strat-O-Gems Deluxe (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Strategy X (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Strawberry Shortcake - Musical Match-Ups (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Street Racer (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Stronghold (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Stunt Cycle (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sub-Scan (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Submarine Commander (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Subterranea (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Suicide Mission (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Summer Games (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Super Breakout (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Super Challenge Baseball (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Super Challenge Football (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Super Cobra (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Super Football (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Superman (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Surf's Up (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Surfer's Paradise - But Danger Below! (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Surround (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Survival Island (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Survival Run (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\SWOOPS! (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sword of Saros (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Swordfight (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\SwordQuest - EarthWorld (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\SwordQuest - FireWorld (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\SwordQuest - WaterWorld (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Sync (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Synthcart (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tac-Scan (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tapeworm (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tapper (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Targ (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tax Avoiders (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Taz (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Telepathy (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tennis (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tetris 26 (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Texas Chainsaw Massacre, The (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\This Planet Sucks (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Threshold (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Thrust+ DC Edition (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Thrust+ Platinum (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Thunderground (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Thwocker (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Time Pilot (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Time Warp (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Title Match Pro Wrestling (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tomarc the Barbarian (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tomcat - The F-14 Fighter Simulator (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tooth Protectors (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Topy (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Towering Inferno (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Toyshop Trouble (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Track & Field (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Treasure Below (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Treasure Island (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Trick Shot (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\TRON - Deadly Discs (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tunnel Runner (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Turmoil (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Tutankham (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Ultra SCSIcide (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Universal Chaos (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Unknown 20th Century Fox Game (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Unknown Activision Game #1 (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Unknown Activision Game #2 (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Unknown Datatech Game #2 - AKA Mazy Match (Mexico).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Up 'n Down (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Vanguard (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Vault Assault (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Venture (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Venture II - The Abysmal Abyss (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Video Checkers (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Video Chess (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Video Jogger (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Video Life (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Video Olympics (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Video Pinball (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Video Reflex (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Video Simon (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Vong (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Wabbit (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Walker (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Wall Ball (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Wall Break (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Warlords (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Warplock (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Warring Worms (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Warring Worms - The Worm (Re)Turns (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Wing War (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Winter Games (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Wizard (USA) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Wizard of Wor (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Word Zapper (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Words-Attack (Europe) (Proto).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\World End (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Worm War I (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\X'Mission (Europe).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\X-Man (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Xenophobe (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Yahtzee (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Yars' Revenge (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Z-Blocks (USA) (Unl).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Zaxxon (USA).zip
+13:57:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 2600\Zoo Fun (Europe).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Activision Decathlon, The (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Astro Chase (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Atari 5200.xml
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Ballblazer (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Beamrider (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\BerZerk (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Blue Print (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Bounty Bob Strikes Back! (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Buck Rogers - Planet of Zoom (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Carol Shaw's River Raid (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Castle Blast (USA) (Unl).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Castle Crisis (USA) (Unl).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Centipede (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Choplifter! (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Congo Bongo (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Countermeasure (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\David Crane's Pitfall II - Lost Caverns (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Defender (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Dig Dug (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Dreadnaught Factor, The (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Frogger (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Frogger II - Threeedeep! (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Galaxian (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Gorf (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Gremlins (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Gyruss (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\H.E.R.O. (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\James Bond 007 (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Joust (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Jungle Hunt (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\K-Razy Shoot-Out (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Kaboom! (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Kangaroo (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Keystone Kapers (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Koffi - Yellow Kopter (USA) (Unl).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Mario Bros. (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\MegaMania (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Meteorites (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Miner 2049er Starring Bounty Bob (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Missile Command (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Montezuma's Revenge featuring Panama Joe (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Moon Patrol (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Mountain King (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Mr. Do!'s Castle (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Ms. Pac-Man (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Pac-Man (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Pengo (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Pitfall! (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Pole Position (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Popeye (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Q-bert (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Qix (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Quest for Quintana Roo (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\RealSports Baseball (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\RealSports Football (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\RealSports Soccer (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\RealSports Tennis (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Rescue on Fractalus! (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Robotron 2084 (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Space Dungeon (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Space Invaders (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Space Shuttle - A Journey Into Space (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Star Raiders (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Star Trek - Strategic Operations Simulator (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Star Wars - Return of the Jedi - Death Star Battle (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Star Wars - The Arcade Game (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Super Breakout (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Super Cobra (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Vanguard (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Wizard of Wor (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Zaxxon (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Zenji (USA).zip
+14:22:55 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Zone Ranger (USA).zip
+14:22:55 - Checking folder: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Unneeded
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Activision Decathlon, The (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Astro Chase (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Ballblazer (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Beamrider (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\BerZerk (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Blue Print (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Bounty Bob Strikes Back! (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Buck Rogers - Planet of Zoom (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Carol Shaw's River Raid (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Castle Blast (USA) (Unl).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Castle Crisis (USA) (Unl).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Centipede (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Choplifter! (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Congo Bongo (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Countermeasure (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\David Crane's Pitfall II - Lost Caverns (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Defender (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Dig Dug (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Dreadnaught Factor, The (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Frogger (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Frogger II - Threeedeep! (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Galaxian (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Gorf (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Gremlins (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Gyruss (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\H.E.R.O. (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\James Bond 007 (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Joust (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Jungle Hunt (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\K-Razy Shoot-Out (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Kaboom! (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Kangaroo (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Keystone Kapers (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Koffi - Yellow Kopter (USA) (Unl).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Mario Bros. (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\MegaMania (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Meteorites (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Miner 2049er Starring Bounty Bob (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Missile Command (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Montezuma's Revenge featuring Panama Joe (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Moon Patrol (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Mountain King (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Mr. Do!'s Castle (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Ms. Pac-Man (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Pac-Man (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Pengo (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Pitfall! (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Pole Position (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Popeye (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Q-bert (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Qix (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Quest for Quintana Roo (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\RealSports Baseball (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\RealSports Football (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\RealSports Soccer (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\RealSports Tennis (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Rescue on Fractalus! (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Robotron 2084 (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Space Dungeon (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Space Invaders (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Space Shuttle - A Journey Into Space (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Star Raiders (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Star Trek - Strategic Operations Simulator (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Star Wars - Return of the Jedi - Death Star Battle (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Star Wars - The Arcade Game (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Super Breakout (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Super Cobra (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Vanguard (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Wizard of Wor (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Zaxxon (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Zenji (USA).zip
+14:23:8 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Zone Ranger (USA).zip
+14:23:8 - Checking folder: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Atari 5200\Unneeded
+14:24:6 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Nintendo GameBoy\3 Choume no Tama - Tama and Friends - 3 Choume Obake Panic!! (Japan).zip
+14:25:46 - Checking file: G:\Hyperspin Project[b_hl3]\Roms\Consoles\Nintendo GameBoy\3 Choume no Tama - Tama and Friends - 3 Choume Obake Panic!! (Japan).zip

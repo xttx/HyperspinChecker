@@ -1,0 +1,90 @@
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\bin\Debug\HyperspinChecker.exe
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\bin\Debug\HyperspinChecker.pdb
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\bin\Debug\HyperspinChecker.xml
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Form1.resources
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Resources.resources
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\HyperspinChecker.exe
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\HyperspinChecker.xml
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\HyperspinChecker.pdb
+c:\users\администратор\documents\visual studio 2010\Projects\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Form2.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\HyperspinChecker.exe
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\HyperspinChecker.xml
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\HyperspinChecker.pdb
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\HyperspinChecker.exe
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\HyperspinChecker.pdb
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\HyperspinChecker.xml
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Form1.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Form2.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Resources.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\HyperspinChecker.exe.config
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.ISOFixAsk_cueWoBin_ext.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.ISOFixAsk_cueWoBin.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.ISOFixAsk_MdfMds_ext.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.ISOFixAsk_MdfMds.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.ISOFixAsk_cueWoBinFileMismatch.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.ISOFixAsk_binWoCue_ext.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.ISOFixAsk_binWoCue_extPlus.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.ISOFixAsk_binWoCue.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Form3.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\Interop.ShockwaveFlashObjects.dll
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\AxInterop.ShockwaveFlashObjects.dll
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\HyperspinChecker.vbproj.ResolveComReference.cache
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\Interop.ShockwaveFlashObjects.dll
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Form4_genres_favorites.resources
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Form4_genres_favorites_preview.resources
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\Interop.WMPLib.dll
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\AxInterop.WMPLib.dll
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\Interop.WMPLib.dll
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\AxInterop.WMPLib.dll
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\WindowsApplication1.Form5_videoDownloader.resources
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\Interop.AXVLC.dll
+F:\Documents\My_Progs\HyperspinChecker\bin\Debug\AxInterop.AXVLC.dll
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\Interop.AXVLC.dll
+F:\Documents\My_Progs\HyperspinChecker\obj\x86\Debug\AxInterop.AXVLC.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\HyperspinChecker.exe.config
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\Interop.AXVLC.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\Interop.ShockwaveFlashObjects.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\Interop.WMPLib.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\AxInterop.ShockwaveFlashObjects.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\AxInterop.WMPLib.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\HyperspinChecker.vbproj.ResolveComReference.cache
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\HyperspinChecker.exe
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\HyperspinChecker.pdb
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\HyperspinChecker.exe
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\HyperspinChecker.pdb
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\AxInterop.AXVLC.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\Interop.AXVLC.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\Interop.ShockwaveFlashObjects.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\Interop.WMPLib.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\bin\Debug\AxInterop.WMPLib.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\HyperspinChecker.vbprojResolveAssemblyReference.cache
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form3.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form4_genres_favorites.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form4_genres_favorites_preview.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form5_videoDownloader.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form6_autorenamer.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.ISOFixAsk_cueWoBin.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.ISOFixAsk_cueWoBinFileMismatch.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.ISOFixAsk_cueWoBin_ext.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.ISOFixAsk_binWoCue_ext.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.ISOFixAsk_binWoCue_extPlus.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.ISOFixAsk_binWoCue.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.ISOFixAsk_MdfMds_ext.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form1.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form2.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.ISOFixAsk_MdfMds.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Resources.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\HyperspinChecker.vbproj.GenerateResource.Cache
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\AxInterop.AXVLC.dll
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form7_dualFolderOperations.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form8_systemProperties.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form9_database_statistic.resources
+E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Debug\WindowsApplication1.Form9_database_statistic_comparer.resources

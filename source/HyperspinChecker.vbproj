@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89C9EB33-F047-4C4C-9ADE-D77D07F11A4F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>HyperspinChecker</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningLevel>1</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningLevel>1</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>checker.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Class1.vb" />
+    <Compile Include="Class2_xml.vb" />
+    <Compile Include="Class3_matcher.vb" />
+    <Compile Include="Class4_clrmamepro.vb" />
+    <Compile Include="Class5_system_manager.vb" />
+    <Compile Include="Form3.Designer.vb">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4_genres_favorites.Designer.vb">
+      <DependentUpon>Form4_genres_favorites.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form4_genres_favorites.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4_genres_favorites_preview.Designer.vb">
+      <DependentUpon>Form4_genres_favorites_preview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form4_genres_favorites_preview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5_videoDownloader.Designer.vb">
+      <DependentUpon>Form5_videoDownloader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form5_videoDownloader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6_autorenamer.Designer.vb">
+      <DependentUpon>Form6_autorenamer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form6_autorenamer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7_dualFolderOperations.Designer.vb">
+      <DependentUpon>Form7_dualFolderOperations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form7_dualFolderOperations.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8_systemProperties.Designer.vb">
+      <DependentUpon>Form8_systemProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form8_systemProperties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9_database_statistic.Designer.vb">
+      <DependentUpon>Form9_database_statistic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form9_database_statistic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9_database_statistic_comparer.Designer.vb">
+      <DependentUpon>Form9_database_statistic_comparer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form9_database_statistic_comparer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormA_hyperlaunch_3rd_party_paths.Designer.vb">
+      <DependentUpon>FormA_hyperlaunch_3rd_party_paths.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormA_hyperlaunch_3rd_party_paths.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniFileApi.vb" />
+    <Compile Include="IniFileVb.vb" />
+    <Compile Include="ISOChecker.vb" />
+    <Compile Include="ISOFixAsk_cueWoBin.designer.vb">
+      <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISOFixAsk_cueWoBin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISOFixAsk_cueWoBinFileMismatch.designer.vb">
+      <DependentUpon>ISOFixAsk_cueWoBinFileMismatch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISOFixAsk_cueWoBinFileMismatch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISOFixAsk_cueWoBin_ext.designer.vb">
+      <DependentUpon>ISOFixAsk_cueWoBin_ext.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISOFixAsk_cueWoBin_ext.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISOFixAsk_binWoCue_ext.Designer.vb">
+      <DependentUpon>ISOFixAsk_binWoCue_ext.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISOFixAsk_binWoCue_ext.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISOFixAsk_binWoCue_extPlus.Designer.vb">
+      <DependentUpon>ISOFixAsk_binWoCue_extPlus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISOFixAsk_binWoCue_extPlus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISOFixAsk_binWoCue.Designer.vb">
+      <DependentUpon>ISOFixAsk_binWoCue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISOFixAsk_binWoCue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISOFixAsk_MdfMds_ext.Designer.vb">
+      <DependentUpon>ISOFixAsk_MdfMds_ext.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISOFixAsk_MdfMds_ext.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISOFixAsk_MdfMds.Designer.vb">
+      <DependentUpon>ISOFixAsk_MdfMds.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISOFixAsk_MdfMds.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4_genres_favorites.resx">
+      <DependentUpon>Form4_genres_favorites.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4_genres_favorites_preview.resx">
+      <DependentUpon>Form4_genres_favorites_preview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5_videoDownloader.resx">
+      <DependentUpon>Form5_videoDownloader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6_autorenamer.resx">
+      <DependentUpon>Form6_autorenamer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7_dualFolderOperations.resx">
+      <DependentUpon>Form7_dualFolderOperations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8_systemProperties.resx">
+      <DependentUpon>Form8_systemProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form9_database_statistic.resx">
+      <DependentUpon>Form9_database_statistic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form9_database_statistic_comparer.resx">
+      <DependentUpon>Form9_database_statistic_comparer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormA_hyperlaunch_3rd_party_paths.resx">
+      <DependentUpon>FormA_hyperlaunch_3rd_party_paths.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOFixAsk_cueWoBin.resx">
+      <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOFixAsk_cueWoBinFileMismatch.resx">
+      <DependentUpon>ISOFixAsk_cueWoBinFileMismatch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOFixAsk_cueWoBin_ext.resx">
+      <DependentUpon>ISOFixAsk_cueWoBin_ext.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOFixAsk_binWoCue_ext.resx">
+      <DependentUpon>ISOFixAsk_binWoCue_ext.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOFixAsk_binWoCue_extPlus.resx">
+      <DependentUpon>ISOFixAsk_binWoCue_extPlus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOFixAsk_binWoCue.resx">
+      <DependentUpon>ISOFixAsk_binWoCue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOFixAsk_MdfMds_ext.resx">
+      <DependentUpon>ISOFixAsk_MdfMds_ext.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOFixAsk_MdfMds.resx">
+      <DependentUpon>ISOFixAsk_MdfMds.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="checker.ico" />
+    <Content Include="kubic.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

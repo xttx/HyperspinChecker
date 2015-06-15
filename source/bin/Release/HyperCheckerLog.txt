@@ -1,0 +1,1839 @@
+17:23:45 - Initializing...
+17:23:45 - Creating menus
+17:23:46 - Loading config
+17:23:46 - Init classes
+17:23:46 - Done init
+17:33:12 - Initializing...
+17:33:12 - Creating menus
+17:33:12 - Loading config
+17:33:12 - Init classes
+17:33:12 - Done init
+18:44:50 - Initializing...
+18:44:50 - Creating menus
+18:44:50 - Loading config
+18:44:50 - Init classes
+18:44:50 - Done init
+18:49:30 - Initializing...
+18:49:30 - Creating menus
+18:49:30 - Loading config
+18:49:30 - Init classes
+18:49:30 - Done init
+18:51:28 - Initializing...
+18:51:28 - Creating menus
+18:51:28 - Loading config
+18:51:28 - Init classes
+18:51:28 - Done init
+18:53:44 - Initializing...
+18:53:44 - Creating menus
+18:53:44 - Loading config
+18:53:44 - Init classes
+18:53:44 - Done init
+18:58:8 - Initializing...
+18:58:8 - Creating menus
+18:58:8 - Loading config
+18:58:8 - Init classes
+18:58:8 - Done init
+19:0:27 - Initializing...
+19:0:27 - Creating menus
+19:0:27 - Loading config
+19:0:27 - Init classes
+19:0:28 - Done init
+9:29:30 - Initializing...
+9:29:30 - Creating menus
+9:29:30 - Loading config
+9:29:31 - Init classes
+9:29:31 - Done init
+9:30:12 - Initializing...
+9:30:12 - Creating menus
+9:30:12 - Loading config
+9:30:12 - Init classes
+9:30:12 - Done init
+9:30:51 - Initializing...
+9:30:51 - Creating menus
+9:30:51 - Loading config
+9:30:51 - Init classes
+9:30:51 - Done init
+10:0:14 - Initializing...
+10:0:14 - Creating menus
+10:0:14 - Loading config
+10:0:14 - Init classes
+10:0:14 - Done init
+10:21:2 - Initializing...
+10:21:2 - Creating menus
+10:21:3 - Loading config
+10:21:3 - Init classes
+10:21:3 - Done init
+10:24:40 - Initializing...
+10:24:40 - Creating menus
+10:24:40 - Loading config
+10:24:40 - Init classes
+10:24:40 - Done init
+10:27:4 - Initializing...
+10:27:4 - Creating menus
+10:27:4 - Loading config
+10:27:4 - Init classes
+10:27:4 - Done init
+11:2:24 - Initializing...
+11:2:24 - Creating menus
+11:2:25 - Loading config
+11:2:25 - Init classes
+11:2:25 - Done init
+11:12:29 - Initializing...
+11:12:29 - Creating menus
+11:12:29 - Loading config
+11:12:29 - Init classes
+11:12:29 - Done init
+11:14:48 - Initializing...
+11:14:48 - Creating menus
+11:14:48 - Loading config
+11:14:48 - Init classes
+11:14:48 - Done init
+11:16:41 - Initializing...
+11:16:41 - Creating menus
+11:16:41 - Loading config
+11:16:41 - Init classes
+11:16:41 - Done init
+11:34:24 - Initializing...
+11:34:24 - Creating menus
+11:34:24 - Loading config
+11:34:24 - Init classes
+11:34:24 - Done init
+11:46:35 - Initializing...
+11:46:35 - Creating menus
+11:46:35 - Loading config
+11:46:35 - Init classes
+11:46:35 - Done init
+11:48:19 - Initializing...
+11:48:19 - Creating menus
+11:48:19 - Loading config
+11:48:19 - Init classes
+11:48:19 - Done init
+11:52:8 - Initializing...
+11:52:8 - Creating menus
+11:52:8 - Loading config
+11:52:8 - Init classes
+11:52:8 - Done init
+11:54:39 - Initializing...
+11:54:39 - Creating menus
+11:54:39 - Loading config
+11:54:39 - Init classes
+11:54:39 - Done init
+11:59:10 - Initializing...
+11:59:10 - Creating menus
+11:59:10 - Loading config
+11:59:10 - Init classes
+11:59:11 - Done init
+12:1:15 - Initializing...
+12:1:15 - Creating menus
+12:1:15 - Loading config
+12:1:15 - Init classes
+12:1:15 - Done init
+12:11:32 - Initializing...
+12:11:32 - Creating menus
+12:11:32 - Loading config
+12:11:32 - Init classes
+12:11:32 - Done init
+12:13:5 - Initializing...
+12:13:5 - Creating menus
+12:13:6 - Loading config
+12:13:6 - Init classes
+12:13:6 - Done init
+12:14:58 - Initializing...
+12:14:58 - Creating menus
+12:14:58 - Loading config
+12:14:58 - Init classes
+12:14:58 - Done init
+12:17:32 - Initializing...
+12:17:32 - Creating menus
+12:17:32 - Loading config
+12:17:32 - Init classes
+12:17:32 - Done init
+12:18:38 - Initializing...
+12:18:38 - Creating menus
+12:18:38 - Loading config
+12:18:38 - Init classes
+12:18:38 - Done init
+12:21:37 - Initializing...
+12:21:37 - Creating menus
+12:21:37 - Loading config
+12:21:37 - Init classes
+12:21:37 - Done init
+12:22:26 - Initializing...
+12:22:26 - Creating menus
+12:22:26 - Loading config
+12:22:26 - Init classes
+12:22:26 - Done init
+13:5:58 - Initializing...
+13:5:58 - Creating menus
+13:5:58 - Loading config
+13:5:58 - Init classes
+13:5:58 - Done init
+13:15:53 - Initializing...
+13:15:53 - Creating menus
+13:15:53 - Loading config
+13:15:53 - Init classes
+13:15:53 - Done init
+13:17:19 - Initializing...
+13:17:19 - Creating menus
+13:17:19 - Loading config
+13:17:19 - Init classes
+13:17:19 - Done init
+13:18:6 - Initializing...
+13:18:6 - Creating menus
+13:18:6 - Loading config
+13:18:6 - Init classes
+13:18:7 - Done init
+13:19:33 - Initializing...
+13:19:33 - Creating menus
+13:19:33 - Loading config
+13:19:33 - Init classes
+13:19:33 - Done init
+13:20:22 - Initializing...
+13:20:22 - Creating menus
+13:20:22 - Loading config
+13:20:22 - Init classes
+13:20:22 - Done init
+14:15:13 - Initializing...
+14:15:13 - Creating menus
+14:15:13 - Loading config
+14:15:13 - Init classes
+14:15:13 - Done init
+14:18:35 - Initializing...
+14:18:35 - Creating menus
+14:18:35 - Loading config
+14:18:35 - Init classes
+14:18:35 - Done init
+14:27:41 - Initializing...
+14:27:41 - Creating menus
+14:27:41 - Loading config
+14:27:41 - Init classes
+14:27:41 - Done init
+14:29:10 - Initializing...
+14:29:10 - Creating menus
+14:29:10 - Loading config
+14:29:10 - Init classes
+14:29:10 - Done init
+14:29:53 - Initializing...
+14:29:53 - Creating menus
+14:29:54 - Loading config
+14:29:54 - Init classes
+14:29:54 - Done init
+14:31:11 - Initializing...
+14:31:11 - Creating menus
+14:31:11 - Loading config
+14:31:11 - Init classes
+14:31:11 - Done init
+14:32:28 - Initializing...
+14:32:28 - Creating menus
+14:32:29 - Loading config
+14:32:29 - Init classes
+14:32:29 - Done init
+14:37:26 - Initializing...
+14:37:26 - Creating menus
+14:37:26 - Loading config
+14:37:26 - Init classes
+14:37:26 - Done init
+16:38:25 - Initializing...
+16:38:25 - Creating menus
+16:38:25 - Loading config
+16:38:25 - Init classes
+16:38:25 - Done init
+16:50:13 - Initializing...
+16:50:13 - Creating menus
+16:50:14 - Loading config
+16:50:14 - Init classes
+16:50:14 - Done init
+17:6:34 - Initializing...
+17:6:34 - Creating menus
+17:6:34 - Loading config
+17:6:34 - Init classes
+17:6:34 - Done init
+23:9:48 - Initializing...
+23:9:48 - Creating menus
+23:9:49 - Loading config
+23:9:49 - Init classes
+23:9:49 - Done init
+23:11:44 - Initializing...
+23:11:44 - Creating menus
+23:11:45 - Loading config
+23:11:45 - Init classes
+23:11:45 - Done init
+23:13:44 - Initializing...
+23:13:44 - Creating menus
+23:13:44 - Loading config
+23:13:45 - Init classes
+23:13:45 - Done init
+23:17:12 - Initializing...
+23:17:12 - Creating menus
+23:17:12 - Loading config
+23:17:12 - Init classes
+23:17:12 - Done init
+23:21:27 - Initializing...
+23:21:27 - Creating menus
+23:21:27 - Loading config
+23:21:27 - Init classes
+23:21:27 - Done init
+23:35:15 - Initializing...
+23:35:15 - Creating menus
+23:35:15 - Loading config
+23:35:15 - Init classes
+23:35:15 - Done init
+23:35:54 - Initializing...
+23:35:54 - Creating menus
+23:35:55 - Loading config
+23:35:55 - Init classes
+23:35:55 - Done init
+23:38:53 - Initializing...
+23:38:53 - Creating menus
+23:38:54 - Loading config
+23:38:54 - Init classes
+23:38:54 - Done init
+8:0:19 - Initializing...
+8:0:19 - Creating menus
+8:0:19 - Loading config
+8:0:19 - Init classes
+8:0:19 - Done init
+8:10:47 - Initializing...
+8:10:47 - Creating menus
+8:10:48 - Loading config
+8:10:48 - Init classes
+8:10:48 - Done init
+8:11:19 - Initializing...
+8:11:19 - Creating menus
+8:11:19 - Loading config
+8:11:20 - Init classes
+8:11:20 - Done init
+8:13:43 - Initializing...
+8:13:43 - Creating menus
+8:13:43 - Loading config
+8:13:43 - Init classes
+8:13:43 - Done init
+8:53:8 - Initializing...
+8:53:8 - Creating menus
+8:53:8 - Loading config
+8:53:9 - Init classes
+8:53:9 - Done init
+9:5:55 - Initializing...
+9:5:55 - Creating menus
+9:5:55 - Loading config
+9:5:56 - Init classes
+9:5:56 - Done init
+9:7:9 - Initializing...
+9:7:9 - Creating menus
+9:7:9 - Loading config
+9:7:9 - Init classes
+9:7:9 - Done init
+9:12:43 - Initializing...
+9:12:43 - Creating menus
+9:12:43 - Loading config
+9:12:43 - Init classes
+9:12:44 - Done init
+9:23:21 - Initializing...
+9:23:21 - Creating menus
+9:23:22 - Loading config
+9:23:22 - Init classes
+9:23:22 - Done init
+9:26:31 - Initializing...
+9:26:31 - Creating menus
+9:26:32 - Loading config
+9:26:32 - Init classes
+9:26:32 - Done init
+10:18:58 - Initializing...
+10:18:58 - Creating menus
+10:18:58 - Loading config
+10:18:58 - Init classes
+10:18:58 - Done init
+10:20:38 - Initializing...
+10:20:38 - Creating menus
+10:20:38 - Loading config
+10:20:39 - Init classes
+10:20:39 - Done init
+12:52:45 - Initializing...
+12:52:45 - Creating menus
+12:52:45 - Loading config
+12:52:45 - Init classes
+12:52:45 - Done init
+8:49:31 - Initializing...
+8:49:31 - Creating menus
+8:49:31 - Loading config
+8:49:32 - Init classes
+8:49:32 - Done init
+10:52:25 - Initializing...
+10:52:25 - Creating menus
+10:52:25 - Loading config
+10:52:26 - Init classes
+10:52:26 - Done init
+10:54:38 - Initializing...
+10:54:38 - Creating menus
+10:54:38 - Loading config
+10:54:38 - Init classes
+10:54:38 - Done init
+10:55:8 - Initializing...
+10:55:8 - Creating menus
+10:55:8 - Loading config
+10:55:8 - Init classes
+10:55:8 - Done init
+10:55:32 - Initializing...
+10:55:32 - Creating menus
+10:55:33 - Loading config
+10:55:33 - Init classes
+10:55:33 - Done init
+10:58:6 - Initializing...
+10:58:6 - Creating menus
+10:58:6 - Loading config
+10:58:6 - Init classes
+10:58:6 - Done init
+11:0:3 - Initializing...
+11:0:3 - Creating menus
+11:0:3 - Loading config
+11:0:3 - Init classes
+11:0:3 - Done init
+11:0:32 - Initializing...
+11:0:32 - Creating menus
+11:0:32 - Loading config
+11:0:32 - Init classes
+11:0:32 - Done init
+11:1:46 - Initializing...
+11:1:46 - Creating menus
+11:1:46 - Loading config
+11:1:46 - Init classes
+11:1:46 - Done init
+11:10:48 - Initializing...
+11:10:48 - Creating menus
+11:10:49 - Loading config
+11:10:49 - Init classes
+11:10:49 - Done init
+11:32:6 - Initializing...
+11:32:6 - Creating menus
+11:32:6 - Loading config
+11:32:6 - Init classes
+11:32:6 - Done init
+11:34:4 - Initializing...
+11:34:4 - Creating menus
+11:34:4 - Loading config
+11:34:4 - Init classes
+11:34:4 - Done init
+11:38:48 - Initializing...
+11:38:48 - Creating menus
+11:38:48 - Loading config
+11:38:48 - Init classes
+11:38:48 - Done init
+13:9:12 - Initializing...
+13:9:12 - Creating menus
+13:9:12 - Loading config
+13:9:12 - Init classes
+13:9:12 - Done init
+13:19:36 - Initializing...
+13:19:36 - Creating menus
+13:19:36 - Loading config
+13:19:36 - Init classes
+13:19:36 - Done init
+13:22:58 - Initializing...
+13:22:58 - Creating menus
+13:22:58 - Loading config
+13:22:58 - Init classes
+13:22:58 - Done init
+13:28:5 - Initializing...
+13:28:5 - Creating menus
+13:28:5 - Loading config
+13:28:5 - Init classes
+13:28:5 - Done init
+13:32:15 - Initializing...
+13:32:15 - Creating menus
+13:32:15 - Loading config
+13:32:15 - Init classes
+13:32:15 - Done init
+13:41:33 - Initializing...
+13:41:33 - Creating menus
+13:41:34 - Loading config
+13:41:34 - Init classes
+13:41:34 - Done init
+13:44:7 - Initializing...
+13:44:7 - Creating menus
+13:44:7 - Loading config
+13:44:7 - Init classes
+13:44:7 - Done init
+13:46:54 - Initializing...
+13:46:54 - Creating menus
+13:46:54 - Loading config
+13:46:54 - Init classes
+13:46:54 - Done init
+13:57:37 - Initializing...
+13:57:37 - Creating menus
+13:57:37 - Loading config
+13:57:37 - Init classes
+13:57:37 - Done init
+13:58:15 - Initializing...
+13:58:15 - Creating menus
+13:58:15 - Loading config
+13:58:15 - Init classes
+13:58:15 - Done init
+13:58:51 - Initializing...
+13:58:51 - Creating menus
+13:58:51 - Loading config
+13:58:51 - Init classes
+13:58:51 - Done init
+13:59:36 - Initializing...
+13:59:36 - Creating menus
+13:59:36 - Loading config
+13:59:36 - Init classes
+13:59:36 - Done init
+13:59:55 - Initializing...
+13:59:55 - Creating menus
+13:59:55 - Loading config
+13:59:55 - Init classes
+13:59:55 - Done init
+14:8:28 - Initializing...
+14:8:28 - Creating menus
+14:8:28 - Loading config
+14:8:28 - Init classes
+14:8:28 - Done init
+14:12:48 - Initializing...
+14:12:48 - Creating menus
+14:12:48 - Loading config
+14:12:48 - Init classes
+14:12:48 - Done init
+16:12:4 - Initializing...
+16:12:4 - Creating menus
+16:12:4 - Loading config
+16:12:4 - Init classes
+16:12:4 - Done init
+16:12:41 - Initializing...
+16:12:41 - Creating menus
+16:12:41 - Loading config
+16:12:42 - Init classes
+16:12:42 - Done init
+16:14:11 - Initializing...
+16:14:11 - Creating menus
+16:14:11 - Loading config
+16:14:11 - Init classes
+16:14:11 - Done init
+18:51:51 - Initializing...
+18:51:51 - Creating menus
+18:51:51 - Loading config
+18:51:51 - Init classes
+18:51:51 - Done init
+18:51:56 - Detecting HLHQ Path
+18:51:56 - Detecting Modules Path
+18:51:56 - Detecting Media Path
+18:51:56 - Detecting Frontend Path
+18:51:56 - Detecting Profiles Path
+18:51:56 - Detecting 7z Path
+18:51:56 - Detecting HiToText Path
+18:51:56 - Detecting Daemon Tools Path
+18:51:56 - Detecting Daemon HLHQ Path
+18:51:56 - Detecting Daemon HLHQ Media Path
+18:51:56 - Detecting HS Plugin Path
+18:51:56 - Detecting HLHQ Plugin Path
+18:52:0 - Detecting HLHQ Path
+18:52:0 - Detecting Modules Path
+18:52:0 - Detecting Media Path
+18:52:0 - Detecting Frontend Path
+18:52:0 - Detecting Profiles Path
+18:52:0 - Detecting 7z Path
+18:52:0 - Detecting HiToText Path
+18:52:0 - Detecting Daemon Tools Path
+18:52:0 - Detecting Daemon HLHQ Path
+18:52:0 - Detecting Daemon HLHQ Media Path
+18:52:0 - Detecting HS Plugin Path
+18:52:0 - Detecting HLHQ Plugin Path
+18:52:3 - Detecting HLHQ Path
+18:52:3 - Detecting Modules Path
+18:52:3 - Detecting Media Path
+18:52:3 - Detecting Frontend Path
+18:52:3 - Detecting Profiles Path
+18:52:3 - Detecting 7z Path
+18:52:3 - Detecting HiToText Path
+18:52:3 - Detecting Daemon Tools Path
+18:52:3 - Detecting Daemon HLHQ Path
+18:52:3 - Detecting Daemon HLHQ Media Path
+18:52:3 - Detecting HS Plugin Path
+18:52:3 - Detecting HLHQ Plugin Path
+18:52:4 - Detecting HLHQ Path
+18:52:4 - Detecting Modules Path
+18:52:4 - Detecting Media Path
+18:52:4 - Detecting Frontend Path
+18:52:4 - Detecting Profiles Path
+18:52:4 - Detecting 7z Path
+18:52:4 - Detecting HiToText Path
+18:52:4 - Detecting Daemon Tools Path
+18:52:4 - Detecting Daemon HLHQ Path
+18:52:4 - Detecting Daemon HLHQ Media Path
+18:52:4 - Detecting HS Plugin Path
+18:52:4 - Detecting HLHQ Plugin Path
+18:52:4 - Detecting HLHQ Path
+18:52:4 - Detecting Modules Path
+18:52:4 - Detecting Media Path
+18:52:4 - Detecting Frontend Path
+18:52:4 - Detecting Profiles Path
+18:52:4 - Detecting 7z Path
+18:52:4 - Detecting HiToText Path
+18:52:4 - Detecting Daemon Tools Path
+18:52:4 - Detecting Daemon HLHQ Path
+18:52:4 - Detecting Daemon HLHQ Media Path
+18:52:4 - Detecting HS Plugin Path
+18:52:4 - Detecting HLHQ Plugin Path
+18:52:6 - Detecting HLHQ Path
+18:52:6 - Detecting Modules Path
+18:52:6 - Detecting Media Path
+18:52:6 - Detecting Frontend Path
+18:52:6 - Detecting Profiles Path
+18:52:6 - Detecting 7z Path
+18:52:6 - Detecting HiToText Path
+18:52:6 - Detecting Daemon Tools Path
+18:52:20 - Initializing...
+18:52:20 - Creating menus
+18:52:21 - Loading config
+18:52:21 - Init classes
+18:52:21 - Done init
+18:52:27 - Detecting HLHQ Path
+18:52:27 - Detecting Modules Path
+18:52:27 - Detecting Media Path
+18:52:27 - Detecting Frontend Path
+18:52:27 - Detecting Profiles Path
+18:52:27 - Detecting 7z Path
+18:52:27 - Detecting HiToText Path
+18:52:27 - Detecting Daemon Tools Path
+18:52:27 - Detecting Daemon HLHQ Path
+18:52:27 - Detecting Daemon HLHQ Media Path
+18:52:27 - Detecting HS Plugin Path
+18:52:27 - Detecting HLHQ Plugin Path
+18:52:30 - Detecting HLHQ Path
+18:52:30 - Detecting Modules Path
+18:52:30 - Detecting Media Path
+18:52:30 - Detecting Frontend Path
+18:52:30 - Detecting Profiles Path
+18:52:30 - Detecting 7z Path
+18:52:30 - Detecting HiToText Path
+18:52:30 - Detecting Daemon Tools Path
+18:52:30 - Detecting Daemon HLHQ Path
+18:52:30 - Detecting Daemon HLHQ Media Path
+18:52:30 - Detecting HS Plugin Path
+18:52:30 - Detecting HLHQ Plugin Path
+18:52:30 - Detecting HLHQ Path
+18:52:30 - Detecting Modules Path
+18:52:30 - Detecting Media Path
+18:52:30 - Detecting Frontend Path
+18:52:30 - Detecting Profiles Path
+18:52:30 - Detecting 7z Path
+18:52:30 - Detecting HiToText Path
+18:52:30 - Detecting Daemon Tools Path
+18:52:30 - Detecting Daemon HLHQ Path
+18:52:30 - Detecting Daemon HLHQ Media Path
+18:52:30 - Detecting HS Plugin Path
+18:52:30 - Detecting HLHQ Plugin Path
+18:52:30 - Detecting HLHQ Path
+18:52:30 - Detecting Modules Path
+18:52:30 - Detecting Media Path
+18:52:30 - Detecting Frontend Path
+18:52:30 - Detecting Profiles Path
+18:52:30 - Detecting 7z Path
+18:52:30 - Detecting HiToText Path
+18:52:30 - Detecting Daemon Tools Path
+18:52:30 - Detecting Daemon HLHQ Path
+18:52:30 - Detecting Daemon HLHQ Media Path
+18:52:30 - Detecting HS Plugin Path
+18:52:30 - Detecting HLHQ Plugin Path
+18:52:36 - Detecting HLHQ Path
+18:52:36 - Detecting Modules Path
+18:52:36 - Detecting Media Path
+18:52:36 - Detecting Frontend Path
+18:52:36 - Detecting Profiles Path
+18:52:36 - Detecting 7z Path
+18:52:36 - Detecting HiToText Path
+18:52:36 - Detecting Daemon Tools Path
+18:52:36 - Detecting Daemon HLHQ Path
+18:52:36 - Detecting Daemon HLHQ Media Path
+18:52:36 - Detecting HS Plugin Path
+18:52:36 - Detecting HLHQ Plugin Path
+16:23:55 - Initializing...
+16:23:55 - Creating menus
+16:23:55 - Loading config
+16:23:55 - Init classes
+16:23:55 - Done init
+16:24:12 - Detecting HLHQ Path
+16:24:12 - Detecting Modules Path
+16:24:12 - Detecting Media Path
+16:24:12 - Detecting Frontend Path
+16:24:12 - Detecting Profiles Path
+16:24:12 - Detecting 7z Path
+16:24:12 - Detecting HiToText Path
+16:24:12 - Detecting Daemon Tools Path
+16:24:12 - Detecting Daemon HLHQ Path
+16:24:12 - Detecting Daemon HLHQ Media Path
+16:24:12 - Detecting HS Plugin Path
+16:24:12 - Detecting HLHQ Plugin Path
+10:16:35 - Initializing...
+10:16:35 - Creating menus
+10:16:35 - Loading config
+10:16:35 - Init classes
+10:16:35 - Done init
+10:23:1 - Initializing...
+10:23:1 - Creating menus
+10:23:1 - Loading config
+10:23:1 - Init classes
+10:23:2 - Done init
+10:24:1 - Initializing...
+10:24:1 - Creating menus
+10:24:1 - Loading config
+10:24:1 - Init classes
+10:24:1 - Done init
+10:37:56 - Initializing...
+10:37:56 - Creating menus
+10:37:57 - Loading config
+10:37:57 - Init classes
+10:37:57 - Done init
+10:41:3 - Initializing...
+10:41:3 - Creating menus
+10:41:4 - Loading config
+10:41:4 - Init classes
+10:41:4 - Done init
+10:41:34 - Initializing...
+10:41:34 - Creating menus
+10:41:34 - Loading config
+10:41:34 - Init classes
+10:41:34 - Done init
+10:46:10 - Initializing...
+10:46:10 - Creating menus
+10:46:10 - Loading config
+10:46:11 - Init classes
+10:46:11 - Done init
+10:50:29 - Initializing...
+10:50:29 - Creating menus
+10:50:29 - Loading config
+10:50:29 - Init classes
+10:50:30 - Done init
+11:36:37 - Initializing...
+11:36:37 - Creating menus
+11:36:37 - Loading config
+11:36:37 - Init classes
+11:36:37 - Done init
+15:57:58 - Initializing...
+15:57:58 - Creating menus
+15:57:59 - Loading config
+15:57:59 - Init classes
+15:57:59 - Done init
+16:5:48 - Initializing...
+16:5:48 - Creating menus
+16:5:48 - Loading config
+16:5:48 - Init classes
+16:5:48 - Done init
+17:37:7 - Initializing...
+17:37:7 - Creating menus
+17:37:7 - Loading config
+17:37:7 - Init classes
+17:37:9 - Done init
+17:56:8 - Initializing...
+17:56:8 - Creating menus
+17:56:8 - Loading config
+17:56:9 - Init classes
+17:56:9 - Done init
+17:57:14 - Initializing...
+17:57:14 - Creating menus
+17:57:14 - Loading config
+17:57:14 - Init classes
+17:57:14 - Done init
+18:1:42 - Initializing...
+18:1:42 - Creating menus
+18:1:43 - Loading config
+18:1:43 - Init classes
+18:1:43 - Done init
+18:11:37 - Initializing...
+18:11:37 - Creating menus
+18:11:37 - Loading config
+18:11:37 - Init classes
+18:11:37 - Done init
+18:12:37 - Initializing...
+18:12:37 - Creating menus
+18:12:38 - Loading config
+18:12:38 - Init classes
+18:12:38 - Done init
+18:15:59 - Initializing...
+18:15:59 - Creating menus
+18:15:59 - Loading config
+18:16:0 - Init classes
+18:16:0 - Done init
+8:40:55 - Initializing...
+8:40:55 - Creating menus
+8:40:55 - Loading config
+8:40:55 - Init classes
+8:40:55 - Done init
+8:47:16 - Initializing...
+8:47:16 - Creating menus
+8:47:16 - Loading config
+8:47:16 - Init classes
+8:47:16 - Done init
+9:30:21 - Initializing...
+9:30:21 - Creating menus
+9:30:22 - Loading config
+9:30:22 - Init classes
+9:30:22 - Done init
+9:33:19 - Initializing...
+9:33:19 - Creating menus
+9:33:19 - Loading config
+9:33:19 - Init classes
+9:33:19 - Done init
+10:23:22 - Initializing...
+10:23:22 - Creating menus
+10:23:22 - Loading config
+10:23:22 - Init classes
+10:23:22 - Done init
+10:30:43 - Initializing...
+10:30:43 - Creating menus
+10:30:43 - Loading config
+10:30:43 - Init classes
+10:30:43 - Done init
+10:31:14 - Initializing...
+10:31:14 - Creating menus
+10:31:14 - Loading config
+10:31:14 - Init classes
+10:31:14 - Done init
+10:31:46 - Initializing...
+10:31:46 - Creating menus
+10:31:46 - Loading config
+10:31:47 - Init classes
+10:31:47 - Done init
+10:32:25 - Initializing...
+10:32:25 - Creating menus
+10:32:25 - Loading config
+10:32:25 - Init classes
+10:32:25 - Done init
+10:35:4 - Initializing...
+10:35:4 - Creating menus
+10:35:4 - Loading config
+10:35:4 - Init classes
+10:35:4 - Done init
+10:35:41 - Initializing...
+10:35:41 - Creating menus
+10:35:41 - Loading config
+10:35:41 - Init classes
+10:35:41 - Done init
+10:35:48 - Initializing...
+10:35:48 - Creating menus
+10:35:48 - Loading config
+10:35:48 - Init classes
+10:35:48 - Done init
+10:39:43 - Initializing...
+10:39:43 - Creating menus
+10:39:44 - Loading config
+10:39:44 - Init classes
+10:39:44 - Done init
+10:42:49 - Initializing...
+10:42:49 - Creating menus
+10:42:49 - Loading config
+10:42:49 - Init classes
+10:42:49 - Done init
+10:43:42 - Initializing...
+10:43:42 - Creating menus
+10:43:42 - Loading config
+10:43:42 - Init classes
+10:43:42 - Done init
+10:49:24 - Initializing...
+10:49:24 - Creating menus
+10:49:25 - Loading config
+10:49:25 - Init classes
+10:49:25 - Done init
+10:49:36 - Initializing...
+10:49:36 - Creating menus
+10:49:36 - Loading config
+10:49:36 - Init classes
+10:49:36 - Done init
+10:51:10 - Initializing...
+10:51:10 - Creating menus
+10:51:10 - Loading config
+10:51:10 - Init classes
+10:51:10 - Done init
+10:52:27 - Initializing...
+10:52:27 - Creating menus
+10:52:28 - Loading config
+10:52:28 - Init classes
+10:52:28 - Done init
+10:53:25 - Initializing...
+10:53:25 - Creating menus
+10:53:26 - Loading config
+10:53:26 - Init classes
+10:53:26 - Done init
+10:53:59 - Initializing...
+10:53:59 - Creating menus
+10:53:59 - Loading config
+10:53:59 - Init classes
+10:53:59 - Done init
+11:14:12 - Initializing...
+11:14:12 - Creating menus
+11:14:12 - Loading config
+11:14:12 - Init classes
+11:14:12 - Done init
+11:14:32 - Initializing...
+11:14:32 - Creating menus
+11:14:32 - Loading config
+11:14:32 - Init classes
+11:14:32 - Done init
+11:16:48 - Initializing...
+11:16:48 - Creating menus
+11:16:48 - Loading config
+11:16:48 - Init classes
+11:16:48 - Done init
+11:23:11 - Initializing...
+11:23:11 - Creating menus
+11:23:11 - Loading config
+11:23:11 - Init classes
+11:23:11 - Done init
+11:24:3 - Initializing...
+11:24:3 - Creating menus
+11:24:3 - Loading config
+11:24:3 - Init classes
+11:24:3 - Done init
+11:24:38 - Initializing...
+11:24:38 - Creating menus
+11:24:38 - Loading config
+11:24:38 - Init classes
+11:24:38 - Done init
+11:30:18 - Initializing...
+11:30:18 - Creating menus
+11:30:18 - Loading config
+11:30:18 - Init classes
+11:30:18 - Done init
+11:33:11 - Initializing...
+11:33:11 - Creating menus
+11:33:11 - Loading config
+11:33:11 - Init classes
+11:33:11 - Done init
+11:35:40 - Initializing...
+11:35:40 - Creating menus
+11:35:40 - Loading config
+11:35:40 - Init classes
+11:35:40 - Done init
+11:53:10 - Initializing...
+11:53:10 - Creating menus
+11:53:10 - Loading config
+11:53:10 - Init classes
+11:53:10 - Done init
+11:54:6 - Initializing...
+11:54:6 - Creating menus
+11:54:6 - Loading config
+11:54:6 - Init classes
+11:54:6 - Done init
+11:55:58 - Initializing...
+11:55:58 - Creating menus
+11:55:58 - Loading config
+11:55:58 - Init classes
+11:55:58 - Done init
+12:1:3 - Initializing...
+12:1:3 - Creating menus
+12:1:3 - Loading config
+12:1:3 - Init classes
+12:1:3 - Done init
+12:1:36 - Initializing...
+12:1:36 - Creating menus
+12:1:36 - Loading config
+12:1:36 - Init classes
+12:1:36 - Done init
+12:9:11 - Initializing...
+12:9:11 - Creating menus
+12:9:12 - Loading config
+12:9:12 - Init classes
+12:9:12 - Done init
+12:9:47 - Initializing...
+12:9:47 - Creating menus
+12:9:47 - Loading config
+12:9:47 - Init classes
+12:9:47 - Done init
+12:11:51 - Initializing...
+12:11:51 - Creating menus
+12:11:51 - Loading config
+12:11:51 - Init classes
+12:11:51 - Done init
+12:12:52 - Initializing...
+12:12:52 - Creating menus
+12:12:52 - Loading config
+12:12:52 - Init classes
+12:12:52 - Done init
+12:15:3 - Initializing...
+12:15:3 - Creating menus
+12:15:3 - Loading config
+12:15:3 - Init classes
+12:15:3 - Done init
+12:17:7 - Initializing...
+12:17:7 - Creating menus
+12:17:7 - Loading config
+12:17:7 - Init classes
+12:17:7 - Done init
+12:20:49 - Initializing...
+12:20:49 - Creating menus
+12:20:49 - Loading config
+12:20:49 - Init classes
+12:20:49 - Done init
+10:48:22 - Initializing...
+10:48:22 - Creating menus
+10:48:22 - Loading config
+10:48:22 - Init classes
+10:48:22 - Done init
+12:47:28 - Initializing...
+12:47:28 - Creating menus
+12:47:28 - Loading config
+12:47:28 - Init classes
+12:47:28 - Done init
+19:19:47 - Initializing...
+19:19:47 - Creating menus
+19:19:48 - Loading config
+19:19:58 - Init classes
+19:19:58 - Done init
+17:14:30 - Initializing...
+17:14:30 - Creating menus
+17:14:30 - Loading config
+17:14:30 - Init classes
+17:14:30 - Done init
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Advanced Dungeons & Dragons - Dragons of Flame (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Airwolf (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Akira (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Akumajou Densetsu (Japan) [T-En by Vice Translations v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Akumajou Special - Boku Dracula-kun (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\American Dream (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ankoku Shinwa - Yamato Takeru Densetsu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Armadillo (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Asmik-kun Land (Japan) [T-En by Gil Galad v0.25] [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Astro Fang - Super Machine (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Attack Animal Gakuen (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\B-Wings (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Banana (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Banana Prince (Germany) [T-En by KingMike Translations v1.1a].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bio Miracle Bokutte Upa (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bio Senshi Dan - Increaser Tono Tatakai (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bloody Warriors - Shan-Go no Gyakushuu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cadillac (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Captain Silver (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Captain Tsubasa Vol. II - Super Striker (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Castle Quest (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cat Ninden Teyandee (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cat Ninden Teyandee (Japan) [T-En by Vice Translations v1.01] (Cartoon Version).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chaos World (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chaos World (Japan) [T-En by Aeon Genesis v0.98F].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chester Field - Ankoku Shin e no Chousen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chevaliers du Zodiaque, Les - La Legende d'Or (France) [T-En by KingMike Translations v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chiisana Obake - Acchi Socchi Kocchi (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Choujin Ookami Senki - Warwolf (Japan) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Choujin Sentai - Jetman (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chuuka Taisen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cocoron (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Columbus - Ougon no Yoake (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Contra (Japan) [T-En by Quest Games v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Contra (Japan) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cosmic Epsilon (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cosmic Wars (Japan) [T-En by TransBRC v0.993] [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cosmo Genesis (Japan) [T-En by Aeon Genesis v1.10].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cosmo Police Galivan (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Crisis Force (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cross Fire (Japan) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Daimeiro - Meikyuu no Tatsujin (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Daisenryaku (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dark Lord (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Deep Dungeon IV - Kuro no Youjutsushi (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Devil Man (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dezaemon (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Doki! Doki! Yuuenchi (Japan) [T-En by No Talent Translations v1.1].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Doraemon (Japan) (Rev A).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Doraemon - Giga Zombie no Gyakushuu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Downtown - Nekketsu Koushinkyoku - Soreyuke Daiundoukai (Japan) [T-En by Disconnected Translations v0.15] [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Downtown Special - Kunio-kun no Jidaigeki Da yo Zenin Shuugou! (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball - Daimaou Fukkatsu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball - Shen Long no Nazo (Japan) (Mapper 34 Hack) [T-En by TransBRC v1.11].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z - Kyoushuu! Saiya Jin (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z Gaiden - Saiya Jin Zetsumetsu Keikaku (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z Gaiden - Saiya Jin Zetsumetsu Keikaku (Japan) [T-En by Twilight Translations v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z II - Gekishin Freeza!! (Japan) (Rev 1) [T-En by Saiya Translations v0.70] [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z II - Gekishin Freeza!! (Japan) [T-En by Saiya Translations v0.70] [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z III - Ressen Jinzou Ningen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Buster II - Yami no Fuuin (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ninja (Japan) (Rev A) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ninja (Japan) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Scroll - Yomigaerishi Maryuu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dream Master (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Eggerland - Meikyuu no Fukkatsu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Egypt (Japan) [T-En by Gil Galad v1.01].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Elysion (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Elysion (Japan) [T-En by Tenshigami Translations v0.92].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Esper Bouken Tai (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Esper Dream 2 - Aratanaru Tatakai (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Exciting Rally - World Rally Championship (Japan) [T-En by Klepto Software v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Famicom Wars (Japan) (Rev 0B) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Fantasy I, II (Japan) [T-En by Demiforce v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Fantasy II (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Fantasy II (Japan) [T-En by Demiforce v1.03] [Ad by Parasyte v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Fantasy III (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Fantasy III (Japan) [T-En by A.W.Jackson+Neill Corlett+SoM2Freak v1.1].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Fantasy VII (China) (Unl) [T-En by Lindblum v0.97].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Mission (Japan) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fire Emblem (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fire Emblem Gaiden (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Foton - The Ultimate Game on Planet Earth (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fudou Myouou Den (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fushigi no Umi no Nadia (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fuzzical Fighter (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ganbare Goemon 2 (Japan) [T-En by Stardust Crusaders v1.02].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ganbare Goemon! - Karakuri Douchuu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gegege no Kitarou - Youkai Daimakyou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gegege no Kitarou 2 - Youkai Gundan no Chousen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gegege no Kitarou 2 - Youkai Gundan no Chousen (Japan) [T-En by Aishsha+Djinn v1.01] [Ad by Dave Augusta v1.2].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Getsufuu Maden (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gorby no Pipeline Daisakusen (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Grand Master (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Heisei Tensai Bakabon (Japan) [T-En by KingMike Translations v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hello Kitty no Ohanabatake (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hello Kitty World (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Heracles no Eikou - Toujin Makyou Den (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Heracles no Eikou II - Titan no Metsubou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Higemaru Makai-jima - Nanatsu no Shima Daibouken (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hinotori - Houou Hen - Gaou no Bouken (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hirake! Ponkikki (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hokuto no Ken (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hokuto no Ken 2 (Japan) [T-En by Extreme Fun Translations v0.50] [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Holy Diver (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Honoo no Toukyuuji - Dodge Danpei (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Honoo no Toukyuuji - Dodge Danpei 2 (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hoshi o Miru Hito (Japan) [T-En by KingMike Translations v0.80] (SRAM Saving) [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hoshi o Miru Hito (Japan) [T-En by KingMike Translations v0.80] [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hottarman no Chitei Tanken (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Houma ga Toki (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hyaku no Sekai no Monogatari - The Tales on a Watery Wilderness (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ike Ike! Nekketsu Hockey-bu - Subette Koronde Dairantou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ike Ike! Nekketsu Hockey-bu - Subette Koronde Dairantou (Japan) [T-En by Disconnected Translations+Takeshi v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Insector X (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\J.League Fighting Soccer - The King of Ace Strikers (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jajamaru Gekimaden - Maboroshi no Kinmajou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jajamaru no Daibouken (Japan) (Mapper 66 Hack) [T-En by Aishsha+Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jajamaru no Daibouken (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jesus - Kyoufu no Bio Monster (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jigoku Gokuraku Maru (Japan) [T-En by Stardust Crusaders v1.00a].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jikuu Yuuden - Debias (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\JJ (Japan) [T-En by DvD Translations v1.00 TD2].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\JJ (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Joy Mech Fight (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Just Breed (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Juuouki (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Juuryoku Soukou Metal Storm (Japan) [T-En by Sliver X v1.01].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaguya Hime Densetsu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaijuu Monogatari (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaiketsu Yancha Maru 2 - Karakuri Land (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaiketsu Yancha Maru 3 - Taiketsu! Zouringen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaiketsu Yancha Maru 3 - Taiketsu! Zouringen (Japan) [T-En by Suicidal Translations v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kanshakudama Nage Kantarou no Toukaidou Gojuusan Tsugi (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kanshakudama Nage Kantarou no Toukaidou Gojuusan Tsugi (Japan) [T-En by KingMike Translations v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Karnov (Japan) (Rev 1) [T-En by Vice Translations v1.10].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Karnov (Japan) [T-En by Vice Translations v1.10].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kart Fighter (China) (Unl) [T-En by DvD Translations v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kekkyoku Nankyoku Daibouken (Japan) (Rev 1) [T-En by Quest Games v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kekkyoku Nankyoku Daibouken (Japan) [T-En by DvD Translations v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kekkyoku Nankyoku Daibouken (Japan) [T-En by Quest Games v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kekkyoku Nankyoku Daibouken (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kero Kero Keroppi no Daibouken (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kero Kero Keroppi no Daibouken 2 - Donuts Ike wa Oosawagi! (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Keroppi to Keroriinu no Splash Bomb! (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\King Kong 2 - Ikari no Megaton Punch (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kinnikuman - Muscle Tag Match (Japan) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kouryuu Densetsu Villgust Gaiden (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kujaku Ou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kujaku Ou II (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kunio-kun no Nekketsu Soccer League (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kyouryuu Sentai Juuranger (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Labyrinth (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Little Magic (Japan) [T-En by Gaijin Productions+TransBRC v0.33a] [i].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Lupin Sansei - Pandora no Isan (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mad City (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Magic John (Japan) [T-En by KingMike Translations v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Magical Doropie (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Maharaja (Japan) [T-En by Snark v0.99].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Majou Densetsu II - Daimashikyou Galious (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Matendouji (Japan) [T-En by Stardust Crusaders v1.00a].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mickey Mouse 3 - Yume Fuusen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Minelvaton Saga (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mini Putt (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Minna no Taabou no Nakayoshi Daisakusen (Japan) [T-En by Suicidal Translations v1.01] [Ad by Hap v20060218].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Minna no Taabou no Nakayoshi Daisakusen (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mirai Senshi - Lios (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mirai Shinwa Jarvas (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mitsume ga Tooru (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Moai-kun (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Moon Crystal (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Motocross Champion (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mottomo Abunai Deka (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mouryou Senki Madara (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Musashi no Bouken (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nakayoshi to Issho (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nakayoshi to Issho (Japan) [T-En by HTI v1.00] (Manga Version).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nekketsu Kakutou Densetsu (Japan) [T-En by oRdErEDchaos v0.95].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nekketsu Kouha Kunio-kun (Japan) [T-En by Vice Translations v1.01].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nekketsu Koukou Dodgeball-bu (Japan) [T-En by Cleveland Rock v0.9].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nekketsu! Street Basket - Ganbare Dunk Heroes (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Niji no Silk Road (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja Jajamaru - Ginga Daisakusen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja Jajamaru-kun (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja-kun - Ashura no Shou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Oishinbo (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Parallel World (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Parodius Da! (Japan) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Penguin-kun Wars (Japan) [T-En by Penguin Translations v1.012] [Ad by Spinner 8 v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Penguin-kun Wars (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Perman Part 2 - Himitsu Kessha Madoodan o Taose! (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pescatore (Japan) (Proto).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Popeye no Eigo Asobi (Japan) [T-En by KingMike Translations v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Portopia Renzoku Satsujin Jiken (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Power Blazer (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Puyo Puyo (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Radia Senki - Reimei Hen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Robocco Wars (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Rockman 2 - Dr. Wily no Nazo (Japan) [T-En by Aeon Genesis v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Romancia (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Saint Seiya - Ougon Densetsu Kanketsu Hen (Japan) [T-En by Aishsha+Djinn v1.01].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Saiyuuki World 2 - Tenjoukai no Majin (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sanrio Carnival 2 (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sanrio Cup - Pon Pon Volley (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\SD Keiji - Blader (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Seirei Gari (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shikinjou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shinsenden (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shufflepuck Cafe (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Silva Saga (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Softball Tengoku (Japan) [T-En by Spoony Bard v1.1].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Soreike! Anpanman - Minna de Hiking Game! (Japan) [T-En by Pope Hentai v0.99].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Spartan X 2 (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Spelunker II - Yuusha e no Chousen (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Splatter House - Wanpaku Graffiti (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sqoon (Japan) [T-En by Stardust Crusaders v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Star Wars (Japan) (Namco) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sted - Iseki Wakusei no Yabou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sugoro Quest - Dice no Senshitachi (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sugoro Quest - Dice no Senshitachi (Japan) [T-En by AlanMidas v20070225] [Ad by KingMike v20071207].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Summer Carnival '92 - Recca (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sweet Home (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Taiyou no Yuusha Firebird (Japan) [T-En by Dragoon-X Translations v1.01].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Takahashi Meijin no Bouken-jima IV (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Takeshi no Chousenjou (Japan) [T-En by KingMike Translations v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tao (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tashiro Masashi no Princess ga Ippai (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tenchi o Kurau II - Shokatsu Koumei Den (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tetrastar - The Fighter (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Time Zone (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Titanic (China) (Unl) [T-En by Pacnsacdave v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tokkyuu Shirei - Solbrain (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Toukon Club (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Transformers - Convoy no Nazo (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee 3 - Poko Poko Daimaou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Urusei Yatsura - Lum no Wedding Bell (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Valis - The Fantastic Soldier (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Valis - The Fantastic Soldier (Japan) [T-En by Satsu+Sliver X v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Valkyrie no Bouken - Toki no Kagi Densetsu (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Venus Senki - Back the City (Japan) [T-En by J2e Translations v2.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wagyan Land (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wagyan Land 2 (Japan) [T-En by Abstract Crouton Production v1.0] [Graphic Hack by Terminus Traduction v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wagyan Land 2 (Japan) [T-En by Abstract Crouton Production v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wai Wai World (Japan) [T-En by Demiforce v3.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wai Wai World (Japan) [T-En by Dylan Robley v1.0].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wai Wai World 2 - SOS!! Paseri Jou (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wanpaku Kokkun no Gourmet World (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Warehouse No.18 (Russia) (Unl) [T-En by Gil Galad v1.00].nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wily & Light no Rockboard - That's Paradise (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wily & Light no Rockboard - That's Paradise (Japan) [T-En by Interordi v1.1] (Rockman Version).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wit's (Japan).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Woody Poko (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Youkai Club (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ys (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ys II - Ancient Ys Vanished - The Final Chapter (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ys III - Wanderers from Ys (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Yume Penguin Monogatari (Japan) (Translated En).nes
+17:56:56 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Zombie Hunter (Japan) (Translated En).nes
+17:56:56 - Checking folder: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Unneeded
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Advanced Dungeons & Dragons - Dragons of Flame (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Airwolf (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Akira (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Akumajou Special - Boku Dracula-kun (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\American Dream (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ankoku Shinwa - Yamato Takeru Densetsu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Arctic (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Argus (J) [hM03].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Argus (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Arkanoid II (J) [hFFE].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Arkanoid II (J) [T+Fre_terminus].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Arkanoid II (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Armadillo (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Astro Fang - Super Machine (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Astro Robo Sasa (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Astro Robo Sasa (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Atlantis no Nazo (J) [hM03].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Atlantis no Nazo (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Attack Animal Gakuen (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\B-Wings (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Babel no Tou (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Babymaker by Grimlick (Dig Dug Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ballblazer (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Baltron (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Baltron (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Banana (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [p1][T+Rus1.1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [p3].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [p3][T+Rus1.1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [p4].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [p4][T+Rus1.1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J) [T+Gre1.0_Vag].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (J).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (VS) [p1][!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (VS) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City (VS).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City 2 (Warpman Hack) [T+Rus].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City 2 (Warpman Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City APU Player by Griever (Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City by Mayuge (Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City by Spirit of Thunder (Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City by Zergkerrigan (Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City Projectile Controllable Edition by shinwa (Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Battle City with 6 Enemies (Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Binary Land (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Binary Land (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Binary Land (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bio Force Ape (Japan) (En) (Proto).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bio Miracle Bokutte Upa (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bio Senshi Dan - Increaser Tono Tatakai (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bird Week (J) [hM00].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bird Week (J) [hM00][p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bird Week (J) [hM03].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bird Week (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Blodia Land - Puzzle Quest (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bloody Warriors - Shan-Go no Gyakushuu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bokosuka Quest III (Bokosuka Wars Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bokosuka Wars (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bokosuka Wars (J) [T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bokosuka Wars (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Bokosuka Wars Sega by Rinkaku (Bokosuka Wars Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Booby Kids (J) [f1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Booby Kids (J) [f1][T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Booby Kids (J) [hFFE].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Booby Kids (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Boris & Boa Boa (Nuts & Milk Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\BuB-BoB by Tempez (Dig Dug Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cadillac (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Captain Silver (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Captain Tsubasa Vol. II - Super Striker (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\CardCaptor Sakura (Tower of Druaga Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Castle Quest (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cat Ninden Teyandee (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chack 'n Pop (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chack'n Pop (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Challenger (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Challenger (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Championship Lode Runner (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Championship Lode Runner (J) [T+FreFinal_ks151].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Championship Lode Runner (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Championship Lode Runner Kai (Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chaos World (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chester Field - Ankoku Shin e no Chousen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chiisana Obake - Acchi Socchi Kocchi (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Choplifter (J) [hM03].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Choplifter (Japan) (En) (Rev 1).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Choujin Sentai - Jetman (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Chuuka Taisen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cikco Charlie (Circus Charlie Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Circus Charlie (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Circus Charlie (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Circus Charlie (J) [T+Chi][t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Circus Charlie (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Circus Fantasy (Circus Charlie Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Circus Mario (Circus Charlie Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cocoron (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Columbus - Ougon no Yoake (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cosmic Epsilon (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cosmo Police Galivan (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Crazy Climber (J) [hM15].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Crazy Climber (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Crisis Force (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Cycle Race - Road Man (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Daimeiro - Meikyuu no Tatsujin (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Daisenryaku (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dark Lord (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Deblock (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Deep Dungeon IV - Kuro no Youjutsushi (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Devil Man (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dezaemon (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dick & Milk (Nuts & Milk Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dig Dug (J) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dig Dug (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dig Dug (J) [T+Gre].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dig Dug (J) [T+Spa_PaladinKnights].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dig Dug (J) [T-Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dig Dug (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Don Doko Don (J) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Don Doko Don (J) [t2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Don Doko Don (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Donald Land (J) [hFFE].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Donald Land (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Donkey Kong 2 (Nuts & Milk Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Donkey Kong 2 Demo Ver.5 (Nuts & Milk Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Door Door (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Door Door (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Doraemon (Japan) (Rev A).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Doraemon - Giga Zombie no Gyakushuu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dough Boy (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dough Boy (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Downtown Special - Kunio-kun no Jidaigeki Da yo Zenin Shuugou! (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball - Daimaou Fukkatsu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z - Kyoushuu! Saiya Jin (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z Gaiden - Saiya Jin Zetsumetsu Keikaku (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Ball Z III - Ressen Jinzou Ningen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Buster (J) [h1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Buster (J) [T+Fre1.0_ks151].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Buster (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Buster II - Yami no Fuuin (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dragon Scroll - Yomigaerishi Maryuu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Draque Buster (Dragon Buster Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dream Master (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dynamite Bowl (J) [p1][!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Dynamite Bowl (Japan) (Rev A).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Eggerland - Meikyuu no Fukkatsu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Elysion (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Empire Invaders (Space Invaders Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Esper Bouken Tai (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Esper Dream 2 - Aratanaru Tatakai (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Exciting Boxing (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Exed Exes (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Exed Exes (J) [T+Fre_emu151].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Exed Exes (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Exerion (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Exerion (Japan) (En) (Proto).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\F-1 Race (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\F-1 Race (J) [T+Chi_madcell].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\F-1 Race (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\F-1 Race (J) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\F-1 Race (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Famicom Wars (Japan) (Rev 0B) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fantasy Zone 2 - Opa-Opa no Namida (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fantasy Zone 2 - The Teardrop of Opa-Opa (J) [hFFE].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Field Combat (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Field Combat (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Fantasy II (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Fantasy III (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Lap (J) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Final Lap (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Finaly Land (Binary Land Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fire Emblem (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fire Emblem Gaiden (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fire Flight Z (Formation Z Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flappy (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flappy (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flipull - An Exciting Cube Game (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flipull - An Exciting Cube Game (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flipull - An Exciting Cube Game (J) [p3].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flipull - An Exciting Cube Game (J) [T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flipull - An Exciting Cube Game (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flying Hero (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Flying Hero (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Formation Z (Japan) (Rev A).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Formation Zeta Chan NEW (Formation Z Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Formation Zeta Chan OLD (Formation Z Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Foton - The Ultimate Game on Planet Earth (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Front Line (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Front Line (J) [T+Pol_Dark Archon].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Front Line (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fudou Myouou Den (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fushigi no Umi no Nadia (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Fuzzical Fighter (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Galaxian (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Galaxian (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Galaxian (J) [T+Pol_Dark Archon].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Galaxian (J) [T-Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Galaxian (Japan) (Rev A).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Game Party (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ganbare Goemon! - Karakuri Douchuu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Garfield - A Week of Garfield (J) [T+Spa_Toma].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Garfield - A Week of Garfield (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gegege no Kitarou - Youkai Daimakyou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gegege no Kitarou 2 - Youkai Gundan no Chousen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Geimos (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Geimos (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gekitotsu Yonku Battle (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Getsufuu Maden (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Getta Robo (Dig Dug Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [hM03].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [hM03][T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [hM03][T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [hM03][T+Por90%_Emuroms].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [hM03][T+Por90%_Tradu-Roms].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [p1][T+Rus].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [T+Por1.00_Iyasu].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [T+Por85%_Made In Brasil].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [T+Rus].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [t2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [t3].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [t4].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [t5].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (J) [t6].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (PC10) [T+Fre1.0_ks151].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (PC10).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Goonies, The (VS).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gorby no Pipeline Daisakusen (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [hM04].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T+Chi][t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T+Chi][t2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T+Chi_lhbl].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T+Chi_MS emumax][t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T+Chi_MS emumax][t2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T+Fre_terminus].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [T-Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (J) [t2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gradius II (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Grand Master (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Great Deal (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gyrodine (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gyrodine (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Gyrodine (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Heavy Tank (Missile Tank Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hello Kitty no Ohanabatake (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hello Kitty World (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Heracles no Eikou - Toujin Makyou Den (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Heracles no Eikou II - Titan no Metsubou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Higemaru Makai-jima - Nanatsu no Shima Daibouken (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hinotori - Houou Hen - Gaou no Bouken (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hirake! Ponkikki (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hokuto no Ken (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Holy Diver (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Honoo no Toukyuuji - Dodge Danpei (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Honoo no Toukyuuji - Dodge Danpei 2 (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hottarman no Chitei Tanken (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Houma ga Toki (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hyaku no Sekai no Monogatari - The Tales on a Watery Wilderness (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hyper Sports (J) (PRG0) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hyper Sports (J) (PRG1) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Hyper Sports (Japan) (Rev 1).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ice Vs Joe Don Baker (Warpman Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ike Ike! Nekketsu Hockey-bu - Subette Koronde Dairantou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ikinari Musician (J) (Prototype) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ikinari Musician (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ikinari Musician (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ikki (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ikki (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ikki (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Insector X (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\J.League Fighting Soccer - The King of Ace Strikers (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jajamaru Gekimaden - Maboroshi no Kinmajou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jajamaru no Daibouken (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jehovah's Witnesses, The (Mappy Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jesus - Kyoufu no Bio Monster (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jikuu Yuuden - Debias (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\JJ (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Joy Mech Fight (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Jumbo Ozaki no Hole in One Professional (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Just Breed (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Juuouki (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaguya Hime Densetsu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaijuu Monogatari (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaiketsu Yancha Maru 2 - Karakuri Land (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kaiketsu Yancha Maru 3 - Taiketsu! Zouringen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kanshakudama Nage Kantarou no Toukaidou Gojuusan Tsugi (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Karateka (J) (Prototype) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Karateka (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Karateka (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kekkyoku Nankyoku Daibouken (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kero Kero Keroppi no Daibouken (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kero Kero Keroppi no Daibouken 2 - Donuts Ike wa Oosawagi! (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Keroppi to Keroriinu no Splash Bomb! (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\King Kong 2 - Ikari no Megaton Punch (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kirby's Nuts (Nuts & Milk Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Koopa Invaders (Space Invaders Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kouryuu Densetsu Villgust Gaiden (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kujaku Ou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kujaku Ou II (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kunio-kun no Nekketsu Soccer League (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kuzu (Binary Land Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Kyouryuu Sentai Juuranger (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Labyrinth (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Lam by darkdata (Milk & Nuts Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Layla (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Layla (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Lost Word of Jenny - Ushinawareta Message (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Lot Lot (J) [h1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Lot Lot (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Lot Lot (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Luigi Wars (Bokosuka Wars Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Lupin Sansei - Pandora no Isan (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mad City (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Magical Doropie (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Magnum Kikiippatsu - Empire City - 1931 (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Majou Densetsu II - Daimashikyou Galious (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Making Love (Battle City Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Maluex (Nuts & Milk Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mappy (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mappy (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mappy (J) [p2][T+Chi1.0_EmuTime].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mappy (J) [T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mappy (J) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mappy (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mappy - MZ700 NO PCG (Mappy Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mappy Kunio (Mappy Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mario + Toad (Nuts & Milk Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mario a la Caza del Tesoro V1.0 Spanish by Googie (Atlantis no Nazo Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mario and Luigi (Nuts & Milk Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mario Ikki (Ikki Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mario Mappy (Mappy Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mario Rider (Unl) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mario Runner by Y.Project (Championship Lode Runner Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mario's Treasure Hunt v1.0 English by Googie (Atlantis no Nazo Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Metals Tank (Battle City Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Metro-Cross (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mickey Mouse 3 - Yume Fuusen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Minelvaton Saga (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mini Putt (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Minna no Taabou no Nakayoshi Daisakusen (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Miracle Ropit's Adventure in 2100 (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mirai Senshi - Lios (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mirai Shinwa Jarvas (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Missile Tank (Ch) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Missile Tank (Ch).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Missile Tank with 6 Enemies (Ch).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mitsume ga Tooru (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Moai-kun (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Moon Crystal (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Motocross Champion (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mottomo Abunai Deka (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Mouryou Senki Madara (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Musashi no Bouken (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nagagutsu o Haita Neko - Sekai Isshuu 80 Nichi Daibouken (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nagagutsu wo Haita Neko - Sekai Isshuu 80 Nichi Daibouken (J) [p1][!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nagagutsu wo Haita Neko - Sekai Isshuu 80 Nichi Daibouken (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nakayoshi to Issho (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nekketsu! Street Basket - Ganbare Dunk Heroes (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Night Arrow (Ch).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Niji no Silk Road (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja Hattori-kun - Ninja wa Shuugyou de Gozaru no Maki (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja Hattori-kun - Ninja wa Shuugyou de Gozaru no Maki (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja Hattori-kun - Ninja wa Syugyou de Gozaru (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja Jajamaru - Ginga Daisakusen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja Jajamaru-kun (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja-kun - Ashura no Shou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja-kun - Majou no Bouken (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja-kun - Majou no Bouken (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ninja-kun - Majou no Bouken (Japan) (Rev 1).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nuts & Milk (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nuts & Milk (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nuts & Milk (J) [T+FreFinal_ks151].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nuts & Milk (J) [T-Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nuts & Milk (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Nuts & Milk by PE (Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Oaty Invaders by Pope Hentai (Space Invaders Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Oishinbo (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Onyanko Town (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Onyanko Town (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pac-Land (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pac-Land (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pachi Com (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pachicom (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Palamedes II - Star Twinkle, Hoshi no Mabataki (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Parallel World (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\PCGC Tank (Battle City Chinese Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Peepar Time (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Penguin-kun Wars (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Penisian (Galaxian Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\PepsiMan by Mogemogesama (Metro-Cross Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Perfect Bowling (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Perman Part 2 - Himitsu Kessha Madoodan o Taose! (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pescatore (Japan) (Proto).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pikachu Dig Dug by Mogemogesama (Dig Dug Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pizza Pop Mario (Unl) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pizza Pop! (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pooyan (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pooyan (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pooyan (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pooyan (J) [T-Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pooyan (J) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Pooyan (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Portopia Renzoku Satsujin Jiken (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Power Blazer (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Power Soccer (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Puffy! Land (Older) by Rinkaku (Binary Land Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Puffy! Land by Rinkaku (Binary Land Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Puyo Puyo (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Puzslot (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Quarth (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Rabbit and Rope (Mappy Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Radia Senki - Reimei Hen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Return of the Black Mage by Redrum (Warpman Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Robocco Wars (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Romancia (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Romman Love (Battle City Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Route 16 Turbo (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Route-16 Turbo (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Saiyuuki World 2 - Tenjoukai no Majin (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sanokuen Zippy Race by Rinkaku (Zippy Race Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sanrio Carnival 2 (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sanrio Cup - Pon Pon Volley (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\SD Keiji - Blader (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Seirei Gari (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shanghai (J) (Sample) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shanghai (J) (Sample) [hM02].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shanghai (J) [hM02].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shanghai (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shanghai 2 (J) [h1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shanghai 2 (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shanghai II (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shikinjou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shinsenden (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Shufflepuck Cafe (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Silva Saga (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sky Destroyer (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sky Destroyer (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sky Destroyer (J) [T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sky Destroyer (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Son Son (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Son Son (J) [T+Chi].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Son Son (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Space Harrier (J) [hM02].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Space Harrier (J) [p1][hM02].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Space Harrier (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Space Invaders (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Space Invaders (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Space Shadow (J) [hFFE][p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Space Shadow (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Spartan X 2 (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Spelunker II - Yuusha e no Chousen (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Splatter House - Wanpaku Graffiti (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Star Luster (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Star Luster (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Star Luster (VS).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Star Wars (Battle City Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Star Wars (Japan) (Namco) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sted - Iseki Wakusei no Yabou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Stick Hunter - Exciting Ice Hockey (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sugoro Quest - Dice no Senshitachi (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Summer Carnival '92 - Recca (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Arabian (J) [f1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Arabian (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Arabian (J) [p2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Arabian (J) [p3].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Arabian (J) [T+Por].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Arabian (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Black Onyx (J) [h1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Black Onyx (J) [hM02].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Black Onyx (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Dyna'mix Badminton (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Lesbian (Super Arabian Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Mario Kart Rider (Unl) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Naked Badminton (Super Dyna'mix Badminton Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Pinball (J) [hM02].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Pinball (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Star Wars (Argus Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Star Wars 2 (Baltron Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super X-Wing 97 (Argus Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Xevious - Gump no Nazo (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Xevious - Gump no Nazo (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Super Xevious - Gump no Nazo (VS).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Sweet Home (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Taito Chase H.Q. (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Takahashi Meijin no Bouken-jima IV (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Takahashi Meijin no Bugutte Honey (J) [hM34].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Takahashi Meijin no Bugutte Honey (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Takeshikun 2 (Mappy Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tank (Battle City Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tank 1990 (Ch).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tank 28 Games by Y.S. (Battle City Hack)7.nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tank Z (Battle City Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tao (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tashiro Masashi no Princess ga Ippai (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tenchi o Kurau II - Shokatsu Koumei Den (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tetrastar - The Fighter (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tetris (Bulletproof) (Japan) (Rev B).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tetris (J) (REV0) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tetris (J) (REVA) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tetris 2 + Bombliss (Japan) (Rev A).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Thexder (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Thexder (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Time Zone (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Titan (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tokkyuu Shirei - Solbrain (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Top Rider (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Top Rider (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Toukon Club (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tower of Druaga, The (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tower of Druaga, The (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Tower of Zalaga (Tower of Druaga Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Transformers - Convoy no Nazo (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Triathron, The (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (J) (FDS Conversion).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (J) [h1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (J) [T+Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (J) [T-Chi_MS emumax].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (J) [t1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (J) [t2].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (J) [t3].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\TwinBee 3 - Poko Poko Daimaou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Uchuu Keibitai SDF (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Urusei Yatsura - Lum no Wedding Bell (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Valis - The Fantastic Soldier (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Valkyrie no Bouken - Toki no Kagi Densetsu (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Volguard II (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Volguard II (J) [T+Fre].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Volguard II (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wagyan Land (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wai Wai World 2 - SOS!! Paseri Jou (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wanpaku Kokkun no Gourmet World (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wario Bros (Don Doko Don Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Warpman (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Warpman (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wily & Light no Rockboard - That's Paradise (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wing of Madoola, The (J) [hFFE].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wing of Madoola, The (J) [hM03].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wing of Madoola, The (J) [T+Fre_KS151].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wing of Madoola, The (J).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wit's (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Wizzy (Formation Z Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Women in Combat Duty (Field Combat Hack).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Woody Poko (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Yie Ar Kung-Fu (J) (V1.2) [!].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Yie Ar Kung-Fu (J) (V1.2) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Yie Ar Kung-Fu (J) (V1.4) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Yie Ar Kung-Fu (Japan) (Rev 1.4).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Youkai Club (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ys (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ys II - Ancient Ys Vanished - The Final Chapter (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Ys III - Wanderers from Ys (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Yume Penguin Monogatari (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Zippy Race (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Zippy Race (Japan).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Zombie Hunter (Japan) (Translated En).nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Zunou Senkan Galg (J) [p1].nes
+20:41:51 - Checking file: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Zunou Senkan Galg (Japan).nes
+20:41:51 - Checking folder: O:\Hyperspin Project Working Setup\Roms\Console\Nintendo Famicom\Unneeded
+9:37:13 - Initializing...
+9:37:13 - Creating menus
+9:37:13 - Loading config
+9:37:14 - Init classes
+9:37:14 - Done init
+9:41:31 - Initializing...
+9:41:31 - Creating menus
+9:41:31 - Loading config
+9:41:31 - Init classes
+9:41:31 - Done init
+10:4:14 - Initializing...
+10:4:14 - Creating menus
+10:4:14 - Loading config
+10:4:14 - Init classes
+10:4:14 - Done init
+10:8:45 - Initializing...
+10:8:45 - Creating menus
+10:8:46 - Loading config
+10:8:46 - Init classes
+10:8:46 - Done init
+17:58:51 - Initializing...
+17:58:51 - Creating menus
+17:58:51 - Loading config
+17:58:51 - Init classes
+17:58:51 - Done init

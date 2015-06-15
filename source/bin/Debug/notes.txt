@@ -1,0 +1,34 @@
+incomplete
+MAME                         - need support for multiple folders in HyperLaunch
+Sony playstation             - all
+
+
+Sega Sg1000                  - wheels, artwork
+PC-Engine                    - wheels
+PC-FX                        - wheels, artwork
+Sony playstation 2           - all
+NeoGeo                       - themes
+Atomiswawe                   - themes
+Sega Model 2                 - themes (daytonam, indy500d)
+Sega Model 3                 - 2 x themes 2 x themes (von2, lemans24)
+Sega ST-V                    - wheels
+Sega Naomi                   - wheels, themes
+Zinc                         - themes
+
+ROMS:
+Sega CD
+Sega Saturn
+Sega DreamCast
+TurboGraphx CD
+PC-FX
+NeoGeo CD
+Panasonic 3DO
+Sony playstation
+Sony playstation 2
+Daphne
+Sega Naomi
+Zinc
+
+Strange to review:
+Nintendo Arcade Systems
+

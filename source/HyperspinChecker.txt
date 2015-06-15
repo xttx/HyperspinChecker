@@ -1,0 +1,26 @@
+Yet another Hyperspin rom & media manager
+
+I don't really know if I'm allowed to post it here, if not, i will remove it.
+
+First of all - Forgive me my poor English, some of notes in the program could be understandable, i'm very sorry for this.
+
+Proof of concept.
+Some futures doesn't work.
+Expect bugs (no destructive, i hope).
+
+- check for roms / videos / themes / wheels / artworks
+- move unneeded roms/media to subfolder
+- collect missing media from another folders
+- crop hyperspin database to contain only roms you have
+- match you media names with db entry
+- check cd images for variuos problems
+- open source
+- ...
+
+If you want to request a feature, report a bug, or just request to rename a label, please post here, i will fill all the requests as soon as possible.
+
+[IMG]http://i49.tinypic.com/24evqxt.jpg[/IMG]
+[IMG]http://i49.tinypic.com/2r6e8lg.jpg[/IMG]
+[IMG]http://i46.tinypic.com/mhahu.jpg[/IMG]
+[IMG]http://i50.tinypic.com/5v0mrr.jpg[/IMG]
+[IMG]http://i45.tinypic.com/r71y5w.jpg[/IMG]

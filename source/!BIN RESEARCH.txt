@@ -1,0 +1,63 @@
+3DO ISO 1-2048
+00000 - 01'ZZZZZ'0100
+70800 - 01'ZZZZZ'0100
+
+CD32 1-2048 (?ISO?)
+8000 - 01'CD001'0100
+8800 - 01'CD001'0100
+9000 - ff'CD001'0100
+
+CD32 1-2352
+head - 00ffffff ffffffff ffffff00 00020001
+9310 - 01'CD001'0100
+9C40 - 01'CD001'0100
+a570 - ff'CD001'0100
+
+CD32 iso
+8000 - 01'CD001'0100
+8800 - 01'CD001'0100
+9000 - ff'CD001'0100
+
+GC iso
+???????
+
+PCFX iso
+???????
+
+PS2 2-2352
+head - 00ffffff ffffffff ffffff00 00020002
+9318 - 01'CD001'0100
+9C48 - ff'CD001'0100
+
+PSX 2-2352
+head - 00ffffff ffffffff ffffff00 00020002
+9318 - 01'CD001'0100
+9C48 - ff'CD001'0100
+
+PSX AUDIO - ?????
+
+SATURN 1-2352
+head - 00ffffff ffffffff ffffff00 00020001
+9310 - 01'CD001'0100
+9C40 - ff'CD001'0100
+
+SATURN ISO
+8000 - 01'CD001'0100
+8800 - ff'CD001'0100
+
+SATURN ISO 1-2352 (?BIN?)
+head - 00ffffff ffffffff ffffff00 00020001
+9310 - 01'CD001'0100
+9C40 - ff'CD001'0100
+
+SCD 1-2352
+head - 00ffffff ffffffff ffffff00 00020001
+9310 - 01'CD001'0100
+9C40 - ff'CD001'0100
+
+PC 1-2352
+head - 00ffffff ffffffff ffffff00 00020001
+ 930 - 00ffffff ffffffff ffffff00 00020101
+1260 - 00ffffff ffffffff ffffff00 00020201
+9310 - 01'CD001'0100
+9C40 - 02'CD001'0100
