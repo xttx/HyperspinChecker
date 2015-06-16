@@ -269,6 +269,7 @@ Partial Class Form1
         Me.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConvertMessToHs = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -2562,7 +2563,7 @@ Partial Class Form1
         '
         'ReorderGamesWhileUpdatingXmlToolStripMenuItem
         '
-        Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem, Me.ReorderAlphabetycallyToolStripMenuItem, Me.ReorderAsSeenInTheCheckTableToolStripMenuItem})
+        Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem, Me.ReorderAlphabetycallyToolStripMenuItem, Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem, Me.ReorderAsSeenInTheCheckTableToolStripMenuItem})
         Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.Name = "ReorderGamesWhileUpdatingXmlToolStripMenuItem"
         Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.Size = New System.Drawing.Size(257, 22)
         Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.Text = "Reorder games while updating xml"
@@ -2579,7 +2580,7 @@ Partial Class Form1
         '
         Me.ReorderAlphabetycallyToolStripMenuItem.Name = "ReorderAlphabetycallyToolStripMenuItem"
         Me.ReorderAlphabetycallyToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
-        Me.ReorderAlphabetycallyToolStripMenuItem.Text = "Reorder alphabetycally"
+        Me.ReorderAlphabetycallyToolStripMenuItem.Text = "Reorder alphabetically by romname"
         '
         'ReorderAsSeenInTheCheckTableToolStripMenuItem
         '
@@ -2779,6 +2780,12 @@ Partial Class Form1
         Me.ConvertMessToHs.Name = "ConvertMessToHs"
         Me.ConvertMessToHs.Size = New System.Drawing.Size(484, 22)
         Me.ConvertMessToHs.Text = "Convert from mess softwarelist xml to HyperSpin .xml"
+        '
+        'ReorderAlphabeticallyByDescriptionToolStripMenuItem
+        '
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Name = "ReorderAlphabeticallyByDescriptionToolStripMenuItem"
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Text = "Reorder alphabetically by database entry"
         '
         'Form1
         '
@@ -3102,5 +3109,6 @@ Partial Class Form1
     Friend WithEvents ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConvertMessToHs As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ReorderAlphabeticallyByDescriptionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

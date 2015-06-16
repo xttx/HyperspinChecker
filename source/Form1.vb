@@ -849,6 +849,11 @@ Public Class Form1
 #End Region
 
 #Region "Menus"
+    'File / Exit
+    Private Sub ExitToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ExitToolStripMenuItem.Click
+        Application.Exit()
+    End Sub
+
     'Table / Allow Edit
     Private Sub AlowEditToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AlowEditToolStripMenuItem.Click
         AlowEditToolStripMenuItem.Checked = Not AlowEditToolStripMenuItem.Checked
@@ -862,6 +867,35 @@ Public Class Form1
         For i As Integer = 2 To 10
             DataGridView1.Columns(i).ReadOnly = True
         Next
+    End Sub
+
+    'Table / Reorder / No Reorder
+    Private Sub NoReorderinsertedLinesAddedToTheEndToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Click
+        NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = True
+        ReorderAlphabetycallyToolStripMenuItem.Checked = False
+        ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked = False
+        ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked = False
+    End Sub
+    'Table / Reorder / Reorder alphabetically by romname
+    Private Sub ReorderAlphabetycallyToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ReorderAlphabetycallyToolStripMenuItem.Click
+        NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = False
+        ReorderAlphabetycallyToolStripMenuItem.Checked = True
+        ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked = False
+        ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked = False
+    End Sub
+    'Table / Reorder / Reorder alphabetically by description
+    Private Sub ReorderAlphabeticallyByDescriptionToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ReorderAlphabeticallyByDescriptionToolStripMenuItem.Click
+        NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = False
+        ReorderAlphabetycallyToolStripMenuItem.Checked = False
+        ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked = True
+        ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked = False
+    End Sub
+    'Table / Reorder / Reorder as seen in table
+    Private Sub ReorderAsSeenInTheCheckTableToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ReorderAsSeenInTheCheckTableToolStripMenuItem.Click
+        NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = False
+        ReorderAlphabetycallyToolStripMenuItem.Checked = False
+        ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked = False
+        ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked = True
     End Sub
 
     'Matcher / Associate option in HS folder click
@@ -1153,4 +1187,6 @@ Public Class Form1
         Form9_database_statistic.Show()
     End Sub
 #End Region
+
+
 End Class

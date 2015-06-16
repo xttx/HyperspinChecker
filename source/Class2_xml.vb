@@ -289,7 +289,6 @@ Public Class Class2_xml
         Dim romName As String = ""
         Dim xmlPath As String = Form1.xmlPath
         Dim x As New Xml.XmlDocument
-        x.Load(xmlPath)
 
         If main_table.RowCount = 0 Then
             Dim res As MsgBoxResult = MsgBox("The check-table is empty. Updating database in current state will just remove all games from xml. Are you sure you want to do it?", MsgBoxStyle.YesNo)
@@ -307,6 +306,8 @@ Public Class Class2_xml
         Else
             FileSystem.CopyFile(xmlPath, xmlPath + ".backupBeforeEdit.xml")
         End If
+
+        x.Load(xmlPath)
 
         'Deleting
         Dim romToDel As String = ""
@@ -383,7 +384,56 @@ Public Class Class2_xml
         Next
 
         Dim w As Xml.XmlWriter = Xml.XmlWriter.Create(xmlPath, New Xml.XmlWriterSettings With {.Indent = True, .NewLineHandling = Xml.NewLineHandling.None})
-        x.Save(w) : w.Close()
+
+        If Form1.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked Then
+            'no reorder
+            x.Save(w)
+        ElseIf Form1.ReorderAlphabetycallyToolStripMenuItem.Checked Then
+            'reorder alphabetically by romname
+            Dim ordered = (From el In x.SelectNodes("/menu/game") Let name = DirectCast(el, Xml.XmlNode).Attributes.GetNamedItem("name").Value.ToString Order By name Ascending)
+            Dim x_reordered As New Xml.XmlDocument
+            Dim x_reordered_menuNode As Xml.XmlElement = x_reordered.CreateElement("menu")
+            x_reordered.AppendChild(x_reordered_menuNode)
+
+            For Each el In ordered
+                x_reordered_menuNode.AppendChild(x_reordered.ImportNode(DirectCast(el.el, Xml.XmlElement), True))
+            Next
+            x_reordered.Save(w)
+        ElseIf Form1.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked Then
+            'reorder alphabetically by description
+            Dim ordered = (From el In x.SelectNodes("/menu/game") Let name = DirectCast(el, Xml.XmlNode).SelectSingleNode("description").InnerText Order By name Descending)
+            Dim x_reordered As New Xml.XmlDocument
+            Dim x_reordered_menuNode As Xml.XmlElement = x_reordered.CreateElement("menu")
+            x_reordered.AppendChild(x_reordered_menuNode)
+
+            For Each el In ordered
+                x_reordered_menuNode.AppendChild(x_reordered.ImportNode(DirectCast(el.el, Xml.XmlElement), True))
+            Next
+            x_reordered.Save(w)
+        ElseIf Form1.ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked Then
+            'reorder as seen in table
+            Dim x_reordered As New Xml.XmlDocument
+            Dim x_reordered_menuNode As Xml.XmlElement = x_reordered.CreateElement("menu")
+            x_reordered.AppendChild(x_reordered_menuNode)
+            For Each r As DataGridViewRow In Form1.DataGridView1.Rows
+                Dim tmpNodes As Xml.XmlNodeList = x.SelectNodes("/menu/game[@name='" + r.Cells(1).Value.ToString + "']")
+                If tmpNodes.Count = 0 Then
+                    MsgBox("Error. Aborting update.") : Exit For
+                ElseIf tmpNodes.Count = 1 Then
+                    x_reordered_menuNode.AppendChild(x_reordered.ImportNode(tmpNodes(0), True))
+                    x.SelectSingleNode("/menu").RemoveChild(tmpNodes(0))
+                ElseIf tmpNodes.Count > 1 Then
+                    For Each tmpNode2 As Xml.XmlNode In tmpNodes
+                        If tmpNode2.SelectSingleNode("description").InnerText = r.Cells(0).Value.ToString Then
+                            x_reordered_menuNode.AppendChild(x_reordered.ImportNode(tmpNode2, True))
+                            x.SelectSingleNode("/menu").RemoveChild(tmpNode2)
+                        End If
+                    Next
+                End If
+            Next
+            x_reordered.Save(w)
+        End If
+        w.Close()
 
         Form1.editor_delete_command_list.Clear()
         Form1.editor_update_command_list.Clear()
@@ -391,7 +441,7 @@ Public Class Class2_xml
         MsgBox("Database Updated.")
     End Sub
 
-    'Delete selected roms from DB / Update DB OLD CODE
+    'Delete selected roms from DB / Update DB !!!OLD CODE!!!
     Private Sub update_delete_rom_OLD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'IF DELETE ROM
         Dim xmlPath As String = Form1.xmlPath
