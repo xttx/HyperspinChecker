@@ -238,8 +238,28 @@ Partial Class Form1
         Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReorderAlphabetycallyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReorderAsSeenInTheCheckTableToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowHideColumnsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F0 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.F2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F7 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F8 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F9 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F10 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F11 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F12 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F13 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F14 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.FPresetChecker = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FPresetEditor = New System.Windows.Forms.ToolStripMenuItem()
         Me.CommitDbEditionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExportToExelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -269,7 +289,6 @@ Partial Class Form1
         Me.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConvertMessToHs = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -2582,6 +2601,12 @@ Partial Class Form1
         Me.ReorderAlphabetycallyToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
         Me.ReorderAlphabetycallyToolStripMenuItem.Text = "Reorder alphabetically by romname"
         '
+        'ReorderAlphabeticallyByDescriptionToolStripMenuItem
+        '
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Name = "ReorderAlphabeticallyByDescriptionToolStripMenuItem"
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Text = "Reorder alphabetically by database entry"
+        '
         'ReorderAsSeenInTheCheckTableToolStripMenuItem
         '
         Me.ReorderAsSeenInTheCheckTableToolStripMenuItem.Name = "ReorderAsSeenInTheCheckTableToolStripMenuItem"
@@ -2590,9 +2615,146 @@ Partial Class Form1
         '
         'ShowHideColumnsToolStripMenuItem
         '
+        Me.ShowHideColumnsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.F0, Me.F1, Me.ToolStripMenuItem3, Me.F2, Me.F3, Me.F4, Me.F5, Me.F6, Me.F7, Me.F8, Me.F9, Me.F10, Me.F11, Me.F12, Me.F13, Me.F14, Me.ToolStripMenuItem4, Me.FPresetChecker, Me.FPresetEditor})
         Me.ShowHideColumnsToolStripMenuItem.Name = "ShowHideColumnsToolStripMenuItem"
         Me.ShowHideColumnsToolStripMenuItem.Size = New System.Drawing.Size(257, 22)
         Me.ShowHideColumnsToolStripMenuItem.Text = "Show / Hide Columns"
+        '
+        'F0
+        '
+        Me.F0.Checked = True
+        Me.F0.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F0.Enabled = False
+        Me.F0.Name = "F0"
+        Me.F0.Size = New System.Drawing.Size(184, 22)
+        Me.F0.Text = "Show Database entry"
+        '
+        'F1
+        '
+        Me.F1.Checked = True
+        Me.F1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F1.Enabled = False
+        Me.F1.Name = "F1"
+        Me.F1.Size = New System.Drawing.Size(184, 22)
+        Me.F1.Text = "Show RomName"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(181, 6)
+        '
+        'F2
+        '
+        Me.F2.Checked = True
+        Me.F2.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F2.Name = "F2"
+        Me.F2.Size = New System.Drawing.Size(184, 22)
+        Me.F2.Text = "Show Rom"
+        '
+        'F3
+        '
+        Me.F3.Checked = True
+        Me.F3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F3.Name = "F3"
+        Me.F3.Size = New System.Drawing.Size(184, 22)
+        Me.F3.Text = "Show Video"
+        '
+        'F4
+        '
+        Me.F4.Checked = True
+        Me.F4.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F4.Name = "F4"
+        Me.F4.Size = New System.Drawing.Size(184, 22)
+        Me.F4.Text = "Show Theme"
+        '
+        'F5
+        '
+        Me.F5.Checked = True
+        Me.F5.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F5.Name = "F5"
+        Me.F5.Size = New System.Drawing.Size(184, 22)
+        Me.F5.Text = "Show Wheel"
+        '
+        'F6
+        '
+        Me.F6.Checked = True
+        Me.F6.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F6.Name = "F6"
+        Me.F6.Size = New System.Drawing.Size(184, 22)
+        Me.F6.Text = "Show Artwork1"
+        '
+        'F7
+        '
+        Me.F7.Checked = True
+        Me.F7.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F7.Name = "F7"
+        Me.F7.Size = New System.Drawing.Size(184, 22)
+        Me.F7.Text = "Show Artwork2"
+        '
+        'F8
+        '
+        Me.F8.Checked = True
+        Me.F8.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F8.Name = "F8"
+        Me.F8.Size = New System.Drawing.Size(184, 22)
+        Me.F8.Text = "Show Artwork3"
+        '
+        'F9
+        '
+        Me.F9.Checked = True
+        Me.F9.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F9.Name = "F9"
+        Me.F9.Size = New System.Drawing.Size(184, 22)
+        Me.F9.Text = "Show Artwork4"
+        '
+        'F10
+        '
+        Me.F10.Checked = True
+        Me.F10.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.F10.Name = "F10"
+        Me.F10.Size = New System.Drawing.Size(184, 22)
+        Me.F10.Text = "Show Sounds"
+        '
+        'F11
+        '
+        Me.F11.Name = "F11"
+        Me.F11.Size = New System.Drawing.Size(184, 22)
+        Me.F11.Text = "Show CRC"
+        '
+        'F12
+        '
+        Me.F12.Name = "F12"
+        Me.F12.Size = New System.Drawing.Size(184, 22)
+        Me.F12.Text = "Show Manufacturer"
+        '
+        'F13
+        '
+        Me.F13.Name = "F13"
+        Me.F13.Size = New System.Drawing.Size(184, 22)
+        Me.F13.Text = "Show Year"
+        '
+        'F14
+        '
+        Me.F14.Name = "F14"
+        Me.F14.Size = New System.Drawing.Size(184, 22)
+        Me.F14.Text = "Show Genre"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(181, 6)
+        '
+        'FPresetChecker
+        '
+        Me.FPresetChecker.Name = "FPresetChecker"
+        Me.FPresetChecker.Size = New System.Drawing.Size(184, 22)
+        Me.FPresetChecker.Text = "Preset - Checker"
+        '
+        'FPresetEditor
+        '
+        Me.FPresetEditor.Name = "FPresetEditor"
+        Me.FPresetEditor.Size = New System.Drawing.Size(184, 22)
+        Me.FPresetEditor.Text = "Preset - Editor"
         '
         'CommitDbEditionsToolStripMenuItem
         '
@@ -2780,12 +2942,6 @@ Partial Class Form1
         Me.ConvertMessToHs.Name = "ConvertMessToHs"
         Me.ConvertMessToHs.Size = New System.Drawing.Size(484, 22)
         Me.ConvertMessToHs.Text = "Convert from mess softwarelist xml to HyperSpin .xml"
-        '
-        'ReorderAlphabeticallyByDescriptionToolStripMenuItem
-        '
-        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Name = "ReorderAlphabeticallyByDescriptionToolStripMenuItem"
-        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
-        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Text = "Reorder alphabetically by database entry"
         '
         'Form1
         '
@@ -3110,5 +3266,24 @@ Partial Class Form1
     Friend WithEvents ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConvertMessToHs As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReorderAlphabeticallyByDescriptionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F0 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents F2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F9 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F10 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F11 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F12 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F13 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F14 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents FPresetChecker As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FPresetEditor As System.Windows.Forms.ToolStripMenuItem
 
 End Class

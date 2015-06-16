@@ -162,11 +162,11 @@ Public Class Form1
         DataGridView1.Columns(7).Width = 50 : DataGridView1.Columns(7).ReadOnly = True
         DataGridView1.Columns(8).Width = 50 : DataGridView1.Columns(8).ReadOnly = True
         DataGridView1.Columns(9).Width = 50 : DataGridView1.Columns(9).ReadOnly = True
-        DataGridView1.Columns(10).Width = 50 : DataGridView1.Columns(9).ReadOnly = True
-        DataGridView1.Columns(11).Width = 75 : DataGridView1.Columns(10).ReadOnly = False : DataGridView1.Columns(11).Visible = False
-        DataGridView1.Columns(12).Width = 180 : DataGridView1.Columns(11).ReadOnly = False : DataGridView1.Columns(12).Visible = False
-        DataGridView1.Columns(13).Width = 65 : DataGridView1.Columns(12).ReadOnly = False : DataGridView1.Columns(13).Visible = False
-        DataGridView1.Columns(14).Width = 120 : DataGridView1.Columns(13).ReadOnly = False : DataGridView1.Columns(14).Visible = False
+        DataGridView1.Columns(10).Width = 50 : DataGridView1.Columns(10).ReadOnly = True
+        DataGridView1.Columns(11).Width = 75 : DataGridView1.Columns(11).ReadOnly = False : DataGridView1.Columns(11).Visible = False
+        DataGridView1.Columns(12).Width = 180 : DataGridView1.Columns(12).ReadOnly = False : DataGridView1.Columns(12).Visible = False
+        DataGridView1.Columns(13).Width = 65 : DataGridView1.Columns(13).ReadOnly = False : DataGridView1.Columns(13).Visible = False
+        DataGridView1.Columns(14).Width = 120 : DataGridView1.Columns(14).ReadOnly = False : DataGridView1.Columns(14).Visible = False
         Dim t As Type = DataGridView1.GetType
         Dim pi As Reflection.PropertyInfo = t.GetProperty("DoubleBuffered", Reflection.BindingFlags.Instance Or Reflection.BindingFlags.NonPublic)
         pi.SetValue(DataGridView1, True, Nothing)
@@ -898,6 +898,30 @@ Public Class Form1
         ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked = True
     End Sub
 
+    'Table / ShowHide columns
+    Private Sub FilterColumns_Click(sender As System.Object, e As System.EventArgs) Handles F0.Click, F1.Click, F2.Click, F3.Click, F4.Click, F5.Click, F6.Click, F7.Click, F8.Click, F9.Click, F10.Click, F11.Click, F12.Click, F13.Click, F14.Click
+        Dim tsmi As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
+        If tsmi.Checked Then tsmi.Checked = False Else tsmi.Checked = True
+        Dim i As Integer = CInt(tsmi.Name.Substring(1))
+
+        For Each c In myContextMenu4.Items
+            Dim ch As ToolStripControlHost = TryCast(c, ToolStripControlHost)
+            If ch IsNot Nothing Then
+                If CInt(DirectCast(ch.Control, CheckBox).Name) = i Then
+                    DirectCast(ch.Control, CheckBox).Checked = tsmi.Checked : Exit For
+                End If
+            End If
+        Next
+    End Sub
+    'Table / ShowHide columns / Preset Checker
+    Private Sub FPresetChecker_Click(sender As System.Object, e As System.EventArgs) Handles FPresetChecker.Click
+        ShowHidePresets(sender, New ToolStripItemClickedEventArgs(myContextMenu4.Items(myContextMenu4.Items.Count - 2)))
+    End Sub
+    'Table / ShowHide columns / Preset Editor
+    Private Sub FPresetEditor_Click(sender As System.Object, e As System.EventArgs) Handles FPresetEditor.Click
+        ShowHidePresets(sender, New ToolStripItemClickedEventArgs(myContextMenu4.Items(myContextMenu4.Items.Count - 1)))
+    End Sub
+
     'Matcher / Associate option in HS folder click
     Private Sub AssocOption_fileInHsFolder_copy_Click(sender As System.Object, e As System.EventArgs) Handles AssocOption_fileInHsFolder_copy.Click, AssocOption_fileInHsFolder_move.Click
         Dim i As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
@@ -1047,10 +1071,12 @@ Public Class Form1
         myContextMenu4.Show(Cursor.Position.X, Cursor.Position.Y)
     End Sub
 
-    'Show/hide columns cchecked_change
+    'Show/hide columns checked_change
     Private Sub ShowHideCol(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckStrip2_0.CheckedChanged, CheckStrip2_1.CheckedChanged, CheckStrip2_2.CheckedChanged, CheckStrip2_3.CheckedChanged, CheckStrip2_4.CheckedChanged, CheckStrip2_5.CheckedChanged, CheckStrip2_6.CheckedChanged, CheckStrip2_7.CheckedChanged, CheckStrip2_8.CheckedChanged, CheckStrip2_9.CheckedChanged, CheckStrip2_10.CheckedChanged, CheckStrip2_11.CheckedChanged, CheckStrip2_12.CheckedChanged, CheckStrip2_13.CheckedChanged, CheckStrip2_14.CheckedChanged
         Dim cb As CheckBox = DirectCast(sender, CheckBox)
         Dim i As Integer = CInt(cb.Name)
+        DirectCast(ShowHideColumnsToolStripMenuItem.DropDownItems("F" + i.ToString), ToolStripMenuItem).Checked = cb.Checked
+
         DataGridView1.Columns(i).Visible = cb.Checked
     End Sub
 
@@ -1187,6 +1213,11 @@ Public Class Form1
         Form9_database_statistic.Show()
     End Sub
 #End Region
+
+    Private Sub CommitDbEditionsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CommitDbEditionsToolStripMenuItem.Click
+
+    End Sub
+
 
 
 End Class
