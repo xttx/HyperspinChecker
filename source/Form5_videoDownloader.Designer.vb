@@ -43,9 +43,9 @@ Partial Class Form5_videoDownloader
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.AxVLCPlugin21 = New AxAXVLC.AxVLCPlugin2()
+        'Me.AxVLCPlugin21 = New AxAXVLC.AxVLCPlugin2()
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
-        CType(Me.AxVLCPlugin21, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.AxVLCPlugin21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -221,12 +221,12 @@ Partial Class Form5_videoDownloader
         '
         'AxVLCPlugin21
         '
-        Me.AxVLCPlugin21.Enabled = True
-        Me.AxVLCPlugin21.Location = New System.Drawing.Point(587, 6)
-        Me.AxVLCPlugin21.Name = "AxVLCPlugin21"
-        Me.AxVLCPlugin21.OcxState = CType(resources.GetObject("AxVLCPlugin21.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxVLCPlugin21.Size = New System.Drawing.Size(320, 240)
-        Me.AxVLCPlugin21.TabIndex = 21
+        'Me.AxVLCPlugin21.Enabled = True
+        'Me.AxVLCPlugin21.Location = New System.Drawing.Point(587, 6)
+        'Me.AxVLCPlugin21.Name = "AxVLCPlugin21"
+        'Me.AxVLCPlugin21.OcxState = CType(resources.GetObject("AxVLCPlugin21.OcxState"), System.Windows.Forms.AxHost.State)
+        'Me.AxVLCPlugin21.Size = New System.Drawing.Size(320, 240)
+        'Me.AxVLCPlugin21.TabIndex = 21
         '
         'TrackBar1
         '
@@ -244,7 +244,7 @@ Partial Class Form5_videoDownloader
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1020, 300)
         Me.Controls.Add(Me.TrackBar1)
-        Me.Controls.Add(Me.AxVLCPlugin21)
+        'Me.Controls.Add(Me.AxVLCPlugin21)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Button5)
@@ -266,7 +266,7 @@ Partial Class Form5_videoDownloader
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form5_videoDownloader"
         Me.Text = "Video downloader"
-        CType(Me.AxVLCPlugin21, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.AxVLCPlugin21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -292,6 +292,6 @@ Partial Class Form5_videoDownloader
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents AxVLCPlugin21 As AxAXVLC.AxVLCPlugin2
+    'Friend WithEvents AxVLCPlugin21 As AxAXVLC.AxVLCPlugin2
     Friend WithEvents TrackBar1 As System.Windows.Forms.TrackBar
 End Class

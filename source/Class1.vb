@@ -10,6 +10,7 @@ Public Class Class1
     Public Shared romFoundlist As New ArrayList
     Public Shared askVar1 As String = "", askVar2 As String = "", askVar3 As String = ""
     Public Shared askList As New List(Of String), askResponse As Integer = 0
+    Public Shared confPath As String = Application.StartupPath + "\Config.conf"
 
     Public Shared Sub Log(ByVal s As String)
         FileOpen(1, ".\HyperCheckerLog.txt", OpenMode.Append)

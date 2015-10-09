@@ -746,8 +746,12 @@ Public Class Class3_matcher
                                 fWoExt = f
                                 If FileSystem.GetFiles(fi, SearchOption.SearchTopLevelOnly, w).Count = 0 Then c = False
                             Else
+                            If f.Contains(".") Then
                                 fWoExt = f.Substring(0, f.LastIndexOf("."))
+                            Else
+                                fWoExt = f
                             End If
+                        End If
 
                             countAllFiles += 1
                             Dim found As Boolean = c And Class1.romlist.Contains(fWoExt.ToLower)
@@ -876,11 +880,11 @@ Public Class Class3_matcher
     End Sub
 
     'Show autorenamer context menu
-    Private Sub Button_associate_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button5_Associate.MouseDown
-        If e.Button = MouseButtons.Right Then
-            Form1.myContextMenu7.Show(Cursor.Position.X, Cursor.Position.Y)
-        End If
-    End Sub
+    'Private Sub Button_associate_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button5_Associate.MouseDown
+    'If e.Button = MouseButtons.Right Then
+    'Form1.myContextMenu7.Show(Cursor.Position.X, Cursor.Position.Y)
+    'End If
+    'End Sub
 
     'Settings Changed - Always show detailed total in matcher
     Private Sub CheckBox27_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles checkBox27.CheckedChanged

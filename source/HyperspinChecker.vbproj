@@ -183,6 +183,18 @@
     <Compile Include="FormA_hyperlaunch_3rd_party_paths.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormB_PCSX2_createIndex.Designer.vb">
+      <DependentUpon>FormB_PCSX2_createIndex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormB_PCSX2_createIndex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormC_mameRomListBuilder.Designer.vb">
+      <DependentUpon>FormC_mameRomListBuilder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormC_mameRomListBuilder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IniFileApi.vb" />
     <Compile Include="IniFileVb.vb" />
     <Compile Include="ISOChecker.vb" />
@@ -247,6 +259,7 @@
     <Compile Include="ISOFixAsk_MdfMds.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Language.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -293,6 +306,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormA_hyperlaunch_3rd_party_paths.resx">
       <DependentUpon>FormA_hyperlaunch_3rd_party_paths.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormB_PCSX2_createIndex.resx">
+      <DependentUpon>FormB_PCSX2_createIndex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormC_mameRomListBuilder.resx">
+      <DependentUpon>FormC_mameRomListBuilder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ISOFixAsk_cueWoBin.resx">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
@@ -345,14 +364,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="AxAXVLC">
-      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
     <COMReference Include="AxShockwaveFlashObjects">
       <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -360,15 +371,6 @@
       <Lcid>0</Lcid>
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
-    </COMReference>
-    <COMReference Include="AXVLC">
-      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="AxWMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>

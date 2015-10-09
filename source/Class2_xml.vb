@@ -1,11 +1,15 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
 Public Class Class2_xml
     Private WithEvents xml_crop As Button = Form1.Button18
-    Private WithEvents xml_from_folder As Button = Form1.Button19
-    Private WithEvents xml_remove_clones As Button = Form1.Button28
-    Private WithEvents xml_compare As Button = Form1.Button31
-    Private WithEvents move_roms_from_txt_to_subfolder As Button = Form1.Button29
+    Private WithEvents xml_from_folder As ToolStripMenuItem = Form1.CreateDatabaseXMLFromRomFolderToolStripMenuItem
+    Private WithEvents xml_from_folder_options As ToolStripMenuItem = Form1.CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem
+
+    'Private WithEvents xml_remove_clones As Button = Form1.Button28
+    Private WithEvents xml_remove_clones As ToolStripMenuItem = Form1.RemoveClonesFromCurrentDBToolStripMenuItem
+    Private WithEvents xml_compare As ToolStripMenuItem = Form1.CompareToolStripMenuItem
+    Private WithEvents move_roms_from_txt_to_subfolder As ToolStripMenuItem = Form1.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem
     Private WithEvents update_delete_rom As Button = Form1.Button21
+    Private WithEvents update_delete_rom_mm As ToolStripMenuItem = Form1.CommitDbEditionsToolStripMenuItem
     Private WithEvents main_table As DataGridView = Form1.DataGridView1
 
     'crop xml
@@ -98,6 +102,11 @@ Public Class Class2_xml
         x.Save(w) : w.Close()
     End Sub
 
+    'xmlFromFolderShowOptions
+    Private Sub xml_from_folder_options_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xml_from_folder_options.Click
+        Form1.myContextMenu5.Show(Cursor.Position.X, Cursor.Position.Y)
+    End Sub
+
     'Remove clones
     Private Sub xml_remove_clones_Click() Handles xml_remove_clones.Click
         If Form1.ComboBox1.SelectedIndex < 0 Then
@@ -166,8 +175,9 @@ Public Class Class2_xml
         FileClose(1)
     End Sub
 
+    'DIFF
     Private Sub xml_compare_Click() Handles xml_compare.Click
-        If Form1.RadioButton12.Checked And Form1.ComboBox1.SelectedIndex < 0 Then MsgBox("In this mode you have to choose system first.") : Exit Sub
+        If Form1.CompareAgainstCurrentDBToolStripMenuItem.Checked And Form1.ComboBox1.SelectedIndex < 0 Then MsgBox("In this mode you have to choose system first.") : Exit Sub
 
         Dim file1 As String = "", file2 As String = ""
 
@@ -179,7 +189,7 @@ Public Class Class2_xml
         If Not FileSystem.FileExists(f.FileName) Then MsgBox("Can't open file") : Exit Sub
         file1 = f.FileName
 
-        If Form1.RadioButton12.Checked Then
+        If Form1.CompareAgainstCurrentDBToolStripMenuItem.Checked Then
             file2 = Form1.xmlPath
         Else
             Dim f2 As New OpenFileDialog
@@ -196,7 +206,7 @@ Public Class Class2_xml
         Dim arr1 As New List(Of String), arr2 As New List(Of String)
         x1.Load(file1) : x2.Load(file2)
         For Each node As Xml.XmlNode In x1.SelectNodes("/menu/game")
-            If Form1.RadioButton14.Checked Then
+            If Form1.CompareGameromNameToolStripMenuItem.Checked Then
                 arr1.Add(streap_brackets(node.Attributes.GetNamedItem("name").Value))
             Else
                 tmpNode = node.SelectSingleNode("description")
@@ -204,7 +214,7 @@ Public Class Class2_xml
             End If
         Next
         For Each node As Xml.XmlNode In x2.SelectNodes("/menu/game")
-            If Form1.RadioButton14.Checked Then
+            If Form1.CompareGameromNameToolStripMenuItem.Checked Then
                 arr2.Add(streap_brackets(node.Attributes.GetNamedItem("name").Value))
             Else
                 tmpNode = node.SelectSingleNode("description")
@@ -439,6 +449,9 @@ Public Class Class2_xml
         Form1.editor_update_command_list.Clear()
         Form1.editor_insert_command_list.Clear()
         MsgBox("Database Updated.")
+    End Sub
+    Private Sub update_delete_rom_mm_Click(sender As System.Object, e As System.EventArgs) Handles update_delete_rom_mm.Click
+        update_delete_rom_Click(update_delete_rom, New System.EventArgs)
     End Sub
 
     'Delete selected roms from DB / Update DB !!!OLD CODE!!!

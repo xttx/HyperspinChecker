@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.FileIO
+﻿Imports WindowsApplication1.Language
+Imports Microsoft.VisualBasic.FileIO
 Imports System.Runtime.InteropServices
 
 Public Class Form1
@@ -106,9 +107,9 @@ Public Class Form1
     Friend WithEvents myContextMenu2 As New ToolStripDropDownMenu 'matcher options
     Private WithEvents myContextMenu3 As New ToolStripDropDownMenu 'move unneeded
     Private WithEvents myContextMenu4 As New ToolStripDropDownMenu 'main table columns hide/show
-    Private WithEvents myContextMenu5 As New ToolStripDropDownMenu 'folder2xml options
+    Public WithEvents myContextMenu5 As New ToolStripDropDownMenu 'folder2xml options
     Friend WithEvents myContextMenu6 As New ToolStripDropDownMenu 'convert to clrmamepro
-    Public WithEvents myContextMenu7 As New ToolStripDropDownMenu 'autorenamer
+    'Public WithEvents myContextMenu7 As New ToolStripDropDownMenu 'autorenamer
     Friend WithEvents RadioStrip1 As New RadioButton
     Friend WithEvents RadioStrip2 As New RadioButton
     'Friend WithEvents CheckStrip1 As New CheckBox
@@ -134,6 +135,8 @@ Public Class Form1
 #End Region
 
 #Region "Main Form Actions (loadForm, system select, check)"
+
+    'FORM LOAD
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Class1.Log("Initializing...")
         Class1.Log("Creating menus")
@@ -210,7 +213,7 @@ Public Class Form1
         myContextMenu3.Items.Add("move unneeded Themes")
         myContextMenu3.Items.Add("move unneeded Sound")
 
-        myContextMenu7.Items.Add("Autorenamer")
+        'myContextMenu7.Items.Add("Autorenamer")
 
         RadioStrip1.AutoSize = True
         RadioStrip2.AutoSize = True
@@ -287,8 +290,10 @@ Public Class Form1
         myContextMenu4.Items.Add(CheckStripHost2_13)
         myContextMenu4.Items.Add(CheckStripHost2_14)
         myContextMenu4.Items.Add(New ToolStripSeparator)
-        myContextMenu4.Items.Add("Preset - Checker")
-        myContextMenu4.Items.Add("Preset - Editor")
+        myContextMenu4.Items.Add(Preset_Checker)
+        myContextMenu4.Items.Add(Preset_Editor)
+        myContextMenu4.Items.Add(New ToolStripSeparator)
+        myContextMenu4.Items.Add(Save_current_cols_conf_as_startup)
 
         Panel1.Left = -100000
         ComboBox12.SelectedIndex = 0
@@ -310,32 +315,50 @@ Public Class Form1
         ComboBox2.SelectedIndex = 0
 
         Class1.Log("Loading config")
-        If Not Microsoft.VisualBasic.FileIO.FileSystem.FileExists(Application.StartupPath + "\Config.conf") Then
+        If Not Microsoft.VisualBasic.FileIO.FileSystem.FileExists(Class1.confPath) Then
             Dim fd As New FolderBrowserDialog
             fd.Description = "Select hyperspin folder"
             fd.ShowDialog()
-            FileOpen(1, Application.StartupPath + "\Config.conf", OpenMode.Output)
-            PrintLine(1, fd.SelectedPath)
+            FileOpen(1, Class1.confPath, OpenMode.Output)
+            PrintLine(1, "[main]")
+            PrintLine(1, "HyperSpin_Path = " + fd.SelectedPath)
             PrintLine(1, "rename_just_cue = 1")
             PrintLine(1, "search_cue_for = bin, iso")
             PrintLine(1, "useHLv3 = 0")
+            PrintLine(1, "")
             PrintLine(1, "[handle_together]")
             PrintLine(1, "mds, mds")
             FileClose(1)
         End If
-        FileOpen(1, Application.StartupPath + "\Config.conf", OpenMode.Input)
-        TextBox14.Text = LineInput(1)
-        Dim l As String
-        Dim hMode As Boolean = False
-        Do While Not EOF(1)
-            l = LineInput(1)
-            If l.IndexOf("rename_just_CUE", StringComparison.InvariantCultureIgnoreCase) >= 0 Then If Not l.Trim.EndsWith("1") Then CheckBox6.Checked = False
-            If l.IndexOf("search_cue_for", StringComparison.InvariantCultureIgnoreCase) >= 0 Then TextBox16.Text = l.Substring(l.IndexOf("=") + 1).Trim
-            If l.IndexOf("usehlv3", StringComparison.InvariantCultureIgnoreCase) >= 0 Then If l.Trim.EndsWith("1") Then CheckBox26.Checked = True
-            If hMode Then ListBox4.Items.Add(l)
-            If l.IndexOf("[handle_together]", StringComparison.InvariantCultureIgnoreCase) >= 0 Then hMode = True
+
+        Dim v As Boolean
+        Dim s As String = ""
+        Dim ini2 As New IniFileApi
+        ini2.IniFile(Class1.confPath)
+        TextBox14.Text = ini2.IniReadValue("main", "HyperSpin_Path")
+        TextBox16.Text = ini2.IniReadValue("main", "search_cue_for")
+        If Not ini2.IniReadValue("main", "rename_just_CUE") = "1" Then CheckBox6.Checked = False
+        If ini2.IniReadValue("main", "usehlv3") = "1" Then CheckBox26.Checked = True
+        Dim i As Integer = 1
+        Do While ini2.IniReadValue("handle_together", i.ToString) <> ""
+            ListBox4.Items.Add(ini2.IniReadValue("handle_together", i.ToString))
+            i += 1
         Loop
-        FileClose(1)
+        For c As Integer = 0 To DataGridView1.ColumnCount - 1
+            s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_visible")
+            If s <> "" Then
+                If s = "0" Then v = False Else v = True
+                DataGridView1.Columns(c).Visible = v
+            End If
+
+            s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_Width")
+            If s <> "" Then DataGridView1.Columns(c).Width = CInt(s)
+        Next
+        s = ini2.IniReadValue("Main", "Main_window_size")
+        If s <> "" Then
+            Me.Width = CInt(s.Split({"x"c})(0))
+            Me.Height = CInt(s.Split({"x"c})(1))
+        End If
 
         If Not FileSystem.FileExists(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml") Then
             MsgBox("Can't find '" + Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml'. Check hyperspin path under 'settings' tab, or in the config.conf")
@@ -352,8 +375,15 @@ Public Class Form1
         clrmame_class = New Class4_clrmamepro
         system_manager_class = New Class5_system_manager
         Class1.Log("Done init")
-    End Sub 'FORM LOAD
+    End Sub
 
+    'Form closing - this is handled to save window size in config
+    Private Sub Form1_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        ini.IniFile(Class1.confPath)
+        ini.IniWriteValue("Main", "Main_window_size", Me.Width.ToString + "x" + Me.Height.ToString)
+    End Sub
+
+    'Main Check
     Private Sub check(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Class1.data.Clear()
         Class1.romlist.Clear()
@@ -470,9 +500,9 @@ Public Class Form1
         Button18.Enabled = True
         If AlowEditToolStripMenuItem.Checked Then Button21.Enabled = True
         Label2.Text = "Total: " + DataGridView1.Rows.Count.ToString
-    End Sub 'Main Check
+    End Sub
 
-    Private Function tryToFindRom(temppath As String, romExtensions() As String, romname As String) As Boolean
+    Private Function tryToFindRom(ByVal temppath As String, ByVal romExtensions() As String, ByVal romname As String) As Boolean
         Dim result As Boolean = False
         For Each ext As String In romExtensions
             If Dir(temppath + romname + "." + ext.Trim) <> "" Then result = True : Exit For
@@ -490,6 +520,7 @@ Public Class Form1
         Return False
     End Function
 
+    'System select
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
         Button2_moveUnneeded.Enabled = False
         Button4.Enabled = False
@@ -555,8 +586,9 @@ Public Class Form1
 
         If CheckBox22.Checked Then CheckBox23.Checked = useParentVids
         If CheckBox22.Checked Then CheckBox24.Checked = useParentThemes
-        Button28.Text = "Remove all clones from current database" + vbCrLf + "(" + ComboBox1.SelectedItem.ToString + " selected)"
-    End Sub 'System select
+        'Button28.Text = "Remove all clones from current database" + vbCrLf + "(" + ComboBox1.SelectedItem.ToString + " selected)"
+        RemoveClonesFromCurrentDBToolStripMenuItem.Text = "Remove all clones from current database (" + ComboBox1.SelectedItem.ToString + " selected)"
+    End Sub
 
     Private Sub retrieve_rom_path_from_HL()
         'HLv3 Thing
@@ -564,6 +596,7 @@ Public Class Form1
         If CheckBox26.Checked And ComboBox1.SelectedIndex >= 0 Then
             'Dim HLPath As String = ""
             Dim HLPath As String = TextBox18.Text
+            If HLPath.ToUpper.EndsWith("EXE") Then HLPath = HLPath.Substring(0, HLPath.LastIndexOf("\"))
             'FileOpen(1, Class1.HyperspinPath + "\Settings\Settings.ini", OpenMode.Input)
             'Do While Not EOF(1)
             's = LineInput(1).Trim
@@ -746,16 +779,25 @@ Public Class Form1
 
     'Save Config
     Private Sub Button20_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button20.Click 'Save Config
-        FileOpen(1, Application.StartupPath + "\Config.conf", OpenMode.Output)
-        PrintLine(1, TextBox14.Text)
-        PrintLine(1, "rename_just_cue = " + DirectCast(IIf(CheckBox6.Checked, "1", "0"), String))
-        PrintLine(1, "search_cue_for = " + TextBox16.Text)
-        PrintLine(1, "useHLv3 = " + DirectCast(IIf(CheckBox26.Checked, "1", "0"), String))
-        PrintLine(1, "[handle_together]")
-        For Each h In ListBox4.Items
-            PrintLine(1, h)
+        ini.IniFile(Class1.confPath)
+        ini.IniWriteValue("MAIN", "HyperSpin_Path", TextBox14.Text)
+        ini.IniWriteValue("MAIN", "rename_just_cue", DirectCast(IIf(CheckBox6.Checked, "1", "0"), String))
+        ini.IniWriteValue("MAIN", "search_cue_for", TextBox16.Text)
+        ini.IniWriteValue("MAIN", "useHLv3", DirectCast(IIf(CheckBox26.Checked, "1", "0"), String))
+        For i As Integer = 1 To ListBox4.Items.Count
+            ini.IniWriteValue("handle_together", i.ToString, ListBox4.Items(i - 1).ToString)
         Next
-        FileClose(1)
+
+        'FileOpen(1, Application.StartupPath + "\Config.conf", OpenMode.Output)
+        'PrintLine(1, TextBox14.Text)
+        'PrintLine(1, "rename_just_cue = " + DirectCast(IIf(CheckBox6.Checked, "1", "0"), String))
+        'PrintLine(1, "search_cue_for = " + TextBox16.Text)
+        'PrintLine(1, "useHLv3 = " + DirectCast(IIf(CheckBox26.Checked, "1", "0"), String))
+        'PrintLine(1, "[handle_together]")
+        'For Each h In ListBox4.Items
+        'PrintLine(1, h)
+        'Next
+        'FileClose(1)
         Label23.BackColor = Color.LightBlue
         Label23.Text = "Config.conf Saved"
     End Sub
@@ -811,15 +853,8 @@ Public Class Form1
         'Next
     End Sub
 
-    'Show folder2xml options
-    Private Sub Button19_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button19.MouseDown
-        If e.Button = MouseButtons.Right Then
-            myContextMenu5.Show(Cursor.Position.X, Cursor.Position.Y)
-        End If
-    End Sub
-
     'Change checkbox 'use HS settings for clones/parents' 
-    Private Sub CheckBox22_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckBox22.CheckedChanged
+    Private Sub CheckBox22_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox22.CheckedChanged
         If CheckBox22.Checked Then
             CheckBox23.Enabled = False : CheckBox24.Enabled = False
             CheckBox23.Checked = useParentVids : CheckBox24.Checked = useParentThemes
@@ -829,7 +864,7 @@ Public Class Form1
     End Sub
 
     'Hyperlaunch path changed
-    Private Sub TextBox18_TextChanged(sender As System.Object, e As System.EventArgs) Handles TextBox18.TextChanged
+    Private Sub TextBox18_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox18.TextChanged
         Dim ok As Boolean = False
         If FileSystem.DirectoryExists(TextBox18.Text) Then
             If FileSystem.FileExists(TextBox18.Text + "\HyperLaunch.exe") Then
@@ -840,7 +875,7 @@ Public Class Form1
     End Sub
 
     'Update Hyperspin INI
-    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         If Not TextBox18.Text.EndsWith("\") Then TextBox18.Text = TextBox18.Text + "\"
         TextBox18.Text = TextBox18.Text.Replace("\\", "\").Replace("\\", "\")
         ini.path = Class1.HyperspinPath + "\Settings\Settings.ini"
@@ -850,18 +885,20 @@ Public Class Form1
 
 #Region "Menus"
     'File / Exit
-    Private Sub ExitToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ExitToolStripMenuItem.Click
+    Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
         Application.Exit()
     End Sub
 
     'Table / Allow Edit
-    Private Sub AlowEditToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AlowEditToolStripMenuItem.Click
+    Private Sub AlowEditToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AlowEditToolStripMenuItem.Click
         AlowEditToolStripMenuItem.Checked = Not AlowEditToolStripMenuItem.Checked
         DataGridView1.ReadOnly = Not AlowEditToolStripMenuItem.Checked
         If AlowEditToolStripMenuItem.Checked And Button2_moveUnneeded.Enabled Then
             Button21.Enabled = True
+            CommitDbEditionsToolStripMenuItem.Enabled = True
         Else
             Button21.Enabled = False
+            CommitDbEditionsToolStripMenuItem.Enabled = False
         End If
 
         For i As Integer = 2 To 10
@@ -870,28 +907,28 @@ Public Class Form1
     End Sub
 
     'Table / Reorder / No Reorder
-    Private Sub NoReorderinsertedLinesAddedToTheEndToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Click
+    Private Sub NoReorderinsertedLinesAddedToTheEndToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Click
         NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = True
         ReorderAlphabetycallyToolStripMenuItem.Checked = False
         ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked = False
         ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked = False
     End Sub
     'Table / Reorder / Reorder alphabetically by romname
-    Private Sub ReorderAlphabetycallyToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ReorderAlphabetycallyToolStripMenuItem.Click
+    Private Sub ReorderAlphabetycallyToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReorderAlphabetycallyToolStripMenuItem.Click
         NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = False
         ReorderAlphabetycallyToolStripMenuItem.Checked = True
         ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked = False
         ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked = False
     End Sub
     'Table / Reorder / Reorder alphabetically by description
-    Private Sub ReorderAlphabeticallyByDescriptionToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ReorderAlphabeticallyByDescriptionToolStripMenuItem.Click
+    Private Sub ReorderAlphabeticallyByDescriptionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReorderAlphabeticallyByDescriptionToolStripMenuItem.Click
         NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = False
         ReorderAlphabetycallyToolStripMenuItem.Checked = False
         ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked = True
         ReorderAsSeenInTheCheckTableToolStripMenuItem.Checked = False
     End Sub
     'Table / Reorder / Reorder as seen in table
-    Private Sub ReorderAsSeenInTheCheckTableToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ReorderAsSeenInTheCheckTableToolStripMenuItem.Click
+    Private Sub ReorderAsSeenInTheCheckTableToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReorderAsSeenInTheCheckTableToolStripMenuItem.Click
         NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = False
         ReorderAlphabetycallyToolStripMenuItem.Checked = False
         ReorderAlphabeticallyByDescriptionToolStripMenuItem.Checked = False
@@ -899,7 +936,7 @@ Public Class Form1
     End Sub
 
     'Table / ShowHide columns
-    Private Sub FilterColumns_Click(sender As System.Object, e As System.EventArgs) Handles F0.Click, F1.Click, F2.Click, F3.Click, F4.Click, F5.Click, F6.Click, F7.Click, F8.Click, F9.Click, F10.Click, F11.Click, F12.Click, F13.Click, F14.Click
+    Private Sub FilterColumns_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles F0.Click, F1.Click, F2.Click, F3.Click, F4.Click, F5.Click, F6.Click, F7.Click, F8.Click, F9.Click, F10.Click, F11.Click, F12.Click, F13.Click, F14.Click
         Dim tsmi As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
         If tsmi.Checked Then tsmi.Checked = False Else tsmi.Checked = True
         Dim i As Integer = CInt(tsmi.Name.Substring(1))
@@ -914,40 +951,18 @@ Public Class Form1
         Next
     End Sub
     'Table / ShowHide columns / Preset Checker
-    Private Sub FPresetChecker_Click(sender As System.Object, e As System.EventArgs) Handles FPresetChecker.Click
+    Private Sub FPresetChecker_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FPresetChecker.Click
         ShowHidePresets(sender, New ToolStripItemClickedEventArgs(myContextMenu4.Items(myContextMenu4.Items.Count - 2)))
     End Sub
     'Table / ShowHide columns / Preset Editor
-    Private Sub FPresetEditor_Click(sender As System.Object, e As System.EventArgs) Handles FPresetEditor.Click
+    Private Sub FPresetEditor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FPresetEditor.Click
         ShowHidePresets(sender, New ToolStripItemClickedEventArgs(myContextMenu4.Items(myContextMenu4.Items.Count - 1)))
     End Sub
 
-    'Matcher / Associate option in HS folder click
-    Private Sub AssocOption_fileInHsFolder_copy_Click(sender As System.Object, e As System.EventArgs) Handles AssocOption_fileInHsFolder_copy.Click, AssocOption_fileInHsFolder_move.Click
-        Dim i As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
-        AssocOption_fileInHsFolder_copy.Checked = False
-        AssocOption_fileInHsFolder_move.Checked = False
-        i.Checked = True
-    End Sub
-
-    'Macher / Associate option in different folder click
-    Private Sub AssocOption_fileInDiffFolder_copy_Click(sender As System.Object, e As System.EventArgs) Handles AssocOption_fileInDiffFolder_copy.Click, AssocOption_fileInDiffFolder_copyToHS.Click, AssocOption_fileInDiffFolder_move.Click, AssocOption_fileInDiffFolder_moveToHS.Click
-        Dim i As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
-        AssocOption_fileInDiffFolder_copy.Checked = False
-        AssocOption_fileInDiffFolder_copyToHS.Checked = False
-        AssocOption_fileInDiffFolder_move.Checked = False
-        AssocOption_fileInDiffFolder_moveToHS.Checked = False
-        i.Checked = True
-    End Sub
-
-    'Tools / Show HL 3rd party paths
-    Private Sub CheckHyperLaunch3rdPartyPathsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Click
-        If TextBox18.BackColor <> colorYES Then MsgBox("You Hyperlaunch path is not correctly set. Check 'Hyperspin system settings' tab") : Exit Sub
-        Dim f As New FormA_hyperlaunch_3rd_party_paths : f.Show()
-    End Sub
+    'Table / Update (commit) DB --- handled in Class2_xml
 
     'Table / Excel csv export
-    Private Sub ExportToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ExportToolStripMenuItem.Click
+    Private Sub ExportToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExportToolStripMenuItem.Click
         If DataGridView1.Rows.Count = 0 Then MsgBox("Table is empty. Nothing to export.") : Exit Sub
 
         Dim sep As String = ""
@@ -983,7 +998,7 @@ Public Class Form1
     End Sub
 
     'Table / Excel export separator change
-    Private Sub SemicolonExcelDefaultToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SemicolonExcelDefaultToolStripMenuItem.Click, CommaFormatDefaultToolStripMenuItem.Click
+    Private Sub SemicolonExcelDefaultToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SemicolonExcelDefaultToolStripMenuItem.Click, CommaFormatDefaultToolStripMenuItem.Click
         Dim m As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
         If m.Name.ToLower.StartsWith("semicolon") Then
             CommaFormatDefaultToolStripMenuItem.Checked = False
@@ -992,6 +1007,89 @@ Public Class Form1
             CommaFormatDefaultToolStripMenuItem.Checked = True
             SemicolonExcelDefaultToolStripMenuItem.Checked = False
         End If
+    End Sub
+
+    'Matcher / Autorenamer
+    Private Sub AutorenamerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AutorenamerToolStripMenuItem.Click
+        If DataGridView1.Rows.Count = 0 Then MsgBox("Please, make ""check"" in summary page, before using this future.") : Exit Sub
+        If ComboBox3.SelectedIndex < 0 Then MsgBox("Select media you want autorename (roms/video/artwork/wheels/themes...).") : Exit Sub
+        RadioButton2.Checked = True
+        RadioButton5.Checked = True
+        If ListBox1.Items.Count = 1 Then
+            If ListBox1.Items(0).ToString.StartsWith("No missing") Then MsgBox(ListBox1.Items(0).ToString + " found. Nothing to do.") : Exit Sub
+        End If
+        If ListBox2.Items.Count = 0 Then MsgBox("There is no unmatched media. Nothing to do.") : Exit Sub
+        Form6_autorenamer.Show()
+    End Sub
+
+    'Matcher / Associate option in HS folder click
+    Private Sub AssocOption_fileInHsFolder_copy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AssocOption_fileInHsFolder_copy.Click, AssocOption_fileInHsFolder_move.Click
+        Dim i As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
+        AssocOption_fileInHsFolder_copy.Checked = False
+        AssocOption_fileInHsFolder_move.Checked = False
+        i.Checked = True
+    End Sub
+
+    'Macher / Associate option in different folder click
+    Private Sub AssocOption_fileInDiffFolder_copy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AssocOption_fileInDiffFolder_copy.Click, AssocOption_fileInDiffFolder_copyToHS.Click, AssocOption_fileInDiffFolder_move.Click, AssocOption_fileInDiffFolder_moveToHS.Click
+        Dim i As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
+        AssocOption_fileInDiffFolder_copy.Checked = False
+        AssocOption_fileInDiffFolder_copyToHS.Checked = False
+        AssocOption_fileInDiffFolder_move.Checked = False
+        AssocOption_fileInDiffFolder_moveToHS.Checked = False
+        i.Checked = True
+    End Sub
+
+    'Tools / Show HL 3rd party paths
+    Private Sub CheckHyperLaunch3rdPartyPathsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Click
+        If TextBox18.BackColor <> colorYES Then MsgBox("You Hyperlaunch path is not correctly set. Check 'Hyperspin system settings' tab") : Exit Sub
+        Dim f As New FormA_hyperlaunch_3rd_party_paths : f.Show()
+    End Sub
+
+    'Tools / Show Genres/favorites manager
+    Private Sub GenresFavoritesManagerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenresFavoritesManagerToolStripMenuItem.Click
+        If ComboBox1.SelectedIndex < 0 Then MsgBox("Please, select a system.") : Exit Sub
+        Form4_genres_favorites.Show()
+    End Sub
+
+    'Tools / Show DB statistic
+    Private Sub ShowDatabaseStatisticToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShowDatabaseStatisticToolStripMenuItem.Click
+        Form9_database_statistic.Show()
+    End Sub
+
+    'Tools / DIFF Options 1
+    Private Sub CompareAgainstCurrentDBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CompareAgainstCurrentDBToolStripMenuItem.Click, ChooseBothFilesToCompareToolStripMenuItem.Click
+        CompareAgainstCurrentDBToolStripMenuItem.Checked = False
+        ChooseBothFilesToCompareToolStripMenuItem.Checked = False
+        DirectCast(sender, ToolStripMenuItem).Checked = True
+    End Sub
+    'Tools / DIFF Options 2
+    Private Sub CompareGameromNameToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CompareGameromNameToolStripMenuItem.Click, CompareDescriptionTagusualyFullNameToolStripMenuItem.Click
+        CompareGameromNameToolStripMenuItem.Checked = False
+        CompareDescriptionTagusualyFullNameToolStripMenuItem.Checked = False
+        DirectCast(sender, ToolStripMenuItem).Checked = True
+    End Sub
+
+    'Tools / Dual folder ops
+    Private Sub DualFolderOperationsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DualFolderOperationsToolStripMenuItem.Click
+        Form7_dualFolderOperations.Show()
+    End Sub
+
+    'Tools / Show video downloader
+    Private Sub VideoDownloaderToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VideoDownloaderToolStripMenuItem.Click
+        Form5_videoDownloader.Show()
+    End Sub
+
+    'Tools / PCSX2 Create indexes
+    Private Sub PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Click
+        Dim f As New FormB_PCSX2_createIndex
+        f.Show()
+    End Sub
+
+    'Tools / Mame romset reducer
+    Private Sub MAMERomsetReducerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MAMERomsetReducerToolStripMenuItem.Click
+        Dim f As New FormC_mameRomListBuilder
+        f.Show(Me)
     End Sub
 #End Region
 
@@ -1082,7 +1180,7 @@ Public Class Form1
 
     'Column headers presets
     Private Sub ShowHidePresets(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu4.ItemClicked
-        If e.ClickedItem.Text = "Preset - Checker" Then
+        If e.ClickedItem.Text = Preset_Checker Then
             CheckStrip2_2.Checked = True
             CheckStrip2_3.Checked = True
             CheckStrip2_4.Checked = True
@@ -1097,7 +1195,7 @@ Public Class Form1
             CheckStrip2_13.Checked = False
             CheckStrip2_14.Checked = False
         End If
-        If e.ClickedItem.Text = "Preset - Editor" Then
+        If e.ClickedItem.Text = Preset_Editor Then
             CheckStrip2_2.Checked = False
             CheckStrip2_3.Checked = False
             CheckStrip2_4.Checked = False
@@ -1111,6 +1209,15 @@ Public Class Form1
             CheckStrip2_12.Checked = True
             CheckStrip2_13.Checked = True
             CheckStrip2_14.Checked = True
+        End If
+        If e.ClickedItem.Text = Save_current_cols_conf_as_startup Then
+            ini.IniFile(Class1.confPath)
+            Dim v As String = ""
+            For i As Integer = 0 To DataGridView1.ColumnCount - 1
+                If DataGridView1.Columns(i).Visible Then v = "1" Else v = "0"
+                ini.IniWriteValue("Main_Table_Columns_Config", "Col_" + i.ToString + "_visible", v)
+                ini.IniWriteValue("Main_Table_Columns_Config", "Col_" + i.ToString + "_width", DataGridView1.Columns(i).Width.ToString)
+            Next
         End If
     End Sub
 
@@ -1152,12 +1259,12 @@ Public Class Form1
     End Sub
 #End Region
 
-#Region "All the '...' buttons (open file browser), Show - genres/favorites, video downloader, Dual Folder Ops, Notes, Autorenamer, Database Statistic"
+#Region "All the '...' buttons (open file browser), Notes, Autorenamer"
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         Dim fd As New FolderBrowserDialog : fd.Description = "Select folder" : fd.ShowDialog()
         TextBox4.Text = fd.SelectedPath
     End Sub '...
-    Private Sub Button36_Click(sender As System.Object, e As System.EventArgs) Handles Button36.Click
+    Private Sub Button36_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button36.Click
         Dim fd As New FolderBrowserDialog : fd.Description = "Select hyperlaunch folder" : fd.ShowDialog()
         TextBox18.Text = fd.SelectedPath
     End Sub '...
@@ -1175,49 +1282,27 @@ Public Class Form1
     End Sub '...
 
     'Set HL folder to \Hyperspin\Hyperlaunch
-    Private Sub Button37_Click(sender As System.Object, e As System.EventArgs) Handles Button37.Click
+    Private Sub Button37_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button37.Click
         TextBox18.Text = (Class1.HyperspinPath + "\Hyperlaunch\").Replace("\\", "\").Replace("\\", "\")
-    End Sub
-    'Show Genres / favorites manager
-    Private Sub Button25_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button25.Click
-        If ComboBox1.SelectedIndex < 0 Then MsgBox("Please, select a system.") : Exit Sub
-        Form4_genres_favorites.Show()
-    End Sub
-    'Show video downloader
-    Private Sub Button26_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button26.Click
-        Form5_videoDownloader.Show()
-    End Sub
-    'Dual folder ops
-    Private Sub Button32_Click(sender As System.Object, e As System.EventArgs) Handles Button32.Click
-        Form7_dualFolderOperations.Show()
     End Sub
 
     'Open Notes
-    Private Sub Button30_Click(sender As System.Object, e As System.EventArgs) Handles Button30.Click
+    Private Sub Button30_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button30.Click
         System.Diagnostics.Process.Start("notepad.exe", ".\notes.txt")
     End Sub
     'Show autorenamer
-    Private Sub contextMenuAutorenamer(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu7.ItemClicked
-        If DataGridView1.Rows.Count = 0 Then MsgBox("Please, make ""check"" in summary page, before using this future.") : Exit Sub
-        If ComboBox3.SelectedIndex < 0 Then MsgBox("Select media you want autorename (roms/video/artwork/wheels/themes...).") : Exit Sub
-        RadioButton2.Checked = True
-        RadioButton5.Checked = True
-        If ListBox1.Items.Count = 1 Then
-            If ListBox1.Items(0).ToString.StartsWith("No missing") Then MsgBox(ListBox1.Items(0).ToString + " found. Nothing to do.") : Exit Sub
-        End If
-        If ListBox2.Items.Count = 0 Then MsgBox("There is no unmatched media. Nothing to do.") : Exit Sub
-        Form6_autorenamer.Show()
-    End Sub
+    'Private Sub contextMenuAutorenamer(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu7.ItemClicked
+    'If DataGridView1.Rows.Count = 0 Then MsgBox("Please, make ""check"" in summary page, before using this future.") : Exit Sub
+    'If ComboBox3.SelectedIndex < 0 Then MsgBox("Select media you want autorename (roms/video/artwork/wheels/themes...).") : Exit Sub
+    'RadioButton2.Checked = True
+    'RadioButton5.Checked = True
+    'If ListBox1.Items.Count = 1 Then
+    'If ListBox1.Items(0).ToString.StartsWith("No missing") Then MsgBox(ListBox1.Items(0).ToString + " found. Nothing to do.") : Exit Sub
+    'End If
+    'If ListBox2.Items.Count = 0 Then MsgBox("There is no unmatched media. Nothing to do.") : Exit Sub
+    'Form6_autorenamer.Show()
+    'End Sub
+
     'Show Database statistic
-    Private Sub Button35_Click(sender As Object, e As EventArgs) Handles Button35.Click
-        Form9_database_statistic.Show()
-    End Sub
 #End Region
-
-    Private Sub CommitDbEditionsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CommitDbEditionsToolStripMenuItem.Click
-
-    End Sub
-
-
-
 End Class

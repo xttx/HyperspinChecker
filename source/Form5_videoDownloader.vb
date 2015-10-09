@@ -28,29 +28,30 @@ Public Class Form5_videoDownloader
         ListView1.Controls.Add(ComboBox3)
         AddHandler ListView1.MouseUp, AddressOf ListView1_MouseUp
         AddHandler ListView1.SelectedIndexChanged, AddressOf ListView1_selectedchange
-        AddHandler AxVLCPlugin21.MediaPlayerTimeChanged, AddressOf b
+        'AddHandler AxVLCPlugin21.MediaPlayerTimeChanged, AddressOf b
     End Sub
 
     Private Sub Form5_videoDownloader_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         urlsList.Clear()
         ComboBox1.SelectedIndex = 1
         ComboBox3.Sorted = True
-        AxVLCPlugin21.Toolbar = False
+        'AxVLCPlugin21.Toolbar = False
     End Sub
 
     Private Sub b()
-        Label6.Text = AxVLCPlugin21.input.Position.ToString
+        'Label6.Text = AxVLCPlugin21.input.Position.ToString
     End Sub
 
     Private Sub Form5_videoDownloader_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        w.CancelAsync()
-        AxVLCPlugin21.playlist.stop()
-        'For i As Integer = 0 To fileList.Count - 1
-        'If fileList(i).EndsWith(".flv.avi", StringComparison.InvariantCultureIgnoreCase) Then
-        'fileList(i) = fileList(i).Replace(".flv.avi", ".flv")
-        'FileSystem.Rename(".\Downloaded Video\" + fileList(i) + ".avi", ".\Downloaded Video\" + fileList(i))
-        'End If
-        'Next
+        'w.CancelAsync()
+        'AxVLCPlugin21.playlist.stop()
+
+        ''For i As Integer = 0 To fileList.Count - 1
+        ''If fileList(i).EndsWith(".flv.avi", StringComparison.InvariantCultureIgnoreCase) Then
+        ''fileList(i) = fileList(i).Replace(".flv.avi", ".flv")
+        ''FileSystem.Rename(".\Downloaded Video\" + fileList(i) + ".avi", ".\Downloaded Video\" + fileList(i))
+        ''End If
+        ''Next
     End Sub
 
     Private Sub AxWindowsMediaPlayer1_PlayStateChange(ByVal sender As Object, ByVal e As AxWMPLib._WMPOCXEvents_PlayStateChangeEvent)
@@ -280,9 +281,9 @@ Public Class Form5_videoDownloader
             'fileList(sel) = fileList(sel) + ".avi"
             'End If
 
-            AxVLCPlugin21.playlist.stop()
+            'AxVLCPlugin21.playlist.stop()
             Dim t As String = New Uri(Application.StartupPath + "\Downloaded Video\" + fileList(sel)).AbsoluteUri
-            Dim id As Integer = AxVLCPlugin21.playlist.add(t) : AxVLCPlugin21.playlist.playItem(id)
+            'Dim id As Integer = AxVLCPlugin21.playlist.add(t) : AxVLCPlugin21.playlist.playItem(id)
         End If
     End Sub
 
@@ -313,7 +314,7 @@ Public Class Form5_videoDownloader
         End If
     End Sub
     Private Sub TrackBar1_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrackBar1.Scroll
-        AxVLCPlugin21.input.Position = TrackBar1.Value / 1000
+        'AxVLCPlugin21.input.Position = TrackBar1.Value / 1000
     End Sub
 End Class
 

@@ -1,21 +1,15 @@
 ﻿Imports System.Text.RegularExpressions
 
 Public Class Class4_clrmamepro
-    Dim WithEvents button_convert_to As Button = Form1.Button22
-    Dim WithEvents button_convert_from As Button = Form1.Button23
+    Dim WithEvents button_convert_cur_db_to_clrmame As ToolStripMenuItem = Form1.ConvertCurrentDBToClrmamepredatToolStripMenuItem
     Dim WithEvents button_convert_to_GO As Button = Form1.Button24
 
-    Dim WithEvents button_convert_tosec_to_HS As Button = Form1.Button38
-    Dim WithEvents button_convert_redump_to_HS As Button = Form1.Button39
-    Dim WithEvents button_convert_nointro_std_to_HS As Button = Form1.Button40
-    Dim WithEvents button_convert_nointro_xml_to_HS As Button = Form1.Button41
-    Dim WithEvents button_convert_mess_xml_to_HS As Button = Form1.Button42
     Dim WithEvents button_convert_new_clrmame_to_HSDB As ToolStripMenuItem = Form1.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem
     Dim WithEvents button_convert_old_clrmame_to_HSDB As ToolStripMenuItem = Form1.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem
     Dim WithEvents button_convert_mess_to_HSDB As ToolStripMenuItem = Form1.ConvertMessToHs
 
     'Convert HSxml to clrMamePro show options
-    Private Sub convert_to_click() Handles button_convert_to.Click
+    Private Sub convert_to_click() Handles button_convert_cur_db_to_clrmame.Click
         Form1.ComboBox6.Items.Clear()
         Form1.ComboBox6.Text = ""
         For Each s As String In Form1.TextBox3.Text.Split(","c)
@@ -121,8 +115,9 @@ Public Class Class4_clrmamepro
         xdat.Save(w) : w.Close()
     End Sub
 
-    'Convert clrMamePro to HSxml
-    Private Sub convert_from() Handles button_convert_from.Click, button_convert_new_clrmame_to_HSDB.Click
+
+    'Convert clrMamePro dat (new, redump, no-intro) to HSxml
+    Private Sub convert_from() Handles button_convert_new_clrmame_to_HSDB.Click
         Dim fb As New OpenFileDialog
         fb.Title = "Open clrMamePro dat or xml"
         fb.Filter = "ClrMamePro/Redump/No-Intro xml|*.xml|ClrMamePro/Redump/No-Intro dat|*.dat|All files|*.*"
@@ -190,8 +185,8 @@ Public Class Class4_clrmamepro
         xHS.Save(w) : w.Close()
     End Sub
 
-    'Convert tosec.dat to HS xml
-    Private Sub tosec_to_hs() Handles button_convert_tosec_to_HS.Click, button_convert_old_clrmame_to_HSDB.Click
+    'Convert clrMamePro dat (old, tosec, no-intro.std) to HS xml
+    Private Sub tosec_to_hs() Handles button_convert_old_clrmame_to_HSDB.Click
         Dim fb As New OpenFileDialog
         fb.Title = "Open Tosec dat"
         fb.Filter = "Tosec / no-intro dat|*.dat|All files|*.*"
@@ -246,23 +241,8 @@ Public Class Class4_clrmamepro
         xHS.Save(w) : w.Close()
     End Sub
 
-    'Convert redump.dat to HS xml
-    Private Sub redump_to_hs() Handles button_convert_redump_to_HS.Click
-        convert_from()
-    End Sub
-
-    'Convert no-intro std .dat to HS xml
-    Private Sub nointro_std_to_hs() Handles button_convert_nointro_std_to_HS.Click
-        tosec_to_hs()
-    End Sub
-
-    'Convert no-intro xml .dat to HS xml
-    Private Sub nointro_xml_to_hs() Handles button_convert_nointro_xml_to_HS.Click
-        convert_from()
-    End Sub
-
     'Convert mess xml to HS xml
-    Private Sub mess_to_hs() Handles button_convert_mess_xml_to_HS.Click, button_convert_mess_to_HSDB.Click
+    Private Sub mess_to_hs() Handles button_convert_mess_to_HSDB.Click
         Dim fb As New OpenFileDialog
         fb.Title = "Open clrMamePro dat or xml"
         fb.Filter = "MESS softwarelist xml|*.xml|All files|*.*"
