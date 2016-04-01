@@ -5,7 +5,12 @@ Public Class ISOChecker
     Private cueWoBin_filename_mismatch_binFname As New List(Of String)
     Private WithEvents Button21_checkISO As Button = Form1.Button21_checkISO
 
+    'Check ISO
     Public Sub Check() Handles Button21_checkISO.Click
+        If Form1.CheckBox17.Checked And Form1.TextBox28.BackColor <> Form1.colorYES Then
+            MsgBox("To use ISO Converter, you have to select UltraISO path in 'Program Settings'")
+            Exit Sub
+        End If
         If Form1.ComboBox2.SelectedIndex = 0 And Form1.CheckBox15.Checked Then
             Dim m As String
             m = "You have selected autodetect .bin file data mode and bps. If .cue file will need to be created the program will try to autodetect .bin format." + vbCrLf
@@ -28,8 +33,9 @@ Public Class ISOChecker
             Form1.ListBox3.Refresh()
         Next
         Form1.ListBox3.Items.Add("All done. " + Form1.ListBox3.Items.Count.ToString + " warnings.")
-    End Sub 'Check ISO
+    End Sub
 
+    'Check ISO SUB
     Private Sub Button2_Click_1_subFilesCheck(ByVal dir As String)
         'MDF wo MDS / MDS wo MDF
         Dim mdfWOmds As New List(Of String), mdsWOmdf As New List(Of String)
@@ -109,15 +115,39 @@ Public Class ISOChecker
                     line = LineInput(1)
                     If line.IndexOf("file", System.StringComparison.InvariantCultureIgnoreCase) >= 0 Then
                         If line.IndexOf("binary", System.StringComparison.InvariantCultureIgnoreCase) >= 0 And binFilename = "" Then
-                            binFilename = line.Substring(line.IndexOf("""") + 1)
-                            binFilename = binFilename.Substring(0, binFilename.LastIndexOf(""""))
+                            'Sometimes filename is not in quotes. Hack for this
+                            If line.IndexOf("""") > 0 Then
+                                'if in quotes
+                                binFilename = line.Substring(line.IndexOf("""") + 1)
+                                binFilename = binFilename.Substring(0, binFilename.LastIndexOf(""""))
+                            Else
+                                'if not in quotes
+                                Dim tmp As String = line
+                                Dim ind As Integer = tmp.IndexOf("binary", System.StringComparison.InvariantCultureIgnoreCase)
+                                tmp = tmp.Remove(ind, 6)
+                                ind = tmp.IndexOf("file", System.StringComparison.InvariantCultureIgnoreCase)
+                                tmp = tmp.Remove(ind, 4)
+                                binFilename = tmp.Trim
+                            End If
                         Else
                             'Check audio format and presence
                             If line.IndexOf("wave", System.StringComparison.InvariantCultureIgnoreCase) < 0 And line.IndexOf("binary", System.StringComparison.InvariantCultureIgnoreCase) < 0 Then
                                 If Not msgshown And Form1.CheckBox5.Checked Then msgshown = True : Form1.ListBox3.Items.Add(".CUE contain audio other then WAVE: " + cueFileName)
                             End If
-                            waveFilename = line.Substring(line.IndexOf("""") + 1)
-                            waveFilename = waveFilename.Substring(0, waveFilename.LastIndexOf(""""))
+                            'Sometimes filename is not in quotes. Hack for this
+                            If line.IndexOf("""") > 0 Then
+                                'if in quotes
+                                waveFilename = line.Substring(line.IndexOf("""") + 1)
+                                waveFilename = waveFilename.Substring(0, waveFilename.LastIndexOf(""""))
+                            Else
+                                'if not in quotes
+                                waveFilename = line
+                                Dim ind As Integer = waveFilename.IndexOf("file", System.StringComparison.InvariantCultureIgnoreCase)
+                                waveFilename = waveFilename.Remove(ind, 4)
+                                ind = waveFilename.LastIndexOf(" ", System.StringComparison.InvariantCultureIgnoreCase)
+                                waveFilename = waveFilename.Substring(0, ind).Trim
+                            End If
+
                             If Not waveFilename.Trim.EndsWith(".wav", StringComparison.InvariantCultureIgnoreCase) And Not waveFilename.Trim.EndsWith(".bin", StringComparison.InvariantCultureIgnoreCase) Then
                                 If Not msgshown2 And Form1.CheckBox5.Checked Then msgshown2 = True : Form1.ListBox3.Items.Add(".CUE reference other format then .wav: " + cueFileName)
                             End If
@@ -223,8 +253,53 @@ Public Class ISOChecker
                 If My.Computer.FileSystem.GetFileInfo(gdi).Length > 307200 Then Form1.ListBox3.Items.Add("Strange GDI, maybe it is just renamed .CDI: " + fName + " (" + dir + ")")
             Next
         End If
-    End Sub 'Check ISO SUB
 
+        'Converter
+        If Form1.CheckBox17.Checked Then
+            Dim ext() As String
+            If Form1.ComboBox8.SelectedIndex = 0 Then
+                Dim tmp As String = ""
+                For i As Integer = 1 To Form1.ComboBox8.Items.Count - 1
+                    tmp = tmp + Form1.ComboBox8.Items(i).ToString + "|"
+                Next
+                tmp = tmp.Substring(0, tmp.Length - 1)
+                ext = tmp.Split({"|"}, StringSplitOptions.RemoveEmptyEntries)
+            Else
+                ext = {Form1.ComboBox8.SelectedItem.ToString}
+            End If
+
+            For Each f As String In FileSystem.GetFiles(dir, SearchOption.SearchTopLevelOnly, ext)
+                Dim outputDir As String = ""
+                If Form1.CheckBox18.Checked Then
+                    outputDir = f.Substring(0, f.LastIndexOf("\"))
+                Else
+                    outputDir = Form1.TextBox29.Text
+                    If Not FileSystem.DirectoryExists(outputDir) Then
+                        Try
+                            FileSystem.CreateDirectory(outputDir)
+                        Catch ex As Exception
+                            MsgBox("Failed to create directory for output converted ISOs" + vbCrLf + outputDir) : Exit Sub
+                        End Try
+                    End If
+                End If
+                If Not outputDir.EndsWith("\") Then outputDir = outputDir + "\"
+
+                Dim outputFname = f.Substring(f.LastIndexOf("\") + 1).Trim
+                Dim outputFnameWoExt = outputFname.Substring(0, outputFname.LastIndexOf("."))
+                Dim newExt = Form1.ComboBox9.SelectedItem.ToString.Substring(0, 3)
+                outputFname = outputFnameWoExt + "." + newExt
+
+                Dim startInfo As New ProcessStartInfo
+                startInfo.FileName = Form1.TextBox28.Text
+                startInfo.Arguments = "-input """ + f + """ -output """ + outputDir + outputFname + """"
+                Dim p As Process = Process.Start(startInfo)
+                p.WaitForInputIdle()
+                p.WaitForExit()
+            Next
+        End If
+    End Sub
+
+    'Check ISO FIX mdf/mds
     Private Sub Button2_Click_1_subFilesFix1(ByVal mdsWOmdf As List(Of String), ByVal mdfWOmds As List(Of String))
         Dim f1WOext, f2WOext, f1Ext, f2Ext As String
         If mdsWOmdf.Count = 1 And mdfWOmds.Count = 1 Then
@@ -327,8 +402,9 @@ Public Class ISOChecker
                 mdfWOmds.Remove(mdf)
             Next
         End If
-    End Sub 'Check ISO FIX mdf/mds
+    End Sub
 
+    'Check ISO FIX .bin wo .cue
     Private Function Button2_Click_1_subFilesFix2(ByVal dir As String, ByVal fname As String, ByVal l As List(Of String)) As Integer
         '-1=create, -2=do nothing, -3=always associate for single cue, +100000 = always
         If l.Count = 0 Then
@@ -396,8 +472,9 @@ Public Class ISOChecker
             FileClose(1)
             Return -2
         End If
-    End Function 'Check ISO FIX .bin wo .cue
+    End Function
 
+    'Check ISO FIX .CUE wo .BIN
     Private Function Button2_Click_1_subFilesFix3(ByVal cue As String, ByVal inCueBinFilename As String, ByVal binList As List(Of String)) As Integer
         Dim cueFname As String = cue.Substring(cue.LastIndexOf("\") + 1)
         Dim cueFnameWoExt = cueFname.Substring(0, cueFname.LastIndexOf(".")).ToLower
@@ -456,7 +533,7 @@ Public Class ISOChecker
             End If
             Return -1
         End If
-    End Function 'Check ISO FIX .CUE wo .BIN
+    End Function
 
     Private Function ifSame(ByVal cueFname As String, ByVal binFname As String, Optional ByVal remove As String = "") As Boolean
         Dim same As Boolean
@@ -474,6 +551,7 @@ Public Class ISOChecker
         Return same
     End Function
 
+    'CUE BIN filenames mismatch fix
     Private Sub Button2_Click_1_subFilesFix4(ByVal dir As String, ByVal cueFname As String, ByVal binFname As String)
         Dim f1WOext, f2WOext, f1Ext, f2Ext As String
         f1Ext = cueFname.Substring(cueFname.LastIndexOf(".") + 1)
@@ -504,7 +582,7 @@ Public Class ISOChecker
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-    End Sub 'CUE BIN filenames mismatch fix
+    End Sub
 
     Private Function Autodetect_bin_format(ByVal f As String) As String
         Dim datamode As Integer = 0

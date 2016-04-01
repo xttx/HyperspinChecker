@@ -195,6 +195,18 @@
     <Compile Include="FormC_mameRomListBuilder.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormD_matcher_autofilter_constructor.Designer.vb">
+      <DependentUpon>FormD_matcher_autofilter_constructor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormD_matcher_autofilter_constructor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormE_Create_database_XML_from_folder.Designer.vb">
+      <DependentUpon>FormE_Create_database_XML_from_folder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormE_Create_database_XML_from_folder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IniFileApi.vb" />
     <Compile Include="IniFileVb.vb" />
     <Compile Include="ISOChecker.vb" />
@@ -312,6 +324,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormC_mameRomListBuilder.resx">
       <DependentUpon>FormC_mameRomListBuilder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormD_matcher_autofilter_constructor.resx">
+      <DependentUpon>FormD_matcher_autofilter_constructor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormE_Create_database_XML_from_folder.resx">
+      <DependentUpon>FormE_Create_database_XML_from_folder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ISOFixAsk_cueWoBin.resx">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>

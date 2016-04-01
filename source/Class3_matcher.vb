@@ -1,6 +1,9 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
+Imports System.Text.RegularExpressions
+
 Public Class Class3_matcher
 #Region "Declarations"
+    Dim dt_files As New DataTable
     Dim countAll As Integer = -1, countFound As Integer = -1, countNotFound As Integer = -1
     Dim countMatchesFiles As Integer = -1, countNotMatchesFiles As Integer = -1, countAllFiles As Integer = -1
     Private WithEvents Button5_Associate As Button = Form1.Button5_Associate
@@ -8,6 +11,7 @@ Public Class Class3_matcher
     Private WithEvents Button7 As Button = Form1.Button7
     Private WithEvents Button20_markAsFound As Button = Form1.Button20_markAsFound
     Private WithEvents ComboBox3 As ComboBox = Form1.ComboBox3
+    Private WithEvents ComboBox7 As ComboBox = Form1.ComboBox7
     Private WithEvents TextBox4 As TextBox = Form1.TextBox4
     Private WithEvents TextStrip1 As TextBox = Form1.TextStrip1
     Private WithEvents CheckBox3 As CheckBox = Form1.CheckBox3
@@ -15,6 +19,7 @@ Public Class Class3_matcher
     Private WithEvents CheckBox11 As CheckBox = Form1.CheckBox11
     Private WithEvents CheckBox12 As CheckBox = Form1.CheckBox12
     Private WithEvents CheckBox13 As CheckBox = Form1.CheckBox13
+    Private WithEvents TextBox27 As TextBox = Form1.TextBox27
 
     Private WithEvents RadioStrip1 As RadioButton = Form1.RadioStrip1
     Private WithEvents RadioStrip2 As RadioButton = Form1.RadioStrip2
@@ -26,8 +31,16 @@ Public Class Class3_matcher
     Private WithEvents RadioButton6 As RadioButton = Form1.RadioButton6
 
     Private WithEvents checkBox27 As CheckBox = Form1.CheckBox27
+    Private WithEvents listbox1 As ListBox = Form1.ListBox1
     'Friend WithEvents myContextMenu7 As New ToolStripDropDownMenu 'autorenamer
+    Public Shared autofilter_regex As String = "%[A-Za-z]{4}[A-Za-z]*"
+    Public Shared autofilter_regex_options() As Boolean = {False, False}
 #End Region
+
+    'Constructor
+    Sub New()
+        dt_files.Columns.Add("name")
+    End Sub
 
     'matcher - remplir database
     Public Sub matcher_remplirDatabaseEntryList()
@@ -143,7 +156,9 @@ Public Class Class3_matcher
 
             Dim ext As String = ""
             Dim l1 As String = .ListBox1.SelectedItem.ToString
-            Dim l2 As String = .ListBox2.SelectedItem.ToString
+            'Dim l2 As String = .ListBox2.SelectedItem.ToString
+            Dim l2 As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
+
             Dim src As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(.TextBox4.Text).FullName.ToLower
             Dim dst As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(getPath()).FullName.ToLower
             If Not src.EndsWith("\") Then src = src + "\" : If Not dst.EndsWith("\") Then dst = dst + "\"
@@ -152,7 +167,7 @@ Public Class Class3_matcher
             Dim list As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = Nothing
             If .CheckBox3.Checked Then
                 Dim wildcards() As String = strToWildcards()
-                list = FileSystem.GetFiles(.TextBox4.Text + "\" + .ListBox2.SelectedItem.ToString, FileIO.SearchOption.SearchTopLevelOnly, wildcards)
+                list = FileSystem.GetFiles(.TextBox4.Text + "\" + l2, FileIO.SearchOption.SearchTopLevelOnly, wildcards)
                 If list.Count = 0 Then MsgBox("This folder does not contain any files that match rom's extensions.") : Exit Sub
                 If list.Count > 1 Then MsgBox("This folder contains multiple files that match rom's extensions. This situation is not handled yet, sorry." + vbCrLf + "The program simply doesn't know what file need to be renamed. Try use 'Override Extension' in options.") : Exit Sub
             Else
@@ -193,14 +208,17 @@ Public Class Class3_matcher
             If (src = dst Or Not copyToHsFolder) Then
                 If .RadioButton5.Checked Then 'show unmatched files
                     currentSelectedIndex = .ListBox2.SelectedIndex
-                    .ListBox2.Items.RemoveAt(.ListBox2.SelectedIndex)
+                    '.ListBox2.Items.RemoveAt(.ListBox2.SelectedIndex)
+                    dt_files.Rows.Remove(DirectCast(.ListBox2.SelectedItem, DataRowView).Row)
                 Else 'show matched or both files
-                    .ListBox2.Items(.ListBox2.SelectedIndex) = l1 + ext
+                    '.ListBox2.Items(.ListBox2.SelectedIndex) = l1 + ext
+                    DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0) = l1 + ext
                     currentSelectedIndex = .ListBox2.SelectedIndex + 1
                 End If
             Else
                 currentSelectedIndex = .ListBox2.SelectedIndex + 1
             End If
+            Dim b As New BindingContext : b(dt_files).EndCurrentEdit()
             If .ListBox2.Items.Count > currentSelectedIndex Then .ListBox2.SelectedIndex = currentSelectedIndex Else .ListBox2.SelectedIndex = currentSelectedIndex - 1
 
             'on box1 (DB entry list)
@@ -225,7 +243,8 @@ Public Class Class3_matcher
         With Form1
             Dim ext As String = ""
             Dim l1 As String = .ListBox1.SelectedItem.ToString
-            Dim l2 As String = .ListBox2.SelectedItem.ToString
+            'Dim l2 As String = .ListBox2.SelectedItem.ToString
+            Dim l2 As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
             Dim op As New List(Of String())
             Try
                 If Not .CheckBox3.Checked Then
@@ -571,8 +590,12 @@ Public Class Class3_matcher
     Private Function getPath() As String
         With Form1
             If .ComboBox3.SelectedIndex = 0 Then
-                'TODO Handle multiple rompaths
-                Return Class1.romPath.Split({"|"c}, StringSplitOptions.RemoveEmptyEntries)(0)
+                'TODO Better handle multiple rompaths
+                If ComboBox7.Visible Then
+                    Return ComboBox7.SelectedItem.ToString
+                Else
+                    Return Class1.romPath.Split({"|"c}, StringSplitOptions.RemoveEmptyEntries)(0)
+                End If
             ElseIf .ComboBox3.SelectedIndex = 1 Then
                 Return Class1.videoPath
             ElseIf .ComboBox3.SelectedIndex = 2 Then
@@ -715,7 +738,12 @@ Public Class Class3_matcher
         With Form1
             .Button20_markAsFound.Enabled = False
             Dim fWoExt As String = ""
-            .ListBox2.Items.Clear()
+
+            '.ListBox2.Items.Clear()
+            .ListBox2.DataSource = Nothing
+            .ListBox2.BeginUpdate()
+            dt_files.Clear()
+
             countMatchesFiles = 0 : countNotMatchesFiles = 0 : countAllFiles = 0
             If Microsoft.VisualBasic.FileIO.FileSystem.DirectoryExists(.TextBox4.Text) Then
                 .Label20.Text = "Refreshing Files" : .Label20.BackColor = Color.Red : .Label20.Refresh()
@@ -735,17 +763,17 @@ Public Class Class3_matcher
                         list = Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(.TextBox4.Text, FileIO.SearchOption.SearchTopLevelOnly, w)
                     End If
 
-                        If list.Count > 0 And src <> dst Then .Button20_markAsFound.Enabled = True
+                    If list.Count > 0 And src <> dst Then .Button20_markAsFound.Enabled = True
 
-                        Dim c As Boolean
-                        For Each fi As String In list
-                            c = True
-                            Dim f As String = fi.Substring(fi.LastIndexOf("\") + 1)
-                            'WE NEED TO CHECK FILES INSIDE FOLDERS WHEN subFoldered mode
-                            If .CheckBox3.Checked Then
-                                fWoExt = f
-                                If FileSystem.GetFiles(fi, SearchOption.SearchTopLevelOnly, w).Count = 0 Then c = False
-                            Else
+                    Dim c As Boolean
+                    For Each fi As String In list
+                        c = True
+                        Dim f As String = fi.Substring(fi.LastIndexOf("\") + 1)
+                        'WE NEED TO CHECK FILES INSIDE FOLDERS WHEN subFoldered mode
+                        If .CheckBox3.Checked Then
+                            fWoExt = f
+                            If FileSystem.GetFiles(fi, SearchOption.SearchTopLevelOnly, w).Count = 0 Then c = False
+                        Else
                             If f.Contains(".") Then
                                 fWoExt = f.Substring(0, f.LastIndexOf("."))
                             Else
@@ -753,18 +781,28 @@ Public Class Class3_matcher
                             End If
                         End If
 
-                            countAllFiles += 1
-                            Dim found As Boolean = c And Class1.romlist.Contains(fWoExt.ToLower)
-                            If found Then countMatchesFiles += 1 Else countNotMatchesFiles += 1
+                        countAllFiles += 1
+                        Dim found As Boolean = c And Class1.romlist.Contains(fWoExt.ToLower)
+                        If found Then countMatchesFiles += 1 Else countNotMatchesFiles += 1
 
-                            'If .RadioButton4.Checked Then If c And Class1.romlist.Contains(fWoExt.ToLower) Then .ListBox2.Items.Add(f) 
-                            'If .RadioButton5.Checked Then If Not c Or Not Class1.romlist.Contains(fWoExt.ToLower) Then .ListBox2.Items.Add(f) 
-                            If .RadioButton4.Checked And found Then .ListBox2.Items.Add(f)
-                            If .RadioButton5.Checked And Not found Then .ListBox2.Items.Add(f)
-                            If .RadioButton6.Checked Then .ListBox2.Items.Add(f)
-                        Next
+                        'If .RadioButton4.Checked Then If c And Class1.romlist.Contains(fWoExt.ToLower) Then .ListBox2.Items.Add(f) 
+                        'If .RadioButton5.Checked Then If Not c Or Not Class1.romlist.Contains(fWoExt.ToLower) Then .ListBox2.Items.Add(f) 
+
+                        'If .RadioButton4.Checked And found Then .ListBox2.Items.Add(f)
+                        If .RadioButton4.Checked And found Then dt_files.Rows.Add(f)
+                        'If .RadioButton5.Checked And Not found Then .ListBox2.Items.Add(f)
+                        If .RadioButton5.Checked And Not found Then dt_files.Rows.Add(f)
+                        'If .RadioButton6.Checked Then .ListBox2.Items.Add(f)
+                        If .RadioButton6.Checked Then dt_files.Rows.Add(f)
+                    Next
                 End If
             End If
+
+            .ListBox2.DataSource = dt_files
+            .ListBox2.DisplayMember = "name"
+            .ListBox2.ValueMember = "name"
+            .ListBox2.EndUpdate()
+
             matcher_update_total_labels()
             '.Label9.Text = "Total: " + .ListBox2.Items.Count.ToString
             .Label20.Text = "Ready" : .Label20.BackColor = Color.LightGreen
@@ -812,6 +850,8 @@ Public Class Class3_matcher
     'Matcher, media type selection change
     Private Sub ComboBox3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox3.SelectedIndexChanged
         With Form1
+            .TextBox4.Visible = True
+            .ComboBox7.Visible = False
             .ListBox1.Items.Clear()
             CheckBox3.Enabled = False
             Dim tmpSubFoldered As Boolean = .subfoldered : CheckBox3.Checked = False : .subfoldered = tmpSubFoldered
@@ -822,7 +862,19 @@ Public Class Class3_matcher
 
             If .RadioStrip1.Checked = True Then
                 If .ComboBox3.SelectedIndex = 0 Then
-                    TextBox4.Text = Class1.romPath
+                    If Class1.romPath.Contains("|") Then
+                        .ComboBox7.Visible = True
+                        .TextBox4.Visible = False
+                        .ComboBox7.Items.Clear()
+                        For Each t As String In Class1.romPath.Split({"|"}, StringSplitOptions.RemoveEmptyEntries)
+                            .ComboBox7.Items.Add(t)
+                        Next
+                        .ComboBox7.Items.Add("Combined View")
+                        .ComboBox7.SelectedIndex = 0
+                        'TextBox4.Text = .ComboBox7.Items(0).ToString
+                    Else
+                        TextBox4.Text = Class1.romPath
+                    End If
                 ElseIf .ComboBox3.SelectedIndex = 1 Then
                     TextBox4.Text = Class1.videoPath
                 ElseIf .ComboBox3.SelectedIndex = 2 Then
@@ -879,17 +931,75 @@ Public Class Class3_matcher
         End With
     End Sub
 
+    'Settings Changed - Always show detailed total in matcher
+    Private Sub CheckBox27_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles checkBox27.CheckedChanged
+        matcher_update_total_labels()
+    End Sub
+
+    'Selecting path in path combobox
+    Private Sub combobox7_selectedChanged(sender As System.Object, e As System.EventArgs) Handles ComboBox7.SelectedIndexChanged
+        If ComboBox7.SelectedIndex < ComboBox7.Items.Count - 1 Then
+            TextBox4.Text = ComboBox7.SelectedItem.ToString
+        End If
+    End Sub
+
+    'Filter change - FileFilter
+    Private Sub textbox27_textChange(sender As System.Object, e As System.EventArgs) Handles TextBox27.TextChanged
+        Try
+            dt_files.DefaultView.RowFilter = "[name] like '" + TextBox27.Text.Replace("'", "''") + "%'"
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    'Autofilter
+    Private Sub listbox1_selection_change(sender As Object, e As System.EventArgs) Handles listbox1.SelectedIndexChanged
+        If Form1.AutofilterToolStripMenuItem.Checked Then
+            If Form1.ComboBox3.SelectedIndex = -1 Then Exit Sub
+            If countAll <= 0 Then Exit Sub
+            If listbox1.SelectedIndex < 0 Then Exit Sub
+
+            Dim s = listbox1.SelectedItem.ToString
+
+            Dim tmpl As String = ""
+            Dim regex As String = autofilter_regex
+            If regex.StartsWith("%") Then regex = regex.Substring(1) : tmpl = "%"
+            Dim rgx As New System.Text.RegularExpressions.Regex(regex)
+            Dim m As MatchCollection = rgx.Matches(s)
+            If m.Count = 0 Then TextBox27.Text = "" : Exit Sub
+            If m.Item(0).Groups.Count > 1 Then
+                tmpl = tmpl + m.Item(0).Groups(1).Value
+            Else
+                tmpl = tmpl + m.Item(0).Groups(0).Value
+            End If
+
+            If autofilter_regex_options(0) = True Then
+                If tmpl.IndexOf("[") > 0 Then tmpl = tmpl.Substring(0, tmpl.LastIndexOf("["))
+            End If
+            If autofilter_regex_options(1) = True Then
+                If tmpl.IndexOf("(") > 0 Then tmpl = tmpl.Substring(0, tmpl.LastIndexOf("("))
+            End If
+            TextBox27.Text = tmpl.Trim
+
+            'Old realisation
+            'If s.IndexOf("(") >= 0 Then s = s.Substring(0, s.IndexOf("("))
+            'If s.IndexOf("[") >= 0 Then s = s.Substring(0, s.IndexOf("["))
+
+            'Dim rgx As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9 -]")
+            's = rgx.Replace(s, "")
+
+            'For Each word As String In s.Split({" "}, StringSplitOptions.None)
+            'If word.Length > 3 Then TextBox27.Text = "%" + word : Exit Sub
+            'Next
+        End If
+    End Sub
+
     'Show autorenamer context menu
     'Private Sub Button_associate_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button5_Associate.MouseDown
     'If e.Button = MouseButtons.Right Then
     'Form1.myContextMenu7.Show(Cursor.Position.X, Cursor.Position.Y)
     'End If
     'End Sub
-
-    'Settings Changed - Always show detailed total in matcher
-    Private Sub CheckBox27_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles checkBox27.CheckedChanged
-        matcher_update_total_labels()
-    End Sub
 End Class
 
 'Class ExtendedLabel

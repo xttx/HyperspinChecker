@@ -6,6 +6,11 @@ Public Class Class1
     Public Shared videoPath As String = ""
     Public Shared videoPathOrig As String = ""
     Public Shared HyperspinPath As String = ""
+    Public Shared HyperspinIniCursysEmuExe As String = ""
+    Public Shared HyperspinIniCursysEmuPath As String = ""
+    Public Shared HyperspinIniCursysEmuExist As Boolean = False
+    Public Shared HyperlaunchPath As String = ""
+    Public Shared HyperlaunchExeName As String = ""
     Public Shared romlist As New ArrayList
     Public Shared romFoundlist As New ArrayList
     Public Shared askVar1 As String = "", askVar2 As String = "", askVar3 As String = ""

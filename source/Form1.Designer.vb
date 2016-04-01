@@ -50,27 +50,21 @@ Partial Class Form1
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox21 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox14 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox16 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox17 = New System.Windows.Forms.ComboBox()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.Label43 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.TextBox27 = New System.Windows.Forms.TextBox()
+        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.Label45 = New System.Windows.Forms.Label()
@@ -261,13 +255,16 @@ Partial Class Form1
         Me.AssocOption_fileInDiffFolder_copyToHS = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssocOption_fileInDiffFolder_moveToHS = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlwaysShowDetailedTotalStatusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ShowFiltersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AutofilterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AutofilterRegexConstructorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenresFavoritesManagerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ShowDatabaseStatisticToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConvertersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -290,11 +287,20 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.CheckBox18 = New System.Windows.Forms.CheckBox()
+        Me.TextBox29 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -317,6 +323,7 @@ Partial Class Form1
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -343,8 +350,8 @@ Partial Class Form1
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(6, 6)
         Me.DataGridView1.MultiSelect = False
@@ -352,13 +359,13 @@ Partial Class Form1
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(894, 353)
+        Me.DataGridView1.Size = New System.Drawing.Size(889, 311)
         Me.DataGridView1.TabIndex = 2
         '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(905, 6)
+        Me.Button1.Location = New System.Drawing.Point(900, 6)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(83, 43)
         Me.Button1.TabIndex = 3
@@ -369,7 +376,7 @@ Partial Class Form1
         '
         Me.Button2_moveUnneeded.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2_moveUnneeded.Enabled = False
-        Me.Button2_moveUnneeded.Location = New System.Drawing.Point(905, 55)
+        Me.Button2_moveUnneeded.Location = New System.Drawing.Point(900, 55)
         Me.Button2_moveUnneeded.Name = "Button2_moveUnneeded"
         Me.Button2_moveUnneeded.Size = New System.Drawing.Size(83, 66)
         Me.Button2_moveUnneeded.TabIndex = 4
@@ -380,7 +387,7 @@ Partial Class Form1
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 365)
+        Me.Label2.Location = New System.Drawing.Point(3, 323)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 13)
         Me.Label2.TabIndex = 5
@@ -389,8 +396,8 @@ Partial Class Form1
         'TabControl1
         '
         Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage4)
@@ -400,13 +407,12 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(12, 60)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1004, 409)
+        Me.TabControl1.Size = New System.Drawing.Size(999, 367)
         Me.TabControl1.TabIndex = 6
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.Panel2)
-        Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.Controls.Add(Me.Button21)
         Me.TabPage1.Controls.Add(Me.Button18)
         Me.TabPage1.Controls.Add(Me.Button4)
@@ -418,7 +424,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(996, 383)
+        Me.TabPage1.Size = New System.Drawing.Size(991, 341)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Summary"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -601,106 +607,15 @@ Partial Class Form1
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(265, 51)
         Me.Label31.TabIndex = 0
-        Me.Label31.Text = "HyperSpin XML does not provide rom's extension, so the first field must be filled" & _
-            ". The others are optional."
-        '
-        'Panel1
-        '
-        Me.Panel1.AutoSize = True
-        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Panel1.Controls.Add(Me.CheckBox17)
-        Me.Panel1.Controls.Add(Me.CheckBox21)
-        Me.Panel1.Controls.Add(Me.ComboBox12)
-        Me.Panel1.Controls.Add(Me.ComboBox13)
-        Me.Panel1.Controls.Add(Me.ComboBox14)
-        Me.Panel1.Controls.Add(Me.ComboBox15)
-        Me.Panel1.Controls.Add(Me.ComboBox16)
-        Me.Panel1.Controls.Add(Me.ComboBox17)
-        Me.Panel1.Location = New System.Drawing.Point(18, 24)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(225, 133)
-        Me.Panel1.TabIndex = 11
-        Me.Panel1.Visible = False
-        '
-        'CheckBox17
-        '
-        Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.Location = New System.Drawing.Point(3, 113)
-        Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(186, 17)
-        Me.CheckBox17.TabIndex = 13
-        Me.CheckBox17.Text = "remove all ( ) and [ ] tags from files"
-        Me.CheckBox17.UseVisualStyleBackColor = True
-        '
-        'CheckBox21
-        '
-        Me.CheckBox21.AutoSize = True
-        Me.CheckBox21.Location = New System.Drawing.Point(3, 90)
-        Me.CheckBox21.Name = "CheckBox21"
-        Me.CheckBox21.Size = New System.Drawing.Size(113, 17)
-        Me.CheckBox21.TabIndex = 12
-        Me.CheckBox21.Text = "fill CRC (very slow)"
-        Me.CheckBox21.UseVisualStyleBackColor = True
-        '
-        'ComboBox12
-        '
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Items.AddRange(New Object() {"DON'T USE", "First parenthesis", "First brackets"})
-        Me.ComboBox12.Location = New System.Drawing.Point(3, 6)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(97, 21)
-        Me.ComboBox12.TabIndex = 6
-        '
-        'ComboBox13
-        '
-        Me.ComboBox13.FormattingEnabled = True
-        Me.ComboBox13.Items.AddRange(New Object() {"Year", "Country", "Manufacturer"})
-        Me.ComboBox13.Location = New System.Drawing.Point(106, 6)
-        Me.ComboBox13.Name = "ComboBox13"
-        Me.ComboBox13.Size = New System.Drawing.Size(116, 21)
-        Me.ComboBox13.TabIndex = 7
-        '
-        'ComboBox14
-        '
-        Me.ComboBox14.FormattingEnabled = True
-        Me.ComboBox14.Items.AddRange(New Object() {"DON'T USE", "Second parenthesis", "Second brackets"})
-        Me.ComboBox14.Location = New System.Drawing.Point(3, 36)
-        Me.ComboBox14.Name = "ComboBox14"
-        Me.ComboBox14.Size = New System.Drawing.Size(97, 21)
-        Me.ComboBox14.TabIndex = 8
-        '
-        'ComboBox15
-        '
-        Me.ComboBox15.FormattingEnabled = True
-        Me.ComboBox15.Items.AddRange(New Object() {"Year", "Country", "Manufacturer"})
-        Me.ComboBox15.Location = New System.Drawing.Point(106, 36)
-        Me.ComboBox15.Name = "ComboBox15"
-        Me.ComboBox15.Size = New System.Drawing.Size(116, 21)
-        Me.ComboBox15.TabIndex = 9
-        '
-        'ComboBox16
-        '
-        Me.ComboBox16.FormattingEnabled = True
-        Me.ComboBox16.Items.AddRange(New Object() {"DON'T USE", "Third parenthesis", "Third brackets"})
-        Me.ComboBox16.Location = New System.Drawing.Point(3, 63)
-        Me.ComboBox16.Name = "ComboBox16"
-        Me.ComboBox16.Size = New System.Drawing.Size(97, 21)
-        Me.ComboBox16.TabIndex = 10
-        '
-        'ComboBox17
-        '
-        Me.ComboBox17.FormattingEnabled = True
-        Me.ComboBox17.Items.AddRange(New Object() {"Year", "Country", "Manufacturer"})
-        Me.ComboBox17.Location = New System.Drawing.Point(106, 63)
-        Me.ComboBox17.Name = "ComboBox17"
-        Me.ComboBox17.Size = New System.Drawing.Size(116, 21)
-        Me.ComboBox17.TabIndex = 11
+        Me.Label31.Text = "Convert current DB to clrmame pro dat - options panel." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "HyperSpin XML does not pr" & _
+    "ovide rom's extension, so the first field must be filled. The others are optiona" & _
+    "l." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Button21
         '
         Me.Button21.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button21.Enabled = False
-        Me.Button21.Location = New System.Drawing.Point(905, 250)
+        Me.Button21.Location = New System.Drawing.Point(900, 250)
         Me.Button21.Name = "Button21"
         Me.Button21.Size = New System.Drawing.Size(83, 47)
         Me.Button21.TabIndex = 9
@@ -711,7 +626,7 @@ Partial Class Form1
         '
         Me.Button18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button18.Enabled = False
-        Me.Button18.Location = New System.Drawing.Point(905, 194)
+        Me.Button18.Location = New System.Drawing.Point(900, 194)
         Me.Button18.Name = "Button18"
         Me.Button18.Size = New System.Drawing.Size(83, 50)
         Me.Button18.TabIndex = 8
@@ -722,7 +637,7 @@ Partial Class Form1
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.Enabled = False
-        Me.Button4.Location = New System.Drawing.Point(905, 127)
+        Me.Button4.Location = New System.Drawing.Point(900, 127)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(83, 61)
         Me.Button4.TabIndex = 7
@@ -732,10 +647,10 @@ Partial Class Form1
         'ProgressBar1
         '
         Me.ProgressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ProgressBar1.Location = New System.Drawing.Point(144, 365)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ProgressBar1.Location = New System.Drawing.Point(144, 323)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(756, 12)
+        Me.ProgressBar1.Size = New System.Drawing.Size(751, 12)
         Me.ProgressBar1.TabIndex = 6
         '
         'TabPage2
@@ -745,7 +660,7 @@ Partial Class Form1
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(0)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(996, 383)
+        Me.TabPage2.Size = New System.Drawing.Size(991, 341)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Matcher"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -759,6 +674,7 @@ Partial Class Form1
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TextBox26)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label44)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label43)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label42)
@@ -768,6 +684,8 @@ Partial Class Form1
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.TextBox27)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.ComboBox7)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label47)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label46)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label45)
@@ -783,15 +701,25 @@ Partial Class Form1
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.ListBox2)
         Me.SplitContainer1.Panel2.Controls.Add(Me.TextBox4)
-        Me.SplitContainer1.Size = New System.Drawing.Size(990, 377)
-        Me.SplitContainer1.SplitterDistance = 406
+        Me.SplitContainer1.Size = New System.Drawing.Size(985, 335)
+        Me.SplitContainer1.SplitterDistance = 403
         Me.SplitContainer1.TabIndex = 12
+        '
+        'TextBox26
+        '
+        Me.TextBox26.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox26.Location = New System.Drawing.Point(5, 292)
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(391, 20)
+        Me.TextBox26.TabIndex = 6
+        Me.TextBox26.Visible = False
         '
         'Label44
         '
         Me.Label44.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(194, 357)
+        Me.Label44.Location = New System.Drawing.Point(194, 315)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(45, 13)
         Me.Label44.TabIndex = 5
@@ -802,7 +730,7 @@ Partial Class Form1
         '
         Me.Label43.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(133, 357)
+        Me.Label43.Location = New System.Drawing.Point(133, 315)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(45, 13)
         Me.Label43.TabIndex = 4
@@ -814,7 +742,7 @@ Partial Class Form1
         Me.Label42.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label42.Location = New System.Drawing.Point(73, 357)
+        Me.Label42.Location = New System.Drawing.Point(73, 315)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(45, 13)
         Me.Label42.TabIndex = 3
@@ -824,13 +752,13 @@ Partial Class Form1
         'ListBox1
         '
         Me.ListBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.IntegralHeight = False
         Me.ListBox1.Location = New System.Drawing.Point(5, 30)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(394, 324)
+        Me.ListBox1.Size = New System.Drawing.Size(391, 282)
         Me.ListBox1.Sorted = True
         Me.ListBox1.TabIndex = 1
         '
@@ -838,7 +766,7 @@ Partial Class Form1
         '
         Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(4, 357)
+        Me.Label7.Location = New System.Drawing.Point(4, 315)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(34, 13)
         Me.Label7.TabIndex = 2
@@ -847,21 +775,41 @@ Partial Class Form1
         'ComboBox3
         '
         Me.ComboBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"roms", "Video", "Wheels", "Artwork1", "Artwork2", "Artwork3", "Artwork4", "Themes", "Sounds"})
         Me.ComboBox3.Location = New System.Drawing.Point(5, 3)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(394, 21)
+        Me.ComboBox3.Size = New System.Drawing.Size(391, 21)
         Me.ComboBox3.TabIndex = 0
+        '
+        'TextBox27
+        '
+        Me.TextBox27.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox27.Location = New System.Drawing.Point(148, 292)
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.Size = New System.Drawing.Size(421, 20)
+        Me.TextBox27.TabIndex = 7
+        Me.TextBox27.Visible = False
+        '
+        'ComboBox7
+        '
+        Me.ComboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox7.FormattingEnabled = True
+        Me.ComboBox7.Location = New System.Drawing.Point(349, 3)
+        Me.ComboBox7.Name = "ComboBox7"
+        Me.ComboBox7.Size = New System.Drawing.Size(109, 21)
+        Me.ComboBox7.TabIndex = 18
+        Me.ComboBox7.Visible = False
         '
         'Label47
         '
         Me.Label47.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label47.Location = New System.Drawing.Point(332, 357)
+        Me.Label47.Location = New System.Drawing.Point(332, 315)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(45, 13)
         Me.Label47.TabIndex = 17
@@ -873,7 +821,7 @@ Partial Class Form1
         Me.Label46.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label46.Location = New System.Drawing.Point(255, 357)
+        Me.Label46.Location = New System.Drawing.Point(255, 315)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(45, 13)
         Me.Label46.TabIndex = 16
@@ -885,7 +833,7 @@ Partial Class Form1
         Me.Label45.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label45.Location = New System.Drawing.Point(188, 357)
+        Me.Label45.Location = New System.Drawing.Point(188, 315)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(45, 13)
         Me.Label45.TabIndex = 6
@@ -908,7 +856,7 @@ Partial Class Form1
         Me.Label20.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label20.AutoSize = True
         Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label20.Location = New System.Drawing.Point(4, 356)
+        Me.Label20.Location = New System.Drawing.Point(4, 314)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(44, 13)
         Me.Label20.TabIndex = 14
@@ -972,7 +920,7 @@ Partial Class Form1
         Me.CheckBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Enabled = False
-        Me.CheckBox3.Location = New System.Drawing.Point(459, 356)
+        Me.CheckBox3.Location = New System.Drawing.Point(457, 314)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(112, 17)
         Me.CheckBox3.TabIndex = 12
@@ -992,7 +940,7 @@ Partial Class Form1
         '
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button6.Enabled = False
-        Me.Button6.Location = New System.Drawing.Point(464, 3)
+        Me.Button6.Location = New System.Drawing.Point(462, 3)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(33, 20)
         Me.Button6.TabIndex = 6
@@ -1002,7 +950,7 @@ Partial Class Form1
         'Button7
         '
         Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button7.Location = New System.Drawing.Point(503, 4)
+        Me.Button7.Location = New System.Drawing.Point(501, 4)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(68, 20)
         Me.Button7.TabIndex = 7
@@ -1013,7 +961,7 @@ Partial Class Form1
         '
         Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(145, 357)
+        Me.Label9.Location = New System.Drawing.Point(145, 315)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 11
@@ -1066,28 +1014,34 @@ Partial Class Form1
         'ListBox2
         '
         Me.ListBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.IntegralHeight = False
         Me.ListBox2.Location = New System.Drawing.Point(148, 30)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(423, 324)
+        Me.ListBox2.Size = New System.Drawing.Size(421, 282)
         Me.ListBox2.Sorted = True
         Me.ListBox2.TabIndex = 5
         '
         'TextBox4
         '
         Me.TextBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox4.Enabled = False
         Me.TextBox4.Location = New System.Drawing.Point(148, 3)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(310, 20)
+        Me.TextBox4.Size = New System.Drawing.Size(308, 20)
         Me.TextBox4.TabIndex = 4
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.TextBox29)
+        Me.TabPage4.Controls.Add(Me.CheckBox18)
+        Me.TabPage4.Controls.Add(Me.Label49)
+        Me.TabPage4.Controls.Add(Me.ComboBox9)
+        Me.TabPage4.Controls.Add(Me.ComboBox8)
+        Me.TabPage4.Controls.Add(Me.CheckBox17)
         Me.TabPage4.Controls.Add(Me.CheckBox25)
         Me.TabPage4.Controls.Add(Me.CheckBox20)
         Me.TabPage4.Controls.Add(Me.CheckBox19)
@@ -1111,7 +1065,7 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.CheckBox1)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(996, 383)
+        Me.TabPage4.Size = New System.Drawing.Size(991, 341)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "CD Image check/fix"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -1151,20 +1105,20 @@ Partial Class Form1
         'ComboBox2
         '
         Me.ComboBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Autodetect", "MODE1/2048 (iso, or bad formatted .bin)", "MODE1/2352 (PC, SegaCD, Saturn, cd32)", "MODE2/2336 (rarely used)", "MODE2/2352 (PSX, PS2)"})
-        Me.ComboBox2.Location = New System.Drawing.Point(611, 257)
+        Me.ComboBox2.Location = New System.Drawing.Point(611, 215)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(353, 21)
+        Me.ComboBox2.Size = New System.Drawing.Size(348, 21)
         Me.ComboBox2.TabIndex = 18
         '
         'Label30
         '
         Me.Label30.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(608, 241)
+        Me.Label30.Location = New System.Drawing.Point(608, 199)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(154, 13)
         Me.Label30.TabIndex = 17
@@ -1265,19 +1219,19 @@ Partial Class Form1
         'ListBox3
         '
         Me.ListBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBox3.FormattingEnabled = True
         Me.ListBox3.IntegralHeight = False
         Me.ListBox3.Location = New System.Drawing.Point(432, 33)
         Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(532, 199)
+        Me.ListBox3.Size = New System.Drawing.Size(527, 157)
         Me.ListBox3.TabIndex = 7
         '
         'Button21_checkISO
         '
         Me.Button21_checkISO.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button21_checkISO.Location = New System.Drawing.Point(432, 238)
+        Me.Button21_checkISO.Location = New System.Drawing.Point(432, 196)
         Me.Button21_checkISO.Name = "Button21_checkISO"
         Me.Button21_checkISO.Size = New System.Drawing.Size(123, 41)
         Me.Button21_checkISO.TabIndex = 6
@@ -1294,7 +1248,7 @@ Partial Class Form1
         Me.CheckBox7.Size = New System.Drawing.Size(400, 17)
         Me.CheckBox7.TabIndex = 5
         Me.CheckBox7.Text = "Check for audio files (mp3,wav,ogg) not referenced in cue (or without cue at all)" & _
-            ""
+    ""
         Me.CheckBox7.UseVisualStyleBackColor = True
         '
         'CheckBox5
@@ -1354,7 +1308,7 @@ Partial Class Form1
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(996, 383)
+        Me.TabPage7.Size = New System.Drawing.Size(991, 341)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Systems Manager"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1362,7 +1316,7 @@ Partial Class Form1
         'Button34
         '
         Me.Button34.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button34.Location = New System.Drawing.Point(892, 48)
+        Me.Button34.Location = New System.Drawing.Point(887, 48)
         Me.Button34.Name = "Button34"
         Me.Button34.Size = New System.Drawing.Size(84, 36)
         Me.Button34.TabIndex = 6
@@ -1373,7 +1327,7 @@ Partial Class Form1
         '
         Me.Label41.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(6, 363)
+        Me.Label41.Location = New System.Drawing.Point(6, 321)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(217, 13)
         Me.Label41.TabIndex = 5
@@ -1382,7 +1336,7 @@ Partial Class Form1
         'Button33
         '
         Me.Button33.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button33.Location = New System.Drawing.Point(892, 6)
+        Me.Button33.Location = New System.Drawing.Point(887, 6)
         Me.Button33.Name = "Button33"
         Me.Button33.Size = New System.Drawing.Size(84, 36)
         Me.Button33.TabIndex = 4
@@ -1396,8 +1350,8 @@ Partial Class Form1
         Me.DataGridView2.AllowUserToDeleteRows = False
         Me.DataGridView2.AllowUserToResizeRows = False
         Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(6, 6)
         Me.DataGridView2.MultiSelect = False
@@ -1405,7 +1359,7 @@ Partial Class Form1
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(880, 354)
+        Me.DataGridView2.Size = New System.Drawing.Size(875, 312)
         Me.DataGridView2.TabIndex = 3
         '
         'TabPage3
@@ -1426,7 +1380,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.Label3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(996, 383)
+        Me.TabPage3.Size = New System.Drawing.Size(991, 341)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "HyperSpin system settings"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1479,7 +1433,7 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.TextBox13)
         Me.GroupBox2.Controls.Add(Me.Label19)
         Me.GroupBox2.Controls.Add(Me.TextBox12)
@@ -1511,7 +1465,7 @@ Partial Class Form1
         Me.GroupBox2.Enabled = False
         Me.GroupBox2.Location = New System.Drawing.Point(15, 121)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(841, 218)
+        Me.GroupBox2.Size = New System.Drawing.Size(841, 176)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Create New System"
@@ -1826,6 +1780,7 @@ Partial Class Form1
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage5.Controls.Add(Me.GroupBox7)
         Me.TabPage5.Controls.Add(Me.GroupBox12)
         Me.TabPage5.Controls.Add(Me.GroupBox9)
         Me.TabPage5.Controls.Add(Me.GroupBox8)
@@ -1839,7 +1794,7 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.Label22)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(996, 383)
+        Me.TabPage5.Size = New System.Drawing.Size(991, 341)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Program settings"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1939,7 +1894,7 @@ Partial Class Form1
         Me.Label40.Size = New System.Drawing.Size(196, 46)
         Me.Label40.TabIndex = 1
         Me.Label40.Text = "NOTE: It is very difficult to gather rom extensions from HyperLaunch inis, so all" & _
-            " extensions will be set to *"
+    " extensions will be set to *"
         '
         'CheckBox26
         '
@@ -2065,7 +2020,7 @@ Partial Class Form1
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.CheckBox27)
         Me.GroupBox4.Controls.Add(Me.Button27)
         Me.GroupBox4.Controls.Add(Me.CheckBox6)
@@ -2080,7 +2035,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.Label24)
         Me.GroupBox4.Location = New System.Drawing.Point(20, 45)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(192, 288)
+        Me.GroupBox4.Size = New System.Drawing.Size(192, 246)
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Matcher"
@@ -2197,9 +2152,9 @@ Partial Class Form1
         '
         'Button20
         '
-        Me.Button20.Location = New System.Drawing.Point(845, 19)
+        Me.Button20.Location = New System.Drawing.Point(872, 292)
         Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(104, 20)
+        Me.Button20.Size = New System.Drawing.Size(104, 41)
         Me.Button20.TabIndex = 4
         Me.Button20.Text = "Save config"
         Me.Button20.UseVisualStyleBackColor = True
@@ -2307,7 +2262,7 @@ Partial Class Form1
         'Button30
         '
         Me.Button30.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button30.Location = New System.Drawing.Point(910, 32)
+        Me.Button30.Location = New System.Drawing.Point(905, 32)
         Me.Button30.Name = "Button30"
         Me.Button30.Size = New System.Drawing.Size(106, 21)
         Me.Button30.TabIndex = 14
@@ -2319,7 +2274,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.MainTableToolStripMenuItem, Me.MatcherToolStripMenuItem, Me.ToolsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1028, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1023, 24)
         Me.MenuStrip1.TabIndex = 15
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -2327,33 +2282,33 @@ Partial Class Form1
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'MainTableToolStripMenuItem
         '
         Me.MainTableToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlowEditToolStripMenuItem, Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem, Me.ShowHideColumnsToolStripMenuItem, Me.CommitDbEditionsToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExportToExelToolStripMenuItem})
         Me.MainTableToolStripMenuItem.Name = "MainTableToolStripMenuItem"
-        Me.MainTableToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
+        Me.MainTableToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.MainTableToolStripMenuItem.Text = "Table"
         '
         'AlowEditToolStripMenuItem
         '
         Me.AlowEditToolStripMenuItem.Name = "AlowEditToolStripMenuItem"
-        Me.AlowEditToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.AlowEditToolStripMenuItem.Size = New System.Drawing.Size(257, 22)
         Me.AlowEditToolStripMenuItem.Text = "Alow Edit"
         '
         'ReorderGamesWhileUpdatingXmlToolStripMenuItem
         '
         Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem, Me.ReorderAlphabetycallyToolStripMenuItem, Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem, Me.ReorderAsSeenInTheCheckTableToolStripMenuItem})
         Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.Name = "ReorderGamesWhileUpdatingXmlToolStripMenuItem"
-        Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.Size = New System.Drawing.Size(257, 22)
         Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem.Text = "Reorder games while updating xml"
         '
         'NoReorderinsertedLinesAddedToTheEndToolStripMenuItem
@@ -2361,32 +2316,32 @@ Partial Class Form1
         Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Checked = True
         Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Name = "NoReorderinsertedLinesAddedToTheEndToolStripMenuItem"
-        Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Size = New System.Drawing.Size(300, 22)
+        Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
         Me.NoReorderinsertedLinesAddedToTheEndToolStripMenuItem.Text = "No Reorder (inserted lines added to the end)"
         '
         'ReorderAlphabetycallyToolStripMenuItem
         '
         Me.ReorderAlphabetycallyToolStripMenuItem.Name = "ReorderAlphabetycallyToolStripMenuItem"
-        Me.ReorderAlphabetycallyToolStripMenuItem.Size = New System.Drawing.Size(300, 22)
+        Me.ReorderAlphabetycallyToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
         Me.ReorderAlphabetycallyToolStripMenuItem.Text = "Reorder alphabetically by romname"
         '
         'ReorderAlphabeticallyByDescriptionToolStripMenuItem
         '
         Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Name = "ReorderAlphabeticallyByDescriptionToolStripMenuItem"
-        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Size = New System.Drawing.Size(300, 22)
+        Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
         Me.ReorderAlphabeticallyByDescriptionToolStripMenuItem.Text = "Reorder alphabetically by database entry"
         '
         'ReorderAsSeenInTheCheckTableToolStripMenuItem
         '
         Me.ReorderAsSeenInTheCheckTableToolStripMenuItem.Name = "ReorderAsSeenInTheCheckTableToolStripMenuItem"
-        Me.ReorderAsSeenInTheCheckTableToolStripMenuItem.Size = New System.Drawing.Size(300, 22)
+        Me.ReorderAsSeenInTheCheckTableToolStripMenuItem.Size = New System.Drawing.Size(307, 22)
         Me.ReorderAsSeenInTheCheckTableToolStripMenuItem.Text = "Reorder as seen in the check table"
         '
         'ShowHideColumnsToolStripMenuItem
         '
         Me.ShowHideColumnsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.F0, Me.F1, Me.ToolStripMenuItem3, Me.F2, Me.F3, Me.F4, Me.F5, Me.F6, Me.F7, Me.F8, Me.F9, Me.F10, Me.F11, Me.F12, Me.F13, Me.F14, Me.ToolStripMenuItem4, Me.FPresetChecker, Me.FPresetEditor})
         Me.ShowHideColumnsToolStripMenuItem.Name = "ShowHideColumnsToolStripMenuItem"
-        Me.ShowHideColumnsToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.ShowHideColumnsToolStripMenuItem.Size = New System.Drawing.Size(257, 22)
         Me.ShowHideColumnsToolStripMenuItem.Text = "Show / Hide Columns"
         '
         'F0
@@ -2395,7 +2350,7 @@ Partial Class Form1
         Me.F0.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F0.Enabled = False
         Me.F0.Name = "F0"
-        Me.F0.Size = New System.Drawing.Size(189, 22)
+        Me.F0.Size = New System.Drawing.Size(184, 22)
         Me.F0.Text = "Show Database entry"
         '
         'F1
@@ -2404,20 +2359,20 @@ Partial Class Form1
         Me.F1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F1.Enabled = False
         Me.F1.Name = "F1"
-        Me.F1.Size = New System.Drawing.Size(189, 22)
+        Me.F1.Size = New System.Drawing.Size(184, 22)
         Me.F1.Text = "Show RomName"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(186, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(181, 6)
         '
         'F2
         '
         Me.F2.Checked = True
         Me.F2.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F2.Name = "F2"
-        Me.F2.Size = New System.Drawing.Size(189, 22)
+        Me.F2.Size = New System.Drawing.Size(184, 22)
         Me.F2.Text = "Show Rom"
         '
         'F3
@@ -2425,7 +2380,7 @@ Partial Class Form1
         Me.F3.Checked = True
         Me.F3.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F3.Name = "F3"
-        Me.F3.Size = New System.Drawing.Size(189, 22)
+        Me.F3.Size = New System.Drawing.Size(184, 22)
         Me.F3.Text = "Show Video"
         '
         'F4
@@ -2433,7 +2388,7 @@ Partial Class Form1
         Me.F4.Checked = True
         Me.F4.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F4.Name = "F4"
-        Me.F4.Size = New System.Drawing.Size(189, 22)
+        Me.F4.Size = New System.Drawing.Size(184, 22)
         Me.F4.Text = "Show Theme"
         '
         'F5
@@ -2441,7 +2396,7 @@ Partial Class Form1
         Me.F5.Checked = True
         Me.F5.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F5.Name = "F5"
-        Me.F5.Size = New System.Drawing.Size(189, 22)
+        Me.F5.Size = New System.Drawing.Size(184, 22)
         Me.F5.Text = "Show Wheel"
         '
         'F6
@@ -2449,7 +2404,7 @@ Partial Class Form1
         Me.F6.Checked = True
         Me.F6.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F6.Name = "F6"
-        Me.F6.Size = New System.Drawing.Size(189, 22)
+        Me.F6.Size = New System.Drawing.Size(184, 22)
         Me.F6.Text = "Show Artwork1"
         '
         'F7
@@ -2457,7 +2412,7 @@ Partial Class Form1
         Me.F7.Checked = True
         Me.F7.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F7.Name = "F7"
-        Me.F7.Size = New System.Drawing.Size(189, 22)
+        Me.F7.Size = New System.Drawing.Size(184, 22)
         Me.F7.Text = "Show Artwork2"
         '
         'F8
@@ -2465,7 +2420,7 @@ Partial Class Form1
         Me.F8.Checked = True
         Me.F8.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F8.Name = "F8"
-        Me.F8.Size = New System.Drawing.Size(189, 22)
+        Me.F8.Size = New System.Drawing.Size(184, 22)
         Me.F8.Text = "Show Artwork3"
         '
         'F9
@@ -2473,7 +2428,7 @@ Partial Class Form1
         Me.F9.Checked = True
         Me.F9.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F9.Name = "F9"
-        Me.F9.Size = New System.Drawing.Size(189, 22)
+        Me.F9.Size = New System.Drawing.Size(184, 22)
         Me.F9.Text = "Show Artwork4"
         '
         'F10
@@ -2481,80 +2436,80 @@ Partial Class Form1
         Me.F10.Checked = True
         Me.F10.CheckState = System.Windows.Forms.CheckState.Checked
         Me.F10.Name = "F10"
-        Me.F10.Size = New System.Drawing.Size(189, 22)
+        Me.F10.Size = New System.Drawing.Size(184, 22)
         Me.F10.Text = "Show Sounds"
         '
         'F11
         '
         Me.F11.Name = "F11"
-        Me.F11.Size = New System.Drawing.Size(189, 22)
+        Me.F11.Size = New System.Drawing.Size(184, 22)
         Me.F11.Text = "Show CRC"
         '
         'F12
         '
         Me.F12.Name = "F12"
-        Me.F12.Size = New System.Drawing.Size(189, 22)
+        Me.F12.Size = New System.Drawing.Size(184, 22)
         Me.F12.Text = "Show Manufacturer"
         '
         'F13
         '
         Me.F13.Name = "F13"
-        Me.F13.Size = New System.Drawing.Size(189, 22)
+        Me.F13.Size = New System.Drawing.Size(184, 22)
         Me.F13.Text = "Show Year"
         '
         'F14
         '
         Me.F14.Name = "F14"
-        Me.F14.Size = New System.Drawing.Size(189, 22)
+        Me.F14.Size = New System.Drawing.Size(184, 22)
         Me.F14.Text = "Show Genre"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(186, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(181, 6)
         '
         'FPresetChecker
         '
         Me.FPresetChecker.Name = "FPresetChecker"
-        Me.FPresetChecker.Size = New System.Drawing.Size(189, 22)
+        Me.FPresetChecker.Size = New System.Drawing.Size(184, 22)
         Me.FPresetChecker.Text = "Preset - Checker"
         '
         'FPresetEditor
         '
         Me.FPresetEditor.Name = "FPresetEditor"
-        Me.FPresetEditor.Size = New System.Drawing.Size(189, 22)
+        Me.FPresetEditor.Size = New System.Drawing.Size(184, 22)
         Me.FPresetEditor.Text = "Preset - Editor"
         '
         'CommitDbEditionsToolStripMenuItem
         '
         Me.CommitDbEditionsToolStripMenuItem.Enabled = False
         Me.CommitDbEditionsToolStripMenuItem.Name = "CommitDbEditionsToolStripMenuItem"
-        Me.CommitDbEditionsToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.CommitDbEditionsToolStripMenuItem.Size = New System.Drawing.Size(257, 22)
         Me.CommitDbEditionsToolStripMenuItem.Text = "Update DB (Commit editions)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(246, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(254, 6)
         '
         'ExportToExelToolStripMenuItem
         '
         Me.ExportToExelToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExportToolStripMenuItem, Me.CSVSToolStripMenuItem})
         Me.ExportToExelToolStripMenuItem.Name = "ExportToExelToolStripMenuItem"
-        Me.ExportToExelToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.ExportToExelToolStripMenuItem.Size = New System.Drawing.Size(257, 22)
         Me.ExportToExelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExportToolStripMenuItem
         '
         Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
-        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.ExportToolStripMenuItem.Text = "Export to .CSV"
         '
         'CSVSToolStripMenuItem
         '
         Me.CSVSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SemicolonExcelDefaultToolStripMenuItem, Me.CommaFormatDefaultToolStripMenuItem})
         Me.CSVSToolStripMenuItem.Name = "CSVSToolStripMenuItem"
-        Me.CSVSToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.CSVSToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.CSVSToolStripMenuItem.Text = "CSV separator"
         '
         'SemicolonExcelDefaultToolStripMenuItem
@@ -2562,70 +2517,70 @@ Partial Class Form1
         Me.SemicolonExcelDefaultToolStripMenuItem.Checked = True
         Me.SemicolonExcelDefaultToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.SemicolonExcelDefaultToolStripMenuItem.Name = "SemicolonExcelDefaultToolStripMenuItem"
-        Me.SemicolonExcelDefaultToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.SemicolonExcelDefaultToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.SemicolonExcelDefaultToolStripMenuItem.Text = "Semicolon (Excel default)"
         '
         'CommaFormatDefaultToolStripMenuItem
         '
         Me.CommaFormatDefaultToolStripMenuItem.Name = "CommaFormatDefaultToolStripMenuItem"
-        Me.CommaFormatDefaultToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.CommaFormatDefaultToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.CommaFormatDefaultToolStripMenuItem.Text = "Comma (Format default)"
         '
         'MatcherToolStripMenuItem
         '
-        Me.MatcherToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AutorenamerToolStripMenuItem, Me.ToolStripMenuItem2, Me.MediaFolderToolStripMenuItem, Me.AssociateToolStripMenuItem, Me.AlwaysShowDetailedTotalStatusToolStripMenuItem})
+        Me.MatcherToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AutorenamerToolStripMenuItem, Me.ToolStripMenuItem2, Me.MediaFolderToolStripMenuItem, Me.AssociateToolStripMenuItem, Me.AlwaysShowDetailedTotalStatusToolStripMenuItem, Me.ToolStripMenuItem11, Me.ShowFiltersToolStripMenuItem, Me.AutofilterToolStripMenuItem, Me.AutofilterRegexConstructorToolStripMenuItem})
         Me.MatcherToolStripMenuItem.Name = "MatcherToolStripMenuItem"
-        Me.MatcherToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.MatcherToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
         Me.MatcherToolStripMenuItem.Text = "Matcher"
         '
         'AutorenamerToolStripMenuItem
         '
         Me.AutorenamerToolStripMenuItem.Name = "AutorenamerToolStripMenuItem"
-        Me.AutorenamerToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.AutorenamerToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.AutorenamerToolStripMenuItem.Text = "Autorenamer"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(243, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(245, 6)
         '
         'MediaFolderToolStripMenuItem
         '
         Me.MediaFolderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UseDefaultHyperspinFolderToolStripMenuItem, Me.UseCustomFolderToolStripMenuItem})
         Me.MediaFolderToolStripMenuItem.Name = "MediaFolderToolStripMenuItem"
-        Me.MediaFolderToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.MediaFolderToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.MediaFolderToolStripMenuItem.Text = "Media folder"
         '
         'UseDefaultHyperspinFolderToolStripMenuItem
         '
         Me.UseDefaultHyperspinFolderToolStripMenuItem.Name = "UseDefaultHyperspinFolderToolStripMenuItem"
-        Me.UseDefaultHyperspinFolderToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.UseDefaultHyperspinFolderToolStripMenuItem.Size = New System.Drawing.Size(227, 22)
         Me.UseDefaultHyperspinFolderToolStripMenuItem.Text = "Use Default Hyperspin Folder"
         '
         'UseCustomFolderToolStripMenuItem
         '
         Me.UseCustomFolderToolStripMenuItem.Name = "UseCustomFolderToolStripMenuItem"
-        Me.UseCustomFolderToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.UseCustomFolderToolStripMenuItem.Size = New System.Drawing.Size(227, 22)
         Me.UseCustomFolderToolStripMenuItem.Text = "Use Custom Folder"
         '
         'AssociateToolStripMenuItem
         '
         Me.AssociateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WToolStripMenuItem, Me.WhenFileIsInDifferentFolderToolStripMenuItem})
         Me.AssociateToolStripMenuItem.Name = "AssociateToolStripMenuItem"
-        Me.AssociateToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.AssociateToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.AssociateToolStripMenuItem.Text = "Associate"
         '
         'WToolStripMenuItem
         '
         Me.WToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssocOption_fileInHsFolder_copy, Me.AssocOption_fileInHsFolder_move})
         Me.WToolStripMenuItem.Name = "WToolStripMenuItem"
-        Me.WToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.WToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
         Me.WToolStripMenuItem.Text = "When file is already in destination folder"
         '
         'AssocOption_fileInHsFolder_copy
         '
         Me.AssocOption_fileInHsFolder_copy.Name = "AssocOption_fileInHsFolder_copy"
-        Me.AssocOption_fileInHsFolder_copy.Size = New System.Drawing.Size(164, 22)
+        Me.AssocOption_fileInHsFolder_copy.Size = New System.Drawing.Size(162, 22)
         Me.AssocOption_fileInHsFolder_copy.Text = "Copy (duplicate)"
         '
         'AssocOption_fileInHsFolder_move
@@ -2633,26 +2588,26 @@ Partial Class Form1
         Me.AssocOption_fileInHsFolder_move.Checked = True
         Me.AssocOption_fileInHsFolder_move.CheckState = System.Windows.Forms.CheckState.Checked
         Me.AssocOption_fileInHsFolder_move.Name = "AssocOption_fileInHsFolder_move"
-        Me.AssocOption_fileInHsFolder_move.Size = New System.Drawing.Size(164, 22)
+        Me.AssocOption_fileInHsFolder_move.Size = New System.Drawing.Size(162, 22)
         Me.AssocOption_fileInHsFolder_move.Text = "Move (rename)"
         '
         'WhenFileIsInDifferentFolderToolStripMenuItem
         '
         Me.WhenFileIsInDifferentFolderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssocOption_fileInDiffFolder_copy, Me.AssocOption_fileInDiffFolder_move, Me.AssocOption_fileInDiffFolder_copyToHS, Me.AssocOption_fileInDiffFolder_moveToHS})
         Me.WhenFileIsInDifferentFolderToolStripMenuItem.Name = "WhenFileIsInDifferentFolderToolStripMenuItem"
-        Me.WhenFileIsInDifferentFolderToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.WhenFileIsInDifferentFolderToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
         Me.WhenFileIsInDifferentFolderToolStripMenuItem.Text = "When file is in different folder"
         '
         'AssocOption_fileInDiffFolder_copy
         '
         Me.AssocOption_fileInDiffFolder_copy.Name = "AssocOption_fileInDiffFolder_copy"
-        Me.AssocOption_fileInDiffFolder_copy.Size = New System.Drawing.Size(206, 22)
+        Me.AssocOption_fileInDiffFolder_copy.Size = New System.Drawing.Size(209, 22)
         Me.AssocOption_fileInDiffFolder_copy.Text = "Copy in place (duplicate)"
         '
         'AssocOption_fileInDiffFolder_move
         '
         Me.AssocOption_fileInDiffFolder_move.Name = "AssocOption_fileInDiffFolder_move"
-        Me.AssocOption_fileInDiffFolder_move.Size = New System.Drawing.Size(206, 22)
+        Me.AssocOption_fileInDiffFolder_move.Size = New System.Drawing.Size(209, 22)
         Me.AssocOption_fileInDiffFolder_move.Text = "Move in place (rename)"
         '
         'AssocOption_fileInDiffFolder_copyToHS
@@ -2660,201 +2615,314 @@ Partial Class Form1
         Me.AssocOption_fileInDiffFolder_copyToHS.Checked = True
         Me.AssocOption_fileInDiffFolder_copyToHS.CheckState = System.Windows.Forms.CheckState.Checked
         Me.AssocOption_fileInDiffFolder_copyToHS.Name = "AssocOption_fileInDiffFolder_copyToHS"
-        Me.AssocOption_fileInDiffFolder_copyToHS.Size = New System.Drawing.Size(206, 22)
+        Me.AssocOption_fileInDiffFolder_copyToHS.Size = New System.Drawing.Size(209, 22)
         Me.AssocOption_fileInDiffFolder_copyToHS.Text = "Copy to hyperspin folder"
         '
         'AssocOption_fileInDiffFolder_moveToHS
         '
         Me.AssocOption_fileInDiffFolder_moveToHS.Name = "AssocOption_fileInDiffFolder_moveToHS"
-        Me.AssocOption_fileInDiffFolder_moveToHS.Size = New System.Drawing.Size(206, 22)
+        Me.AssocOption_fileInDiffFolder_moveToHS.Size = New System.Drawing.Size(209, 22)
         Me.AssocOption_fileInDiffFolder_moveToHS.Text = "Move to Hyperspin folder"
         '
         'AlwaysShowDetailedTotalStatusToolStripMenuItem
         '
         Me.AlwaysShowDetailedTotalStatusToolStripMenuItem.Name = "AlwaysShowDetailedTotalStatusToolStripMenuItem"
-        Me.AlwaysShowDetailedTotalStatusToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.AlwaysShowDetailedTotalStatusToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.AlwaysShowDetailedTotalStatusToolStripMenuItem.Text = "Always show detailed total status"
+        '
+        'ToolStripMenuItem11
+        '
+        Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
+        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(245, 6)
+        '
+        'ShowFiltersToolStripMenuItem
+        '
+        Me.ShowFiltersToolStripMenuItem.Name = "ShowFiltersToolStripMenuItem"
+        Me.ShowFiltersToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.ShowFiltersToolStripMenuItem.Text = "Show Filters"
+        '
+        'AutofilterToolStripMenuItem
+        '
+        Me.AutofilterToolStripMenuItem.Name = "AutofilterToolStripMenuItem"
+        Me.AutofilterToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.AutofilterToolStripMenuItem.Text = "Autofilter"
+        '
+        'AutofilterRegexConstructorToolStripMenuItem
+        '
+        Me.AutofilterRegexConstructorToolStripMenuItem.Name = "AutofilterRegexConstructorToolStripMenuItem"
+        Me.AutofilterRegexConstructorToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.AutofilterRegexConstructorToolStripMenuItem.Text = "Autofilter regex constructor"
         '
         'ToolsToolStripMenuItem
         '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem, Me.GenresFavoritesManagerToolStripMenuItem, Me.ToolStripMenuItem6, Me.ShowDatabaseStatisticToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem, Me.ConvertersToolStripMenuItem, Me.ToolStripMenuItem7, Me.RemoveClonesFromCurrentDBToolStripMenuItem, Me.DIFFToolToolStripMenuItem, Me.DualFolderOperationsToolStripMenuItem, Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem, Me.ToolStripMenuItem8, Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem, Me.MAMERomsetReducerToolStripMenuItem, Me.VideoDownloaderToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem, Me.GenresFavoritesManagerToolStripMenuItem, Me.ToolStripMenuItem6, Me.ShowDatabaseStatisticToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem, Me.ConvertersToolStripMenuItem, Me.ToolStripMenuItem7, Me.RemoveClonesFromCurrentDBToolStripMenuItem, Me.DIFFToolToolStripMenuItem, Me.DualFolderOperationsToolStripMenuItem, Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem, Me.ToolStripMenuItem8, Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem, Me.MAMERomsetReducerToolStripMenuItem, Me.VideoDownloaderToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
         '
         'CheckHyperLaunch3rdPartyPathsToolStripMenuItem
         '
         Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Name = "CheckHyperLaunch3rdPartyPathsToolStripMenuItem"
-        Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Text = "Check HyperLaunch 3rd party paths"
         '
         'GenresFavoritesManagerToolStripMenuItem
         '
         Me.GenresFavoritesManagerToolStripMenuItem.Name = "GenresFavoritesManagerToolStripMenuItem"
-        Me.GenresFavoritesManagerToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.GenresFavoritesManagerToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.GenresFavoritesManagerToolStripMenuItem.Text = "Genres / Favorites manager"
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(355, 6)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(370, 6)
         '
         'ShowDatabaseStatisticToolStripMenuItem
         '
         Me.ShowDatabaseStatisticToolStripMenuItem.Name = "ShowDatabaseStatisticToolStripMenuItem"
-        Me.ShowDatabaseStatisticToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.ShowDatabaseStatisticToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.ShowDatabaseStatisticToolStripMenuItem.Text = "Show Database Statistic"
         '
         'CreateDatabaseXMLFromRomFolderToolStripMenuItem
         '
         Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem.Name = "CreateDatabaseXMLFromRomFolderToolStripMenuItem"
-        Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
-        Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem.Text = "Create database XML from rom folder"
-        '
-        'CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem
-        '
-        Me.CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem.Name = "CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem"
-        Me.CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
-        Me.CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem.Text = "Create database XML from rom folder - Options"
+        Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
+        Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem.Text = "Create database XML from rom folder ..."
         '
         'ConvertersToolStripMenuItem
         '
         Me.ConvertersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem, Me.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem, Me.ConvertMessToHs, Me.ToolStripMenuItem5, Me.ConvertCurrentDBToClrmamepredatToolStripMenuItem})
         Me.ConvertersToolStripMenuItem.Name = "ConvertersToolStripMenuItem"
-        Me.ConvertersToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.ConvertersToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.ConvertersToolStripMenuItem.Text = "Converters"
         '
         'ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem
         '
         Me.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem.Name = "ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem"
-        Me.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem.Size = New System.Drawing.Size(457, 22)
+        Me.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem.Size = New System.Drawing.Size(484, 22)
         Me.ConvertFromClrmameprodatToHyperSpinxmlToolStripMenuItem.Text = "Convert from clrmamepro xml .dat (redump, no-intro xml)  to HyperSpin .xml"
         '
         'ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem
         '
         Me.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem.Name = "ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem"
-        Me.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem.Size = New System.Drawing.Size(457, 22)
+        Me.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem.Size = New System.Drawing.Size(484, 22)
         Me.ConvertFromOldClrmameprodattosecNointroStdDatToHyperSpinxmlToolStripMenuItem.Text = "Convert from old clrmamepro .dat (tosec, no-intro std dat)  to HyperSpin .xml"
         '
         'ConvertMessToHs
         '
         Me.ConvertMessToHs.Name = "ConvertMessToHs"
-        Me.ConvertMessToHs.Size = New System.Drawing.Size(457, 22)
+        Me.ConvertMessToHs.Size = New System.Drawing.Size(484, 22)
         Me.ConvertMessToHs.Text = "Convert from mess softwarelist xml to HyperSpin .xml"
         '
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(454, 6)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(481, 6)
         '
         'ConvertCurrentDBToClrmamepredatToolStripMenuItem
         '
         Me.ConvertCurrentDBToClrmamepredatToolStripMenuItem.Name = "ConvertCurrentDBToClrmamepredatToolStripMenuItem"
-        Me.ConvertCurrentDBToClrmamepredatToolStripMenuItem.Size = New System.Drawing.Size(457, 22)
+        Me.ConvertCurrentDBToClrmamepredatToolStripMenuItem.Size = New System.Drawing.Size(484, 22)
         Me.ConvertCurrentDBToClrmamepredatToolStripMenuItem.Text = "Convert current DB to clrmamepre .dat"
         '
         'ToolStripMenuItem7
         '
         Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(355, 6)
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(370, 6)
         '
         'RemoveClonesFromCurrentDBToolStripMenuItem
         '
         Me.RemoveClonesFromCurrentDBToolStripMenuItem.Name = "RemoveClonesFromCurrentDBToolStripMenuItem"
-        Me.RemoveClonesFromCurrentDBToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.RemoveClonesFromCurrentDBToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.RemoveClonesFromCurrentDBToolStripMenuItem.Text = "Remove clones from current database (nothing selected)"
         '
         'DIFFToolToolStripMenuItem
         '
         Me.DIFFToolToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompareToolStripMenuItem, Me.ToolStripMenuItem9, Me.CompareAgainstCurrentDBToolStripMenuItem, Me.ChooseBothFilesToCompareToolStripMenuItem, Me.ToolStripMenuItem10, Me.CompareGameromNameToolStripMenuItem, Me.CompareDescriptionTagusualyFullNameToolStripMenuItem})
         Me.DIFFToolToolStripMenuItem.Name = "DIFFToolToolStripMenuItem"
-        Me.DIFFToolToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.DIFFToolToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.DIFFToolToolStripMenuItem.Text = "DIFF Tool (Compare XMLs)"
         '
         'CompareToolStripMenuItem
         '
         Me.CompareToolStripMenuItem.Name = "CompareToolStripMenuItem"
-        Me.CompareToolStripMenuItem.Size = New System.Drawing.Size(290, 22)
+        Me.CompareToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.CompareToolStripMenuItem.Text = "Compare ..."
         '
         'ToolStripMenuItem9
         '
         Me.ToolStripMenuItem9.Name = "ToolStripMenuItem9"
-        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(287, 6)
+        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(300, 6)
         '
         'CompareAgainstCurrentDBToolStripMenuItem
         '
         Me.CompareAgainstCurrentDBToolStripMenuItem.Checked = True
         Me.CompareAgainstCurrentDBToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CompareAgainstCurrentDBToolStripMenuItem.Name = "CompareAgainstCurrentDBToolStripMenuItem"
-        Me.CompareAgainstCurrentDBToolStripMenuItem.Size = New System.Drawing.Size(290, 22)
+        Me.CompareAgainstCurrentDBToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.CompareAgainstCurrentDBToolStripMenuItem.Text = "Compare against current DB"
         '
         'ChooseBothFilesToCompareToolStripMenuItem
         '
         Me.ChooseBothFilesToCompareToolStripMenuItem.Name = "ChooseBothFilesToCompareToolStripMenuItem"
-        Me.ChooseBothFilesToCompareToolStripMenuItem.Size = New System.Drawing.Size(290, 22)
+        Me.ChooseBothFilesToCompareToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.ChooseBothFilesToCompareToolStripMenuItem.Text = "Choose both files to compare"
         '
         'ToolStripMenuItem10
         '
         Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
-        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(287, 6)
+        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(300, 6)
         '
         'CompareGameromNameToolStripMenuItem
         '
         Me.CompareGameromNameToolStripMenuItem.Checked = True
         Me.CompareGameromNameToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CompareGameromNameToolStripMenuItem.Name = "CompareGameromNameToolStripMenuItem"
-        Me.CompareGameromNameToolStripMenuItem.Size = New System.Drawing.Size(290, 22)
+        Me.CompareGameromNameToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.CompareGameromNameToolStripMenuItem.Text = "Compare game (rom) name"
         '
         'CompareDescriptionTagusualyFullNameToolStripMenuItem
         '
         Me.CompareDescriptionTagusualyFullNameToolStripMenuItem.Name = "CompareDescriptionTagusualyFullNameToolStripMenuItem"
-        Me.CompareDescriptionTagusualyFullNameToolStripMenuItem.Size = New System.Drawing.Size(290, 22)
+        Me.CompareDescriptionTagusualyFullNameToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.CompareDescriptionTagusualyFullNameToolStripMenuItem.Text = "Compare description tag (usualy full name)"
         '
         'DualFolderOperationsToolStripMenuItem
         '
         Me.DualFolderOperationsToolStripMenuItem.Name = "DualFolderOperationsToolStripMenuItem"
-        Me.DualFolderOperationsToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.DualFolderOperationsToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.DualFolderOperationsToolStripMenuItem.Text = "Dual folder operations"
         '
         'MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem
         '
         Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem.Name = "MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem"
-        Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem.Text = "Move roms in provided list (.txt) to subfolder"
         '
         'ToolStripMenuItem8
         '
         Me.ToolStripMenuItem8.Name = "ToolStripMenuItem8"
-        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(355, 6)
+        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(370, 6)
         '
         'PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem
         '
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Name = "PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem"
-        Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Text = "PCSX2 - Create index files for compressed iso"
         '
         'MAMERomsetReducerToolStripMenuItem
         '
         Me.MAMERomsetReducerToolStripMenuItem.Name = "MAMERomsetReducerToolStripMenuItem"
-        Me.MAMERomsetReducerToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.MAMERomsetReducerToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.MAMERomsetReducerToolStripMenuItem.Text = "MAME romset reducer"
         '
         'VideoDownloaderToolStripMenuItem
         '
         Me.VideoDownloaderToolStripMenuItem.Name = "VideoDownloaderToolStripMenuItem"
-        Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(358, 22)
+        Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader"
+        '
+        'CheckBox17
+        '
+        Me.CheckBox17.AutoSize = True
+        Me.CheckBox17.Location = New System.Drawing.Point(13, 281)
+        Me.CheckBox17.Name = "CheckBox17"
+        Me.CheckBox17.Size = New System.Drawing.Size(63, 17)
+        Me.CheckBox17.TabIndex = 22
+        Me.CheckBox17.Text = "Convert"
+        Me.CheckBox17.UseVisualStyleBackColor = True
+        '
+        'ComboBox8
+        '
+        Me.ComboBox8.FormattingEnabled = True
+        Me.ComboBox8.Items.AddRange(New Object() {"All Images", "*.iso", "*.isz", "*.cue", "*.bin", "*.nrg", "*.mds", "*.mdf", "*.img", "*.cdi"})
+        Me.ComboBox8.Location = New System.Drawing.Point(77, 279)
+        Me.ComboBox8.Name = "ComboBox8"
+        Me.ComboBox8.Size = New System.Drawing.Size(109, 21)
+        Me.ComboBox8.TabIndex = 23
+        '
+        'ComboBox9
+        '
+        Me.ComboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox9.FormattingEnabled = True
+        Me.ComboBox9.Items.AddRange(New Object() {"ISO", "ISZ (Compreessed Iso)", "BIN / CUE", "NRG", "MDF / MDS", "IMG / CCD / SUB"})
+        Me.ComboBox9.Location = New System.Drawing.Point(214, 279)
+        Me.ComboBox9.Name = "ComboBox9"
+        Me.ComboBox9.Size = New System.Drawing.Size(85, 21)
+        Me.ComboBox9.TabIndex = 24
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Location = New System.Drawing.Point(192, 282)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(16, 13)
+        Me.Label49.TabIndex = 25
+        Me.Label49.Text = "to"
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.Button19)
+        Me.GroupBox7.Controls.Add(Me.TextBox28)
+        Me.GroupBox7.Controls.Add(Me.Label50)
+        Me.GroupBox7.Location = New System.Drawing.Point(671, 139)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(305, 86)
+        Me.GroupBox7.TabIndex = 10
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "3rd party"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Location = New System.Drawing.Point(6, 18)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(211, 13)
+        Me.Label50.TabIndex = 0
+        Me.Label50.Text = "UltraISO path (used to convert CD images):"
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Location = New System.Drawing.Point(9, 34)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(258, 20)
+        Me.TextBox28.TabIndex = 1
+        '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(273, 32)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(25, 22)
+        Me.Button19.TabIndex = 2
+        Me.Button19.Text = "..."
+        Me.Button19.UseVisualStyleBackColor = True
+        '
+        'CheckBox18
+        '
+        Me.CheckBox18.AutoSize = True
+        Me.CheckBox18.Checked = True
+        Me.CheckBox18.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox18.Location = New System.Drawing.Point(41, 306)
+        Me.CheckBox18.Name = "CheckBox18"
+        Me.CheckBox18.Size = New System.Drawing.Size(120, 17)
+        Me.CheckBox18.TabIndex = 26
+        Me.CheckBox18.Text = "Output to original dir"
+        Me.CheckBox18.UseVisualStyleBackColor = True
+        '
+        'TextBox29
+        '
+        Me.TextBox29.Enabled = False
+        Me.TextBox29.Location = New System.Drawing.Point(167, 304)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.Size = New System.Drawing.Size(240, 20)
+        Me.TextBox29.TabIndex = 27
+        Me.TextBox29.Text = "C:\Converted ISO\"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 481)
+        Me.ClientSize = New System.Drawing.Size(1023, 439)
         Me.Controls.Add(Me.Button30)
         Me.Controls.Add(Me.CheckBox13)
         Me.Controls.Add(Me.CheckBox12)
@@ -2876,8 +2944,6 @@ Partial Class Form1
         Me.TabPage1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel1.PerformLayout()
@@ -2917,6 +2983,8 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3045,14 +3113,6 @@ Partial Class Form1
     Friend WithEvents CheckBox16 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox20 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox19 As System.Windows.Forms.CheckBox
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox13 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox14 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox15 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox16 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox17 As System.Windows.Forms.ComboBox
-    Friend WithEvents CheckBox21 As System.Windows.Forms.CheckBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
     Friend WithEvents Label35 As System.Windows.Forms.Label
@@ -3138,7 +3198,6 @@ Partial Class Form1
     Friend WithEvents WhenFileIsInDifferentFolderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssocOption_fileInDiffFolder_copy As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssocOption_fileInDiffFolder_move As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CheckBox17 As System.Windows.Forms.CheckBox
     Friend WithEvents AssocOption_fileInDiffFolder_copyToHS As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssocOption_fileInDiffFolder_moveToHS As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConvertersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -3172,7 +3231,6 @@ Partial Class Form1
     Friend WithEvents ToolStripMenuItem6 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents CreateDatabaseXMLFromRomFolderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem7 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DualFolderOperationsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem8 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents GenresFavoritesManagerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -3188,5 +3246,22 @@ Partial Class Form1
     Friend WithEvents CompareGameromNameToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CompareDescriptionTagusualyFullNameToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RemoveClonesFromCurrentDBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ComboBox7 As System.Windows.Forms.ComboBox
+    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox27 As System.Windows.Forms.TextBox
+    Friend WithEvents ToolStripMenuItem11 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ShowFiltersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AutofilterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AutofilterRegexConstructorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CheckBox17 As System.Windows.Forms.CheckBox
+    Friend WithEvents Label49 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox9 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox8 As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button19 As System.Windows.Forms.Button
+    Friend WithEvents TextBox28 As System.Windows.Forms.TextBox
+    Friend WithEvents Label50 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox18 As System.Windows.Forms.CheckBox
+    Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
 
 End Class

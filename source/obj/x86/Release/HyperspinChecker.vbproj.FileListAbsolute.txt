@@ -117,10 +117,8 @@ E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\WindowsApplication1
 E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\WindowsApplication1.Form9_database_statistic.resources
 E:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\WindowsApplication1.Form9_database_statistic_comparer.resources
 D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\HyperspinChecker.exe.config
-D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\Interop.AXVLC.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\Interop.ShockwaveFlashObjects.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\Interop.WMPLib.dll
-D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\AxInterop.AXVLC.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\AxInterop.ShockwaveFlashObjects.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\AxInterop.WMPLib.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\HyperspinChecker.vbproj.ResolveComReference.cache
@@ -128,10 +126,8 @@ D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\HyperspinChecker.ex
 D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\HyperspinChecker.pdb
 D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\HyperspinChecker.exe
 D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\HyperspinChecker.pdb
-D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\Interop.AXVLC.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\Interop.ShockwaveFlashObjects.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\Interop.WMPLib.dll
-D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\AxInterop.AXVLC.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\AxInterop.ShockwaveFlashObjects.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\bin\Release\AxInterop.WMPLib.dll
 D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\ResolveAssemblyReference.cache
@@ -199,3 +195,6 @@ C:\MyProg\HyperspinChecker\trunc\obj\x86\Release\WindowsApplication1.ISOFixAsk_M
 C:\MyProg\HyperspinChecker\trunc\obj\x86\Release\WindowsApplication1.Resources.resources
 C:\MyProg\HyperspinChecker\trunc\obj\x86\Release\GenerateResource.read.1.tlog
 C:\MyProg\HyperspinChecker\trunc\obj\x86\Release\GenerateResource.write.1.tlog
+D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\WindowsApplication1.FormC_mameRomListBuilder.resources
+D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\WindowsApplication1.FormD_matcher_autofilter_constructor.resources
+D:\Documents\My_Progs\HyperspinChecker\trunc\obj\x86\Release\WindowsApplication1.FormE_Create_database_XML_from_folder.resources

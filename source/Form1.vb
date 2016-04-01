@@ -3,29 +3,23 @@ Imports Microsoft.VisualBasic.FileIO
 Imports System.Runtime.InteropServices
 
 Public Class Form1
-    'QRS #49 Thanks for your help!! Problem is solved. I just checked the last cue file and the quotations was missing in the name inside the cue file Example: Supreme Warrior (USA) (Disc 1).bin instead of "Supreme Warrior (USA) (Disc 1).bin"
-    'aupton #63 When selecting "Move unneeded roms or media to subfolder" the app thows a JIT error.
-    'MadCoder #85 Well, I had an idea about the fix ISO for DC...I going to add Dreamcast CDI to ISO ability, and ISO fixer.
-    'RandomName1 #91 - Would it be possible to strip tags from rom descriptions automatically (except disc numbers) when creating an xml from a rom folder?
-    'Obiwantje #103 - updateble HS ini files
-    'desrop69 #105 - case sensitive crc
-    'Acidnine #108 - When I check the master snes .xml db file it says there's an error loading it. When I tell it to fix it, it replaces all the ampersands '&' with '&amp;' in the <game name=""> tag. Is this wanted? because now I have to rename my roms with ampersands in them to match the name tag.
-    'tastyratz #112 - I encountered a bug when trying to create a cue file for a saturn bin which does not have one. It gave me the error, created a 0kb file, and left the file locked but unfinished. Any subsequent attempts show the file in use error below. This error mentions the F:\ path but I do not have an F:\ drive, maybe related?
-    'tastyratz #112 - I want to be able to treat iso, cue like bin, cue because all of my sega cd collection is iso & cue. Would that be the right field (handle together) for entry?
-    'tastyratz #112 - Finally another bug: When matching an iso/cue set in subfolder it tells me it cannot find the original iso filename - however it does rename and edit the iso/cue just fine (just not the folder). If I click it a second time it renames the folder without errors.
-    'brownvim #118 - hide clones in a MAME list. I want to check if im missing any unique roms but so many are red (clones).
-    'Andyman #121 - Is there a way to show which games are clones in MAME? That would be a tremendous help. 
-    'baezl #128 - How do you guys handle multiple disc games (Sega CD)? What is your structure so we can use this kick ass tool which I freaking love!!!! I noticed the current database has Disc1 and Disc2 separate? On some games, (Sega CD again), I get "Length Less Than Zero" or "File already open".
-    'rpdmatt #129 - After choosing the system I can try to check for roms in the Summary page and it will populate everything from my database xml file but won't pick up on the roms that I have. I have tried going to the HyperSpin system settings and changing the 'Rom Path:' but it still doesn't affect the outcome. Also, if I change the 'Video Path:' to something else I cannot get the outcome to change. It seems like the user settings on the HyperSpin system settings tab don't affect the actual check on the Summary tab. Not sure if this is just the case since the new HyperLaunch HQ or not. Has anyone been able to change the 'Rom Path:' and have it affect the check? 
-    'potts43 #137 - Hyperpause media...? Controller Manual Guides Fades etc... It would be great to have columns for all of these folders 
-    'zero dreams #146 - When the check button is selected, it does a check and returns to the top of the list at the beginning of the database. I would love it if there was an option to turn this off. I'm basically looking for something like how HLHQ audits games and the list remains static during and after the audit. 
-    'Pike #147, Akelarre #149 - is it possible to have another button ("duplicate" or whatever you want), which is keeping the original art file and make a copy of it with the new name ? I'm asking this because when you have localized games not from original HS XML database but added to it, all art files already exist with the original rom, and we just need to copy-rename these files.
-    'potts43 #151 - multibin games related
-    'tanin #152 - error
-    'potts43 #154 - If possible have two way renaming. At the moment you can rename roms and artwork from the xml but for systems like future pinball and WinUAEloader that change regularly it would be good to point the DB xml to an updated rom and update the xml to match that newer rom name.
+    'REQUEST [desrop69 #105] case sensitive crc
+    'REQUEST [Acidnine #108] When I check the master snes .xml db file it says there's an error loading it. When I tell it to fix it, it replaces all the ampersands '&' with '&amp;' in the <game name=""> tag. Is this wanted? because now I have to rename my roms with ampersands in them to match the name tag.
+    'REQUEST [tastyratz #112] I encountered a bug when trying to create a cue file for a saturn bin which does not have one. It gave me the error, created a 0kb file, and left the file locked but unfinished. Any subsequent attempts show the file in use error below. This error mentions the F:\ path but I do not have an F:\ drive, maybe related?
+    'REQUEST [tastyratz #112] I want to be able to treat iso, cue like bin, cue because all of my sega cd collection is iso & cue. Would that be the right field (handle together) for entry?
+    'REQUEST [tastyratz #112] Finally another bug: When matching an iso/cue set in subfolder it tells me it cannot find the original iso filename - however it does rename and edit the iso/cue just fine (just not the folder). If I click it a second time it renames the folder without errors.
+    'REQUEST [brownvim #118] hide clones in a MAME list. I want to check if im missing any unique roms but so many are red (clones).
+    'REQUEST [Andyman #121] Is there a way to show which games are clones in MAME? That would be a tremendous help. 
+    'REQUEST [baezl #128] How do you guys handle multiple disc games (Sega CD)? What is your structure so we can use this kick ass tool which I freaking love!!!! I noticed the current database has Disc1 and Disc2 separate? On some games, (Sega CD again), I get "Length Less Than Zero" or "File already open".
+    'REQUEST [rpdmatt #129] After choosing the system I can try to check for roms in the Summary page and it will populate everything from my database xml file but won't pick up on the roms that I have. I have tried going to the HyperSpin system settings and changing the 'Rom Path:' but it still doesn't affect the outcome. Also, if I change the 'Video Path:' to something else I cannot get the outcome to change. It seems like the user settings on the HyperSpin system settings tab don't affect the actual check on the Summary tab. Not sure if this is just the case since the new HyperLaunch HQ or not. Has anyone been able to change the 'Rom Path:' and have it affect the check? 
+    'REQUEST [potts43 #137] Hyperpause media...? Controller Manual Guides Fades etc... It would be great to have columns for all of these folders 
+    'REQUEST [zero dreams #146] When the check button is selected, it does a check and returns to the top of the list at the beginning of the database. I would love it if there was an option to turn this off. I'm basically looking for something like how HLHQ audits games and the list remains static during and after the audit. 
+    'REQUEST [Pike #147, Akelarre #149] is it possible to have another button ("duplicate" or whatever you want), which is keeping the original art file and make a copy of it with the new name ? I'm asking this because when you have localized games not from original HS XML database but added to it, all art files already exist with the original rom, and we just need to copy-rename these files.
+    'REQUEST [potts43 #151] multibin games related
+    'REQUEST [tanin #152] error
+    'REQUEST [potts43 #154] If possible have two way renaming. At the moment you can rename roms and artwork from the xml but for systems like future pinball and WinUAEloader that change regularly it would be good to point the DB xml to an updated rom and update the xml to match that newer rom name.
     'when switching rom path (HL / HS), and then recheck without reselect system, path is not updated
     'when changing custom rom path in matcher, sometimes got error (try use MAME path)
-    'HL multiple path support (move unneeded - done)
     'Rename media when edit romname
     'To see if hs path is set, system manager refers to Label23.color, which can be not necessary green but purple, if path is ok, but config.save clicked.
 
@@ -51,6 +45,10 @@ Public Class Form1
     'TODO check and improve collect media dialog
     'TODO check/verify all possibilities while associating in matcher (copy, move, in/from different folders, and check listBoxex behaviour)
     'TODO when move roms in subfolder in NOT subfoldered mode, filelist don't reflect changes
+
+    'TODO matcher filters
+    'TODO 'handle-together' in 'move unneeded to subfolder'
+
     'DONE ADDED notes
     'DONE ADDED tool to move roms found in .txt list to subfolder
     'DONE ADDED tool to remove clones in HSxmlDB
@@ -82,7 +80,15 @@ Public Class Form1
     'DONE TODO check all '...' buttons
     'DONE TODO check video in default HS video folder
     'DONE TODO move roms in subfolder in NOT subfoldered mode
-
+    'DONE TODO HL multiple path support (in 'move unneeded' - this is already done)
+    'DONE TODO repare system manager (hl path including filename not properly handled)
+    'DONE TODO add to system manager MainMenuWheel, MainMenuVideo
+    'DONE TODO move dir2dat options to form
+    'DONE TODO REQUEST [QRS, post #49] I just checked the last cue file and the quotations was missing in the name inside the cue file Example: Supreme Warrior (USA) (Disc 1).bin instead of "Supreme Warrior (USA) (Disc 1).bin"
+    'DONE TODO REQUEST [aupton, post #63] When selecting "Move unneeded roms or media to subfolder" the app thows a JIT error. (added additional check for roms without extension)
+    'DONE TODO REQUEST [MadCoder, post #85] Well, I had an idea about the fix ISO for DC...I going to add Dreamcast CDI to ISO ability, and ISO fixer. (Not skilled enough to write my own CD images converter. Added bath converter using UltraISO)
+    'DONE TODO REQUEST [RandomName1, post #91] Would it be possible to strip tags from rom descriptions automatically (except disc numbers) when creating an xml from a rom folder? (added long ago, but was broken. Also added exception option for disk numbers)
+    'DONE TODO REQUEST [Obiwantje #103] updateble HS ini files
 #Region "Declarations"
     Public xmlPath As String = ""
     Private ini As New IniFileApi
@@ -109,7 +115,8 @@ Public Class Form1
     Private WithEvents myContextMenu4 As New ToolStripDropDownMenu 'main table columns hide/show
     Public WithEvents myContextMenu5 As New ToolStripDropDownMenu 'folder2xml options
     Friend WithEvents myContextMenu6 As New ToolStripDropDownMenu 'convert to clrmamepro
-    'Public WithEvents myContextMenu7 As New ToolStripDropDownMenu 'autorenamer
+    Friend WithEvents myContextMenu7 As New ToolStripDropDownMenu 'main table context menu
+    Friend WithEvents myContextMenu8 As New ToolStripDropDownMenu 'system manager table context menu
     Friend WithEvents RadioStrip1 As New RadioButton
     Friend WithEvents RadioStrip2 As New RadioButton
     'Friend WithEvents CheckStrip1 As New CheckBox
@@ -130,6 +137,16 @@ Public Class Form1
     Dim WithEvents CheckStrip2_12 As New CheckBox With {.Name = "12", .Text = "Show Manufacturer", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
     Dim WithEvents CheckStrip2_13 As New CheckBox With {.Name = "13", .Text = "Show Year", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
     Dim WithEvents CheckStrip2_14 As New CheckBox With {.Name = "14", .Text = "Show Genre", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+
+    Dim WithEvents CheckStrip3_1 As New CheckBox With {.Name = "01", .Text = "Main Menu Database Entry", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
+    Dim WithEvents CheckStrip3_2 As New CheckBox With {.Name = "02", .Text = "Database", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
+    Dim WithEvents CheckStrip3_3 As New CheckBox With {.Name = "03", .Text = "Main Menu Theme", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
+    Dim WithEvents CheckStrip3_4 As New CheckBox With {.Name = "04", .Text = "System Theme", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
+    Dim WithEvents CheckStrip3_5 As New CheckBox With {.Name = "05", .Text = "Settings", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
+    Dim WithEvents CheckStrip3_6 As New CheckBox With {.Name = "06", .Text = "Emulator path", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
+    Dim WithEvents CheckStrip3_7 As New CheckBox With {.Name = "07", .Text = "Rom Path", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
+    Dim WithEvents CheckStrip3_8 As New CheckBox With {.Name = "08", .Text = "Main Menu Wheel", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_9 As New CheckBox With {.Name = "09", .Text = "Main Menu Video", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
     <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)> Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As UInteger, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     End Function
 #End Region
@@ -139,7 +156,13 @@ Public Class Form1
     'FORM LOAD
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Class1.Log("Initializing...")
+        ComboBox7.Left = TextBox4.Left
+        ComboBox7.Width = TextBox4.Width - 10
+        ComboBox8.SelectedIndex = 0
+        ComboBox9.SelectedIndex = 0
         Class1.Log("Creating menus")
+
+        'Main table columns set up
         DataGridView1.Columns.Add("col0", "Database entry")
         DataGridView1.Columns.Add("col1", "RomName")
         DataGridView1.Columns.Add("col2", "Rom")
@@ -174,6 +197,7 @@ Public Class Form1
         Dim pi As Reflection.PropertyInfo = t.GetProperty("DoubleBuffered", Reflection.BindingFlags.Instance Or Reflection.BindingFlags.NonPublic)
         pi.SetValue(DataGridView1, True, Nothing)
 
+        'System manager table columns set up
         DataGridView2.Columns.Add("col0", "System")
         DataGridView2.Columns.Add("col1", "Main Menu")
         DataGridView2.Columns.Add("col2", "Database")
@@ -182,6 +206,8 @@ Public Class Form1
         DataGridView2.Columns.Add("col5", "Settings")
         DataGridView2.Columns.Add("col6", "Emulator Path")
         DataGridView2.Columns.Add("col7", "Rom Path")
+        DataGridView2.Columns.Add("col8", "Main Menu Wheel")
+        DataGridView2.Columns.Add("col9", "Main Menu Video")
         DataGridView2.Columns(0).Width = 250
         DataGridView2.Columns(1).Width = 80 : DataGridView2.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView2.Columns(2).Width = 80 : DataGridView2.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -190,7 +216,12 @@ Public Class Form1
         DataGridView2.Columns(5).Width = 80 : DataGridView2.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView2.Columns(6).Width = 80 : DataGridView2.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView2.Columns(7).Width = 80 : DataGridView2.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(8).Width = 90 : DataGridView2.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(9).Width = 90 : DataGridView2.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(8).DisplayIndex = 3 : DataGridView2.Columns(8).Visible = False
+        DataGridView2.Columns(9).DisplayIndex = 5 : DataGridView2.Columns(9).Visible = False
 
+        'Context menu - check missing rom or media in another folder
         myContextMenu.Items.Add("check for missing Roms")
         myContextMenu.Items.Add(New ToolStripSeparator)
         myContextMenu.Items.Add("check for missing Video")
@@ -201,6 +232,7 @@ Public Class Form1
         myContextMenu.Items.Add("check for missing Artwork3")
         myContextMenu.Items.Add("check for missing Artwork4")
 
+        'Context menu - move unneeded to sub folder
         myContextMenu3.Items.Add("move unneeded Roms")
         myContextMenu3.Items.Add(New ToolStripSeparator)
         myContextMenu3.Items.Add("move unneeded Video")
@@ -213,8 +245,8 @@ Public Class Form1
         myContextMenu3.Items.Add("move unneeded Themes")
         myContextMenu3.Items.Add("move unneeded Sound")
 
-        'myContextMenu7.Items.Add("Autorenamer")
 
+        'Matcher options
         RadioStrip1.AutoSize = True
         RadioStrip2.AutoSize = True
         'CheckStrip1.AutoSize = True
@@ -258,6 +290,7 @@ Public Class Form1
         tooltip2.ShowAlways = True
         tooltip2.SetToolTip(Button20_markAsFound, "Temporary mark all matching media found in this folder as 'found', in the main grid.")
 
+        'Main table columns headers context menu
         Dim CheckStripHost2_0 As New ToolStripControlHost(CheckStrip2_0)
         Dim CheckStripHost2_1 As New ToolStripControlHost(CheckStrip2_1)
         Dim CheckStripHost2_2 As New ToolStripControlHost(CheckStrip2_2)
@@ -295,17 +328,31 @@ Public Class Form1
         myContextMenu4.Items.Add(New ToolStripSeparator)
         myContextMenu4.Items.Add(Save_current_cols_conf_as_startup)
 
-        Panel1.Left = -100000
-        ComboBox12.SelectedIndex = 0
-        ComboBox13.SelectedIndex = 0
-        ComboBox14.SelectedIndex = 0
-        ComboBox15.SelectedIndex = 1
-        ComboBox16.SelectedIndex = 0
-        ComboBox17.SelectedIndex = 2
-        Panel1.BackColor = Color.FromArgb(0, 255, 0, 0)
-        Dim CheckHost11 As New ToolStripControlHost(Panel1)
-        myContextMenu5.Items.Add(CheckHost11)
+        'System Manager table columns headers context menu
+        Dim CheckStripHost3_1 As New ToolStripControlHost(CheckStrip3_1)
+        Dim CheckStripHost3_2 As New ToolStripControlHost(CheckStrip3_2)
+        Dim CheckStripHost3_3 As New ToolStripControlHost(CheckStrip3_3)
+        Dim CheckStripHost3_4 As New ToolStripControlHost(CheckStrip3_4)
+        Dim CheckStripHost3_5 As New ToolStripControlHost(CheckStrip3_5)
+        Dim CheckStripHost3_6 As New ToolStripControlHost(CheckStrip3_6)
+        Dim CheckStripHost3_7 As New ToolStripControlHost(CheckStrip3_7)
+        Dim CheckStripHost3_8 As New ToolStripControlHost(CheckStrip3_8)
+        Dim CheckStripHost3_9 As New ToolStripControlHost(CheckStrip3_9)
+        myContextMenu8.Items.Add(CheckStripHost3_1)
+        myContextMenu8.Items.Add(CheckStripHost3_2)
+        myContextMenu8.Items.Add(CheckStripHost3_3)
+        myContextMenu8.Items.Add(CheckStripHost3_4)
+        myContextMenu8.Items.Add(CheckStripHost3_5)
+        myContextMenu8.Items.Add(CheckStripHost3_6)
+        myContextMenu8.Items.Add(CheckStripHost3_7)
+        myContextMenu8.Items.Add(CheckStripHost3_8)
+        myContextMenu8.Items.Add(CheckStripHost3_9)
+        myContextMenu8.Items.Add(New ToolStripSeparator)
+        myContextMenu8.Items.Add(Preset_SysMngr_Default)
+        myContextMenu8.Items.Add(Preset_SysMngr_Checker)
+        myContextMenu8.Items.Add(Preset_SysMngr_Manager)
 
+        'Convert current DB to clrmame pro dat - options panel
         Panel2.Left = -100000
         Panel2.BackColor = Color.FromArgb(0, 255, 0, 0)
         Dim CheckHost22 As New ToolStripControlHost(Panel2)
@@ -337,6 +384,7 @@ Public Class Form1
         ini2.IniFile(Class1.confPath)
         TextBox14.Text = ini2.IniReadValue("main", "HyperSpin_Path")
         TextBox16.Text = ini2.IniReadValue("main", "search_cue_for")
+        TextBox28.Text = ini2.IniReadValue("3rd_Party_Tools", "UltraISO")
         If Not ini2.IniReadValue("main", "rename_just_CUE") = "1" Then CheckBox6.Checked = False
         If ini2.IniReadValue("main", "usehlv3") = "1" Then CheckBox26.Checked = True
         Dim i As Integer = 1
@@ -506,6 +554,7 @@ Public Class Form1
         Dim result As Boolean = False
         For Each ext As String In romExtensions
             If Dir(temppath + romname + "." + ext.Trim) <> "" Then result = True : Exit For
+            'If FileSystem.FileExists(temppath + romname + "." + ext.Trim) Then result = True : Exit For
         Next
         If result Then Return True
 
@@ -513,6 +562,7 @@ Public Class Form1
         For Each ext As String In romExtensions
             Try
                 If Dir(temppath + "\" + romname + "\" + romname + "." + ext.Trim) <> "" Then result = True : Exit For
+                'If FileSystem.FileExists(temppath + "\" + romname + "\" + romname + "." + ext.Trim) Then result = True : Exit For
             Catch ex As Exception
             End Try
         Next
@@ -527,6 +577,9 @@ Public Class Form1
         Button5_Associate.Enabled = False
         Button18.Enabled = False
         Button21.Enabled = False
+        Class1.HyperspinIniCursysEmuExe = ""
+        Class1.HyperspinIniCursysEmuPath = ""
+        Class1.HyperspinIniCursysEmuExist = False
 
         ComboBox3.SelectedIndex = -1
         DataGridView1.Rows.Clear()
@@ -564,6 +617,12 @@ Public Class Form1
                 TextBox3.Text = s.Substring(s.IndexOf("=") + 1).Trim : TextBox3.Enabled = True
                 'found += 1
             End If
+            If s.StartsWith("path", StringComparison.InvariantCultureIgnoreCase) And category.ToUpper.Contains("exe info") Then
+                Class1.HyperspinIniCursysEmuPath = s.Substring(s.IndexOf("=") + 1)
+            End If
+            If s.StartsWith("exe", StringComparison.InvariantCultureIgnoreCase) And category.ToUpper.Contains("exe info") Then
+                Class1.HyperspinIniCursysEmuExe = s.Substring(s.IndexOf("=") + 1)
+            End If
             If s.StartsWith("path", StringComparison.InvariantCultureIgnoreCase) And category.ToUpper.Contains("VIDEO DEFAULTS") Then
                 Class1.videoPath = s.Substring(s.IndexOf("=") + 1).Trim
                 Class1.videoPathOrig = s.Substring(s.IndexOf("=") + 1).Trim
@@ -584,19 +643,22 @@ Public Class Form1
         Loop
         FileClose(1)
 
+        If FileSystem.FileExists(Class1.HyperspinIniCursysEmuPath + "\" + Class1.HyperspinIniCursysEmuExe) Then Class1.HyperspinIniCursysEmuExist = True
+        retrieve_rom_path_from_HL(False)
+
         If CheckBox22.Checked Then CheckBox23.Checked = useParentVids
         If CheckBox22.Checked Then CheckBox24.Checked = useParentThemes
         'Button28.Text = "Remove all clones from current database" + vbCrLf + "(" + ComboBox1.SelectedItem.ToString + " selected)"
         RemoveClonesFromCurrentDBToolStripMenuItem.Text = "Remove all clones from current database (" + ComboBox1.SelectedItem.ToString + " selected)"
     End Sub
 
-    Private Sub retrieve_rom_path_from_HL()
+    Private Sub retrieve_rom_path_from_HL(Optional messages As Boolean = True)
         'HLv3 Thing
         Dim s As String = ""
         If CheckBox26.Checked And ComboBox1.SelectedIndex >= 0 Then
-            'Dim HLPath As String = ""
-            Dim HLPath As String = TextBox18.Text
-            If HLPath.ToUpper.EndsWith("EXE") Then HLPath = HLPath.Substring(0, HLPath.LastIndexOf("\"))
+            'Dim HLPath As String = TextBox18.Text
+            Dim HLPath As String = Class1.HyperlaunchPath
+            'If HLPath.ToUpper.EndsWith("EXE") Then HLPath = HLPath.Substring(0, HLPath.LastIndexOf("\"))
             'FileOpen(1, Class1.HyperspinPath + "\Settings\Settings.ini", OpenMode.Input)
             'Do While Not EOF(1)
             's = LineInput(1).Trim
@@ -605,13 +667,21 @@ Public Class Form1
             'End If
             'Loop
             'FileClose(1)
-            If HLPath = "" Then MsgBox("Hyperlaunch_path in Settings.ini is not set. Rom path from HS .ini will be used.") : Exit Sub
-            If HLPath.StartsWith(".") Then MsgBox("Relative hyperlaunch_path in Settings.ini is not supported. Rom path from HS .ini will be used.") : Exit Sub
+            If HLPath = "" Then
+                If messages Then MsgBox("Hyperlaunch_path in Settings.ini is not set. Rom path from HS .ini will be used.")
+                Exit Sub
+            End If
+
+            If HLPath.StartsWith(".") Then
+                If messages Then MsgBox("Relative hyperlaunch_path in Settings.ini is not supported. Rom path from HS .ini will be used.")
+                Exit Sub
+            End If
+
 
             If Not HLPath.EndsWith("\") Then HLPath = HLPath + "\"
             Dim HLiniFile As String = HLPath + "Settings\" + ComboBox1.SelectedItem.ToString + "\Emulators.ini"
             If Not Microsoft.VisualBasic.FileIO.FileSystem.FileExists(HLiniFile) Then
-                MsgBox("HL system settings file: '" & HLiniFile & "' not found. Rom path from HS .ini will be used.")
+                If messages Then MsgBox("HL system settings file: '" & HLiniFile & "' not found. Rom path from HS .ini will be used.")
                 Exit Sub
             End If
 
@@ -625,7 +695,7 @@ Public Class Form1
             Loop
             FileClose(1)
             If HLRomPath = "" Then
-                MsgBox("Rom_Path not set in '" & HLiniFile & "'. Rom path from HS .ini will be used.")
+                If messages Then MsgBox("Rom_Path not set in '" & HLiniFile & "'. Rom path from HS .ini will be used.")
                 Exit Sub
             End If
 
@@ -705,7 +775,11 @@ Public Class Form1
             For Each rom As String In Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(_mediaPath)
                 Class1.Log("Checking file: " + rom)
                 rom = rom.Substring(rom.LastIndexOf("\") + 1)
-                romWoExt = rom.Substring(0, rom.LastIndexOf("."))
+                If rom.Contains(".") Then
+                    romWoExt = rom.Substring(0, rom.LastIndexOf("."))
+                Else
+                    romWoExt = rom
+                End If
                 If exclusionList.Contains(romWoExt.ToUpper) Then Class1.Log(rom + " is found on exclusion list. Skipped") : Continue For
                 If Not Class1.romlist.Contains(romWoExt.ToLower) Then
                     Microsoft.VisualBasic.FileIO.FileSystem.MoveFile(_mediaPath + "\" + rom, _mediaPath + "\Unneeded\" + rom)
@@ -784,6 +858,7 @@ Public Class Form1
         ini.IniWriteValue("MAIN", "rename_just_cue", DirectCast(IIf(CheckBox6.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "search_cue_for", TextBox16.Text)
         ini.IniWriteValue("MAIN", "useHLv3", DirectCast(IIf(CheckBox26.Checked, "1", "0"), String))
+        ini.IniWriteValue("3rd_Party_Tools", "UltraISO", TextBox28.Text.Trim)
         For i As Integer = 1 To ListBox4.Items.Count
             ini.IniWriteValue("handle_together", i.ToString, ListBox4.Items(i - 1).ToString)
         Next
@@ -866,9 +941,20 @@ Public Class Form1
     'Hyperlaunch path changed
     Private Sub TextBox18_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox18.TextChanged
         Dim ok As Boolean = False
-        If FileSystem.DirectoryExists(TextBox18.Text) Then
-            If FileSystem.FileExists(TextBox18.Text + "\HyperLaunch.exe") Then
+
+        If TextBox18.Text.ToUpper.EndsWith("EXE") Then
+            Class1.HyperlaunchPath = TextBox18.Text.Substring(0, TextBox18.Text.LastIndexOf("\"))
+            Class1.HyperlaunchExeName = TextBox18.Text.Substring(TextBox18.Text.LastIndexOf("\") + 1)
+            If FileSystem.FileExists(TextBox18.Text) Then
                 ok = True
+            End If
+        Else
+            Class1.HyperlaunchPath = TextBox18.Text
+            Class1.HyperlaunchExeName = ""
+            If FileSystem.DirectoryExists(TextBox18.Text) Then
+                If FileSystem.FileExists(TextBox18.Text + "\HyperLaunch.exe") Then
+                    ok = True
+                End If
             End If
         End If
         If ok Then TextBox18.BackColor = colorYES Else TextBox18.BackColor = colorNO
@@ -876,10 +962,27 @@ Public Class Form1
 
     'Update Hyperspin INI
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        If Not TextBox18.Text.EndsWith("\") Then TextBox18.Text = TextBox18.Text + "\"
+        If Not TextBox18.Text.ToUpper.EndsWith("EXE") Then
+            If Not TextBox18.Text.EndsWith("\") Then TextBox18.Text = TextBox18.Text + "\"
+        End If
         TextBox18.Text = TextBox18.Text.Replace("\\", "\").Replace("\\", "\")
         ini.path = Class1.HyperspinPath + "\Settings\Settings.ini"
         ini.IniWriteValue("main", "Hyperlaunch_Path", TextBox18.Text)
+
+        TextBox1.Text = TextBox1.Text.Trim
+        TextBox3.Text = TextBox3.Text.Trim
+        TextBox2.Text = TextBox2.Text.Trim
+        If Not TextBox1.Text = "" AndAlso Not TextBox1.Text.EndsWith("\") Then TextBox1.Text = TextBox1.Text + "\"
+        If Not TextBox2.Text = "" AndAlso Not TextBox2.Text.EndsWith("\") Then TextBox2.Text = TextBox2.Text + "\"
+        ini.path = Class1.HyperspinPath + "\Settings\" + ComboBox1.SelectedItem.ToString + ".ini"
+        ini.IniWriteValue("exe info", "rompath", TextBox1.Text)
+        ini.IniWriteValue("exe info", "romextension", TextBox3.Text)
+        ini.IniWriteValue("video defaults", "path", TextBox2.Text)
+    End Sub
+
+    'Update UltraISO path
+    Private Sub TextBox28_TextChanged(sender As System.Object, e As System.EventArgs) Handles TextBox28.TextChanged
+        If FileSystem.FileExists(TextBox28.Text) Then TextBox28.BackColor = colorYES Else TextBox28.BackColor = colorNO
     End Sub
 #End Region
 
@@ -996,7 +1099,6 @@ Public Class Form1
         Next
         FileClose(1)
     End Sub
-
     'Table / Excel export separator change
     Private Sub SemicolonExcelDefaultToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SemicolonExcelDefaultToolStripMenuItem.Click, CommaFormatDefaultToolStripMenuItem.Click
         Dim m As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
@@ -1021,7 +1123,6 @@ Public Class Form1
         If ListBox2.Items.Count = 0 Then MsgBox("There is no unmatched media. Nothing to do.") : Exit Sub
         Form6_autorenamer.Show()
     End Sub
-
     'Matcher / Associate option in HS folder click
     Private Sub AssocOption_fileInHsFolder_copy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AssocOption_fileInHsFolder_copy.Click, AssocOption_fileInHsFolder_move.Click
         Dim i As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
@@ -1029,7 +1130,6 @@ Public Class Form1
         AssocOption_fileInHsFolder_move.Checked = False
         i.Checked = True
     End Sub
-
     'Macher / Associate option in different folder click
     Private Sub AssocOption_fileInDiffFolder_copy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AssocOption_fileInDiffFolder_copy.Click, AssocOption_fileInDiffFolder_copyToHS.Click, AssocOption_fileInDiffFolder_move.Click, AssocOption_fileInDiffFolder_moveToHS.Click
         Dim i As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
@@ -1039,24 +1139,49 @@ Public Class Form1
         AssocOption_fileInDiffFolder_moveToHS.Checked = False
         i.Checked = True
     End Sub
+    'Macher / Show filters
+    Private Sub ShowFiltersToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ShowFiltersToolStripMenuItem.Click
+        If ShowFiltersToolStripMenuItem.Checked = False Then ShowFiltersToolStripMenuItem.Checked = True Else ShowFiltersToolStripMenuItem.Checked = False
+
+        If ShowFiltersToolStripMenuItem.Checked Then
+            TextBox26.Visible = True
+            TextBox27.Visible = True
+            ListBox1.Height = ListBox1.Height - 25
+            ListBox2.Height = ListBox2.Height - 25
+        Else
+            TextBox26.Text = ""
+            TextBox27.Text = ""
+            TextBox26.Visible = False
+            TextBox27.Visible = False
+            ListBox1.Height = ListBox1.Height + 25
+            ListBox2.Height = ListBox2.Height + 25
+        End If
+    End Sub
+    'Macher / Autofilter
+    Private Sub AutofilterToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AutofilterToolStripMenuItem.Click
+        If AutofilterToolStripMenuItem.Checked = False Then AutofilterToolStripMenuItem.Checked = True Else AutofilterToolStripMenuItem.Checked = False
+    End Sub
+    'Macher / Autofilter regex constructor
+    Private Sub AutofilterRegexConstructorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AutofilterRegexConstructorToolStripMenuItem.Click
+        If FormD_matcher_autofilter_constructor.Visible Then Exit Sub
+        Dim f As New FormD_matcher_autofilter_constructor
+        f.ShowDialog(Me)
+    End Sub
 
     'Tools / Show HL 3rd party paths
     Private Sub CheckHyperLaunch3rdPartyPathsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Click
         If TextBox18.BackColor <> colorYES Then MsgBox("You Hyperlaunch path is not correctly set. Check 'Hyperspin system settings' tab") : Exit Sub
         Dim f As New FormA_hyperlaunch_3rd_party_paths : f.Show()
     End Sub
-
     'Tools / Show Genres/favorites manager
     Private Sub GenresFavoritesManagerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenresFavoritesManagerToolStripMenuItem.Click
         If ComboBox1.SelectedIndex < 0 Then MsgBox("Please, select a system.") : Exit Sub
         Form4_genres_favorites.Show()
     End Sub
-
     'Tools / Show DB statistic
     Private Sub ShowDatabaseStatisticToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShowDatabaseStatisticToolStripMenuItem.Click
         Form9_database_statistic.Show()
     End Sub
-
     'Tools / DIFF Options 1
     Private Sub CompareAgainstCurrentDBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CompareAgainstCurrentDBToolStripMenuItem.Click, ChooseBothFilesToCompareToolStripMenuItem.Click
         CompareAgainstCurrentDBToolStripMenuItem.Checked = False
@@ -1069,23 +1194,19 @@ Public Class Form1
         CompareDescriptionTagusualyFullNameToolStripMenuItem.Checked = False
         DirectCast(sender, ToolStripMenuItem).Checked = True
     End Sub
-
     'Tools / Dual folder ops
     Private Sub DualFolderOperationsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DualFolderOperationsToolStripMenuItem.Click
         Form7_dualFolderOperations.Show()
     End Sub
-
     'Tools / Show video downloader
     Private Sub VideoDownloaderToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VideoDownloaderToolStripMenuItem.Click
         Form5_videoDownloader.Show()
     End Sub
-
     'Tools / PCSX2 Create indexes
     Private Sub PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Click
         Dim f As New FormB_PCSX2_createIndex
         f.Show()
     End Sub
-
     'Tools / Mame romset reducer
     Private Sub MAMERomsetReducerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MAMERomsetReducerToolStripMenuItem.Click
         Dim f As New FormC_mameRomListBuilder
@@ -1163,13 +1284,37 @@ Public Class Form1
         'SendMessage(DataGridView1.Parent.Handle, 11, True, 0)
     End Sub
 
-    'Column Headers
+    'Main Table - Column Headers context menu (show / hide columns and presets)
     Private Sub DataGridView1_ColumnHeaderMouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DataGridView1.ColumnHeaderMouseClick
         If e.Button <> Windows.Forms.MouseButtons.Right Then Exit Sub
         myContextMenu4.Show(Cursor.Position.X, Cursor.Position.Y)
     End Sub
 
-    'Show/hide columns checked_change
+    'System Manager - Column Headers context menu (show / hide columns and presets)
+    Private Sub DataGridView2_ColumnHeaderMouseClick(sender As Object, e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DataGridView2.ColumnHeaderMouseClick
+        If e.Button <> Windows.Forms.MouseButtons.Right Then Exit Sub
+        myContextMenu8.Show(Cursor.Position.X, Cursor.Position.Y)
+    End Sub
+
+    'Cell context menu (start game)
+    Dim romname_to_start As String = ""
+    Private Sub DataGridView1_CellMouseClick(sender As Object, e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseClick
+        If e.Button <> Windows.Forms.MouseButtons.Right Then Exit Sub
+        If e.RowIndex < 0 Then Exit Sub
+        myContextMenu7.Items.Clear()
+        romname_to_start = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString
+        myContextMenu7.Items.Add("Start '" + romname_to_start + "' using HyperSpin settings")
+        myContextMenu7.Items.Add("Start '" + romname_to_start + "' using HyperLaunch settings")
+
+        If DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString.ToUpper <> "YES" Then
+            myContextMenu7.Items(0).Enabled = False : myContextMenu7.Items(1).Enabled = False
+        End If
+        If Not Class1.HyperspinIniCursysEmuExist Then myContextMenu7.Items(0).Enabled = False
+
+        myContextMenu7.Show(Cursor.Position.X, Cursor.Position.Y)
+    End Sub
+
+    'Main Table - Show/hide columns checked_change
     Private Sub ShowHideCol(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckStrip2_0.CheckedChanged, CheckStrip2_1.CheckedChanged, CheckStrip2_2.CheckedChanged, CheckStrip2_3.CheckedChanged, CheckStrip2_4.CheckedChanged, CheckStrip2_5.CheckedChanged, CheckStrip2_6.CheckedChanged, CheckStrip2_7.CheckedChanged, CheckStrip2_8.CheckedChanged, CheckStrip2_9.CheckedChanged, CheckStrip2_10.CheckedChanged, CheckStrip2_11.CheckedChanged, CheckStrip2_12.CheckedChanged, CheckStrip2_13.CheckedChanged, CheckStrip2_14.CheckedChanged
         Dim cb As CheckBox = DirectCast(sender, CheckBox)
         Dim i As Integer = CInt(cb.Name)
@@ -1178,7 +1323,14 @@ Public Class Form1
         DataGridView1.Columns(i).Visible = cb.Checked
     End Sub
 
-    'Column headers presets
+    'System Manager - Show/hide columns checked_change
+    Private Sub ShowHideCol_sysMgr(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckStrip3_1.CheckedChanged, CheckStrip3_2.CheckedChanged, CheckStrip3_3.CheckedChanged, CheckStrip3_4.CheckedChanged, CheckStrip3_5.CheckedChanged, CheckStrip3_6.CheckedChanged, CheckStrip3_7.CheckedChanged, CheckStrip3_8.CheckedChanged, CheckStrip3_9.CheckedChanged
+        Dim cb As CheckBox = DirectCast(sender, CheckBox)
+        Dim i As Integer = CInt(cb.Name)
+        DataGridView2.Columns(i).Visible = cb.Checked
+    End Sub
+
+    'Main Table - Column headers presets
     Private Sub ShowHidePresets(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu4.ItemClicked
         If e.ClickedItem.Text = Preset_Checker Then
             CheckStrip2_2.Checked = True
@@ -1218,6 +1370,56 @@ Public Class Form1
                 ini.IniWriteValue("Main_Table_Columns_Config", "Col_" + i.ToString + "_visible", v)
                 ini.IniWriteValue("Main_Table_Columns_Config", "Col_" + i.ToString + "_width", DataGridView1.Columns(i).Width.ToString)
             Next
+        End If
+    End Sub
+
+    'System Manager - Column headers presets
+    Private Sub ShowHidePresets_sysMgr(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu8.ItemClicked
+        If e.ClickedItem.Text = Preset_SysMngr_Default Then
+            CheckStrip3_1.Checked = True
+            CheckStrip3_2.Checked = True
+            CheckStrip3_3.Checked = True
+            CheckStrip3_4.Checked = True
+            CheckStrip3_5.Checked = True
+            CheckStrip3_6.Checked = True
+            CheckStrip3_7.Checked = True
+            CheckStrip3_8.Checked = False
+            CheckStrip3_9.Checked = False
+        End If
+        If e.ClickedItem.Text = Preset_SysMngr_Checker Then
+            CheckStrip3_1.Checked = True
+            CheckStrip3_2.Checked = True
+            CheckStrip3_3.Checked = True
+            CheckStrip3_4.Checked = True
+            CheckStrip3_5.Checked = False
+            CheckStrip3_6.Checked = False
+            CheckStrip3_7.Checked = False
+            CheckStrip3_8.Checked = True
+            CheckStrip3_9.Checked = True
+        End If
+        If e.ClickedItem.Text = Preset_SysMngr_Manager Then
+            CheckStrip3_1.Checked = True
+            CheckStrip3_2.Checked = True
+            CheckStrip3_3.Checked = True
+            CheckStrip3_4.Checked = False
+            CheckStrip3_5.Checked = True
+            CheckStrip3_6.Checked = True
+            CheckStrip3_7.Checked = True
+            CheckStrip3_8.Checked = False
+            CheckStrip3_9.Checked = False
+        End If
+    End Sub
+
+    Private Sub contextMenuStartGame(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu7.ItemClicked
+        If myContextMenu7.Items.IndexOf(e.ClickedItem) = 0 Then
+            'Start with HyperSpin settings
+            'TODO
+        ElseIf myContextMenu7.Items.IndexOf(e.ClickedItem) = 1 Then
+            'Start with HyperLaunch settings
+            Dim HLexe As String = "HyperLaunch.exe"
+            If Class1.HyperlaunchExeName <> "" Then HLexe = Class1.HyperlaunchExeName
+            Dim pStart As New ProcessStartInfo(Class1.HyperlaunchPath + "\" + HLexe, "-s """ + ComboBox1.SelectedItem.ToString + """ -r """ + romname_to_start + """")
+            Process.Start(pStart)
         End If
     End Sub
 
@@ -1280,6 +1482,14 @@ Public Class Form1
         Dim fd As New FolderBrowserDialog : fd.Description = "Select hyperspin root folder (where hyperspin.exe is)" : fd.ShowDialog()
         TextBox14.Text = fd.SelectedPath
     End Sub '...
+    Private Sub Button19_Click(sender As System.Object, e As System.EventArgs) Handles Button19.Click
+        Dim fd As New OpenFileDialog
+        fd.Filter = "EXE Files|*.exe"
+        fd.RestoreDirectory = True
+        If TextBox28.Text.Trim <> "" Then fd.InitialDirectory = TextBox28.Text.Trim
+        fd.ShowDialog()
+        TextBox28.Text = fd.FileName
+    End Sub
 
     'Set HL folder to \Hyperspin\Hyperlaunch
     Private Sub Button37_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button37.Click
@@ -1289,6 +1499,11 @@ Public Class Form1
     'Open Notes
     Private Sub Button30_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button30.Click
         System.Diagnostics.Process.Start("notepad.exe", ".\notes.txt")
+    End Sub
+
+    'Iso Converter output to orig dir
+    Private Sub CheckBox18_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckBox18.CheckedChanged
+        TextBox29.Enabled = Not CheckBox18.Checked
     End Sub
     'Show autorenamer
     'Private Sub contextMenuAutorenamer(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu7.ItemClicked
@@ -1305,4 +1520,6 @@ Public Class Form1
 
     'Show Database statistic
 #End Region
+
+
 End Class

@@ -22,7 +22,13 @@
 
         iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
         Dim HL_Path As String = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
-        If Not HL_Path = "" AndAlso Not FileIO.FileSystem.FileExists(HL_Path + "\HyperLaunch.exe") Then HL_Path = ""
+        If Not HL_Path = "" Then
+            If HL_Path.ToUpper.EndsWith(".EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\") + 1)
+
+            Dim t1 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\HyperLaunch.exe")
+            Dim t2 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\RocketLauncher.exe")
+            If Not t1 And Not t2 Then HL_Path = ""
+        End If
         If Not HL_Path = "" Then iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
 
         'SCANING MODULES
@@ -42,14 +48,18 @@
                             supportedSys = supportedSys.Replace("""", "").Trim
                             l.Add(supportedSys.ToUpper)
                         Next
-                        modules.Add(module_file.Substring(module_file.LastIndexOf("\") + 1), l)
+                        Dim modul_fileName = module_file.Substring(module_file.LastIndexOf("\") + 1)
+                        While modules.ContainsKey(modul_fileName)
+                            modul_fileName = modul_fileName + "[a]"
+                        End While
+                        modules.Add(modul_fileName, l)
                     End If
                 Loop
                 FileClose(1)
             Next
         End If
 
-
+        'Load MainMenu.xml
         Dim mainMenuXml As New Xml.XmlDocument
         mainMenuXml.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
         activeCount = mainMenuXml.SelectNodes("/menu/game").Count
@@ -59,6 +69,7 @@
             Systems(node.Attributes("name").Value.ToUpper).Add("%1%")
         Next
 
+        'Checking databases
         Dim sys As String = ""
         For Each Dir As String In FileIO.FileSystem.GetDirectories(Class1.HyperspinPath + "\Databases\")
             sys = Dir.Substring(Dir.LastIndexOf("\") + 1)
@@ -71,6 +82,7 @@
             End If
         Next
 
+        'Checking main-menu themes
         Dim files As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = FileIO.FileSystem.GetFiles(Class1.HyperspinPath + "\Media\Main Menu\Themes\", FileIO.SearchOption.SearchTopLevelOnly, {"*.zip"})
         For Each file As String In files
             sys = file.Substring(file.LastIndexOf("\") + 1)
@@ -82,6 +94,7 @@
             Systems(sys.ToUpper).Add("%3%")
         Next
 
+        'Checking default system themes
         For Each Dir As String In FileIO.FileSystem.GetDirectories(Class1.HyperspinPath + "\Media\")
             sys = Dir.Substring(Dir.LastIndexOf("\") + 1)
             If FileIO.FileSystem.FileExists(Dir + "\Themes\default.zip") And Not sys.ToUpper = "MAIN MENU" Then
@@ -91,6 +104,28 @@
                 End If
                 Systems(sys.ToUpper).Add("%4%")
             End If
+        Next
+
+        'Checking default system wheels
+        For Each file As String In FileIO.FileSystem.GetFiles(Class1.HyperspinPath + "\Media\Main Menu\Images\Wheel", FileIO.SearchOption.SearchTopLevelOnly, {"*.png", "*.jpg"})
+            sys = file.Substring(file.LastIndexOf("\") + 1)
+            sys = sys.Substring(0, sys.LastIndexOf("."))
+            If Not Systems.Keys.Contains(sys.ToUpper) Then
+                Systems.Add(sys.ToUpper, New List(Of String))
+                Systems(sys.ToUpper).Add(sys)
+            End If
+            Systems(sys.ToUpper).Add("%8%")
+        Next
+
+        'Checking default system videos
+        For Each file As String In FileIO.FileSystem.GetFiles(Class1.HyperspinPath + "\Media\Main Menu\Video", FileIO.SearchOption.SearchTopLevelOnly, {"*.flv", "*.mp4"})
+            sys = file.Substring(file.LastIndexOf("\") + 1)
+            sys = sys.Substring(0, sys.LastIndexOf("."))
+            If Not Systems.Keys.Contains(sys.ToUpper) Then
+                Systems.Add(sys.ToUpper, New List(Of String))
+                Systems(sys.ToUpper).Add(sys)
+            End If
+            Systems(sys.ToUpper).Add("%9%")
         Next
 
         Dim c As Integer = 0
@@ -146,7 +181,7 @@
         Next
 
         'FILL GRID
-        Dim x(7) As String
+        Dim x(9) As String
         For Each l As List(Of String) In Systems.Values
             x(0) = l(0)
             If l.Contains("%1%") Then x(1) = "X" Else x(1) = ""
@@ -158,9 +193,11 @@
             If l.Contains("%5HL_PATH_NOT_SET%") Then x(5) = "INVALID HL PATH"
             If l.Contains("%6%") Then x(6) = "X" Else x(6) = ""
             If l.Contains("%7%") Then x(7) = "X" Else x(7) = ""
+            If l.Contains("%8%") Then x(8) = "X" Else x(8) = ""
+            If l.Contains("%9%") Then x(9) = "X" Else x(9) = ""
             Dim r As New DataGridViewRow()
             r.CreateCells(grid, x)
-            For i As Integer = 1 To 7
+            For i As Integer = 1 To 9
                 If x(i) = "X" Or x(i) = "HL" Then
                     r.Cells(i).Style.BackColor = Form1.colorYES
                 Else

@@ -35,6 +35,7 @@ Public Class FormB_PCSX2_createIndex
         startinfo.FileName = TextBox1.Text
 
         Dim threadWait As Threading.Thread = New Threading.Thread(AddressOf threadWaitSub)
+        Dim threadWait2 As Threading.Thread = New Threading.Thread(AddressOf threadWaitSub2)
 
         For Each f As IO.FileInfo In fi
             If FileExists(f.FullName + TextBox5.Text.Replace("*", "")) Then
@@ -63,6 +64,14 @@ Public Class FormB_PCSX2_createIndex
 
                 p.Kill()
                 log("Created")
+
+                'Wait after closing emu
+                waitHandle = False
+                threadWait2 = New Threading.Thread(AddressOf threadWaitSub2)
+                threadWait2.Start()
+                Do While waitHandle = False
+                    Application.DoEvents()
+                Loop
             End If
         Next
         log("All done.")
@@ -78,6 +87,11 @@ Public Class FormB_PCSX2_createIndex
         waitHandle = True
     End Sub
 
+    Private Sub threadWaitSub2()
+        Threading.Thread.Sleep(CInt(NumericUpDown2.Value) * 1000)
+        waitHandle = True
+    End Sub
+
     Private Sub log(s As String)
         TextBox7.AppendText(s + vbCrLf)
     End Sub
@@ -89,5 +103,19 @@ Public Class FormB_PCSX2_createIndex
         TextBox4.Enabled = e
         TextBox5.Enabled = e
         TextBox6.Enabled = e
+    End Sub
+
+    Dim ini As New IniFileApi With {.path = ".\Config.conf"}
+    Private Sub FormB_PCSX2_createIndex_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        TextBox1.Text = ini.IniReadValue("Tool_PCSX2_indexer", "exe")
+        TextBox2.Text = ini.IniReadValue("Tool_PCSX2_indexer", "iso_path")
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As System.Object, e As System.EventArgs) Handles TextBox1.TextChanged
+        ini.IniWriteValue("Tool_PCSX2_indexer", "exe", TextBox1.Text)
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As System.Object, e As System.EventArgs) Handles TextBox2.TextChanged
+        ini.IniWriteValue("Tool_PCSX2_indexer", "iso_path", TextBox2.Text)
     End Sub
 End Class

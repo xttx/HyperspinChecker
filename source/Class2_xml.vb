@@ -2,7 +2,13 @@
 Public Class Class2_xml
     Private WithEvents xml_crop As Button = Form1.Button18
     Private WithEvents xml_from_folder As ToolStripMenuItem = Form1.CreateDatabaseXMLFromRomFolderToolStripMenuItem
-    Private WithEvents xml_from_folder_options As ToolStripMenuItem = Form1.CreateDatabaseXMLFromRomFolderOptionsToolStripMenuItem
+    Public Shared xml_from_folder_options_src As String = ""
+    Public Shared xml_from_folder_options_dst As String = ""
+    Public Shared xml_from_folder_options_adv As String = ""
+    Public Shared xml_from_folder_options_fillCRC As Boolean = False
+    Public Shared xml_from_folder_options_removeParanthesis As Boolean = False
+    Public Shared xml_from_folder_options_removeParanthesis_exceptions As String = ""
+
 
     'Private WithEvents xml_remove_clones As Button = Form1.Button28
     Private WithEvents xml_remove_clones As ToolStripMenuItem = Form1.RemoveClonesFromCurrentDBToolStripMenuItem
@@ -48,20 +54,28 @@ Public Class Class2_xml
 
     'xmlFromFolder
     Private Sub xml_from_folder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xml_from_folder.Click
-        Dim fd As New FolderBrowserDialog
-        fd.Description = "Select folder to create XML from."
-        fd.ShowDialog()
-        If fd.SelectedPath = "" Then Exit Sub
+        xml_from_folder_options_src = ""
+        xml_from_folder_options_dst = ""
+        Dim f As New FormE_Create_database_XML_from_folder
+        f.ShowDialog()
+
+        'Dim fd As New FolderBrowserDialog
+        'fd.Description = "Select folder to create XML from."
+        'fd.ShowDialog()
+        'If fd.SelectedPath = "" Then Exit Sub
+        xml_from_folder_options_src = xml_from_folder_options_src.Trim
+        xml_from_folder_options_dst = xml_from_folder_options_dst.Trim
+        If xml_from_folder_options_src = "" Or xml_from_folder_options_dst = "" Then Exit Sub
         Dim x As New Xml.XmlDocument
         Dim menuElem As Xml.XmlElement = x.CreateElement("menu") : x.AppendChild(menuElem)
 
-        For Each file As String In Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(fd.SelectedPath)
+        For Each file As String In Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(xml_from_folder_options_src)
             Dim elemCrc As Xml.XmlElement = x.CreateElement("crc")
             Dim elemManufacturer As Xml.XmlElement = x.CreateElement("manufacturer")
             Dim elemYear As Xml.XmlElement = x.CreateElement("year")
             Dim elemGenre As Xml.XmlElement = x.CreateElement("genre")
 
-            If Form1.CheckBox21.Checked Then
+            If xml_from_folder_options_fillCRC Then
                 Dim crc As String = GetCRC32(file)
                 Dim lead As String = ""
                 If crc.Length < 8 Then lead = New String("0"c, 8 - crc.Length)
@@ -71,9 +85,11 @@ Public Class Class2_xml
             file = file.Substring(file.LastIndexOf("\") + 1)
             file = file.Substring(0, file.LastIndexOf("."))
             Dim gameElem As Xml.XmlElement = x.CreateElement("game")
-            gameElem.SetAttribute("name", file)
+            Dim name As String = file
+            If xml_from_folder_options_removeParanthesis Then name = streap_brackets_accurate(name)
+            gameElem.SetAttribute("name", name)
             Dim elemDescription As Xml.XmlElement = x.CreateElement("description")
-            elemDescription.InnerText = file
+            elemDescription.InnerText = name
 
             Dim val As String = ""
             val = getAttr(file, 0)
@@ -91,20 +107,16 @@ Public Class Class2_xml
             menuElem.AppendChild(gameElem)
         Next
 
-        Dim fs As New SaveFileDialog
-        fs.Title = "Select folder to put XML to."
-        fs.Filter = "XML Files | *.xml"
-        fs.RestoreDirectory = True
-        fs.InitialDirectory = Class1.HyperspinPath + "\Databases"
-        fs.ShowDialog()
-        If fs.FileName = "" Then Exit Sub
-        Dim w As Xml.XmlWriter = Xml.XmlWriter.Create(fs.FileName, New Xml.XmlWriterSettings With {.Indent = True, .NewLineHandling = Xml.NewLineHandling.None})
+        'Dim fs As New SaveFileDialog
+        'fs.Title = "Select folder to put XML to."
+        'fs.Filter = "XML Files | *.xml"
+        'fs.RestoreDirectory = True
+        'fs.InitialDirectory = Class1.HyperspinPath + "\Databases"
+        'fs.ShowDialog()
+        'If fs.FileName = "" Then Exit Sub
+        Dim w As Xml.XmlWriter = Xml.XmlWriter.Create(xml_from_folder_options_dst, New Xml.XmlWriterSettings With {.Indent = True, .NewLineHandling = Xml.NewLineHandling.None})
         x.Save(w) : w.Close()
-    End Sub
-
-    'xmlFromFolderShowOptions
-    Private Sub xml_from_folder_options_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xml_from_folder_options.Click
-        Form1.myContextMenu5.Show(Cursor.Position.X, Cursor.Position.Y)
+        MsgBox("Database from selected rom folder created.")
     End Sub
 
     'Remove clones
@@ -543,16 +555,21 @@ Public Class Class2_xml
     End Sub
 
     Private Function getAttr(ByVal s As String, ByVal n As Integer) As String
+        Dim c(5) As Integer
+        For i As Integer = 0 To 5
+            c(i) = CInt(xml_from_folder_options_adv.Substring(i * 2, 2))
+        Next
+
         Dim val As String = ""
-        If Form1.ComboBox13.SelectedIndex = n Then
-            If Form1.ComboBox12.SelectedIndex = 1 Then val = getInParenthesis(s, 1, False)
-            If Form1.ComboBox12.SelectedIndex = 2 Then val = getInParenthesis(s, 1, True)
-        ElseIf Form1.ComboBox15.SelectedIndex = n Then
-            If Form1.ComboBox14.SelectedIndex = 1 Then val = getInParenthesis(s, 2, False)
-            If Form1.ComboBox14.SelectedIndex = 2 Then val = getInParenthesis(s, 2, True)
-        ElseIf Form1.ComboBox17.SelectedIndex = n Then
-            If Form1.ComboBox16.SelectedIndex = 1 Then val = getInParenthesis(s, 3, False)
-            If Form1.ComboBox16.SelectedIndex = 2 Then val = getInParenthesis(s, 3, True)
+        If c(1) = n Then
+            If c(0) = 1 Then val = getInParenthesis(s, 1, False)
+            If c(0) = 2 Then val = getInParenthesis(s, 1, True)
+        ElseIf c(3) = n Then
+            If c(2) = 1 Then val = getInParenthesis(s, 2, False)
+            If c(2) = 2 Then val = getInParenthesis(s, 2, True)
+        ElseIf c(5) = n Then
+            If c(4) = 1 Then val = getInParenthesis(s, 3, False)
+            If c(4) = 2 Then val = getInParenthesis(s, 3, True)
         End If
         Return val
     End Function
@@ -595,6 +612,73 @@ Public Class Class2_xml
             If s.IndexOf("(") >= 0 Then s = s.Substring(0, s.IndexOf("("))
         End If
         Return s.ToUpper.Trim
+    End Function
+
+    Public Shared Function streap_brackets_accurate(s As String) As String
+        'Dim r As New System.Text.RegularExpressions.Regex("\( (?> [^()]+ | \( (?<Depth>) | \) (?<-Depth>) )* (?(Depth)(?!)) \)", System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace)
+        's = r.Replace(s, "").Replace("  ", " ").Replace("  ", " ").Replace("  ", " ").Replace("  ", " ")
+        'r = New System.Text.RegularExpressions.Regex("\[ (?> [^\[\]]+ | \[ (?<Depth>) | \] (?<-Depth>) )* (?(Depth)(?!)) \]", System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace)
+        's = r.Replace(s, "").Replace("  ", " ").Replace("  ", " ").Replace("  ", " ").Replace("  ", " ")
+
+        '@"\(              # Match an opening parenthesis.
+        '(?>             # Then either match (possessively):
+        '[^()]+         #  any characters except parentheses
+        '|               # or
+        '\( (?<Depth>)  #  an opening paren (and increase the parens counter)
+        '|               # or
+        '\) (?<-Depth>) #  a closing paren (and decrease the parens counter).
+        ')*              # Repeat as needed.
+        '(?(Depth)(?!))   # Assert that the parens counter is at zero.
+        '\)               # Then match a closing parenthesis.",
+
+        Dim lastIndex As Integer = 0
+        Dim ind1 As Integer = 0, ind2 As Integer = 0
+        Dim cnt As String = ""
+        Dim exc As Boolean = False
+        Do While s.IndexOf("(", lastIndex) > 0
+            exc = False
+            ind1 = s.IndexOf("(", lastIndex)
+            ind2 = s.IndexOf(")", ind1)
+            If ind2 > 0 And Not ind2 = s.Length - 1 Then
+                If xml_from_folder_options_removeParanthesis_exceptions.Trim <> "" Then
+                    cnt = s.Substring(ind1 + 1, ind2 - ind1 - 1)
+                    For Each ex As String In xml_from_folder_options_removeParanthesis_exceptions.Split({"|"}, StringSplitOptions.RemoveEmptyEntries)
+                        If cnt.Trim.ToUpper.Contains(ex.Trim.ToUpper) Then exc = True : Exit For
+                    Next
+                End If
+
+                If Not exc Then s = s.Substring(0, ind1) + s.Substring(ind2 + 1) Else lastIndex = ind1 + 1
+            Else
+                'Not pair or ')' is a last symbol in string
+                s = s.Substring(0, ind1).Trim
+                Exit Do
+            End If
+            s = s.Replace("  ", " ").Replace("  ", " ").Replace("  ", " ").Trim
+        Loop
+
+        lastIndex = 0
+        Do While s.IndexOf("[", lastIndex) > 0
+            exc = False
+            ind1 = s.IndexOf("[", lastIndex)
+            ind2 = s.IndexOf("]", ind1)
+            If ind2 > 0 And Not ind2 = s.Length - 1 Then
+                If xml_from_folder_options_removeParanthesis_exceptions.Trim <> "" Then
+                    cnt = s.Substring(ind1 + 1, ind2 - ind1 - 1)
+                    For Each ex As String In xml_from_folder_options_removeParanthesis_exceptions.Split({"|"}, StringSplitOptions.RemoveEmptyEntries)
+                        If cnt.Trim.ToUpper.Contains(ex.Trim.ToUpper) Then exc = True : Exit For
+                    Next
+                End If
+
+                If Not exc Then s = s.Substring(0, ind1) + s.Substring(ind2 + 1) Else lastIndex = ind1 + 1
+            Else
+                'Not pair or ']' is a last symbol in string
+                s = s.Substring(0, ind1).Trim
+                Exit Do
+            End If
+            s = s.Replace("  ", " ").Replace("  ", " ").Replace("  ", " ").Trim
+        Loop
+
+        Return s.Trim
     End Function
 
     'Get CRC32
