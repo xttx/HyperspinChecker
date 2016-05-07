@@ -118,11 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Class1.vb" />
-    <Compile Include="Class2_xml.vb" />
-    <Compile Include="Class3_matcher.vb" />
-    <Compile Include="Class4_clrmamepro.vb" />
-    <Compile Include="Class5_system_manager.vb" />
+    <Compile Include="Class\Class1.vb" />
+    <Compile Include="Class\Class2_xml.vb" />
+    <Compile Include="Class\Class3_matcher.vb" />
+    <Compile Include="Class\Class4_clrmamepro.vb" />
+    <Compile Include="Class\Class5_system_manager.vb" />
     <Compile Include="Form3.Designer.vb">
       <DependentUpon>Form3.vb</DependentUpon>
     </Compile>
@@ -207,49 +207,49 @@
     <Compile Include="FormE_Create_database_XML_from_folder.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IniFileApi.vb" />
-    <Compile Include="IniFileVb.vb" />
-    <Compile Include="ISOChecker.vb" />
-    <Compile Include="ISOFixAsk_cueWoBin.designer.vb">
+    <Compile Include="Class\IniFileApi.vb" />
+    <Compile Include="Class\IniFileVb.vb" />
+    <Compile Include="Class\ISOChecker.vb" />
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.designer.vb">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
     </Compile>
-    <Compile Include="ISOFixAsk_cueWoBin.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ISOFixAsk_cueWoBinFileMismatch.designer.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBinFileMismatch.designer.vb">
       <DependentUpon>ISOFixAsk_cueWoBinFileMismatch.vb</DependentUpon>
     </Compile>
-    <Compile Include="ISOFixAsk_cueWoBinFileMismatch.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBinFileMismatch.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ISOFixAsk_cueWoBin_ext.designer.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin_ext.designer.vb">
       <DependentUpon>ISOFixAsk_cueWoBin_ext.vb</DependentUpon>
     </Compile>
-    <Compile Include="ISOFixAsk_cueWoBin_ext.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin_ext.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ISOFixAsk_binWoCue_ext.Designer.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue_ext.Designer.vb">
       <DependentUpon>ISOFixAsk_binWoCue_ext.vb</DependentUpon>
     </Compile>
-    <Compile Include="ISOFixAsk_binWoCue_ext.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue_ext.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ISOFixAsk_binWoCue_extPlus.Designer.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue_extPlus.Designer.vb">
       <DependentUpon>ISOFixAsk_binWoCue_extPlus.vb</DependentUpon>
     </Compile>
-    <Compile Include="ISOFixAsk_binWoCue_extPlus.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue_extPlus.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ISOFixAsk_binWoCue.Designer.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue.Designer.vb">
       <DependentUpon>ISOFixAsk_binWoCue.vb</DependentUpon>
     </Compile>
-    <Compile Include="ISOFixAsk_binWoCue.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ISOFixAsk_MdfMds_ext.Designer.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_MdfMds_ext.Designer.vb">
       <DependentUpon>ISOFixAsk_MdfMds_ext.vb</DependentUpon>
     </Compile>
-    <Compile Include="ISOFixAsk_MdfMds_ext.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_MdfMds_ext.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -265,10 +265,10 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ISOFixAsk_MdfMds.Designer.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_MdfMds.Designer.vb">
       <DependentUpon>ISOFixAsk_MdfMds.vb</DependentUpon>
     </Compile>
-    <Compile Include="ISOFixAsk_MdfMds.vb">
+    <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_MdfMds.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Language.vb" />
@@ -331,25 +331,25 @@
     <EmbeddedResource Include="FormE_Create_database_XML_from_folder.resx">
       <DependentUpon>FormE_Create_database_XML_from_folder.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOFixAsk_cueWoBin.resx">
+    <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.resx">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOFixAsk_cueWoBinFileMismatch.resx">
+    <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBinFileMismatch.resx">
       <DependentUpon>ISOFixAsk_cueWoBinFileMismatch.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOFixAsk_cueWoBin_ext.resx">
+    <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin_ext.resx">
       <DependentUpon>ISOFixAsk_cueWoBin_ext.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOFixAsk_binWoCue_ext.resx">
+    <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue_ext.resx">
       <DependentUpon>ISOFixAsk_binWoCue_ext.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOFixAsk_binWoCue_extPlus.resx">
+    <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue_extPlus.resx">
       <DependentUpon>ISOFixAsk_binWoCue_extPlus.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOFixAsk_binWoCue.resx">
+    <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_binWoCue.resx">
       <DependentUpon>ISOFixAsk_binWoCue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOFixAsk_MdfMds_ext.resx">
+    <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_MdfMds_ext.resx">
       <DependentUpon>ISOFixAsk_MdfMds_ext.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -358,7 +358,7 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOFixAsk_MdfMds.resx">
+    <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_MdfMds.resx">
       <DependentUpon>ISOFixAsk_MdfMds.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
