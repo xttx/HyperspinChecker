@@ -8,7 +8,11 @@ Public Class Class2_xml
     Public Shared xml_from_folder_options_fillCRC As Boolean = False
     Public Shared xml_from_folder_options_removeParanthesis As Boolean = False
     Public Shared xml_from_folder_options_removeParanthesis_exceptions As String = ""
-
+    Public Shared xml_from_folder_options_mergeWithExisting As String = ""
+    Public Shared xml_from_folder_options_includeFiles As Boolean = False
+    Public Shared xml_from_folder_options_includeFolders As Boolean = False
+    Public Shared xml_from_folder_options_includeFoldersCheck As Boolean = False
+    Public Shared xml_from_folder_options_includeExtentions As String = ""
 
     'Private WithEvents xml_remove_clones As Button = Form1.Button28
     Private WithEvents xml_remove_clones As ToolStripMenuItem = Form1.RemoveClonesFromCurrentDBToolStripMenuItem
@@ -56,67 +60,121 @@ Public Class Class2_xml
     Private Sub xml_from_folder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xml_from_folder.Click
         xml_from_folder_options_src = ""
         xml_from_folder_options_dst = ""
+        Dim stat_files As Integer = 0
+        Dim stat_folders As Integer = 0
+        Dim stat_folders_skipped As Integer = 0
+        Dim stat_merged_orig As Integer = 0
+        Dim stat_merged_new As Integer = 0
+
         Dim f As New FormE_Create_database_XML_from_folder
         f.ShowDialog()
 
-        'Dim fd As New FolderBrowserDialog
-        'fd.Description = "Select folder to create XML from."
-        'fd.ShowDialog()
-        'If fd.SelectedPath = "" Then Exit Sub
         xml_from_folder_options_src = xml_from_folder_options_src.Trim
         xml_from_folder_options_dst = xml_from_folder_options_dst.Trim
+        xml_from_folder_options_includeExtentions = xml_from_folder_options_includeExtentions.Trim
+        If xml_from_folder_options_includeExtentions = "" Then xml_from_folder_options_includeExtentions = "*"
         If xml_from_folder_options_src = "" Or xml_from_folder_options_dst = "" Then Exit Sub
         Dim x As New Xml.XmlDocument
         Dim menuElem As Xml.XmlElement = x.CreateElement("menu") : x.AppendChild(menuElem)
 
-        For Each file As String In Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(xml_from_folder_options_src)
-            Dim elemCrc As Xml.XmlElement = x.CreateElement("crc")
-            Dim elemManufacturer As Xml.XmlElement = x.CreateElement("manufacturer")
-            Dim elemYear As Xml.XmlElement = x.CreateElement("year")
-            Dim elemGenre As Xml.XmlElement = x.CreateElement("genre")
+        If xml_from_folder_options_includeFiles Then
+            Dim maskArr() As String = xml_from_folder_options_includeExtentions.Split(";"c)
+            For i As Integer = 0 To maskArr.Count - 1
+                maskArr(i) = "*." + maskArr(i)
+            Next
 
-            If xml_from_folder_options_fillCRC Then
-                Dim crc As String = GetCRC32(file)
-                Dim lead As String = ""
-                If crc.Length < 8 Then lead = New String("0"c, 8 - crc.Length)
-                elemCrc.InnerText = lead + crc
-            End If
+            For Each file As String In FileSystem.GetFiles(xml_from_folder_options_src, SearchOption.SearchTopLevelOnly, maskArr)
+                stat_files += 1
+                xml_from_folder_Click_sub(x, menuElem, file)
+            Next
+        End If
+        If xml_from_folder_options_includeFolders Then
+            Dim exts() As String = xml_from_folder_options_includeExtentions.Split(";"c)
+            For Each folder As String In FileSystem.GetDirectories(xml_from_folder_options_src, SearchOption.SearchTopLevelOnly)
+                If xml_from_folder_options_includeFoldersCheck Then
+                    Dim fld As String = folder.Substring(folder.LastIndexOf("\") + 1)
+                    Dim fls(exts.Count - 1) As String
+                    For i As Integer = 0 To exts.Count - 1
+                        fls(i) = fld + "." + exts(i)
+                    Next
 
-            file = file.Substring(file.LastIndexOf("\") + 1)
-            file = file.Substring(0, file.LastIndexOf("."))
-            Dim gameElem As Xml.XmlElement = x.CreateElement("game")
-            Dim name As String = file
-            If xml_from_folder_options_removeParanthesis Then name = streap_brackets_accurate(name)
-            gameElem.SetAttribute("name", name)
-            Dim elemDescription As Xml.XmlElement = x.CreateElement("description")
-            elemDescription.InnerText = name
+                    Dim files() As String = FileSystem.GetFiles(folder, SearchOption.SearchTopLevelOnly, fls).ToArray
+                    If files.Count > 0 Then stat_folders += 1 : xml_from_folder_Click_sub(x, menuElem, files(0)) Else stat_folders_skipped += 1
+                Else
+                    stat_folders += 1
+                    Dim tmp As Boolean = xml_from_folder_options_fillCRC
+                    xml_from_folder_options_fillCRC = False
+                    xml_from_folder_Click_sub(x, menuElem, folder + ".tmp")
+                    xml_from_folder_options_fillCRC = tmp
+                End If
+            Next
+        End If
 
-            Dim val As String = ""
-            val = getAttr(file, 0)
-            If val <> "" Then elemYear.InnerText = val
+        If xml_from_folder_options_mergeWithExisting <> "" AndAlso FileSystem.FileExists(xml_from_folder_options_mergeWithExisting) Then
+            Dim x_orig As New Xml.XmlDocument
+            x_orig.Load(xml_from_folder_options_mergeWithExisting)
+            Dim nodeOrigRoot As Xml.XmlNode = x_orig.SelectSingleNode("/menu")
+            stat_merged_orig = x_orig.SelectNodes("/menu/game").Count
 
-            val = ""
-            val = getAttr(file, 2)
-            If val <> "" Then elemManufacturer.InnerText = val
+            For Each node As Xml.XmlNode In x.SelectNodes("/menu/game")
+                Dim romName As String = node.Attributes.GetNamedItem("name").Value
+                If x_orig.SelectSingleNode("/menu/game[@name=""" + romName + """]") Is Nothing Then nodeOrigRoot.AppendChild(x_orig.ImportNode(node, True))
+            Next
+            stat_merged_new = x_orig.SelectNodes("/menu/game").Count
 
-            gameElem.AppendChild(elemDescription)
-            gameElem.AppendChild(elemCrc)
-            gameElem.AppendChild(elemManufacturer)
-            gameElem.AppendChild(elemYear)
-            gameElem.AppendChild(elemGenre)
-            menuElem.AppendChild(gameElem)
-        Next
+            Dim w As Xml.XmlWriter = Xml.XmlWriter.Create(xml_from_folder_options_dst, New Xml.XmlWriterSettings With {.Indent = True, .NewLineHandling = Xml.NewLineHandling.None})
+            x_orig.Save(w) : w.Close()
 
-        'Dim fs As New SaveFileDialog
-        'fs.Title = "Select folder to put XML to."
-        'fs.Filter = "XML Files | *.xml"
-        'fs.RestoreDirectory = True
-        'fs.InitialDirectory = Class1.HyperspinPath + "\Databases"
-        'fs.ShowDialog()
-        'If fs.FileName = "" Then Exit Sub
-        Dim w As Xml.XmlWriter = Xml.XmlWriter.Create(xml_from_folder_options_dst, New Xml.XmlWriterSettings With {.Indent = True, .NewLineHandling = Xml.NewLineHandling.None})
-        x.Save(w) : w.Close()
-        MsgBox("Database from selected rom folder created.")
+            Dim msg As String = "Database from selected rom folder created." + vbCrLf
+            msg = msg + stat_files.ToString + " files and " + stat_folders.ToString + " folders added, " + stat_folders_skipped.ToString + " folders skipped" + vbCrLf
+            msg = msg + stat_merged_orig.ToString + " entries was in original XML, and there are " + stat_merged_new.ToString + " entries now."
+            MsgBox(msg)
+        Else
+            Dim w As Xml.XmlWriter = Xml.XmlWriter.Create(xml_from_folder_options_dst, New Xml.XmlWriterSettings With {.Indent = True, .NewLineHandling = Xml.NewLineHandling.None})
+            x.Save(w) : w.Close()
+
+            Dim msg As String = "Database from selected rom folder created." + vbCrLf
+            msg = msg + stat_files.ToString + " files and " + stat_folders.ToString + " folders added, " + stat_folders_skipped.ToString + " folders skipped"
+            MsgBox(msg)
+        End If
+    End Sub
+    'xmlFromFolder SUB (add file)
+    Private Sub xml_from_folder_Click_sub(x As Xml.XmlDocument, menuElem As Xml.XmlElement, file As String)
+        Dim elemCrc As Xml.XmlElement = x.CreateElement("crc")
+        Dim elemManufacturer As Xml.XmlElement = x.CreateElement("manufacturer")
+        Dim elemYear As Xml.XmlElement = x.CreateElement("year")
+        Dim elemGenre As Xml.XmlElement = x.CreateElement("genre")
+
+        If xml_from_folder_options_fillCRC Then
+            Dim crc As String = GetCRC32(file)
+            Dim lead As String = ""
+            If crc.Length < 8 Then lead = New String("0"c, 8 - crc.Length)
+            elemCrc.InnerText = lead + crc
+        End If
+
+        file = file.Substring(file.LastIndexOf("\") + 1)
+        file = file.Substring(0, file.LastIndexOf("."))
+        Dim gameElem As Xml.XmlElement = x.CreateElement("game")
+        Dim name As String = file
+        If xml_from_folder_options_removeParanthesis Then name = streap_brackets_accurate(name)
+        gameElem.SetAttribute("name", name)
+        Dim elemDescription As Xml.XmlElement = x.CreateElement("description")
+        elemDescription.InnerText = name
+
+        Dim val As String = ""
+        val = getAttr(file, 0)
+        If val <> "" Then elemYear.InnerText = val
+
+        val = ""
+        val = getAttr(file, 2)
+        If val <> "" Then elemManufacturer.InnerText = val
+
+        gameElem.AppendChild(elemDescription)
+        gameElem.AppendChild(elemCrc)
+        gameElem.AppendChild(elemManufacturer)
+        gameElem.AppendChild(elemYear)
+        gameElem.AppendChild(elemGenre)
+        menuElem.AppendChild(gameElem)
     End Sub
 
     'Remove clones
@@ -148,7 +206,7 @@ Public Class Class2_xml
         Next
         Dim w As Xml.XmlWriter = Xml.XmlWriter.Create(xmlPath, New Xml.XmlWriterSettings With {.Indent = True, .NewLineHandling = Xml.NewLineHandling.None})
         x.Save(w) : w.Close()
-        MsgBox("Done! Please, recheck to see changes.")
+        MsgBox("Done! Please, recheck To see changes.")
     End Sub
 
     'Move roms to subfolder
