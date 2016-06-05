@@ -1,12 +1,16 @@
-﻿Public Class Class5_system_manager
+﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
+
+Public Class Class5_system_manager
     Dim ini As New IniFileApi
     Dim modules As New Dictionary(Of String, List(Of String))
     Private frm As New Form8_systemProperties
     Private Systems As New Dictionary(Of String, List(Of String))
     Private WithEvents Btn_scan As Button = Form1.Button33
     Private WithEvents Btn_prop As Button = Form1.Button34
+    Private WithEvents Btn_exclude As Button = Form1.Button22
     Private WithEvents grid As DataGridView = Form1.DataGridView2
 
+    'Constructor
     Public Sub New()
         AddHandler Form8_systemProperties.paths_updated, AddressOf SystemPathUpdated
     End Sub
@@ -20,6 +24,20 @@
         Dim iniClass As New IniFile, iniclass2 As New IniFile
         Dim activeCount As Integer = 0
 
+        'Load exclusion settings
+        ini.path = ".\Config.conf"
+        Dim tmp As String = ""
+        Dim required_media_number As Integer = 0
+        Dim dont_show_completed As Boolean = False
+        Dim required_media_list As String() = Nothing
+        tmp = ini.IniReadValue("SystemManager", "required_media_number")
+        If tmp <> "" AndAlso IsNumeric(tmp) Then required_media_number = CInt(tmp)
+        tmp = ini.IniReadValue("SystemManager", "dont_show_completed")
+        If tmp <> "" And tmp <> "0" Then dont_show_completed = True
+        tmp = ini.IniReadValue("SystemManager", "required_media_list")
+        If tmp <> "" Then required_media_list = tmp.Split({","c}, StringSplitOptions.RemoveEmptyEntries)
+
+        'Get HL Path
         iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
         Dim HL_Path As String = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
         If Not HL_Path = "" Then
@@ -95,14 +113,22 @@
         Next
 
         'Checking default system themes
-        For Each Dir As String In FileIO.FileSystem.GetDirectories(Class1.HyperspinPath + "\Media\")
+        For Each Dir As String In GetDirectories(Class1.HyperspinPath + "\Media\")
             sys = Dir.Substring(Dir.LastIndexOf("\") + 1)
-            If FileIO.FileSystem.FileExists(Dir + "\Themes\default.zip") And Not sys.ToUpper = "MAIN MENU" Then
-                If Not Systems.Keys.Contains(sys.ToUpper) Then
-                    Systems.Add(sys.ToUpper, New List(Of String))
-                    Systems(sys.ToUpper).Add(sys)
+            If Not sys.ToUpper = "MAIN MENU" Then
+                If FileExists(Dir + "\Themes\default.zip") Then
+                    If Not Systems.Keys.Contains(sys.ToUpper) Then
+                        Systems.Add(sys.ToUpper, New List(Of String))
+                        Systems(sys.ToUpper).Add(sys)
+                    End If
+                    Systems(sys.ToUpper).Add("%4%")
+                ElseIf DirectoryExists(Dir + "\Themes") AndAlso GetFiles(Dir + "\Themes", FileIO.SearchOption.SearchTopLevelOnly, {"*.zip"}).Count > 0 Then
+                    If Not Systems.Keys.Contains(sys.ToUpper) Then
+                        Systems.Add(sys.ToUpper, New List(Of String))
+                        Systems(sys.ToUpper).Add(sys)
+                    End If
+                    Systems(sys.ToUpper).Add("%4G%")
                 End If
-                Systems(sys.ToUpper).Add("%4%")
             End If
         Next
 
@@ -128,6 +154,7 @@
             Systems(sys.ToUpper).Add("%9%")
         Next
 
+        'Checking Hyperspin Setting File
         Dim c As Integer = 0
         Dim emuPath As String = ""
         Dim romPath As String = ""
@@ -184,153 +211,58 @@
         Dim x(9) As String
         For Each l As List(Of String) In Systems.Values
             x(0) = l(0)
-            If l.Contains("%1%") Then x(1) = "X" Else x(1) = ""
-            If l.Contains("%2%") Then x(2) = "X" Else x(2) = ""
-            If l.Contains("%3%") Then x(3) = "X" Else x(3) = ""
-            If l.Contains("%4%") Then x(4) = "X" Else x(4) = ""
-            If l.Contains("%5%") Then x(5) = "X" Else x(5) = ""
+            Dim fnd_n As Integer = 0
+            If l.Contains("%1%") Then x(1) = "X" : fnd_n += 1 Else x(1) = ""
+            If l.Contains("%2%") Then x(2) = "X" : fnd_n += 1 Else x(2) = ""
+            If l.Contains("%3%") Then x(3) = "X" : fnd_n += 1 Else x(3) = ""
+            If l.Contains("%4%") Then x(4) = "X" : fnd_n += 1 Else x(4) = ""
+            If l.Contains("%4G%") Then x(4) = "Per Game" : fnd_n += 1
+            If l.Contains("%5%") Then x(5) = "X" : fnd_n += 1 Else x(5) = ""
             If l.Contains("%5HL%") Then x(5) = "HL"
             If l.Contains("%5HL_PATH_NOT_SET%") Then x(5) = "INVALID HL PATH"
-            If l.Contains("%6%") Then x(6) = "X" Else x(6) = ""
-            If l.Contains("%7%") Then x(7) = "X" Else x(7) = ""
-            If l.Contains("%8%") Then x(8) = "X" Else x(8) = ""
-            If l.Contains("%9%") Then x(9) = "X" Else x(9) = ""
-            Dim r As New DataGridViewRow()
-            r.CreateCells(grid, x)
-            For i As Integer = 1 To 9
-                If x(i) = "X" Or x(i) = "HL" Then
-                    r.Cells(i).Style.BackColor = Form1.colorYES
-                Else
-                    r.Cells(i).Style.BackColor = Form1.colorNO
+            If l.Contains("%6%") Then x(6) = "X" : fnd_n += 1 Else x(6) = ""
+            If l.Contains("%7%") Then x(7) = "X" : fnd_n += 1 Else x(7) = ""
+            If l.Contains("%8%") Then x(8) = "X" : fnd_n += 1 Else x(8) = ""
+            If l.Contains("%9%") Then x(9) = "X" : fnd_n += 1 Else x(9) = ""
 
-                    If x(i) = "INVALID HL PATH" Then
-                        Dim f As Font = New Font(Control.DefaultFont.FontFamily, 6, FontStyle.Regular)
-                        r.Cells(i).Style.Font = f
+            Dim req As Boolean = True
+            If required_media_list IsNot Nothing Then
+                For Each item As String In required_media_list
+                    If item.Trim = "0" And x(1) = "" Then req = False : Exit For
+                    If item.Trim = "1" And x(2) = "" Then req = False : Exit For
+                    If item.Trim = "2" And x(3) = "" Then req = False : Exit For
+                    If item.Trim = "3" And x(4) = "" Then req = False : Exit For
+                    If item.Trim = "4" And x(8) = "" Then req = False : Exit For
+                    If item.Trim = "5" And x(9) = "" Then req = False : Exit For
+                    If item.Trim = "6" And x(5) = "" Or x(5) = "INVALID HL PATH" Then req = False : Exit For
+                    If item.Trim = "7" And x(6) = "" Then req = False : Exit For
+                    If item.Trim = "8" And x(7) = "" Then req = False : Exit For
+                Next
+            End If
+            If dont_show_completed And fnd_n = 9 Then req = False
+
+            If req And (required_media_number = 0 OrElse required_media_number < fnd_n) Then
+                Dim r As New DataGridViewRow()
+                r.CreateCells(grid, x)
+                For i As Integer = 1 To 9
+                    If x(i) = "X" Or x(i) = "HL" Then
+                        r.Cells(i).Style.BackColor = Form1.colorYES
+                    Else
+                        r.Cells(i).Style.BackColor = Form1.colorNO
+                        If x(i).ToUpper = "PER GAME" Then
+                            r.Cells(i).Style.BackColor = Color.YellowGreen
+                        End If
+                        If x(i) = "INVALID HL PATH" Then
+                            Dim f As Font = New Font(Control.DefaultFont.FontFamily, 6, FontStyle.Regular)
+                            r.Cells(i).Style.Font = f
+                        End If
                     End If
-                End If
-            Next
-            Form1.DataGridView2.Rows.Add(r)
+                Next
+                Form1.DataGridView2.Rows.Add(r)
+            End If
         Next
         Form1.Label41.Text = "System count: " + Form1.DataGridView2.Rows.Count.ToString + ", Active:" + activeCount.ToString
     End Sub
-
-#Region "Drag'n'drop"
-    Private Sub drag_enter(sender As Object, e As Windows.Forms.DragEventArgs) Handles grid.DragEnter
-        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
-            e.Effect = DragDropEffects.Move
-            grid.SelectionMode = DataGridViewSelectionMode.CellSelect
-            grid.DefaultCellStyle.SelectionBackColor = Color.LightGoldenrodYellow
-        End If
-    End Sub
-
-    Private Sub drag_over(sender As Object, e As Windows.Forms.DragEventArgs) Handles grid.DragOver
-        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
-            e.Effect = DragDropEffects.Copy
-            Dim clientPoint As Point = grid.PointToClient(New Point(e.X, e.Y))
-            Dim hitTest As DataGridView.HitTestInfo = grid.HitTest(clientPoint.X, clientPoint.Y)
-            If hitTest.RowIndex >= 0 And hitTest.ColumnIndex >= 0 Then
-                grid.Rows(hitTest.RowIndex).Cells(hitTest.ColumnIndex).Selected = True
-            End If
-        End If
-    End Sub
-
-    Private Sub drag_drop(sender As Object, e As System.EventArgs) Handles grid.DragLeave
-        Dim r As Integer = -1
-        grid.DefaultCellStyle.SelectionBackColor = SystemColors.Highlight
-        If grid.SelectedCells.Count > 0 Then r = grid.SelectedCells(0).RowIndex
-        grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        If r >= 0 Then grid.Rows(r).Selected = True
-    End Sub
-
-    Private Sub drag_drop(sender As Object, e As Windows.Forms.DragEventArgs) Handles grid.DragDrop
-        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
-            grid.DefaultCellStyle.SelectionBackColor = SystemColors.Highlight
-            Dim clientPoint As Point = grid.PointToClient(New Point(e.X, e.Y))
-            Dim hitTest As DataGridView.HitTestInfo = grid.HitTest(clientPoint.X, clientPoint.Y)
-
-            Dim failed As New List(Of String)
-            Dim files As String() = DirectCast(e.Data.GetData(DataFormats.FileDrop), String())
-            If files.Count > 0 Then
-                Select Case hitTest.ColumnIndex
-                    Case 2 'Database
-                        For Each file As String In files
-                            If file.ToUpper.EndsWith(".XML") Then
-                                Dim sys As String = file.ToUpper.Replace(".XML", "")
-                                If Systems.Keys.Contains(sys) Then
-                                    FileCopy(file, Class1.HyperspinPath + "\Databases\" + Systems(sys)(0) + "\" + Systems(sys)(0) + ".xml")
-                                Else
-                                    failed.Add(file)
-                                End If
-                            End If
-
-                            If failed.Count = 1 Then
-                                Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
-                                FileCopy(failed(0), Class1.HyperspinPath + "\Databases\" + sys + "\" + sys + ".xml")
-                                grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Form1.colorYES
-                                If grid.Rows(hitTest.RowIndex).Cells(4).Value.ToString = "" Then
-                                    grid.Rows(hitTest.RowIndex).Cells(4).Value = "X"
-                                Else
-                                    grid.Rows(hitTest.RowIndex).Cells(4).Value = "NEW"
-                                End If
-                            End If
-                        Next
-                    Case 3 'Main menu theme
-                        For Each file As String In files
-                            If file.ToUpper.EndsWith(".ZIP") Then
-                                Dim sys As String = file.ToUpper.Replace(".ZIP", "")
-                                If Systems.Keys.Contains(sys) Then
-                                    FileCopy(file, Class1.HyperspinPath + "\Media\Main Menu\Themes\" + Systems(sys)(0) + ".zip")
-                                Else
-                                    failed.Add(file)
-                                End If
-                            End If
-                        Next
-
-                        If failed.Count = 1 Then
-                            Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
-                            Dim res As Microsoft.VisualBasic.MsgBoxResult = MsgBox("Following file were not recognized as system: " + failed(0).Substring(failed(0).LastIndexOf("\")) + vbCrLf + "Do you want to set it as " + sys + "?", MsgBoxStyle.YesNo)
-                            If res = MsgBoxResult.Yes Then
-                                FileCopy(failed(0), Class1.HyperspinPath + "\Media\Main Menu\Themes\" + sys + ".zip")
-                                grid.Rows(hitTest.RowIndex).Cells(3).Style.BackColor = Form1.colorYES
-                                If grid.Rows(hitTest.RowIndex).Cells(3).Value.ToString = "" Then
-                                    grid.Rows(hitTest.RowIndex).Cells(3).Value = "X"
-                                Else
-                                    grid.Rows(hitTest.RowIndex).Cells(3).Value = "NEW"
-                                End If
-                            End If
-                        Else
-                            MsgBox("Following files were not recognized as system: " + vbCrLf + String.Join(vbCrLf, failed))
-                        End If
-                    Case 4 'System Theme
-                        For Each file As String In files
-                            If file.ToUpper.EndsWith(".ZIP") Then
-                                Dim sys As String = file.ToUpper.Replace(".ZIP", "")
-                                If Systems.Keys.Contains(sys) Then
-                                    FileCopy(file, Class1.HyperspinPath + "\Media\" + Systems(sys)(0) + "\Themes\default.zip")
-                                Else
-                                    failed.Add(file)
-                                End If
-                            End If
-
-                            If failed.Count = 1 Then
-                                Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString.ToUpper
-                                FileCopy(failed(0), Class1.HyperspinPath + "\Media\" + Systems(sys)(0) + "\Themes\default.zip")
-                                grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Form1.colorYES
-                                If grid.Rows(hitTest.RowIndex).Cells(4).Value.ToString = "" Then
-                                    grid.Rows(hitTest.RowIndex).Cells(4).Value = "X"
-                                Else
-                                    grid.Rows(hitTest.RowIndex).Cells(4).Value = "NEW"
-                                End If
-                            End If
-                        Next
-                End Select
-            End If
-
-            grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            If hitTest.RowIndex >= 0 And hitTest.ColumnIndex >= 0 Then grid.Rows(hitTest.RowIndex).Selected = True
-        End If
-    End Sub
-#End Region
 
     'Show properties
     Private Sub show_properties() Handles Btn_prop.Click, grid.CellDoubleClick
@@ -459,4 +391,128 @@
             If FileIO.FileSystem.DirectoryExists(romPath) Then r.Cells(7).Value = "X" : r.Cells(7).Style.BackColor = Form1.colorYES Else r.Cells(7).Value = "" : r.Cells(7).Style.BackColor = Form1.colorNO
         End If
     End Sub
+
+    'Show exclusion form
+    Private Sub shoExclusionDialog() Handles Btn_exclude.Click
+        Dim f As New FormF_systemManager_exclusions
+        f.ShowDialog(Form1)
+    End Sub
+
+#Region "Drag'n'drop"
+    Private Sub drag_enter(sender As Object, e As Windows.Forms.DragEventArgs) Handles grid.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Move
+            grid.SelectionMode = DataGridViewSelectionMode.CellSelect
+            grid.DefaultCellStyle.SelectionBackColor = Color.LightGoldenrodYellow
+        End If
+    End Sub
+
+    Private Sub drag_over(sender As Object, e As Windows.Forms.DragEventArgs) Handles grid.DragOver
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+            Dim clientPoint As Point = grid.PointToClient(New Point(e.X, e.Y))
+            Dim hitTest As DataGridView.HitTestInfo = grid.HitTest(clientPoint.X, clientPoint.Y)
+            If hitTest.RowIndex >= 0 And hitTest.ColumnIndex >= 0 Then
+                grid.Rows(hitTest.RowIndex).Cells(hitTest.ColumnIndex).Selected = True
+            End If
+        End If
+    End Sub
+
+    Private Sub drag_drop(sender As Object, e As System.EventArgs) Handles grid.DragLeave
+        Dim r As Integer = -1
+        grid.DefaultCellStyle.SelectionBackColor = SystemColors.Highlight
+        If grid.SelectedCells.Count > 0 Then r = grid.SelectedCells(0).RowIndex
+        grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        If r >= 0 Then grid.Rows(r).Selected = True
+    End Sub
+
+    Private Sub drag_drop(sender As Object, e As Windows.Forms.DragEventArgs) Handles grid.DragDrop
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            grid.DefaultCellStyle.SelectionBackColor = SystemColors.Highlight
+            Dim clientPoint As Point = grid.PointToClient(New Point(e.X, e.Y))
+            Dim hitTest As DataGridView.HitTestInfo = grid.HitTest(clientPoint.X, clientPoint.Y)
+
+            Dim failed As New List(Of String)
+            Dim files As String() = DirectCast(e.Data.GetData(DataFormats.FileDrop), String())
+            If files.Count > 0 Then
+                Select Case hitTest.ColumnIndex
+                    Case 2 'Database
+                        For Each file As String In files
+                            If file.ToUpper.EndsWith(".XML") Then
+                                Dim sys As String = file.ToUpper.Replace(".XML", "")
+                                If Systems.Keys.Contains(sys) Then
+                                    FileCopy(file, Class1.HyperspinPath + "\Databases\" + Systems(sys)(0) + "\" + Systems(sys)(0) + ".xml")
+                                Else
+                                    failed.Add(file)
+                                End If
+                            End If
+
+                            If failed.Count = 1 Then
+                                Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
+                                FileCopy(failed(0), Class1.HyperspinPath + "\Databases\" + sys + "\" + sys + ".xml")
+                                grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Form1.colorYES
+                                If grid.Rows(hitTest.RowIndex).Cells(4).Value.ToString = "" Then
+                                    grid.Rows(hitTest.RowIndex).Cells(4).Value = "X"
+                                Else
+                                    grid.Rows(hitTest.RowIndex).Cells(4).Value = "NEW"
+                                End If
+                            End If
+                        Next
+                    Case 3 'Main menu theme
+                        For Each file As String In files
+                            If file.ToUpper.EndsWith(".ZIP") Then
+                                Dim sys As String = file.ToUpper.Replace(".ZIP", "")
+                                If Systems.Keys.Contains(sys) Then
+                                    FileCopy(file, Class1.HyperspinPath + "\Media\Main Menu\Themes\" + Systems(sys)(0) + ".zip")
+                                Else
+                                    failed.Add(file)
+                                End If
+                            End If
+                        Next
+
+                        If failed.Count = 1 Then
+                            Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
+                            Dim res As Microsoft.VisualBasic.MsgBoxResult = MsgBox("Following file were not recognized as system: " + failed(0).Substring(failed(0).LastIndexOf("\")) + vbCrLf + "Do you want to set it as " + sys + "?", MsgBoxStyle.YesNo)
+                            If res = MsgBoxResult.Yes Then
+                                FileCopy(failed(0), Class1.HyperspinPath + "\Media\Main Menu\Themes\" + sys + ".zip")
+                                grid.Rows(hitTest.RowIndex).Cells(3).Style.BackColor = Form1.colorYES
+                                If grid.Rows(hitTest.RowIndex).Cells(3).Value.ToString = "" Then
+                                    grid.Rows(hitTest.RowIndex).Cells(3).Value = "X"
+                                Else
+                                    grid.Rows(hitTest.RowIndex).Cells(3).Value = "NEW"
+                                End If
+                            End If
+                        Else
+                            MsgBox("Following files were not recognized as system: " + vbCrLf + String.Join(vbCrLf, failed))
+                        End If
+                    Case 4 'System Theme
+                        For Each file As String In files
+                            If file.ToUpper.EndsWith(".ZIP") Then
+                                Dim sys As String = file.ToUpper.Replace(".ZIP", "")
+                                If Systems.Keys.Contains(sys) Then
+                                    FileCopy(file, Class1.HyperspinPath + "\Media\" + Systems(sys)(0) + "\Themes\default.zip")
+                                Else
+                                    failed.Add(file)
+                                End If
+                            End If
+
+                            If failed.Count = 1 Then
+                                Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString.ToUpper
+                                FileCopy(failed(0), Class1.HyperspinPath + "\Media\" + Systems(sys)(0) + "\Themes\default.zip")
+                                grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Form1.colorYES
+                                If grid.Rows(hitTest.RowIndex).Cells(4).Value.ToString = "" Then
+                                    grid.Rows(hitTest.RowIndex).Cells(4).Value = "X"
+                                Else
+                                    grid.Rows(hitTest.RowIndex).Cells(4).Value = "NEW"
+                                End If
+                            End If
+                        Next
+                End Select
+            End If
+
+            grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            If hitTest.RowIndex >= 0 And hitTest.ColumnIndex >= 0 Then grid.Rows(hitTest.RowIndex).Selected = True
+        End If
+    End Sub
+#End Region
 End Class

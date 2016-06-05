@@ -87,6 +87,12 @@ Partial Class Form1
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TextBox29 = New System.Windows.Forms.TextBox()
+        Me.CheckBox18 = New System.Windows.Forms.CheckBox()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
         Me.CheckBox25 = New System.Windows.Forms.CheckBox()
         Me.CheckBox20 = New System.Windows.Forms.CheckBox()
         Me.CheckBox19 = New System.Windows.Forms.CheckBox()
@@ -157,6 +163,10 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.Label50 = New System.Windows.Forms.Label()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.GroupBox14 = New System.Windows.Forms.GroupBox()
         Me.RadioButton18 = New System.Windows.Forms.RadioButton()
@@ -287,16 +297,7 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.Button19 = New System.Windows.Forms.Button()
-        Me.CheckBox18 = New System.Windows.Forms.CheckBox()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
+        Me.Button22 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -314,6 +315,7 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
@@ -323,7 +325,6 @@ Partial Class Form1
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -607,8 +608,8 @@ Partial Class Form1
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(265, 51)
         Me.Label31.TabIndex = 0
-        Me.Label31.Text = "Convert current DB to clrmame pro dat - options panel." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "HyperSpin XML does not pr" & _
-    "ovide rom's extension, so the first field must be filled. The others are optiona" & _
+        Me.Label31.Text = "Convert current DB to clrmame pro dat - options panel." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "HyperSpin XML does not pr" &
+    "ovide rom's extension, so the first field must be filled. The others are optiona" &
     "l." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Button21
@@ -1070,6 +1071,65 @@ Partial Class Form1
         Me.TabPage4.Text = "CD Image check/fix"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
+        'TextBox29
+        '
+        Me.TextBox29.Enabled = False
+        Me.TextBox29.Location = New System.Drawing.Point(167, 304)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.Size = New System.Drawing.Size(240, 20)
+        Me.TextBox29.TabIndex = 27
+        Me.TextBox29.Text = "C:\Converted ISO\"
+        '
+        'CheckBox18
+        '
+        Me.CheckBox18.AutoSize = True
+        Me.CheckBox18.Checked = True
+        Me.CheckBox18.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox18.Location = New System.Drawing.Point(41, 306)
+        Me.CheckBox18.Name = "CheckBox18"
+        Me.CheckBox18.Size = New System.Drawing.Size(120, 17)
+        Me.CheckBox18.TabIndex = 26
+        Me.CheckBox18.Text = "Output to original dir"
+        Me.CheckBox18.UseVisualStyleBackColor = True
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Location = New System.Drawing.Point(192, 282)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(16, 13)
+        Me.Label49.TabIndex = 25
+        Me.Label49.Text = "to"
+        '
+        'ComboBox9
+        '
+        Me.ComboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox9.FormattingEnabled = True
+        Me.ComboBox9.Items.AddRange(New Object() {"ISO", "ISZ (Compreessed Iso)", "BIN / CUE", "NRG", "MDF / MDS", "IMG / CCD / SUB"})
+        Me.ComboBox9.Location = New System.Drawing.Point(214, 279)
+        Me.ComboBox9.Name = "ComboBox9"
+        Me.ComboBox9.Size = New System.Drawing.Size(85, 21)
+        Me.ComboBox9.TabIndex = 24
+        '
+        'ComboBox8
+        '
+        Me.ComboBox8.FormattingEnabled = True
+        Me.ComboBox8.Items.AddRange(New Object() {"All Images", "*.iso", "*.isz", "*.cue", "*.bin", "*.nrg", "*.mds", "*.mdf", "*.img", "*.cdi"})
+        Me.ComboBox8.Location = New System.Drawing.Point(77, 279)
+        Me.ComboBox8.Name = "ComboBox8"
+        Me.ComboBox8.Size = New System.Drawing.Size(109, 21)
+        Me.ComboBox8.TabIndex = 23
+        '
+        'CheckBox17
+        '
+        Me.CheckBox17.AutoSize = True
+        Me.CheckBox17.Location = New System.Drawing.Point(13, 281)
+        Me.CheckBox17.Name = "CheckBox17"
+        Me.CheckBox17.Size = New System.Drawing.Size(63, 17)
+        Me.CheckBox17.TabIndex = 22
+        Me.CheckBox17.Text = "Convert"
+        Me.CheckBox17.UseVisualStyleBackColor = True
+        '
         'CheckBox25
         '
         Me.CheckBox25.AutoSize = True
@@ -1247,7 +1307,7 @@ Partial Class Form1
         Me.CheckBox7.Name = "CheckBox7"
         Me.CheckBox7.Size = New System.Drawing.Size(400, 17)
         Me.CheckBox7.TabIndex = 5
-        Me.CheckBox7.Text = "Check for audio files (mp3,wav,ogg) not referenced in cue (or without cue at all)" & _
+        Me.CheckBox7.Text = "Check for audio files (mp3,wav,ogg) not referenced in cue (or without cue at all)" &
     ""
         Me.CheckBox7.UseVisualStyleBackColor = True
         '
@@ -1301,6 +1361,7 @@ Partial Class Form1
         '
         'TabPage7
         '
+        Me.TabPage7.Controls.Add(Me.Button22)
         Me.TabPage7.Controls.Add(Me.Button34)
         Me.TabPage7.Controls.Add(Me.Label41)
         Me.TabPage7.Controls.Add(Me.Button33)
@@ -1799,6 +1860,43 @@ Partial Class Form1
         Me.TabPage5.Text = "Program settings"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.Button19)
+        Me.GroupBox7.Controls.Add(Me.TextBox28)
+        Me.GroupBox7.Controls.Add(Me.Label50)
+        Me.GroupBox7.Location = New System.Drawing.Point(671, 139)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(305, 86)
+        Me.GroupBox7.TabIndex = 10
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "3rd party"
+        '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(273, 32)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(25, 22)
+        Me.Button19.TabIndex = 2
+        Me.Button19.Text = "..."
+        Me.Button19.UseVisualStyleBackColor = True
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Location = New System.Drawing.Point(9, 34)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(258, 20)
+        Me.TextBox28.TabIndex = 1
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Location = New System.Drawing.Point(6, 18)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(211, 13)
+        Me.Label50.TabIndex = 0
+        Me.Label50.Text = "UltraISO path (used to convert CD images):"
+        '
         'GroupBox12
         '
         Me.GroupBox12.Controls.Add(Me.GroupBox14)
@@ -1893,7 +1991,7 @@ Partial Class Form1
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(196, 46)
         Me.Label40.TabIndex = 1
-        Me.Label40.Text = "NOTE: It is very difficult to gather rom extensions from HyperLaunch inis, so all" & _
+        Me.Label40.Text = "NOTE: It is very difficult to gather rom extensions from HyperLaunch inis, so all" &
     " extensions will be set to *"
         '
         'CheckBox26
@@ -2822,101 +2920,15 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader"
         '
-        'CheckBox17
+        'Button22
         '
-        Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.Location = New System.Drawing.Point(13, 281)
-        Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(63, 17)
-        Me.CheckBox17.TabIndex = 22
-        Me.CheckBox17.Text = "Convert"
-        Me.CheckBox17.UseVisualStyleBackColor = True
-        '
-        'ComboBox8
-        '
-        Me.ComboBox8.FormattingEnabled = True
-        Me.ComboBox8.Items.AddRange(New Object() {"All Images", "*.iso", "*.isz", "*.cue", "*.bin", "*.nrg", "*.mds", "*.mdf", "*.img", "*.cdi"})
-        Me.ComboBox8.Location = New System.Drawing.Point(77, 279)
-        Me.ComboBox8.Name = "ComboBox8"
-        Me.ComboBox8.Size = New System.Drawing.Size(109, 21)
-        Me.ComboBox8.TabIndex = 23
-        '
-        'ComboBox9
-        '
-        Me.ComboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Items.AddRange(New Object() {"ISO", "ISZ (Compreessed Iso)", "BIN / CUE", "NRG", "MDF / MDS", "IMG / CCD / SUB"})
-        Me.ComboBox9.Location = New System.Drawing.Point(214, 279)
-        Me.ComboBox9.Name = "ComboBox9"
-        Me.ComboBox9.Size = New System.Drawing.Size(85, 21)
-        Me.ComboBox9.TabIndex = 24
-        '
-        'Label49
-        '
-        Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(192, 282)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(16, 13)
-        Me.Label49.TabIndex = 25
-        Me.Label49.Text = "to"
-        '
-        'GroupBox7
-        '
-        Me.GroupBox7.Controls.Add(Me.Button19)
-        Me.GroupBox7.Controls.Add(Me.TextBox28)
-        Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Location = New System.Drawing.Point(671, 139)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(305, 86)
-        Me.GroupBox7.TabIndex = 10
-        Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "3rd party"
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(6, 18)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(211, 13)
-        Me.Label50.TabIndex = 0
-        Me.Label50.Text = "UltraISO path (used to convert CD images):"
-        '
-        'TextBox28
-        '
-        Me.TextBox28.Location = New System.Drawing.Point(9, 34)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(258, 20)
-        Me.TextBox28.TabIndex = 1
-        '
-        'Button19
-        '
-        Me.Button19.Location = New System.Drawing.Point(273, 32)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(25, 22)
-        Me.Button19.TabIndex = 2
-        Me.Button19.Text = "..."
-        Me.Button19.UseVisualStyleBackColor = True
-        '
-        'CheckBox18
-        '
-        Me.CheckBox18.AutoSize = True
-        Me.CheckBox18.Checked = True
-        Me.CheckBox18.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox18.Location = New System.Drawing.Point(41, 306)
-        Me.CheckBox18.Name = "CheckBox18"
-        Me.CheckBox18.Size = New System.Drawing.Size(120, 17)
-        Me.CheckBox18.TabIndex = 26
-        Me.CheckBox18.Text = "Output to original dir"
-        Me.CheckBox18.UseVisualStyleBackColor = True
-        '
-        'TextBox29
-        '
-        Me.TextBox29.Enabled = False
-        Me.TextBox29.Location = New System.Drawing.Point(167, 304)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.Size = New System.Drawing.Size(240, 20)
-        Me.TextBox29.TabIndex = 27
-        Me.TextBox29.Text = "C:\Converted ISO\"
+        Me.Button22.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button22.Location = New System.Drawing.Point(887, 282)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(84, 36)
+        Me.Button22.TabIndex = 7
+        Me.Button22.Text = "Exclude"
+        Me.Button22.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2966,6 +2978,8 @@ Partial Class Form1
         Me.GroupBox2.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
         Me.GroupBox12.ResumeLayout(False)
         Me.GroupBox14.ResumeLayout(False)
         Me.GroupBox14.PerformLayout()
@@ -2983,8 +2997,6 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3263,5 +3275,5 @@ Partial Class Form1
     Friend WithEvents Label50 As System.Windows.Forms.Label
     Friend WithEvents CheckBox18 As System.Windows.Forms.CheckBox
     Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
-
+    Friend WithEvents Button22 As Button
 End Class

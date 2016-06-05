@@ -239,3 +239,4 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.ISOFixAsk_MdfMds.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Resources.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\HyperspinChecker.vbproj.GenerateResource.Cache
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormF_systemManager_exclusions.resources

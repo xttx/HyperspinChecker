@@ -210,6 +210,12 @@
     <Compile Include="Class\IniFileApi.vb" />
     <Compile Include="Class\IniFileVb.vb" />
     <Compile Include="Class\ISOChecker.vb" />
+    <Compile Include="FormF_systemManager_exclusions.Designer.vb">
+      <DependentUpon>FormF_systemManager_exclusions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormF_systemManager_exclusions.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.designer.vb">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormE_Create_database_XML_from_folder.resx">
       <DependentUpon>FormE_Create_database_XML_from_folder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormF_systemManager_exclusions.resx">
+      <DependentUpon>FormF_systemManager_exclusions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.resx">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
