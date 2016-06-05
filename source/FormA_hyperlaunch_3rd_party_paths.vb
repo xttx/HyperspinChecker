@@ -344,7 +344,7 @@ Public Class FormA_hyperlaunch_3rd_party_paths
             ini.path = (HLPathNoExt + "Settings\RocketLauncher.ini").Replace("\\", "\")
             ini.IniWriteValue("Settings", "RocketLauncher_Media_Path", TextBox2.Text)
             If TextBox3.Text.Trim <> "" Then ini.IniWriteValue("Settings", "Default_Front_End_Path", TextBox3.Text)
-            ini.IniWriteValue("Pause", "HyperPause_HiToText_Path", TextBox6.Text)
+            ini.IniWriteValue("Pause", "Pause_HiToText_Path", TextBox6.Text)
             ini.IniWriteValue("Virtual Drive", "Virtual_Drive_Path", TextBox7.Text)
         Else
             MsgBox("Error updating HL/RL ini")
