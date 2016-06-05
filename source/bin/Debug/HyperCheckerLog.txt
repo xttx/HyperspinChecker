@@ -1074,3 +1074,166 @@
 20:1:2 - Loading config
 20:1:2 - Init classes
 20:1:2 - Done init
+20:9:39 - Initializing...
+20:9:39 - Creating menus
+20:9:39 - Loading config
+20:9:39 - Init classes
+20:9:39 - Done init
+21:38:53 - Initializing...
+21:38:53 - Creating menus
+21:38:53 - Loading config
+21:38:53 - Init classes
+21:38:53 - Done init
+21:38:59 - Detecting HLHQ Path
+21:38:59 - Detecting Modules Path
+21:38:59 - Detecting Media Path
+21:38:59 - Detecting Frontend Path
+21:38:59 - Detecting Profiles Path
+21:38:59 - Detecting 7z Path
+21:38:59 - Detecting HiToText Path
+21:38:59 - Detecting Daemon Tools Path
+21:38:59 - Detecting Daemon HLHQ Path
+21:38:59 - Detecting Daemon HLHQ Media Path
+21:38:59 - Detecting HS Plugin Path
+21:38:59 - Detecting HLHQ Plugin Path
+21:39:52 - Initializing...
+21:39:52 - Creating menus
+21:39:52 - Loading config
+21:39:52 - Init classes
+21:39:53 - Done init
+21:40:8 - Detecting HLHQ Path
+21:40:8 - Detecting Modules Path
+21:40:8 - Detecting Media Path
+21:40:8 - Detecting Frontend Path
+21:40:8 - Detecting Profiles Path
+21:40:8 - Detecting 7z Path
+21:40:8 - Detecting HiToText Path
+21:40:8 - Detecting Daemon Tools Path
+21:40:8 - Detecting Daemon HLHQ Path
+21:40:8 - Detecting Daemon HLHQ Media Path
+21:40:8 - Detecting HS Plugin Path
+21:40:8 - Detecting HLHQ Plugin Path
+21:40:9 - Detecting HLHQ Path
+21:40:9 - Detecting Modules Path
+21:40:9 - Detecting Media Path
+21:40:9 - Detecting Frontend Path
+21:40:9 - Detecting Profiles Path
+21:40:9 - Detecting 7z Path
+21:40:9 - Detecting HiToText Path
+21:40:9 - Detecting Daemon Tools Path
+21:40:9 - Detecting Daemon HLHQ Path
+21:40:9 - Detecting Daemon HLHQ Media Path
+21:40:9 - Detecting HS Plugin Path
+21:40:9 - Detecting HLHQ Plugin Path
+21:40:9 - Detecting HLHQ Path
+21:40:9 - Detecting Modules Path
+21:40:9 - Detecting Media Path
+21:40:9 - Detecting Frontend Path
+21:40:9 - Detecting Profiles Path
+21:40:9 - Detecting 7z Path
+21:40:9 - Detecting HiToText Path
+21:40:9 - Detecting Daemon Tools Path
+21:40:9 - Detecting Daemon HLHQ Path
+21:40:9 - Detecting Daemon HLHQ Media Path
+21:40:9 - Detecting HS Plugin Path
+21:40:9 - Detecting HLHQ Plugin Path
+21:40:10 - Detecting HLHQ Path
+21:40:10 - Detecting Modules Path
+21:40:10 - Detecting Media Path
+21:40:10 - Detecting Frontend Path
+21:40:10 - Detecting Profiles Path
+21:40:10 - Detecting 7z Path
+21:40:10 - Detecting HiToText Path
+21:40:10 - Detecting Daemon Tools Path
+21:40:10 - Detecting Daemon HLHQ Path
+21:40:10 - Detecting Daemon HLHQ Media Path
+21:40:10 - Detecting HS Plugin Path
+21:40:10 - Detecting HLHQ Plugin Path
+21:40:10 - Detecting HLHQ Path
+21:40:10 - Detecting Modules Path
+21:40:10 - Detecting Media Path
+21:40:10 - Detecting Frontend Path
+21:40:10 - Detecting Profiles Path
+21:40:10 - Detecting 7z Path
+21:40:10 - Detecting HiToText Path
+21:40:10 - Detecting Daemon Tools Path
+21:40:10 - Detecting Daemon HLHQ Path
+21:40:10 - Detecting Daemon HLHQ Media Path
+21:40:10 - Detecting HS Plugin Path
+21:40:10 - Detecting HLHQ Plugin Path
+21:40:11 - Detecting HLHQ Path
+21:40:11 - Detecting Modules Path
+21:40:11 - Detecting Media Path
+21:40:11 - Detecting Frontend Path
+21:40:11 - Detecting Profiles Path
+21:40:11 - Detecting 7z Path
+21:40:11 - Detecting HiToText Path
+21:40:11 - Detecting Daemon Tools Path
+21:40:11 - Detecting Daemon HLHQ Path
+21:40:11 - Detecting Daemon HLHQ Media Path
+21:40:11 - Detecting HS Plugin Path
+21:40:11 - Detecting HLHQ Plugin Path
+21:40:11 - Detecting HLHQ Path
+21:40:11 - Detecting Modules Path
+21:40:11 - Detecting Media Path
+21:40:11 - Detecting Frontend Path
+21:40:11 - Detecting Profiles Path
+21:40:11 - Detecting 7z Path
+21:40:11 - Detecting HiToText Path
+21:40:11 - Detecting Daemon Tools Path
+21:40:11 - Detecting Daemon HLHQ Path
+21:40:11 - Detecting Daemon HLHQ Media Path
+21:40:11 - Detecting HS Plugin Path
+21:40:11 - Detecting HLHQ Plugin Path
+21:40:11 - Detecting HLHQ Path
+21:40:11 - Detecting Modules Path
+21:40:11 - Detecting Media Path
+21:40:11 - Detecting Frontend Path
+21:40:11 - Detecting Profiles Path
+21:40:11 - Detecting 7z Path
+21:40:11 - Detecting HiToText Path
+21:40:11 - Detecting Daemon Tools Path
+21:40:11 - Detecting Daemon HLHQ Path
+21:40:11 - Detecting Daemon HLHQ Media Path
+21:40:11 - Detecting HS Plugin Path
+21:40:11 - Detecting HLHQ Plugin Path
+21:42:8 - Initializing...
+21:42:8 - Creating menus
+21:42:8 - Loading config
+21:42:8 - Init classes
+21:42:8 - Done init
+21:46:12 - Initializing...
+21:46:12 - Creating menus
+21:46:12 - Loading config
+21:46:12 - Init classes
+21:46:12 - Done init
+22:9:12 - Initializing...
+22:9:12 - Creating menus
+22:9:12 - Loading config
+22:9:12 - Init classes
+22:9:12 - Done init
+22:10:30 - Initializing...
+22:10:30 - Creating menus
+22:10:30 - Loading config
+22:10:30 - Init classes
+22:10:30 - Done init
+22:11:38 - Initializing...
+22:11:38 - Creating menus
+22:11:38 - Loading config
+22:11:38 - Init classes
+22:11:38 - Done init
+22:12:28 - Initializing...
+22:12:28 - Creating menus
+22:12:28 - Loading config
+22:12:28 - Init classes
+22:12:28 - Done init
+22:13:25 - Initializing...
+22:13:25 - Creating menus
+22:13:25 - Loading config
+22:13:25 - Init classes
+22:13:25 - Done init
+22:16:50 - Initializing...
+22:16:50 - Creating menus
+22:16:50 - Loading config
+22:16:50 - Init classes
+22:16:50 - Done init

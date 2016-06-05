@@ -465,9 +465,9 @@ Partial Class FormA_hyperlaunch_3rd_party_paths
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(21, 15)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(40, 13)
+        Me.Label15.Size = New System.Drawing.Size(76, 13)
         Me.Label15.TabIndex = 44
-        Me.Label15.Text = "HLHQ:"
+        Me.Label15.Text = "HLHQ / RLUI:"
         '
         'Button17
         '

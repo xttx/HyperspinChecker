@@ -2,16 +2,43 @@
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Public Class FormA_hyperlaunch_3rd_party_paths
     Dim HLPath As String = ""
+    Dim HLPathNoExt As String = ""
     Dim HLHQPath As String = ""
     Dim ini As New IniFileApi
     Dim doNotUpdate As Boolean = False
 
     Private Sub FormA_hyperlaunch_3rd_party_paths_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        HLPath = Form1.TextBox18.Text.Replace("\\", "\").Replace("\\", "\")
-        HLHQPath = HLPath
+        HLPath = Form1.TextBox18.Text.Replace("\\", "\").Replace("\\", "\").Trim
+        If HLPath.ToUpper.EndsWith("EXE") Then HLPathNoExt = HLPath.Substring(0, HLPath.LastIndexOf("\")).Trim Else HLPathNoExt = HLPath.Trim
+        If Not HLPathNoExt.EndsWith("\") Then HLPathNoExt = HLPathNoExt + "\"
+
+        If FileExists(HLPathNoExt + "HyperLaunchHQ.exe") Then
+            HLHQPath = HLPathNoExt
+        Else
+            If FileExists(HLPathNoExt + "HyperLaunchHQ\HyperLaunchHQ.exe") Then
+                HLHQPath = HLPathNoExt + "HyperLaunchHQ\"
+            Else
+                If FileExists(HLPathNoExt + "RocketLauncherUI.exe") Then
+                    HLHQPath = HLPathNoExt
+                Else
+                    If FileExists(HLPathNoExt + "RocketLauncherUI\RocketLauncherUI.exe") Then
+                        HLHQPath = HLPathNoExt + "RocketLauncherUI\"
+                    End If
+                End If
+            End If
+        End If
+        If HLHQPath.Trim = "" Then TextBox_TextChanged(TextBox0, New System.EventArgs) : Exit Sub
+
         TextBox0.Text = HLHQPath
 
-        ini.path = (HLPath + "\Settings\HyperLaunch.ini").Replace("\\", "\")
+        If FileExists((HLPathNoExt + "\Settings\HyperLaunch.ini").Replace("\\", "\")) Then
+            ini.path = (HLPathNoExt + "\Settings\HyperLaunch.ini").Replace("\\", "\")
+        ElseIf FileExists((HLPathNoExt + "\Settings\RocketLauncher.ini").Replace("\\", "\")) Then
+            ini.path = (HLPathNoExt + "\Settings\RocketLauncher.ini").Replace("\\", "\")
+        Else
+            Exit Sub
+        End If
+
         TextBox1.Text = ini.IniReadValue("Settings", "Modules_Path")
         TextBox2.Text = ini.IniReadValue("Settings", "HyperLaunch_Media_Path")
         TextBox3.Text = ini.IniReadValue("Settings", "Frontend_Path")
@@ -22,12 +49,23 @@ Public Class FormA_hyperlaunch_3rd_party_paths
         TextBox8.Text = ini.IniReadValue("Keymapper", "Xpadder_Path")
         TextBox9.Text = ini.IniReadValue("Keymapper", "JoyToKey_Path")
         TextBox10.Text = ini.IniReadValue("Vjoy", "VJoy_Path")
+
+        If TextBox2.Text = "" Then TextBox2.Text = ini.IniReadValue("Settings", "RocketLauncher_Media_Path")
+        If TextBox3.Text = "" Then TextBox3.Text = ini.IniReadValue("Settings", "Default_Front_End_Path")
+        If TextBox6.Text = "" Then TextBox6.Text = ini.IniReadValue("Pause", "Pause_HiToText_Path")
+        If TextBox7.Text = "" Then TextBox7.Text = ini.IniReadValue("Virtual Drive", "Virtual_Drive_Path")
     End Sub
 
     Private Sub read_HLHQ_ini()
-        ini.path = (HLHQPath + "\Settings\HyperLaunchHQ.ini").Replace("\\", "\")
+        If FileExists((HLHQPath + "\Settings\HyperLaunchHQ.ini").Replace("\\", "\")) Then
+            ini.path = (HLHQPath + "\Settings\HyperLaunchHQ.ini").Replace("\\", "\")
+        ElseIf FileExists((HLHQPath + "\Settings\RocketLauncherUI.ini").Replace("\\", "\")) Then
+            ini.path = (HLHQPath + "\Settings\RocketLauncherUI.ini").Replace("\\", "\")
+        End If
+
         TextBox11.Text = ini.IniReadValue("Paths", "HL_Folder")
         If TextBox11.Text = "" Then TextBox11.Text = ini.IniReadValue("Settings", "HL_Folder")
+        If TextBox11.Text = "" Then TextBox11.Text = ini.IniReadValue("Paths", "RL_Folder")
         TextBox12.Text = ini.IniReadValue("Paths", "Media_Folder_Path")
         If TextBox12.Text = "" Then TextBox12.Text = ini.IniReadValue("Settings", "Media_Folder_Path")
 
@@ -36,10 +74,11 @@ Public Class FormA_hyperlaunch_3rd_party_paths
         If TextBox13.Text = "" Then TextBox13.Text = ini.IniReadValue("HS", "Path")
 
         TextBox14.Text = ini.IniReadValue("HyperLaunchHQ", "Path")
+        If TextBox14.Text = "" Then TextBox14.Text = ini.IniReadValue("RocketLauncherUI", "Path")
 
         Dim f As String = ini.IniReadValue("Settings", "Default_Frontend").ToUpper
         If f = "HS" Or f = "HYPERSPIN" Then CheckBox2.Checked = True
-        If f = "HyperLaunchHQ" Then CheckBox3.Checked = True
+        If f = "HYPERLAUNCHHQ" Or f = "ROCKETLAUNCHERUI" Then CheckBox3.Checked = True
     End Sub
 
     Private Sub TextBox_TextChanged(sender As System.Object, e As System.EventArgs) Handles TextBox0.TextChanged, TextBox1.TextChanged, TextBox2.TextChanged, _
@@ -50,72 +89,70 @@ Public Class FormA_hyperlaunch_3rd_party_paths
         Dim ID As Integer = CInt(DirectCast(sender, TextBox).Name.Substring(7))
 
         If ID = 0 Then 'HLHQ Path
-            If FileExists(TextBox0.Text + "\HyperLaunchHQ.exe") Then
+            If FileExists(TextBox0.Text + "\HyperLaunchHQ.exe") OrElse FileExists(TextBox0.Text + "\RocketLauncherUI.exe") Then
                 TextBox0.BackColor = Form1.colorYES : read_HLHQ_ini()
             Else
                 TextBox0.BackColor = Form1.colorNO
                 TextBox11.Text = "HLHQ Path not set" : TextBox12.Text = "HLHQ Path not set"
                 TextBox13.Text = "HLHQ Path not set" : TextBox14.Text = "HLHQ Path not set"
             End If
-            HLHQPath = (TextBox0.Text + "\").Replace("\\", "\").Replace("\\", "\")
+            HLHQPath = (TextBox0.Text + "\").Replace("\\", "\").Replace("\\", "\").Trim
         End If
 
         If ID = 1 Then 'Modules Path
-            If DirectoryExists(Relative_Path_to_Absolute(HLPath, TextBox1.Text)) Then TextBox1.BackColor = Form1.colorYES Else TextBox1.BackColor = Form1.colorNO
+            If DirectoryExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox1.Text)) Then TextBox1.BackColor = Form1.colorYES Else TextBox1.BackColor = Form1.colorNO
         End If
 
         If ID = 2 Then 'Media Path
-            If DirectoryExists(Relative_Path_to_Absolute(HLPath, TextBox2.Text)) Then TextBox2.BackColor = Form1.colorYES Else TextBox2.BackColor = Form1.colorNO
+            If DirectoryExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox2.Text)) Then TextBox2.BackColor = Form1.colorYES Else TextBox2.BackColor = Form1.colorNO
         End If
 
         If ID = 3 Then 'Frontend Path
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox3.Text)) Then TextBox3.BackColor = Form1.colorYES Else TextBox3.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox3.Text)) Then TextBox3.BackColor = Form1.colorYES Else TextBox3.BackColor = Form1.colorNO
         End If
 
         If ID = 4 Then 'Profiles Path
-            If DirectoryExists(Relative_Path_to_Absolute(HLPath, TextBox4.Text)) Then TextBox4.BackColor = Form1.colorYES Else TextBox4.BackColor = Form1.colorNO
+            If DirectoryExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox4.Text)) Then TextBox4.BackColor = Form1.colorYES Else TextBox4.BackColor = Form1.colorNO
         End If
 
         If ID = 5 Then '7z Path
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox5.Text)) Then TextBox5.BackColor = Form1.colorYES Else TextBox5.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox5.Text)) Then TextBox5.BackColor = Form1.colorYES Else TextBox5.BackColor = Form1.colorNO
         End If
 
         If ID = 6 Then 'HiToText Path
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox6.Text)) Then TextBox6.BackColor = Form1.colorYES Else TextBox6.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox6.Text)) Then TextBox6.BackColor = Form1.colorYES Else TextBox6.BackColor = Form1.colorNO
         End If
 
         If ID = 7 Then 'Daemon Tools Path
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox7.Text)) Then TextBox7.BackColor = Form1.colorYES Else TextBox7.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox7.Text)) Then TextBox7.BackColor = Form1.colorYES Else TextBox7.BackColor = Form1.colorNO
         End If
 
         If ID = 8 Then 'Daemon Tools Path
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox8.Text)) Then TextBox8.BackColor = Form1.colorYES Else TextBox8.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox8.Text)) Then TextBox8.BackColor = Form1.colorYES Else TextBox8.BackColor = Form1.colorNO
         End If
 
         If ID = 9 Then 'Joy To Key Path
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox9.Text)) Then TextBox9.BackColor = Form1.colorYES Else TextBox9.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox9.Text)) Then TextBox9.BackColor = Form1.colorYES Else TextBox9.BackColor = Form1.colorNO
         End If
 
         If ID = 10 Then 'Vjoy Path
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox10.Text)) Then TextBox10.BackColor = Form1.colorYES Else TextBox10.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLPathNoExt, TextBox10.Text)) Then TextBox10.BackColor = Form1.colorYES Else TextBox10.BackColor = Form1.colorNO
         End If
 
         If ID = 11 Then 'Hyperlaunch Path for HLHQ
-            If DirectoryExists(Relative_Path_to_Absolute(HLPath, TextBox11.Text)) Then TextBox11.BackColor = Form1.colorYES Else TextBox11.BackColor = Form1.colorNO
+            If DirectoryExists(Relative_Path_to_Absolute(HLHQPath, TextBox11.Text)) Then TextBox11.BackColor = Form1.colorYES Else TextBox11.BackColor = Form1.colorNO
         End If
 
         If ID = 12 Then 'Media Path for HLHQ
-            If DirectoryExists(Relative_Path_to_Absolute(HLPath, TextBox12.Text)) Then TextBox12.BackColor = Form1.colorYES Else TextBox12.BackColor = Form1.colorNO
+            If DirectoryExists(Relative_Path_to_Absolute(HLHQPath, TextBox12.Text)) Then TextBox12.BackColor = Form1.colorYES Else TextBox12.BackColor = Form1.colorNO
         End If
 
-        'TODO Maybe this should be relative to HL path and not to HLHQ path
         If ID = 13 Then 'HS Plugin
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox13.Text)) Then TextBox13.BackColor = Form1.colorYES Else TextBox13.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLHQPath, TextBox13.Text)) Then TextBox13.BackColor = Form1.colorYES Else TextBox13.BackColor = Form1.colorNO
         End If
 
-        'TODO Maybe this should be relative to HL path and not to HLHQ path
         If ID = 14 Then 'HLHQ Plugin
-            If FileExists(Relative_Path_to_Absolute(HLPath, TextBox14.Text)) Then TextBox14.BackColor = Form1.colorYES Else TextBox14.BackColor = Form1.colorNO
+            If FileExists(Relative_Path_to_Absolute(HLHQPath, TextBox14.Text)) Then TextBox14.BackColor = Form1.colorYES Else TextBox14.BackColor = Form1.colorNO
         End If
     End Sub
 
@@ -150,58 +187,62 @@ Public Class FormA_hyperlaunch_3rd_party_paths
         'HLHQ Path
         Class1.Log("Detecting HLHQ Path")
         If Not CheckBox1.Checked Or TextBox0.BackColor = Form1.colorNO Then
-            If FileExists(HLPath + "\" + "HyperLaunchHQ.exe") Then
-                TextBox0.Text = (HLPath + "\").Replace("\\", "\").Replace("\\", "\")
-            ElseIf FileExists(HLPath + "\HyperLaunchHQ\HyperLaunchHQ.exe") Then
-                TextBox0.Text = (HLPath + "\HyperLaunchHQ\").Replace("\\", "\").Replace("\\", "\")
+            If FileExists(HLPathNoExt + "\HyperLaunchHQ.exe") Then
+                TextBox0.Text = (HLPathNoExt + "\").Replace("\\", "\").Replace("\\", "\")
+            ElseIf FileExists(HLPathNoExt + "\HyperLaunchHQ\HyperLaunchHQ.exe") Then
+                TextBox0.Text = (HLPathNoExt + "\HyperLaunchHQ\").Replace("\\", "\").Replace("\\", "\")
+            ElseIf FileExists(HLPathNoExt + "\RocketLauncherUI.exe") Then
+                TextBox0.Text = (HLPathNoExt + "\").Replace("\\", "\").Replace("\\", "\")
+            ElseIf FileExists(HLPathNoExt + "\RocketLauncherUI\RocketLauncherUI.exe") Then
+                TextBox0.Text = (HLPathNoExt + "\RocketLauncherUI\").Replace("\\", "\").Replace("\\", "\")
             End If
         End If
 
         'Modules
         Class1.Log("Detecting Modules Path")
         If Not CheckBox1.Checked Or TextBox1.BackColor = Form1.colorNO Then
-            If DirectoryExists(HLPath + "\Modules") Then
-                TextBox1.Text = Absolute_Path_to_Relative(HLPath, (HLPath + "\Modules\").Replace("\\", "\").Replace("\\", "\"))
+            If DirectoryExists(HLPathNoExt + "\Modules") Then
+                TextBox1.Text = Absolute_Path_to_Relative(HLPathNoExt, (HLPathNoExt + "\Modules\").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
 
         'Media
         Class1.Log("Detecting Media Path")
         If Not CheckBox1.Checked Or TextBox2.BackColor = Form1.colorNO Then
-            If DirectoryExists(HLPath + "\Media") Then
-                TextBox2.Text = Absolute_Path_to_Relative(HLPath, (HLPath + "\Media\").Replace("\\", "\").Replace("\\", "\"))
+            If DirectoryExists(HLPathNoExt + "\Media") Then
+                TextBox2.Text = Absolute_Path_to_Relative(HLPathNoExt, (HLPathNoExt + "\Media\").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
 
         'Frontend
         Class1.Log("Detecting Frontend Path")
         If Not CheckBox1.Checked Or TextBox3.BackColor = Form1.colorNO Then
-            If FileExists(Class1.HyperspinPath + "\hyperspin.exe") Then
-                TextBox3.Text = Absolute_Path_to_Relative(HLPath, (Class1.HyperspinPath + "\hyperspin.exe").Replace("\\", "\").Replace("\\", "\"))
+            If FileExists(Class1.HyperspinPath + "\HyperSpin.exe") Then
+                TextBox3.Text = Absolute_Path_to_Relative(HLPath, (Class1.HyperspinPath + "\HyperSpin.exe").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
 
         'Profiles
         Class1.Log("Detecting Profiles Path")
         If Not CheckBox1.Checked Or TextBox4.BackColor = Form1.colorNO Then
-            If DirectoryExists(HLPath + "\Profiles") Then
-                TextBox4.Text = Absolute_Path_to_Relative(HLPath, (HLPath + "\Profiles\").Replace("\\", "\").Replace("\\", "\"))
+            If DirectoryExists(HLPathNoExt + "\Profiles") Then
+                TextBox4.Text = Absolute_Path_to_Relative(HLPathNoExt, (HLPathNoExt + "\Profiles\").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
 
         '7z
         Class1.Log("Detecting 7z Path")
         If Not CheckBox1.Checked Or TextBox5.BackColor = Form1.colorNO Then
-            If FileExists(HLPath + "\Module Extensions\7z.exe") Then
-                TextBox5.Text = Absolute_Path_to_Relative(HLPath, (HLPath + "\Module Extensions\7z.exe").Replace("\\", "\").Replace("\\", "\"))
+            If FileExists(HLPathNoExt + "\Module Extensions\7z.exe") Then
+                TextBox5.Text = Absolute_Path_to_Relative(HLPathNoExt, (HLPathNoExt + "\Module Extensions\7z.exe").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
 
         'HiToText
         Class1.Log("Detecting HiToText Path")
         If Not CheckBox1.Checked Or TextBox6.BackColor = Form1.colorNO Then
-            If FileExists(HLPath + "\Module Extensions\HiToText.exe") Then
-                TextBox6.Text = Absolute_Path_to_Relative(HLPath, (HLPath + "\Module Extensions\HiToText.exe").Replace("\\", "\").Replace("\\", "\"))
+            If FileExists(HLPathNoExt + "\Module Extensions\HiToText.exe") Then
+                TextBox6.Text = Absolute_Path_to_Relative(HLPathNoExt, (HLPathNoExt + "\Module Extensions\HiToText.exe").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
 
@@ -230,8 +271,8 @@ Public Class FormA_hyperlaunch_3rd_party_paths
         'HL For HLHQ
         Class1.Log("Detecting Daemon HLHQ Path")
         If Not CheckBox1.Checked Or TextBox11.BackColor = Form1.colorNO Then
-            If FileExists(HLPath + "\HyperLaunch.exe") Then
-                TextBox11.Text = Absolute_Path_to_Relative(HLHQPath, (HLPath + "\").Replace("\\", "\").Replace("\\", "\"))
+            If FileExists(HLPathNoExt + "\HyperLaunch.exe") OrElse FileExists(HLPathNoExt + "\RocketLauncher.exe") Then
+                TextBox11.Text = Absolute_Path_to_Relative(HLHQPath, (HLPathNoExt + "\").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
 
@@ -248,7 +289,7 @@ Public Class FormA_hyperlaunch_3rd_party_paths
         Class1.Log("Detecting HS Plugin Path")
         If Not CheckBox1.Checked Or TextBox13.BackColor = Form1.colorNO Then
             If FileExists(Class1.HyperspinPath + "\hyperspin.exe") Then
-                TextBox13.Text = Absolute_Path_to_Relative(HLHQPath, (Class1.HyperspinPath + "\hyperspin.exe").Replace("\\", "\").Replace("\\", "\"))
+                TextBox13.Text = Absolute_Path_to_Relative(HLHQPath, (Class1.HyperspinPath + "\HyperSpin.exe").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
 
@@ -258,6 +299,8 @@ Public Class FormA_hyperlaunch_3rd_party_paths
         If Not CheckBox1.Checked Or TextBox14.BackColor = Form1.colorNO Then
             If FileExists(HLHQPath + "\HyperLaunchHQ.exe") Then
                 TextBox14.Text = Absolute_Path_to_Relative(HLHQPath, (HLHQPath + "\HyperLaunchHQ.exe").Replace("\\", "\").Replace("\\", "\"))
+            ElseIf FileExists(HLHQPath + "\RocketLauncherUI.exe") Then
+                TextBox14.Text = Absolute_Path_to_Relative(HLHQPath, (HLHQPath + "\RocketLauncherUI.exe").Replace("\\", "\").Replace("\\", "\"))
             End If
         End If
     End Sub
@@ -290,15 +333,27 @@ Public Class FormA_hyperlaunch_3rd_party_paths
         Next
         doNotUpdate = False
 
-        'HL ini
-        ini.path = (HLPath + "\Settings\HyperLaunch.ini").Replace("\\", "\")
+        'HL/RL ini
+        If FileExists(HLPathNoExt + "Settings\HyperLaunch.ini") Then
+            ini.path = (HLPathNoExt + "\Settings\HyperLaunch.ini").Replace("\\", "\")
+            ini.IniWriteValue("Settings", "HyperLaunch_Media_Path", TextBox2.Text)
+            If TextBox3.Text.Trim <> "" Then ini.IniWriteValue("Settings", "Frontend_Path", TextBox3.Text)
+            ini.IniWriteValue("HyperPause", "HyperPause_HiToText_Path", TextBox6.Text)
+            ini.IniWriteValue("DAEMON Tools", "DAEMON_Tools_Path", TextBox7.Text)
+        ElseIf FileExists(HLPathNoExt + "Settings\RocketLauncher.ini") Then
+            ini.path = (HLPathNoExt + "Settings\RocketLauncher.ini").Replace("\\", "\")
+            ini.IniWriteValue("Settings", "RocketLauncher_Media_Path", TextBox2.Text)
+            If TextBox3.Text.Trim <> "" Then ini.IniWriteValue("Settings", "Default_Front_End_Path", TextBox3.Text)
+            ini.IniWriteValue("Pause", "HyperPause_HiToText_Path", TextBox6.Text)
+            ini.IniWriteValue("Virtual Drive", "Virtual_Drive_Path", TextBox7.Text)
+        Else
+            MsgBox("Error updating HL/RL ini")
+            Exit Sub
+        End If
+
         ini.IniWriteValue("Settings", "Modules_Path", TextBox1.Text)
-        ini.IniWriteValue("Settings", "HyperLaunch_Media_Path", TextBox2.Text)
-        If TextBox3.Text.Trim <> "" Then ini.IniWriteValue("Settings", "Frontend_Path", TextBox3.Text)
         ini.IniWriteValue("Settings", "Profiles_Path", TextBox4.Text)
         ini.IniWriteValue("7z", "7z_Path", TextBox5.Text)
-        ini.IniWriteValue("HyperPause", "HyperPause_HiToText_Path", TextBox6.Text)
-        ini.IniWriteValue("DAEMON Tools", "DAEMON_Tools_Path", TextBox7.Text)
         ini.IniWriteValue("Keymapper", "Xpadder_Path", TextBox8.Text)
         ini.IniWriteValue("Keymapper", "JoyToKey_Path", TextBox9.Text)
         ini.IniWriteValue("Vjoy", "VJoy_Path", TextBox10.Text)
@@ -343,6 +398,24 @@ Public Class FormA_hyperlaunch_3rd_party_paths
             ElseIf CheckBox3.Checked Then
                 ini.IniWriteValue("Settings", "Default_Frontend", "HyperLaunchHQ")
             End If
+        ElseIf FileExists(HLHQPath + "\RocketLauncherUI.exe") Then
+            ini.path = (HLHQPath + "\Settings\RocketLauncherUI.ini").Replace("\\", "\")
+
+            ini.IniWriteValue("Paths", "RL_Folder", TextBox11.Text)
+            ini.IniWriteValue("Paths", "Media_Folder_Path", TextBox12.Text)
+
+            ini.path = (HLHQPath + "\Settings\Frontends.ini").Replace("\\", "\")
+            ini.IniWriteValue("Hyperspin", "Path", TextBox13.Text)
+            ini.IniWriteValue("RocketLauncherUI", "Path", TextBox14.Text)
+
+            If CheckBox2.Checked Then
+                ini.IniWriteValue("Settings", "Default_Frontend", "HyperSpin")
+            ElseIf CheckBox3.Checked Then
+                ini.IniWriteValue("Settings", "Default_Frontend", "RocketLauncherUI")
+            End If
+        Else
+            MsgBox("Error updating HLHQ/RL UI ini")
+            Exit Sub
         End If
     End Sub
 
