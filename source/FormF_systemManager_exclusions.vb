@@ -34,7 +34,7 @@
                 list = list + i.ToString + ","
             End If
         Next
-        list = list.Substring(0, list.Length - 1)
+        If Not list = "" Then list = list.Substring(0, list.Length - 1)
         ini.IniWriteValue("SystemManager", "required_media_list", list)
         Me.Close()
     End Sub

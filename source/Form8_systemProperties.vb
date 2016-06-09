@@ -1,9 +1,15 @@
 ﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
 
 Public Class Form8_systemProperties
+    Dim controls_to_hide() As String = {"BUTTON6", "BUTTON7", "BUTTON8", "LISTVIEW1", "PANEL1"}
+
+    Dim refr As Boolean = True
     Dim sys As String = ""
+    Dim sysNormalCase As String = ""
     Dim _data As List(Of String)
     Dim _modules As List(Of String)
+    Dim _HS_ini As List(Of String)
+    Dim _mainMenu As List(Of String)
     Dim HL_Path As String = ""
     Dim current_module As String = ""
     Public Shared Event paths_updated(system As String)
@@ -14,6 +20,9 @@ Public Class Form8_systemProperties
             Return _data
         End Get
         Set(value As List(Of String))
+            refr = True
+            If Panel1.Visible Then Button8_Click(Button8, New EventArgs)
+
             ComboBox2.Items.Clear()
 
             _data = value
@@ -24,6 +33,8 @@ Public Class Form8_systemProperties
             If _data(2) = "" Then Label1.BackColor = Form1.colorNO Else Label1.BackColor = Form1.colorYES
             If _data(3) = "" Then Label2.BackColor = Form1.colorNO Else Label2.BackColor = Form1.colorYES
             If _data(4) = "" Then Label6.BackColor = Form1.colorNO Else Label6.BackColor = Form1.colorYES
+            If _data(9) = "" Then Label3.BackColor = Form1.colorNO Else Label3.BackColor = Form1.colorYES
+            If _data(10) = "" Then Label4.BackColor = Form1.colorNO Else Label4.BackColor = Form1.colorYES
             If _data(5) = "" Then RadioButton2.Checked = True Else RadioButton1.Checked = True
             If _data(6) = "" Then
                 TextBox1.Text = "" : TextBox2.Text = ""
@@ -35,7 +46,8 @@ Public Class Form8_systemProperties
             If _data(7) = "" Then TextBox1.BackColor = Form1.colorNO : TextBox3.BackColor = Form1.colorNO Else TextBox1.BackColor = Form1.colorYES : TextBox3.BackColor = Form1.colorYES
             If _data(8) = "" Then TextBox2.BackColor = Form1.colorNO : TextBox4.BackColor = Form1.colorNO Else TextBox2.BackColor = Form1.colorYES : TextBox4.BackColor = Form1.colorYES
 
-            sys = _data(9)
+            sys = _data(11)
+            sysNormalCase = _data(12)
             If sys <> "" Then
                 If FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then
                     Dim iniClass As New IniFile
@@ -45,6 +57,7 @@ Public Class Form8_systemProperties
 
                     iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
                     HL_Path = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
+                    If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
                     If FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
                         iniClass.Load(HL_Path + "\Settings\" + sys + "\Emulators.ini")
                         Dim emu As String = iniClass.GetKeyValue("ROMS", "Default_Emulator").Trim
@@ -59,9 +72,28 @@ Public Class Form8_systemProperties
                     End If
                 End If
             End If
+
+            'Add main menu systems to listview
+            ListView1.Items.Clear()
+            Dim _mainMenuUpper As New List(Of String)
+            For Each s As String In _mainMenu
+                ListView1.Items.Add(New ListViewItem(s))
+                _mainMenuUpper.Add(s.ToUpper)
+            Next
+            If Not _mainMenuUpper.Contains(sys) Then ListView1.Items.Insert(0, New ListViewItem(sys))
+
+            If Not _mainMenuUpper.Contains(sys) Then
+                ListView1.TopItem = ListView1.Items(0)
+                ListView1.Items(0).Selected = True
+            Else
+                Dim ind As Integer = _mainMenuUpper.IndexOf(sys)
+                If ind >= 3 Then ListView1.TopItem = ListView1.Items(ind - 3) Else ListView1.TopItem = ListView1.Items(0)
+                ListView1.Items(ind).Selected = True
+            End If
+
+            refr = False
         End Set
     End Property
-
     'Modules property set/get to interchange modules data for current system with main form
     Public Property modules As List(Of String)
         Get
@@ -81,6 +113,28 @@ Public Class Form8_systemProperties
                 ComboBox2.SelectedItem = ComboBox2.Items.Count - 1
                 ComboBox2.ForeColor = Color.DarkRed
             End If
+        End Set
+    End Property
+    'HS ini files
+    Public Property HS_ini As List(Of String)
+        Get
+            Return _HS_ini
+        End Get
+        Set(value As List(Of String))
+            _HS_ini = value
+            ComboBox1.Items.Clear()
+            For Each s As String In value
+                ComboBox1.Items.Add(s)
+            Next
+        End Set
+    End Property
+    'Main menu
+    Public Property mainMenu As List(Of String)
+        Get
+            Return _mainMenu
+        End Get
+        Set(value As List(Of String))
+            _mainMenu = value
         End Set
     End Property
 
@@ -105,19 +159,23 @@ Public Class Form8_systemProperties
         If name = "button1" Then
             Dim fd As New OpenFileDialog
             fd.Filter = "Emulator exe (*.exe)|*.exe|All files (*.*)|*.*"
+            fd.FileName = TextBox1.Text
             fd.ShowDialog()
             TextBox1.Text = fd.FileName
         ElseIf name = "button2" Then
             Dim fd As New FolderBrowserDialog
+            fd.SelectedPath = TextBox2.Text
             fd.ShowDialog()
             TextBox2.Text = fd.SelectedPath
         ElseIf name = "button3" Then
             Dim fd As New OpenFileDialog
             fd.Filter = "Emulator exe (*.exe)|*.exe|All files (*.*)|*.*"
+            fd.FileName = TextBox3.Text
             fd.ShowDialog()
             TextBox3.Text = fd.FileName
         ElseIf name = "button4" Then
             Dim fd As New FolderBrowserDialog
+            fd.SelectedPath = TextBox4.Text
             fd.ShowDialog()
             TextBox4.Text = fd.SelectedPath
         End If
@@ -159,9 +217,16 @@ Public Class Form8_systemProperties
             If TextBox2.Text.Trim = "" Or HL_Path = "" Then
                 TextBox2.BackColor = Form1.colorNO
             Else
-                tmpPath = TextBox2.Text
-                If tmpPath.StartsWith(".") Then tmpPath = HL_Path + "\" + tmpPath
-                If DirectoryExists(tmpPath) Then TextBox2.BackColor = Form1.colorYES Else TextBox2.BackColor = Form1.colorNO
+                Dim somethingFound As Boolean = False
+                Dim somethingNotFound As Boolean = False
+                For Each tmp As String In TextBox2.Text.Split({"|"c}, StringSplitOptions.RemoveEmptyEntries)
+                    If tmp.StartsWith(".") Then tmp = HL_Path + "\" + tmp
+                    If DirectoryExists(tmp) Then somethingFound = True Else somethingNotFound = True
+                Next
+
+                If somethingFound And Not somethingNotFound Then TextBox2.BackColor = Form1.colorYES
+                If somethingFound And somethingNotFound Then TextBox2.BackColor = Color.YellowGreen
+                If Not somethingFound Then TextBox2.BackColor = Form1.colorNO
             End If
         End If
 
@@ -191,22 +256,47 @@ Public Class Form8_systemProperties
         'If HL_Path 
         If RadioButton1.Checked And ComboBox2.SelectedIndex < 0 Then MsgBox("Module need to be set to use hyperlaunch.") : Exit Sub
 
+        'Add/remove system in main menu
+        If _data(0) = "" And insert_new_system_at <> -1 Then
+            'Add system
+            Dim x As New Xml.XmlDocument
+            x.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
+            Dim rootNode = x.SelectSingleNode("/menu")
+            Dim gameNodes = x.SelectNodes("/menu/game")
+            Dim newNode = x.CreateElement("game")
+            newNode.SetAttribute("name", sysNormalCase)
+            rootNode.InsertBefore(newNode, gameNodes(insert_new_system_at))
+            x.Save(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
+            _data(0) = "1"
+        ElseIf _data(0) <> "" And insert_new_system_at = -1 Then
+            'Remove system
+            Dim x As New Xml.XmlDocument
+            x.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
+            Dim node_to_delete = x.SelectSingleNode("/menu/game[@name='" + sysNormalCase + "']")
+            x.SelectSingleNode("/menu").RemoveChild(node_to_delete)
+            x.Save(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
+            _data(0) = ""
+        End If
+
+        'Emu & Rom Paths
         Dim found As Boolean = False
         Dim iniclass As New IniFile
         Dim iniclass2 As New IniFileApi
 
         'hyperlaunch
+        Dim selectedEmuName As String = TextBox1.Text
+        selectedEmuName = selectedEmuName.Substring(selectedEmuName.LastIndexOf("\") + 1).Trim()
+        If selectedEmuName.Contains(".") Then selectedEmuName = selectedEmuName.Substring(0, selectedEmuName.LastIndexOf("."))
+
         If RadioButton1.Checked Then
+            Dim moduleWoExtension As String = ComboBox2.Items(ComboBox2.SelectedIndex).ToString.Trim()
+            If moduleWoExtension.Contains(".") Then moduleWoExtension = moduleWoExtension.Substring(0, moduleWoExtension.LastIndexOf("."))
+
             If FileExists(HL_Path + "\Settings\Global Emulators.ini") Then
                 iniclass.Load(HL_Path + "\Settings\Global Emulators.ini")
                 For Each Section In iniclass.Sections
                     Dim emuSection = DirectCast(Section, IniFile.IniSection)
                     Dim emuName As String = emuSection.Name
-                    Dim selectedEmuName As String = TextBox1.Text
-                    selectedEmuName = selectedEmuName.Substring(selectedEmuName.LastIndexOf("\") + 1).Trim()
-                    If selectedEmuName.Contains(".") Then selectedEmuName = selectedEmuName.Substring(0, selectedEmuName.LastIndexOf("."))
-                    Dim moduleWoExtension As String = ComboBox2.Items(ComboBox2.SelectedIndex).ToString.Trim()
-                    If moduleWoExtension.Contains(".") Then moduleWoExtension = moduleWoExtension.Substring(0, moduleWoExtension.LastIndexOf("."))
 
                     If iniclass.GetKeyValue(emuName, "Module") = ComboBox2.Items(ComboBox2.SelectedIndex).ToString Then
                         found = True
@@ -229,16 +319,18 @@ Public Class Form8_systemProperties
                         Else
                             MsgBox("File does not exist: """ + HL_Path + "\Settings\" + sys + "\Emulators.ini""") : Exit Sub
                         End If
-                        RaiseEvent paths_updated(sys) : Me.Close() : Exit Sub
                     End If
                 Next
-                If Not found Then MsgBox("There is no emulator associated with selected modul in 'Global Emulators.ini'. You have to either add new emulator associated with this module through HyperLaunchHQ, or select another module." + vbCrLf + "This feature will be implimented in HyperspinChecker soon, but not yet.") : Exit Sub
+                If Not found Then MsgBox("There is no emulator associated with selected module in 'Global Emulators.ini'. You have to either add new emulator associated with this module through HyperLaunchHQ, or select another module." + vbCrLf + "This feature will be implimented in HyperspinChecker soon, but not yet.") : Exit Sub
             Else
                 MsgBox("File does not exist: """ + HL_Path + "\Settings\Global Emulators.ini""") : Exit Sub
             End If
         End If
+
+        RaiseEvent paths_updated(sys) : Me.Close() : Exit Sub
     End Sub
 
+    'Absolute_Path_to_Relative
     Private Function Absolute_Path_to_Relative(path_from As String, path_to As String) As String
         If path_to.StartsWith(".") Then Return path_to
         If String.IsNullOrEmpty(path_from) Then Return ""
@@ -259,4 +351,121 @@ Public Class Form8_systemProperties
         If Not relativePath.StartsWith(".") Then relativePath = ".\" + relativePath
         Return relativePath
     End Function
+
+    'Always on top checkbox
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+        Me.TopMost = CheckBox3.Checked
+    End Sub
+
+    'Activate in mainMenu checkbox
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If refr Then Exit Sub
+        If Not CheckBox1.Checked Then insert_new_system_at = -1 : Exit Sub
+
+        If ListView1.SelectedItems.Count = 1 Then ListView1.SelectedItems(0).Text = sys
+        For Each c As Control In Me.Controls
+            If Not controls_to_hide.Contains(c.Name.ToUpper) Then c.Enabled = False
+        Next
+
+        Panel1.Visible = True
+        ListView1.Focus()
+    End Sub
+
+    'Copy hs.ini
+    Private Sub Button_copyFrom_Click(sender As Object, e As EventArgs) Handles Button_copyFrom.Click
+        If ComboBox1.SelectedIndex < 0 Then Exit Sub
+        Dim p As String = Class1.HyperspinPath + "\Settings\" + ComboBox1.SelectedItem.ToString
+        Dim p_new As String = Class1.HyperspinPath + "\Settings\" + sysNormalCase + ".ini"
+        If Not FileExists(p) Then MsgBox("File not exist." + vbCrLf + p) : Exit Sub
+        If FileExists(p_new) Then MsgBox("File already exist." + vbCrLf + p_new) : Exit Sub
+        FileCopy(p, p_new)
+        Label6.BackColor = Form1.colorYES
+        RaiseEvent paths_updated(sys)
+    End Sub
+
+#Region "Region: Insert in mainMenu panel"
+    'Main menu systems list selection change
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        If refr Or ListView1.SelectedItems.Count <> 1 Then Exit Sub
+        Dim c As Integer = 0
+        Dim f As Font = ListView1.Font
+        Dim f_bold As Font = New Font(f.FontFamily, f.SizeInPoints + 4, FontStyle.Bold)
+        For Each l As ListViewItem In ListView1.Items
+            If l.Selected Then
+                l.Text = sys
+                l.Font = f_bold
+            Else
+                l.Text = _mainMenu(c)
+                l.Font = f
+                c += 1
+            End If
+        Next
+    End Sub
+
+    'Set to top
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        If ListView1.SelectedItems.Count <> 1 Then Exit Sub
+
+        Dim c As Integer = 0
+        Dim f As Font = ListView1.Font
+        Dim f_bold As Font = New Font(f.FontFamily, f.SizeInPoints + 4, FontStyle.Bold)
+        For i As Integer = 0 To ListView1.Items.Count - 1
+            Dim l As ListViewItem = ListView1.Items(i)
+            If i = 0 Then
+                l.Text = sys
+                l.Font = f_bold
+            Else
+                l.Text = _mainMenu(c)
+                l.Font = f
+                c += 1
+            End If
+        Next
+        ListView1.TopItem = ListView1.Items(0)
+        ListView1.Items(0).Selected = True
+        ListView1.Focus()
+    End Sub
+
+    'Set to bottom
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        If ListView1.SelectedItems.Count <> 1 Then Exit Sub
+
+        Dim c As Integer = 0
+        Dim f As Font = ListView1.Font
+        Dim f_bold As Font = New Font(f.FontFamily, f.SizeInPoints + 4, FontStyle.Bold)
+        For i As Integer = 0 To ListView1.Items.Count - 1
+            Dim l As ListViewItem = ListView1.Items(i)
+            If i = ListView1.Items.Count - 1 Then
+                l.Text = sys
+                l.Font = f_bold
+            Else
+                l.Text = _mainMenu(c)
+                l.Font = f
+                c += 1
+            End If
+        Next
+        ListView1.TopItem = ListView1.Items(ListView1.Items.Count - 1)
+        ListView1.Items(ListView1.Items.Count - 1).Selected = True
+        ListView1.Focus()
+    End Sub
+
+    'OK
+    Dim insert_new_system_at As Integer = -1
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Panel1.Visible = False
+        For Each c As Control In Me.Controls
+            If Not controls_to_hide.Contains(c.Name.ToUpper) Then c.Enabled = True
+        Next
+        insert_new_system_at = ListView1.SelectedIndices(0)
+    End Sub
+
+    'Cancel
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        refr = True : CheckBox1.Checked = False : refr = False
+        Panel1.Visible = False
+        For Each c As Control In Me.Controls
+            If Not controls_to_hide.Contains(c.Name.ToUpper) Then c.Enabled = True
+        Next
+        insert_new_system_at = -1
+    End Sub
+#End Region
 End Class

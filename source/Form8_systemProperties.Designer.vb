@@ -50,6 +50,15 @@ Partial Class Form8_systemProperties
         Me.Label11 = New System.Windows.Forms.Label()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'CheckBox1
@@ -307,11 +316,103 @@ Partial Class Form8_systemProperties
         Me.Button5.Text = "Update"
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Checked = True
+        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox3.Location = New System.Drawing.Point(12, 337)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(92, 17)
+        Me.CheckBox3.TabIndex = 27
+        Me.CheckBox3.Text = "Always on top"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'ListView1
+        '
+        Me.ListView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
+        Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(3, 4)
+        Me.ListView1.MultiSelect = False
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(333, 294)
+        Me.ListView1.TabIndex = 1
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Where put new system on main wheel?"
+        Me.ColumnHeader1.Width = 300
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Button9)
+        Me.Panel1.Controls.Add(Me.Button8)
+        Me.Panel1.Controls.Add(Me.Button7)
+        Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.ListView1)
+        Me.Panel1.Location = New System.Drawing.Point(119, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(343, 342)
+        Me.Panel1.TabIndex = 28
+        Me.Panel1.Visible = False
+        '
+        'Button9
+        '
+        Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button9.Location = New System.Drawing.Point(195, 304)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(64, 30)
+        Me.Button9.TabIndex = 5
+        Me.Button9.Text = "Cancel"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button8.Location = New System.Drawing.Point(265, 304)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(64, 30)
+        Me.Button8.TabIndex = 4
+        Me.Button8.Text = "OK"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button7.Location = New System.Drawing.Point(88, 304)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(79, 30)
+        Me.Button7.TabIndex = 3
+        Me.Button7.Text = "Set to bottom"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button6.Location = New System.Drawing.Point(3, 304)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(79, 30)
+        Me.Button6.TabIndex = 2
+        Me.Button6.Text = "Set to top"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Form8_systemProperties
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(590, 366)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.Button4)
@@ -345,6 +446,8 @@ Partial Class Form8_systemProperties
         Me.MinimizeBox = False
         Me.Name = "Form8_systemProperties"
         Me.Text = "System Properties"
+        Me.TopMost = True
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -376,4 +479,12 @@ Partial Class Form8_systemProperties
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button9 As Button
 End Class
