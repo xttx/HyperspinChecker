@@ -299,6 +299,7 @@ Partial Class Form1
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button23 = New System.Windows.Forms.Button()
+        Me.Button25 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -1362,6 +1363,7 @@ Partial Class Form1
         '
         'TabPage7
         '
+        Me.TabPage7.Controls.Add(Me.Button25)
         Me.TabPage7.Controls.Add(Me.Button23)
         Me.TabPage7.Controls.Add(Me.Button22)
         Me.TabPage7.Controls.Add(Me.Button34)
@@ -2942,6 +2944,16 @@ Partial Class Form1
         Me.Button23.Text = "Add system"
         Me.Button23.UseVisualStyleBackColor = True
         '
+        'Button25
+        '
+        Me.Button25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button25.Location = New System.Drawing.Point(887, 181)
+        Me.Button25.Name = "Button25"
+        Me.Button25.Size = New System.Drawing.Size(84, 44)
+        Me.Button25.TabIndex = 9
+        Me.Button25.Text = "Start HyperSpin"
+        Me.Button25.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3289,4 +3301,5 @@ Partial Class Form1
     Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
     Friend WithEvents Button22 As Button
     Friend WithEvents Button23 As Button
+    Friend WithEvents Button25 As Button
 End Class

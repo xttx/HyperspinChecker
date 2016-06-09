@@ -1684,3 +1684,13 @@
 11:23:25 - Loading config
 11:23:25 - Init classes
 11:23:25 - Done init
+12:54:42 - Initializing...
+12:54:42 - Creating menus
+12:54:42 - Loading config
+12:54:42 - Init classes
+12:54:42 - Done init
+12:55:5 - Initializing...
+12:55:5 - Creating menus
+12:55:5 - Loading config
+12:55:5 - Init classes
+12:55:5 - Done init

@@ -12,6 +12,7 @@ Public Class Class5_system_manager
     Private WithEvents Btn_scan As Button = Form1.Button33
     Private WithEvents Btn_prop As Button = Form1.Button34
     Private WithEvents Btn_exclude As Button = Form1.Button22
+    Private WithEvents Btn_startHS As Button = Form1.Button25
     Private WithEvents grid As DataGridView = Form1.DataGridView2
 
     'Constructor
@@ -424,7 +425,7 @@ Public Class Class5_system_manager
         End If
     End Sub
 
-#Region "Region: Show forms"
+#Region "Region: Show forms / launch HS"
     'Show properties
     Private Sub show_properties() Handles Btn_prop.Click, grid.CellDoubleClick
         frm = New Form8_systemProperties
@@ -460,6 +461,12 @@ Public Class Class5_system_manager
     Private Sub shoExclusionDialog() Handles Btn_exclude.Click
         Dim f As New FormF_systemManager_exclusions
         f.ShowDialog(Form1)
+    End Sub
+
+    'Start HS
+    Private Sub startHS() Handles Btn_startHS.Click
+        Dim hs As String = Class1.HyperspinPath + "\Hyperspin.exe"
+        Process.Start(hs)
     End Sub
 #End Region
 
