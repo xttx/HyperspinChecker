@@ -58,6 +58,8 @@ Partial Class Form8_systemProperties
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -170,7 +172,7 @@ Partial Class Form8_systemProperties
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(12, 243)
+        Me.RadioButton2.Location = New System.Drawing.Point(12, 275)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(191, 17)
         Me.RadioButton2.TabIndex = 10
@@ -180,7 +182,7 @@ Partial Class Form8_systemProperties
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(48, 167)
+        Me.Label7.Location = New System.Drawing.Point(48, 199)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(45, 13)
         Me.Label7.TabIndex = 11
@@ -190,7 +192,7 @@ Partial Class Form8_systemProperties
         '
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(119, 164)
+        Me.ComboBox2.Location = New System.Drawing.Point(119, 196)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(190, 21)
         Me.ComboBox2.TabIndex = 12
@@ -198,7 +200,7 @@ Partial Class Form8_systemProperties
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(48, 194)
+        Me.Label8.Location = New System.Drawing.Point(48, 226)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(56, 13)
         Me.Label8.TabIndex = 13
@@ -206,14 +208,14 @@ Partial Class Form8_systemProperties
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(119, 191)
+        Me.TextBox1.Location = New System.Drawing.Point(119, 223)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(406, 20)
         Me.TextBox1.TabIndex = 14
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(119, 217)
+        Me.TextBox2.Location = New System.Drawing.Point(119, 249)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(406, 20)
         Me.TextBox2.TabIndex = 16
@@ -221,7 +223,7 @@ Partial Class Form8_systemProperties
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(48, 220)
+        Me.Label9.Location = New System.Drawing.Point(48, 252)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 13)
         Me.Label9.TabIndex = 15
@@ -229,7 +231,7 @@ Partial Class Form8_systemProperties
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(531, 191)
+        Me.Button1.Location = New System.Drawing.Point(531, 223)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(45, 20)
         Me.Button1.TabIndex = 17
@@ -238,7 +240,7 @@ Partial Class Form8_systemProperties
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(531, 217)
+        Me.Button2.Location = New System.Drawing.Point(531, 249)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(45, 20)
         Me.Button2.TabIndex = 18
@@ -247,7 +249,7 @@ Partial Class Form8_systemProperties
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(531, 292)
+        Me.Button4.Location = New System.Drawing.Point(531, 324)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(45, 20)
         Me.Button4.TabIndex = 24
@@ -256,7 +258,7 @@ Partial Class Form8_systemProperties
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(531, 266)
+        Me.Button3.Location = New System.Drawing.Point(531, 298)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(45, 20)
         Me.Button3.TabIndex = 23
@@ -265,7 +267,7 @@ Partial Class Form8_systemProperties
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(119, 292)
+        Me.TextBox4.Location = New System.Drawing.Point(119, 324)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(406, 20)
         Me.TextBox4.TabIndex = 22
@@ -273,7 +275,7 @@ Partial Class Form8_systemProperties
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(48, 295)
+        Me.Label10.Location = New System.Drawing.Point(48, 327)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(57, 13)
         Me.Label10.TabIndex = 21
@@ -281,7 +283,7 @@ Partial Class Form8_systemProperties
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(119, 266)
+        Me.TextBox3.Location = New System.Drawing.Point(119, 298)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(406, 20)
         Me.TextBox3.TabIndex = 20
@@ -289,7 +291,7 @@ Partial Class Form8_systemProperties
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(48, 269)
+        Me.Label11.Location = New System.Drawing.Point(48, 301)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(56, 13)
         Me.Label11.TabIndex = 19
@@ -300,7 +302,7 @@ Partial Class Form8_systemProperties
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Checked = True
         Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox2.Location = New System.Drawing.Point(317, 166)
+        Me.CheckBox2.Location = New System.Drawing.Point(317, 198)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(219, 17)
         Me.CheckBox2.TabIndex = 25
@@ -309,7 +311,7 @@ Partial Class Form8_systemProperties
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(456, 318)
+        Me.Button5.Location = New System.Drawing.Point(456, 350)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(120, 36)
         Me.Button5.TabIndex = 26
@@ -321,7 +323,7 @@ Partial Class Form8_systemProperties
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Checked = True
         Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox3.Location = New System.Drawing.Point(12, 337)
+        Me.CheckBox3.Location = New System.Drawing.Point(12, 369)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(92, 17)
         Me.CheckBox3.TabIndex = 27
@@ -340,7 +342,7 @@ Partial Class Form8_systemProperties
         Me.ListView1.Location = New System.Drawing.Point(3, 4)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(333, 294)
+        Me.ListView1.Size = New System.Drawing.Size(333, 338)
         Me.ListView1.TabIndex = 1
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -360,7 +362,7 @@ Partial Class Form8_systemProperties
         Me.Panel1.Controls.Add(Me.ListView1)
         Me.Panel1.Location = New System.Drawing.Point(119, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(343, 342)
+        Me.Panel1.Size = New System.Drawing.Size(343, 386)
         Me.Panel1.TabIndex = 28
         Me.Panel1.Visible = False
         '
@@ -368,7 +370,7 @@ Partial Class Form8_systemProperties
         '
         Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button9.Location = New System.Drawing.Point(195, 304)
+        Me.Button9.Location = New System.Drawing.Point(195, 348)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(64, 30)
         Me.Button9.TabIndex = 5
@@ -379,7 +381,7 @@ Partial Class Form8_systemProperties
         '
         Me.Button8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button8.Location = New System.Drawing.Point(265, 304)
+        Me.Button8.Location = New System.Drawing.Point(265, 348)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(64, 30)
         Me.Button8.TabIndex = 4
@@ -389,7 +391,7 @@ Partial Class Form8_systemProperties
         'Button7
         '
         Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button7.Location = New System.Drawing.Point(88, 304)
+        Me.Button7.Location = New System.Drawing.Point(88, 348)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(79, 30)
         Me.Button7.TabIndex = 3
@@ -399,18 +401,37 @@ Partial Class Form8_systemProperties
         'Button6
         '
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button6.Location = New System.Drawing.Point(3, 304)
+        Me.Button6.Location = New System.Drawing.Point(3, 348)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(79, 30)
         Me.Button6.TabIndex = 2
         Me.Button6.Text = "Set to top"
         Me.Button6.UseVisualStyleBackColor = True
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(48, 173)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(51, 13)
+        Me.Label12.TabIndex = 29
+        Me.Label12.Text = "Emulator:"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(119, 169)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(190, 21)
+        Me.ComboBox3.TabIndex = 30
+        '
         'Form8_systemProperties
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(590, 366)
+        Me.ClientSize = New System.Drawing.Size(590, 410)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.Button5)
@@ -440,6 +461,7 @@ Partial Class Form8_systemProperties
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.ComboBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -487,4 +509,6 @@ Partial Class Form8_systemProperties
     Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button9 As Button
+    Friend WithEvents Label12 As Label
+    Friend WithEvents ComboBox3 As ComboBox
 End Class

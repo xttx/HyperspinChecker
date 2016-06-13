@@ -8,6 +8,7 @@ Public Class Form8_systemProperties
     Dim sysNormalCase As String = ""
     Dim _data As List(Of String)
     Dim _modules As List(Of String)
+    Dim _emulators As Dictionary(Of String, List(Of String))
     Dim _HS_ini As List(Of String)
     Dim _mainMenu As List(Of String)
     Dim HL_Path As String = ""
@@ -22,8 +23,6 @@ Public Class Form8_systemProperties
         Set(value As List(Of String))
             refr = True
             If Panel1.Visible Then Button8_Click(Button8, New EventArgs)
-
-            ComboBox2.Items.Clear()
 
             _data = value
             If _data.Count = 0 Then Me.Enabled = False : Exit Property
@@ -48,29 +47,11 @@ Public Class Form8_systemProperties
 
             sys = _data(11)
             sysNormalCase = _data(12)
-            If sys <> "" Then
-                If FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then
-                    Dim iniClass As New IniFile
-                    iniClass.Load(Class1.HyperspinPath + "\Settings\" + sys + ".ini")
-                    TextBox3.Text = iniClass.GetKeyValue("EXE INFO", "path").Trim
-                    TextBox4.Text = iniClass.GetKeyValue("EXE INFO", "rompath").Trim
-
-                    iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
-                    HL_Path = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
-                    If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
-                    If FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
-                        iniClass.Load(HL_Path + "\Settings\" + sys + "\Emulators.ini")
-                        Dim emu As String = iniClass.GetKeyValue("ROMS", "Default_Emulator").Trim
-                        TextBox2.Text = iniClass.GetKeyValue("ROMS", "Rom_Path").Trim
-                        Dim default_emulator = iniClass.GetKeyValue("ROMS", "Default_Emulator").Trim
-
-                        If emu <> "" Then
-                            iniClass.Load(HL_Path + "\Settings\Global Emulators.ini")
-                            TextBox1.Text = iniClass.GetKeyValue(emu, "Emu_Path").Trim
-                            current_module = iniClass.GetKeyValue(emu, "Module").Trim
-                        End If
-                    End If
-                End If
+            If sys <> "" AndAlso FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then
+                Dim iniClass As New IniFile
+                iniClass.Load(Class1.HyperspinPath + "\Settings\" + sys + ".ini")
+                TextBox3.Text = iniClass.GetKeyValue("EXE INFO", "path").Trim
+                TextBox4.Text = iniClass.GetKeyValue("EXE INFO", "rompath").Trim
             End If
 
             'Add main menu systems to listview
@@ -101,52 +82,89 @@ Public Class Form8_systemProperties
         End Get
         Set(value As List(Of String))
             _modules = value
+
+            'Fill modules list (only compatible here)
+            ComboBox2.Items.Clear()
             For Each m As String In _modules
                 ComboBox2.Items.Add(m)
             Next
 
+            'Fill emulators list (only those, which module exist in modules list)
+            ComboBox3.Items.Clear()
+            For Each k As String In _emulators.Keys
+                Dim m As String = _emulators(k)(1)
+                For i As Integer = 0 To ComboBox2.Items.Count - 1
+                    If ComboBox2.Items(i).ToString.ToUpper = m.ToUpper Then ComboBox3.Items.Add(k) : Exit For
+                Next
+            Next
+
+            'Set hl rom path, and default emulator (if exist in emulator list)
+            Dim emu As String = ""
+            Dim ini As New IniFileApi
+            If sys <> "" AndAlso FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
+                ini.path = HL_Path + "\Settings\" + sys + "\Emulators.ini"
+                emu = ini.IniReadValue("ROMS", "Default_Emulator").Trim
+                TextBox2.Text = ini.IniReadValue("ROMS", "Rom_Path").Trim
+            Else
+                TextBox2.Text = ""
+            End If
+            If emu <> "" And ComboBox3.Items.Contains(emu) Then ComboBox3.SelectedItem = emu Else ComboBox3.SelectedIndex = -1
+        End Set
+    End Property
+    'One time init
+    Public Sub oneTimeInit(HS_ini As List(Of String), mainMenu As List(Of String), emulators As Dictionary(Of String, List(Of String)))
+        _mainMenu = mainMenu
+        _HS_ini = HS_ini
+        _emulators = emulators
+        ComboBox1.Items.Clear()
+        For Each s As String In _HS_ini
+            ComboBox1.Items.Add(s)
+        Next
+
+        Dim ini As New IniFileApi
+        ini.path = Class1.HyperspinPath + "\Settings\Settings.ini"
+        HL_Path = ini.IniReadValue("Main", "Hyperlaunch_Path").Trim
+        If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
+    End Sub
+
+    'Change HL emulator
+    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
+        current_module = ""
+        If Not sys = "" And Not HL_Path = "" And ComboBox3.SelectedIndex >= 0 Then
+            Dim emu As String = ComboBox3.SelectedItem.ToString
+            If _emulators.Keys.Contains(emu) Then
+                TextBox1.Text = _emulators(emu)(2)
+                current_module = _emulators(emu)(1)
+            Else
+                TextBox1.Text = ""
+            End If
+            If current_module.Contains("\") Then current_module = current_module.Substring(current_module.LastIndexOf("\") + 1)
+
             If current_module <> "" Then
                 For i As Integer = 0 To ComboBox2.Items.Count - 1
-                    If ComboBox2.Items(i).ToString.ToUpper = current_module.ToUpper Then ComboBox2.SelectedIndex = i : Exit Property
+                    If ComboBox2.Items(i).ToString.ToUpper = current_module.ToUpper Then ComboBox2.SelectedIndex = i : Exit Sub
                 Next
                 ComboBox2.Items.Add(current_module)
-                ComboBox2.SelectedItem = ComboBox2.Items.Count - 1
+                ComboBox2.SelectedIndex = ComboBox2.Items.Count - 1
                 ComboBox2.ForeColor = Color.DarkRed
             End If
-        End Set
-    End Property
-    'HS ini files
-    Public Property HS_ini As List(Of String)
-        Get
-            Return _HS_ini
-        End Get
-        Set(value As List(Of String))
-            _HS_ini = value
-            ComboBox1.Items.Clear()
-            For Each s As String In value
-                ComboBox1.Items.Add(s)
-            Next
-        End Set
-    End Property
-    'Main menu
-    Public Property mainMenu As List(Of String)
-        Get
-            Return _mainMenu
-        End Get
-        Set(value As List(Of String))
-            _mainMenu = value
-        End Set
-    End Property
+            Exit Sub
+        End If
+        ComboBox2.SelectedIndex = -1
+        TextBox1.Text = ""
+    End Sub
 
     'Use Hyperspin / hyperlaunch switch
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         If RadioButton1.Checked Then
-            TextBox1.Enabled = True : TextBox2.Enabled = True : ComboBox2.Enabled = True : CheckBox2.Enabled = True
+            ComboBox2.Enabled = True : ComboBox3.Enabled = True : CheckBox2.Enabled = True
+            TextBox1.Enabled = True : TextBox2.Enabled = True
             Button1.Enabled = True : Button2.Enabled = True
             TextBox3.Enabled = False : TextBox4.Enabled = False
             Button4.Enabled = False : Button3.Enabled = False
         Else
-            TextBox1.Enabled = False : TextBox2.Enabled = False : ComboBox2.Enabled = False : CheckBox2.Enabled = False
+            ComboBox2.Enabled = False : ComboBox3.Enabled = False : CheckBox2.Enabled = False
+            TextBox1.Enabled = False : TextBox2.Enabled = False
             Button1.Enabled = False : Button2.Enabled = False
             TextBox3.Enabled = True : TextBox4.Enabled = True
             Button4.Enabled = True : Button3.Enabled = True
@@ -254,6 +272,7 @@ Public Class Form8_systemProperties
     'UPDATE
     Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
         'If HL_Path 
+        If RadioButton1.Checked And ComboBox3.SelectedIndex < 0 Then MsgBox("Emulator need to be set to use hyperlaunch.") : Exit Sub
         If RadioButton1.Checked And ComboBox2.SelectedIndex < 0 Then MsgBox("Module need to be set to use hyperlaunch.") : Exit Sub
 
         'Add/remove system in main menu
@@ -289,39 +308,39 @@ Public Class Form8_systemProperties
         If selectedEmuName.Contains(".") Then selectedEmuName = selectedEmuName.Substring(0, selectedEmuName.LastIndexOf("."))
 
         If RadioButton1.Checked Then
+            If ComboBox3.SelectedIndex < 0 Then MsgBox("You have to select an emulator, to use HyperLaunch")
+
+            Dim emu As String = ComboBox3.SelectedItem.ToString
             Dim moduleWoExtension As String = ComboBox2.Items(ComboBox2.SelectedIndex).ToString.Trim()
             If moduleWoExtension.Contains(".") Then moduleWoExtension = moduleWoExtension.Substring(0, moduleWoExtension.LastIndexOf("."))
 
+            If selectedEmuName.ToUpper <> emu.ToUpper And selectedEmuName.ToUpper <> moduleWoExtension.ToUpper Then
+                Dim msg As String = "Your module name is: " + moduleWoExtension + vbCrLf + "Associated emulator is: " + emu + vbCrLf + "and your selected emulator is: " + selectedEmuName
+                msg = msg + vbCrLf + "Your selected emulator doesn't match with module name nither with associated emulator name. Sometimes it happens. Are you sure this information is correct?"
+                msg = msg + vbCrLf + "(emulator in [" + emu + "] section, in 'Global Emulators.ini' will be overwriten by your newly selected emulator)"
+                Dim res As MsgBoxResult = MsgBox(msg, MsgBoxStyle.YesNo)
+                If res = MsgBoxResult.No Then Exit Sub
+            End If
+
             If FileExists(HL_Path + "\Settings\Global Emulators.ini") Then
-                iniclass.Load(HL_Path + "\Settings\Global Emulators.ini")
-                For Each Section In iniclass.Sections
-                    Dim emuSection = DirectCast(Section, IniFile.IniSection)
-                    Dim emuName As String = emuSection.Name
+                Dim ini As New IniFileApi
+                ini.path = HL_Path + "\Settings\Global Emulators.ini"
+                ini.IniWriteValue(emu, "Emu_Path", Absolute_Path_to_Relative((HL_Path + "\").Replace("\\", "\"), TextBox1.Text))
 
-                    If iniclass.GetKeyValue(emuName, "Module") = ComboBox2.Items(ComboBox2.SelectedIndex).ToString Then
-                        found = True
-                        If selectedEmuName.ToUpper <> emuName.ToUpper And selectedEmuName.ToUpper <> moduleWoExtension.ToUpper Then
-                            Dim msg As String = "Your module name is: " + moduleWoExtension + vbCrLf + "Associated emulator is: " + emuName + vbCrLf + "and your selected emulator is: " + selectedEmuName
-                            msg = msg + vbCrLf + "Your selected emulator doesn't match with module name nither with associated emulator name. Sometimes it happens. Are you sure this information is correct?"
-                            msg = msg + vbCrLf + "(emulator in [" + emuName + "] section, in 'Global Emulators.ini' will be overwriten by your newly selected emulator)"
-                            Dim res As MsgBoxResult = MsgBox(msg, MsgBoxStyle.YesNo)
-                            If res = MsgBoxResult.No Then Exit Sub
-                        End If
+                If Not FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
+                    'MsgBox("System setting file does not exist: """ + HL_Path + "\Settings\" + sys + "\Emulators.ini""")
+                    'Exit Sub
+                    Dim msg As String = "System setting file does not exist: """ + HL_Path + "\Settings\" + sys + "\Emulators.ini"""
+                    Dim frm As New FormF_createNewHL_system
+                    frm.init(msg, HL_Path)
+                    frm.ShowDialog(Me)
+                    If frm.response = "" Then Exit Sub
+                    CopyDirectory(HL_Path + "\Settings\" + frm.response, HL_Path + "\Settings\" + sys, True)
+                End If
 
-                        iniclass2.path = HL_Path + "\Settings\Global Emulators.ini"
-                        iniclass2.IniWriteValue(emuName, "Emu_Path", Absolute_Path_to_Relative((HL_Path + "\").Replace("\\", "\"), TextBox1.Text))
-
-                        If FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
-                            iniclass2.path = HL_Path + "\Settings\" + sys + "\Emulators.ini"
-
-                            iniclass2.IniWriteValue("ROMS", "Default_Emulator", emuName)
-                            iniclass2.IniWriteValue("ROMS", "Rom_Path", Absolute_Path_to_Relative((HL_Path + "\").Replace("\\", "\"), TextBox2.Text))
-                        Else
-                            MsgBox("File does not exist: """ + HL_Path + "\Settings\" + sys + "\Emulators.ini""") : Exit Sub
-                        End If
-                    End If
-                Next
-                If Not found Then MsgBox("There is no emulator associated with selected module in 'Global Emulators.ini'. You have to either add new emulator associated with this module through HyperLaunchHQ, or select another module." + vbCrLf + "This feature will be implimented in HyperspinChecker soon, but not yet.") : Exit Sub
+                ini.path = HL_Path + "\Settings\" + sys + "\Emulators.ini"
+                ini.IniWriteValue("ROMS", "Default_Emulator", emu)
+                ini.IniWriteValue("ROMS", "Rom_Path", Absolute_Path_to_Relative((HL_Path + "\").Replace("\\", "\"), TextBox2.Text))
             Else
                 MsgBox("File does not exist: """ + HL_Path + "\Settings\Global Emulators.ini""") : Exit Sub
             End If
@@ -380,6 +399,30 @@ Public Class Form8_systemProperties
         If FileExists(p_new) Then MsgBox("File already exist." + vbCrLf + p_new) : Exit Sub
         FileCopy(p, p_new)
         Label6.BackColor = Form1.colorYES
+
+        If FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then
+            Dim iniClass As New IniFile
+            iniClass.Load(Class1.HyperspinPath + "\Settings\" + sys + ".ini")
+            TextBox3.Text = iniClass.GetKeyValue("EXE INFO", "path").Trim
+            TextBox4.Text = iniClass.GetKeyValue("EXE INFO", "rompath").Trim
+
+            iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
+            HL_Path = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
+            If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
+            If FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
+                iniClass.Load(HL_Path + "\Settings\" + sys + "\Emulators.ini")
+                Dim emu As String = iniClass.GetKeyValue("ROMS", "Default_Emulator").Trim
+                TextBox2.Text = iniClass.GetKeyValue("ROMS", "Rom_Path").Trim
+                Dim default_emulator = iniClass.GetKeyValue("ROMS", "Default_Emulator").Trim
+
+                If emu <> "" Then
+                    iniClass.Load(HL_Path + "\Settings\Global Emulators.ini")
+                    TextBox1.Text = iniClass.GetKeyValue(emu, "Emu_Path").Trim
+                    current_module = iniClass.GetKeyValue(emu, "Module").Trim
+                End If
+            End If
+        End If
+
         RaiseEvent paths_updated(sys)
     End Sub
 

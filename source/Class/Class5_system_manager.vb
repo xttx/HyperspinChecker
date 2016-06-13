@@ -2,10 +2,12 @@
 
 Public Class Class5_system_manager
     Dim ini As New IniFileApi
+    Dim emulators As New Dictionary(Of String, List(Of String))
     Dim modules As New Dictionary(Of String, List(Of String))
     Dim modules_supported_systems As New List(Of String)
     Dim hs_ini As New List(Of String)
     Dim mainMenu As New List(Of String)
+    Dim checked As Boolean = False
     Private frm As New Form8_systemProperties
     Private Systems As New Dictionary(Of String, List(Of String))
     Private WithEvents Btn_add As Button = Form1.Button23
@@ -15,7 +17,7 @@ Public Class Class5_system_manager
     Private WithEvents Btn_startHS As Button = Form1.Button25
     Private WithEvents grid As DataGridView = Form1.DataGridView2
 
-    'Constructor
+    'Constructor (just add handler here)
     Public Sub New()
         AddHandler Form8_systemProperties.paths_updated, AddressOf SystemPathUpdated
     End Sub
@@ -24,6 +26,7 @@ Public Class Class5_system_manager
     Private Sub scan() Handles Btn_scan.Click
         If Form1.Label23.BackColor <> Color.LightGreen Then MsgBox("HyperSpin path is incorrect or not set. Set HS path in 'Program Settings' tab.") : Exit Sub
         Systems.Clear()
+        emulators.Clear()
         modules.Clear()
         modules_supported_systems.Clear()
         hs_ini.Clear()
@@ -56,6 +59,18 @@ Public Class Class5_system_manager
             If Not t1 And Not t2 Then HL_Path = ""
         End If
         If Not HL_Path = "" Then iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
+
+        'Fill emulators list
+        ini.path = HL_Path + "\Settings\Global Emulators.ini"
+        For Each s As String In ini.IniListKey
+            Dim m_raw As String = ini.IniReadValue(s, "Module").Trim
+            Dim path As String = ini.IniReadValue(s, "Emu_Path").Trim
+            Dim m As String = m_raw
+            If m.Contains("\") Then m = m.Substring(m.LastIndexOf("\") + 1)
+            Dim l As New List(Of String)
+            l.Add(m_raw) : l.Add(m) : l.Add(path)
+            emulators.Add(s, l)
+        Next
 
         'SCANING MODULES
         If Not HL_Path = "" Then
@@ -273,6 +288,7 @@ Public Class Class5_system_manager
             End If
         Next
         Form1.Label41.Text = "System count: " + Form1.DataGridView2.Rows.Count.ToString + ", Active:" + activeCount.ToString
+        checked = True
     End Sub
 
     'Grid selection changed
@@ -316,6 +332,7 @@ Public Class Class5_system_manager
 
     'System path Updated Event from form_properties
     Private Sub SystemPathUpdated(sys As String)
+        Dim ind As Integer = -1
         Dim system_grid_index As Integer = -1
         For i As Integer = 0 To grid.Rows.Count - 1
             If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then system_grid_index = i : Exit For
@@ -334,12 +351,11 @@ Public Class Class5_system_manager
             For Each x As Xml.XmlNode In mainMenuXml.SelectNodes("/menu/game")
                 mainMenu.Add(x.Attributes("name").Value)
             Next
-            Dim ind As Integer = Systems(sys).IndexOf("%1%")
-            If ind < 0 Then Systems(sys).Add("%1%")
+            If Not Systems(sys).Contains("%1%") Then Systems(sys).Add("%1%")
             'If mainMenu.IndexOf(sysNormalCase) = -1 Then mainMenu.Insert(system_grid_index, sysNormalCase)
             r.Cells(1).Value = "X" : r.Cells(1).Style.BackColor = Form1.colorYES
         Else
-            Dim ind As Integer = Systems(sys).IndexOf("%1%")
+            ind = Systems(sys).IndexOf("%1%")
             If ind >= 0 Then Systems(sys).RemoveAt(ind)
             If mainMenu.IndexOf(sysNormalCase) <> -1 Then mainMenu.Remove(sysNormalCase)
             r.Cells(1).Value = "" : r.Cells(1).Style.BackColor = Form1.colorNO
@@ -352,7 +368,6 @@ Public Class Class5_system_manager
         Dim HL_Path As String = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
         If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
         If Not HL_Path = "" AndAlso (Not FileExists(HL_Path + "\HyperLaunch.exe") And Not FileExists(HL_Path + "\RocketLauncher.exe")) Then HL_Path = ""
-        If Not HL_Path = "" Then iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
 
         If Not FileIO.FileSystem.FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then
             Dim f As Font = r.Cells(4).Style.Font
@@ -363,11 +378,19 @@ Public Class Class5_system_manager
             r.Cells(5).Style.BackColor = Form1.colorNO
             r.Cells(6).Style.BackColor = Form1.colorNO
             r.Cells(7).Style.BackColor = Form1.colorNO
+            ind = Systems(sys).IndexOf("%5%")
+            If ind >= 0 Then Systems(sys).RemoveAt(ind)
+            ind = Systems(sys).IndexOf("%5HL%")
+            If ind >= 0 Then Systems(sys).RemoveAt(ind)
+            ind = Systems(sys).IndexOf("%5HL_PATH_NOT_SET%")
+            If ind >= 0 Then Systems(sys).RemoveAt(ind)
         Else
+            If Not Systems(sys).Contains("%5%") Then Systems(sys).Add("%5%")
             iniClass.Load(Class1.HyperspinPath + "\Settings\" + sys + ".ini")
 
             If iniClass.GetKeyValue("EXE INFO", "hyperlaunch").Trim.ToUpper = "TRUE" Then
                 'Check Hyperlaunch paths
+                If Not Systems(sys).Contains("%5HL%") Then Systems(sys).Add("%5HL%")
                 If HL_Path = "" Then
                     Dim f As Font = New Font(Control.DefaultFont.FontFamily, 6, FontStyle.Regular)
                     r.Cells(5).Value = "INVALID HL PATH"
@@ -377,10 +400,16 @@ Public Class Class5_system_manager
                     r.Cells(5).Style.BackColor = Form1.colorNO
                     r.Cells(6).Style.BackColor = Form1.colorNO
                     r.Cells(7).Style.BackColor = Form1.colorNO
+                    If Not Systems(sys).Contains("%5HL_PATH_NOT_SET%") Then Systems(sys).Add("%5HL_PATH_NOT_SET%")
+                    ind = Systems(sys).IndexOf("%6%")
+                    If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                    ind = Systems(sys).IndexOf("%7%")
+                    If ind >= 0 Then Systems(sys).RemoveAt(ind)
                 Else
                     Dim f As Font = r.Cells(4).Style.Font
                     r.Cells(5).Value = "HL"
                     r.Cells(5).Style.Font = f
+                    r.Cells(5).Style.BackColor = Form1.colorYES
 
                     Dim emu As String = ""
                     Dim emuPath As String = ""
@@ -392,17 +421,40 @@ Public Class Class5_system_manager
                         If romPath.StartsWith(".") Then romPath = HL_Path + "\" + romPath
 
                         If emu <> "" Then
+                            iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
                             emuPath = iniclass2.GetKeyValue(emu, "Emu_Path").Trim
                             If emuPath.StartsWith(".") Then emuPath = HL_Path + "\" + emuPath
                         End If
 
-                        If FileIO.FileSystem.FileExists(emuPath) Then r.Cells(6).Value = "X" : r.Cells(6).Style.BackColor = Form1.colorYES Else r.Cells(6).Value = "" : r.Cells(6).Style.BackColor = Form1.colorNO
-                        If FileIO.FileSystem.DirectoryExists(romPath) Then r.Cells(7).Value = "X" : r.Cells(7).Style.BackColor = Form1.colorYES Else r.Cells(7).Value = "" : r.Cells(7).Style.BackColor = Form1.colorNO
+                        If FileIO.FileSystem.FileExists(emuPath) Then
+                            r.Cells(6).Value = "X"
+                            r.Cells(6).Style.BackColor = Form1.colorYES
+                            If Not Systems(sys).Contains("%6%") Then Systems(sys).Add("%6%")
+                        Else
+                            r.Cells(6).Value = ""
+                            r.Cells(6).Style.BackColor = Form1.colorNO
+                            ind = Systems(sys).IndexOf("%6%")
+                            If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                        End If
+                        If FileIO.FileSystem.DirectoryExists(romPath) Then
+                            r.Cells(7).Value = "X"
+                            r.Cells(7).Style.BackColor = Form1.colorYES
+                            If Not Systems(sys).Contains("%7%") Then Systems(sys).Add("%7%")
+                        Else
+                            r.Cells(7).Value = ""
+                            r.Cells(7).Style.BackColor = Form1.colorNO
+                            ind = Systems(sys).IndexOf("%7%")
+                            If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                        End If
                     Else
                         r.Cells(6).Value = ""
                         r.Cells(7).Value = ""
                         r.Cells(6).Style.BackColor = Form1.colorNO
                         r.Cells(7).Style.BackColor = Form1.colorNO
+                        ind = Systems(sys).IndexOf("%6%")
+                        If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                        ind = Systems(sys).IndexOf("%7%")
+                        If ind >= 0 Then Systems(sys).RemoveAt(ind)
                     End If
                 End If
             Else
@@ -410,6 +462,7 @@ Public Class Class5_system_manager
                 Dim f As Font = r.Cells(4).Style.Font
                 r.Cells(5).Value = "X"
                 r.Cells(5).Style.Font = f
+                r.Cells(5).Style.BackColor = Form1.colorYES
 
                 Dim emuPath As String = iniClass.GetKeyValue("EXE INFO", "path").Trim
                 If emuPath <> "" AndAlso Not emuPath.EndsWith("\") Then emuPath = emuPath + "\"
@@ -419,8 +472,26 @@ Public Class Class5_system_manager
                 Dim romPath As String = iniClass.GetKeyValue("EXE INFO", "rompath").Trim
                 If romPath <> "" And romPath.StartsWith(".") Then romPath = Class1.HyperspinPath + "\" + romPath
 
-                If FileIO.FileSystem.FileExists(emuPath) Then r.Cells(6).Value = "X" : r.Cells(6).Style.BackColor = Form1.colorYES Else r.Cells(6).Value = "" : r.Cells(6).Style.BackColor = Form1.colorNO
-                If FileIO.FileSystem.DirectoryExists(romPath) Then r.Cells(7).Value = "X" : r.Cells(7).Style.BackColor = Form1.colorYES Else r.Cells(7).Value = "" : r.Cells(7).Style.BackColor = Form1.colorNO
+                If FileIO.FileSystem.FileExists(emuPath) Then
+                    r.Cells(6).Value = "X"
+                    r.Cells(6).Style.BackColor = Form1.colorYES
+                    If Not Systems(sys).Contains("%6%") Then Systems(sys).Add("%6%")
+                Else
+                    r.Cells(6).Value = ""
+                    r.Cells(6).Style.BackColor = Form1.colorNO
+                    ind = Systems(sys).IndexOf("%6%")
+                    If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                End If
+                If FileIO.FileSystem.DirectoryExists(romPath) Then
+                    r.Cells(7).Value = "X"
+                    r.Cells(7).Style.BackColor = Form1.colorYES
+                    If Not Systems(sys).Contains("%7%") Then Systems(sys).Add("%7%")
+                Else
+                    r.Cells(7).Value = ""
+                    r.Cells(7).Style.BackColor = Form1.colorNO
+                    ind = Systems(sys).IndexOf("%7%")
+                    If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                End If
             End If
         End If
     End Sub
@@ -429,11 +500,14 @@ Public Class Class5_system_manager
     'Show properties
     Private Sub show_properties() Handles Btn_prop.Click, grid.CellDoubleClick
         frm = New Form8_systemProperties
-        frm.mainMenu = mainMenu : setPropertiesFormData() : frm.HS_ini = hs_ini : frm.Show()
+        frm.oneTimeInit(hs_ini, mainMenu, emulators)
+        setPropertiesFormData()
+        frm.Show()
     End Sub
 
     'Show add system dialog
     Private Sub addSystem() Handles Btn_add.Click
+        If Not checked Then MsgBox("Please, run scan before adding new systems") : Exit Sub
         Dim f As New FormF_systemManager_addSystem
         f.systems = modules_supported_systems
         f.ShowDialog(Form1)

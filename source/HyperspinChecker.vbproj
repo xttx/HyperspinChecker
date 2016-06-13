@@ -210,6 +210,12 @@
     <Compile Include="Class\IniFileApi.vb" />
     <Compile Include="Class\IniFileVb.vb" />
     <Compile Include="Class\ISOChecker.vb" />
+    <Compile Include="FormF_createNewHL_system.Designer.vb">
+      <DependentUpon>FormF_createNewHL_system.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormF_createNewHL_system.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormF_systemManager_addSystem.Designer.vb">
       <DependentUpon>FormF_systemManager_addSystem.vb</DependentUpon>
     </Compile>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormE_Create_database_XML_from_folder.resx">
       <DependentUpon>FormE_Create_database_XML_from_folder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormF_createNewHL_system.resx">
+      <DependentUpon>FormF_createNewHL_system.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormF_systemManager_addSystem.resx">
       <DependentUpon>FormF_systemManager_addSystem.vb</DependentUpon>
