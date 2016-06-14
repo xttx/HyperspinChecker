@@ -276,7 +276,7 @@ Public Class Form8_systemProperties
         If RadioButton1.Checked And ComboBox2.SelectedIndex < 0 Then MsgBox("Module need to be set to use hyperlaunch.") : Exit Sub
 
         'Add/remove system in main menu
-        If _data(0) = "" And insert_new_system_at <> -1 Then
+        If _data(0) = "" And CheckBox1.Checked And insert_new_system_at <> -1 Then
             'Add system
             Dim x As New Xml.XmlDocument
             x.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
@@ -287,7 +287,7 @@ Public Class Form8_systemProperties
             rootNode.InsertBefore(newNode, gameNodes(insert_new_system_at))
             x.Save(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
             _data(0) = "1"
-        ElseIf _data(0) <> "" And insert_new_system_at = -1 Then
+        ElseIf _data(0) <> "" And Not CheckBox1.Checked And insert_new_system_at = -1 Then
             'Remove system
             Dim x As New Xml.XmlDocument
             x.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")

@@ -234,62 +234,69 @@ Public Class Class5_system_manager
         Next
 
         'FILL GRID
-        Dim x(9) As String
         For Each l As List(Of String) In Systems.Values
-            x(0) = l(0)
-            Dim fnd_n As Integer = 0
-            If l.Contains("%1%") Then x(1) = "X" : fnd_n += 1 Else x(1) = ""
-            If l.Contains("%2%") Then x(2) = "X" : fnd_n += 1 Else x(2) = ""
-            If l.Contains("%3%") Then x(3) = "X" : fnd_n += 1 Else x(3) = ""
-            If l.Contains("%4%") Then x(4) = "X" : fnd_n += 1 Else x(4) = ""
-            If l.Contains("%4G%") Then x(4) = "Per Game" : fnd_n += 1
-            If l.Contains("%5%") Then x(5) = "X" : fnd_n += 1 Else x(5) = ""
-            If l.Contains("%5HL%") Then x(5) = "HL"
-            If l.Contains("%5HL_PATH_NOT_SET%") Then x(5) = "INVALID HL PATH"
-            If l.Contains("%6%") Then x(6) = "X" : fnd_n += 1 Else x(6) = ""
-            If l.Contains("%7%") Then x(7) = "X" : fnd_n += 1 Else x(7) = ""
-            If l.Contains("%8%") Then x(8) = "X" : fnd_n += 1 Else x(8) = ""
-            If l.Contains("%9%") Then x(9) = "X" : fnd_n += 1 Else x(9) = ""
-
-            Dim req As Boolean = True
-            If required_media_list IsNot Nothing Then
-                For Each item As String In required_media_list
-                    If item.Trim = "0" And x(1) = "" Then req = False : Exit For
-                    If item.Trim = "1" And x(2) = "" Then req = False : Exit For
-                    If item.Trim = "2" And x(3) = "" Then req = False : Exit For
-                    If item.Trim = "3" And x(4) = "" Then req = False : Exit For
-                    If item.Trim = "4" And x(8) = "" Then req = False : Exit For
-                    If item.Trim = "5" And x(9) = "" Then req = False : Exit For
-                    If item.Trim = "6" And x(5) = "" Or x(5) = "INVALID HL PATH" Then req = False : Exit For
-                    If item.Trim = "7" And x(6) = "" Then req = False : Exit For
-                    If item.Trim = "8" And x(7) = "" Then req = False : Exit For
-                Next
-            End If
-            If dont_show_completed And fnd_n = 9 Then req = False
-
-            If req And (required_media_number = 0 OrElse required_media_number < fnd_n) Then
-                Dim r As New DataGridViewRow()
-                r.CreateCells(grid, x)
-                For i As Integer = 1 To 9
-                    If x(i) = "X" Or x(i) = "HL" Then
-                        r.Cells(i).Style.BackColor = Form1.colorYES
-                    Else
-                        r.Cells(i).Style.BackColor = Form1.colorNO
-                        If x(i).ToUpper = "PER GAME" Then
-                            r.Cells(i).Style.BackColor = Color.YellowGreen
-                        End If
-                        If x(i) = "INVALID HL PATH" Then
-                            Dim f As Font = New Font(Control.DefaultFont.FontFamily, 6, FontStyle.Regular)
-                            r.Cells(i).Style.Font = f
-                        End If
-                    End If
-                Next
-                Form1.DataGridView2.Rows.Add(r)
-            End If
+            Dim r As DataGridViewRow = scan_FillRowSub(l, required_media_list, dont_show_completed, required_media_number)
+            If r IsNot Nothing Then Form1.DataGridView2.Rows.Add(r)
         Next
         Form1.Label41.Text = "System count: " + Form1.DataGridView2.Rows.Count.ToString + ", Active:" + activeCount.ToString
         checked = True
     End Sub
+
+    Private Function scan_FillRowSub(l As List(Of String), Optional req_ml As String() = Nothing, Optional req_notCompleted As Boolean = False, Optional req_N As Integer = 0) As DataGridViewRow
+        Dim x(9) As String
+        x(0) = l(0)
+        Dim fnd_n As Integer = 0
+        If l.Contains("%1%") Then x(1) = "X" : fnd_n += 1 Else x(1) = ""
+        If l.Contains("%2%") Then x(2) = "X" : fnd_n += 1 Else x(2) = ""
+        If l.Contains("%3%") Then x(3) = "X" : fnd_n += 1 Else x(3) = ""
+        If l.Contains("%4%") Then x(4) = "X" : fnd_n += 1 Else x(4) = ""
+        If l.Contains("%4G%") Then x(4) = "Per Game" : fnd_n += 1
+        If l.Contains("%5%") Then x(5) = "X" : fnd_n += 1 Else x(5) = ""
+        If l.Contains("%5HL%") Then x(5) = "HL"
+        If l.Contains("%5HL_PATH_NOT_SET%") Then x(5) = "INVALID HL PATH"
+        If l.Contains("%6%") Then x(6) = "X" : fnd_n += 1 Else x(6) = ""
+        If l.Contains("%7%") Then x(7) = "X" : fnd_n += 1 Else x(7) = ""
+        If l.Contains("%8%") Then x(8) = "X" : fnd_n += 1 Else x(8) = ""
+        If l.Contains("%9%") Then x(9) = "X" : fnd_n += 1 Else x(9) = ""
+
+        Dim req As Boolean = True
+        If req_ml IsNot Nothing Then
+            For Each item As String In req_ml
+                If item.Trim = "0" And x(1) = "" Then req = False : Exit For
+                If item.Trim = "1" And x(2) = "" Then req = False : Exit For
+                If item.Trim = "2" And x(3) = "" Then req = False : Exit For
+                If item.Trim = "3" And x(4) = "" Then req = False : Exit For
+                If item.Trim = "4" And x(8) = "" Then req = False : Exit For
+                If item.Trim = "5" And x(9) = "" Then req = False : Exit For
+                If item.Trim = "6" And x(5) = "" Or x(5) = "INVALID HL PATH" Then req = False : Exit For
+                If item.Trim = "7" And x(6) = "" Then req = False : Exit For
+                If item.Trim = "8" And x(7) = "" Then req = False : Exit For
+            Next
+        End If
+        If req_notCompleted And fnd_n = 9 Then req = False
+
+        If req And (req_N = 0 OrElse req_N < fnd_n) Then
+            Dim r As New DataGridViewRow()
+            r.CreateCells(grid, x)
+            For i As Integer = 1 To 9
+                If x(i) = "X" Or x(i) = "HL" Then
+                    r.Cells(i).Style.BackColor = Form1.colorYES
+                Else
+                    r.Cells(i).Style.BackColor = Form1.colorNO
+                    If x(i).ToUpper = "PER GAME" Then
+                        r.Cells(i).Style.BackColor = Color.YellowGreen
+                    End If
+                    If x(i) = "INVALID HL PATH" Then
+                        Dim f As Font = New Font(Control.DefaultFont.FontFamily, 6, FontStyle.Regular)
+                        r.Cells(i).Style.Font = f
+                    End If
+                End If
+            Next
+            Return r
+        Else
+            Return Nothing
+        End If
+    End Function
 
     'Grid selection changed
     Private Sub grid_SelectionChanged(sender As Object, e As EventArgs) Handles grid.SelectionChanged
@@ -352,13 +359,12 @@ Public Class Class5_system_manager
                 mainMenu.Add(x.Attributes("name").Value)
             Next
             If Not Systems(sys).Contains("%1%") Then Systems(sys).Add("%1%")
-            'If mainMenu.IndexOf(sysNormalCase) = -1 Then mainMenu.Insert(system_grid_index, sysNormalCase)
-            r.Cells(1).Value = "X" : r.Cells(1).Style.BackColor = Form1.colorYES
+            'r.Cells(1).Value = "X" : r.Cells(1).Style.BackColor = Form1.colorYES
         Else
             ind = Systems(sys).IndexOf("%1%")
             If ind >= 0 Then Systems(sys).RemoveAt(ind)
             If mainMenu.IndexOf(sysNormalCase) <> -1 Then mainMenu.Remove(sysNormalCase)
-            r.Cells(1).Value = "" : r.Cells(1).Style.BackColor = Form1.colorNO
+            'r.Cells(1).Value = "" : r.Cells(1).Style.BackColor = Form1.colorNO
         End If
 
 
@@ -370,20 +376,9 @@ Public Class Class5_system_manager
         If Not HL_Path = "" AndAlso (Not FileExists(HL_Path + "\HyperLaunch.exe") And Not FileExists(HL_Path + "\RocketLauncher.exe")) Then HL_Path = ""
 
         If Not FileIO.FileSystem.FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then
-            Dim f As Font = r.Cells(4).Style.Font
-            r.Cells(5).Value = "INVALID HL PATH"
-            r.Cells(6).Value = ""
-            r.Cells(7).Value = ""
-            r.Cells(5).Style.Font = f
-            r.Cells(5).Style.BackColor = Form1.colorNO
-            r.Cells(6).Style.BackColor = Form1.colorNO
-            r.Cells(7).Style.BackColor = Form1.colorNO
-            ind = Systems(sys).IndexOf("%5%")
-            If ind >= 0 Then Systems(sys).RemoveAt(ind)
-            ind = Systems(sys).IndexOf("%5HL%")
-            If ind >= 0 Then Systems(sys).RemoveAt(ind)
-            ind = Systems(sys).IndexOf("%5HL_PATH_NOT_SET%")
-            If ind >= 0 Then Systems(sys).RemoveAt(ind)
+            ind = Systems(sys).IndexOf("%5%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
+            ind = Systems(sys).IndexOf("%5HL%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
+            ind = Systems(sys).IndexOf("%5HL_PATH_NOT_SET%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
         Else
             If Not Systems(sys).Contains("%5%") Then Systems(sys).Add("%5%")
             iniClass.Load(Class1.HyperspinPath + "\Settings\" + sys + ".ini")
@@ -392,25 +387,12 @@ Public Class Class5_system_manager
                 'Check Hyperlaunch paths
                 If Not Systems(sys).Contains("%5HL%") Then Systems(sys).Add("%5HL%")
                 If HL_Path = "" Then
-                    Dim f As Font = New Font(Control.DefaultFont.FontFamily, 6, FontStyle.Regular)
-                    r.Cells(5).Value = "INVALID HL PATH"
-                    r.Cells(6).Value = ""
-                    r.Cells(7).Value = ""
-                    r.Cells(5).Style.Font = f
-                    r.Cells(5).Style.BackColor = Form1.colorNO
-                    r.Cells(6).Style.BackColor = Form1.colorNO
-                    r.Cells(7).Style.BackColor = Form1.colorNO
                     If Not Systems(sys).Contains("%5HL_PATH_NOT_SET%") Then Systems(sys).Add("%5HL_PATH_NOT_SET%")
                     ind = Systems(sys).IndexOf("%6%")
                     If ind >= 0 Then Systems(sys).RemoveAt(ind)
                     ind = Systems(sys).IndexOf("%7%")
                     If ind >= 0 Then Systems(sys).RemoveAt(ind)
                 Else
-                    Dim f As Font = r.Cells(4).Style.Font
-                    r.Cells(5).Value = "HL"
-                    r.Cells(5).Style.Font = f
-                    r.Cells(5).Style.BackColor = Form1.colorYES
-
                     Dim emu As String = ""
                     Dim emuPath As String = ""
                     Dim romPath As String = ""
@@ -427,43 +409,22 @@ Public Class Class5_system_manager
                         End If
 
                         If FileIO.FileSystem.FileExists(emuPath) Then
-                            r.Cells(6).Value = "X"
-                            r.Cells(6).Style.BackColor = Form1.colorYES
                             If Not Systems(sys).Contains("%6%") Then Systems(sys).Add("%6%")
                         Else
-                            r.Cells(6).Value = ""
-                            r.Cells(6).Style.BackColor = Form1.colorNO
-                            ind = Systems(sys).IndexOf("%6%")
-                            If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                            ind = Systems(sys).IndexOf("%6%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
                         End If
                         If FileIO.FileSystem.DirectoryExists(romPath) Then
-                            r.Cells(7).Value = "X"
-                            r.Cells(7).Style.BackColor = Form1.colorYES
                             If Not Systems(sys).Contains("%7%") Then Systems(sys).Add("%7%")
                         Else
-                            r.Cells(7).Value = ""
-                            r.Cells(7).Style.BackColor = Form1.colorNO
-                            ind = Systems(sys).IndexOf("%7%")
-                            If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                            ind = Systems(sys).IndexOf("%7%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
                         End If
                     Else
-                        r.Cells(6).Value = ""
-                        r.Cells(7).Value = ""
-                        r.Cells(6).Style.BackColor = Form1.colorNO
-                        r.Cells(7).Style.BackColor = Form1.colorNO
-                        ind = Systems(sys).IndexOf("%6%")
-                        If ind >= 0 Then Systems(sys).RemoveAt(ind)
-                        ind = Systems(sys).IndexOf("%7%")
-                        If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                        ind = Systems(sys).IndexOf("%6%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                        ind = Systems(sys).IndexOf("%7%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
                     End If
                 End If
             Else
                 'Check Hyperspin paths
-                Dim f As Font = r.Cells(4).Style.Font
-                r.Cells(5).Value = "X"
-                r.Cells(5).Style.Font = f
-                r.Cells(5).Style.BackColor = Form1.colorYES
-
                 Dim emuPath As String = iniClass.GetKeyValue("EXE INFO", "path").Trim
                 If emuPath <> "" AndAlso Not emuPath.EndsWith("\") Then emuPath = emuPath + "\"
                 If emuPath <> "" Then emuPath = emuPath + iniClass.GetKeyValue("EXE INFO", "exe").Trim
@@ -473,27 +434,23 @@ Public Class Class5_system_manager
                 If romPath <> "" And romPath.StartsWith(".") Then romPath = Class1.HyperspinPath + "\" + romPath
 
                 If FileIO.FileSystem.FileExists(emuPath) Then
-                    r.Cells(6).Value = "X"
-                    r.Cells(6).Style.BackColor = Form1.colorYES
                     If Not Systems(sys).Contains("%6%") Then Systems(sys).Add("%6%")
                 Else
-                    r.Cells(6).Value = ""
-                    r.Cells(6).Style.BackColor = Form1.colorNO
-                    ind = Systems(sys).IndexOf("%6%")
-                    If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                    ind = Systems(sys).IndexOf("%6%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
                 End If
                 If FileIO.FileSystem.DirectoryExists(romPath) Then
-                    r.Cells(7).Value = "X"
-                    r.Cells(7).Style.BackColor = Form1.colorYES
                     If Not Systems(sys).Contains("%7%") Then Systems(sys).Add("%7%")
                 Else
-                    r.Cells(7).Value = ""
-                    r.Cells(7).Style.BackColor = Form1.colorNO
-                    ind = Systems(sys).IndexOf("%7%")
-                    If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                    ind = Systems(sys).IndexOf("%7%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
                 End If
             End If
         End If
+
+        Dim r1 As DataGridViewRow = scan_FillRowSub(Systems(sys))
+        For i As Integer = 0 To r.Cells.Count - 1
+            r.Cells(i).Value = r1.Cells(i).Value
+            r.Cells(i).Style = r1.Cells(i).Style
+        Next
     End Sub
 
 #Region "Region: Show forms / launch HS"
