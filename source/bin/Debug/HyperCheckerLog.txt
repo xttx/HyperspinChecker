@@ -1999,3 +1999,8 @@
 10:25:3 - Loading config
 10:25:3 - Init classes
 10:25:3 - Done init
+11:58:56 - Initializing...
+11:58:56 - Creating menus
+11:58:56 - Loading config
+11:58:56 - Init classes
+11:58:56 - Done init

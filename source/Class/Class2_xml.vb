@@ -146,7 +146,7 @@ Public Class Class2_xml
         Dim elemGenre As Xml.XmlElement = x.CreateElement("genre")
 
         If xml_from_folder_options_fillCRC Then
-            Dim crc As String = GetCRC32(file)
+            Dim crc As String = Class6_hash.GetCRC32(file)
             Dim lead As String = ""
             If crc.Length < 8 Then lead = New String("0"c, 8 - crc.Length)
             elemCrc.InnerText = lead + crc
@@ -737,49 +737,6 @@ Public Class Class2_xml
         Loop
 
         Return s.Trim
-    End Function
-
-    'Get CRC32
-    Public Shared Function GetCRC32(ByVal sFileName As String) As String
-        Try
-            Dim FS As IO.FileStream = New IO.FileStream(sFileName, IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read, 8192)
-            Dim CRC32Result As Integer = &HFFFFFFFF
-            Dim Buffer(4096) As Byte
-            Dim ReadSize As Integer = 4096
-            Dim Count As Integer = FS.Read(Buffer, 0, ReadSize)
-            Dim CRC32Table(256) As Integer
-            Dim DWPolynomial As Integer = &HEDB88320
-            Dim DWCRC As Long
-            Dim i As Integer, j As Integer, n As Integer
-
-            'Create CRC32 Table
-            For i = 0 To 255
-                DWCRC = i
-                For j = 8 To 1 Step -1
-                    If CBool(DWCRC And 1) Then
-                        DWCRC = ((DWCRC And &HFFFFFFFE) \ 2&) And &H7FFFFFFF
-                        DWCRC = DWCRC Xor DWPolynomial
-                    Else
-                        DWCRC = ((DWCRC And &HFFFFFFFE) \ 2&) And &H7FFFFFFF
-                    End If
-                Next j
-                CRC32Table(i) = CInt(DWCRC)
-            Next i
-
-            'Calcualting CRC32 Hash
-            Do While (Count > 0)
-                For i = 0 To Count - 1
-                    n = (CRC32Result And &HFF) Xor Buffer(i)
-                    CRC32Result = ((CRC32Result And &HFFFFFF00) \ &H100) And &HFFFFFF
-                    CRC32Result = CRC32Result Xor CRC32Table(n)
-                Next i
-                Count = FS.Read(Buffer, 0, ReadSize)
-            Loop
-            FS.Close()
-            Return Hex(Not (CRC32Result))
-        Catch ex As Exception
-            Return ""
-        End Try
     End Function
 
     'Press Insert or Delete in main table
