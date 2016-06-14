@@ -341,6 +341,7 @@ Public Class Class5_system_manager
     Private Sub SystemPathUpdated(sys As String)
         Dim ind As Integer = -1
         Dim system_grid_index As Integer = -1
+
         For i As Integer = 0 To grid.Rows.Count - 1
             If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then system_grid_index = i : Exit For
         Next
@@ -348,23 +349,38 @@ Public Class Class5_system_manager
         Dim r As DataGridViewRow = grid.Rows(system_grid_index)
 
         'Update mainMenu status
+        Dim selectedSys = ""
         Dim sysNormalCase As String = r.Cells(0).Value.ToString
         Dim mainMenuXml As New Xml.XmlDocument
         mainMenuXml.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
         Dim node = mainMenuXml.SelectSingleNode("/menu/game[@name='" + sysNormalCase + "']")
         'Dim node = mainMenuXml.SelectSingleNode("/menu/game[translate(@name, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')='" + sys + "']")
         If node IsNot Nothing Then
+            'Adding new system to main menu
+            Form1.ComboBox1.Tag = "REFRESHING"
+            If Form1.ComboBox1.SelectedItem IsNot Nothing Then selectedSys = Form1.ComboBox1.SelectedItem.ToString
+
             mainMenu.Clear()
+            Form1.ComboBox1.Items.Clear()
             For Each x As Xml.XmlNode In mainMenuXml.SelectNodes("/menu/game")
                 mainMenu.Add(x.Attributes("name").Value)
+                Form1.ComboBox1.Items.Add(x.Attributes("name").Value)
             Next
             If Not Systems(sys).Contains("%1%") Then Systems(sys).Add("%1%")
-            'r.Cells(1).Value = "X" : r.Cells(1).Style.BackColor = Form1.colorYES
+
+            If selectedSys <> "" Then Form1.ComboBox1.SelectedItem = selectedSys
+            Form1.ComboBox1.Tag = "0"
         Else
+            'Remove a system to main menu
             ind = Systems(sys).IndexOf("%1%")
             If ind >= 0 Then Systems(sys).RemoveAt(ind)
             If mainMenu.IndexOf(sysNormalCase) <> -1 Then mainMenu.Remove(sysNormalCase)
-            'r.Cells(1).Value = "" : r.Cells(1).Style.BackColor = Form1.colorNO
+
+            If Form1.ComboBox1.SelectedItem IsNot Nothing Then selectedSys = Form1.ComboBox1.SelectedItem.ToString
+            If selectedSys = sysNormalCase Then Form1.ComboBox1.SelectedIndex = -1
+            Form1.ComboBox1.Tag = "REFRESHING"
+            If Form1.ComboBox1.Items.IndexOf(sysNormalCase) >= 0 Then Form1.ComboBox1.Items.Remove(sysNormalCase)
+            Form1.ComboBox1.Tag = "0"
         End If
 
 

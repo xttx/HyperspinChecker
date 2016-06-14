@@ -115,6 +115,8 @@ Partial Class Form1
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.Button25 = New System.Windows.Forms.Button()
+        Me.Button23 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Button34 = New System.Windows.Forms.Button()
         Me.Label41 = New System.Windows.Forms.Label()
@@ -298,8 +300,6 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button23 = New System.Windows.Forms.Button()
-        Me.Button25 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -346,6 +346,7 @@ Partial Class Form1
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(254, 21)
         Me.ComboBox1.TabIndex = 1
+        Me.ComboBox1.Tag = "0"
         '
         'DataGridView1
         '
@@ -1377,6 +1378,26 @@ Partial Class Form1
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Systems Manager"
         Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'Button25
+        '
+        Me.Button25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button25.Location = New System.Drawing.Point(887, 181)
+        Me.Button25.Name = "Button25"
+        Me.Button25.Size = New System.Drawing.Size(84, 44)
+        Me.Button25.TabIndex = 9
+        Me.Button25.Text = "Start HyperSpin"
+        Me.Button25.UseVisualStyleBackColor = True
+        '
+        'Button23
+        '
+        Me.Button23.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button23.Location = New System.Drawing.Point(887, 90)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(84, 36)
+        Me.Button23.TabIndex = 8
+        Me.Button23.Text = "Add system"
+        Me.Button23.UseVisualStyleBackColor = True
         '
         'Button22
         '
@@ -2933,26 +2954,6 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Name = "VideoDownloaderToolStripMenuItem"
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader"
-        '
-        'Button23
-        '
-        Me.Button23.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button23.Location = New System.Drawing.Point(887, 90)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(84, 36)
-        Me.Button23.TabIndex = 8
-        Me.Button23.Text = "Add system"
-        Me.Button23.UseVisualStyleBackColor = True
-        '
-        'Button25
-        '
-        Me.Button25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button25.Location = New System.Drawing.Point(887, 181)
-        Me.Button25.Name = "Button25"
-        Me.Button25.Size = New System.Drawing.Size(84, 44)
-        Me.Button25.TabIndex = 9
-        Me.Button25.Text = "Start HyperSpin"
-        Me.Button25.UseVisualStyleBackColor = True
         '
         'Form1
         '

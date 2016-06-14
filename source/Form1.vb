@@ -572,6 +572,8 @@ Public Class Form1
 
     'System select
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.Tag.ToString = "REFRESHING" Then Exit Sub
+
         Button2_moveUnneeded.Enabled = False
         Button4.Enabled = False
         Button5_Associate.Enabled = False
@@ -826,7 +828,7 @@ Public Class Form1
             Class1.HyperspinPath = TextBox14.Text
             If Not Class1.HyperspinPath.EndsWith("\") Then Class1.HyperspinPath = Class1.HyperspinPath + "\"
 
-            If Not Microsoft.VisualBasic.FileIO.FileSystem.FileExists(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml") Then
+            If Not FileSystem.FileExists(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml") Then
                 Label23.BackColor = Color.Orange
                 Label23.Text = "Can't find \Databases\Main Menu\Main Menu.xml." : Exit Sub
             Else
@@ -1520,6 +1522,4 @@ Public Class Form1
 
     'Show Database statistic
 #End Region
-
-
 End Class
