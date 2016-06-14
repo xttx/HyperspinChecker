@@ -147,12 +147,16 @@ Public Class Form1
     Dim WithEvents CheckStrip3_7 As New CheckBox With {.Name = "07", .Text = "Rom Path", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
     Dim WithEvents CheckStrip3_8 As New CheckBox With {.Name = "08", .Text = "Main Menu Wheel", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
     Dim WithEvents CheckStrip3_9 As New CheckBox With {.Name = "09", .Text = "Main Menu Video", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_10 As New CheckBox With {.Name = "10", .Text = "Roms", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_11 As New CheckBox With {.Name = "11", .Text = "Videos", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_12 As New CheckBox With {.Name = "12", .Text = "Themes", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_13 As New CheckBox With {.Name = "13", .Text = "Wheels", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_14 As New CheckBox With {.Name = "14", .Text = "Artworks", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
     <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)> Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As UInteger, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     End Function
 #End Region
 
-#Region "Main Form Actions (loadForm, system select, check)"
-
+#Region "Main Form Actions (loadForm, system select, main check)"
     'FORM LOAD
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Class1.Log("Initializing...")
@@ -208,6 +212,11 @@ Public Class Form1
         DataGridView2.Columns.Add("col7", "Rom Path")
         DataGridView2.Columns.Add("col8", "Main Menu Wheel")
         DataGridView2.Columns.Add("col9", "Main Menu Video")
+        DataGridView2.Columns.Add("col10", "Roms")
+        DataGridView2.Columns.Add("col11", "Videos")
+        DataGridView2.Columns.Add("col12", "Themes")
+        DataGridView2.Columns.Add("col13", "Wheels")
+        DataGridView2.Columns.Add("col14", "Artworks")
         DataGridView2.Columns(0).Width = 250
         DataGridView2.Columns(1).Width = 80 : DataGridView2.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView2.Columns(2).Width = 80 : DataGridView2.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -220,6 +229,11 @@ Public Class Form1
         DataGridView2.Columns(9).Width = 90 : DataGridView2.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView2.Columns(8).DisplayIndex = 3 : DataGridView2.Columns(8).Visible = False
         DataGridView2.Columns(9).DisplayIndex = 5 : DataGridView2.Columns(9).Visible = False
+        DataGridView2.Columns(10).Width = 90 : DataGridView2.Columns(10).Visible = False
+        DataGridView2.Columns(11).Width = 90 : DataGridView2.Columns(11).Visible = False
+        DataGridView2.Columns(12).Width = 90 : DataGridView2.Columns(12).Visible = False
+        DataGridView2.Columns(13).Width = 90 : DataGridView2.Columns(13).Visible = False
+        DataGridView2.Columns(14).Width = 90 : DataGridView2.Columns(14).Visible = False
 
         'Context menu - check missing rom or media in another folder
         myContextMenu.Items.Add("check for missing Roms")
@@ -338,6 +352,11 @@ Public Class Form1
         Dim CheckStripHost3_7 As New ToolStripControlHost(CheckStrip3_7)
         Dim CheckStripHost3_8 As New ToolStripControlHost(CheckStrip3_8)
         Dim CheckStripHost3_9 As New ToolStripControlHost(CheckStrip3_9)
+        Dim CheckStripHost3_10 As New ToolStripControlHost(CheckStrip3_10)
+        Dim CheckStripHost3_11 As New ToolStripControlHost(CheckStrip3_11)
+        Dim CheckStripHost3_12 As New ToolStripControlHost(CheckStrip3_12)
+        Dim CheckStripHost3_13 As New ToolStripControlHost(CheckStrip3_13)
+        Dim CheckStripHost3_14 As New ToolStripControlHost(CheckStrip3_14)
         myContextMenu8.Items.Add(CheckStripHost3_1)
         myContextMenu8.Items.Add(CheckStripHost3_2)
         myContextMenu8.Items.Add(CheckStripHost3_3)
@@ -347,10 +366,18 @@ Public Class Form1
         myContextMenu8.Items.Add(CheckStripHost3_7)
         myContextMenu8.Items.Add(CheckStripHost3_8)
         myContextMenu8.Items.Add(CheckStripHost3_9)
+        myContextMenu8.Items.Add(CheckStripHost3_10)
+        myContextMenu8.Items.Add(CheckStripHost3_11)
+        myContextMenu8.Items.Add(CheckStripHost3_12)
+        myContextMenu8.Items.Add(CheckStripHost3_13)
+        myContextMenu8.Items.Add(CheckStripHost3_14)
         myContextMenu8.Items.Add(New ToolStripSeparator)
         myContextMenu8.Items.Add(Preset_SysMngr_Default)
         myContextMenu8.Items.Add(Preset_SysMngr_Checker)
         myContextMenu8.Items.Add(Preset_SysMngr_Manager)
+        myContextMenu8.Items.Add(Preset_SysMngr_Full)
+        myContextMenu8.Items.Add(New ToolStripSeparator)
+        myContextMenu8.Items.Add(Save_current_cols_conf_as_startup)
 
         'Convert current DB to clrmame pro dat - options panel
         Panel2.Left = -100000
@@ -378,6 +405,7 @@ Public Class Form1
             FileClose(1)
         End If
 
+        'Load config
         Dim v As Boolean
         Dim s As String = ""
         Dim ini2 As New IniFileApi
@@ -392,6 +420,7 @@ Public Class Form1
             ListBox4.Items.Add(ini2.IniReadValue("handle_together", i.ToString))
             i += 1
         Loop
+        'Main table startup config
         For c As Integer = 0 To DataGridView1.ColumnCount - 1
             s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_visible")
             If s <> "" Then
@@ -402,6 +431,18 @@ Public Class Form1
             s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_Width")
             If s <> "" Then DataGridView1.Columns(c).Width = CInt(s)
         Next
+        'System table startup config
+        For c As Integer = 0 To DataGridView2.ColumnCount - 1
+            s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_visible")
+            If s <> "" Then
+                If s = "0" Then v = False Else v = True
+                DataGridView2.Columns(c).Visible = v
+            End If
+
+            s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_Width")
+            If s <> "" Then DataGridView2.Columns(c).Width = CInt(s)
+        Next
+        'Main_window_size
         s = ini2.IniReadValue("Main", "Main_window_size")
         If s <> "" Then
             Me.Width = CInt(s.Split({"x"c})(0))
@@ -451,6 +492,7 @@ Public Class Form1
         If Class1.romPath = "" Then MsgBox("Can't retrive rom path.") : Exit Sub
 
         Dim a(10) As String
+        Dim counters() As Integer = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         Dim romName As String
         Dim tempStr As String
         'Dim tempPath As String
@@ -477,10 +519,12 @@ Public Class Form1
             If node.SelectSingleNode("genre") IsNot Nothing Then a_genre = node.SelectSingleNode("genre").InnerText Else a_genre = ""
             If node.SelectSingleNode("cloneof") IsNot Nothing Then a_cloneof = node.SelectSingleNode("cloneof").InnerText Else a_cloneof = ""
 
+            'Get romname and description
             a(0) = node.SelectSingleNode("description").InnerText
             romName = node.Attributes.GetNamedItem("name").Value
             Class1.romlist.Add(romName.ToLower)
 
+            'Check rom
             a(2) = ""
             If Not Class1.romPath.Contains("|") Then 'Handle HL multiple paths
                 'tempPath = Class1.romPath + romName
@@ -492,8 +536,9 @@ Public Class Form1
                     If tryToFindRom(temppath2, romExtensions, romName) Then a(2) = "YES" : Exit For
                 Next
             End If
-            If a(2) = "" Then a(2) = "NO" Else Class1.romFoundlist.Add(romName.ToLower)
+            If a(2) = "" Then a(2) = "NO" Else Class1.romFoundlist.Add(romName.ToLower) : counters(1) += 1
 
+            'Check video
             a(3) = "NO"
             Dim useVidFromParent As Boolean = False
             If CheckBox11.Checked Then
@@ -514,20 +559,26 @@ Public Class Form1
                     If FileSystem.FileExists(Class1.videoPath + a_cloneof + ".png") Then a(3) = "YES" : useVidFromParent = True
                 End If
             End If
+            If a(3) = "YES" Then counters(2) += 1
 
+            'Check theme
             Dim useThemeFromParent As Boolean = False
             Dim p As String = Class1.HyperspinPath + "Media\" + ComboBox1.SelectedItem.ToString
             If FileSystem.FileExists(p + "\Themes\" + romName + ".zip") Then a(4) = "YES" Else a(4) = "NO"
             If a(4) = "NO" And CheckBox24.Checked And a_cloneof <> "" Then
                 If FileSystem.FileExists(p + "\Themes\" + a_cloneof + ".zip") Then a(4) = "YES" : useThemeFromParent = True
             End If
-            If FileSystem.FileExists(p + "\Images\Wheel\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Wheel\" + romName + ".jpg") Then a(5) = "YES" Else a(5) = "NO"
-            If FileSystem.FileExists(p + "\Images\Artwork1\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork1\" + romName + ".jpg") Then a(6) = "YES" Else a(6) = "NO"
-            If FileSystem.FileExists(p + "\Images\Artwork2\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork2\" + romName + ".jpg") Then a(7) = "YES" Else a(7) = "NO"
-            If FileSystem.FileExists(p + "\Images\Artwork3\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork3\" + romName + ".jpg") Then a(8) = "YES" Else a(8) = "NO"
-            If FileSystem.FileExists(p + "\Images\Artwork4\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork4\" + romName + ".jpg") Then a(9) = "YES" Else a(9) = "NO"
-            If FileSystem.FileExists(p + "\Sound\Background Music\" + romName + ".mp3") Then a(10) = "YES" Else a(10) = "NO"
+            If a(4) = "YES" Then counters(3) += 1
 
+            'Check Wheels and artworks
+            If FileSystem.FileExists(p + "\Images\Wheel\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Wheel\" + romName + ".jpg") Then a(5) = "YES" : counters(4) += 1 Else a(5) = "NO"
+            If FileSystem.FileExists(p + "\Images\Artwork1\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork1\" + romName + ".jpg") Then a(6) = "YES" : counters(5) += 1 Else a(6) = "NO"
+            If FileSystem.FileExists(p + "\Images\Artwork2\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork2\" + romName + ".jpg") Then a(7) = "YES" : counters(6) += 1 Else a(7) = "NO"
+            If FileSystem.FileExists(p + "\Images\Artwork3\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork3\" + romName + ".jpg") Then a(8) = "YES" : counters(7) += 1 Else a(8) = "NO"
+            If FileSystem.FileExists(p + "\Images\Artwork4\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork4\" + romName + ".jpg") Then a(9) = "YES" : counters(8) += 1 Else a(9) = "NO"
+            If FileSystem.FileExists(p + "\Sound\Background Music\" + romName + ".mp3") Then a(10) = "YES" : counters(9) += 1 Else a(10) = "NO"
+
+            'Add row
             Dim r As New DataGridViewRow
             r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a_crc, a_manufacturer, a_year, a_genre})
             tempStr = ""
@@ -548,6 +599,11 @@ Public Class Form1
         Button18.Enabled = True
         If AlowEditToolStripMenuItem.Checked Then Button21.Enabled = True
         Label2.Text = "Total: " + DataGridView1.Rows.Count.ToString
+
+        'save lastCheckResult
+        counters(0) = DataGridView1.Rows.Count
+        ini.path = Class1.confPath
+        ini.IniWriteValue("LastCheckResult", ComboBox1.SelectedItem.ToString, String.Join(",", counters))
     End Sub
 
     Private Function tryToFindRom(ByVal temppath As String, ByVal romExtensions() As String, ByVal romname As String) As Boolean
@@ -1326,7 +1382,12 @@ Public Class Form1
     End Sub
 
     'System Manager - Show/hide columns checked_change
-    Private Sub ShowHideCol_sysMgr(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckStrip3_1.CheckedChanged, CheckStrip3_2.CheckedChanged, CheckStrip3_3.CheckedChanged, CheckStrip3_4.CheckedChanged, CheckStrip3_5.CheckedChanged, CheckStrip3_6.CheckedChanged, CheckStrip3_7.CheckedChanged, CheckStrip3_8.CheckedChanged, CheckStrip3_9.CheckedChanged
+    Private Sub ShowHideCol_sysMgr(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckStrip3_1.CheckedChanged,
+        CheckStrip3_2.CheckedChanged, CheckStrip3_3.CheckedChanged, CheckStrip3_4.CheckedChanged, CheckStrip3_5.CheckedChanged,
+        CheckStrip3_6.CheckedChanged, CheckStrip3_7.CheckedChanged, CheckStrip3_8.CheckedChanged, CheckStrip3_9.CheckedChanged,
+        CheckStrip3_10.CheckedChanged, CheckStrip3_11.CheckedChanged, CheckStrip3_12.CheckedChanged, CheckStrip3_13.CheckedChanged,
+        CheckStrip3_14.CheckedChanged
+
         Dim cb As CheckBox = DirectCast(sender, CheckBox)
         Dim i As Integer = CInt(cb.Name)
         DataGridView2.Columns(i).Visible = cb.Checked
@@ -1398,6 +1459,11 @@ Public Class Form1
             CheckStrip3_7.Checked = False
             CheckStrip3_8.Checked = True
             CheckStrip3_9.Checked = True
+            CheckStrip3_10.Checked = False
+            CheckStrip3_11.Checked = False
+            CheckStrip3_12.Checked = False
+            CheckStrip3_13.Checked = False
+            CheckStrip3_14.Checked = False
         End If
         If e.ClickedItem.Text = Preset_SysMngr_Manager Then
             CheckStrip3_1.Checked = True
@@ -1409,6 +1475,36 @@ Public Class Form1
             CheckStrip3_7.Checked = True
             CheckStrip3_8.Checked = False
             CheckStrip3_9.Checked = False
+            CheckStrip3_10.Checked = False
+            CheckStrip3_11.Checked = False
+            CheckStrip3_12.Checked = False
+            CheckStrip3_13.Checked = False
+            CheckStrip3_14.Checked = False
+        End If
+        If e.ClickedItem.Text = Preset_SysMngr_Full Then
+            CheckStrip3_1.Checked = True
+            CheckStrip3_2.Checked = True
+            CheckStrip3_3.Checked = True
+            CheckStrip3_4.Checked = False
+            CheckStrip3_5.Checked = True
+            CheckStrip3_6.Checked = True
+            CheckStrip3_7.Checked = True
+            CheckStrip3_8.Checked = False
+            CheckStrip3_9.Checked = False
+            CheckStrip3_10.Checked = True
+            CheckStrip3_11.Checked = True
+            CheckStrip3_12.Checked = True
+            CheckStrip3_13.Checked = True
+            CheckStrip3_14.Checked = True
+        End If
+        If e.ClickedItem.Text = Save_current_cols_conf_as_startup Then
+            ini.IniFile(Class1.confPath)
+            Dim v As String = ""
+            For i As Integer = 0 To DataGridView2.ColumnCount - 1
+                If DataGridView2.Columns(i).Visible Then v = "1" Else v = "0"
+                ini.IniWriteValue("System_Table_Columns_Config", "Col_" + i.ToString + "_visible", v)
+                ini.IniWriteValue("System_Table_Columns_Config", "Col_" + i.ToString + "_width", DataGridView2.Columns(i).Width.ToString)
+            Next
         End If
     End Sub
 
