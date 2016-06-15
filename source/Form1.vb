@@ -492,14 +492,32 @@ Public Class Form1
         ComboBox3.SelectedIndex = -1
         If ComboBox1.SelectedIndex < 0 Then MsgBox("Please, select a system.") : Exit Sub
 
+        'Get and check rom path(s)
         retrieve_rom_path_from_HL()
-        If Class1.romPath = "" Then MsgBox("Can't retrive rom path.") : Exit Sub
+        If Class1.romPath = "" Or Class1.romPath = "\" Then MsgBox("Can't retrive rom path.") : Exit Sub
+        If Not Class1.romPath.Contains("|") Then 'Handle HL multiple paths
+            'Single path
+            If Class1.romPath.Substring(1, 2) = ":\" Then
+                Dim p_drv As String = Class1.romPath.Substring(0, 3).ToUpper
+                Dim ex As Boolean = FileIO.FileSystem.Drives.Any(Function(drv) drv.Name = p_drv And drv.DriveType <> IO.DriveType.CDRom)
+                If Not ex Then MsgBox("Rompath refers to drive " + p_drv + ", but it does not exist or is CDRom." + vbCrLf + "You can fix rom paths in system manager.") : Exit Sub
+            End If
+        Else
+            'Multiple paths routine
+            For Each temppath2 As String In Class1.romPath.Split({"|"c}, StringSplitOptions.RemoveEmptyEntries)
+                If Not temppath2.EndsWith("\") Then temppath2 = temppath2 + "\"
+                If temppath2.Substring(1, 2) = ":\" Then
+                    Dim p_drv As String = Class1.romPath.Substring(0, 3).ToUpper
+                    Dim ex As Boolean = FileIO.FileSystem.Drives.Any(Function(drv) drv.Name = p_drv And drv.DriveType <> IO.DriveType.CDRom)
+                    If Not ex Then MsgBox("One of rompaths refers to drive " + p_drv + ", but it does not exist or is CDRom." + vbCrLf + "You can fix rom paths in system manager.") : Exit Sub
+                End If
+            Next
+        End If
 
         Dim a(10) As String
         Dim counters() As Integer = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         Dim romName As String
         Dim tempStr As String
-        'Dim tempPath As String
         Dim x As New Xml.XmlDocument
         Try
             x.Load(xmlPath)
