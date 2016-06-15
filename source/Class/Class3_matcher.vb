@@ -41,6 +41,7 @@ Public Class Class3_matcher
     'Constructor
     Sub New()
         dt_files.Columns.Add("name")
+        dt_files.Columns.Add("nameWithoutHyphen")
     End Sub
 
     'matcher - remplir database
@@ -795,18 +796,19 @@ Public Class Class3_matcher
                         'If .RadioButton5.Checked Then If Not c Or Not Class1.romlist.Contains(fWoExt.ToLower) Then .ListBox2.Items.Add(f) 
 
                         'If .RadioButton4.Checked And found Then .ListBox2.Items.Add(f)
-                        If .RadioButton4.Checked And found Then dt_files.Rows.Add(f)
+                        If .RadioButton4.Checked And found Then dt_files.Rows.Add({f, f.Replace("-", " ")})
                         'If .RadioButton5.Checked And Not found Then .ListBox2.Items.Add(f)
-                        If .RadioButton5.Checked And Not found Then dt_files.Rows.Add(f)
+                        If .RadioButton5.Checked And Not found Then dt_files.Rows.Add({f, f.Replace("-", " ")})
                         'If .RadioButton6.Checked Then .ListBox2.Items.Add(f)
-                        If .RadioButton6.Checked Then dt_files.Rows.Add(f)
+                        If .RadioButton6.Checked Then dt_files.Rows.Add({f, f.Replace("-", " ")})
                     Next
                 End If
             End If
 
             'Sorting table, and reassign to itself
             Dim dv As DataView = dt_files.DefaultView
-            dv.Sort = dt_files.Columns(0).ColumnName + " asc"
+            'dv.Sort = dt_files.Columns(0).ColumnName + " asc"
+            dv.Sort = dt_files.Columns(1).ColumnName + " asc"
             dt_files = dv.ToTable
 
             .ListBox2.DataSource = dt_files
