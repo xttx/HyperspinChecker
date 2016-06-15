@@ -313,6 +313,7 @@ Public Class FormC_mameRomListBuilder
 
     Private Sub BackgroundWorker2_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker2.RunWorkerCompleted
         Timer1.Enabled = False
+        If props_obj(0) Is Nothing Then Label1.Text = "Status: Idle" : Exit Sub
         Label1.Text = "Filling lists..."
         Me.Refresh() : Label1.Refresh()
 
@@ -344,15 +345,15 @@ Public Class FormC_mameRomListBuilder
         Dim item As item
 
         'Creating lists of selected properties
-        Dim list() As List(Of String) = _
-            {New List(Of String), New List(Of String), New List(Of String), _
-             New List(Of String), New List(Of String), New List(Of String), _
-             New List(Of String), New List(Of String), New List(Of String), _
+        Dim list() As List(Of String) =
+            {New List(Of String), New List(Of String), New List(Of String),
+             New List(Of String), New List(Of String), New List(Of String),
+             New List(Of String), New List(Of String), New List(Of String),
              New List(Of String)}
 
-        Dim listboxes() As ListBox = {ListBox1, ListBox3, ListBox4, _
-                                      ListBox5, ListBox6, ListBox2, _
-                                      ListBox7, ListBox8, ListBox9, _
+        Dim listboxes() As ListBox = {ListBox1, ListBox3, ListBox4,
+                                      ListBox5, ListBox6, ListBox2,
+                                      ListBox7, ListBox8, ListBox9,
                                       ListBox10}
 
         For i As Integer = 0 To listboxes.Count - 1

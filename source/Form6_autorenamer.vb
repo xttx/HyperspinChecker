@@ -19,8 +19,8 @@
                 If CheckBox5.Checked Then curGameName = Convert_roman(curGameName)
                 clean_game_names.Add(Remove_spaces(curGameName))
             Next
-            For Each item As String In Form1.ListBox2.Items
-                curRomName = item.ToUpper.Trim
+            For Each item As DataRowView In Form1.ListBox2.Items
+                curRomName = item.Item(0).ToString.ToUpper.Trim
                 If CheckBox1.Checked Then curRomName = Remove_paranteses(curRomName)
                 If CheckBox2.Checked Then curRomName = Remove_brackets(curRomName)
                 If CheckBox3.Checked Then curRomName = Remove_Special(curRomName)
@@ -47,7 +47,7 @@
                     similarity = 100 * (commonList.Count * 2) / (stringSplit1.Length + stringSplit2.Length)
                     If similarity > min_ratio Then
                         t1 = Form1.ListBox1.Items(counter1).ToString
-                        t2 = Form1.ListBox2.Items(counter2).ToString
+                        t2 = DirectCast(Form1.ListBox2.Items(counter2), DataRowView).Item(0).ToString
                         DataGridView1.Rows.Add({t1, t2, Math.Round(similarity, 2, MidpointRounding.AwayFromZero).ToString, "X"})
                     End If
                     counter1 += 1

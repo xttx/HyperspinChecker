@@ -67,6 +67,9 @@ Partial Class FormC_mameRomListBuilder
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button23 = New System.Windows.Forms.Button()
+        Me.Button22 = New System.Windows.Forms.Button()
+        Me.Button21 = New System.Windows.Forms.Button()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Button_uncheck_all = New System.Windows.Forms.Button()
@@ -99,9 +102,6 @@ Partial Class FormC_mameRomListBuilder
         Me.Button15 = New System.Windows.Forms.Button()
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.Button22 = New System.Windows.Forms.Button()
-        Me.Button23 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -110,7 +110,7 @@ Partial Class FormC_mameRomListBuilder
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -137,7 +137,7 @@ Partial Class FormC_mameRomListBuilder
         'TextBox2
         '
         Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox2.Location = New System.Drawing.Point(195, 41)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(456, 20)
@@ -178,7 +178,7 @@ Partial Class FormC_mameRomListBuilder
         'TextBox1
         '
         Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.Location = New System.Drawing.Point(195, 19)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(456, 20)
@@ -212,8 +212,8 @@ Partial Class FormC_mameRomListBuilder
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.Button13)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.ListBox10)
@@ -565,6 +565,33 @@ Partial Class FormC_mameRomListBuilder
         Me.GroupBox3.Text = "File operations"
         Me.GroupBox3.Visible = False
         '
+        'Button23
+        '
+        Me.Button23.Location = New System.Drawing.Point(469, 284)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(106, 64)
+        Me.Button23.TabIndex = 32
+        Me.Button23.Text = "Generate .bat file to delete unneeded roms"
+        Me.Button23.UseVisualStyleBackColor = True
+        '
+        'Button22
+        '
+        Me.Button22.Location = New System.Drawing.Point(469, 214)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(106, 64)
+        Me.Button22.TabIndex = 31
+        Me.Button22.Text = "Move selected roms to destination folder"
+        Me.Button22.UseVisualStyleBackColor = True
+        '
+        'Button21
+        '
+        Me.Button21.Location = New System.Drawing.Point(469, 144)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(106, 64)
+        Me.Button21.TabIndex = 30
+        Me.Button21.Text = "Copy selected roms to destination folder"
+        Me.Button21.UseVisualStyleBackColor = True
+        '
         'Label28
         '
         Me.Label28.AutoSize = True
@@ -855,33 +882,6 @@ Partial Class FormC_mameRomListBuilder
         Me.Button14.TabIndex = 4
         Me.Button14.Text = "GO"
         Me.Button14.UseVisualStyleBackColor = True
-        '
-        'Button21
-        '
-        Me.Button21.Location = New System.Drawing.Point(469, 144)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(106, 64)
-        Me.Button21.TabIndex = 30
-        Me.Button21.Text = "Copy selected roms to destination folder"
-        Me.Button21.UseVisualStyleBackColor = True
-        '
-        'Button22
-        '
-        Me.Button22.Location = New System.Drawing.Point(469, 214)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(106, 64)
-        Me.Button22.TabIndex = 31
-        Me.Button22.Text = "Move selected roms to destination folder"
-        Me.Button22.UseVisualStyleBackColor = True
-        '
-        'Button23
-        '
-        Me.Button23.Location = New System.Drawing.Point(469, 284)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(106, 64)
-        Me.Button23.TabIndex = 32
-        Me.Button23.Text = "Generate .bat file to delete unneeded roms"
-        Me.Button23.UseVisualStyleBackColor = True
         '
         'FormC_mameRomListBuilder
         '

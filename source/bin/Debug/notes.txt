@@ -5,6 +5,13 @@ TODO:
 - renaming history
 - drag & drop in system manager
 
+
+PS2
+Cocoto Kart Racer (Europe)
+Colin McRae Rally 2005 (Europe) - in your .doc, you wrote "low framerate". Framerate is ok, but image is corrupted. Unplayable anyway.
+Fifa soccer 12 - works
+
+
 incomplete
 
 

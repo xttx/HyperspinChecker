@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
 Public Class ISOChecker
+    Private counter As Integer = 0
     Private isofix(10) As Integer
     Private cueWoBin_filename_mismatch As New List(Of String)
     Private cueWoBin_filename_mismatch_binFname As New List(Of String)
@@ -7,6 +8,7 @@ Public Class ISOChecker
 
     'Check ISO
     Public Sub Check() Handles Button21_checkISO.Click
+        counter = 0
         If Form1.CheckBox17.Checked And Form1.TextBox28.BackColor <> Form1.colorYES Then
             MsgBox("To use ISO Converter, you have to select UltraISO path in 'Program Settings'")
             Exit Sub

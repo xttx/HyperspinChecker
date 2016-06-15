@@ -2593,3 +2593,557 @@
 19:15:10 - Loading config
 19:15:10 - Init classes
 19:15:10 - Done init
+19:21:1 - Initializing...
+19:21:1 - Creating menus
+19:21:1 - Loading config
+19:21:1 - Init classes
+19:21:1 - Done init
+20:23:38 - Initializing...
+20:23:38 - Creating menus
+20:23:38 - Loading config
+20:23:38 - Init classes
+20:23:38 - Done init
+20:40:2 - Initializing...
+20:40:2 - Creating menus
+20:40:2 - Loading config
+20:40:2 - Init classes
+20:40:2 - Done init
+20:41:22 - Initializing...
+20:41:22 - Creating menus
+20:41:22 - Loading config
+20:41:22 - Init classes
+20:41:22 - Done init
+20:44:16 - Initializing...
+20:44:16 - Creating menus
+20:44:16 - Loading config
+20:44:16 - Init classes
+20:44:16 - Done init
+20:45:2 - Initializing...
+20:45:2 - Creating menus
+20:45:2 - Loading config
+20:45:2 - Init classes
+20:45:2 - Done init
+20:45:27 - Initializing...
+20:45:27 - Creating menus
+20:45:27 - Loading config
+20:45:27 - Init classes
+20:45:27 - Done init
+20:46:56 - Initializing...
+20:46:56 - Creating menus
+20:46:56 - Loading config
+20:46:56 - Init classes
+20:46:56 - Done init
+21:18:41 - Initializing...
+21:18:41 - Creating menus
+21:18:41 - Loading config
+21:18:41 - Init classes
+21:18:41 - Done init
+21:21:40 - Initializing...
+21:21:40 - Creating menus
+21:21:41 - Loading config
+21:21:41 - Init classes
+21:21:41 - Done init
+21:26:53 - Initializing...
+21:26:53 - Creating menus
+21:26:53 - Loading config
+21:26:53 - Init classes
+21:26:53 - Done init
+21:32:21 - Initializing...
+21:32:21 - Creating menus
+21:32:21 - Loading config
+21:32:21 - Init classes
+21:32:21 - Done init
+21:35:58 - checking folder: F:\Roms Console\Sega CD USA Project\!Genuine and tested Sega CD USA images (2007-11-14)\Unzipped
+21:35:58 - checking CUE: \3 Ninjas Kick Back (1994)(Sony Imagesoft)(NTSC)(US)[CDAC-078200 2].cue
+21:35:58 - checking CUE: \Advanced Dungeons & Dragons Eye of the Beholder.cue
+21:35:58 - checking CUE: \Adventures Of Batman & Robin (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Adventures Of Willy Beamish (Sega CD) (U).cue
+21:35:58 - checking CUE: \After Armageddon Gaiden - Majuu Toushouden Eclipse (1994)(Sega)(NTSC)(JP)(Track 01 of 39)[!].cue
+21:35:58 - checking CUE: \AfterBurner3(SegaCD-NTSC).cue
+21:35:58 - checking CUE: \AH-3 Thunderstrike (U).cue
+21:35:58 - checking CUE: \Amazing_Spider-Man_Vs_The_Kingpin(US-Genesis).cue
+21:35:58 - checking CUE: \android_assault_-_sega_CD_T-163015-00.cue
+21:35:58 - checking CUE: \Anett Futatabi (1993)(Wolf Team)(NTSC)(JP)(en)[!].cue
+21:35:58 - checking CUE: \Animals!, The (1994)(The Software Toolworks)(NTSC)(US)[CDAC-064100 2].cue
+21:35:58 - checking CUE: \AX-101 (1994)(Absolute Entertainment)(NTSC)(US)[SEGAT86015RE R1J].cue
+21:35:58 - checking CUE: \Batman Returns (Sega CD) (U).cue
+21:35:58 - checking CUE: \Battle Fantasy (1994)(Micronet)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Battlecorps.cue
+21:35:58 - checking CUE: \BC_Racers(US-Genesis).cue
+21:35:58 - checking CUE: \Bill Walsh College Football (U).cue
+21:35:58 - checking CUE: \Black Hole Assault (1992)(Bignet)(NTSC)(US)[CDAC-031700 1].cue
+21:35:58 - checking CUE: \Bloodshot (T-88045)(E)(50).cue
+21:35:58 - checking CUE: \Bouncers (U).cue
+21:35:58 - checking CUE: \Bram Stoker's Dracula (1.0) (U).cue
+21:35:58 - checking CUE: \Bram Stoker's Dracula (combo pack 2.0 version) (U).cue
+21:35:58 - checking CUE: \Brutal - Paws of Fury (U).cue
+21:35:58 - checking CUE: \Burai - Hachigyoku no Yuushi Densetsu (1992)(Sega)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Cadillacs & Dinosaurs - The Second Cataclysm (U).cue
+21:35:58 - checking CUE: \Captain Tsubasa (1994)(Tecmo)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Championship Soccer '94 (1994)(Sony Imagesoft)(NTSC)(US)[CDAC-068200 1].cue
+21:35:58 - checking CUE: \Chuck Rock I (u).cue
+21:35:58 - checking CUE: \Chuck Rock II - Son Of Chuck (u).cue
+21:35:58 - checking CUE: \Cliffhanger (u).cue
+21:35:58 - checking CUE: \Cobra Command (Sega CD) (U).cue
+21:35:58 - checking CUE: \Colors Of Modern Rock, The (U).cue
+21:35:58 - checking CUE: \Compton's Interactive Encyclopedia (1994)(Compton's NewMedia)(NTSC)(US)[Version 2.00S][CIESEGAV200 R1C].cue
+21:35:58 - checking CUE: \Corpse Killer (32X) (Sega CD) (U).cue
+21:35:58 - checking CUE: \Corpse Killer (U).cue
+21:35:58 - checking CUE: \Cosmic Fantasy Stories (1992)(Riot)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \CRIMEPATROL.CUE
+21:35:58 - checking CUE: \Cyborg 009 (1993)(Riot)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \DarkWizard_U.cue
+21:35:58 - checking CUE: \Demolition Man (U).cue
+21:35:58 - checking CUE: \Dennin-Aleste - Nobunaga and his Ninja Force (1992)(Compile)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Devastator (1993)(Wolf Team)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Double Switch (u).cue
+21:35:58 - checking CUE: \Dracula Unleashed CD1.cue
+21:35:58 - checking CUE: \Dracula Unleashed CD2.cue
+21:35:58 - checking CUE: \Dragons_Lair_U.cue
+21:35:58 - checking CUE: \Dune (u).CUE
+21:35:58 - checking CUE: \Dungeon Explorer (U).cue
+21:35:58 - checking CUE: \Dungeon Master- Skull Keep (U).cue
+21:35:58 - checking CUE: \dw-mmfb.cue
+21:35:58 - checking CUE: \Dynamic Country Club - 3D Golf Simulation (1993)(Sega)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Earnest Evans (1991)(Wolf Team)(NTSC)(JP)(en)[!].cue
+21:35:58 - checking CUE: \Earthworm Jim - Special Edition (Sega CD) (U).cue
+21:35:58 - checking CUE: \Ecco - The Tides Of Time (Sega CD) (U).cue
+21:35:58 - checking CUE: \Ecco the Dolphin (U).cue
+21:35:58 - checking CUE: \Egawa Sugoru no Super League CD (1993)(Sega)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \ESPN Baseball Tonight (1994)(Sony Imagesoft)(NTSC)(US)[CDAC-072400 1].cue
+21:35:58 - checking CUE: \ESPN National Hockey Night (U).cue
+21:35:58 - checking CUE: \ESPN NBA Hang Time '95 (U).cue
+21:35:58 - checking CUE: \ESPN Sunday Night NFL (U).cue
+21:35:58 - checking CUE: \Eternal Champions (U).cue
+21:35:58 - checking CUE: \F1 Circus CD (1994)(Nichibutsu)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Fahrenheit_Disc-1(US-Genesis-32x).cue
+21:35:58 - checking CUE: \Fahrenheit_Disc-2(US-32x-Genesis).cue
+21:35:58 - checking CUE: \Fatal Fury Special (U).cue
+21:35:58 - checking CUE: \Fifa International Soccer (U).cue
+21:35:58 - checking CUE: \Final Fight CD (Sega CD) (U).cue
+21:35:58 - checking CUE: \Flashback-The_Quest_For_Identity(US-Genesis).cue
+21:35:58 - checking CUE: \Flink (U).cue
+21:35:58 - checking CUE: \Formula_One_World_Championship-Beyond_The_Limit(US-Genesis).cue
+21:35:58 - checking CUE: \Game no Kanzume - Sega Games Can Vol.1 (1994)(Sega)(NTSC)(JP)[!][compilation].cue
+21:35:58 - checking CUE: \Game no Kanzume - Sega Games Can Vol.2 (1994)(Sega)(NTSC)(JP)[!][compilation].cue
+21:35:58 - checking CUE: \Ground Zero Texas (disc 1) (Sega CD) (U).cue
+21:35:58 - checking CUE: \Ground Zero Texas (disc 2) (Sega CD) (U).cue
+21:35:58 - checking CUE: \Heart Of The Alien (Sega CD) (U).cue
+21:35:58 - checking CUE: \Heavenly Symphony - Formula One World Championship 1993 (1994)(Sega)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Heavy Nova (1991)(Micronet)(NTSC)(JP)(en-ja)[!].cue
+21:35:58 - checking CUE: \Heimdall.cue
+21:35:58 - checking CUE: \Hook (Sega CD) (U).cue
+21:35:58 - checking CUE: \Hot Hits - Adventurous New Music Sampler (U).cue
+21:35:58 - checking CUE: \INXS (1992)(Sega)(NTSC)(US)[Make My Video][CDAC-039200 1].cue
+21:35:58 - checking CUE: \Iron Helix (1992)(Spectrum HoloByte)(NTSC)(US)[SEGAT124015 R2H].cue
+21:35:58 - checking CUE: \Jaguar XC220.cue
+21:35:58 - checking CUE: \Jeopardy! (Sega CD) (U).cue
+21:35:58 - checking CUE: \Joe Montana's NFL Football (U).cue
+21:35:58 - checking CUE: \Jurassic Park (Sega CD) (U).cue
+21:35:58 - checking CUE: \Keio_Flying_Squadron(US-Genesis).cue
+21:35:58 - checking CUE: \Kids_On_Site(US-Genesis).cue
+21:35:58 - checking CUE: \Lawnmower Man (U).cue
+21:35:58 - checking CUE: \Lethal Enforcers (Sega CD) (U).cue
+21:35:58 - checking CUE: \Lethal_Enforcers_II-Gun_Fighters(US-Genesis).cue
+21:35:58 - checking CUE: \Links - The Challenge Of Golf (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Loadstar - The Legend of Tully Bodine (1994)(Rocket Science Games)(NTSC)(US)[SEGAT153015 R3J].cue
+21:35:58 - checking CUE: \Lords of Thunder (U).cue
+21:35:58 - checking CUE: \Lunar - The Silver Star (Sega CD) (U).cue
+21:35:58 - checking CUE: \Lunar Eternal Blue.cue
+21:35:58 - checking CUE: \Mad Dog II - The Lost Gold (1994)(American Laser Games)(NTSC)(US)[SEGAT111065 R1F].cue
+21:35:58 - checking CUE: \Mad Dog McCree (1993)(American Laser Games)(NTSC)(US)[SEGAT111015 R1D].cue
+21:35:58 - checking CUE: \Make My Video - Kris Kross (U).cue
+21:35:58 - checking CUE: \Mansion of Hidden Souls (U).cue
+21:35:58 - checking CUE: \Marko's Magic Football (1994)(Domark)(PAL)(M4)[!].cue
+21:35:58 - checking CUE: \Mary Shelley's Frankenstein (1994)(Sony Imagesoft)(NTSC)(US)[CDAC-077800 1].cue
+21:35:58 - checking CUE: \Masked Rider, The - Kamen Rider ZO (1994)(Sega)(NTSC)(US)[SEGA4444 R2H].cue
+21:35:58 - checking CUE: \MEGADRIVE_GAME_SPECIAL.cue
+21:35:58 - checking CUE: \MEGADRIVE_GAME_SPECIAL_1.CUE
+21:35:58 - checking CUE: \MegaRace (1994)(The Software Toolworks)(NTSC)(US)[CDAC-073000 1].cue
+21:35:58 - checking CUE: \Mickey Mania (Sega CD) (U).cue
+21:35:58 - checking CUE: \Microcosm (Sega CD) (U).cue
+21:35:58 - checking CUE: \Mighty Morphin Power Rangers (Sega CD) (U).cue
+21:35:58 - checking CUE: \mortalkombatu.cue
+21:35:58 - checking CUE: \NBA_Jam(US-Genesis).cue
+21:35:58 - checking CUE: \NFL Football Trivia Challenge (1994)(CapDisc)(NTSC)(US)[SEGAT135015 R1H].cue
+21:35:58 - checking CUE: \NFL's Greatest - San Francisco vs. Dallas 1978-1993 (1993)(Sega)(NTSC)(US)[CDAC-054500 4].cue
+21:35:58 - checking CUE: \NHL '94 (U).cue
+21:35:58 - checking CUE: \Night Striker (1993)(Taito)(NTSC)(JP)(en)[!].cue
+21:35:58 - checking CUE: \Night Trap (32X) (disc 1) (u).cue
+21:35:58 - checking CUE: \Night Trap (32X) (disc 2) (u).cue
+21:35:58 - checking CUE: \Night Trap - disc 1 (U).cue
+21:35:58 - checking CUE: \Night Trap - disc 2 (U).cue
+21:35:58 - checking CUE: \Night Trap 1994 Re-Release - Disc 1 (U).cue
+21:35:58 - checking CUE: \Night Trap 1994 Re-Release - Disc 2 (U).cue
+21:35:58 - checking CUE: \Ninjawarriors, The (1993)(Taito)(NTSC)(JP)(en)[!].cue
+21:35:58 - checking CUE: \Novastorm (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Panic! (1994)(Data East)(NTSC)(US)[SEGAT13015RE R1J].cue
+21:35:58 - checking CUE: \Pitfall - The Mayan Adventure (u).cue
+21:35:58 - checking CUE: \Popful Mail (Sega CD) (U).cue
+21:35:58 - checking CUE: \Power Factory, Featuring C&C Music Factory (1992)(Sony Imagesoft)(NTSC)(US)[Make My Video][CDRM-1038530 3].cue
+21:35:58 - checking CUE: \Power Monger (Sega CD) (U).cue
+21:35:58 - checking CUE: \Prince of Persia - CD.cue
+21:35:58 - checking CUE: \prize fighter disc 1.cue
+21:35:58 - checking CUE: \prize fighter disc 2.cue
+21:35:58 - checking CUE: \Pro Yakyuu Super League CD (1992)(Sega)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Puggsy (Sega CD) (U).cue
+21:35:58 - checking CUE: \Racing Aces (1993)(Sega)(NTSC)(US)[CDAC-055000 1].cue
+21:35:58 - checking CUE: \radicalrex.CUE
+21:35:58 - checking CUE: \Revenge of the Ninja (1994)(Renovation Products)(NTSC)(US)[SEGAT49035 R1C].cue
+21:35:58 - checking CUE: \Revengers of Vengeance (U).cue
+21:35:58 - checking CUE: \Rise_of_the_Dragon.cue
+21:35:58 - checking CUE: \Road Avenger (Sega CD) (U).cue
+21:35:58 - checking CUE: \road_rash_-_sega_cd_T-50085_[redump].cue
+21:35:58 - checking CUE: \Robo_Aleste(US-Genesis).cue
+21:35:58 - checking CUE: \Samurai Shodown (U).cue
+21:35:58 - checking CUE: \Secret Of Monkey Island (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Sega Classics 4-in-1 (U).cue
+21:35:58 - checking CUE: \Sega Classics Arcade Collection (1992)(Sega)(NTSC)(US)[!][compilation - 5 games][CDAC-056800 2].cue
+21:35:58 - checking CUE: \Sega Classics Arcade Collection - Limited Edition (1993)(Sega)(PAL)[!][compilation][610-5411P-00036A 2].cue
+21:35:58 - checking CUE: \Sengoku Denshou (1993)(Sammy)(NTSC)(JP)[!].cue
+21:35:58 - checking CUE: \Sensible Soccer (1993)(Sony Imagesoft)(PAL)(M4)[!].cue
+21:35:58 - checking CUE: \Sewer Shark (pack-in ver) (Sega CD) (U).cue
+21:35:58 - checking CUE: \Sewer Shark (U).cue
+21:35:58 - checking CUE: \shadowofthebeast2.CUE
+21:35:58 - checking CUE: \Sherlock Holmes - Consulting Detective (U).cue
+21:35:58 - checking CUE: \Sherlock_Holmes-Consulting_Detective_Vol-II_Disc-1(US-Genesis).cue
+21:35:58 - checking CUE: \Sherlock_Holmes-Consulting_Detective_Vol-II_Disc-2(US-Genesis).cue
+21:35:58 - checking CUE: \Shining Force CD (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Silpheed.cue
+21:35:58 - checking CUE: \Slam City With Scottie Pippen (disc 1) (Sega CD) (U).cue
+21:35:58 - checking CUE: \Slam City With Scottie Pippen (disc 2) (Sega CD) (U).cue
+21:35:58 - checking CUE: \Slam City With Scottie Pippen (disc 3) (Sega CD) (U).cue
+21:35:58 - checking CUE: \Slam City With Scottie Pippen (disc 4) (Sega CD) (U).cue
+21:35:58 - checking CUE: \Slam City with Scottie Pippen (U) (32x) - Disc 1.cue
+21:35:58 - checking CUE: \Slam City with Scottie Pippen (U) (32x) - Disc 2.cue
+21:35:58 - checking CUE: \Slam City with Scottie Pippen (U) (32x) - Disc 3.cue
+21:35:58 - checking CUE: \Slam City with Scottie Pippen (U) (32x) - Disc 4.cue
+21:35:58 - checking CUE: \Smurfs, The (T-151015)(E)(00).cue
+21:35:58 - checking CUE: \Snatcher (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Sol-Feace (U).cue
+21:35:58 - checking CUE: \sonic_cd_-_sega_cd_MK-4407_(redump).cue
+21:35:58 - checking CUE: \Soul Star (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Space Ace (1994)(ReadySoft)(NTSC)(US)[CDAC-080300 4].cue
+21:35:58 - checking CUE: \Space Adventure, The - Cobra - The Legendary Bandit (1994)(Hudson Soft)(NTSC)(US)[SEGAT143015 R1H].cue
+21:35:58 - checking CUE: \Star Blade (1994)(Namco)(NTSC)(US)[CDAC-073400 2].cue
+21:35:58 - checking CUE: \Star Wars - Rebel Assault (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Star Wars Chess (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Stellar-Fire (Sega CD) (U).cue
+21:35:58 - checking CUE: \Supreme Warrior (1994)(Digital Pictures)(NTSC)(US)(Disc 1 of 2)[Fire & Earth][GW 02411.1].cue
+21:35:58 - checking CUE: \Supreme Warrior (1994)(Digital Pictures)(NTSC)(US)(Disc 2 of 2)[Wind & Fang Tu][GW 02411.2].cue
+21:35:58 - checking CUE: \Supreme Warrior (32X) (disc 1) (U).cue
+21:35:58 - checking CUE: \Supreme Warrior (32X) (disc 2) (U).cue
+21:35:58 - checking CUE: \Surgical Strike (1995)(Sega)(NTSC)(US)[CDAC-088700 1].cue
+21:35:58 - checking CUE: \Syndicate (1995)(Domark)(PAL)(M3)[!].cue
+21:35:58 - checking CUE: \Terminator (Sega CD) (U).cue
+21:35:58 - checking CUE: \Theme Park (T-88055)(E)(50).cue
+21:35:58 - checking CUE: \Third World War (Sega CD) (U).cue
+21:35:58 - checking CUE: \Thunderhawk (1993)(Core)(PAL)(M4)[!][SEGAT115015RE R4C].cue
+21:35:58 - checking CUE: \Time Gal (Sega CD) (U).cue
+21:35:58 - checking CUE: \Tomcat Alley (U).cue
+21:35:58 - checking CUE: \Trivial Pursuit (1994)(Parker Brothers)(NTSC)(US)[SEGAT89015 R1J].cue
+21:35:58 - checking CUE: \Ultraverse Prime (Sega CD) (U).cue
+21:35:58 - checking CUE: \Vay (Sega CD) (U).cue
+21:35:58 - checking CUE: \Wheel Of Fortune (Sega CD) (U)-redump.cue
+21:35:58 - checking CUE: \Who Shot Johnny Rock (Sega CD) (U).cue
+21:35:58 - checking CUE: \Wild_Woody.cue
+21:35:58 - checking CUE: \Wing Commander (1994)(Origin Systems)(NTSC)(US)[CDAC-059000 2].cue
+21:35:58 - checking CUE: \wirehead.cue
+21:35:58 - checking CUE: \Wolfchild (Sega CD) (U).cue
+21:35:58 - checking CUE: \Wonder Dog (u).CUE
+21:35:58 - checking CUE: \World Cup USA 94 (U).cue
+21:35:58 - checking CUE: \WWF Rage in the Cage.cue
+21:40:44 - Initializing...
+21:40:44 - Creating menus
+21:40:44 - Loading config
+21:40:44 - Init classes
+21:40:44 - Done init
+21:46:30 - checking folder: F:\Roms Console\Sega CD USA Project\!Genuine and tested Sega CD USA images (2007-11-14)\Unzipped
+21:46:30 - checking CUE: \3 Ninjas Kick Back (1994)(Sony Imagesoft)(NTSC)(US)[CDAC-078200 2].cue
+21:46:30 - checking CUE: \Advanced Dungeons & Dragons Eye of the Beholder.cue
+21:46:30 - checking CUE: \Adventures Of Batman & Robin (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Adventures Of Willy Beamish (Sega CD) (U).cue
+21:46:30 - checking CUE: \After Armageddon Gaiden - Majuu Toushouden Eclipse (1994)(Sega)(NTSC)(JP)(Track 01 of 39)[!].cue
+21:46:30 - checking CUE: \AfterBurner3(SegaCD-NTSC).cue
+21:46:30 - checking CUE: \AH-3 Thunderstrike (U).cue
+21:46:30 - checking CUE: \Amazing_Spider-Man_Vs_The_Kingpin(US-Genesis).cue
+21:46:30 - checking CUE: \android_assault_-_sega_CD_T-163015-00.cue
+21:46:30 - checking CUE: \Anett Futatabi (1993)(Wolf Team)(NTSC)(JP)(en)[!].cue
+21:46:30 - checking CUE: \Animals!, The (1994)(The Software Toolworks)(NTSC)(US)[CDAC-064100 2].cue
+21:46:30 - checking CUE: \AX-101 (1994)(Absolute Entertainment)(NTSC)(US)[SEGAT86015RE R1J].cue
+21:46:30 - checking CUE: \Batman Returns (Sega CD) (U).cue
+21:46:30 - checking CUE: \Battle Fantasy (1994)(Micronet)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Battlecorps.cue
+21:46:30 - checking CUE: \BC_Racers(US-Genesis).cue
+21:46:30 - checking CUE: \Bill Walsh College Football (U).cue
+21:46:30 - checking CUE: \Black Hole Assault (1992)(Bignet)(NTSC)(US)[CDAC-031700 1].cue
+21:46:30 - checking CUE: \Bloodshot (T-88045)(E)(50).cue
+21:46:30 - checking CUE: \Bouncers (U).cue
+21:46:30 - checking CUE: \Bram Stoker's Dracula (1.0) (U).cue
+21:46:30 - checking CUE: \Bram Stoker's Dracula (combo pack 2.0 version) (U).cue
+21:46:30 - checking CUE: \Brutal - Paws of Fury (U).cue
+21:46:30 - checking CUE: \Burai - Hachigyoku no Yuushi Densetsu (1992)(Sega)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Cadillacs & Dinosaurs - The Second Cataclysm (U).cue
+21:46:30 - checking CUE: \Captain Tsubasa (1994)(Tecmo)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Championship Soccer '94 (1994)(Sony Imagesoft)(NTSC)(US)[CDAC-068200 1].cue
+21:46:30 - checking CUE: \Chuck Rock I (u).cue
+21:46:30 - checking CUE: \Chuck Rock II - Son Of Chuck (u).cue
+21:46:30 - checking CUE: \Cliffhanger (u).cue
+21:46:30 - checking CUE: \Cobra Command (Sega CD) (U).cue
+21:46:30 - checking CUE: \Colors Of Modern Rock, The (U).cue
+21:46:30 - checking CUE: \Compton's Interactive Encyclopedia (1994)(Compton's NewMedia)(NTSC)(US)[Version 2.00S][CIESEGAV200 R1C].cue
+21:46:30 - checking CUE: \Corpse Killer (32X) (Sega CD) (U).cue
+21:46:30 - checking CUE: \Corpse Killer (U).cue
+21:46:30 - checking CUE: \Cosmic Fantasy Stories (1992)(Riot)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \CRIMEPATROL.CUE
+21:46:30 - checking CUE: \Cyborg 009 (1993)(Riot)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \DarkWizard_U.cue
+21:46:30 - checking CUE: \Demolition Man (U).cue
+21:46:30 - checking CUE: \Dennin-Aleste - Nobunaga and his Ninja Force (1992)(Compile)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Devastator (1993)(Wolf Team)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Double Switch (u).cue
+21:46:30 - checking CUE: \Dracula Unleashed CD1.cue
+21:46:30 - checking CUE: \Dracula Unleashed CD2.cue
+21:46:30 - checking CUE: \Dragons_Lair_U.cue
+21:46:30 - checking CUE: \Dune (u).CUE
+21:46:30 - checking CUE: \Dungeon Explorer (U).cue
+21:46:30 - checking CUE: \Dungeon Master- Skull Keep (U).cue
+21:46:30 - checking CUE: \dw-mmfb.cue
+21:46:30 - checking CUE: \Dynamic Country Club - 3D Golf Simulation (1993)(Sega)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Earnest Evans (1991)(Wolf Team)(NTSC)(JP)(en)[!].cue
+21:46:30 - checking CUE: \Earthworm Jim - Special Edition (Sega CD) (U).cue
+21:46:30 - checking CUE: \Ecco - The Tides Of Time (Sega CD) (U).cue
+21:46:30 - checking CUE: \Ecco the Dolphin (U).cue
+21:46:30 - checking CUE: \Egawa Sugoru no Super League CD (1993)(Sega)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \ESPN Baseball Tonight (1994)(Sony Imagesoft)(NTSC)(US)[CDAC-072400 1].cue
+21:46:30 - checking CUE: \ESPN National Hockey Night (U).cue
+21:46:30 - checking CUE: \ESPN NBA Hang Time '95 (U).cue
+21:46:30 - checking CUE: \ESPN Sunday Night NFL (U).cue
+21:46:30 - checking CUE: \Eternal Champions (U).cue
+21:46:30 - checking CUE: \F1 Circus CD (1994)(Nichibutsu)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Fahrenheit_Disc-1(US-Genesis-32x).cue
+21:46:30 - checking CUE: \Fahrenheit_Disc-2(US-32x-Genesis).cue
+21:46:30 - checking CUE: \Fatal Fury Special (U).cue
+21:46:30 - checking CUE: \Fifa International Soccer (U).cue
+21:46:30 - checking CUE: \Final Fight CD (Sega CD) (U).cue
+21:46:30 - checking CUE: \Flashback-The_Quest_For_Identity(US-Genesis).cue
+21:46:30 - checking CUE: \Flink (U).cue
+21:46:30 - checking CUE: \Formula_One_World_Championship-Beyond_The_Limit(US-Genesis).cue
+21:46:30 - checking CUE: \Game no Kanzume - Sega Games Can Vol.1 (1994)(Sega)(NTSC)(JP)[!][compilation].cue
+21:46:30 - checking CUE: \Game no Kanzume - Sega Games Can Vol.2 (1994)(Sega)(NTSC)(JP)[!][compilation].cue
+21:46:30 - checking CUE: \Ground Zero Texas (disc 1) (Sega CD) (U).cue
+21:46:30 - checking CUE: \Ground Zero Texas (disc 2) (Sega CD) (U).cue
+21:46:30 - checking CUE: \Heart Of The Alien (Sega CD) (U).cue
+21:46:30 - checking CUE: \Heavenly Symphony - Formula One World Championship 1993 (1994)(Sega)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Heavy Nova (1991)(Micronet)(NTSC)(JP)(en-ja)[!].cue
+21:46:30 - checking CUE: \Heimdall.cue
+21:46:30 - checking CUE: \Hook (Sega CD) (U).cue
+21:46:30 - checking CUE: \Hot Hits - Adventurous New Music Sampler (U).cue
+21:46:30 - checking CUE: \INXS (1992)(Sega)(NTSC)(US)[Make My Video][CDAC-039200 1].cue
+21:46:30 - checking CUE: \Iron Helix (1992)(Spectrum HoloByte)(NTSC)(US)[SEGAT124015 R2H].cue
+21:46:30 - checking CUE: \Jaguar XC220.cue
+21:46:30 - checking CUE: \Jeopardy! (Sega CD) (U).cue
+21:46:30 - checking CUE: \Joe Montana's NFL Football (U).cue
+21:46:30 - checking CUE: \Jurassic Park (Sega CD) (U).cue
+21:46:30 - checking CUE: \Keio_Flying_Squadron(US-Genesis).cue
+21:46:30 - checking CUE: \Kids_On_Site(US-Genesis).cue
+21:46:30 - checking CUE: \Lawnmower Man (U).cue
+21:46:30 - checking CUE: \Lethal Enforcers (Sega CD) (U).cue
+21:46:30 - checking CUE: \Lethal_Enforcers_II-Gun_Fighters(US-Genesis).cue
+21:46:30 - checking CUE: \Links - The Challenge Of Golf (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Loadstar - The Legend of Tully Bodine (1994)(Rocket Science Games)(NTSC)(US)[SEGAT153015 R3J].cue
+21:46:30 - checking CUE: \Lords of Thunder (U).cue
+21:46:30 - checking CUE: \Lunar - The Silver Star (Sega CD) (U).cue
+21:46:30 - checking CUE: \Lunar Eternal Blue.cue
+21:46:30 - checking CUE: \Mad Dog II - The Lost Gold (1994)(American Laser Games)(NTSC)(US)[SEGAT111065 R1F].cue
+21:46:30 - checking CUE: \Mad Dog McCree (1993)(American Laser Games)(NTSC)(US)[SEGAT111015 R1D].cue
+21:46:30 - checking CUE: \Make My Video - Kris Kross (U).cue
+21:46:30 - checking CUE: \Mansion of Hidden Souls (U).cue
+21:46:30 - checking CUE: \Marko's Magic Football (1994)(Domark)(PAL)(M4)[!].cue
+21:46:30 - checking CUE: \Mary Shelley's Frankenstein (1994)(Sony Imagesoft)(NTSC)(US)[CDAC-077800 1].cue
+21:46:30 - checking CUE: \Masked Rider, The - Kamen Rider ZO (1994)(Sega)(NTSC)(US)[SEGA4444 R2H].cue
+21:46:30 - checking CUE: \MEGADRIVE_GAME_SPECIAL.cue
+21:46:30 - checking CUE: \MEGADRIVE_GAME_SPECIAL_1.CUE
+21:46:30 - checking CUE: \MegaRace (1994)(The Software Toolworks)(NTSC)(US)[CDAC-073000 1].cue
+21:46:30 - checking CUE: \Mickey Mania (Sega CD) (U).cue
+21:46:30 - checking CUE: \Microcosm (Sega CD) (U).cue
+21:46:30 - checking CUE: \Mighty Morphin Power Rangers (Sega CD) (U).cue
+21:46:30 - checking CUE: \mortalkombatu.cue
+21:46:30 - checking CUE: \NBA_Jam(US-Genesis).cue
+21:46:30 - checking CUE: \NFL Football Trivia Challenge (1994)(CapDisc)(NTSC)(US)[SEGAT135015 R1H].cue
+21:46:30 - checking CUE: \NFL's Greatest - San Francisco vs. Dallas 1978-1993 (1993)(Sega)(NTSC)(US)[CDAC-054500 4].cue
+21:46:30 - checking CUE: \NHL '94 (U).cue
+21:46:30 - checking CUE: \Night Striker (1993)(Taito)(NTSC)(JP)(en)[!].cue
+21:46:30 - checking CUE: \Night Trap (32X) (disc 1) (u).cue
+21:46:30 - checking CUE: \Night Trap (32X) (disc 2) (u).cue
+21:46:30 - checking CUE: \Night Trap - disc 1 (U).cue
+21:46:30 - checking CUE: \Night Trap - disc 2 (U).cue
+21:46:30 - checking CUE: \Night Trap 1994 Re-Release - Disc 1 (U).cue
+21:46:30 - checking CUE: \Night Trap 1994 Re-Release - Disc 2 (U).cue
+21:46:30 - checking CUE: \Ninjawarriors, The (1993)(Taito)(NTSC)(JP)(en)[!].cue
+21:46:30 - checking CUE: \Novastorm (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Panic! (1994)(Data East)(NTSC)(US)[SEGAT13015RE R1J].cue
+21:46:30 - checking CUE: \Pitfall - The Mayan Adventure (u).cue
+21:46:30 - checking CUE: \Popful Mail (Sega CD) (U).cue
+21:46:30 - checking CUE: \Power Factory, Featuring C&C Music Factory (1992)(Sony Imagesoft)(NTSC)(US)[Make My Video][CDRM-1038530 3].cue
+21:46:30 - checking CUE: \Power Monger (Sega CD) (U).cue
+21:46:30 - checking CUE: \Prince of Persia - CD.cue
+21:46:30 - checking CUE: \prize fighter disc 1.cue
+21:46:30 - checking CUE: \prize fighter disc 2.cue
+21:46:30 - checking CUE: \Pro Yakyuu Super League CD (1992)(Sega)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Puggsy (Sega CD) (U).cue
+21:46:30 - checking CUE: \Racing Aces (1993)(Sega)(NTSC)(US)[CDAC-055000 1].cue
+21:46:30 - checking CUE: \radicalrex.CUE
+21:46:30 - checking CUE: \Revenge of the Ninja (1994)(Renovation Products)(NTSC)(US)[SEGAT49035 R1C].cue
+21:46:30 - checking CUE: \Revengers of Vengeance (U).cue
+21:46:30 - checking CUE: \Rise_of_the_Dragon.cue
+21:46:30 - checking CUE: \Road Avenger (Sega CD) (U).cue
+21:46:30 - checking CUE: \road_rash_-_sega_cd_T-50085_[redump].cue
+21:46:30 - checking CUE: \Robo_Aleste(US-Genesis).cue
+21:46:30 - checking CUE: \Samurai Shodown (U).cue
+21:46:30 - checking CUE: \Secret Of Monkey Island (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Sega Classics 4-in-1 (U).cue
+21:46:30 - checking CUE: \Sega Classics Arcade Collection (1992)(Sega)(NTSC)(US)[!][compilation - 5 games][CDAC-056800 2].cue
+21:46:30 - checking CUE: \Sega Classics Arcade Collection - Limited Edition (1993)(Sega)(PAL)[!][compilation][610-5411P-00036A 2].cue
+21:46:30 - checking CUE: \Sengoku Denshou (1993)(Sammy)(NTSC)(JP)[!].cue
+21:46:30 - checking CUE: \Sensible Soccer (1993)(Sony Imagesoft)(PAL)(M4)[!].cue
+21:46:30 - checking CUE: \Sewer Shark (pack-in ver) (Sega CD) (U).cue
+21:46:30 - checking CUE: \Sewer Shark (U).cue
+21:46:30 - checking CUE: \shadowofthebeast2.CUE
+21:46:30 - checking CUE: \Sherlock Holmes - Consulting Detective (U).cue
+21:46:30 - checking CUE: \Sherlock_Holmes-Consulting_Detective_Vol-II_Disc-1(US-Genesis).cue
+21:46:30 - checking CUE: \Sherlock_Holmes-Consulting_Detective_Vol-II_Disc-2(US-Genesis).cue
+21:46:30 - checking CUE: \Shining Force CD (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Silpheed.cue
+21:46:30 - checking CUE: \Slam City With Scottie Pippen (disc 1) (Sega CD) (U).cue
+21:46:30 - checking CUE: \Slam City With Scottie Pippen (disc 2) (Sega CD) (U).cue
+21:46:30 - checking CUE: \Slam City With Scottie Pippen (disc 3) (Sega CD) (U).cue
+21:46:30 - checking CUE: \Slam City With Scottie Pippen (disc 4) (Sega CD) (U).cue
+21:46:30 - checking CUE: \Slam City with Scottie Pippen (U) (32x) - Disc 1.cue
+21:46:30 - checking CUE: \Slam City with Scottie Pippen (U) (32x) - Disc 2.cue
+21:46:30 - checking CUE: \Slam City with Scottie Pippen (U) (32x) - Disc 3.cue
+21:46:30 - checking CUE: \Slam City with Scottie Pippen (U) (32x) - Disc 4.cue
+21:46:30 - checking CUE: \Smurfs, The (T-151015)(E)(00).cue
+21:46:30 - checking CUE: \Snatcher (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Sol-Feace (U).cue
+21:46:30 - checking CUE: \sonic_cd_-_sega_cd_MK-4407_(redump).cue
+21:46:30 - checking CUE: \Soul Star (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Space Ace (1994)(ReadySoft)(NTSC)(US)[CDAC-080300 4].cue
+21:46:30 - checking CUE: \Space Adventure, The - Cobra - The Legendary Bandit (1994)(Hudson Soft)(NTSC)(US)[SEGAT143015 R1H].cue
+21:46:30 - checking CUE: \Star Blade (1994)(Namco)(NTSC)(US)[CDAC-073400 2].cue
+21:46:30 - checking CUE: \Star Wars - Rebel Assault (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Star Wars Chess (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Stellar-Fire (Sega CD) (U).cue
+21:46:30 - checking CUE: \Supreme Warrior (1994)(Digital Pictures)(NTSC)(US)(Disc 1 of 2)[Fire & Earth][GW 02411.1].cue
+21:46:30 - checking CUE: \Supreme Warrior (1994)(Digital Pictures)(NTSC)(US)(Disc 2 of 2)[Wind & Fang Tu][GW 02411.2].cue
+21:46:30 - checking CUE: \Supreme Warrior (32X) (disc 1) (U).cue
+21:46:30 - checking CUE: \Supreme Warrior (32X) (disc 2) (U).cue
+21:46:30 - checking CUE: \Surgical Strike (1995)(Sega)(NTSC)(US)[CDAC-088700 1].cue
+21:46:30 - checking CUE: \Syndicate (1995)(Domark)(PAL)(M3)[!].cue
+21:46:30 - checking CUE: \Terminator (Sega CD) (U).cue
+21:46:30 - checking CUE: \Theme Park (T-88055)(E)(50).cue
+21:46:30 - checking CUE: \Third World War (Sega CD) (U).cue
+21:46:30 - checking CUE: \Thunderhawk (1993)(Core)(PAL)(M4)[!][SEGAT115015RE R4C].cue
+21:46:30 - checking CUE: \Time Gal (Sega CD) (U).cue
+21:46:30 - checking CUE: \Tomcat Alley (U).cue
+21:46:30 - checking CUE: \Trivial Pursuit (1994)(Parker Brothers)(NTSC)(US)[SEGAT89015 R1J].cue
+21:46:30 - checking CUE: \Ultraverse Prime (Sega CD) (U).cue
+21:46:30 - checking CUE: \Vay (Sega CD) (U).cue
+21:46:30 - checking CUE: \Wheel Of Fortune (Sega CD) (U)-redump.cue
+21:46:30 - checking CUE: \Who Shot Johnny Rock (Sega CD) (U).cue
+21:46:30 - checking CUE: \Wild_Woody.cue
+21:46:30 - checking CUE: \Wing Commander (1994)(Origin Systems)(NTSC)(US)[CDAC-059000 2].cue
+21:46:30 - checking CUE: \wirehead.cue
+21:46:30 - checking CUE: \Wolfchild (Sega CD) (U).cue
+21:46:30 - checking CUE: \Wonder Dog (u).CUE
+21:46:30 - checking CUE: \World Cup USA 94 (U).cue
+21:46:30 - checking CUE: \WWF Rage in the Cage.cue
+21:58:46 - Detecting HLHQ Path
+21:58:46 - Detecting Modules Path
+21:58:46 - Detecting Media Path
+21:58:46 - Detecting Frontend Path
+21:58:46 - Detecting Profiles Path
+21:58:46 - Detecting 7z Path
+21:58:46 - Detecting HiToText Path
+21:58:46 - Detecting Daemon Tools Path
+21:58:46 - Detecting Daemon HLHQ Path
+21:58:46 - Detecting Daemon HLHQ Media Path
+21:58:46 - Detecting HS Plugin Path
+21:58:46 - Detecting HLHQ Plugin Path
+22:4:23 - Detecting HLHQ Path
+22:4:23 - Detecting Modules Path
+22:4:23 - Detecting Media Path
+22:4:23 - Detecting Frontend Path
+22:4:23 - Detecting Profiles Path
+22:4:23 - Detecting 7z Path
+22:4:23 - Detecting HiToText Path
+22:4:23 - Detecting Daemon Tools Path
+22:4:23 - Detecting Daemon HLHQ Path
+22:4:23 - Detecting Daemon HLHQ Media Path
+22:4:23 - Detecting HS Plugin Path
+22:4:23 - Detecting HLHQ Plugin Path
+22:5:45 - Initializing...
+22:5:45 - Creating menus
+22:5:45 - Loading config
+22:5:45 - Init classes
+22:5:45 - Done init
+22:37:6 - Initializing...
+22:37:6 - Creating menus
+22:37:6 - Loading config
+22:37:6 - Init classes
+22:37:6 - Done init
+22:38:15 - Initializing...
+22:38:15 - Creating menus
+22:38:15 - Loading config
+22:38:16 - Init classes
+22:38:16 - Done init
+22:42:0 - Initializing...
+22:42:0 - Creating menus
+22:42:0 - Loading config
+22:42:0 - Init classes
+22:42:0 - Done init
+22:45:30 - Initializing...
+22:45:30 - Creating menus
+22:45:30 - Loading config
+22:45:30 - Init classes
+22:45:30 - Done init
+22:46:31 - Initializing...
+22:46:31 - Creating menus
+22:46:31 - Loading config
+22:46:31 - Init classes
+22:46:31 - Done init
+22:48:2 - Initializing...
+22:48:2 - Creating menus
+22:48:2 - Loading config
+22:48:2 - Init classes
+22:48:2 - Done init
+22:49:28 - Initializing...
+22:49:28 - Creating menus
+22:49:29 - Loading config
+22:49:29 - Init classes
+22:49:29 - Done init
+22:49:57 - Initializing...
+22:49:57 - Creating menus
+22:49:57 - Loading config
+22:49:57 - Init classes
+22:49:57 - Done init
+22:50:32 - Initializing...
+22:50:32 - Creating menus
+22:50:33 - Loading config
+22:50:33 - Init classes
+22:50:33 - Done init
+22:50:52 - Initializing...
+22:50:52 - Creating menus
+22:50:52 - Loading config
+22:50:52 - Init classes
+22:50:52 - Done init
+23:2:6 - Initializing...
+23:2:6 - Creating menus
+23:2:6 - Loading config
+23:2:6 - Init classes
+23:2:6 - Done init
+23:14:13 - Initializing...
+23:14:13 - Creating menus
+23:14:13 - Loading config
+23:14:13 - Init classes
+23:14:13 - Done init
