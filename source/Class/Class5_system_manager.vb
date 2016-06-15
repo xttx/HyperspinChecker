@@ -36,7 +36,7 @@ Public Class Class5_system_manager
         Dim activeCount As Integer = 0
 
         'Load exclusion settings
-        ini.path = ".\Config.conf"
+        ini.path = Class1.confPath
         Dim tmp As String = ""
         Dim required_media_number As Integer = 0
         Dim dont_show_completed As Boolean = False
@@ -61,10 +61,11 @@ Public Class Class5_system_manager
         If Not HL_Path = "" Then iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
 
         'Fill emulators list
-        ini.path = HL_Path + "\Settings\Global Emulators.ini"
-        For Each s As String In ini.IniListKey
-            Dim m_raw As String = ini.IniReadValue(s, "Module").Trim
-            Dim path As String = ini.IniReadValue(s, "Emu_Path").Trim
+        Dim ini2 As New IniFileApi
+        ini2.path = HL_Path + "\Settings\Global Emulators.ini"
+        For Each s As String In ini2.IniListKey
+            Dim m_raw As String = ini2.IniReadValue(s, "Module").Trim
+            Dim path As String = ini2.IniReadValue(s, "Emu_Path").Trim
             Dim m As String = m_raw
             If m.Contains("\") Then m = m.Substring(m.LastIndexOf("\") + 1)
             Dim l As New List(Of String)
@@ -236,7 +237,43 @@ Public Class Class5_system_manager
         'FILL GRID
         For Each l As List(Of String) In Systems.Values
             Dim r As DataGridViewRow = scan_FillRowSub(l, required_media_list, dont_show_completed, required_media_number)
-            If r IsNot Nothing Then Form1.DataGridView2.Rows.Add(r)
+            If r IsNot Nothing Then
+                'add last_check_result
+                tmp = ini.IniReadValue("LastCheckResult", l(0))
+                If tmp <> "" Then
+                    Dim arr() As String = tmp.Split({","c}, StringSplitOptions.RemoveEmptyEntries) 'total, rom, vid, thm, w, a1-a4, snd
+                    Dim arr_int = arr.ToList.ConvertAll(Function(str) Int32.Parse(str))
+
+                    For i As Integer = 1 To 4
+                        r.Cells(i + 9).Value = arr_int(i).ToString + " \ " + arr_int(0).ToString
+                        If arr_int(i) = arr_int(0) Then
+                            r.Cells(i + 9).Style.BackColor = Form1.colorYES
+                        ElseIf arr_int(i) = 0 Then
+                            r.Cells(i + 9).Style.BackColor = Form1.colorNO
+                        Else
+                            r.Cells(i + 9).Style.BackColor = Color.Yellow
+                        End If
+                    Next
+                    'Artworks handle
+                    tmp = ""
+                    Dim atLeastOneComplete As Boolean = False
+                    Dim atLeastOneIncomplete As Boolean = False
+                    For i As Integer = 5 To 8
+                        If arr_int(i) <> 0 Then
+                            If tmp <> "" Then tmp = tmp + ", "
+                            tmp = tmp + arr_int(i).ToString
+                            If arr_int(i) = arr_int(0) Then atLeastOneComplete = True Else atLeastOneIncomplete = True
+                        End If
+                    Next
+                    If Not tmp = "" Then tmp = tmp + " \ " + arr_int(0).ToString Else tmp = "none"
+                    r.Cells(14).Value = tmp
+                    If atLeastOneIncomplete Then r.Cells(14).Style.BackColor = Color.Yellow
+                    If Not atLeastOneIncomplete And atLeastOneComplete Then r.Cells(14).Style.BackColor = Form1.colorYES
+                    If Not atLeastOneIncomplete And Not atLeastOneComplete Then r.Cells(14).Style.BackColor = Form1.colorNO
+                End If
+                    'add row to grid
+                    Form1.DataGridView2.Rows.Add(r)
+            End If
         Next
         Form1.Label41.Text = "System count: " + Form1.DataGridView2.Rows.Count.ToString + ", Active:" + activeCount.ToString
         checked = True
