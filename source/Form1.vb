@@ -159,6 +159,7 @@ Public Class Form1
 #Region "Main Form Actions (loadForm, system select, main check)"
     'FORM LOAD
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Dim z As New SevenZip.SevenZipExtractor("O:\(DC)Rayman 2 The Great Escape[RUS].rar")
         Class1.Log("Initializing...")
         ComboBox7.Left = TextBox4.Left
         ComboBox7.Width = TextBox4.Width - 10

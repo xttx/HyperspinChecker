@@ -172,3 +172,4 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\HyperspinChecker.pdb
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\HyperspinChecker.vbprojResolveAssemblyReference.cache
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.FormF_createNewHL_system.resources
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Debug\SevenZipSharp.dll
