@@ -111,8 +111,8 @@ Public Class Form1
     Private useParentVids, useParentThemes As Boolean
     Private WithEvents myContextMenu As New ToolStripDropDownMenu 'checking for roms in other folders
     Friend WithEvents myContextMenu2 As New ToolStripDropDownMenu 'matcher options
-    Private WithEvents myContextMenu3 As New ToolStripDropDownMenu 'move unneeded
-    Private WithEvents myContextMenu4 As New ToolStripDropDownMenu 'main table columns hide/show
+    Private WithEvents myContextMenu3 As New ToolStripDropDownMenu With {.Name = "myContextMenu3"} 'move unneeded
+    Private WithEvents myContextMenu4 As New ToolStripDropDownMenu With {.Name = "myContextMenu4"} 'main table columns hide/show
     Public WithEvents myContextMenu5 As New ToolStripDropDownMenu 'folder2xml options
     Friend WithEvents myContextMenu6 As New ToolStripDropDownMenu 'convert to clrmamepro
     Friend WithEvents myContextMenu7 As New ToolStripDropDownMenu 'main table context menu
@@ -425,18 +425,21 @@ Public Class Form1
             s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_visible")
             If s <> "" Then
                 If s = "0" Then v = False Else v = True
-                DataGridView1.Columns(c).Visible = v
+                'DataGridView1.Columns(c).Visible = v
+                'DirectCast(ShowHideColumnsToolStripMenuItem.DropDownItems("F" + c.ToString), ToolStripMenuItem).Checked = v
+                DirectCast(myContextMenu4.Controls(Format(c, "00")), CheckBox).Checked = v
             End If
 
             s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_Width")
             If s <> "" Then DataGridView1.Columns(c).Width = CInt(s)
         Next
         'System table startup config
-        For c As Integer = 0 To DataGridView2.ColumnCount - 1
+        For c As Integer = 1 To DataGridView2.ColumnCount - 1
             s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_visible")
             If s <> "" Then
                 If s = "0" Then v = False Else v = True
-                DataGridView2.Columns(c).Visible = v
+                'DataGridView2.Columns(c).Visible = v
+                DirectCast(myContextMenu8.Controls(Format(c, "00")), CheckBox).Checked = v
             End If
 
             s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_Width")
@@ -1272,7 +1275,7 @@ Public Class Form1
     End Sub
 #End Region
 
-#Region "Table headers and painting"
+#Region "Table headers, columns sho/hide and painting"
     'Table Filter
     Private Sub ComboBox4_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox4.SelectedIndexChanged
         Dim counter1 As Integer = 0
@@ -1448,6 +1451,11 @@ Public Class Form1
             CheckStrip3_7.Checked = True
             CheckStrip3_8.Checked = False
             CheckStrip3_9.Checked = False
+            CheckStrip3_10.Checked = False
+            CheckStrip3_11.Checked = False
+            CheckStrip3_12.Checked = False
+            CheckStrip3_13.Checked = False
+            CheckStrip3_14.Checked = False
         End If
         If e.ClickedItem.Text = Preset_SysMngr_Checker Then
             CheckStrip3_1.Checked = True
