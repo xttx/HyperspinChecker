@@ -32,6 +32,7 @@ Public Class Class3_matcher
 
     Private WithEvents checkBox27 As CheckBox = Form1.CheckBox27
     Private WithEvents listbox1 As ListBox = Form1.ListBox1
+    Private WithEvents listbox2 As ListBox = Form1.ListBox2
     'Friend WithEvents myContextMenu7 As New ToolStripDropDownMenu 'autorenamer
     Public Shared autofilter_regex As String = "%[A-Za-z]{4}[A-Za-z]*"
     Public Shared autofilter_regex_options() As Boolean = {False, False}
@@ -202,9 +203,11 @@ Public Class Class3_matcher
 
             'Moving selected index
             'on box2 (filelist)
+            Dim currentTopIndex As Integer = .ListBox2.TopIndex
             Dim currentSelectedIndex As Integer
             'V svoey direktorii ILI (NE v svoey i NE kopiruem)
             'If (src = dst Or Not .CheckStrip1.Checked) Then
+            .ListBox2.BeginUpdate()
             If (src = dst Or Not copyToHsFolder) Then
                 If .RadioButton5.Checked Then 'show unmatched files
                     currentSelectedIndex = .ListBox2.SelectedIndex
@@ -213,13 +216,16 @@ Public Class Class3_matcher
                 Else 'show matched or both files
                     '.ListBox2.Items(.ListBox2.SelectedIndex) = l1 + ext
                     DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0) = l1 + ext
+                    currentTopIndex += 1
                     currentSelectedIndex = .ListBox2.SelectedIndex + 1
                 End If
             Else
                 currentSelectedIndex = .ListBox2.SelectedIndex + 1
             End If
             Dim b As New BindingContext : b(dt_files).EndCurrentEdit()
+            If currentTopIndex >= 0 Then .ListBox2.TopIndex = currentTopIndex
             If .ListBox2.Items.Count > currentSelectedIndex Then .ListBox2.SelectedIndex = currentSelectedIndex Else .ListBox2.SelectedIndex = currentSelectedIndex - 1
+            .ListBox2.EndUpdate()
 
             'on box1 (DB entry list)
             If .RadioButton2.Checked And (src = dst Or copyToHsFolder) Then
@@ -797,6 +803,11 @@ Public Class Class3_matcher
                     Next
                 End If
             End If
+
+            'Sorting table, and reassign to itself
+            Dim dv As DataView = dt_files.DefaultView
+            dv.Sort = dt_files.Columns(0).ColumnName + " asc"
+            dt_files = dv.ToTable
 
             .ListBox2.DataSource = dt_files
             .ListBox2.DisplayMember = "name"

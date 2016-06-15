@@ -2,6 +2,8 @@ TODO:
 - save last check result and show it in system manager table
 - fix changeSeleted in listbox in renaming
 - show any defaultly hided column, save table config, restart checker. Column is shown, but menu item does not checked
+- renaming history
+- drag & drop in system manager
 
 incomplete
 

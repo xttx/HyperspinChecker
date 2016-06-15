@@ -1025,7 +1025,6 @@ Partial Class Form1
         Me.ListBox2.Location = New System.Drawing.Point(148, 30)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(421, 282)
-        Me.ListBox2.Sorted = True
         Me.ListBox2.TabIndex = 5
         '
         'TextBox4
