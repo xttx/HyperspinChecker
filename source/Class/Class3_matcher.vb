@@ -742,6 +742,11 @@ Public Class Class3_matcher
 
     'Change dir in matcher (fill files list)
     Private Sub TextBox4_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox4.TextChanged
+        If TextBox4.Text.Trim <> "" AndAlso IO.Path.GetInvalidPathChars.Intersect(TextBox4.Text).Count = 0 Then
+            Dim tmp As String = FileSystem.GetDirectoryInfo(TextBox4.Text).FullName
+            If tmp.ToUpper.Trim <> TextBox4.Text.ToUpper.Trim Then TextBox4.Text = tmp.Trim : Exit Sub
+        End If
+
         With Form1
             .Button20_markAsFound.Enabled = False
             Dim fWoExt As String = ""
@@ -752,12 +757,12 @@ Public Class Class3_matcher
             dt_files.Clear()
 
             countMatchesFiles = 0 : countNotMatchesFiles = 0 : countAllFiles = 0
-            If Microsoft.VisualBasic.FileIO.FileSystem.DirectoryExists(.TextBox4.Text) Then
+            If FileSystem.DirectoryExists(.TextBox4.Text) Then
                 .Label20.Text = "Refreshing Files" : .Label20.BackColor = Color.Red : .Label20.Refresh()
 
                 Dim dst As String = ""
-                Dim src As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(.TextBox4.Text).FullName.ToLower
-                If .ComboBox3.SelectedIndex >= 0 Then dst = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(getPath()).FullName.ToLower
+                Dim src As String = FileSystem.GetDirectoryInfo(.TextBox4.Text).FullName.ToLower
+                If .ComboBox3.SelectedIndex >= 0 Then dst = FileSystem.GetDirectoryInfo(getPath()).FullName.ToLower
 
                 If Not src.EndsWith("\") Then src = src + "\" : If Not dst.EndsWith("\") Then dst = dst + "\"
 
@@ -765,9 +770,9 @@ Public Class Class3_matcher
                 Dim list As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = Nothing
                 If w(0) <> "" Then
                     If .CheckBox3.Checked Then
-                        list = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories(.TextBox4.Text)
+                        list = FileSystem.GetDirectories(.TextBox4.Text)
                     Else
-                        list = Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(.TextBox4.Text, FileIO.SearchOption.SearchTopLevelOnly, w)
+                        list = FileSystem.GetFiles(.TextBox4.Text, SearchOption.SearchTopLevelOnly, w)
                     End If
 
                     If list.Count > 0 And src <> dst Then .Button20_markAsFound.Enabled = True
@@ -880,6 +885,7 @@ Public Class Class3_matcher
                         .TextBox4.Visible = False
                         .ComboBox7.Items.Clear()
                         For Each t As String In Class1.romPath.Split({"|"}, StringSplitOptions.RemoveEmptyEntries)
+                            If t.Trim <> "" AndAlso IO.Path.GetInvalidPathChars.Intersect(t).Count = 0 Then t = FileSystem.GetDirectoryInfo(t).FullName
                             .ComboBox7.Items.Add(t)
                         Next
                         .ComboBox7.Items.Add("Combined View")
@@ -909,7 +915,7 @@ Public Class Class3_matcher
         End With
     End Sub
 
-    'Context Menu
+    'Context Menu - Switch to custom path
     Private Sub contextMeny2radioChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioStrip1.CheckedChanged, RadioStrip2.CheckedChanged
         With Form1
             If .RadioStrip1.Checked = True Then
@@ -925,6 +931,7 @@ Public Class Class3_matcher
                         .TextBox4.Visible = False
                         .ComboBox7.Items.Clear()
                         For Each t As String In Class1.romPath.Split({"|"}, StringSplitOptions.RemoveEmptyEntries)
+                            If t.Trim <> "" AndAlso IO.Path.GetInvalidPathChars.Intersect(t).Count = 0 Then t = FileSystem.GetDirectoryInfo(t).FullName
                             .ComboBox7.Items.Add(t)
                         Next
                         .ComboBox7.Items.Add("Combined View")
