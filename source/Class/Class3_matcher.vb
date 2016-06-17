@@ -884,7 +884,6 @@ Public Class Class3_matcher
                         Next
                         .ComboBox7.Items.Add("Combined View")
                         .ComboBox7.SelectedIndex = 0
-                        'TextBox4.Text = .ComboBox7.Items(0).ToString
                     Else
                         TextBox4.Text = Class1.romPath
                     End If
@@ -921,7 +920,18 @@ Public Class Class3_matcher
                 If .ComboBox3.SelectedIndex < 0 Then Exit Sub
                 If .ComboBox1.SelectedIndex < 0 Then Exit Sub
                 If .ComboBox3.SelectedIndex = 0 Then
-                    TextBox4.Text = Class1.romPath
+                    If Class1.romPath.Contains("|") Then
+                        .ComboBox7.Visible = True
+                        .TextBox4.Visible = False
+                        .ComboBox7.Items.Clear()
+                        For Each t As String In Class1.romPath.Split({"|"}, StringSplitOptions.RemoveEmptyEntries)
+                            .ComboBox7.Items.Add(t)
+                        Next
+                        .ComboBox7.Items.Add("Combined View")
+                        .ComboBox7.SelectedIndex = 0
+                    Else
+                        TextBox4.Text = Class1.romPath
+                    End If
                 ElseIf ComboBox3.SelectedIndex = 1 Then
                     TextBox4.Text = Class1.videoPath
                 ElseIf ComboBox3.SelectedIndex = 2 Then
@@ -939,7 +949,9 @@ Public Class Class3_matcher
                 If .ComboBox1.SelectedIndex < 0 Then MsgBox("Please, select a system.") : .RadioStrip1.Checked = True : Exit Sub
                 '.CheckStrip1.Enabled = True
                 TextBox4.Enabled = True
+                TextBox4.Visible = True
                 .Button6.Enabled = True
+                .ComboBox7.Visible = False
             End If
         End With
     End Sub
@@ -949,9 +961,10 @@ Public Class Class3_matcher
         matcher_update_total_labels()
     End Sub
 
-    'Selecting path in path combobox
+    'Selecting path in multiple paths combobox
     Private Sub combobox7_selectedChanged(sender As System.Object, e As System.EventArgs) Handles ComboBox7.SelectedIndexChanged
         If ComboBox7.SelectedIndex < ComboBox7.Items.Count - 1 Then
+            'If selected <> "Combined View"
             TextBox4.Text = ComboBox7.SelectedItem.ToString
         End If
     End Sub

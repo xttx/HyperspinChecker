@@ -800,6 +800,8 @@ Partial Class Form1
         '
         'ComboBox7
         '
+        Me.ComboBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox7.FormattingEnabled = True
         Me.ComboBox7.Location = New System.Drawing.Point(349, 3)

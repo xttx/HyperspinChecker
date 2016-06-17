@@ -1,6 +1,9 @@
 ﻿Imports System.Text.RegularExpressions
+Imports Microsoft.VisualBasic.FileIO.FileSystem
 
 Public Class Form6_autorenamer
+    'Dim local_list1 As New List(Of String)
+    'Dim local_list2 As New List(Of String)
     Dim clean_game_names, clean_rom_names As List(Of String)
 
     'Button Collect Info
@@ -87,11 +90,11 @@ Public Class Form6_autorenamer
         For Each r As DataGridViewRow In DataGridView1.Rows
             If r.Cells(3).Value.ToString = "X" Then
                 Try
-                    Dim f = Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(path, FileIO.SearchOption.SearchTopLevelOnly, {r.Cells(1).Value.ToString + ".*"})
+                    Dim f = GetFiles(path, FileIO.SearchOption.SearchTopLevelOnly, {r.Cells(1).Value.ToString + ".*"})
                     If f.Count > 0 Then
                         Dim fname As String = f(0)
                         Dim ext As String = fname.Substring(fname.LastIndexOf("."))
-                        Microsoft.VisualBasic.FileSystem.Rename(fname, path + r.Cells(0).Value.ToString + ext)
+                        Rename(fname, path + r.Cells(0).Value.ToString + ext)
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
@@ -222,12 +225,9 @@ Public Class Form6_autorenamer
         Form1.GroupBox1.Enabled = enable
         Form1.GroupBox3.Enabled = enable
 
-        'Button2.Text = "GO"
         Button2.Enabled = True
         DataGridView1.Rows.Clear()
     End Sub
-
-
 
     Private Sub Form6_autorenamer_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Dim enable As Boolean = True
