@@ -1,0 +1,10 @@
+14:4:4 - Initializing...
+14:4:4 - Creating menus
+14:4:4 - Loading config
+14:4:16 - Initializing...
+14:4:16 - Creating menus
+14:4:16 - Loading config
+14:4:19 - Init classes
+14:4:19 - Done init
+14:16:10 - Init classes
+14:16:10 - Done init

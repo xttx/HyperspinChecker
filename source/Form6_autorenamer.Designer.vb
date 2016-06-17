@@ -42,6 +42,8 @@ Partial Class Form6_autorenamer
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,7 +54,7 @@ Partial Class Form6_autorenamer
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(692, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Pre-Compare options (this will not affect your rom names in any way, it's a prepr" & _
+        Me.Label1.Text = "Pre-Compare options (this will not affect your rom names in any way, it's a prepr" &
     "ocessing routine to retrieve  'clean' game name from your romname)"
         '
         'CheckBox1
@@ -152,11 +154,11 @@ Partial Class Form6_autorenamer
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(745, 46)
+        Me.Button2.Location = New System.Drawing.Point(863, 22)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(91, 20)
         Me.Button2.TabIndex = 10
-        Me.Button2.Text = "GO"
+        Me.Button2.Text = "Collect info"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'DataGridView1
@@ -167,7 +169,6 @@ Partial Class Form6_autorenamer
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
@@ -175,7 +176,7 @@ Partial Class Form6_autorenamer
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(821, 192)
+        Me.DataGridView1.Size = New System.Drawing.Size(937, 192)
         Me.DataGridView1.TabIndex = 11
         '
         'Column1
@@ -207,7 +208,7 @@ Partial Class Form6_autorenamer
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProgressBar1.Location = New System.Drawing.Point(15, 269)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(821, 20)
+        Me.ProgressBar1.Size = New System.Drawing.Size(937, 20)
         Me.ProgressBar1.TabIndex = 12
         '
         'Label2
@@ -228,11 +229,35 @@ Partial Class Form6_autorenamer
         Me.TextBox3.TabIndex = 14
         Me.TextBox3.Text = "90"
         '
+        'Button3
+        '
+        Me.Button3.Enabled = False
+        Me.Button3.Location = New System.Drawing.Point(863, 45)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(91, 20)
+        Me.Button3.TabIndex = 15
+        Me.Button3.Text = "Rename"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Checked = True
+        Me.CheckBox7.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox7.Location = New System.Drawing.Point(745, 48)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(112, 17)
+        Me.CheckBox7.TabIndex = 16
+        Me.CheckBox7.Text = "Proirotize numbers"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
         'Form6_autorenamer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(850, 295)
+        Me.ClientSize = New System.Drawing.Size(966, 295)
+        Me.Controls.Add(Me.CheckBox7)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ProgressBar1)
@@ -275,4 +300,6 @@ Partial Class Form6_autorenamer
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button3 As Button
+    Friend WithEvents CheckBox7 As CheckBox
 End Class
