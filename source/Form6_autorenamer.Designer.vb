@@ -44,6 +44,7 @@ Partial Class Form6_autorenamer
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -176,7 +177,7 @@ Partial Class Form6_autorenamer
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(937, 192)
+        Me.DataGridView1.Size = New System.Drawing.Size(937, 272)
         Me.DataGridView1.TabIndex = 11
         '
         'Column1
@@ -206,7 +207,7 @@ Partial Class Form6_autorenamer
         '
         Me.ProgressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ProgressBar1.Location = New System.Drawing.Point(15, 269)
+        Me.ProgressBar1.Location = New System.Drawing.Point(15, 349)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(937, 20)
         Me.ProgressBar1.TabIndex = 12
@@ -251,18 +252,29 @@ Partial Class Form6_autorenamer
         Me.CheckBox7.Text = "Proirotize numbers"
         Me.CheckBox7.UseVisualStyleBackColor = True
         '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.Location = New System.Drawing.Point(863, 8)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(78, 17)
+        Me.CheckBox8.TabIndex = 17
+        Me.CheckBox8.Text = "CRC Mode"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
         'Form6_autorenamer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(966, 295)
+        Me.ClientSize = New System.Drawing.Size(966, 375)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.CheckBox8)
         Me.Controls.Add(Me.CheckBox7)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CheckBox6)
         Me.Controls.Add(Me.CheckBox5)
@@ -302,4 +314,5 @@ Partial Class Form6_autorenamer
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button3 As Button
     Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox8 As CheckBox
 End Class

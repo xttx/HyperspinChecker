@@ -1,17 +1,27 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.ComponentModel
+Imports System.Text.RegularExpressions
 Imports Microsoft.VisualBasic.FileIO.FileSystem
-
+'TODO - scan in background
+'TODO - need to handle archives when renaming
+'TODO - what is this error, when renaming Atari ST?
 Public Class Form6_autorenamer
     'Dim local_list1 As New List(Of String)
     'Dim local_list2 As New List(Of String)
+    Dim WithEvents bg_scaner As New BackgroundWorker()
+    Dim WithEvents bg_renamer As New BackgroundWorker()
     Dim clean_game_names, clean_rom_names As List(Of String)
+    Dim fileCrc As New Dictionary(Of String, String)
+    Dim allowRenameInsideArchive As MsgBoxResult = MsgBoxResult.Retry
+    Dim allowKeepOnlyNeeded As MsgBoxResult = MsgBoxResult.Retry
 
     'Button Collect Info
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        If CheckBox8.Checked Then Button2_Click_crc_mode() : Exit Sub
         If Not IsNumeric(TextBox3.Text) Then MsgBox("Please, check your min ratio % param.") : Exit Sub
         Dim min_ratio As Integer = CInt(TextBox3.Text)
 
         'Preprocess
+        fileCrc.Clear()
         Button2.Enabled = False
         Button3.Enabled = False
         DataGridView1.Rows.Clear()
@@ -81,26 +91,144 @@ Public Class Form6_autorenamer
         DataGridView1.AutoResizeColumns() : DataGridView1.AutoResizeColumnHeadersHeight()
         If DataGridView1.Rows.Count > 0 Then Button3.Enabled = True  'Button2.Text = "RENAME"
     End Sub
+    Private Sub Button2_Click_crc_mode()
+        Button2.Enabled = False : Button3.Enabled = False
+        fileCrc.Clear()
+        DataGridView1.Rows.Clear()
+        Dim z As New Class7_archives
+        Dim path As String = Form1.TextBox4.Text + "\"
+
+        Dim crc As String = ""
+        Dim index As Integer = -1
+        ProgressBar1.Minimum = 0
+        ProgressBar1.Maximum = Form1.ListBox2.Items.Count
+        ProgressBar1.Value = 0
+        Dim list_of_added_roms = New List(Of String)
+        Dim list_of_added_games = New List(Of String)
+        For Each item As DataRowView In Form1.ListBox2.Items
+            Dim file As String = item(0).ToString
+            If z.isArchive(item(0).ToString) Then
+                z.setFile(path + item(0).ToString)
+                For Each a_data In z.ArchiveFileData
+                    crc = Hex(a_data.Crc).ToUpper
+                    index = Class1.data_crc.IndexOf(crc)
+                    If index >= 0 AndAlso Class1.data(index).Substring(0, 1) = "N" Then
+                        Dim x As String = "X"
+                        Dim game As String = Class1.romlist(index).ToUpper
+                        Dim RealFilePath As String = GetFileInfo(path + item(0).ToString).FullName.ToUpper
+                        fileCrc.Add(RealFilePath, crc)
+                        If list_of_added_roms.Contains(file.ToUpper) Then x = ""
+                        If list_of_added_games.Contains(game.ToUpper) Then x = ""
+                        DataGridView1.Rows.Add({Class1.romlist(index), item(0).ToString, "100", x})
+                        If x = "X" AndAlso Not list_of_added_roms.Contains(file.ToUpper) Then list_of_added_roms.Add(file.ToUpper)
+                        If x = "X" AndAlso Not list_of_added_games.Contains(game.ToUpper) Then list_of_added_games.Add(game.ToUpper)
+                    End If
+                Next
+            Else
+                crc = Class6_hash.GetCRC32(path + item(0).ToString).ToUpper
+                index = Class1.data_crc.IndexOf(crc)
+                If index >= 0 AndAlso Class1.data(index).Substring(0, 1) = "N" Then
+                    Dim x As String = "X"
+                    Dim game As String = Class1.romlist(index).ToUpper
+                    If list_of_added_roms.Contains(file.ToUpper) Then x = ""
+                    If list_of_added_games.Contains(game.ToUpper) Then x = ""
+                    DataGridView1.Rows.Add({Class1.romlist(index), item(0).ToString, "100", x})
+                    If x = "X" AndAlso Not list_of_added_roms.Contains(file.ToUpper) Then list_of_added_roms.Add(file.ToUpper)
+                    If x = "X" AndAlso Not list_of_added_games.Contains(game.ToUpper) Then list_of_added_games.Add(game.ToUpper)
+                End If
+            End If
+            ProgressBar1.Value += 1
+            If ProgressBar1.Value Mod 10 = 0 Then ProgressBar1.Refresh()
+        Next
+
+        ProgressBar1.Value = 0
+        Button2.Enabled = True
+        DataGridView1.AutoResizeColumns() : DataGridView1.AutoResizeColumnHeadersHeight()
+        If DataGridView1.Rows.Count > 0 Then Button3.Enabled = True
+    End Sub
 
     'Button RENAME
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Button2.Enabled = False : Button3.Enabled = False
-        Dim path As String = Form1.TextBox4.Text
+        allowRenameInsideArchive = MsgBoxResult.Retry
+        allowKeepOnlyNeeded = MsgBoxResult.Retry
+
+        ProgressBar1.Minimum = 0
+        ProgressBar1.Maximum = DataGridView1.Rows.Count
+        ProgressBar1.Value = 0
+        bg_renamer.WorkerReportsProgress = True
+        bg_renamer.RunWorkerAsync(Form1.TextBox4.Text)
+    End Sub
+    Private Sub Button3_Click_BGWork(sender As Object, e As DoWorkEventArgs) Handles bg_renamer.DoWork
+        Dim fname As String = ""
+        Dim ext As String = ""
+        Dim path As String = e.Argument.ToString
+        Dim progress As Integer = 0
+        Dim z As New Class7_archives
         If Not path.EndsWith("\") Then path = path + "\"
         For Each r As DataGridViewRow In DataGridView1.Rows
             If r.Cells(3).Value.ToString = "X" Then
                 Try
                     Dim f = GetFiles(path, FileIO.SearchOption.SearchTopLevelOnly, {r.Cells(1).Value.ToString + ".*"})
                     If f.Count > 0 Then
-                        Dim fname As String = f(0)
-                        Dim ext As String = fname.Substring(fname.LastIndexOf("."))
+                        fname = f(0)
+                        ext = fname.Substring(fname.LastIndexOf("."))
                         Rename(fname, path + r.Cells(0).Value.ToString + ext)
+                        If z.isArchive(path + r.Cells(0).Value.ToString + ext) Then
+                            'Handle archives
+                            Dim realFilePath As String = GetFileInfo(path + r.Cells(0).Value.ToString + ext).FullName.ToUpper
+                            z.setFile(realFilePath)
+                            If fileCrc.ContainsKey(GetFileInfo(f(0)).FullName.ToUpper) Then
+                                For Each a In z.ArchiveFileData
+                                    If Hex(a.Crc).ToUpper = fileCrc(GetFileInfo(f(0)).FullName.ToUpper) Then
+                                        Dim a_fName As String = a.FileName
+                                        If a_fName.Contains("\") Then a_fName = a_fName.Substring(a_fName.LastIndexOf("\") + 1)
+                                        Dim a_fNameWoExt As String = a_fName
+                                        If a_fNameWoExt.Contains(".") Then a_fNameWoExt = a_fNameWoExt.Substring(0, a_fNameWoExt.LastIndexOf("."))
+                                        If a_fNameWoExt.ToUpper <> r.Cells(0).Value.ToString.ToUpper Then
+                                            If allowRenameInsideArchive = MsgBoxResult.Retry Then
+                                                allowRenameInsideArchive = MsgBox("At least one of files, INSIDE ARCHIVE have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
+                                            End If
+                                            If allowRenameInsideArchive = MsgBoxResult.Yes Then
+                                                Dim realfNameWoExt As String = realFilePath
+                                                If realfNameWoExt.Contains(".") Then realfNameWoExt = realfNameWoExt.Substring(0, realfNameWoExt.LastIndexOf("."))
+                                                If z.ArchiveFileData.Count > 1 Then
+                                                    If allowKeepOnlyNeeded = MsgBoxResult.Retry Then
+                                                        allowKeepOnlyNeeded = MsgBox("At least one of archive contains more than one files. Do you want to remove other files and only keep needed file?", MsgBoxStyle.YesNo)
+                                                    End If
+                                                    If allowKeepOnlyNeeded = MsgBoxResult.Yes Then
+                                                        'rename inside arch and keep only crc
+                                                        z.renameInArchive(realFilePath, realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(realFilePath), True)
+                                                    Else
+                                                        'jest rename inside arch
+                                                        z.renameInArchive(realFilePath, realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(realFilePath))
+                                                    End If
+                                                Else
+                                                    z.renameInArchive(realFilePath, realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(realFilePath))
+                                                End If
+                                            End If
+                                        End If
+                                    End If
+                                Next
+                            End If
+                        End If
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
+            progress += 1
+            If progress Mod 10 = 0 Then bg_renamer.ReportProgress(progress)
         Next
+    End Sub
+    Private Sub Button3_Click_BGWork_progress(sender As Object, p As ProgressChangedEventArgs) Handles bg_renamer.ProgressChanged
+        'ProgressBar1.Value += 1
+        'If ProgressBar1.Value Mod 10 = 0 Then ProgressBar1.Refresh()
+        ProgressBar1.Value = p.ProgressPercentage
+        ProgressBar1.Refresh()
+    End Sub
+    Private Sub Button3_Click_BGWork_complete() Handles bg_renamer.RunWorkerCompleted
+        ProgressBar1.Value = 0
         Button2.Enabled = True
         MsgBox("Done!")
         Me.Close()
