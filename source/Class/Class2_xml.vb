@@ -565,7 +565,8 @@ Public Class Class2_xml
 
         Dim i As Integer = Class1.romlist.IndexOf(romToDel)
         Class1.data.RemoveAt(i)
-        Class1.romlist.Remove(i)
+        Class1.data_crc.RemoveAt(i)
+        Class1.romlist.RemoveAt(i)
         If Class1.romFoundlist.Contains(romToDel) Then
             Class1.romFoundlist.Remove(romToDel)
         End If

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label()
@@ -166,6 +166,16 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.TextBox30 = New System.Windows.Forms.TextBox()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.ComboBox10 = New System.Windows.Forms.ComboBox()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.ComboBox11 = New System.Windows.Forms.ComboBox()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.Button19 = New System.Windows.Forms.Button()
         Me.TextBox28 = New System.Windows.Forms.TextBox()
@@ -317,6 +327,7 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
@@ -1877,6 +1888,7 @@ Partial Class Form1
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage5.Controls.Add(Me.GroupBox10)
         Me.TabPage5.Controls.Add(Me.GroupBox7)
         Me.TabPage5.Controls.Add(Me.GroupBox12)
         Me.TabPage5.Controls.Add(Me.GroupBox9)
@@ -1896,14 +1908,114 @@ Partial Class Form1
         Me.TabPage5.Text = "Program settings"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'GroupBox10
+        '
+        Me.GroupBox10.Controls.Add(Me.Label55)
+        Me.GroupBox10.Controls.Add(Me.TextBox30)
+        Me.GroupBox10.Controls.Add(Me.Label52)
+        Me.GroupBox10.Controls.Add(Me.ComboBox10)
+        Me.GroupBox10.Controls.Add(Me.Label54)
+        Me.GroupBox10.Controls.Add(Me.Label51)
+        Me.GroupBox10.Controls.Add(Me.ComboBox11)
+        Me.GroupBox10.Controls.Add(Me.Label53)
+        Me.GroupBox10.Controls.Add(Me.ComboBox12)
+        Me.GroupBox10.Location = New System.Drawing.Point(671, 126)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(305, 160)
+        Me.GroupBox10.TabIndex = 11
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Comprtession"
+        '
+        'Label55
+        '
+        Me.Label55.Location = New System.Drawing.Point(73, 122)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(213, 35)
+        Me.Label55.TabIndex = 12
+        Me.Label55.Text = "*can use {Archive} and {HSChecker} keywords."
+        '
+        'TextBox30
+        '
+        Me.TextBox30.Location = New System.Drawing.Point(76, 99)
+        Me.TextBox30.Name = "TextBox30"
+        Me.TextBox30.Size = New System.Drawing.Size(210, 20)
+        Me.TextBox30.TabIndex = 11
+        Me.TextBox30.Text = "{Archive}\tmp"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(8, 102)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(34, 13)
+        Me.Label52.TabIndex = 10
+        Me.Label52.Text = "Temp"
+        '
+        'ComboBox10
+        '
+        Me.ComboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox10.FormattingEnabled = True
+        Me.ComboBox10.Items.AddRange(New Object() {"Zip", "Seven Zip"})
+        Me.ComboBox10.Location = New System.Drawing.Point(76, 18)
+        Me.ComboBox10.Name = "ComboBox10"
+        Me.ComboBox10.Size = New System.Drawing.Size(132, 21)
+        Me.ComboBox10.TabIndex = 3
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Location = New System.Drawing.Point(7, 75)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(36, 13)
+        Me.Label54.TabIndex = 9
+        Me.Label54.Text = "Level:"
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Location = New System.Drawing.Point(6, 21)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(34, 13)
+        Me.Label51.TabIndex = 4
+        Me.Label51.Text = "Type:"
+        '
+        'ComboBox11
+        '
+        Me.ComboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox11.FormattingEnabled = True
+        Me.ComboBox11.Items.AddRange(New Object() {"Default", "Bzip", "Copy", "Deflate", "Deflate64", "LZMA", "LZMA2", "Ppmd"})
+        Me.ComboBox11.Location = New System.Drawing.Point(76, 45)
+        Me.ComboBox11.Name = "ComboBox11"
+        Me.ComboBox11.Size = New System.Drawing.Size(132, 21)
+        Me.ComboBox11.TabIndex = 5
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Location = New System.Drawing.Point(7, 48)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(46, 13)
+        Me.Label53.TabIndex = 8
+        Me.Label53.Text = "Method:"
+        '
+        'ComboBox12
+        '
+        Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox12.FormattingEnabled = True
+        Me.ComboBox12.Items.AddRange(New Object() {"None", "Fast", "Low", "Normal", "High", "Ultra"})
+        Me.ComboBox12.Location = New System.Drawing.Point(76, 72)
+        Me.ComboBox12.Name = "ComboBox12"
+        Me.ComboBox12.Size = New System.Drawing.Size(132, 21)
+        Me.ComboBox12.TabIndex = 6
+        '
         'GroupBox7
         '
         Me.GroupBox7.Controls.Add(Me.Button19)
         Me.GroupBox7.Controls.Add(Me.TextBox28)
         Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Location = New System.Drawing.Point(671, 139)
+        Me.GroupBox7.Location = New System.Drawing.Point(671, 45)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(305, 86)
+        Me.GroupBox7.Size = New System.Drawing.Size(305, 75)
         Me.GroupBox7.TabIndex = 10
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "3rd party"
@@ -2014,7 +2126,7 @@ Partial Class Form1
         '
         Me.GroupBox9.Controls.Add(Me.Label40)
         Me.GroupBox9.Controls.Add(Me.CheckBox26)
-        Me.GroupBox9.Location = New System.Drawing.Point(671, 45)
+        Me.GroupBox9.Location = New System.Drawing.Point(457, 45)
         Me.GroupBox9.Name = "GroupBox9"
         Me.GroupBox9.Size = New System.Drawing.Size(208, 88)
         Me.GroupBox9.TabIndex = 9
@@ -3004,6 +3116,8 @@ Partial Class Form1
         Me.GroupBox2.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
         Me.GroupBox12.ResumeLayout(False)
@@ -3304,4 +3418,14 @@ Partial Class Form1
     Friend WithEvents Button22 As Button
     Friend WithEvents Button23 As Button
     Friend WithEvents Button25 As Button
+    Friend WithEvents ComboBox11 As ComboBox
+    Friend WithEvents Label51 As Label
+    Friend WithEvents ComboBox10 As ComboBox
+    Friend WithEvents ComboBox12 As ComboBox
+    Friend WithEvents Label53 As Label
+    Friend WithEvents GroupBox10 As GroupBox
+    Friend WithEvents TextBox30 As TextBox
+    Friend WithEvents Label52 As Label
+    Friend WithEvents Label54 As Label
+    Friend WithEvents Label55 As Label
 End Class

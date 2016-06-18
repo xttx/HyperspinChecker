@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Class\Class7_archives.vb" />
     <Compile Include="Class\Class1.vb" />
     <Compile Include="Class\Class2_xml.vb" />
     <Compile Include="Class\Class3_matcher.vb" />
@@ -281,10 +282,10 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Form2_checkMissingInOtherFolders.Designer.vb">
+      <DependentUpon>Form2_checkMissingInOtherFolders.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="Form2_checkMissingInOtherFolders.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_MdfMds.Designer.vb">
@@ -386,8 +387,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Form2_checkMissingInOtherFolders.resx">
+      <DependentUpon>Form2_checkMissingInOtherFolders.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_MdfMds.resx">
       <DependentUpon>ISOFixAsk_MdfMds.vb</DependentUpon>

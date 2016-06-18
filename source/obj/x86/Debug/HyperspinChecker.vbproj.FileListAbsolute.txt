@@ -164,7 +164,6 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.ISOFixAsk_binWoCue.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.ISOFixAsk_MdfMds_ext.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form1.resources
-D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form2.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.ISOFixAsk_MdfMds.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Resources.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\HyperspinChecker.vbproj.GenerateResource.Cache
@@ -172,3 +171,4 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\HyperspinChecker.pdb
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\HyperspinChecker.vbprojResolveAssemblyReference.cache
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.FormF_createNewHL_system.resources
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form2_checkMissingInOtherFolders.resources

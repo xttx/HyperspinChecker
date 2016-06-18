@@ -159,7 +159,6 @@ Public Class Form1
 #Region "Main Form Actions (loadForm, system select, main check)"
     'FORM LOAD
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Dim z As New SevenZip.SevenZipExtractor("O:\(DC)Rayman 2 The Great Escape[RUS].rar")
         Class1.Log("Initializing...")
         ComboBox7.Left = TextBox4.Left
         ComboBox7.Width = TextBox4.Width - 10
@@ -452,6 +451,15 @@ Public Class Form1
             Me.Width = CInt(s.Split({"x"c})(0))
             Me.Height = CInt(s.Split({"x"c})(1))
         End If
+        'Compression
+        s = ini2.IniReadValue("Main", "Compression_type")
+        If s <> "" Then ComboBox10.Text = s Else ComboBox10.SelectedIndex = 0
+        s = ini2.IniReadValue("Main", "Compression_method")
+        If s <> "" Then ComboBox11.Text = s Else ComboBox11.SelectedIndex = 0
+        s = ini2.IniReadValue("Main", "Compression_level")
+        If s <> "" Then ComboBox12.Text = s Else ComboBox12.SelectedIndex = 5
+        s = ini2.IniReadValue("Main", "Compression_temp")
+        If s <> "" Then TextBox30.Text = s
 
         If Not FileSystem.FileExists(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml") Then
             MsgBox("Can't find '" + Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml'. Check hyperspin path under 'settings' tab, or in the config.conf")
@@ -479,6 +487,7 @@ Public Class Form1
     'Main Check
     Private Sub check(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Class1.data.Clear()
+        Class1.data_crc.Clear()
         Class1.romlist.Clear()
         Class1.romFoundlist.Clear()
         Label2.Text = "..."
@@ -611,6 +620,7 @@ Public Class Form1
             If useVidFromParent And a(3) = "YES" Then r.Cells(3).Style.BackColor = colorPAR
             If useThemeFromParent And a(4) = "YES" Then r.Cells(4).Style.BackColor = colorPAR
             Class1.data.Add(tempStr)
+            Class1.data_crc.Add(a_crc.ToUpper)
             DataGridView1.Rows.Add(r)
             ProgressBar1.Value = ProgressBar1.Value + 1 : If ProgressBar1.Value Mod 50 = 0 Then ProgressBar1.Refresh()
         Next
@@ -806,7 +816,7 @@ Public Class Form1
         If e.ClickedItem Is myContextMenu.Items(6) Then Class1.i = 5
         If e.ClickedItem Is myContextMenu.Items(7) Then Class1.i = 6
         If e.ClickedItem Is myContextMenu.Items(8) Then Class1.i = 7
-        Form2.Show()
+        Form2_checkMissingInOtherFolders.Show()
     End Sub
 
     'MoveUnneeded button
@@ -898,6 +908,7 @@ Public Class Form1
     'HS path changing
     Private Sub TextBox14_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox14.TextChanged
         Class1.data.Clear()
+        Class1.data_crc.Clear()
         Class1.romlist.Clear()
         Class1.romFoundlist.Clear()
         ComboBox1.Items.Clear()
@@ -943,16 +954,12 @@ Public Class Form1
             ini.IniWriteValue("handle_together", i.ToString, ListBox4.Items(i - 1).ToString)
         Next
 
-        'FileOpen(1, Application.StartupPath + "\Config.conf", OpenMode.Output)
-        'PrintLine(1, TextBox14.Text)
-        'PrintLine(1, "rename_just_cue = " + DirectCast(IIf(CheckBox6.Checked, "1", "0"), String))
-        'PrintLine(1, "search_cue_for = " + TextBox16.Text)
-        'PrintLine(1, "useHLv3 = " + DirectCast(IIf(CheckBox26.Checked, "1", "0"), String))
-        'PrintLine(1, "[handle_together]")
-        'For Each h In ListBox4.Items
-        'PrintLine(1, h)
-        'Next
-        'FileClose(1)
+        'Compression
+        ini.IniWriteValue("Main", "Compression_type", ComboBox10.SelectedItem.ToString)
+        ini.IniWriteValue("Main", "Compression_method", ComboBox11.SelectedItem.ToString)
+        ini.IniWriteValue("Main", "Compression_level", ComboBox12.SelectedItem.ToString)
+        ini.IniWriteValue("Main", "Compression_temp", TextBox30.Text)
+
         Label23.BackColor = Color.LightBlue
         Label23.Text = "Config.conf Saved"
     End Sub
@@ -1630,6 +1637,7 @@ Public Class Form1
     Private Sub CheckBox18_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckBox18.CheckedChanged
         TextBox29.Enabled = Not CheckBox18.Checked
     End Sub
+
     'Show autorenamer
     'Private Sub contextMenuAutorenamer(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu7.ItemClicked
     'If DataGridView1.Rows.Count = 0 Then MsgBox("Please, make ""check"" in summary page, before using this future.") : Exit Sub

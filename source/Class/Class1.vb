@@ -2,6 +2,7 @@
 Public Class Class1
     Public Shared i As Integer = 0
     Public Shared data As New List(Of String)
+    Public Shared data_crc As New List(Of String)
     Public Shared romPath As String = ""
     Public Shared videoPath As String = ""
     Public Shared videoPathOrig As String = ""
@@ -11,7 +12,7 @@ Public Class Class1
     Public Shared HyperspinIniCursysEmuExist As Boolean = False
     Public Shared HyperlaunchPath As String = ""
     Public Shared HyperlaunchExeName As String = ""
-    Public Shared romlist As New ArrayList
+    Public Shared romlist As New List(Of String)
     Public Shared romFoundlist As New ArrayList
     Public Shared askVar1 As String = "", askVar2 As String = "", askVar3 As String = ""
     Public Shared askList As New List(Of String), askResponse As Integer = 0
