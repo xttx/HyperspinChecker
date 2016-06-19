@@ -1,6 +1,7 @@
 ﻿Imports WindowsApplication1.Language
 Imports Microsoft.VisualBasic.FileIO
 Imports System.Runtime.InteropServices
+Imports System.ComponentModel
 
 Public Class Form1
     'REQUEST [desrop69 #105] case sensitive crc
@@ -90,6 +91,10 @@ Public Class Form1
     'DONE TODO REQUEST [RandomName1, post #91] Would it be possible to strip tags from rom descriptions automatically (except disc numbers) when creating an xml from a rom folder? (added long ago, but was broken. Also added exception option for disk numbers)
     'DONE TODO REQUEST [Obiwantje #103] updateble HS ini files
 #Region "Declarations"
+    Structure check_param
+        Dim x As Xml.XmlDocument
+        Dim sys As String
+    End Structure
     Public xmlPath As String = ""
     Private ini As New IniFileApi
     Private xml_class As Class2_xml
@@ -109,17 +114,17 @@ Public Class Form1
     Private romExtensions() As String = {""}
     Private oldCombo4Value As Integer = 0
     Private useParentVids, useParentThemes As Boolean
-    Private WithEvents myContextMenu As New ToolStripDropDownMenu 'checking for roms in other folders
+    Private WithEvents bg_check As New BackgroundWorker() With {.WorkerReportsProgress = True}
+    Friend WithEvents myContextMenu As New ToolStripDropDownMenu 'checking for roms in other folders
     Friend WithEvents myContextMenu2 As New ToolStripDropDownMenu 'matcher options
-    Private WithEvents myContextMenu3 As New ToolStripDropDownMenu With {.Name = "myContextMenu3"} 'move unneeded
-    Private WithEvents myContextMenu4 As New ToolStripDropDownMenu With {.Name = "myContextMenu4"} 'main table columns hide/show
-    Public WithEvents myContextMenu5 As New ToolStripDropDownMenu 'folder2xml options
+    Friend WithEvents myContextMenu3 As New ToolStripDropDownMenu With {.Name = "myContextMenu3"} 'move unneeded
+    Friend WithEvents myContextMenu4 As New ToolStripDropDownMenu With {.Name = "myContextMenu4"} 'main table columns hide/show
+    Friend WithEvents myContextMenu5 As New ToolStripDropDownMenu 'folder2xml options
     Friend WithEvents myContextMenu6 As New ToolStripDropDownMenu 'convert to clrmamepro
     Friend WithEvents myContextMenu7 As New ToolStripDropDownMenu 'main table context menu
     Friend WithEvents myContextMenu8 As New ToolStripDropDownMenu 'system manager table context menu
     Friend WithEvents RadioStrip1 As New RadioButton
     Friend WithEvents RadioStrip2 As New RadioButton
-    'Friend WithEvents CheckStrip1 As New CheckBox
     Friend WithEvents TextStrip1 As New TextBox
     Friend WithEvents ButtonStrip1 As New Button With {.Text = "UNDO last operation."}
     Dim WithEvents CheckStrip2_0 As New CheckBox With {.Name = "00", .Text = "Show Database Entry", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = False}
@@ -523,10 +528,6 @@ Public Class Form1
             Next
         End If
 
-        Dim a(10) As String
-        Dim counters() As Integer = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-        Dim romName As String
-        Dim tempStr As String
         Dim x As New Xml.XmlDocument
         Try
             x.Load(xmlPath)
@@ -542,6 +543,17 @@ Public Class Form1
 
         ProgressBar1.Value = 0
         ProgressBar1.Maximum = x.SelectNodes("/menu/game").Count
+        Dim param As New check_param With {.x = x, .sys = ComboBox1.SelectedItem.ToString}
+        bg_check.RunWorkerAsync(param)
+    End Sub
+    Private Sub check_bg(sender As Object, e As DoWorkEventArgs) Handles bg_check.DoWork
+        Dim a(10) As String
+        Dim romName As String
+        Dim tempStr As String
+        Dim progress As Integer = 0
+        Dim param = DirectCast(e.Argument, check_param)
+        Dim x As Xml.XmlDocument = param.x
+        Dim counters() As Integer = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         Dim a_crc, a_manufacturer, a_year, a_genre, a_cloneof As String
         For Each node As Xml.XmlNode In x.SelectNodes("/menu/game")
             If node.SelectSingleNode("crc") IsNot Nothing Then a_crc = node.SelectSingleNode("crc").InnerText Else a_crc = ""
@@ -594,7 +606,7 @@ Public Class Form1
 
             'Check theme
             Dim useThemeFromParent As Boolean = False
-            Dim p As String = Class1.HyperspinPath + "Media\" + ComboBox1.SelectedItem.ToString
+            Dim p As String = Class1.HyperspinPath + "Media\" + param.sys
             If FileSystem.FileExists(p + "\Themes\" + romName + ".zip") Then a(4) = "YES" Else a(4) = "NO"
             If a(4) = "NO" And CheckBox24.Checked And a_cloneof <> "" Then
                 If FileSystem.FileExists(p + "\Themes\" + a_cloneof + ".zip") Then a(4) = "YES" : useThemeFromParent = True
@@ -621,9 +633,18 @@ Public Class Form1
             If useThemeFromParent And a(4) = "YES" Then r.Cells(4).Style.BackColor = colorPAR
             Class1.data.Add(tempStr)
             Class1.data_crc.Add(a_crc.ToUpper)
-            DataGridView1.Rows.Add(r)
-            ProgressBar1.Value = ProgressBar1.Value + 1 : If ProgressBar1.Value Mod 50 = 0 Then ProgressBar1.Refresh()
+            'DataGridView1.Rows.Add(r)
+            DataGridView1.BeginInvoke(Sub() DataGridView1.Rows.Add(r))
+            progress += 1 : If progress Mod 50 = 0 Then bg_check.ReportProgress(progress)
+            'ProgressBar1.Value = ProgressBar1.Value + 1 : If ProgressBar1.Value Mod 50 = 0 Then ProgressBar1.Refresh()
         Next
+
+        'save lastCheckResult
+        counters(0) = DataGridView1.Rows.Count
+        ini.path = Class1.confPath
+        ini.IniWriteValue("LastCheckResult", param.sys, String.Join(",", counters))
+    End Sub
+    Private Sub check_bg_complete() Handles bg_check.RunWorkerCompleted
         ProgressBar1.Value = 0
         Button2_moveUnneeded.Enabled = True
         Button5_Associate.Enabled = True
@@ -631,11 +652,9 @@ Public Class Form1
         Button18.Enabled = True
         If AlowEditToolStripMenuItem.Checked Then Button21.Enabled = True
         Label2.Text = "Total: " + DataGridView1.Rows.Count.ToString
-
-        'save lastCheckResult
-        counters(0) = DataGridView1.Rows.Count
-        ini.path = Class1.confPath
-        ini.IniWriteValue("LastCheckResult", ComboBox1.SelectedItem.ToString, String.Join(",", counters))
+    End Sub
+    Private Sub check_bg_progress(o As Object, e As ProgressChangedEventArgs) Handles bg_check.ProgressChanged
+        ProgressBar1.Value = e.ProgressPercentage
     End Sub
 
     Private Function tryToFindRom(ByVal temppath As String, ByVal romExtensions() As String, ByVal romname As String) As Boolean
