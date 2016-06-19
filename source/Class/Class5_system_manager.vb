@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
+﻿Imports System.ComponentModel
+Imports Microsoft.VisualBasic.FileIO.FileSystem
 
 Public Class Class5_system_manager
     Dim ini As New IniFileApi
@@ -10,12 +11,14 @@ Public Class Class5_system_manager
     Dim checked As Boolean = False
     Private frm As New Form8_systemProperties
     Private Systems As New Dictionary(Of String, List(Of String))
+    Private status_Label As Label = Form1.Label41
     Private WithEvents Btn_add As Button = Form1.Button23
     Private WithEvents Btn_scan As Button = Form1.Button33
     Private WithEvents Btn_prop As Button = Form1.Button34
     Private WithEvents Btn_exclude As Button = Form1.Button22
     Private WithEvents Btn_startHS As Button = Form1.Button25
     Private WithEvents grid As DataGridView = Form1.DataGridView2
+    Private WithEvents bg_check As New BackgroundWorker() With {.WorkerReportsProgress = True}
 
     'Constructor (just add handler here)
     Public Sub New()
@@ -25,13 +28,16 @@ Public Class Class5_system_manager
     'Main Scan Systems
     Private Sub scan() Handles Btn_scan.Click
         If Form1.Label23.BackColor <> Color.LightGreen Then MsgBox("HyperSpin path is incorrect or not set. Set HS path in 'Program Settings' tab.") : Exit Sub
+        Form1.DataGridView2.Rows.Clear()
+        bg_check.RunWorkerAsync()
+    End Sub
+    Private Sub scan_bg(o As Object, e As DoWorkEventArgs) Handles bg_check.DoWork
         Systems.Clear()
         emulators.Clear()
         modules.Clear()
         modules_supported_systems.Clear()
         hs_ini.Clear()
         mainMenu.Clear()
-        Form1.DataGridView2.Rows.Clear()
         Dim iniClass As New IniFile, iniclass2 As New IniFile
         Dim activeCount As Integer = 0
 
@@ -61,6 +67,7 @@ Public Class Class5_system_manager
         If Not HL_Path = "" Then iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
 
         'Fill emulators list
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 1/10] Get emulators from HL/RL Global Emulators.ini...")
         Dim ini2 As New IniFileApi
         ini2.path = HL_Path + "\Settings\Global Emulators.ini"
         For Each s As String In ini2.IniListKey
@@ -74,6 +81,7 @@ Public Class Class5_system_manager
         Next
 
         'SCANING MODULES
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 2/10] Scaning HL/RL modules...")
         If Not HL_Path = "" Then
             Dim s As String = ""
             Dim modules_files As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = FileIO.FileSystem.GetFiles(HL_Path + "\Modules\", FileIO.SearchOption.SearchAllSubDirectories, {"*.ahk"})
@@ -103,6 +111,7 @@ Public Class Class5_system_manager
         End If
 
         'Load MainMenu.xml
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 3/10] Scaning HyperSpin Main Menu.xml...")
         Dim mainMenuXml As New Xml.XmlDocument
         mainMenuXml.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
         activeCount = mainMenuXml.SelectNodes("/menu/game").Count
@@ -114,6 +123,7 @@ Public Class Class5_system_manager
         Next
 
         'Checking databases
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 4/10] Scaning System Databases (XML)...")
         Dim sys As String = ""
         For Each Dir As String In FileIO.FileSystem.GetDirectories(Class1.HyperspinPath + "\Databases\")
             sys = Dir.Substring(Dir.LastIndexOf("\") + 1)
@@ -127,6 +137,7 @@ Public Class Class5_system_manager
         Next
 
         'Checking main-menu themes
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 5/10] Scaning Main Menu Themes...")
         Dim files As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = FileIO.FileSystem.GetFiles(Class1.HyperspinPath + "\Media\Main Menu\Themes\", FileIO.SearchOption.SearchTopLevelOnly, {"*.zip"})
         For Each file As String In files
             sys = file.Substring(file.LastIndexOf("\") + 1)
@@ -139,6 +150,7 @@ Public Class Class5_system_manager
         Next
 
         'Checking default system themes
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 6/10] Scaning System Thenes...")
         For Each Dir As String In GetDirectories(Class1.HyperspinPath + "\Media\")
             sys = Dir.Substring(Dir.LastIndexOf("\") + 1)
             If Not sys.ToUpper = "MAIN MENU" Then
@@ -159,6 +171,7 @@ Public Class Class5_system_manager
         Next
 
         'Checking default system wheels
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 7/10] Scaning System Wheels...")
         For Each file As String In FileIO.FileSystem.GetFiles(Class1.HyperspinPath + "\Media\Main Menu\Images\Wheel", FileIO.SearchOption.SearchTopLevelOnly, {"*.png", "*.jpg"})
             sys = file.Substring(file.LastIndexOf("\") + 1)
             sys = sys.Substring(0, sys.LastIndexOf("."))
@@ -170,6 +183,7 @@ Public Class Class5_system_manager
         Next
 
         'Checking default system videos
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 8/10] Scaning System Videos...")
         For Each file As String In FileIO.FileSystem.GetFiles(Class1.HyperspinPath + "\Media\Main Menu\Video", FileIO.SearchOption.SearchTopLevelOnly, {"*.flv", "*.mp4"})
             sys = file.Substring(file.LastIndexOf("\") + 1)
             sys = sys.Substring(0, sys.LastIndexOf("."))
@@ -230,11 +244,11 @@ Public Class Class5_system_manager
                 If FileIO.FileSystem.FileExists(emuPath) Then Systems(sys.ToUpper).Add("%6%")
                 If FileIO.FileSystem.DirectoryExists(romPath) Then Systems(sys.ToUpper).Add("%7%")
             End If
-
-            Form1.Label41.Text = "Scanning... " + c.ToString + " of " + files.Count.ToString : Form1.Label41.Refresh()
+            status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 9/10] Scanning Hyperspin Settings.ini... " + c.ToString + " of " + files.Count.ToString)
         Next
 
         'FILL GRID
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 10/10] Filling grid... ")
         For Each l As List(Of String) In Systems.Values
             Dim r As DataGridViewRow = scan_FillRowSub(l, required_media_list, dont_show_completed, required_media_number)
             If r IsNot Nothing Then
@@ -271,11 +285,12 @@ Public Class Class5_system_manager
                     If Not atLeastOneIncomplete And atLeastOneComplete Then r.Cells(14).Style.BackColor = Form1.colorYES
                     If Not atLeastOneIncomplete And Not atLeastOneComplete Then r.Cells(14).Style.BackColor = Form1.colorNO
                 End If
-                    'add row to grid
-                    Form1.DataGridView2.Rows.Add(r)
+                'add row to grid
+                grid.BeginInvoke(Sub() grid.Rows.Add(r))
             End If
         Next
-        Form1.Label41.Text = "System count: " + Form1.DataGridView2.Rows.Count.ToString + ", Active:" + activeCount.ToString
+        'Form1.Label41.Text = "System count: " + Form1.DataGridView2.Rows.Count.ToString + ", Active:" + activeCount.ToString
+        status_Label.BeginInvoke(Sub() status_Label.Text = "System count: " + grid.Rows.Count.ToString + ", Active:" + activeCount.ToString)
         checked = True
     End Sub
 

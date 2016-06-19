@@ -923,7 +923,7 @@ Public Class Form1
     End Sub
 #End Region
 
-#Region "System Settings"
+#Region "System properties"
     'HS path changing
     Private Sub TextBox14_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox14.TextChanged
         Class1.data.Clear()
