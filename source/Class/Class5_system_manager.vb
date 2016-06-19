@@ -27,6 +27,7 @@ Public Class Class5_system_manager
 
     'Main Scan Systems
     Private Sub scan() Handles Btn_scan.Click
+        If Form1.Label23.BackColor = Color.LightBlue Then Form1.TextBox14_TextChanged_sub_check()
         If Form1.Label23.BackColor <> Color.LightGreen Then MsgBox("HyperSpin path is incorrect or not set. Set HS path in 'Program Settings' tab.") : Exit Sub
         Form1.DataGridView2.Rows.Clear()
         bg_check.RunWorkerAsync()
@@ -55,15 +56,19 @@ Public Class Class5_system_manager
         If tmp <> "" Then required_media_list = tmp.Split({","c}, StringSplitOptions.RemoveEmptyEntries)
 
         'Get HL Path
-        iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
-        Dim HL_Path As String = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
-        If Not HL_Path = "" Then
-            If HL_Path.ToUpper.EndsWith(".EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\") + 1)
+        'iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
+        'Dim HL_Path As String = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
+        'If Not HL_Path = "" Then
+        'If HL_Path.ToUpper.EndsWith(".EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\") + 1)
 
-            Dim t1 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\HyperLaunch.exe")
-            Dim t2 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\RocketLauncher.exe")
-            If Not t1 And Not t2 Then HL_Path = ""
-        End If
+        'Dim t1 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\HyperLaunch.exe")
+        'Dim t2 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\RocketLauncher.exe")
+        'If Not t1 And Not t2 Then HL_Path = ""
+        'End If
+        Dim HL_Path As String = Class1.HyperlaunchPath
+        Dim t1 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\HyperLaunch.exe")
+        Dim t2 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\RocketLauncher.exe")
+        If Not t1 And Not t2 Then HL_Path = ""
         If Not HL_Path = "" Then iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
 
         'Fill emulators list
@@ -261,9 +266,9 @@ Public Class Class5_system_manager
                     For i As Integer = 1 To 4
                         r.Cells(i + 9).Value = arr_int(i).ToString + " \ " + arr_int(0).ToString
                         If arr_int(i) = arr_int(0) Then
-                            r.Cells(i + 9).Style.BackColor = Form1.colorYES
+                            r.Cells(i + 9).Style.BackColor = Class1.colorYES
                         ElseIf arr_int(i) = 0 Then
-                            r.Cells(i + 9).Style.BackColor = Form1.colorNO
+                            r.Cells(i + 9).Style.BackColor = Class1.colorNO
                         Else
                             r.Cells(i + 9).Style.BackColor = Color.Yellow
                         End If
@@ -282,8 +287,8 @@ Public Class Class5_system_manager
                     If Not tmp = "" Then tmp = tmp + " \ " + arr_int(0).ToString Else tmp = "none"
                     r.Cells(14).Value = tmp
                     If atLeastOneIncomplete Then r.Cells(14).Style.BackColor = Color.Yellow
-                    If Not atLeastOneIncomplete And atLeastOneComplete Then r.Cells(14).Style.BackColor = Form1.colorYES
-                    If Not atLeastOneIncomplete And Not atLeastOneComplete Then r.Cells(14).Style.BackColor = Form1.colorNO
+                    If Not atLeastOneIncomplete And atLeastOneComplete Then r.Cells(14).Style.BackColor = Class1.colorYES
+                    If Not atLeastOneIncomplete And Not atLeastOneComplete Then r.Cells(14).Style.BackColor = Class1.colorNO
                 End If
                 'add row to grid
                 grid.BeginInvoke(Sub() grid.Rows.Add(r))
@@ -332,9 +337,9 @@ Public Class Class5_system_manager
             r.CreateCells(grid, x)
             For i As Integer = 1 To 9
                 If x(i) = "X" Or x(i) = "HL" Then
-                    r.Cells(i).Style.BackColor = Form1.colorYES
+                    r.Cells(i).Style.BackColor = Class1.colorYES
                 Else
-                    r.Cells(i).Style.BackColor = Form1.colorNO
+                    r.Cells(i).Style.BackColor = Class1.colorNO
                     If x(i).ToUpper = "PER GAME" Then
                         r.Cells(i).Style.BackColor = Color.YellowGreen
                     End If
@@ -439,8 +444,11 @@ Public Class Class5_system_manager
         'HS ini, Rompath and emupaths
         Dim iniClass As New IniFile, iniclass2 As New IniFile
         iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
-        Dim HL_Path As String = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
-        If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
+
+        'Dim HL_Path As String = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
+        'If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
+        'If Not HL_Path = "" AndAlso (Not FileExists(HL_Path + "\HyperLaunch.exe") And Not FileExists(HL_Path + "\RocketLauncher.exe")) Then HL_Path = ""
+        Dim HL_Path As String = Class1.HyperlaunchPath
         If Not HL_Path = "" AndAlso (Not FileExists(HL_Path + "\HyperLaunch.exe") And Not FileExists(HL_Path + "\RocketLauncher.exe")) Then HL_Path = ""
 
         If Not FileIO.FileSystem.FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then
@@ -548,7 +556,7 @@ Public Class Class5_system_manager
             r.CreateCells(grid)
             r.Cells(0).Value = sys
             For i As Integer = 1 To 9
-                r.Cells(i).Style.BackColor = Form1.colorNO
+                r.Cells(i).Style.BackColor = Class1.colorNO
             Next
             Form1.DataGridView2.Rows.Add(r)
             Form1.DataGridView2.Rows(Form1.DataGridView2.Rows.Count - 1).Selected = True
@@ -621,7 +629,7 @@ Public Class Class5_system_manager
                             If failed.Count = 1 Then
                                 Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
                                 FileCopy(failed(0), Class1.HyperspinPath + "\Databases\" + sys + "\" + sys + ".xml")
-                                grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Form1.colorYES
+                                grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Class1.colorYES
                                 If grid.Rows(hitTest.RowIndex).Cells(4).Value.ToString = "" Then
                                     grid.Rows(hitTest.RowIndex).Cells(4).Value = "X"
                                 Else
@@ -646,7 +654,7 @@ Public Class Class5_system_manager
                             Dim res As Microsoft.VisualBasic.MsgBoxResult = MsgBox("Following file were not recognized as system: " + failed(0).Substring(failed(0).LastIndexOf("\")) + vbCrLf + "Do you want to set it as " + sys + "?", MsgBoxStyle.YesNo)
                             If res = MsgBoxResult.Yes Then
                                 FileCopy(failed(0), Class1.HyperspinPath + "\Media\Main Menu\Themes\" + sys + ".zip")
-                                grid.Rows(hitTest.RowIndex).Cells(3).Style.BackColor = Form1.colorYES
+                                grid.Rows(hitTest.RowIndex).Cells(3).Style.BackColor = Class1.colorYES
                                 If grid.Rows(hitTest.RowIndex).Cells(3).Value.ToString = "" Then
                                     grid.Rows(hitTest.RowIndex).Cells(3).Value = "X"
                                 Else
@@ -670,7 +678,7 @@ Public Class Class5_system_manager
                             If failed.Count = 1 Then
                                 Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString.ToUpper
                                 FileCopy(failed(0), Class1.HyperspinPath + "\Media\" + Systems(sys)(0) + "\Themes\default.zip")
-                                grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Form1.colorYES
+                                grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Class1.colorYES
                                 If grid.Rows(hitTest.RowIndex).Cells(4).Value.ToString = "" Then
                                     grid.Rows(hitTest.RowIndex).Cells(4).Value = "X"
                                 Else

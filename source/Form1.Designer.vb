@@ -310,6 +310,7 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox21 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -1472,6 +1473,7 @@ Partial Class Form1
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.CheckBox21)
         Me.TabPage3.Controls.Add(Me.Button37)
         Me.TabPage3.Controls.Add(Me.Button36)
         Me.TabPage3.Controls.Add(Me.TextBox18)
@@ -2431,6 +2433,7 @@ Partial Class Form1
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(397, 20)
         Me.TextBox14.TabIndex = 1
+        Me.TextBox14.Text = "not set"
         '
         'Label22
         '
@@ -3068,6 +3071,16 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader"
         '
+        'CheckBox21
+        '
+        Me.CheckBox21.AutoSize = True
+        Me.CheckBox21.Location = New System.Drawing.Point(895, 18)
+        Me.CheckBox21.Name = "CheckBox21"
+        Me.CheckBox21.Size = New System.Drawing.Size(58, 17)
+        Me.CheckBox21.TabIndex = 27
+        Me.CheckBox21.Text = "Freeze"
+        Me.CheckBox21.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3428,4 +3441,5 @@ Partial Class Form1
     Friend WithEvents Label52 As Label
     Friend WithEvents Label54 As Label
     Friend WithEvents Label55 As Label
+    Friend WithEvents CheckBox21 As CheckBox
 End Class

@@ -28,12 +28,12 @@ Public Class Form8_systemProperties
             If _data.Count = 0 Then Me.Enabled = False : Exit Property
             Me.Enabled = True
             If _data(0) = "" Then CheckBox1.Checked = False Else CheckBox1.Checked = True
-            If _data(1) = "" Then Label5.BackColor = Form1.colorNO Else Label5.BackColor = Form1.colorYES
-            If _data(2) = "" Then Label1.BackColor = Form1.colorNO Else Label1.BackColor = Form1.colorYES
-            If _data(3) = "" Then Label2.BackColor = Form1.colorNO Else Label2.BackColor = Form1.colorYES
-            If _data(4) = "" Then Label6.BackColor = Form1.colorNO Else Label6.BackColor = Form1.colorYES
-            If _data(9) = "" Then Label3.BackColor = Form1.colorNO Else Label3.BackColor = Form1.colorYES
-            If _data(10) = "" Then Label4.BackColor = Form1.colorNO Else Label4.BackColor = Form1.colorYES
+            If _data(1) = "" Then Label5.BackColor = Class1.colorNO Else Label5.BackColor = Class1.colorYES
+            If _data(2) = "" Then Label1.BackColor = Class1.colorNO Else Label1.BackColor = Class1.colorYES
+            If _data(3) = "" Then Label2.BackColor = Class1.colorNO Else Label2.BackColor = Class1.colorYES
+            If _data(4) = "" Then Label6.BackColor = Class1.colorNO Else Label6.BackColor = Class1.colorYES
+            If _data(9) = "" Then Label3.BackColor = Class1.colorNO Else Label3.BackColor = Class1.colorYES
+            If _data(10) = "" Then Label4.BackColor = Class1.colorNO Else Label4.BackColor = Class1.colorYES
             If _data(5) = "" Then RadioButton2.Checked = True Else RadioButton1.Checked = True
             If _data(6) = "" Then
                 TextBox1.Text = "" : TextBox2.Text = ""
@@ -42,8 +42,8 @@ Public Class Form8_systemProperties
                 TextBox1.Text = "HL Path Not Set" : TextBox2.Text = "HL Path Not Set" : ComboBox1.SelectedIndex = -1
                 RadioButton2.Checked = True : RadioButton1.Enabled = False
             End If
-            If _data(7) = "" Then TextBox1.BackColor = Form1.colorNO : TextBox3.BackColor = Form1.colorNO Else TextBox1.BackColor = Form1.colorYES : TextBox3.BackColor = Form1.colorYES
-            If _data(8) = "" Then TextBox2.BackColor = Form1.colorNO : TextBox4.BackColor = Form1.colorNO Else TextBox2.BackColor = Form1.colorYES : TextBox4.BackColor = Form1.colorYES
+            If _data(7) = "" Then TextBox1.BackColor = Class1.colorNO : TextBox3.BackColor = Class1.colorNO Else TextBox1.BackColor = Class1.colorYES : TextBox3.BackColor = Class1.colorYES
+            If _data(8) = "" Then TextBox2.BackColor = Class1.colorNO : TextBox4.BackColor = Class1.colorNO Else TextBox2.BackColor = Class1.colorYES : TextBox4.BackColor = Class1.colorYES
 
             sys = _data(11)
             sysNormalCase = _data(12)
@@ -123,8 +123,9 @@ Public Class Form8_systemProperties
 
         Dim ini As New IniFileApi
         ini.path = Class1.HyperspinPath + "\Settings\Settings.ini"
-        HL_Path = ini.IniReadValue("Main", "Hyperlaunch_Path").Trim
-        If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
+        'HL_Path = ini.IniReadValue("Main", "Hyperlaunch_Path").Trim
+        'If HL_Path.ToUpper.EndsWith("EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\"))
+        HL_Path = Class1.HyperlaunchPath
     End Sub
 
     'Change HL emulator
@@ -207,12 +208,12 @@ Public Class Form8_systemProperties
         Dim tmpPath As String = ""
         If name = "textbox1" Then
             If TextBox1.Text.Trim = "" Or HL_Path = "" Then
-                TextBox1.BackColor = Form1.colorNO
+                TextBox1.BackColor = Class1.colorNO
             Else
                 tmpPath = TextBox1.Text
                 If tmpPath.StartsWith(".") Then tmpPath = HL_Path + "\" + tmpPath
                 If FileExists(tmpPath) Then
-                    TextBox1.BackColor = Form1.colorYES
+                    TextBox1.BackColor = Class1.colorYES
 
                     'Try to find module
                     If CheckBox2.Checked Then
@@ -226,14 +227,14 @@ Public Class Form8_systemProperties
                         Next
                     End If
                 Else
-                    TextBox1.BackColor = Form1.colorNO
+                    TextBox1.BackColor = Class1.colorNO
                 End If
             End If
         End If
 
         If name = "textbox2" Then
             If TextBox2.Text.Trim = "" Or HL_Path = "" Then
-                TextBox2.BackColor = Form1.colorNO
+                TextBox2.BackColor = Class1.colorNO
             Else
                 Dim somethingFound As Boolean = False
                 Dim somethingNotFound As Boolean = False
@@ -242,29 +243,29 @@ Public Class Form8_systemProperties
                     If DirectoryExists(tmp) Then somethingFound = True Else somethingNotFound = True
                 Next
 
-                If somethingFound And Not somethingNotFound Then TextBox2.BackColor = Form1.colorYES
+                If somethingFound And Not somethingNotFound Then TextBox2.BackColor = Class1.colorYES
                 If somethingFound And somethingNotFound Then TextBox2.BackColor = Color.YellowGreen
-                If Not somethingFound Then TextBox2.BackColor = Form1.colorNO
+                If Not somethingFound Then TextBox2.BackColor = Class1.colorNO
             End If
         End If
 
         If name = "textbox3" Then
             If TextBox3.Text.Trim = "" Then
-                TextBox3.BackColor = Form1.colorNO
+                TextBox3.BackColor = Class1.colorNO
             Else
                 tmpPath = TextBox3.Text
                 If tmpPath.StartsWith(".") Then tmpPath = Class1.HyperspinPath + "\" + tmpPath
-                If FileExists(tmpPath) Then TextBox3.BackColor = Form1.colorYES Else TextBox3.BackColor = Form1.colorNO
+                If FileExists(tmpPath) Then TextBox3.BackColor = Class1.colorYES Else TextBox3.BackColor = Class1.colorNO
             End If
         End If
 
         If name = "textbox4" Then
             If TextBox4.Text.Trim = "" Then
-                TextBox4.BackColor = Form1.colorNO
+                TextBox4.BackColor = Class1.colorNO
             Else
                 tmpPath = TextBox4.Text
                 If tmpPath.StartsWith(".") Then tmpPath = Class1.HyperspinPath + "\" + tmpPath
-                If DirectoryExists(tmpPath) Then TextBox4.BackColor = Form1.colorYES Else TextBox4.BackColor = Form1.colorNO
+                If DirectoryExists(tmpPath) Then TextBox4.BackColor = Class1.colorYES Else TextBox4.BackColor = Class1.colorNO
             End If
         End If
     End Sub
@@ -398,7 +399,7 @@ Public Class Form8_systemProperties
         If Not FileExists(p) Then MsgBox("File not exist." + vbCrLf + p) : Exit Sub
         If FileExists(p_new) Then MsgBox("File already exist." + vbCrLf + p_new) : Exit Sub
         FileCopy(p, p_new)
-        Label6.BackColor = Form1.colorYES
+        Label6.BackColor = Class1.colorYES
 
         If FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then
             Dim iniClass As New IniFile
@@ -509,6 +510,10 @@ Public Class Form8_systemProperties
             If Not controls_to_hide.Contains(c.Name.ToUpper) Then c.Enabled = True
         Next
         insert_new_system_at = -1
+    End Sub
+
+    Private Sub Form8_systemProperties_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 #End Region
 End Class

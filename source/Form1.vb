@@ -24,18 +24,6 @@ Public Class Form1
     'Rename media when edit romname
     'To see if hs path is set, system manager refers to Label23.color, which can be not necessary green but purple, if path is ok, but config.save clicked.
 
-    'DONE TODO thrasherx #119, Turranius #160 - Any chance you could filter the MAME BIOS files from the 'move unneeded roms' option? I consolidated my MAME roms and it took my BIOS files with it. 
-    'MOSTLY DONE TODO flames #153 - print check table on printer or exel export
-    'DONE TODO potts43 #154 - On the renamer page have a totals number always present.eg.  Unmatched/total  Matched/total  Both/total
-    'MOSTLY DONE TODO potts43 #154 - Be able to add/copy/delete xml entries. This way you could add a blank entry and complete it and then save it.
-    'DONE TODO potts43 #154 - Be able to edit both name and description in the xml. Even better to have all fields. This way you can have custom Xmls made easy.
-    'DONE TODO Yardley #159 - option to move themes in the "Move unneeded roms or media to subfolder" options. Seems simple to add this feature. 
-    'DONE TODO Added default icon
-    'DONE TODO Ability to change HyperLaunch path in HS Settings.ini.
-    'DONE TODO Ability to change HyperLaunch / HyperLaunchHQ ini to make HS easier to move from one drive/folder to another
-    'DONE TODO Speed up loading time
-    'DONE TODO Iso Checker now tracks wrong formated GDI (no fix though)
-
     'TODO option to rename audio files associated with .cue (ME)
     'TODO It appears to be setting the "video" folder for Visual Pinball to the previous system a "Check" was ran on. In the Matcher tab, even when I tell it to use a custom folder and point it to the correct Visual Pinball video folder, once I perform the "Associate" action, it's still copying the video files out of my Visual Pinball video folder and moving them to the Gamecube video folder (note: Gamecube was the last system I had ran a "Check" on). So, the Matcher seems to be using the custom folder fine to actually find the video files, but when it performs an "Associate", something is getting confused. Not a big deal, but thought I'd pass the info along. I've tried using both the System.ini and default Hyperspin Video location settings and happens for both. Let me know if you have any questions on my setup & thanks for the great tool.  (Signet145 #47)
     'TODO undo the renaming INSIDE the .cue. The .cue and .bin files both get renamed back to the correct original file name, but inside the cue file does not. (windowlicker #27)
@@ -49,6 +37,19 @@ Public Class Form1
 
     'TODO matcher filters
     'TODO 'handle-together' in 'move unneeded to subfolder'
+
+    'MOSTLY DONE TODO relative HL path not working ('Hyperlaunch path changed, 'HS path changing)
+    'MOSTLY DONE TODO flames #153 - print check table on printer or exel export
+    'MOSTLY DONE TODO potts43 #154 - Be able to add/copy/delete xml entries. This way you could add a blank entry and complete it and then save it.
+    'DONE TODO potts43 #154 - On the renamer page have a totals number always present.eg.  Unmatched/total  Matched/total  Both/total
+    'DONE TODO thrasherx #119, Turranius #160 - Any chance you could filter the MAME BIOS files from the 'move unneeded roms' option? I consolidated my MAME roms and it took my BIOS files with it. 
+    'DONE TODO potts43 #154 - Be able to edit both name and description in the xml. Even better to have all fields. This way you can have custom Xmls made easy.
+    'DONE TODO Yardley #159 - option to move themes in the "Move unneeded roms or media to subfolder" options. Seems simple to add this feature. 
+    'DONE TODO Added default icon
+    'DONE TODO Ability to change HyperLaunch path in HS Settings.ini.
+    'DONE TODO Ability to change HyperLaunch / HyperLaunchHQ ini to make HS easier to move from one drive/folder to another
+    'DONE TODO Speed up loading time
+    'DONE TODO Iso Checker now tracks wrong formated GDI (no fix though)
 
     'DONE ADDED notes
     'DONE ADDED tool to move roms found in .txt list to subfolder
@@ -90,6 +91,8 @@ Public Class Form1
     'DONE TODO REQUEST [MadCoder, post #85] Well, I had an idea about the fix ISO for DC...I going to add Dreamcast CDI to ISO ability, and ISO fixer. (Not skilled enough to write my own CD images converter. Added bath converter using UltraISO)
     'DONE TODO REQUEST [RandomName1, post #91] Would it be possible to strip tags from rom descriptions automatically (except disc numbers) when creating an xml from a rom folder? (added long ago, but was broken. Also added exception option for disk numbers)
     'DONE TODO REQUEST [Obiwantje #103] updateble HS ini files
+    'DONE TODO After saving config (label became violet), scan says HS path not found
+    'DONE TODO When loading form, HL path says "please select system", therefore, this goes into path variable ??? can't reproduce!!! I don't know how, but r.cells(0).style.backcolor = Class1.colorYES cause this
 #Region "Declarations"
     Structure check_param
         Dim x As Xml.XmlDocument
@@ -108,9 +111,6 @@ Public Class Form1
     Friend subfoldered As Boolean = False
     Friend subfoldered2 As Boolean = False
     Friend undo As New List(Of List(Of String))
-    Friend colorNO As Color = Color.OrangeRed
-    Friend colorYES As Color = Color.LightGreen
-    Friend colorPAR As Color = Color.FromArgb(&HFF, &HB0, &HFF, &HB0)
     Private romExtensions() As String = {""}
     Private oldCombo4Value As Integer = 0
     Private useParentVids, useParentThemes As Boolean
@@ -456,6 +456,12 @@ Public Class Form1
             Me.Width = CInt(s.Split({"x"c})(0))
             Me.Height = CInt(s.Split({"x"c})(1))
         End If
+        'Freeze HL Path
+        s = ini2.IniReadValue("Main", "Freeze_HL_path")
+        If s <> "" Then
+            CheckBox21.Checked = True
+            TextBox18.Text = s
+        End If
         'Compression
         s = ini2.IniReadValue("Main", "Compression_type")
         If s <> "" Then ComboBox10.Text = s Else ComboBox10.SelectedIndex = 0
@@ -626,11 +632,11 @@ Public Class Form1
             r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a_crc, a_manufacturer, a_year, a_genre})
             tempStr = ""
             For i As Integer = 2 To 10
-                If a(i) = "YES" Then r.Cells(i).Style.BackColor = colorYES Else r.Cells(i).Style.BackColor = colorNO
+                If a(i) = "YES" Then r.Cells(i).Style.BackColor = Class1.colorYES Else r.Cells(i).Style.BackColor = Class1.colorNO
                 tempStr = tempStr + a(i).Substring(0, 1)
             Next
-            If useVidFromParent And a(3) = "YES" Then r.Cells(3).Style.BackColor = colorPAR
-            If useThemeFromParent And a(4) = "YES" Then r.Cells(4).Style.BackColor = colorPAR
+            If useVidFromParent And a(3) = "YES" Then r.Cells(3).Style.BackColor = Class1.colorPAR
+            If useThemeFromParent And a(4) = "YES" Then r.Cells(4).Style.BackColor = Class1.colorPAR
             Class1.data.Add(tempStr)
             Class1.data_crc.Add(a_crc.ToUpper)
             'DataGridView1.Rows.Add(r)
@@ -932,6 +938,9 @@ Public Class Form1
         Class1.romFoundlist.Clear()
         ComboBox1.Items.Clear()
         DataGridView1.Rows.Clear()
+        TextBox14_TextChanged_sub_check()
+    End Sub
+    Public Sub TextBox14_TextChanged_sub_check()
         If FileSystem.DirectoryExists(TextBox14.Text) Then
             Class1.HyperspinPath = TextBox14.Text
             If Not Class1.HyperspinPath.EndsWith("\") Then Class1.HyperspinPath = Class1.HyperspinPath + "\"
@@ -951,7 +960,7 @@ Public Class Form1
             Next
 
             'Get hyperlaunch path from settings.ini
-            If FileSystem.FileExists(Class1.HyperspinPath + "\Settings\Settings.ini") Then
+            If Not CheckBox21.Checked AndAlso FileSystem.FileExists(Class1.HyperspinPath + "\Settings\Settings.ini") Then
                 ini.path = Class1.HyperspinPath + "\Settings\Settings.ini"
                 TextBox18.Text = ini.IniReadValue("main", "Hyperlaunch_Path")
             End If
@@ -959,6 +968,31 @@ Public Class Form1
             Label23.BackColor = Color.Orange
             Label23.Text = "Directory not exist." : Exit Sub
         End If
+    End Sub
+
+    'Hyperlaunch path changed
+    Private Sub TextBox18_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox18.TextChanged
+        Dim ok As Boolean = False
+        If TextBox18.Text.StartsWith(".") Then TextBox18.Text = (Class1.HyperspinPath + "\" + TextBox18.Text) : Exit Sub
+        Dim str As String = TextBox18.Text
+
+
+        If str.ToUpper.EndsWith("EXE") Then
+            Class1.HyperlaunchPath = str.Substring(0, str.LastIndexOf("\"))
+            Class1.HyperlaunchExeName = str.Substring(str.LastIndexOf("\") + 1)
+            If FileSystem.FileExists(str) Then
+                ok = True
+            End If
+        Else
+            Class1.HyperlaunchPath = str
+            Class1.HyperlaunchExeName = ""
+            If FileSystem.DirectoryExists(str) Then
+                If FileSystem.FileExists(str + "\HyperLaunch.exe") Or FileSystem.FileExists(str + "\RocketLauncher.exe") Then
+                    ok = True
+                End If
+            End If
+        End If
+        If ok Then TextBox18.BackColor = Class1.colorYES Else TextBox18.BackColor = Class1.colorNO
     End Sub
 
     'Save Config
@@ -972,6 +1006,11 @@ Public Class Form1
         For i As Integer = 1 To ListBox4.Items.Count
             ini.IniWriteValue("handle_together", i.ToString, ListBox4.Items(i - 1).ToString)
         Next
+        If CheckBox21.Checked Then
+            ini.IniWriteValue("Main", "Freeze_HL_path", TextBox18.Text)
+        Else
+            ini.IniWriteValue("Main", "Freeze_HL_path", "")
+        End If
 
         'Compression
         ini.IniWriteValue("Main", "Compression_type", ComboBox10.SelectedItem.ToString)
@@ -1044,28 +1083,6 @@ Public Class Form1
         End If
     End Sub
 
-    'Hyperlaunch path changed
-    Private Sub TextBox18_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox18.TextChanged
-        Dim ok As Boolean = False
-
-        If TextBox18.Text.ToUpper.EndsWith("EXE") Then
-            Class1.HyperlaunchPath = TextBox18.Text.Substring(0, TextBox18.Text.LastIndexOf("\"))
-            Class1.HyperlaunchExeName = TextBox18.Text.Substring(TextBox18.Text.LastIndexOf("\") + 1)
-            If FileSystem.FileExists(TextBox18.Text) Then
-                ok = True
-            End If
-        Else
-            Class1.HyperlaunchPath = TextBox18.Text
-            Class1.HyperlaunchExeName = ""
-            If FileSystem.DirectoryExists(TextBox18.Text) Then
-                If FileSystem.FileExists(TextBox18.Text + "\HyperLaunch.exe") Then
-                    ok = True
-                End If
-            End If
-        End If
-        If ok Then TextBox18.BackColor = colorYES Else TextBox18.BackColor = colorNO
-    End Sub
-
     'Update Hyperspin INI
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         If Not TextBox18.Text.ToUpper.EndsWith("EXE") Then
@@ -1088,7 +1105,7 @@ Public Class Form1
 
     'Update UltraISO path
     Private Sub TextBox28_TextChanged(sender As System.Object, e As System.EventArgs) Handles TextBox28.TextChanged
-        If FileSystem.FileExists(TextBox28.Text) Then TextBox28.BackColor = colorYES Else TextBox28.BackColor = colorNO
+        If FileSystem.FileExists(TextBox28.Text) Then TextBox28.BackColor = Class1.colorYES Else TextBox28.BackColor = Class1.colorNO
     End Sub
 #End Region
 
@@ -1276,7 +1293,7 @@ Public Class Form1
 
     'Tools / Show HL 3rd party paths
     Private Sub CheckHyperLaunch3rdPartyPathsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Click
-        If TextBox18.BackColor <> colorYES Then MsgBox("You Hyperlaunch path is not correctly set. Check 'Hyperspin system settings' tab") : Exit Sub
+        If TextBox18.BackColor <> Class1.colorYES Then MsgBox("You Hyperlaunch path is not correctly set. Check 'Hyperspin system settings' tab") : Exit Sub
         Dim f As New FormA_hyperlaunch_3rd_party_paths : f.Show()
     End Sub
     'Tools / Show Genres/favorites manager

@@ -1,5 +1,6 @@
 TODO:
-- add crc matcher in "check missing in another folder"
+- strange bug - launch without config, set HS path, set use HL, check any system
+- association tables
 - renaming history
 - drag & drop in system manager
 
@@ -7,6 +8,7 @@ DONE:
 - fix changeSeleted in listbox in renaming
 - show any defaultly hided column, save table config, restart checker. Column is shown, but menu item does not checked
 - save last check result and show it in system manager table
+- add crc matcher in "check missing in another folder"
 
 PS2
 Cocoto Kart Racer (Europe)

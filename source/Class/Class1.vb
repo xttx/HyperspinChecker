@@ -17,6 +17,9 @@ Public Class Class1
     Public Shared askVar1 As String = "", askVar2 As String = "", askVar3 As String = ""
     Public Shared askList As New List(Of String), askResponse As Integer = 0
     Public Shared confPath As String = Application.StartupPath + ".\Config.conf"
+    Public Shared colorNO As Color = Color.OrangeRed
+    Public Shared colorYES As Color = Color.LightGreen
+    Public Shared colorPAR As Color = Color.FromArgb(&HFF, &HB0, &HFF, &HB0)
 
     Public Shared Sub Log(ByVal s As String)
         FileOpen(1, ".\HyperCheckerLog.txt", OpenMode.Append)

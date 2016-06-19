@@ -213,7 +213,6 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Rele
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Release\AxInterop.ShockwaveFlashObjects.dll
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Release\AxInterop.WMPLib.dll
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\HyperspinChecker.vbprojResolveAssemblyReference.cache
-D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form3.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form4_genres_favorites.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form4_genres_favorites_preview.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form5_videoDownloader.resources
@@ -235,10 +234,11 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.ISOFixAsk_binWoCue.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.ISOFixAsk_MdfMds_ext.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form1.resources
-D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form2.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.ISOFixAsk_MdfMds.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Resources.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\HyperspinChecker.vbproj.GenerateResource.Cache
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormF_systemManager_exclusions.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormF_createNewHL_system.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormF_systemManager_addSystem.resources
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form3_mameFoldersFilter.resources
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form2_checkMissingInOtherFolders.resources

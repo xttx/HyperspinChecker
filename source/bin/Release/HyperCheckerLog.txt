@@ -1,10 +1,15 @@
-14:4:4 - Initializing...
-14:4:4 - Creating menus
-14:4:4 - Loading config
-14:4:16 - Initializing...
-14:4:16 - Creating menus
-14:4:16 - Loading config
-14:4:19 - Init classes
-14:4:19 - Done init
-14:16:10 - Init classes
-14:16:10 - Done init
+14:33:35 - Initializing...
+14:33:35 - Creating menus
+14:33:35 - Loading config
+14:33:35 - Init classes
+14:33:35 - Done init
+15:26:26 - Initializing...
+15:26:26 - Creating menus
+15:26:26 - Loading config
+15:26:32 - Init classes
+15:26:32 - Done init
+15:27:13 - Initializing...
+15:27:13 - Creating menus
+15:27:13 - Loading config
+15:27:20 - Init classes
+15:27:20 - Done init

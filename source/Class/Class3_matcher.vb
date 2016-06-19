@@ -682,10 +682,10 @@ Public Class Class3_matcher
                 If Form1.DataGridView1.Item(1, r).Value.ToString.ToLower = fWoExt.ToLower Then
                     If Not remove Then
                         Form1.DataGridView1.Item(col, r).Value = "YES"
-                        Form1.DataGridView1.Item(col, r).Style.BackColor = Form1.colorYES
+                        Form1.DataGridView1.Item(col, r).Style.BackColor = Class1.colorYES
                     Else
                         Form1.DataGridView1.Item(col, r).Value = "NO"
-                        Form1.DataGridView1.Item(col, r).Style.BackColor = Form1.colorNO
+                        Form1.DataGridView1.Item(col, r).Style.BackColor = Class1.colorNO
                     End If
                     Exit For
                 End If

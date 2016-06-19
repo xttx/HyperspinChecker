@@ -9,7 +9,7 @@ Public Class ISOChecker
     'Check ISO
     Public Sub Check() Handles Button21_checkISO.Click
         counter = 0
-        If Form1.CheckBox17.Checked And Form1.TextBox28.BackColor <> Form1.colorYES Then
+        If Form1.CheckBox17.Checked And Form1.TextBox28.BackColor <> Class1.colorYES Then
             MsgBox("To use ISO Converter, you have to select UltraISO path in 'Program Settings'")
             Exit Sub
         End If
