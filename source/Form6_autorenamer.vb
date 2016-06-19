@@ -8,29 +8,56 @@ Public Class Form6_autorenamer
     'Dim local_list1 As New List(Of String)
     'Dim local_list2 As New List(Of String)
     Dim WithEvents bg_scaner As New BackgroundWorker()
+    Dim WithEvents bg_scaner_crc As New BackgroundWorker()
     Dim WithEvents bg_renamer As New BackgroundWorker()
     Dim clean_game_names, clean_rom_names As List(Of String)
     Dim fileCrc As New Dictionary(Of String, String)
     Dim allowRenameInsideArchive As MsgBoxResult = MsgBoxResult.Retry
     Dim allowKeepOnlyNeeded As MsgBoxResult = MsgBoxResult.Retry
+    Structure listboxes_local_lists
+        Dim list1 As ListBox.ObjectCollection
+        Dim list2 As ListBox.ObjectCollection
+        Dim path As String
+    End Structure
 
     'Button Collect Info
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
-        If CheckBox8.Checked Then Button2_Click_crc_mode() : Exit Sub
-        If Not IsNumeric(TextBox3.Text) Then MsgBox("Please, check your min ratio % param.") : Exit Sub
-        Dim min_ratio As Integer = CInt(TextBox3.Text)
+        If Not CheckBox8.Checked And Not IsNumeric(TextBox3.Text) Then MsgBox("Please, check your min ratio % param.") : Exit Sub
 
+        For Each c As Control In Me.Controls
+            If Not c.Name.ToUpper.StartsWith("DATAGRID") Then c.Enabled = False
+        Next
+        'Button2.Enabled = False
+        'Button3.Enabled = False
+        DataGridView1.Rows.Clear()
+        ProgressBar1.Minimum = 0
+        ProgressBar1.Value = 0
+        Dim lists As New listboxes_local_lists With {.list1 = Form1.ListBox1.Items, .list2 = Form1.ListBox2.Items}
+
+        If CheckBox8.Checked Then
+            'crc mode
+            lists.path = Form1.TextBox4.Text + "\"
+            bg_scaner_crc.WorkerReportsProgress = True
+            bg_scaner_crc.RunWorkerAsync(lists)
+        Else
+            'names mode
+            bg_scaner.WorkerReportsProgress = True
+            bg_scaner.RunWorkerAsync(lists)
+        End If
+    End Sub
+    Private Sub Button2_Click_BGWork(sender As Object, e As DoWorkEventArgs) Handles bg_scaner.DoWork
         'Preprocess
         fileCrc.Clear()
-        Button2.Enabled = False
-        Button3.Enabled = False
-        DataGridView1.Rows.Clear()
+        Dim progress As Integer = 0
+        Dim min_ratio As Integer = CInt(TextBox3.Text)
         Dim curGameName, curRomName As String
         clean_game_names = New List(Of String)
         clean_rom_names = New List(Of String)
         Dim list_of_added_roms = New List(Of String)
         Dim list_of_added_games = New List(Of String)
-        For Each item As String In Form1.ListBox1.Items
+        Dim lists As listboxes_local_lists = DirectCast(e.Argument, listboxes_local_lists)
+        'For Each item As String In Form1.ListBox1.Items
+        For Each item As String In lists.list1
             curGameName = item.ToUpper.Trim
             If CheckBox1.Checked Then curGameName = Remove_paranteses(curGameName)
             If CheckBox2.Checked Then curGameName = Remove_brackets(curGameName)
@@ -39,7 +66,8 @@ Public Class Form6_autorenamer
             If CheckBox5.Checked Then curGameName = Convert_roman(curGameName)
             clean_game_names.Add(Remove_spaces(curGameName))
         Next
-        For Each item As DataRowView In Form1.ListBox2.Items
+        'For Each item As DataRowView In Form1.ListBox2.Items
+        For Each item As DataRowView In lists.list2
             curRomName = item.Item(0).ToString.ToUpper.Trim
             If CheckBox1.Checked Then curRomName = Remove_paranteses(curRomName)
             If CheckBox2.Checked Then curRomName = Remove_brackets(curRomName)
@@ -50,9 +78,7 @@ Public Class Form6_autorenamer
         Next
 
         'Comparing
-        ProgressBar1.Minimum = 0
-        ProgressBar1.Maximum = clean_rom_names.Count
-        ProgressBar1.Value = 0
+        Me.Invoke(New MethodInvoker(Sub() ProgressBar1.Maximum = clean_rom_names.Count))
         Dim counter1 As Integer = 0, counter2 As Integer = 0
         Dim numbersInRomName As String = "", numbersInGameName As String = ""
         Dim stringSplit1(), stringSplit2() As String
@@ -71,11 +97,14 @@ Public Class Form6_autorenamer
                     similarity = 100 * (commonList.Count * 2) / (stringSplit1.Length + stringSplit2.Length)
                     If similarity >= min_ratio Then
                         Dim X As String = "X"
-                        t1 = Form1.ListBox1.Items(counter1).ToString
-                        t2 = DirectCast(Form1.ListBox2.Items(counter2), DataRowView).Item(0).ToString
+                        't1 = Form1.ListBox1.Items(counter1).ToString
+                        t1 = lists.list1(counter1).ToString
+                        't2 = DirectCast(Form1.ListBox2.Items(counter2), DataRowView).Item(0).ToString
+                        t2 = DirectCast(lists.list2(counter2), DataRowView).Item(0).ToString
                         If list_of_added_roms.Contains(t2) Then X = "" 'Else list_of_added_roms.Add(t2)
                         If list_of_added_games.Contains(t1) Then X = "" 'Else list_of_added_games.Add(t1)
-                        DataGridView1.Rows.Add({t1, t2, Math.Round(similarity, 2, MidpointRounding.AwayFromZero).ToString, X})
+                        'DataGridView1.Rows.Add({t1, t2, Math.Round(similarity, 2, MidpointRounding.AwayFromZero).ToString, X})
+                        Me.Invoke(New MethodInvoker(Sub() DataGridView1.Rows.Add({t1, t2, Math.Round(similarity, 2, MidpointRounding.AwayFromZero).ToString, X})))
                         If X = "X" AndAlso Not list_of_added_roms.Contains(t2) Then list_of_added_roms.Add(t2)
                         If X = "X" AndAlso Not list_of_added_games.Contains(t1) Then list_of_added_games.Add(t1)
                     End If
@@ -83,29 +112,34 @@ Public Class Form6_autorenamer
                 counter1 += 1
             Next
             counter2 += 1
-            ProgressBar1.Value += 1
-            If ProgressBar1.Value Mod 10 = 0 Then ProgressBar1.Refresh()
+            progress += 1
+            If progress Mod 10 = 0 Then bg_scaner.ReportProgress(progress)
+            'ProgressBar1.Value += 1
+            'If ProgressBar1.Value Mod 10 = 0 Then ProgressBar1.Refresh()
         Next
-        Button2.Enabled = True
+    End Sub
+    Private Sub Button2_Click_BGWork_complete() Handles bg_scaner.RunWorkerCompleted
+        'Button2.Enabled = True
+        For Each c As Control In Me.Controls
+            If Not c.Name.ToUpper.StartsWith("DATAGRID") Then c.Enabled = True
+        Next
         ProgressBar1.Value = 0
         DataGridView1.AutoResizeColumns() : DataGridView1.AutoResizeColumnHeadersHeight()
-        If DataGridView1.Rows.Count > 0 Then Button3.Enabled = True  'Button2.Text = "RENAME"
+        If DataGridView1.Rows.Count > 0 Then Button3.Enabled = True Else Button3.Enabled = False
     End Sub
-    Private Sub Button2_Click_crc_mode()
-        Button2.Enabled = False : Button3.Enabled = False
+    Private Sub Button2_Click_BGWork_crc_mode(sender As Object, e As DoWorkEventArgs) Handles bg_scaner_crc.DoWork
         fileCrc.Clear()
-        DataGridView1.Rows.Clear()
         Dim z As New Class7_archives
-        Dim path As String = Form1.TextBox4.Text + "\"
+        Dim lists As listboxes_local_lists = DirectCast(e.Argument, listboxes_local_lists)
+        Dim path As String = lists.path
+        Dim progress As Integer = 0
 
         Dim crc As String = ""
         Dim index As Integer = -1
-        ProgressBar1.Minimum = 0
-        ProgressBar1.Maximum = Form1.ListBox2.Items.Count
-        ProgressBar1.Value = 0
+        Me.Invoke(New MethodInvoker(Sub() ProgressBar1.Maximum = lists.list2.Count))
         Dim list_of_added_roms = New List(Of String)
         Dim list_of_added_games = New List(Of String)
-        For Each item As DataRowView In Form1.ListBox2.Items
+        For Each item As DataRowView In lists.list2
             Dim file As String = item(0).ToString
             If z.isArchive(item(0).ToString) Then
                 z.setFile(path + item(0).ToString)
@@ -119,7 +153,8 @@ Public Class Form6_autorenamer
                         fileCrc.Add(RealFilePath, crc)
                         If list_of_added_roms.Contains(file.ToUpper) Then x = ""
                         If list_of_added_games.Contains(game.ToUpper) Then x = ""
-                        DataGridView1.Rows.Add({Class1.romlist(index), item(0).ToString, "100", x})
+                        'DataGridView1.Rows.Add({Class1.romlist(index), item(0).ToString, "100", x})
+                        Me.Invoke(New MethodInvoker(Sub() DataGridView1.Rows.Add({Class1.romlist(index), item(0).ToString, "100", x})))
                         If x = "X" AndAlso Not list_of_added_roms.Contains(file.ToUpper) Then list_of_added_roms.Add(file.ToUpper)
                         If x = "X" AndAlso Not list_of_added_games.Contains(game.ToUpper) Then list_of_added_games.Add(game.ToUpper)
                     End If
@@ -132,26 +167,31 @@ Public Class Form6_autorenamer
                     Dim game As String = Class1.romlist(index).ToUpper
                     If list_of_added_roms.Contains(file.ToUpper) Then x = ""
                     If list_of_added_games.Contains(game.ToUpper) Then x = ""
-                    DataGridView1.Rows.Add({Class1.romlist(index), item(0).ToString, "100", x})
+                    'DataGridView1.Rows.Add({Class1.romlist(index), item(0).ToString, "100", x})
+                    Me.Invoke(New MethodInvoker(Sub() DataGridView1.Rows.Add({Class1.romlist(index), item(0).ToString, "100", x})))
                     If x = "X" AndAlso Not list_of_added_roms.Contains(file.ToUpper) Then list_of_added_roms.Add(file.ToUpper)
                     If x = "X" AndAlso Not list_of_added_games.Contains(game.ToUpper) Then list_of_added_games.Add(game.ToUpper)
                 End If
             End If
-            ProgressBar1.Value += 1
-            If ProgressBar1.Value Mod 10 = 0 Then ProgressBar1.Refresh()
+            progress += 1
+            If progress Mod 10 = 0 Then bg_scaner_crc.ReportProgress(progress)
+            'ProgressBar1.Value += 1
+            'If ProgressBar1.Value Mod 10 = 0 Then ProgressBar1.Refresh()
         Next
-
+    End Sub
+    Private Sub Button2_Click_BGWork_crc_mode_complete() Handles bg_scaner_crc.RunWorkerCompleted
         ProgressBar1.Value = 0
-        Button2.Enabled = True
+        'Button2.Enabled = True
+        For Each c As Control In Me.Controls
+            If Not c.Name.ToUpper.StartsWith("DATAGRID") Then c.Enabled = True
+        Next
         DataGridView1.AutoResizeColumns() : DataGridView1.AutoResizeColumnHeadersHeight()
-        If DataGridView1.Rows.Count > 0 Then Button3.Enabled = True
+        If DataGridView1.Rows.Count > 0 Then Button3.Enabled = True Else Button3.Enabled = False
     End Sub
 
     'Button RENAME
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Button2.Enabled = False : Button3.Enabled = False
-        allowRenameInsideArchive = MsgBoxResult.Retry
-        allowKeepOnlyNeeded = MsgBoxResult.Retry
 
         ProgressBar1.Minimum = 0
         ProgressBar1.Maximum = DataGridView1.Rows.Count
@@ -160,6 +200,8 @@ Public Class Form6_autorenamer
         bg_renamer.RunWorkerAsync(Form1.TextBox4.Text)
     End Sub
     Private Sub Button3_Click_BGWork(sender As Object, e As DoWorkEventArgs) Handles bg_renamer.DoWork
+        allowRenameInsideArchive = MsgBoxResult.Retry
+        allowKeepOnlyNeeded = MsgBoxResult.Retry
         Dim fname As String = ""
         Dim ext As String = ""
         Dim path As String = e.Argument.ToString
@@ -220,12 +262,6 @@ Public Class Form6_autorenamer
             progress += 1
             If progress Mod 10 = 0 Then bg_renamer.ReportProgress(progress)
         Next
-    End Sub
-    Private Sub Button3_Click_BGWork_progress(sender As Object, p As ProgressChangedEventArgs) Handles bg_renamer.ProgressChanged
-        'ProgressBar1.Value += 1
-        'If ProgressBar1.Value Mod 10 = 0 Then ProgressBar1.Refresh()
-        ProgressBar1.Value = p.ProgressPercentage
-        ProgressBar1.Refresh()
     End Sub
     Private Sub Button3_Click_BGWork_complete() Handles bg_renamer.RunWorkerCompleted
         ProgressBar1.Value = 0
@@ -334,10 +370,17 @@ Public Class Form6_autorenamer
         Return s.Replace("      ", " ").Replace("     ", " ").Replace("    ", " ").Replace("   ", " ").Replace("  ", " ")
     End Function
 
+    Private Sub BGWork_progress(sender As Object, p As ProgressChangedEventArgs) Handles bg_renamer.ProgressChanged, bg_scaner.ProgressChanged, bg_scaner_crc.ProgressChanged
+        'ProgressBar1.Value += 1
+        'If ProgressBar1.Value Mod 10 = 0 Then ProgressBar1.Refresh()
+        ProgressBar1.Value = p.ProgressPercentage
+        ProgressBar1.Refresh()
+    End Sub
+
+    'Cell chenge "X" - dblclick and keypress
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         If DataGridView1.Item(3, e.RowIndex).Value.ToString = "X" Then DataGridView1.Item(3, e.RowIndex).Value = "" Else DataGridView1.Item(3, e.RowIndex).Value = "X"
     End Sub
-
     Private Sub DataGridView1_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles DataGridView1.KeyDown
         If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Space Then
             Dim r As Integer = DataGridView1.SelectedCells(0).RowIndex
@@ -345,6 +388,7 @@ Public Class Form6_autorenamer
         End If
     End Sub
 
+    'Form show
     Private Sub Form6_autorenamer_Shown(sender As Object, e As System.EventArgs) Handles Me.Shown
         Dim enable As Boolean = False
         Form1.Button1.Enabled = enable
@@ -356,7 +400,7 @@ Public Class Form6_autorenamer
         Button2.Enabled = True
         DataGridView1.Rows.Clear()
     End Sub
-
+    'Form Close
     Private Sub Form6_autorenamer_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Dim enable As Boolean = True
         Form1.Button1.Enabled = enable
