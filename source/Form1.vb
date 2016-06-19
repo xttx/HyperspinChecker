@@ -1337,8 +1337,8 @@ Public Class Form1
             If f.FileName = "" Then ComboBox4.SelectedIndex = oldCombo4Value : Exit Sub
             If Not FileSystem.FileExists(f.FileName) Then MsgBox("Can't open file") : ComboBox4.SelectedIndex = oldCombo4Value : Exit Sub
             Class1.askVar1 = f.FileName
-            Form3.ShowDialog()
-            If Form3.filter.Count = 0 Then MsgBox("No games selected") : ComboBox4.SelectedIndex = oldCombo4Value : Exit Sub
+            Form3_mameFoldersFilter.ShowDialog()
+            If Form3_mameFoldersFilter.filter.Count = 0 Then MsgBox("No games selected") : ComboBox4.SelectedIndex = oldCombo4Value : Exit Sub
 
             oldCombo4Value = ComboBox4.SelectedIndex
             ProgressBar1.Value = 0
@@ -1346,7 +1346,7 @@ Public Class Form1
             Label2.Text = "Filtering..." : Label2.Refresh()
             For i As Integer = 0 To DataGridView1.Rows.Count - 1
                 DataGridView1.Rows(i).Visible = True
-                If Form3.filter.Contains(DataGridView1.Rows(i).Cells(1).Value.ToString.ToLower) Then
+                If Form3_mameFoldersFilter.filter.Contains(DataGridView1.Rows(i).Cells(1).Value.ToString.ToLower) Then
                     counter1 = counter1 + 1
                     DataGridView1.Rows(i).Visible = True
                 Else

@@ -1,4 +1,4 @@
-﻿Public Class Form3
+﻿Public Class Form3_mameFoldersFilter
     Public filter As New List(Of String)
     Dim rom_list As New Dictionary(Of String, List(Of String))
 

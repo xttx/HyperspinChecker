@@ -91,7 +91,11 @@ Public Class Class7_archives
         Dim cFormat As OutArchiveFormat
         Dim cMethod As CompressionMethod
         Dim clevel As CompressionLevel
+        Dim cFormatStr As String = ""
+        Dim cMethodStr As String = ""
+        Dim clevelStr As String = ""
         Try
+            Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
             If f.ToUpper.EndsWith(".ZIP") Then
                 arch_ext = ".zip"
                 cFormat = OutArchiveFormat.Zip
@@ -101,8 +105,9 @@ Public Class Class7_archives
                 cFormat = OutArchiveFormat.SevenZip
                 cMethod = CompressionMethod.Default
             Else
-                Dim frm As String = Form1.ComboBox10.SelectedItem.ToString
-                Select Case frm.ToUpper
+                cFormatStr = frm.ComboBox10.SelectedItem.ToString()
+                cMethodStr = frm.ComboBox10.SelectedItem.ToString()
+                Select Case cFormatStr.ToUpper
                     Case "7Z"
                         arch_ext = "7z"
                     Case "BZIP2"
@@ -116,14 +121,14 @@ Public Class Class7_archives
                     Case "XZ"
                         arch_ext = "xz"
                 End Select
-                cFormat = DirectCast([Enum].Parse(GetType(OutArchiveFormat), frm), OutArchiveFormat)
-                cMethod = DirectCast([Enum].Parse(GetType(CompressionMethod), frm), CompressionMethod)
+                cFormat = DirectCast([Enum].Parse(GetType(OutArchiveFormat), cFormatStr), OutArchiveFormat)
+                cMethod = DirectCast([Enum].Parse(GetType(CompressionMethod), cMethodStr), CompressionMethod)
             End If
-            clevel = DirectCast([Enum].Parse(GetType(CompressionLevel), Form1.ComboBox12.SelectedItem.ToString), CompressionLevel)
+
+            clevelStr = frm.ComboBox12.SelectedItem.ToString
+            clevel = DirectCast([Enum].Parse(GetType(CompressionLevel), clevelStr), CompressionLevel)
         Catch ex As Exception
-            Dim str As String = Form1.ComboBox10.SelectedItem.ToString + ","
-            str += Form1.ComboBox11.SelectedItem.ToString + "," + Form1.ComboBox12.SelectedItem.ToString
-            MsgBox("Can't parse compression settings:" + vbCrLf + str) : Exit Sub
+            MsgBox("Can't parse compression settings:" + vbCrLf + cFormatStr + "," + cMethodStr + "," + clevelStr) : Exit Sub
         End Try
 
         Dim zc As New SevenZipCompressor

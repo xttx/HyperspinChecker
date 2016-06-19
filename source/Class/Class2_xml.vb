@@ -46,7 +46,7 @@ Public Class Class2_xml
                     node.ParentNode.RemoveChild(node)
                 End If
             Else
-                If Not Form3.filter.Contains(romName.ToLower) Then
+                If Not Form3_mameFoldersFilter.filter.Contains(romName.ToLower) Then
                     node.ParentNode.RemoveChild(node)
                 End If
             End If

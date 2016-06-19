@@ -128,10 +128,10 @@
     <Compile Include="Class\Class4_clrmamepro.vb" />
     <Compile Include="Class\Class5_system_manager.vb" />
     <Compile Include="Class\Class6_hash.vb" />
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <Compile Include="Form3_mameFoldersFilter.Designer.vb">
+      <DependentUpon>Form3_mameFoldersFilter.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form3.vb">
+    <Compile Include="Form3_mameFoldersFilter.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form4_genres_favorites.Designer.vb">
@@ -312,8 +312,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <EmbeddedResource Include="Form3_mameFoldersFilter.resx">
+      <DependentUpon>Form3_mameFoldersFilter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4_genres_favorites.resx">
       <DependentUpon>Form4_genres_favorites.vb</DependentUpon>

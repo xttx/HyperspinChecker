@@ -1,15 +1,26 @@
-﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
+﻿Imports System.ComponentModel
+Imports Microsoft.VisualBasic.FileIO.FileSystem
+
+'TODO - delete files from list, when renaming
 
 Public Class Form2_checkMissingInOtherFolders
+    Structure renamer_param
+        Dim dstPath As String
+    End Structure
+    Dim refr As Boolean = True
+    Dim restore_textbox_focus As Boolean = False
     Dim crc_cache As New Dictionary(Of String, Dictionary(Of String, String))
     Dim corresponding_games As New Dictionary(Of String, String)
     Dim allowRename As MsgBoxResult = MsgBoxResult.Retry
     Dim allowRenameInArchive As MsgBoxResult = MsgBoxResult.Retry
     Dim allowDeleteAllButGameInArchive As MsgBoxResult = MsgBoxResult.Retry
+    Dim selectedMediaType As Integer = -1
+    Dim WithEvents bg_fillist As New BackgroundWorker() With {.WorkerReportsProgress = True}
+    Dim WithEvents bg_rename As New BackgroundWorker() With {.WorkerReportsProgress = True}
 
     Private Sub Form2_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         ProgressBar1.Value = 0
-        ComboBox1.SelectedIndex = Class1.i
+        ComboBox1.SelectedIndex = Class1.i : refr = False
         Select Case ComboBox1.SelectedIndex
             Case 0
                 TextBox1.Text = Class1.romPath
@@ -32,6 +43,7 @@ Public Class Form2_checkMissingInOtherFolders
 
     'Change combobox - Media Type
     Private Sub ComboBox1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If refr Then Exit Sub
         fillList()
         If ComboBox1.SelectedIndex = 0 Then
             CheckBox1.Enabled = True
@@ -53,22 +65,33 @@ Public Class Form2_checkMissingInOtherFolders
     End Sub
 
     'Fill filelist
-    Private Sub fillList() 'Optional useCRC As Boolean = False)
+    Private Sub fillList()
+        ListBox1.Items.Clear()
+        corresponding_games.Clear()
+        If Not DirectoryExists(TextBox1.Text) Then Exit Sub
+        If TextBox1.Focused Then restore_textbox_focus = True Else restore_textbox_focus = False
+        For Each c As Control In Me.Controls
+            If Not c.Name.ToUpper.StartsWith("LISTBOX") Then c.Enabled = False
+        Next
+        ProgressBar1.Value = 0
+        selectedMediaType = ComboBox1.SelectedIndex
+        bg_fillist.RunWorkerAsync(TextBox1.Text)
+    End Sub
+    Private Sub fillList_BG(o As Object, e As DoWorkEventArgs) Handles bg_fillist.DoWork
         Dim index As Integer
+        Dim progress As Integer = 0
         Dim fWoExt As String = ""
         Dim allowedExt As String = ""
         Dim useCRC As Boolean = CheckBox2.Checked
-        ListBox1.Items.Clear()
-        corresponding_games.Clear()
-        If Microsoft.VisualBasic.FileIO.FileSystem.DirectoryExists(TextBox1.Text) Then
-            Dim realdir As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(TextBox1.Text).FullName.ToUpper
+        Dim path As String = DirectCast(e.Argument, String)
+        If Microsoft.VisualBasic.FileIO.FileSystem.DirectoryExists(path) Then
+            Dim realdir As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(path).FullName.ToUpper
             If Not realdir.EndsWith("\") Then realdir = realdir + "\"
             If useCRC AndAlso Not crc_cache.ContainsKey(realdir) Then crc_cache.Add(realdir, New Dictionary(Of String, String))
 
-            ProgressBar1.Value = 0 : ProgressBar1.Refresh()
             Dim files As Collections.ObjectModel.ReadOnlyCollection(Of String)
-            files = Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(TextBox1.Text)
-            ProgressBar1.Maximum = files.Count
+            files = Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(path)
+            ProgressBar1.Invoke(Sub() ProgressBar1.Maximum = files.Count)
             For Each f As String In files
                 If Not useCRC Then
                     'Use names
@@ -95,9 +118,19 @@ Public Class Form2_checkMissingInOtherFolders
                         fillList_addToList(index, f)
                     End If
                 End If
-                ProgressBar1.Value += 1
+                'ProgressBar1.Value += 1
+                progress += 1 : bg_fillist.ReportProgress(progress)
             Next
         End If
+    End Sub
+    Private Sub fillList_BG_progress(o As Object, p As ProgressChangedEventArgs) Handles bg_fillist.ProgressChanged
+        ProgressBar1.Value = p.ProgressPercentage
+    End Sub
+    Private Sub fillList_BG_complete() Handles bg_fillist.RunWorkerCompleted
+        For Each c As Control In Me.Controls
+            c.Enabled = True
+        Next
+        If restore_textbox_focus Then TextBox1.Focus()
         ProgressBar1.Value = 0
         Label3.Text = "Total found: " + ListBox1.Items.Count.ToString
     End Sub
@@ -108,11 +141,11 @@ Public Class Form2_checkMissingInOtherFolders
             If corresponding_games.Keys.Contains(Class1.romlist(index).ToString) Then Exit Sub
             If filenameContainPath Then fname = fname.Substring(fname.LastIndexOf("\") + 1)
             If RadioButton1.Checked Then
-                If Class1.data(index).Substring(ComboBox1.SelectedIndex, 1) = "N" Then
-                    corresponding_games.Add(Class1.romlist(index).ToString, f) : ListBox1.Items.Add(fname)
+                If Class1.data(index).Substring(selectedMediaType, 1) = "N" Then
+                    corresponding_games.Add(Class1.romlist(index).ToString, f) : ListBox1.BeginInvoke(Sub() ListBox1.Items.Add(fname))
                 End If
             Else
-                corresponding_games.Add(Class1.romlist(index).ToString, f) : ListBox1.Items.Add(fname)
+                corresponding_games.Add(Class1.romlist(index).ToString, f) : ListBox1.BeginInvoke(Sub() ListBox1.Items.Add(fname))
             End If
         End If
     End Sub
@@ -128,6 +161,8 @@ Public Class Form2_checkMissingInOtherFolders
 
     'GO
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        If ListBox1.Items.Count = 0 Then MsgBox("Nothing to copy.") : Exit Sub
+
         Dim dstPath As String = ""
         ProgressBar1.Value = 0
         Select Case ComboBox1.SelectedIndex
@@ -149,18 +184,29 @@ Public Class Form2_checkMissingInOtherFolders
                 dstPath = Class1.HyperspinPath + "Media\" + Form1.ComboBox1.SelectedItem.ToString + "\Images\Artwork4\"
         End Select
 
-        If ListBox1.Items.Count = 0 Then MsgBox("Nothing to copy.") : Exit Sub
+        For Each c As Control In Me.Controls
+            If Not c.Name.ToUpper.StartsWith("LISTBOX") Then c.Enabled = False
+        Next
+        Dim param As New renamer_param With {.dstPath = dstPath}
+        bg_rename.RunWorkerAsync(param)
+    End Sub
+    Private Sub Button2_Click_BG(o As Object, e As DoWorkEventArgs) Handles bg_rename.DoWork
+        Dim progress As Integer = 0
+        Dim param As renamer_param = DirectCast(e.Argument, renamer_param)
+
         If Not CheckBox2.Checked Then
             'name mode
-            ProgressBar1.Maximum = ListBox1.Items.Count
+            ProgressBar1.Invoke(Sub() ProgressBar1.Maximum = ListBox1.Items.Count)
             For Each filename As String In ListBox1.Items
-                CopyFile(TextBox1.Text + "\" + filename, dstPath + "\" + filename)
-                ProgressBar1.Value += 1
-                If ProgressBar1.Value Mod 3 = 0 Then ProgressBar1.Refresh()
+                CopyFile(TextBox1.Text + "\" + filename, param.dstPath + "\" + filename)
+                'ProgressBar1.Value += 1
+                'If ProgressBar1.Value Mod 3 = 0 Then ProgressBar1.Refresh()
+                progress += 1
+                If progress Mod 3 = 0 Then bg_rename.ReportProgress(progress)
             Next
         Else
             'crc mode
-            ProgressBar1.Maximum = corresponding_games.Count
+            ProgressBar1.Invoke(Sub() ProgressBar1.Maximum = corresponding_games.Count)
 
             Dim z As New Class7_archives
             Dim realdir As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(TextBox1.Text).FullName.ToUpper
@@ -174,7 +220,7 @@ Public Class Form2_checkMissingInOtherFolders
                     'file mode
                     If fWoExt.ToUpper <> item.Key.ToUpper Then
                         If allowRename = MsgBoxResult.Retry Then allowRename = MsgBox("At least one of files have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
-                        Button2_Click_sub(item.Value, dstPath, item.Key)
+                        Button2_Click_sub(item.Value, param.dstPath, item.Key)
                     End If
                 Else
                     'archive mode
@@ -200,17 +246,28 @@ Public Class Form2_checkMissingInOtherFolders
                             If z.ArchiveFileData.Count > 1 Then
                                 If allowDeleteAllButGameInArchive = MsgBoxResult.Retry Then allowDeleteAllButGameInArchive = MsgBox("At least one of archive contains more than one files. Do you want to remove other files and only keep needed file?", MsgBoxStyle.YesNo)
                             End If
-                            Button2_Click_sub(item.Value, dstPath, item.Key, True, crc_cache(realdir)(item.Value.ToUpper))
+                            Button2_Click_sub(item.Value, param.dstPath, item.Key, True, crc_cache(realdir)(item.Value.ToUpper))
                         Else
                             'just copy archive
-                            Button2_Click_sub(item.Value, dstPath, item.Key)
+                            Button2_Click_sub(item.Value, param.dstPath, item.Key)
                         End If
                     End If
                 End If
-                ProgressBar1.Value += 1
-                If ProgressBar1.Value Mod 3 = 0 Then ProgressBar1.Refresh()
+                'ProgressBar1.Value += 1
+                'If ProgressBar1.Value Mod 3 = 0 Then ProgressBar1.Refresh()
+                progress += 1
+                If progress Mod 3 = 0 Then bg_rename.ReportProgress(progress)
             Next
         End If
+    End Sub
+    Private Sub Button2_Click_BG_Progress(o As Object, e As ProgressChangedEventArgs) Handles bg_rename.ProgressChanged
+        ProgressBar1.Value = e.ProgressPercentage
+    End Sub
+    Private Sub Button2_Click_BG_Complete() Handles bg_rename.RunWorkerCompleted
+        For Each c As Control In Me.Controls
+            c.Enabled = True
+        Next
+        MsgBox("Done.")
         Me.Close()
     End Sub
     'GO Sub

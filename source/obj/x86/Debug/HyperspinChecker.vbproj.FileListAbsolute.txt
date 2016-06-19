@@ -140,7 +140,6 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\AxInterop.ShockwaveFlashObjects.dll
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\AxInterop.WMPLib.dll
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\HyperspinChecker.vbproj.ResolveComReference.cache
-D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form3.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form4_genres_favorites.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form4_genres_favorites_preview.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form5_videoDownloader.resources
@@ -172,3 +171,4 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\HyperspinChecker.vbprojResolveAssemblyReference.cache
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.FormF_createNewHL_system.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form2_checkMissingInOtherFolders.resources
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form3_mameFoldersFilter.resources
