@@ -4,6 +4,7 @@ Imports System.Runtime.InteropServices
 Imports System.ComponentModel
 
 Public Class Form1
+    'TODO When update emu / rom paths and/or use hl in sys properties, and reopen system properties without scan - paths not updated sometimes
     'REQUEST [desrop69 #105] case sensitive crc
     'REQUEST [Acidnine #108] When I check the master snes .xml db file it says there's an error loading it. When I tell it to fix it, it replaces all the ampersands '&' with '&amp;' in the <game name=""> tag. Is this wanted? because now I have to rename my roms with ampersands in them to match the name tag.
     'REQUEST [tastyratz #112] I encountered a bug when trying to create a cue file for a saturn bin which does not have one. It gave me the error, created a 0kb file, and left the file locked but unfinished. Any subsequent attempts show the file in use error below. This error mentions the F:\ path but I do not have an F:\ drive, maybe related?

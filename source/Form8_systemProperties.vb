@@ -308,7 +308,9 @@ Public Class Form8_systemProperties
         selectedEmuName = selectedEmuName.Substring(selectedEmuName.LastIndexOf("\") + 1).Trim()
         If selectedEmuName.Contains(".") Then selectedEmuName = selectedEmuName.Substring(0, selectedEmuName.LastIndexOf("."))
 
+        If Not FileExists(Class1.HyperspinPath + "\Settings\" + sys + ".ini") Then MsgBox("Hyperspin " + sys + ".ini not found.") : Exit Sub
         If RadioButton1.Checked Then
+            'Use hl
             If ComboBox3.SelectedIndex < 0 Then MsgBox("You have to select an emulator, to use HyperLaunch")
 
             Dim emu As String = ComboBox3.SelectedItem.ToString
@@ -323,8 +325,11 @@ Public Class Form8_systemProperties
                 If res = MsgBoxResult.No Then Exit Sub
             End If
 
+            Dim ini As New IniFileApi
+            ini.path = Class1.HyperspinPath + "\Settings\" + sys + ".ini"
+            ini.IniWriteValue("exe info", "hyperlaunch", "true")
+
             If FileExists(HL_Path + "\Settings\Global Emulators.ini") Then
-                Dim ini As New IniFileApi
                 ini.path = HL_Path + "\Settings\Global Emulators.ini"
                 ini.IniWriteValue(emu, "Emu_Path", Absolute_Path_to_Relative((HL_Path + "\").Replace("\\", "\"), TextBox1.Text))
 
@@ -345,6 +350,13 @@ Public Class Form8_systemProperties
             Else
                 MsgBox("File does not exist: """ + HL_Path + "\Settings\Global Emulators.ini""") : Exit Sub
             End If
+        Else
+            'Don't use hl
+            Dim ini As New IniFileApi
+            ini.path = Class1.HyperspinPath + "\Settings\" + sys + ".ini"
+            ini.IniWriteValue("exe info", "hyperlaunch", "false")
+            ini.IniWriteValue("exe info", "path", TextBox3.Text.Trim)
+            ini.IniWriteValue("exe info", "rompath", TextBox4.Text.Trim)
         End If
 
         RaiseEvent paths_updated(sys) : Me.Close() : Exit Sub
