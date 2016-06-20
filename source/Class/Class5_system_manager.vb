@@ -365,7 +365,8 @@ Public Class Class5_system_manager
     'setPropertiesFormData()
     Private Sub setPropertiesFormData()
         Dim data = New List(Of String)
-        Dim modules_for_cur_system As New List(Of String)
+        'Dim modules_for_cur_system As New List(Of String)
+        Dim modules_for_cur_system As New Dictionary(Of String, String)
 
         If grid.SelectedRows.Count > 0 Then
             Dim sys = grid.SelectedRows(0).Cells(0).Value.ToString.ToUpper
@@ -386,7 +387,7 @@ Public Class Class5_system_manager
             'SET modules
             For Each m As KeyValuePair(Of String, List(Of String)) In modules
                 If m.Value.Contains(sys) Then
-                    modules_for_cur_system.Add(m.Key)
+                    modules_for_cur_system.Add(m.Key, m.Value(0))
                 End If
             Next
         End If
@@ -462,67 +463,75 @@ Public Class Class5_system_manager
             If iniClass.GetKeyValue("EXE INFO", "hyperlaunch").Trim.ToUpper = "TRUE" Then
                 'Check Hyperlaunch paths
                 If Not Systems(sys).Contains("%5HL%") Then Systems(sys).Add("%5HL%")
-                    If HL_Path = "" Then
-                        If Not Systems(sys).Contains("%5HL_PATH_NOT_SET%") Then Systems(sys).Add("%5HL_PATH_NOT_SET%")
-                        ind = Systems(sys).IndexOf("%6%")
-                        If ind >= 0 Then Systems(sys).RemoveAt(ind)
-                        ind = Systems(sys).IndexOf("%7%")
-                        If ind >= 0 Then Systems(sys).RemoveAt(ind)
-                    Else
-                        Dim emu As String = ""
-                        Dim emuPath As String = ""
-                        Dim romPath As String = ""
-                        If FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
-                            iniClass.Load(HL_Path + "\Settings\" + sys + "\Emulators.ini")
-                            emu = iniClass.GetKeyValue("ROMS", "Default_Emulator").Trim
-                            romPath = iniClass.GetKeyValue("ROMS", "Rom_Path").Trim
-                            If romPath.StartsWith(".") Then romPath = HL_Path + "\" + romPath
+                If HL_Path = "" Then
+                    If Not Systems(sys).Contains("%5HL_PATH_NOT_SET%") Then Systems(sys).Add("%5HL_PATH_NOT_SET%")
+                    ind = Systems(sys).IndexOf("%6%")
+                    If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                    ind = Systems(sys).IndexOf("%7%")
+                    If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                Else
+                    Dim emu As String = ""
+                    Dim emuPath As String = ""
+                    Dim romPath As String = ""
+                    If FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
+                        iniClass.Load(HL_Path + "\Settings\" + sys + "\Emulators.ini")
+                        emu = iniClass.GetKeyValue("ROMS", "Default_Emulator").Trim
+                        romPath = iniClass.GetKeyValue("ROMS", "Rom_Path").Trim
+                        If romPath.StartsWith(".") Then romPath = HL_Path + "\" + romPath
 
-                            If emu <> "" Then
-                                iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
-                                emuPath = iniclass2.GetKeyValue(emu, "Emu_Path").Trim
-                                If emuPath.StartsWith(".") Then emuPath = HL_Path + "\" + emuPath
-                            End If
+                        If emu <> "" Then
+                            iniclass2.Load(HL_Path + "\Settings\Global Emulators.ini")
+                            emuPath = iniclass2.GetKeyValue(emu, "Emu_Path").Trim
+                            If emuPath.StartsWith(".") Then emuPath = HL_Path + "\" + emuPath
 
-                            If FileIO.FileSystem.FileExists(emuPath) Then
-                                If Not Systems(sys).Contains("%6%") Then Systems(sys).Add("%6%")
-                            Else
-                                ind = Systems(sys).IndexOf("%6%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
-                            End If
-                            If FileIO.FileSystem.DirectoryExists(romPath) Then
-                                If Not Systems(sys).Contains("%7%") Then Systems(sys).Add("%7%")
-                            Else
-                                ind = Systems(sys).IndexOf("%7%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
-                            End If
+                            Dim m_raw As String = iniclass2.GetKeyValue(emu, "Module").Trim
+                            Dim m As String = m_raw
+                            If m.Contains("\") Then m = m.Substring(m.LastIndexOf("\") + 1)
+                            Dim l As New List(Of String)
+                            l.Add(m_raw) : l.Add(m) : l.Add(emuPath)
+                            emulators(emu) = l
+                        End If
+
+                        If FileIO.FileSystem.FileExists(emuPath) Then
+                            If Not Systems(sys).Contains("%6%") Then Systems(sys).Add("%6%")
                         Else
                             ind = Systems(sys).IndexOf("%6%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                        End If
+                        If FileIO.FileSystem.DirectoryExists(romPath) Then
+                            If Not Systems(sys).Contains("%7%") Then Systems(sys).Add("%7%")
+                        Else
                             ind = Systems(sys).IndexOf("%7%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
                         End If
-                    End If
-                Else
-                    'Check Hyperspin paths
-                    Dim emuPath As String = iniClass.GetKeyValue("EXE INFO", "path").Trim
-                    If emuPath <> "" AndAlso Not emuPath.EndsWith("\") Then emuPath = emuPath + "\"
-                    If emuPath <> "" Then emuPath = emuPath + iniClass.GetKeyValue("EXE INFO", "exe").Trim
-                    If emuPath <> "" And emuPath.StartsWith(".") Then emuPath = Class1.HyperspinPath + "\" + emuPath
-
-                    Dim romPath As String = iniClass.GetKeyValue("EXE INFO", "rompath").Trim
-                    If romPath <> "" And romPath.StartsWith(".") Then romPath = Class1.HyperspinPath + "\" + romPath
-
-                    If FileIO.FileSystem.FileExists(emuPath) Then
-                        If Not Systems(sys).Contains("%6%") Then Systems(sys).Add("%6%")
                     Else
                         ind = Systems(sys).IndexOf("%6%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
-                    End If
-                    If FileIO.FileSystem.DirectoryExists(romPath) Then
-                        If Not Systems(sys).Contains("%7%") Then Systems(sys).Add("%7%")
-                    Else
                         ind = Systems(sys).IndexOf("%7%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
                     End If
                 End If
-            End If
+            Else
+                'Check Hyperspin paths
+                ind = Systems(sys).IndexOf("%5HL%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                Dim emuPath As String = iniClass.GetKeyValue("EXE INFO", "path").Trim
+                If emuPath <> "" AndAlso Not emuPath.EndsWith("\") Then emuPath = emuPath + "\"
+                If emuPath <> "" Then emuPath = emuPath + iniClass.GetKeyValue("EXE INFO", "exe").Trim
+                If emuPath <> "" And emuPath.StartsWith(".") Then emuPath = Class1.HyperspinPath + "\" + emuPath
 
-            Dim r1 As DataGridViewRow = scan_FillRowSub(Systems(sys))
+                Dim romPath As String = iniClass.GetKeyValue("EXE INFO", "rompath").Trim
+                If romPath <> "" And romPath.StartsWith(".") Then romPath = Class1.HyperspinPath + "\" + romPath
+
+                If FileIO.FileSystem.FileExists(emuPath) Then
+                    If Not Systems(sys).Contains("%6%") Then Systems(sys).Add("%6%")
+                Else
+                    ind = Systems(sys).IndexOf("%6%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                End If
+                If FileIO.FileSystem.DirectoryExists(romPath) Then
+                    If Not Systems(sys).Contains("%7%") Then Systems(sys).Add("%7%")
+                Else
+                    ind = Systems(sys).IndexOf("%7%") : If ind >= 0 Then Systems(sys).RemoveAt(ind)
+                End If
+            End If
+        End If
+
+        Dim r1 As DataGridViewRow = scan_FillRowSub(Systems(sys))
         For i As Integer = 0 To r.Cells.Count - 1
             r.Cells(i).Value = r1.Cells(i).Value
             r.Cells(i).Style = r1.Cells(i).Style

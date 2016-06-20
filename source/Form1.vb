@@ -4,8 +4,7 @@ Imports System.Runtime.InteropServices
 Imports System.ComponentModel
 
 Public Class Form1
-    'TODO When update emu / rom paths and/or use hl in sys properties, and reopen system properties without scan - paths not updated sometimes
-    'TODO When update rompath for selected system, and not using HL, rompath is not updated on main check
+    'TODO After autorenaming something, and then reopen autorenamer and collect info, crash on Form6_autorenamer.vb-line145 cause file not found
     'REQUEST [desrop69 #105] case sensitive crc
     'REQUEST [Acidnine #108] When I check the master snes .xml db file it says there's an error loading it. When I tell it to fix it, it replaces all the ampersands '&' with '&amp;' in the <game name=""> tag. Is this wanted? because now I have to rename my roms with ampersands in them to match the name tag.
     'REQUEST [tastyratz #112] I encountered a bug when trying to create a cue file for a saturn bin which does not have one. It gave me the error, created a 0kb file, and left the file locked but unfinished. Any subsequent attempts show the file in use error below. This error mentions the F:\ path but I do not have an F:\ drive, maybe related?
@@ -21,16 +20,12 @@ Public Class Form1
     'REQUEST [potts43 #151] multibin games related
     'REQUEST [tanin #152] error
     'REQUEST [potts43 #154] If possible have two way renaming. At the moment you can rename roms and artwork from the xml but for systems like future pinball and WinUAEloader that change regularly it would be good to point the DB xml to an updated rom and update the xml to match that newer rom name.
-    'when switching rom path (HL / HS), and then recheck without reselect system, path is not updated
-    'when changing custom rom path in matcher, sometimes got error (try use MAME path)
-    'Rename media when edit romname
-    'To see if hs path is set, system manager refers to Label23.color, which can be not necessary green but purple, if path is ok, but config.save clicked.
+    'Rename media when edit romname in main table
 
     'TODO option to rename audio files associated with .cue (ME)
     'TODO It appears to be setting the "video" folder for Visual Pinball to the previous system a "Check" was ran on. In the Matcher tab, even when I tell it to use a custom folder and point it to the correct Visual Pinball video folder, once I perform the "Associate" action, it's still copying the video files out of my Visual Pinball video folder and moving them to the Gamecube video folder (note: Gamecube was the last system I had ran a "Check" on). So, the Matcher seems to be using the custom folder fine to actually find the video files, but when it performs an "Associate", something is getting confused. Not a big deal, but thought I'd pass the info along. I've tried using both the System.ini and default Hyperspin Video location settings and happens for both. Let me know if you have any questions on my setup & thanks for the great tool.  (Signet145 #47)
     'TODO undo the renaming INSIDE the .cue. The .cue and .bin files both get renamed back to the correct original file name, but inside the cue file does not. (windowlicker #27)
     'TODO undo message box displays a couple of extra backslashes, but it does not affect anything. (windowlicker #27)
-    'TODO REQUEST [MadCoder] Dreamcast CDI to ISO ability, and ISO fixer
     'TODO Restore .cues from backup
     'TODO in button20(markAsFound) and TextBox4(matcher filelist) WE ALSO NEED TO CHECK IF A FILE WITH ROMNAME AND APPROPRIATE EXTENSION EXISTS IN SUBDIR
     'TODO check and improve collect media dialog
@@ -96,6 +91,13 @@ Public Class Form1
     'DONE TODO After saving config (label became violet), scan says HS path not found
     'DONE TODO When loading form, HL path says "please select system", therefore, this goes into path variable ??? can't reproduce!!! I don't know how, but r.cells(0).style.backcolor = Class1.colorYES cause this
     'DONE TODO Autorenamer crc mode have problems with zips
+    'DONE TODO When update emu / rom paths and/or use hl in sys properties, and reopen system properties without scan - paths not updated sometimes
+    'DONE TODO When update rompath for selected system, and not using HL, rompath is not updated on main check
+    'DONE TODO when switching rom path (HL / HS), and then recheck without reselect system, path is not updated
+    'DONE TODO when changing custom rom path in matcher, sometimes got error (try use MAME path) (was it multipath issue?)
+    'DONE TODO To see if hs path is set, system manager refers to Label23.color, which can be not necessary green but purple, if path is ok, but config.save clicked.
+    'DONE TODO REQUEST [MadCoder] Dreamcast CDI to ISO ability, and ISO fixer
+    'DONE TODO can't change hl module in sys properties. It's just not updated.
 #Region "Declarations"
     Structure check_param
         Dim x As Xml.XmlDocument

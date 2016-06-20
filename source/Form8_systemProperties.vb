@@ -7,7 +7,7 @@ Public Class Form8_systemProperties
     Dim sys As String = ""
     Dim sysNormalCase As String = ""
     Dim _data As List(Of String)
-    Dim _modules As List(Of String)
+    Dim _modules As Dictionary(Of String, String)
     Dim _emulators As Dictionary(Of String, List(Of String))
     Dim _HS_ini As List(Of String)
     Dim _mainMenu As List(Of String)
@@ -76,17 +76,17 @@ Public Class Form8_systemProperties
         End Set
     End Property
     'Modules property set/get to interchange modules data for current system with main form
-    Public Property modules As List(Of String)
+    Public Property modules As Dictionary(Of String, String)
         Get
             Return _modules
         End Get
-        Set(value As List(Of String))
+        Set(value As Dictionary(Of String, String))
             _modules = value
 
             'Fill modules list (only compatible here)
             ComboBox2.Items.Clear()
-            For Each m As String In _modules
-                ComboBox2.Items.Add(m)
+            For Each m In _modules
+                ComboBox2.Items.Add(m.Key)
             Next
 
             'Fill emulators list (only those, which module exist in modules list)
@@ -330,7 +330,14 @@ Public Class Form8_systemProperties
             ini.IniWriteValue("exe info", "hyperlaunch", "true")
 
             If FileExists(HL_Path + "\Settings\Global Emulators.ini") Then
+                Dim modul As String = ComboBox2.Items(ComboBox2.SelectedIndex).ToString.Trim()
+                Dim modul_folder As String = _modules(ComboBox2.SelectedItem.ToString)
+                modul_folder = modul_folder.Substring(0, modul_folder.LastIndexOf("\"))
+                modul_folder = modul_folder.Substring(modul_folder.LastIndexOf("\") + 1)
+                If modul_folder.ToUpper <> moduleWoExtension.ToUpper Then modul = "..\" + modul_folder + "\" + modul
+
                 ini.path = HL_Path + "\Settings\Global Emulators.ini"
+                ini.IniWriteValue(emu, "Module", modul)
                 ini.IniWriteValue(emu, "Emu_Path", Absolute_Path_to_Relative((HL_Path + "\").Replace("\\", "\"), TextBox1.Text))
 
                 If Not FileIO.FileSystem.FileExists(HL_Path + "\Settings\" + sys + "\Emulators.ini") Then
