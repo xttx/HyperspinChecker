@@ -172,3 +172,4 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.FormF_createNewHL_system.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form2_checkMissingInOtherFolders.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.Form3_mameFoldersFilter.resources
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.FormG_associationTables.resources

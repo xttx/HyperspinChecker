@@ -123,6 +123,7 @@ Partial Class Form1
         Me.Button33 = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.CheckBox21 = New System.Windows.Forms.CheckBox()
         Me.Button37 = New System.Windows.Forms.Button()
         Me.Button36 = New System.Windows.Forms.Button()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
@@ -310,7 +311,7 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox21 = New System.Windows.Forms.CheckBox()
+        Me.AssociationTablesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -1494,6 +1495,16 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "HyperSpin system settings"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'CheckBox21
+        '
+        Me.CheckBox21.AutoSize = True
+        Me.CheckBox21.Location = New System.Drawing.Point(895, 18)
+        Me.CheckBox21.Name = "CheckBox21"
+        Me.CheckBox21.Size = New System.Drawing.Size(58, 17)
+        Me.CheckBox21.TabIndex = 27
+        Me.CheckBox21.Text = "Freeze"
+        Me.CheckBox21.UseVisualStyleBackColor = True
         '
         'Button37
         '
@@ -2904,7 +2915,7 @@ Partial Class Form1
         '
         'ToolsToolStripMenuItem
         '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem, Me.GenresFavoritesManagerToolStripMenuItem, Me.ToolStripMenuItem6, Me.ShowDatabaseStatisticToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem, Me.ConvertersToolStripMenuItem, Me.ToolStripMenuItem7, Me.RemoveClonesFromCurrentDBToolStripMenuItem, Me.DIFFToolToolStripMenuItem, Me.DualFolderOperationsToolStripMenuItem, Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem, Me.ToolStripMenuItem8, Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem, Me.MAMERomsetReducerToolStripMenuItem, Me.VideoDownloaderToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssociationTablesToolStripMenuItem, Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem, Me.GenresFavoritesManagerToolStripMenuItem, Me.ToolStripMenuItem6, Me.ShowDatabaseStatisticToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem, Me.ConvertersToolStripMenuItem, Me.ToolStripMenuItem7, Me.RemoveClonesFromCurrentDBToolStripMenuItem, Me.DIFFToolToolStripMenuItem, Me.DualFolderOperationsToolStripMenuItem, Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem, Me.ToolStripMenuItem8, Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem, Me.MAMERomsetReducerToolStripMenuItem, Me.VideoDownloaderToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
         Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
@@ -2913,13 +2924,13 @@ Partial Class Form1
         '
         Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Name = "CheckHyperLaunch3rdPartyPathsToolStripMenuItem"
         Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
-        Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Text = "Check HyperLaunch 3rd party paths"
+        Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Text = "Check HyperLaunch 3rd party paths ..."
         '
         'GenresFavoritesManagerToolStripMenuItem
         '
         Me.GenresFavoritesManagerToolStripMenuItem.Name = "GenresFavoritesManagerToolStripMenuItem"
         Me.GenresFavoritesManagerToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
-        Me.GenresFavoritesManagerToolStripMenuItem.Text = "Genres / Favorites manager"
+        Me.GenresFavoritesManagerToolStripMenuItem.Text = "Genres / Favorites manager ..."
         '
         'ToolStripMenuItem6
         '
@@ -2930,7 +2941,7 @@ Partial Class Form1
         '
         Me.ShowDatabaseStatisticToolStripMenuItem.Name = "ShowDatabaseStatisticToolStripMenuItem"
         Me.ShowDatabaseStatisticToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
-        Me.ShowDatabaseStatisticToolStripMenuItem.Text = "Show Database Statistic"
+        Me.ShowDatabaseStatisticToolStripMenuItem.Text = "Show Database Statistic ..."
         '
         'CreateDatabaseXMLFromRomFolderToolStripMenuItem
         '
@@ -3040,7 +3051,7 @@ Partial Class Form1
         '
         Me.DualFolderOperationsToolStripMenuItem.Name = "DualFolderOperationsToolStripMenuItem"
         Me.DualFolderOperationsToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
-        Me.DualFolderOperationsToolStripMenuItem.Text = "Dual folder operations"
+        Me.DualFolderOperationsToolStripMenuItem.Text = "Dual folder operations ..."
         '
         'MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem
         '
@@ -3057,29 +3068,25 @@ Partial Class Form1
         '
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Name = "PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem"
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
-        Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Text = "PCSX2 - Create index files for compressed iso"
+        Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem.Text = "PCSX2 - Create index files for compressed iso ..."
         '
         'MAMERomsetReducerToolStripMenuItem
         '
         Me.MAMERomsetReducerToolStripMenuItem.Name = "MAMERomsetReducerToolStripMenuItem"
         Me.MAMERomsetReducerToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
-        Me.MAMERomsetReducerToolStripMenuItem.Text = "MAME romset reducer"
+        Me.MAMERomsetReducerToolStripMenuItem.Text = "MAME romset reducer ..."
         '
         'VideoDownloaderToolStripMenuItem
         '
         Me.VideoDownloaderToolStripMenuItem.Name = "VideoDownloaderToolStripMenuItem"
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
-        Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader"
+        Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader ..."
         '
-        'CheckBox21
+        'AssociationTablesToolStripMenuItem
         '
-        Me.CheckBox21.AutoSize = True
-        Me.CheckBox21.Location = New System.Drawing.Point(895, 18)
-        Me.CheckBox21.Name = "CheckBox21"
-        Me.CheckBox21.Size = New System.Drawing.Size(58, 17)
-        Me.CheckBox21.TabIndex = 27
-        Me.CheckBox21.Text = "Freeze"
-        Me.CheckBox21.UseVisualStyleBackColor = True
+        Me.AssociationTablesToolStripMenuItem.Name = "AssociationTablesToolStripMenuItem"
+        Me.AssociationTablesToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
+        Me.AssociationTablesToolStripMenuItem.Text = "Association Tables ..."
         '
         'Form1
         '
@@ -3442,4 +3449,5 @@ Partial Class Form1
     Friend WithEvents Label54 As Label
     Friend WithEvents Label55 As Label
     Friend WithEvents CheckBox21 As CheckBox
+    Friend WithEvents AssociationTablesToolStripMenuItem As ToolStripMenuItem
 End Class

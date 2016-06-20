@@ -1291,6 +1291,10 @@ Public Class Form1
         f.ShowDialog(Me)
     End Sub
 
+    'Tools / Association tables
+    Private Sub AssociationTablesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AssociationTablesToolStripMenuItem.Click
+        Dim frm As New FormG_associationTables : frm.Show()
+    End Sub
     'Tools / Show HL 3rd party paths
     Private Sub CheckHyperLaunch3rdPartyPathsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Click
         If TextBox18.BackColor <> Class1.colorYES Then MsgBox("You Hyperlaunch path is not correctly set. Check 'Hyperspin system settings' tab") : Exit Sub
