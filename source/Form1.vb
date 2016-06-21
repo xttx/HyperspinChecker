@@ -106,7 +106,7 @@ Public Class Form1
     Public xmlPath As String = ""
     Private ini As New IniFileApi
     Private xml_class As Class2_xml
-    Private matcher_class As Class3_matcher
+    Public matcher_class As Class3_matcher
     Private system_manager_class As Class5_system_manager
     Private isoChecker As ISOChecker
     Private clrmame_class As Class4_clrmamepro
@@ -425,6 +425,8 @@ Public Class Form1
         TextBox16.Text = ini2.IniReadValue("main", "search_cue_for")
         TextBox28.Text = ini2.IniReadValue("3rd_Party_Tools", "UltraISO")
         If Not ini2.IniReadValue("main", "rename_just_CUE") = "1" Then CheckBox6.Checked = False
+        If ini2.IniReadValue("main", "archives_rename_inside") = "1" Then CheckBox28.Checked = True
+        If ini2.IniReadValue("main", "archives_remove_unneeded") = "1" Then CheckBox29.Checked = True
         If ini2.IniReadValue("main", "usehlv3") = "1" Then CheckBox26.Checked = True
         Dim i As Integer = 1
         Do While ini2.IniReadValue("handle_together", i.ToString) <> ""
@@ -1008,6 +1010,8 @@ Public Class Form1
         ini.IniWriteValue("MAIN", "rename_just_cue", DirectCast(IIf(CheckBox6.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "search_cue_for", TextBox16.Text)
         ini.IniWriteValue("MAIN", "useHLv3", DirectCast(IIf(CheckBox26.Checked, "1", "0"), String))
+        ini.IniWriteValue("MAIN", "archives_rename_inside", DirectCast(IIf(CheckBox28.Checked, "1", "0"), String))
+        ini.IniWriteValue("MAIN", "archives_remove_unneeded", DirectCast(IIf(CheckBox29.Checked, "1", "0"), String))
         ini.IniWriteValue("3rd_Party_Tools", "UltraISO", TextBox28.Text.Trim)
         For i As Integer = 1 To ListBox4.Items.Count
             ini.IniWriteValue("handle_together", i.ToString, ListBox4.Items(i - 1).ToString)

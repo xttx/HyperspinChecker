@@ -4,35 +4,37 @@ Imports System.Text.RegularExpressions
 Public Class Class3_matcher
 #Region "Declarations"
     Dim dt_files As New DataTable
+    Public crc_for_archs As String = ""
+    Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
     Dim countAll As Integer = -1, countFound As Integer = -1, countNotFound As Integer = -1
     Dim countMatchesFiles As Integer = -1, countNotMatchesFiles As Integer = -1, countAllFiles As Integer = -1
-    Private WithEvents Button5_Associate As Button = Form1.Button5_Associate
-    Private WithEvents ButtonStrip1 As Button = Form1.ButtonStrip1
-    Private WithEvents Button7 As Button = Form1.Button7
-    Private WithEvents Button20_markAsFound As Button = Form1.Button20_markAsFound
-    Private WithEvents ComboBox3 As ComboBox = Form1.ComboBox3
-    Private WithEvents ComboBox7 As ComboBox = Form1.ComboBox7
-    Private WithEvents TextBox4 As TextBox = Form1.TextBox4
-    Private WithEvents TextStrip1 As TextBox = Form1.TextStrip1
-    Private WithEvents CheckBox3 As CheckBox = Form1.CheckBox3
-    Private WithEvents CheckBox10 As CheckBox = Form1.CheckBox10
-    Private WithEvents CheckBox11 As CheckBox = Form1.CheckBox11
-    Private WithEvents CheckBox12 As CheckBox = Form1.CheckBox12
-    Private WithEvents CheckBox13 As CheckBox = Form1.CheckBox13
-    Private WithEvents TextBox27 As TextBox = Form1.TextBox27
+    Private WithEvents Button5_Associate As Button = frm.Button5_Associate
+    Private WithEvents ButtonStrip1 As Button = frm.ButtonStrip1
+    Private WithEvents Button7 As Button = frm.Button7
+    Private WithEvents Button20_markAsFound As Button = frm.Button20_markAsFound
+    Private WithEvents ComboBox3 As ComboBox = frm.ComboBox3
+    Private WithEvents ComboBox7 As ComboBox = frm.ComboBox7
+    Private WithEvents TextBox4 As TextBox = frm.TextBox4
+    Private WithEvents TextStrip1 As TextBox = frm.TextStrip1
+    Private WithEvents CheckBox3 As CheckBox = frm.CheckBox3
+    Private WithEvents CheckBox10 As CheckBox = frm.CheckBox10
+    Private WithEvents CheckBox11 As CheckBox = frm.CheckBox11
+    Private WithEvents CheckBox12 As CheckBox = frm.CheckBox12
+    Private WithEvents CheckBox13 As CheckBox = frm.CheckBox13
+    Private WithEvents TextBox27 As TextBox = frm.TextBox27
 
-    Private WithEvents RadioStrip1 As RadioButton = Form1.RadioStrip1
-    Private WithEvents RadioStrip2 As RadioButton = Form1.RadioStrip2
-    Private WithEvents RadioButton1 As RadioButton = Form1.RadioButton1
-    Private WithEvents RadioButton2 As RadioButton = Form1.RadioButton2
-    Private WithEvents RadioButton3 As RadioButton = Form1.RadioButton3
-    Private WithEvents RadioButton4 As RadioButton = Form1.RadioButton4
-    Private WithEvents RadioButton5 As RadioButton = Form1.RadioButton5
-    Private WithEvents RadioButton6 As RadioButton = Form1.RadioButton6
+    Private WithEvents RadioStrip1 As RadioButton = frm.RadioStrip1
+    Private WithEvents RadioStrip2 As RadioButton = frm.RadioStrip2
+    Private WithEvents RadioButton1 As RadioButton = frm.RadioButton1
+    Private WithEvents RadioButton2 As RadioButton = frm.RadioButton2
+    Private WithEvents RadioButton3 As RadioButton = frm.RadioButton3
+    Private WithEvents RadioButton4 As RadioButton = frm.RadioButton4
+    Private WithEvents RadioButton5 As RadioButton = frm.RadioButton5
+    Private WithEvents RadioButton6 As RadioButton = frm.RadioButton6
 
-    Private WithEvents checkBox27 As CheckBox = Form1.CheckBox27
-    Private WithEvents listbox1 As ListBox = Form1.ListBox1
-    Private WithEvents listbox2 As ListBox = Form1.ListBox2
+    Private WithEvents checkBox27 As CheckBox = frm.CheckBox27
+    Private WithEvents listbox1 As ListBox = frm.ListBox1
+    Private WithEvents listbox2 As ListBox = frm.ListBox2
     'Friend WithEvents myContextMenu7 As New ToolStripDropDownMenu 'autorenamer
     Public Shared autofilter_regex As String = "%[A-Za-z]{4}[A-Za-z]*"
     Public Shared autofilter_regex_options() As Boolean = {False, False}
@@ -49,7 +51,7 @@ Public Class Class3_matcher
         countAll = 0
         countFound = 0
         countNotFound = 0
-        With Form1
+        With frm
             .ListBox1.Items.Clear()
             If .ComboBox3.SelectedIndex < 0 Then Exit Sub
             If .ComboBox1.SelectedIndex < 0 Then Exit Sub
@@ -95,7 +97,7 @@ Public Class Class3_matcher
     'matcher - remplir database SUB
     Private Function matcher_remplirDatabaseEntryList_addRow(ByVal row As DataGridViewRow, ByVal cellIndex As Integer) As Boolean
         Dim retVal As Boolean = False
-        With Form1
+        With frm
             If row.Cells(cellIndex).Value.ToString = "YES" Then retVal = True
             If .RadioButton1.Checked Then If row.Cells(cellIndex).Value.ToString = "YES" Then .ListBox1.Items.Add(row.Cells(1).Value)
             If .RadioButton2.Checked Then If row.Cells(cellIndex).Value.ToString = "NO" Then .ListBox1.Items.Add(row.Cells(1).Value)
@@ -106,7 +108,7 @@ Public Class Class3_matcher
 
     'Update TOTAL labels
     Private Sub matcher_update_total_labels()
-        With Form1
+        With frm
             If countFound = -1 And countNotFound = -1 And countAll = -1 Then
                 .Label7.Text = "Total: "
                 .Label9.Text = "Total: "
@@ -152,10 +154,12 @@ Public Class Class3_matcher
 
     'Associate CLICK
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5_Associate.Click
-        With Form1
+        With frm
             If .ListBox1.SelectedIndex < 0 Then MsgBox("Select a database entry to associate a file to.") : Exit Sub
             If .ListBox2.SelectedIndex < 0 Then MsgBox("Select a file to associate to selected database entry.") : Exit Sub
-
+            crc_for_archs = ""
+            Class7_archives.rename = Class7_archives.answer.useDefaultForm1Settings
+            Class7_archives.keep_only_one = Class7_archives.answer.useDefaultForm1Settings
             Dim ext As String = ""
             Dim l1_selected_game As String = .ListBox1.SelectedItem.ToString
             Dim l2_selected_file As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
@@ -234,7 +238,7 @@ Public Class Class3_matcher
     End Sub
 
     'Associate SUB - creating file operation array
-    Private Function associate_copyMove(src_dir As String, dst_dir As String, gameName As String, fName As String, Optional subfoldered_mode As Boolean = False, Optional create_sub_folder As Boolean = False) As String()
+    Public Function associate_copyMove(src_dir As String, dst_dir As String, gameName As String, fName As String, Optional subfoldered_mode As Boolean = False, Optional create_sub_folder As Boolean = False) As String()
         Dim ext As String = ""
         Dim op As New List(Of String())
         Try
@@ -247,25 +251,25 @@ Public Class Class3_matcher
                     'src is in HS folder
                     If create_sub_folder Then dst_dir = dst_dir + "\" + gameName
 
-                    If Form1.AssocOption_fileInHsFolder_copy.Checked Then
+                    If frm.AssocOption_fileInHsFolder_copy.Checked Then
                         'Copy (duplicate)
                         op.Add({"FILECOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
-                    ElseIf Form1.AssocOption_fileInHsFolder_move.Checked Then
+                    ElseIf frm.AssocOption_fileInHsFolder_move.Checked Then
                         'Move (rename)
                         op.Add({"FILERENAME", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
                     End If
                 Else
                     'src is in different folder
-                    If Form1.AssocOption_fileInDiffFolder_copy.Checked Then
+                    If frm.AssocOption_fileInDiffFolder_copy.Checked Then
                         'Copy in place
                         op.Add({"FILECOPY", src_dir + "\" + fName, src_dir + "\" + gameName + ext})
-                    ElseIf Form1.AssocOption_fileInDiffFolder_move.Checked Then
+                    ElseIf frm.AssocOption_fileInDiffFolder_move.Checked Then
                         'Move in place
                         op.Add({"FILERENAME", src_dir + "\" + fName, src_dir + "\" + gameName + ext})
-                    ElseIf Form1.AssocOption_fileInDiffFolder_copyToHS.Checked Then
+                    ElseIf frm.AssocOption_fileInDiffFolder_copyToHS.Checked Then
                         'Copy to HS folder
                         op.Add({"FILECOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
-                    ElseIf Form1.AssocOption_fileInDiffFolder_moveToHS.Checked Then
+                    ElseIf frm.AssocOption_fileInDiffFolder_moveToHS.Checked Then
                         'Move to HS folder
                         op.Add({"FILERENAME", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
                     End If
@@ -283,39 +287,39 @@ Public Class Class3_matcher
 
                 If src_dir = dst_dir Then
                     'src is in HS folder
-                    If Form1.AssocOption_fileInHsFolder_copy.Checked Then
+                    If frm.AssocOption_fileInHsFolder_copy.Checked Then
                         'Copy (duplicate)
                         op.Add({"DIRCOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + "\"})
                         Dim res0 As String = associate_fileOP(op)
                         If res0 <> "" Then Return {res0, ext}
                         op = New List(Of String())
                         op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
-                    ElseIf Form1.AssocOption_fileInHsFolder_move.Checked Then
+                    ElseIf frm.AssocOption_fileInHsFolder_move.Checked Then
                         'Move (rename)
                         op.Add({"FILERENAME", list.Item(0), dst_dir + "\" + fName + "\" + gameName + ext, "0"})
                         op.Add({"DIRRENAME", src_dir + "\" + fName, gameName, "0"})
                     End If
                 Else
                     'src is in different folder
-                    If Form1.AssocOption_fileInDiffFolder_copy.Checked Then
+                    If frm.AssocOption_fileInDiffFolder_copy.Checked Then
                         'Copy in place
                         op.Add({"DIRCOPY", src_dir + "\" + fName, src_dir + "\" + gameName + "\"})
                         Dim res0 As String = associate_fileOP(op)
                         If res0 <> "" Then Return {res0, ext}
                         op = New List(Of String())
                         op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, src_dir + "\" + gameName + "\" + gameName + ext, "0"})
-                    ElseIf Form1.AssocOption_fileInDiffFolder_move.Checked Then
+                    ElseIf frm.AssocOption_fileInDiffFolder_move.Checked Then
                         'Move in place
                         op.Add({"FILERENAME", list.Item(0), src_dir + "\" + fName + "\" + gameName + ext, "0"})
                         op.Add({"DIRRENAME", src_dir + "\" + fName, gameName, "0"})
-                    ElseIf Form1.AssocOption_fileInDiffFolder_copyToHS.Checked Then
+                    ElseIf frm.AssocOption_fileInDiffFolder_copyToHS.Checked Then
                         'Copy to HS folder
                         op.Add({"DIRCOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + "\"})
                         Dim res0 As String = associate_fileOP(op)
                         If res0 <> "" Then Return {res0, ext}
                         op = New List(Of String())
                         op.Add({"FILERENAME", dst_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
-                    ElseIf Form1.AssocOption_fileInDiffFolder_moveToHS.Checked Then
+                    ElseIf frm.AssocOption_fileInDiffFolder_moveToHS.Checked Then
                         'Move to HS folder
                         'TODO
                     End If
@@ -355,7 +359,7 @@ Public Class Class3_matcher
                 'check .cue
                 Dim listFilesInCue(1) As List(Of String)
                 Dim listaudio As Boolean = DirectCast(IIf(o(0) = "FILECOPY", True, False), Boolean)
-                If tmpExt.ToLower = "cue" And Not Form1.CheckBox6.Checked Then
+                If tmpExt.ToLower = "cue" And Not frm.CheckBox6.Checked Then
                     listFilesInCue = associate_listFilesFromCue(o(1), listaudio)
                     If listFilesInCue(0).Count = 0 Then msg = "Image file reference in """ + tmpfileName + """ not found. Check your .cue in notepad." : Exit For
                     If listFilesInCue(0)(0) = "" Then msg = "Image file reference in """ + tmpfileName + """ is empty. Check your .cue in notepad." : Exit For
@@ -377,7 +381,7 @@ Public Class Class3_matcher
                     restoreCue = True
                 Else
                     'if file being renamed is iso or bin or one of the list in options, we have to search for .cue
-                    For Each e As String In Form1.TextBox16.Text.ToLower.Split(","c)
+                    For Each e As String In frm.TextBox16.Text.ToLower.Split(","c)
                         If e.Trim = tmpExt.ToLower Then
                             For Each f As String In FileSystem.GetFiles(tmppath, SearchOption.SearchTopLevelOnly, {"*.cue"})
                                 listFilesInCue = associate_listFilesFromCue(tmppath + tmpfileNameWOext + ".cue", listaudio)
@@ -393,7 +397,7 @@ Public Class Class3_matcher
                 End If
 
                 'check pairs (mdf/mds list)
-                For Each l As String In Form1.ListBox4.Items
+                For Each l As String In frm.ListBox4.Items
                     If l.ToLower.Contains(tmpExt.ToLower) Then
                         For Each ext As String In l.Split(","c)
                             If ext.Trim.ToLower = tmpExt.ToLower Then Continue For
@@ -428,58 +432,90 @@ Public Class Class3_matcher
         If msg <> "" Then Return msg + vbCrLf + "File operation aborted. Nothing changed."
 
         'Actual performing file operations and undo array fill
-        Form1.undo.Add(New List(Of String))
-        Form1.undo_humanReadable.Add(New List(Of String))
-        Dim undoIndex = Form1.undo.Count - 1
+        Dim z As New Class7_archives
+        frm.undo.Add(New List(Of String))
+        frm.undo_humanReadable.Add(New List(Of String))
+        Dim undoIndex = frm.undo.Count - 1
         If tmp.Count > 0 Then op.InsertRange(1, tmp)
+        Dim archive_handled As Boolean = False
         Try
             For Each o In op
                 If o(0) = "FILECOPY" Then
-                    FileSystem.CopyFile(o(1), o(2))
-                    If o(1).Substring(o(1).LastIndexOf(".") + 1).ToLower = "cue" And restoreCue Then
-                        Form1.undo(undoIndex).Add("RESTORECUE?" + o(1))
-                        Form1.undo(undoIndex).Add("FILEREMOVE?" + o(2))
-                        Form1.undo_humanReadable(undoIndex).Add("Copy File")
-                        Form1.undo_humanReadable(undoIndex).Add("- rewrote .cue" + o(1))
-                        Form1.undo_humanReadable(undoIndex).Add("- copy " + o(1) + " to " + o(2))
-                    Else
-                        Form1.undo(undoIndex).Add("FILEREMOVE?" + o(2))
-                        Form1.undo_humanReadable(undoIndex).Add("Copy File " + o(1) + " to " + o(2))
+                    If z.isArchive(o(1)) Then
+                        z.setFile(o(1))
+                        Dim archNameWoExt = o(2)
+                        If archNameWoExt.Contains(".") Then archNameWoExt = archNameWoExt.Substring(0, archNameWoExt.LastIndexOf("."))
+                        Dim gameName = FileSystem.GetFileInfo(o(2)).Name
+                        If gameName.Contains(".") Then gameName = gameName.Substring(0, gameName.LastIndexOf("."))
+                        archive_handled = z.renameInArchiveIfNeeded(archNameWoExt, crc_for_archs)
+                        If archive_handled Then
+                            frm.undo(undoIndex).Add("ARCHIVE?" + o(1) + "?" + o(2))
+                            frm.undo_humanReadable(undoIndex).Add("Recompressed Archive " + o(1) + " to " + o(2))
+                        End If
+                    End If
+
+                    If Not archive_handled Then
+                        FileSystem.CopyFile(o(1), o(2))
+                        If o(1).Substring(o(1).LastIndexOf(".") + 1).ToLower = "cue" And restoreCue Then
+                            frm.undo(undoIndex).Add("RESTORECUE?" + o(1))
+                            frm.undo(undoIndex).Add("FILEREMOVE?" + o(2))
+                            frm.undo_humanReadable(undoIndex).Add("Copy File")
+                            frm.undo_humanReadable(undoIndex).Add("- rewrote .cue" + o(1))
+                            frm.undo_humanReadable(undoIndex).Add("- copy " + o(1) + " to " + o(2))
+                        Else
+                            frm.undo(undoIndex).Add("FILEREMOVE?" + o(2))
+                            frm.undo_humanReadable(undoIndex).Add("Copy File " + o(1) + " to " + o(2))
+                        End If
                     End If
                 End If
                 If o(0) = "FILERENAME" Then
-                    FileSystem.MoveFile(o(1), o(2))
-                    If o(1).Substring(o(1).LastIndexOf(".") + 1).ToLower = "cue" And restoreCue Then
-                        Form1.undo(undoIndex).Add("RESTORECUE?" + o(1))
-                        Form1.undo(undoIndex).Add("FILEREMOVE?" + o(2))
-                        Form1.undo_humanReadable(undoIndex).Add("Move File")
-                        Form1.undo_humanReadable(undoIndex).Add("- rewrote .cue" + o(1))
-                        Form1.undo_humanReadable(undoIndex).Add("- move " + o(1) + " to " + o(2))
-                    Else
-                        Form1.undo(undoIndex).Add("FILERENAME?" + o(2) + "?" + o(1))
-                        Form1.undo_humanReadable(undoIndex).Add("Move File " + o(1) + " to " + o(2))
+                    If z.isArchive(o(1)) Then
+                        z.setFile(o(1))
+                        Dim archNameWoExt = o(2)
+                        If archNameWoExt.Contains(".") Then archNameWoExt = archNameWoExt.Substring(0, archNameWoExt.LastIndexOf("."))
+                        Dim gameName = FileSystem.GetFileInfo(o(2)).Name
+                        If gameName.Contains(".") Then gameName = gameName.Substring(0, gameName.LastIndexOf("."))
+                        archive_handled = z.renameInArchiveIfNeeded(archNameWoExt, crc_for_archs)
+                        If archive_handled Then
+                            frm.undo(undoIndex).Add("ARCHIVE?" + o(1) + "?" + o(2))
+                            frm.undo_humanReadable(undoIndex).Add("Recompressed Archive " + o(1) + " to " + o(2))
+                        End If
+                    End If
+
+                    If Not archive_handled Then
+                        FileSystem.MoveFile(o(1), o(2))
+                        If o(1).Substring(o(1).LastIndexOf(".") + 1).ToLower = "cue" And restoreCue Then
+                            frm.undo(undoIndex).Add("RESTORECUE?" + o(1))
+                            frm.undo(undoIndex).Add("FILEREMOVE?" + o(2))
+                            frm.undo_humanReadable(undoIndex).Add("Move File")
+                            frm.undo_humanReadable(undoIndex).Add("- rewrote .cue" + o(1))
+                            frm.undo_humanReadable(undoIndex).Add("- move " + o(1) + " to " + o(2))
+                        Else
+                            frm.undo(undoIndex).Add("FILERENAME?" + o(2) + "?" + o(1))
+                            frm.undo_humanReadable(undoIndex).Add("Move File " + o(1) + " to " + o(2))
+                        End If
                     End If
                 End If
                 If o(0) = "DIRCOPY" Then
                     FileSystem.CopyDirectory(o(1), o(2))
-                    Form1.undo(undoIndex).Add("DIRREMOVE?" + o(2))
-                    Form1.undo_humanReadable(undoIndex).Add("Copy Directory " + o(1) + " to " + o(2))
+                    frm.undo(undoIndex).Add("DIRREMOVE?" + o(2))
+                    frm.undo_humanReadable(undoIndex).Add("Copy Directory " + o(1) + " to " + o(2))
                 End If
                 If o(0) = "DIRMOVE" Then
                     FileSystem.MoveDirectory(o(1), o(2))
-                    Form1.undo(undoIndex).Add("DIRMOVE?" + o(2) + "?" + o(1))
-                    Form1.undo_humanReadable(undoIndex).Add("Move Directory " + o(1) + " to " + o(2))
+                    frm.undo(undoIndex).Add("DIRMOVE?" + o(2) + "?" + o(1))
+                    frm.undo_humanReadable(undoIndex).Add("Move Directory " + o(1) + " to " + o(2))
                 End If
                 If o(0) = "DIRRENAME" Then
                     FileSystem.RenameDirectory(o(1), o(2))
                     Dim name As String = o(1).Substring(o(1).LastIndexOf("\") + 1)
                     Dim path As String = o(1).Substring(0, o(1).LastIndexOf("\") + 1)
-                    Form1.undo(undoIndex).Add("DIRRENAME?" + path + o(2) + "?" + name)
-                    Form1.undo_humanReadable(undoIndex).Add("Rename Directory " + o(1) + " to " + o(2))
+                    frm.undo(undoIndex).Add("DIRRENAME?" + path + o(2) + "?" + name)
+                    frm.undo_humanReadable(undoIndex).Add("Rename Directory " + o(1) + " to " + o(2))
                 End If
             Next
         Catch ex As Exception
-            If Form1.undo(undoIndex).Count = 0 Then Form1.undo.RemoveAt(undoIndex) : Form1.undo_humanReadable.RemoveAt(undoIndex)
+            If frm.undo(undoIndex).Count = 0 Then frm.undo.RemoveAt(undoIndex) : frm.undo_humanReadable.RemoveAt(undoIndex)
             Return ex.Message
         End Try
         Return ""
@@ -540,7 +576,7 @@ Public Class Class3_matcher
         'do backup
         Dim backupN As Integer = 0
         If FileSystem.FileExists(filename + ".backup") Then
-            Do While Microsoft.VisualBasic.FileIO.FileSystem.FileExists(Form1.xmlPath + ".backup" + backupN.ToString)
+            Do While Microsoft.VisualBasic.FileIO.FileSystem.FileExists(frm.xmlPath + ".backup" + backupN.ToString)
                 backupN += 1
             Loop
             FileSystem.CopyFile(filename, filename + ".backup" + backupN.ToString)
@@ -558,11 +594,11 @@ Public Class Class3_matcher
 
     'UNDO click
     Private Sub associate_undo() Handles ButtonStrip1.Click
-        If Form1.undo.Count = 0 Then MsgBox("Nothing to undo.") : Exit Sub
-        Dim undoIndex As Integer = Form1.undo.Count - 1
+        If frm.undo.Count = 0 Then MsgBox("Nothing to undo.") : Exit Sub
+        Dim undoIndex As Integer = frm.undo.Count - 1
         Dim msg As String = "The following operations will be executed:" + vbCrLf
-        For i As Integer = Form1.undo(undoIndex).Count - 1 To 0 Step -1
-            Dim m() As String = Form1.undo(undoIndex)(i).Split("?"c)
+        For i As Integer = frm.undo(undoIndex).Count - 1 To 0 Step -1
+            Dim m() As String = frm.undo(undoIndex)(i).Split("?"c)
             m(1) = m(1).Replace("\\", "\")
             If m(0) = "FILEREMOVE" Then msg = msg + "Remove file: " + m(1) + vbCrLf
             If m(0) = "FILERENAME" Then msg = msg + "Rename file: " + m(1) + " to " + m(2).Replace("\\", "\") + vbCrLf
@@ -574,15 +610,15 @@ Public Class Class3_matcher
         msg = msg + "Is it OK?"
         If MsgBox(msg, MsgBoxStyle.YesNo) = MsgBoxResult.No Then
             If MsgBox("Remove this operation from undo list?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                Form1.undo.RemoveAt(undoIndex)
-                Form1.undo_humanReadable.RemoveAt(undoIndex)
+                frm.undo.RemoveAt(undoIndex)
+                frm.undo_humanReadable.RemoveAt(undoIndex)
             End If
             Exit Sub
         End If
 
-        For i As Integer = Form1.undo(undoIndex).Count - 1 To 0 Step -1
+        For i As Integer = frm.undo(undoIndex).Count - 1 To 0 Step -1
             Try
-                Dim o() As String = Form1.undo(undoIndex)(i).Split("?"c)
+                Dim o() As String = frm.undo(undoIndex)(i).Split("?"c)
                 If o(0) = "FILEREMOVE" Then FileSystem.DeleteFile(o(1))
                 If o(0) = "FILERENAME" Then FileSystem.MoveFile(o(1), o(2))
                 If o(0) = "DIRREMOVE" Then FileSystem.DeleteDirectory(o(1), DeleteDirectoryOption.DeleteAllContents)
@@ -591,7 +627,7 @@ Public Class Class3_matcher
                 If o(0) = "RESTORECUE" Then
                     Dim backupN As Integer = 0
                     If FileSystem.FileExists(o(1) + ".backup") Then
-                        Do While Microsoft.VisualBasic.FileIO.FileSystem.FileExists(Form1.xmlPath + ".backup" + backupN.ToString)
+                        Do While Microsoft.VisualBasic.FileIO.FileSystem.FileExists(frm.xmlPath + ".backup" + backupN.ToString)
                             backupN += 1
                         Loop
                         If backupN = 0 Then FileSystem.MoveFile(o(1) + ".backup", o(1), True)
@@ -602,14 +638,14 @@ Public Class Class3_matcher
                 MsgBox(ex.Message, MsgBoxStyle.Exclamation)
             End Try
         Next
-        Form1.undo.RemoveAt(undoIndex)
-        Form1.undo_humanReadable.RemoveAt(undoIndex)
+        frm.undo.RemoveAt(undoIndex)
+        frm.undo_humanReadable.RemoveAt(undoIndex)
         MsgBox("You have to reCheck to reflect changes")
     End Sub
 
     'get path to media based on matcher mediaselect Combobox
     Private Function get_HS_Path_of_selected_media() As String
-        With Form1
+        With frm
             If .ComboBox3.SelectedIndex = 0 Then
                 'TODO Better handle multiple rompaths
                 If ComboBox7.Visible Then
@@ -640,12 +676,12 @@ Public Class Class3_matcher
 
     'matcher options
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
-        Form1.myContextMenu2.Show(Cursor.Position.X, Cursor.Position.Y)
+        frm.myContextMenu2.Show(Cursor.Position.X, Cursor.Position.Y)
     End Sub
 
     'markAsFound
     Private Sub Button20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button20_markAsFound.Click
-        With Form1
+        With frm
             Dim count As Integer = 0
             Dim fWoExt As String = ""
             If .ComboBox3.SelectedIndex < 0 Then MsgBox("Please, select media type.") : Exit Sub
@@ -676,15 +712,15 @@ Public Class Class3_matcher
 
     'matcher media combobox TO datagrid col
     Private Function Button20_markAsFound_comboToCol() As Integer
-        If Form1.ComboBox3.SelectedIndex = 0 Then Return 2
-        If Form1.ComboBox3.SelectedIndex = 1 Then Return 3
-        If Form1.ComboBox3.SelectedIndex = 2 Then Return 5
-        If Form1.ComboBox3.SelectedIndex = 3 Then Return 6
-        If Form1.ComboBox3.SelectedIndex = 4 Then Return 7
-        If Form1.ComboBox3.SelectedIndex = 5 Then Return 8
-        If Form1.ComboBox3.SelectedIndex = 6 Then Return 9
-        If Form1.ComboBox3.SelectedIndex = 7 Then Return 4
-        If Form1.ComboBox3.SelectedIndex = 8 Then Return 10
+        If frm.ComboBox3.SelectedIndex = 0 Then Return 2
+        If frm.ComboBox3.SelectedIndex = 1 Then Return 3
+        If frm.ComboBox3.SelectedIndex = 2 Then Return 5
+        If frm.ComboBox3.SelectedIndex = 3 Then Return 6
+        If frm.ComboBox3.SelectedIndex = 4 Then Return 7
+        If frm.ComboBox3.SelectedIndex = 5 Then Return 8
+        If frm.ComboBox3.SelectedIndex = 6 Then Return 9
+        If frm.ComboBox3.SelectedIndex = 7 Then Return 4
+        If frm.ComboBox3.SelectedIndex = 8 Then Return 10
         Return 0
     End Function
 
@@ -692,14 +728,14 @@ Public Class Class3_matcher
     Private Function Button20_markAsFound_sub(ByVal fWoExt As String, ByVal col As Integer, Optional ByVal remove As Boolean = False) As Boolean
         If Class1.romlist.Contains(fWoExt.ToLower) Then
             'mark in grid
-            For r = 0 To Form1.DataGridView1.Rows.Count - 1
-                If Form1.DataGridView1.Item(1, r).Value.ToString.ToLower = fWoExt.ToLower Then
+            For r = 0 To frm.DataGridView1.Rows.Count - 1
+                If frm.DataGridView1.Item(1, r).Value.ToString.ToLower = fWoExt.ToLower Then
                     If Not remove Then
-                        Form1.DataGridView1.Item(col, r).Value = "YES"
-                        Form1.DataGridView1.Item(col, r).Style.BackColor = Class1.colorYES
+                        frm.DataGridView1.Item(col, r).Value = "YES"
+                        frm.DataGridView1.Item(col, r).Style.BackColor = Class1.colorYES
                     Else
-                        Form1.DataGridView1.Item(col, r).Value = "NO"
-                        Form1.DataGridView1.Item(col, r).Style.BackColor = Class1.colorNO
+                        frm.DataGridView1.Item(col, r).Value = "NO"
+                        frm.DataGridView1.Item(col, r).Style.BackColor = Class1.colorNO
                     End If
                     Exit For
                 End If
@@ -729,19 +765,19 @@ Public Class Class3_matcher
     End Function
 
     Private Function getCurMediaExtensionWildcards() As String()
-        If Form1.ComboBox3.SelectedIndex = 1 Then
+        If frm.ComboBox3.SelectedIndex = 1 Then
             Dim t As String = ""
-            If Form1.CheckBox11.Checked Then t = "*.flv"
-            If Form1.CheckBox12.Checked Then If t = "" Then t = "*.mp4" Else t = t + ",*.mp4"
-            If Form1.CheckBox13.Checked Then If t = "" Then t = "*.png" Else t = t + ",*.png"
+            If frm.CheckBox11.Checked Then t = "*.flv"
+            If frm.CheckBox12.Checked Then If t = "" Then t = "*.mp4" Else t = t + ",*.mp4"
+            If frm.CheckBox13.Checked Then If t = "" Then t = "*.png" Else t = t + ",*.png"
             Return t.Split(","c)
         End If
-        If Form1.ComboBox3.SelectedIndex = 7 Then Return {"*.zip"}
-        If Form1.ComboBox3.SelectedIndex = 8 Then Return {"*.mp3"}
-        If Form1.ComboBox3.SelectedIndex <> 0 Then Return {"*.png"}
+        If frm.ComboBox3.SelectedIndex = 7 Then Return {"*.zip"}
+        If frm.ComboBox3.SelectedIndex = 8 Then Return {"*.mp3"}
+        If frm.ComboBox3.SelectedIndex <> 0 Then Return {"*.png"}
 
         Dim str As String
-        If Form1.TextStrip1.Text <> "" Then str = Form1.TextStrip1.Text Else str = Form1.TextBox3.Text
+        If frm.TextStrip1.Text <> "" Then str = frm.TextStrip1.Text Else str = frm.TextBox3.Text
 
         Dim s() As String = {}
         If str.Trim = "" Then Return {"*.*"}
@@ -761,7 +797,7 @@ Public Class Class3_matcher
             If tmp.ToUpper.Trim <> TextBox4.Text.ToUpper.Trim Then TextBox4.Text = tmp.Trim : Exit Sub
         End If
 
-        With Form1
+        With frm
             .Button20_markAsFound.Enabled = False
             Dim fWoExt As String = ""
 
@@ -855,15 +891,15 @@ Public Class Class3_matcher
 
     'Subfoldered1
     Private Sub CheckBox3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox3.CheckedChanged
-        Form1.subfoldered = Form1.CheckBox3.Checked
-        Form1.CheckBox10.Checked = Form1.CheckBox3.Checked
-        If Form1.subfoldered Then Form1.CheckBox10.Enabled = False Else Form1.CheckBox10.Enabled = True
+        frm.subfoldered = frm.CheckBox3.Checked
+        frm.CheckBox10.Checked = frm.CheckBox3.Checked
+        If frm.subfoldered Then frm.CheckBox10.Enabled = False Else frm.CheckBox10.Enabled = True
         TextBox4_TextChanged(sender, New System.EventArgs)
     End Sub
 
     'Subfoldered2
     Private Sub CheckBox10_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox10.CheckedChanged
-        Form1.subfoldered2 = Form1.CheckBox10.Checked
+        frm.subfoldered2 = frm.CheckBox10.Checked
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged, RadioButton3.CheckedChanged
@@ -876,12 +912,12 @@ Public Class Class3_matcher
 
     'video ext changed
     Private Sub CheckBox11_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox11.CheckedChanged, CheckBox12.CheckedChanged, CheckBox13.CheckedChanged
-        If Form1.ComboBox3.SelectedIndex = 1 Then TextBox4_TextChanged(sender, New System.EventArgs)
+        If frm.ComboBox3.SelectedIndex = 1 Then TextBox4_TextChanged(sender, New System.EventArgs)
     End Sub
 
     'Matcher, media type selection change
     Private Sub ComboBox3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox3.SelectedIndexChanged
-        With Form1
+        With frm
             .TextBox4.Visible = True
             .ComboBox7.Visible = False
             .ListBox1.Items.Clear()
@@ -931,7 +967,7 @@ Public Class Class3_matcher
 
     'Context Menu - Switch to custom path
     Private Sub contextMeny2radioChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioStrip1.CheckedChanged, RadioStrip2.CheckedChanged
-        With Form1
+        With frm
             If .RadioStrip1.Checked = True Then
                 '.CheckStrip1.Enabled = False
                 TextBox4.Enabled = False
@@ -993,7 +1029,7 @@ Public Class Class3_matcher
     'Filter change - FileFilter
     Private Sub textbox27_textChange(sender As System.Object, e As System.EventArgs) Handles TextBox27.TextChanged
         Try
-            dt_files.DefaultView.RowFilter = "[name] like '" + TextBox27.Text.Replace("'", "''") + "%'"
+            dt_files.DefaultView.RowFilter = "[name] Like '" + TextBox27.Text.Replace("'", "''") + "%'"
         Catch ex As Exception
 
         End Try
@@ -1001,8 +1037,8 @@ Public Class Class3_matcher
 
     'Autofilter
     Private Sub listbox1_selection_change(sender As Object, e As System.EventArgs) Handles listbox1.SelectedIndexChanged
-        If Form1.AutofilterToolStripMenuItem.Checked Then
-            If Form1.ComboBox3.SelectedIndex = -1 Then Exit Sub
+        If frm.AutofilterToolStripMenuItem.Checked Then
+            If frm.ComboBox3.SelectedIndex = -1 Then Exit Sub
             If countAll <= 0 Then Exit Sub
             If listbox1.SelectedIndex < 0 Then Exit Sub
 
@@ -1044,7 +1080,7 @@ Public Class Class3_matcher
     'Show autorenamer context menu
     'Private Sub Button_associate_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button5_Associate.MouseDown
     'If e.Button = MouseButtons.Right Then
-    'Form1.myContextMenu7.Show(Cursor.Position.X, Cursor.Position.Y)
+    'frm.myContextMenu7.Show(Cursor.Position.X, Cursor.Position.Y)
     'End If
     'End Sub
 End Class

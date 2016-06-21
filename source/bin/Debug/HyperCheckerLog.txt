@@ -6229,3 +6229,2557 @@
 10:24:39 - Loading config
 10:24:39 - Init classes
 10:24:39 - Done init
+10:35:36 - Initializing...
+10:35:36 - Creating menus
+10:35:36 - Loading config
+10:35:36 - Init classes
+10:35:36 - Done init
+10:46:47 - Initializing...
+10:46:47 - Creating menus
+10:46:47 - Loading config
+10:46:47 - Init classes
+10:46:47 - Done init
+10:50:22 - Initializing...
+10:50:22 - Creating menus
+10:50:22 - Loading config
+10:50:22 - Init classes
+10:50:22 - Done init
+16:7:42 - Initializing...
+16:7:42 - Creating menus
+16:7:42 - Loading config
+16:7:42 - Init classes
+16:7:42 - Done init
+17:2:42 - Initializing...
+17:2:42 - Creating menus
+17:2:42 - Loading config
+17:2:42 - Init classes
+17:2:42 - Done init
+17:2:49 - Initializing...
+17:2:49 - Creating menus
+17:2:49 - Loading config
+17:2:50 - Init classes
+17:2:50 - Done init
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\armwrest.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\balonfgt.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\bnglngby.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\btlecity.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\cluclu.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\cstlevna.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong3.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkongjr.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\drmario.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\duckhunt.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\excitebk.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\goonies.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\helifire.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\hogalley.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\iceclimb.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\jajamaru.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\machridr.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\mario.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\mightybj.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_adam.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_con3.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_fzer.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_lwep.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_ncaa.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:17 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_rob3.7z
+17:5:17 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:17 - Archive Handler - Multiple files keep_only_one is needed
+17:5:17 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_skin.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_smw.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_ssoc.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_sten.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_1942.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bball.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bfght.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bstar.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cntra.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cshwk.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cvnia.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_dbldr.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ddrgn.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_drmro.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_duckh.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ebike.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ftqst.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_gntlt.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_golf.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_goons.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_grdus.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_hgaly.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_kngfu.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mario.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_miket.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mman3.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_moglf.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mtoid.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngai2.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngai3.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngaid.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pinbt.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pwbld.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pwrst.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_radr2.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_radrc.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rcpam.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rkats.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rnatk.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rrngr.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rygar.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_sjetm.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb2.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb3.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_suprc.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tbowl.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tenis.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tkfld.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tmnt.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tmnt2.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_trjan.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_vball.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_wcup.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_wgnmn.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ynoid.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\platoon.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\popeye.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\punchout.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\radarscp.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\rbibb.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\rtype.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\smgolf.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\spnchout.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\suprmrio.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:18 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\supxevs.7z
+17:5:18 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:18 - Archive Handler - Multiple files keep_only_one is needed
+17:5:18 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\tkoboxng.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\topgun.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsbball.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsfdf.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsgradus.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsgshoe.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vspinbal.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsskykid.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsslalom.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vssoccer.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vstennis.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vstetris.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:5:19 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\wrecking.7z
+17:5:19 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:5:19 - Archive Handler - Multiple files keep_only_one is needed
+17:5:19 - Archive Handler - nothing done, exiting.
+17:11:15 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\armwrest.7z
+17:11:38 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:11:43 - Archive Handler - Multiple files keep_only_one is needed
+17:12:26 - Archive Handler - nothing done, exiting.
+17:13:15 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\balonfgt.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\bnglngby.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\btlecity.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\cluclu.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\cstlevna.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong3.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkongjr.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\drmario.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\duckhunt.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\excitebk.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\goonies.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\helifire.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\hogalley.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\iceclimb.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\jajamaru.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\machridr.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\mario.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\mightybj.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_adam.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_con3.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_fzer.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_lwep.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_ncaa.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_rob3.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_skin.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_smw.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_ssoc.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_sten.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_1942.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bball.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bfght.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bstar.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cntra.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cshwk.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cvnia.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_dbldr.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ddrgn.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_drmro.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_duckh.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ebike.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ftqst.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_gntlt.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_golf.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_goons.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_grdus.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_hgaly.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_kngfu.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mario.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_miket.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mman3.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_moglf.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mtoid.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngai2.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngai3.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngaid.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pinbt.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pwbld.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pwrst.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_radr2.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_radrc.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rcpam.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rkats.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rnatk.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rrngr.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rygar.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_sjetm.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb2.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb3.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_suprc.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tbowl.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tenis.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tkfld.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tmnt.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tmnt2.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_trjan.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_vball.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_wcup.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_wgnmn.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ynoid.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\platoon.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\popeye.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\punchout.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\radarscp.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\rbibb.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\rtype.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\smgolf.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\spnchout.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\suprmrio.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\supxevs.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\tkoboxng.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\topgun.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsbball.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsfdf.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsgradus.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsgshoe.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vspinbal.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsskykid.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsslalom.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vssoccer.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vstennis.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vstetris.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:13:16 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\wrecking.7z
+17:13:16 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:13:16 - Archive Handler - Multiple files keep_only_one is needed
+17:13:16 - Archive Handler - nothing done, exiting.
+17:20:12 - Initializing...
+17:20:12 - Creating menus
+17:20:12 - Loading config
+17:20:12 - Init classes
+17:20:12 - Done init
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\armwrest.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\balonfgt.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\bnglngby.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\btlecity.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\cluclu.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\cstlevna.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong3.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkongjr.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\drmario.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\duckhunt.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\excitebk.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\goonies.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\helifire.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\hogalley.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\iceclimb.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\jajamaru.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\machridr.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\mario.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\mightybj.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_adam.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_con3.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_fzer.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_lwep.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_ncaa.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_rob3.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_skin.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_smw.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_ssoc.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_sten.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_1942.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bball.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bfght.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bstar.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cntra.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cshwk.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cvnia.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_dbldr.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ddrgn.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_drmro.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_duckh.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ebike.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ftqst.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_gntlt.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_golf.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_goons.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_grdus.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_hgaly.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_kngfu.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mario.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_miket.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mman3.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_moglf.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mtoid.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngai2.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngai3.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngaid.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pinbt.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pwbld.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pwrst.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_radr2.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_radrc.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rcpam.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rkats.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rnatk.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rrngr.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rygar.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_sjetm.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb2.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb3.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_suprc.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tbowl.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tenis.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tkfld.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tmnt.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tmnt2.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_trjan.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_vball.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_wcup.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_wgnmn.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ynoid.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\platoon.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\popeye.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\punchout.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\radarscp.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:35 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\rbibb.7z
+17:20:35 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:35 - Archive Handler - Multiple files keep_only_one is needed
+17:20:35 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\rtype.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\smgolf.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\spnchout.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\suprmrio.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\supxevs.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\tkoboxng.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\topgun.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsbball.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsfdf.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsgradus.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsgshoe.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vspinbal.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsskykid.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsslalom.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vssoccer.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vstennis.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vstetris.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:20:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\wrecking.7z
+17:20:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:20:36 - Archive Handler - Multiple files keep_only_one is needed
+17:20:36 - Archive Handler - nothing done, exiting.
+17:21:11 - Initializing...
+17:21:11 - Creating menus
+17:21:11 - Loading config
+17:21:11 - Init classes
+17:21:12 - Done init
+17:22:54 - Initializing...
+17:22:54 - Creating menus
+17:22:54 - Loading config
+17:22:54 - Init classes
+17:22:54 - Done init
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\armwrest.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\balonfgt.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\bnglngby.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\btlecity.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\cluclu.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\cstlevna.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong3.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkongjr.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\drmario.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\duckhunt.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\excitebk.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\goonies.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\helifire.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\hogalley.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\iceclimb.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\jajamaru.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\machridr.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\mario.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\mightybj.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_adam.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_con3.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_fzer.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_lwep.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_ncaa.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_rob3.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_skin.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_smw.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_ssoc.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\nss_sten.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_1942.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bball.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bfght.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_bstar.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cntra.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cshwk.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_cvnia.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_dbldr.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ddrgn.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_drmro.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_duckh.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ebike.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ftqst.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_gntlt.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_golf.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_goons.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_grdus.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_hgaly.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_kngfu.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mario.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_miket.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mman3.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_moglf.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_mtoid.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngai2.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngai3.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ngaid.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pinbt.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pwbld.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_pwrst.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_radr2.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_radrc.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rcpam.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rkats.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rnatk.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rrngr.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_rygar.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_sjetm.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb2.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_smb3.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_suprc.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tbowl.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tenis.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tkfld.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tmnt.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_tmnt2.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_trjan.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_vball.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_wcup.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_wgnmn.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\pc_ynoid.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\platoon.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\popeye.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\punchout.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\radarscp.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\rbibb.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\rtype.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\smgolf.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\spnchout.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\suprmrio.7z
+17:23:36 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:36 - Archive Handler - Multiple files keep_only_one is needed
+17:23:36 - Archive Handler - nothing done, exiting.
+17:23:36 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\supxevs.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\tkoboxng.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\topgun.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsbball.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsfdf.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsgradus.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsgshoe.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vspinbal.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsskykid.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vsslalom.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vssoccer.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vstennis.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\vstetris.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:23:37 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\wrecking.7z
+17:23:37 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:23:37 - Archive Handler - Multiple files keep_only_one is needed
+17:23:37 - Archive Handler - nothing done, exiting.
+17:24:6 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong.7z
+17:24:6 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:24:6 - Archive Handler - Multiple files keep_only_one is needed
+17:24:6 - Archive Handler - nothing done, exiting.
+17:24:6 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkong3.7z
+17:24:6 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:24:6 - Archive Handler - Multiple files keep_only_one is needed
+17:24:6 - Archive Handler - nothing done, exiting.
+17:24:6 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\dkongjr.7z
+17:24:6 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:24:6 - Archive Handler - Multiple files keep_only_one is needed
+17:24:6 - Archive Handler - nothing done, exiting.
+17:24:6 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\drmario.7z
+17:24:6 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:24:6 - Archive Handler - Multiple files keep_only_one is needed
+17:24:6 - Archive Handler - nothing done, exiting.
+17:24:6 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\duckhunt.7z
+17:24:6 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:24:6 - Archive Handler - Multiple files keep_only_one is needed
+17:24:6 - Archive Handler - nothing done, exiting.
+17:25:3 - Initializing...
+17:25:3 - Creating menus
+17:25:3 - Loading config
+17:25:3 - Init classes
+17:25:3 - Done init
+17:25:28 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\armwrest.7z
+17:25:28 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:25:28 - Archive Handler - Multiple files keep_only_one is needed
+17:25:28 - Archive Handler - nothing done, exiting.
+17:25:28 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\balonfgt.7z
+17:25:28 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:25:28 - Archive Handler - Multiple files keep_only_one is needed
+17:25:28 - Archive Handler - nothing done, exiting.
+17:25:28 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\bnglngby.7z
+17:25:28 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:25:28 - Archive Handler - Multiple files keep_only_one is needed
+17:25:28 - Archive Handler - nothing done, exiting.
+17:25:28 - Archive Handler - Archive name is - o:\mame t7z merged 0.173\btlecity.7z
+17:25:28 - Archive Handler - CRC NOT supplied, multiple files, _ASSUMING_ rename needed
+17:25:28 - Archive Handler - Multiple files keep_only_one is needed
+17:25:28 - Archive Handler - nothing done, exiting.
+17:32:34 - Initializing...
+17:32:34 - Creating menus
+17:32:34 - Loading config
+17:32:34 - Init classes
+17:32:34 - Done init
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Commando (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Crack'ed (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Crossbow (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Dark Chambers (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Desert Falcon (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Dig Dug (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Donkey Kong (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Donkey Kong Junior (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Double Dragon (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\F-18 Hornet (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Fatal Run (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Fight Night (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Food Fight (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Hat Trick (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ikari Warriors (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Impossible Mission (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Jinks (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Joust (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Karateka (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Kung-Fu Master (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Mario Bros. (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Mat Mania Challenge (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Mean 18 Ultimate Golf (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Meltdown (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Midnight Mutants (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Motor Psycho (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ms. Pac-Man (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ninja Golf (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\One-on-One Basketball (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Pete Rose Baseball (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Planet Smashers (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Pole Position II (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Rampage (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\RealSports Baseball (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Robotron - 2084 (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Scrapyard Dog (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Sentinel (Europe).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Summer Games (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Super Skateboardin' (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Tank Command (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Title Match Pro Wrestling (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Tomcat - The F-14 Fighter Simulator (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Touchdown Football (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Tower Toppler (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Winter Games (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Xenophobe (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:43:27 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Xevious (USA).zip
+17:43:27 - Archive Handler - CRC NOT supplied, rename needed
+17:43:27 - Archive Handler - nothing done, exiting.
+17:46:2 - Initializing...
+17:46:2 - Creating menus
+17:46:2 - Loading config
+17:46:2 - Init classes
+17:46:2 - Done init
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Commando (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Crack'ed (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Crossbow (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Dark Chambers (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Desert Falcon (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Dig Dug (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Donkey Kong (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Donkey Kong Junior (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Double Dragon (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\F-18 Hornet (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Fatal Run (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Fight Night (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Food Fight (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Hat Trick (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ikari Warriors (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Impossible Mission (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Jinks (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Joust (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Karateka (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Kung-Fu Master (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Mario Bros. (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Mat Mania Challenge (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Mean 18 Ultimate Golf (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Meltdown (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Midnight Mutants (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Motor Psycho (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ms. Pac-Man (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ninja Golf (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\One-on-One Basketball (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Pete Rose Baseball (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Planet Smashers (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Pole Position II (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Rampage (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\RealSports Baseball (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Robotron - 2084 (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Scrapyard Dog (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Sentinel (Europe).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Summer Games (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Super Skateboardin' (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Tank Command (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Title Match Pro Wrestling (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Tomcat - The F-14 Fighter Simulator (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Touchdown Football (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Tower Toppler (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Winter Games (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Xenophobe (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:46:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Xevious (USA).zip
+17:46:19 - Archive Handler - CRC NOT supplied, rename needed
+17:46:19 - Archive Handler - nothing done, exiting.
+17:47:37 - Initializing...
+17:47:37 - Creating menus
+17:47:37 - Loading config
+17:47:37 - Init classes
+17:47:37 - Done init
+17:48:16 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+17:48:16 - Archive Handler - CRC NOT supplied, rename needed
+17:48:16 - Archive Handler - nothing done, exiting.
+17:48:16 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+17:48:16 - Archive Handler - CRC NOT supplied, rename needed
+17:48:16 - Archive Handler - nothing done, exiting.
+17:48:16 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+17:48:16 - Archive Handler - CRC NOT supplied, rename needed
+17:48:16 - Archive Handler - nothing done, exiting.
+17:48:16 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+17:48:16 - Archive Handler - CRC NOT supplied, rename needed
+17:48:16 - Archive Handler - nothing done, exiting.
+17:48:16 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+17:48:16 - Archive Handler - CRC NOT supplied, rename needed
+17:48:16 - Archive Handler - nothing done, exiting.
+17:48:16 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+17:48:16 - Archive Handler - CRC NOT supplied, rename needed
+17:48:16 - Archive Handler - nothing done, exiting.
+17:48:16 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+17:48:16 - Archive Handler - CRC NOT supplied, rename needed
+17:48:16 - Archive Handler - nothing done, exiting.
+17:48:16 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+17:48:16 - Archive Handler - CRC NOT supplied, rename needed
+17:48:16 - Archive Handler - nothing done, exiting.
+17:48:44 - Initializing...
+17:48:44 - Creating menus
+17:48:44 - Loading config
+17:48:44 - Init classes
+17:48:44 - Done init
+17:49:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+17:49:6 - Archive Handler - CRC NOT supplied, rename needed
+17:49:22 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+17:49:22 - Archive Handler - CRC NOT supplied, rename needed
+17:49:47 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+17:49:47 - Archive Handler - CRC NOT supplied, rename needed
+17:50:47 - Initializing...
+17:50:47 - Creating menus
+17:50:47 - Loading config
+17:50:47 - Init classes
+17:50:47 - Done init
+17:51:15 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+17:51:15 - Archive Handler - CRC NOT supplied, rename needed
+17:51:57 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+17:51:57 - Archive Handler - CRC NOT supplied, rename needed
+17:52:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+17:52:6 - Archive Handler - CRC NOT supplied, rename needed
+17:52:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+17:52:8 - Archive Handler - CRC NOT supplied, rename needed
+17:52:9 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+17:52:9 - Archive Handler - CRC NOT supplied, rename needed
+17:52:9 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+17:52:9 - Archive Handler - CRC NOT supplied, rename needed
+17:52:9 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+17:52:9 - Archive Handler - CRC NOT supplied, rename needed
+17:52:9 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+17:52:9 - Archive Handler - CRC NOT supplied, rename needed
+17:52:53 - Initializing...
+17:52:53 - Creating menus
+17:52:53 - Loading config
+17:52:53 - Init classes
+17:52:53 - Done init
+17:53:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+17:53:8 - Archive Handler - CRC NOT supplied, rename needed
+17:53:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+17:53:8 - Archive Handler - CRC NOT supplied, rename needed
+17:53:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+17:53:8 - Archive Handler - CRC NOT supplied, rename needed
+17:53:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+17:53:8 - Archive Handler - CRC NOT supplied, rename needed
+17:53:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+17:53:8 - Archive Handler - CRC NOT supplied, rename needed
+17:53:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+17:53:8 - Archive Handler - CRC NOT supplied, rename needed
+17:53:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+17:53:8 - Archive Handler - CRC NOT supplied, rename needed
+17:53:8 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+17:53:8 - Archive Handler - CRC NOT supplied, rename needed
+18:35:34 - Initializing...
+18:35:34 - Creating menus
+18:35:34 - Loading config
+18:35:34 - Init classes
+18:35:34 - Done init
+18:35:53 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:35:53 - Archive Handler - CRC NOT supplied, rename needed
+18:35:56 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:36:2 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:36:2 - Archive Handler - CRC NOT supplied, rename needed
+18:36:2 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:36:2 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:36:2 - Archive Handler - CRC NOT supplied, rename needed
+18:36:2 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:36:2 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:36:2 - Archive Handler - CRC NOT supplied, rename needed
+18:36:2 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:36:2 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:36:2 - Archive Handler - CRC NOT supplied, rename needed
+18:36:2 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:36:2 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:36:2 - Archive Handler - CRC NOT supplied, rename needed
+18:36:2 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:36:2 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:36:2 - Archive Handler - CRC NOT supplied, rename needed
+18:36:2 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:36:3 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:36:3 - Archive Handler - CRC NOT supplied, rename needed
+18:36:3 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:36:39 - Initializing...
+18:36:39 - Creating menus
+18:36:39 - Loading config
+18:36:39 - Init classes
+18:36:39 - Done init
+18:36:58 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:36:58 - Archive Handler - CRC NOT supplied, rename needed
+18:36:58 - Archive Handler - nothing done, exiting.
+18:36:58 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:36:58 - Archive Handler - CRC NOT supplied, rename needed
+18:36:58 - Archive Handler - nothing done, exiting.
+18:36:58 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:36:58 - Archive Handler - CRC NOT supplied, rename needed
+18:36:58 - Archive Handler - nothing done, exiting.
+18:36:58 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:36:58 - Archive Handler - CRC NOT supplied, rename needed
+18:36:58 - Archive Handler - nothing done, exiting.
+18:36:58 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:36:58 - Archive Handler - CRC NOT supplied, rename needed
+18:36:58 - Archive Handler - nothing done, exiting.
+18:36:58 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:36:58 - Archive Handler - CRC NOT supplied, rename needed
+18:36:58 - Archive Handler - nothing done, exiting.
+18:36:58 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:36:58 - Archive Handler - CRC NOT supplied, rename needed
+18:36:58 - Archive Handler - nothing done, exiting.
+18:36:58 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:36:58 - Archive Handler - CRC NOT supplied, rename needed
+18:36:58 - Archive Handler - nothing done, exiting.
+18:37:54 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:37:54 - Archive Handler - CRC NOT supplied, rename needed
+18:37:54 - Archive Handler - nothing done, exiting.
+18:37:54 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:37:54 - Archive Handler - CRC NOT supplied, rename needed
+18:37:54 - Archive Handler - nothing done, exiting.
+18:37:54 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:37:54 - Archive Handler - CRC NOT supplied, rename needed
+18:37:54 - Archive Handler - nothing done, exiting.
+18:37:54 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:37:54 - Archive Handler - CRC NOT supplied, rename needed
+18:37:54 - Archive Handler - nothing done, exiting.
+18:37:54 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:37:54 - Archive Handler - CRC NOT supplied, rename needed
+18:37:54 - Archive Handler - nothing done, exiting.
+18:37:54 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:37:54 - Archive Handler - CRC NOT supplied, rename needed
+18:37:54 - Archive Handler - nothing done, exiting.
+18:37:54 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:37:54 - Archive Handler - CRC NOT supplied, rename needed
+18:37:54 - Archive Handler - nothing done, exiting.
+18:37:54 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:37:54 - Archive Handler - CRC NOT supplied, rename needed
+18:37:54 - Archive Handler - nothing done, exiting.
+18:38:19 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:38:19 - Archive Handler - CRC NOT supplied, rename needed
+18:38:20 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:20 - Archive Handler - nothing done, exiting.
+18:38:20 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:38:20 - Archive Handler - CRC NOT supplied, rename needed
+18:38:20 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:20 - Archive Handler - nothing done, exiting.
+18:38:20 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:38:20 - Archive Handler - CRC NOT supplied, rename needed
+18:38:20 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:20 - Archive Handler - nothing done, exiting.
+18:38:20 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:38:20 - Archive Handler - CRC NOT supplied, rename needed
+18:38:20 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:20 - Archive Handler - nothing done, exiting.
+18:38:20 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:38:20 - Archive Handler - CRC NOT supplied, rename needed
+18:38:20 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:20 - Archive Handler - nothing done, exiting.
+18:38:20 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:38:20 - Archive Handler - CRC NOT supplied, rename needed
+18:38:20 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:20 - Archive Handler - nothing done, exiting.
+18:38:20 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:38:20 - Archive Handler - CRC NOT supplied, rename needed
+18:38:20 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:20 - Archive Handler - nothing done, exiting.
+18:38:20 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:38:20 - Archive Handler - CRC NOT supplied, rename needed
+18:38:20 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:20 - Archive Handler - nothing done, exiting.
+18:38:41 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:38:41 - Archive Handler - CRC NOT supplied, rename needed
+18:38:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:41 - Archive Handler - nothing done, exiting.
+18:38:41 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:38:41 - Archive Handler - CRC NOT supplied, rename needed
+18:38:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:41 - Archive Handler - nothing done, exiting.
+18:38:41 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:38:41 - Archive Handler - CRC NOT supplied, rename needed
+18:38:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:41 - Archive Handler - nothing done, exiting.
+18:38:41 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:38:41 - Archive Handler - CRC NOT supplied, rename needed
+18:38:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:41 - Archive Handler - nothing done, exiting.
+18:38:41 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:38:41 - Archive Handler - CRC NOT supplied, rename needed
+18:38:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:41 - Archive Handler - nothing done, exiting.
+18:38:41 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:38:41 - Archive Handler - CRC NOT supplied, rename needed
+18:38:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:41 - Archive Handler - nothing done, exiting.
+18:38:41 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:38:41 - Archive Handler - CRC NOT supplied, rename needed
+18:38:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:41 - Archive Handler - nothing done, exiting.
+18:38:41 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:38:41 - Archive Handler - CRC NOT supplied, rename needed
+18:38:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:38:41 - Archive Handler - nothing done, exiting.
+18:39:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:39:6 - Archive Handler - CRC NOT supplied, rename needed
+18:39:6 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:39:6 - Archive Handler - nothing done, exiting.
+18:39:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:39:6 - Archive Handler - CRC NOT supplied, rename needed
+18:39:6 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:39:6 - Archive Handler - nothing done, exiting.
+18:39:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:39:6 - Archive Handler - CRC NOT supplied, rename needed
+18:39:6 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:39:6 - Archive Handler - nothing done, exiting.
+18:39:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:39:6 - Archive Handler - CRC NOT supplied, rename needed
+18:39:6 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:39:6 - Archive Handler - nothing done, exiting.
+18:39:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:39:6 - Archive Handler - CRC NOT supplied, rename needed
+18:39:6 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:39:6 - Archive Handler - nothing done, exiting.
+18:39:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:39:6 - Archive Handler - CRC NOT supplied, rename needed
+18:39:6 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:39:6 - Archive Handler - nothing done, exiting.
+18:39:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:39:6 - Archive Handler - CRC NOT supplied, rename needed
+18:39:6 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:39:6 - Archive Handler - nothing done, exiting.
+18:39:6 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:39:6 - Archive Handler - CRC NOT supplied, rename needed
+18:39:6 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:39:6 - Archive Handler - nothing done, exiting.
+18:39:48 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:39:48 - Archive Handler - CRC NOT supplied, rename needed
+18:40:57 - Initializing...
+18:40:57 - Creating menus
+18:40:57 - Loading config
+18:40:57 - Init classes
+18:40:57 - Done init
+18:41:17 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:41:17 - Archive Handler - CRC NOT supplied, rename needed
+18:41:17 - Archive Handler - nothing done, exiting.
+18:41:17 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:41:17 - Archive Handler - CRC NOT supplied, rename needed
+18:41:17 - Archive Handler - nothing done, exiting.
+18:41:17 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:41:17 - Archive Handler - CRC NOT supplied, rename needed
+18:41:17 - Archive Handler - nothing done, exiting.
+18:41:17 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:41:17 - Archive Handler - CRC NOT supplied, rename needed
+18:41:17 - Archive Handler - nothing done, exiting.
+18:41:17 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:41:17 - Archive Handler - CRC NOT supplied, rename needed
+18:41:17 - Archive Handler - nothing done, exiting.
+18:41:18 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:41:18 - Archive Handler - CRC NOT supplied, rename needed
+18:41:18 - Archive Handler - nothing done, exiting.
+18:41:18 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:41:18 - Archive Handler - CRC NOT supplied, rename needed
+18:41:18 - Archive Handler - nothing done, exiting.
+18:41:18 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:41:18 - Archive Handler - CRC NOT supplied, rename needed
+18:41:18 - Archive Handler - nothing done, exiting.
+18:41:30 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:41:30 - Archive Handler - CRC NOT supplied, rename needed
+18:41:32 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:32 - Archive Handler - nothing done, exiting.
+18:41:32 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:41:32 - Archive Handler - CRC NOT supplied, rename needed
+18:41:32 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:32 - Archive Handler - nothing done, exiting.
+18:41:32 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:41:32 - Archive Handler - CRC NOT supplied, rename needed
+18:41:32 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:32 - Archive Handler - nothing done, exiting.
+18:41:32 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:41:32 - Archive Handler - CRC NOT supplied, rename needed
+18:41:32 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:32 - Archive Handler - nothing done, exiting.
+18:41:32 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:41:32 - Archive Handler - CRC NOT supplied, rename needed
+18:41:32 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:32 - Archive Handler - nothing done, exiting.
+18:41:32 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:41:32 - Archive Handler - CRC NOT supplied, rename needed
+18:41:32 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:32 - Archive Handler - nothing done, exiting.
+18:41:32 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:41:32 - Archive Handler - CRC NOT supplied, rename needed
+18:41:32 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:32 - Archive Handler - nothing done, exiting.
+18:41:32 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:41:32 - Archive Handler - CRC NOT supplied, rename needed
+18:41:32 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:32 - Archive Handler - nothing done, exiting.
+18:41:46 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:41:46 - Archive Handler - CRC NOT supplied, rename needed
+18:41:46 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:46 - Archive Handler - nothing done, exiting.
+18:41:46 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:41:46 - Archive Handler - CRC NOT supplied, rename needed
+18:41:46 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:46 - Archive Handler - nothing done, exiting.
+18:41:46 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:41:46 - Archive Handler - CRC NOT supplied, rename needed
+18:41:46 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:46 - Archive Handler - nothing done, exiting.
+18:41:46 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:41:46 - Archive Handler - CRC NOT supplied, rename needed
+18:41:46 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:46 - Archive Handler - nothing done, exiting.
+18:41:46 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:41:46 - Archive Handler - CRC NOT supplied, rename needed
+18:41:46 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:46 - Archive Handler - nothing done, exiting.
+18:41:46 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:41:46 - Archive Handler - CRC NOT supplied, rename needed
+18:41:46 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:46 - Archive Handler - nothing done, exiting.
+18:41:46 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:41:46 - Archive Handler - CRC NOT supplied, rename needed
+18:41:46 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:46 - Archive Handler - nothing done, exiting.
+18:41:46 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:41:46 - Archive Handler - CRC NOT supplied, rename needed
+18:41:46 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:41:46 - Archive Handler - nothing done, exiting.
+18:42:22 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:42:22 - Archive Handler - CRC NOT supplied, rename needed
+18:42:35 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:42:35 - Archive Handler - nothing done, exiting.
+18:42:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:42:35 - Archive Handler - CRC NOT supplied, rename needed
+18:42:35 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:42:35 - Archive Handler - nothing done, exiting.
+18:42:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:42:35 - Archive Handler - CRC NOT supplied, rename needed
+18:42:35 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:42:35 - Archive Handler - nothing done, exiting.
+18:42:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:42:35 - Archive Handler - CRC NOT supplied, rename needed
+18:42:35 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:42:35 - Archive Handler - nothing done, exiting.
+18:42:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:42:35 - Archive Handler - CRC NOT supplied, rename needed
+18:42:35 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:42:35 - Archive Handler - nothing done, exiting.
+18:42:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:42:35 - Archive Handler - CRC NOT supplied, rename needed
+18:42:35 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:42:35 - Archive Handler - nothing done, exiting.
+18:42:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:42:35 - Archive Handler - CRC NOT supplied, rename needed
+18:42:35 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:42:35 - Archive Handler - nothing done, exiting.
+18:42:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:42:35 - Archive Handler - CRC NOT supplied, rename needed
+18:42:35 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:42:35 - Archive Handler - nothing done, exiting.
+18:43:6 - Initializing...
+18:43:6 - Creating menus
+18:43:6 - Loading config
+18:43:6 - Init classes
+18:43:6 - Done init
+18:43:30 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:43:30 - Archive Handler - CRC NOT supplied, rename needed
+18:43:31 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:43:31 - Archive Handler - nothing done, exiting.
+18:43:31 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:43:31 - Archive Handler - CRC NOT supplied, rename needed
+18:43:31 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:43:31 - Archive Handler - nothing done, exiting.
+18:43:31 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:43:31 - Archive Handler - CRC NOT supplied, rename needed
+18:43:31 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:43:31 - Archive Handler - nothing done, exiting.
+18:43:31 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:43:31 - Archive Handler - CRC NOT supplied, rename needed
+18:43:31 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:43:31 - Archive Handler - nothing done, exiting.
+18:43:31 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:43:31 - Archive Handler - CRC NOT supplied, rename needed
+18:43:31 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:43:31 - Archive Handler - nothing done, exiting.
+18:43:31 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:43:31 - Archive Handler - CRC NOT supplied, rename needed
+18:43:31 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:43:31 - Archive Handler - nothing done, exiting.
+18:43:31 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:43:31 - Archive Handler - CRC NOT supplied, rename needed
+18:43:31 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:43:31 - Archive Handler - nothing done, exiting.
+18:43:31 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:43:31 - Archive Handler - CRC NOT supplied, rename needed
+18:43:31 - Archive Handler - Asked to allow rename files inside archive. Response - No
+18:43:31 - Archive Handler - nothing done, exiting.
+18:43:44 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+18:43:44 - Archive Handler - CRC NOT supplied, rename needed
+18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:43:45 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+18:43:45 - Archive Handler - CRC NOT supplied, rename needed
+18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:43:45 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+18:43:45 - Archive Handler - CRC NOT supplied, rename needed
+18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:43:45 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+18:43:45 - Archive Handler - CRC NOT supplied, rename needed
+18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:43:45 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+18:43:45 - Archive Handler - CRC NOT supplied, rename needed
+18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:43:45 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+18:43:45 - Archive Handler - CRC NOT supplied, rename needed
+18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:43:45 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+18:43:45 - Archive Handler - CRC NOT supplied, rename needed
+18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+18:43:45 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+18:43:45 - Archive Handler - CRC NOT supplied, rename needed
+18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes

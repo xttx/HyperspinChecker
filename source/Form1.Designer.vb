@@ -184,6 +184,10 @@ Partial Class Form1
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.CheckBox26 = New System.Windows.Forms.CheckBox()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox24 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox23 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.CheckBox16 = New System.Windows.Forms.CheckBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -272,6 +276,8 @@ Partial Class Form1
         Me.ShowFiltersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AutofilterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AutofilterRegexConstructorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripSeparator()
+        Me.UndoHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssociationTablesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -301,12 +307,8 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox23 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox24 = New System.Windows.Forms.CheckBox()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripSeparator()
-        Me.UndoHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox28 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox29 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -327,11 +329,11 @@ Partial Class Form1
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -1914,6 +1916,8 @@ Partial Class Form1
         '
         'GroupBox10
         '
+        Me.GroupBox10.Controls.Add(Me.CheckBox29)
+        Me.GroupBox10.Controls.Add(Me.CheckBox28)
         Me.GroupBox10.Controls.Add(Me.Label55)
         Me.GroupBox10.Controls.Add(Me.TextBox30)
         Me.GroupBox10.Controls.Add(Me.Label52)
@@ -1960,15 +1964,15 @@ Partial Class Form1
         Me.ComboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox10.FormattingEnabled = True
         Me.ComboBox10.Items.AddRange(New Object() {"Zip", "Seven Zip"})
-        Me.ComboBox10.Location = New System.Drawing.Point(76, 18)
+        Me.ComboBox10.Location = New System.Drawing.Point(194, 19)
         Me.ComboBox10.Name = "ComboBox10"
-        Me.ComboBox10.Size = New System.Drawing.Size(132, 21)
+        Me.ComboBox10.Size = New System.Drawing.Size(92, 21)
         Me.ComboBox10.TabIndex = 3
         '
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(7, 75)
+        Me.Label54.Location = New System.Drawing.Point(134, 76)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(36, 13)
         Me.Label54.TabIndex = 9
@@ -1977,7 +1981,7 @@ Partial Class Form1
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(6, 21)
+        Me.Label51.Location = New System.Drawing.Point(134, 22)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(34, 13)
         Me.Label51.TabIndex = 4
@@ -1988,15 +1992,15 @@ Partial Class Form1
         Me.ComboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox11.FormattingEnabled = True
         Me.ComboBox11.Items.AddRange(New Object() {"Default", "Bzip", "Copy", "Deflate", "Deflate64", "LZMA", "LZMA2", "Ppmd"})
-        Me.ComboBox11.Location = New System.Drawing.Point(76, 45)
+        Me.ComboBox11.Location = New System.Drawing.Point(194, 46)
         Me.ComboBox11.Name = "ComboBox11"
-        Me.ComboBox11.Size = New System.Drawing.Size(132, 21)
+        Me.ComboBox11.Size = New System.Drawing.Size(92, 21)
         Me.ComboBox11.TabIndex = 5
         '
         'Label53
         '
         Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(7, 48)
+        Me.Label53.Location = New System.Drawing.Point(134, 49)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(46, 13)
         Me.Label53.TabIndex = 8
@@ -2007,9 +2011,9 @@ Partial Class Form1
         Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox12.FormattingEnabled = True
         Me.ComboBox12.Items.AddRange(New Object() {"None", "Fast", "Low", "Normal", "High", "Ultra"})
-        Me.ComboBox12.Location = New System.Drawing.Point(76, 72)
+        Me.ComboBox12.Location = New System.Drawing.Point(194, 73)
         Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(132, 21)
+        Me.ComboBox12.Size = New System.Drawing.Size(92, 21)
         Me.ComboBox12.TabIndex = 6
         '
         'GroupBox7
@@ -2078,6 +2082,52 @@ Partial Class Form1
         Me.CheckBox26.TabIndex = 0
         Me.CheckBox26.Text = "Use rom path from HL settings"
         Me.CheckBox26.UseVisualStyleBackColor = True
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.CheckBox24)
+        Me.GroupBox8.Controls.Add(Me.CheckBox23)
+        Me.GroupBox8.Controls.Add(Me.CheckBox22)
+        Me.GroupBox8.Location = New System.Drawing.Point(457, 139)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(208, 86)
+        Me.GroupBox8.TabIndex = 9
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "Clones use Parents vids && themes"
+        '
+        'CheckBox24
+        '
+        Me.CheckBox24.AutoSize = True
+        Me.CheckBox24.Enabled = False
+        Me.CheckBox24.Location = New System.Drawing.Point(17, 63)
+        Me.CheckBox24.Name = "CheckBox24"
+        Me.CheckBox24.Size = New System.Drawing.Size(153, 17)
+        Me.CheckBox24.TabIndex = 2
+        Me.CheckBox24.Text = "Clones use parents themes"
+        Me.CheckBox24.UseVisualStyleBackColor = True
+        '
+        'CheckBox23
+        '
+        Me.CheckBox23.AutoSize = True
+        Me.CheckBox23.Enabled = False
+        Me.CheckBox23.Location = New System.Drawing.Point(17, 40)
+        Me.CheckBox23.Name = "CheckBox23"
+        Me.CheckBox23.Size = New System.Drawing.Size(150, 17)
+        Me.CheckBox23.TabIndex = 1
+        Me.CheckBox23.Text = "Clones use parents videos"
+        Me.CheckBox23.UseVisualStyleBackColor = True
+        '
+        'CheckBox22
+        '
+        Me.CheckBox22.AutoSize = True
+        Me.CheckBox22.Checked = True
+        Me.CheckBox22.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox22.Location = New System.Drawing.Point(6, 17)
+        Me.CheckBox22.Name = "CheckBox22"
+        Me.CheckBox22.Size = New System.Drawing.Size(136, 17)
+        Me.CheckBox22.TabIndex = 0
+        Me.CheckBox22.Text = "Use HyperSpin settings"
+        Me.CheckBox22.UseVisualStyleBackColor = True
         '
         'GroupBox6
         '
@@ -2781,6 +2831,17 @@ Partial Class Form1
         Me.AutofilterRegexConstructorToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.AutofilterRegexConstructorToolStripMenuItem.Text = "Autofilter regex constructor"
         '
+        'ToolStripMenuItem12
+        '
+        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
+        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(245, 6)
+        '
+        'UndoHistoryToolStripMenuItem
+        '
+        Me.UndoHistoryToolStripMenuItem.Name = "UndoHistoryToolStripMenuItem"
+        Me.UndoHistoryToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.UndoHistoryToolStripMenuItem.Text = "Undo History"
+        '
         'ToolsToolStripMenuItem
         '
         Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssociationTablesToolStripMenuItem, Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem, Me.GenresFavoritesManagerToolStripMenuItem, Me.ToolStripMenuItem6, Me.ShowDatabaseStatisticToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem, Me.ConvertersToolStripMenuItem, Me.ToolStripMenuItem7, Me.RemoveClonesFromCurrentDBToolStripMenuItem, Me.DIFFToolToolStripMenuItem, Me.DualFolderOperationsToolStripMenuItem, Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem, Me.ToolStripMenuItem8, Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem, Me.MAMERomsetReducerToolStripMenuItem, Me.VideoDownloaderToolStripMenuItem})
@@ -2956,62 +3017,26 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader ..."
         '
-        'CheckBox22
+        'CheckBox28
         '
-        Me.CheckBox22.AutoSize = True
-        Me.CheckBox22.Checked = True
-        Me.CheckBox22.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox22.Location = New System.Drawing.Point(6, 17)
-        Me.CheckBox22.Name = "CheckBox22"
-        Me.CheckBox22.Size = New System.Drawing.Size(136, 17)
-        Me.CheckBox22.TabIndex = 0
-        Me.CheckBox22.Text = "Use HyperSpin settings"
-        Me.CheckBox22.UseVisualStyleBackColor = True
+        Me.CheckBox28.AutoSize = True
+        Me.CheckBox28.Location = New System.Drawing.Point(11, 21)
+        Me.CheckBox28.Name = "CheckBox28"
+        Me.CheckBox28.Size = New System.Drawing.Size(120, 17)
+        Me.CheckBox28.TabIndex = 13
+        Me.CheckBox28.Text = "Rename in archives"
+        Me.CheckBox28.UseVisualStyleBackColor = True
         '
-        'CheckBox23
+        'CheckBox29
         '
-        Me.CheckBox23.AutoSize = True
-        Me.CheckBox23.Enabled = False
-        Me.CheckBox23.Location = New System.Drawing.Point(17, 40)
-        Me.CheckBox23.Name = "CheckBox23"
-        Me.CheckBox23.Size = New System.Drawing.Size(150, 17)
-        Me.CheckBox23.TabIndex = 1
-        Me.CheckBox23.Text = "Clones use parents videos"
-        Me.CheckBox23.UseVisualStyleBackColor = True
-        '
-        'CheckBox24
-        '
-        Me.CheckBox24.AutoSize = True
-        Me.CheckBox24.Enabled = False
-        Me.CheckBox24.Location = New System.Drawing.Point(17, 63)
-        Me.CheckBox24.Name = "CheckBox24"
-        Me.CheckBox24.Size = New System.Drawing.Size(153, 17)
-        Me.CheckBox24.TabIndex = 2
-        Me.CheckBox24.Text = "Clones use parents themes"
-        Me.CheckBox24.UseVisualStyleBackColor = True
-        '
-        'GroupBox8
-        '
-        Me.GroupBox8.Controls.Add(Me.CheckBox24)
-        Me.GroupBox8.Controls.Add(Me.CheckBox23)
-        Me.GroupBox8.Controls.Add(Me.CheckBox22)
-        Me.GroupBox8.Location = New System.Drawing.Point(457, 139)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(208, 86)
-        Me.GroupBox8.TabIndex = 9
-        Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "Clones use Parents vids && themes"
-        '
-        'ToolStripMenuItem12
-        '
-        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
-        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(245, 6)
-        '
-        'UndoHistoryToolStripMenuItem
-        '
-        Me.UndoHistoryToolStripMenuItem.Name = "UndoHistoryToolStripMenuItem"
-        Me.UndoHistoryToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
-        Me.UndoHistoryToolStripMenuItem.Text = "Undo History"
+        Me.CheckBox29.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CheckBox29.Location = New System.Drawing.Point(11, 48)
+        Me.CheckBox29.Name = "CheckBox29"
+        Me.CheckBox29.Size = New System.Drawing.Size(117, 41)
+        Me.CheckBox29.TabIndex = 14
+        Me.CheckBox29.Text = "Remove unneeded files from archive"
+        Me.CheckBox29.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CheckBox29.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -3067,6 +3092,8 @@ Partial Class Form1
         Me.GroupBox7.PerformLayout()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -3075,8 +3102,6 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3365,4 +3390,6 @@ Partial Class Form1
     Friend WithEvents CheckBox22 As CheckBox
     Friend WithEvents ToolStripMenuItem12 As ToolStripSeparator
     Friend WithEvents UndoHistoryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckBox28 As CheckBox
+    Friend WithEvents CheckBox29 As CheckBox
 End Class

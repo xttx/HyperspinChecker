@@ -8,6 +8,7 @@ Public Class Form2_checkMissingInOtherFolders
         Dim dstPath As String
     End Structure
     Dim refr As Boolean = True
+    Dim override_copy_mode(5) As Boolean
     Dim restore_textbox_focus As Boolean = False
     Dim crc_cache As New Dictionary(Of String, Dictionary(Of String, String))
     Dim corresponding_games As New Dictionary(Of String, String)
@@ -187,20 +188,38 @@ Public Class Form2_checkMissingInOtherFolders
         For Each c As Control In Me.Controls
             If Not c.Name.ToUpper.StartsWith("LISTBOX") Then c.Enabled = False
         Next
+
+        'Ovverwride matcher copy mode
+        Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
+        override_copy_mode(0) = frm.AssocOption_fileInDiffFolder_copy.Checked
+        override_copy_mode(1) = frm.AssocOption_fileInDiffFolder_copyToHS.Checked
+        override_copy_mode(2) = frm.AssocOption_fileInDiffFolder_move.Checked
+        override_copy_mode(3) = frm.AssocOption_fileInDiffFolder_moveToHS.Checked
+        override_copy_mode(4) = frm.AssocOption_fileInHsFolder_copy.Checked
+        override_copy_mode(5) = frm.AssocOption_fileInHsFolder_move.Checked
+        frm.AssocOption_fileInDiffFolder_copy.Checked = False
+        frm.AssocOption_fileInDiffFolder_copyToHS.Checked = True
+        frm.AssocOption_fileInDiffFolder_move.Checked = False
+        frm.AssocOption_fileInDiffFolder_moveToHS.Checked = False
+        frm.AssocOption_fileInHsFolder_copy.Checked = False
+        frm.AssocOption_fileInHsFolder_move.Checked = True
+
         Dim param As New renamer_param With {.dstPath = dstPath}
         bg_rename.RunWorkerAsync(param)
     End Sub
     Private Sub Button2_Click_BG(o As Object, e As DoWorkEventArgs) Handles bg_rename.DoWork
         Dim progress As Integer = 0
         Dim param As renamer_param = DirectCast(e.Argument, renamer_param)
+        Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
 
         If Not CheckBox2.Checked Then
             'name mode
             ProgressBar1.Invoke(Sub() ProgressBar1.Maximum = ListBox1.Items.Count)
             For Each filename As String In ListBox1.Items
-                CopyFile(TextBox1.Text + "\" + filename, param.dstPath + "\" + filename)
-                'ProgressBar1.Value += 1
-                'If ProgressBar1.Value Mod 3 = 0 Then ProgressBar1.Refresh()
+                Dim fNameWoExt = filename
+                If fNameWoExt.Contains(".") Then fNameWoExt = fNameWoExt.Substring(0, fNameWoExt.LastIndexOf("."))
+                'CopyFile(TextBox1.Text + "\" + filename, param.dstPath + "\" + filename)
+                frm.matcher_class.associate_copyMove(TextBox1.Text, param.dstPath, fNameWoExt, filename)
                 progress += 1
                 If progress Mod 3 = 0 Then bg_rename.ReportProgress(progress)
             Next
@@ -209,6 +228,11 @@ Public Class Form2_checkMissingInOtherFolders
             ProgressBar1.Invoke(Sub() ProgressBar1.Maximum = corresponding_games.Count)
 
             Dim z As New Class7_archives
+            Class7_archives.lastRespons_rename = MsgBoxResult.Retry
+            Class7_archives.lastRespons_keepOne = MsgBoxResult.Retry
+            Class7_archives.rename = Class7_archives.answer.ask_once
+            Class7_archives.keep_only_one = Class7_archives.answer.ask_once
+
             Dim realdir As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(TextBox1.Text).FullName.ToUpper
             If Not realdir.EndsWith("\") Then realdir = realdir + "\"
             If Not crc_cache.ContainsKey(realdir) Then MsgBox("CRC cache is empty.") : Exit Sub
@@ -216,43 +240,54 @@ Public Class Form2_checkMissingInOtherFolders
                 Dim f = GetFileInfo(item.Value).Name
                 Dim fWoExt As String = f.Substring(0, f.LastIndexOf("."))
 
-                If Not z.isArchive(item.Value) Then
-                    'file mode
-                    If fWoExt.ToUpper <> item.Key.ToUpper Then
-                        If allowRename = MsgBoxResult.Retry Then allowRename = MsgBox("At least one of files have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
-                        Button2_Click_sub(item.Value, param.dstPath, item.Key)
-                    End If
-                Else
-                    'archive mode
-                    z.setFile(item.Value)
-                    'Dim rename As Boolean = False
-                    If fWoExt.ToUpper <> item.Key.ToUpper Then
-                        If allowRename = MsgBoxResult.Retry Then allowRename = MsgBox("At least one of files have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
-                    End If
-
-                    'check if filename inside have wrong name, and ask if it should recompress to rename file inside
-                    Dim arcF As String = ""
-                    For Each a In z.ArchiveFileData
-                        If Hex(a.Crc).ToUpper = crc_cache(realdir)(item.Value.ToUpper) Then arcF = a.FileName : Exit For
-                    Next
-                    If arcF = "" Then MsgBox("Needed file not found in archive. Something wrong. Aborting.") : Exit Sub
-                    If arcF.Contains("\") And arcF.IndexOf("\") <> arcF.Length - 1 Then arcF = arcF.Substring(arcF.LastIndexOf("\") + 1)
-                    Dim arcFWoExt As String = arcF : If arcF.Contains(".") Then arcFWoExt = arcF.Substring(0, arcF.LastIndexOf("."))
-                    If arcFWoExt.ToUpper <> item.Key.ToUpper Then
-                        If allowRenameInArchive = MsgBoxResult.Retry Then allowRenameInArchive = MsgBox("At least one of files, INSIDE ARCHIVE have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
-                        If allowRenameInArchive = MsgBoxResult.Yes Then
-                            'rename file in archive
-                            'check if it have multiple files and ask if it should just keep one, when rearchiving
-                            If z.ArchiveFileData.Count > 1 Then
-                                If allowDeleteAllButGameInArchive = MsgBoxResult.Retry Then allowDeleteAllButGameInArchive = MsgBox("At least one of archive contains more than one files. Do you want to remove other files and only keep needed file?", MsgBoxStyle.YesNo)
-                            End If
-                            Button2_Click_sub(item.Value, param.dstPath, item.Key, True, crc_cache(realdir)(item.Value.ToUpper))
-                        Else
-                            'just copy archive
-                            Button2_Click_sub(item.Value, param.dstPath, item.Key)
-                        End If
-                    End If
+                If fWoExt.ToUpper <> item.Key.ToUpper Then
+                    If allowRename = MsgBoxResult.Retry Then allowRename = MsgBox("At least one of files have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
                 End If
+                If allowRename = MsgBoxResult.Yes Then
+                    frm.matcher_class.associate_copyMove(TextBox1.Text, param.dstPath, item.Key, f)
+                Else
+                    frm.matcher_class.associate_copyMove(TextBox1.Text, param.dstPath, fWoExt, f)
+                End If
+
+                'If Not z.isArchive(item.Value) Then
+                '    'file mode
+                '    If fWoExt.ToUpper <> item.Key.ToUpper Then
+                '        If allowRename = MsgBoxResult.Retry Then allowRename = MsgBox("At least one of files have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
+                '    End If
+                '    If fWoExt.ToUpper <> item.Key.ToUpper Then
+                '        'Button2_Click_sub(item.Value, param.dstPath, item.Key)
+                '    End If
+                'Else
+                'archive mode
+                '    z.setFile(item.Value)
+                '    'Dim rename As Boolean = False
+                '    If fWoExt.ToUpper <> item.Key.ToUpper Then
+                '        If allowRename = MsgBoxResult.Retry Then allowRename = MsgBox("At least one of files have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
+                '    End If
+
+                '    'check if filename inside have wrong name, and ask if it should recompress to rename file inside
+                '    Dim arcF As String = ""
+                '    For Each a In z.ArchiveFileData
+                '        If Hex(a.Crc).ToUpper = crc_cache(realdir)(item.Value.ToUpper) Then arcF = a.FileName : Exit For
+                '    Next
+                '    If arcF = "" Then MsgBox("Needed file not found in archive. Something wrong. Aborting.") : Exit Sub
+                '    If arcF.Contains("\") And arcF.IndexOf("\") <> arcF.Length - 1 Then arcF = arcF.Substring(arcF.LastIndexOf("\") + 1)
+                '    Dim arcFWoExt As String = arcF : If arcF.Contains(".") Then arcFWoExt = arcF.Substring(0, arcF.LastIndexOf("."))
+                '    If arcFWoExt.ToUpper <> item.Key.ToUpper Then
+                '        If allowRenameInArchive = MsgBoxResult.Retry Then allowRenameInArchive = MsgBox("At least one of files, INSIDE ARCHIVE have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
+                '        If allowRenameInArchive = MsgBoxResult.Yes Then
+                '            'rename file in archive
+                '            'check if it have multiple files and ask if it should just keep one, when rearchiving
+                '            If z.ArchiveFileData.Count > 1 Then
+                '                If allowDeleteAllButGameInArchive = MsgBoxResult.Retry Then allowDeleteAllButGameInArchive = MsgBox("At least one of archive contains more than one files. Do you want to remove other files and only keep needed file?", MsgBoxStyle.YesNo)
+                '            End If
+                '            Button2_Click_sub(item.Value, param.dstPath, item.Key, True, crc_cache(realdir)(item.Value.ToUpper))
+                '        Else
+                '            'just copy archive
+                '            Button2_Click_sub(item.Value, param.dstPath, item.Key)
+                '        End If
+                '    End If
+                'End If
                 progress += 1
                 If progress Mod 3 = 0 Then bg_rename.ReportProgress(progress)
             Next
@@ -265,6 +300,14 @@ Public Class Form2_checkMissingInOtherFolders
         For Each c As Control In Me.Controls
             c.Enabled = True
         Next
+
+        Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
+        frm.AssocOption_fileInDiffFolder_copy.Checked = override_copy_mode(0)
+        frm.AssocOption_fileInDiffFolder_copyToHS.Checked = override_copy_mode(1)
+        frm.AssocOption_fileInDiffFolder_move.Checked = override_copy_mode(2)
+        frm.AssocOption_fileInDiffFolder_moveToHS.Checked = override_copy_mode(3)
+        frm.AssocOption_fileInHsFolder_copy.Checked = override_copy_mode(4)
+        frm.AssocOption_fileInHsFolder_move.Checked = override_copy_mode(5)
         MsgBox("Done.")
         Me.Close()
     End Sub
@@ -288,9 +331,9 @@ Public Class Form2_checkMissingInOtherFolders
             Dim only_keep_crc As Boolean = False
             If z.ArchiveFileData.Count > 1 And allowDeleteAllButGameInArchive = MsgBoxResult.Yes Then only_keep_crc = True
             If allowRename = MsgBoxResult.Yes Then
-                z.renameInArchive(src, dstPath + "\" + gamename, gamename, crc, only_keep_crc)
+                z.renameInArchive(dstPath + "\" + gamename, gamename, crc, only_keep_crc)
             Else
-                z.renameInArchive(src, dstPath + "\" + fWoExt, gamename, crc, only_keep_crc)
+                z.renameInArchive(dstPath + "\" + fWoExt, gamename, crc, only_keep_crc)
             End If
         End If
     End Sub

@@ -240,13 +240,13 @@ Public Class Form6_autorenamer
                                                     End If
                                                     If allowKeepOnlyNeeded = MsgBoxResult.Yes Then
                                                         'rename inside arch and keep only crc
-                                                        z.renameInArchive(realFilePath, realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper), True)
+                                                        z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper), True)
                                                     Else
                                                         'jest rename inside arch
-                                                        z.renameInArchive(realFilePath, realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper))
+                                                        z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper))
                                                     End If
                                                 Else
-                                                    z.renameInArchive(realFilePath, realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper))
+                                                    z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper))
                                                 End If
                                             End If
                                         End If
