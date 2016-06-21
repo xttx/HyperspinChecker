@@ -164,24 +164,14 @@ Public Class Class3_matcher
             Dim dst_dir As String = FileSystem.GetDirectoryInfo(get_HS_Path_of_selected_media()).FullName.ToLower
             If Not src_dir.EndsWith("\") Then src_dir = src_dir + "\" : If Not dst_dir.EndsWith("\") Then dst_dir = dst_dir + "\"
 
-            '''''''''''HANDLE SUBFOLDERED MODE
-            Dim list As New List(Of String)
-            If .CheckBox3.Checked Then
-                'subfoldered mode on
-                Dim wildcards() As String = getCurMediaExtensionWildcards()
-                list = FileSystem.GetFiles(.TextBox4.Text + "\" + l2_selected_file, FileIO.SearchOption.SearchTopLevelOnly, wildcards).ToList
-                If list.Count = 0 Then MsgBox("This folder does not contain any files that match rom's extensions.") : Exit Sub
-                If list.Count > 1 Then MsgBox("This folder contains multiple files that match rom's extensions. This situation is not handled yet, sorry." + vbCrLf + "The program simply doesn't know what file need to be renamed. Try use 'Override Extension' in options.") : Exit Sub
-            Else
-                'subfoldered mode off
-                list.Add(l2_selected_file)
-                ext = l2_selected_file.Substring(l2_selected_file.LastIndexOf("."))
+            If Not .CheckBox3.Checked Then
+                'If not subfoldered mode
+                If l2_selected_file.Contains(".") Then ext = l2_selected_file.Substring(l2_selected_file.LastIndexOf("."))
             End If
-            '''''''''''END HANDLER OF SUBFOLDERED MODE
 
             '''''''''''Actual Copy/Rename
             .Label20.Text = "Renaming..." : .Label20.BackColor = Color.Red : .Label20.Refresh()
-            Dim res() As String = associate_copyMove(src_dir, dst_dir, list)
+            Dim res() As String = associate_copyMove(src_dir, dst_dir, l1_selected_game, l2_selected_file, .CheckBox3.Checked, .CheckBox10.Checked)
             If res(0) <> "" Then
                 MsgBox(res(0)) : .Label20.Text = "Ready" : .Label20.BackColor = Color.LightGreen : .Label20.Refresh() : Exit Sub
             End If
@@ -213,7 +203,7 @@ Public Class Class3_matcher
                     'show unmatched files (need to remove file from list)
                     dt_files.Rows.Remove(DirectCast(.ListBox2.SelectedItem, DataRowView).Row)
                 Else
-                    'show matched or both files (just need to select next file)
+                    'show matched or both files (need to change filename and select next file)
                     DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0) = l1_selected_game + ext
                     currentTopIndex += 1
                     currentSelectedIndex += 1
@@ -244,96 +234,100 @@ Public Class Class3_matcher
     End Sub
 
     'Associate SUB - creating file operation array
-    Private Function associate_copyMove(src As String, dst As String, Optional list As List(Of String) = Nothing) As String()
-        With Form1
-            Dim ext As String = ""
-            Dim l1 As String = .ListBox1.SelectedItem.ToString
-            Dim l2 As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
-            Dim op As New List(Of String())
-            Try
-                If Not .CheckBox3.Checked Then
-                    'SINGLEFILE MODE
-                    ext = l2.Substring(l2.LastIndexOf("."))
-                    If src = dst Then
-                        'src is in HS folder
-                        If .CheckBox10.Checked Then dst = dst + "\" + l1
+    Private Function associate_copyMove(src_dir As String, dst_dir As String, gameName As String, fName As String, Optional subfoldered_mode As Boolean = False, Optional create_sub_folder As Boolean = False) As String()
+        Dim ext As String = ""
+        'Dim l1 As String = .ListBox1.SelectedItem.ToString
+        'Dim l2 As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
+        Dim op As New List(Of String())
+        Try
+            If Not subfoldered_mode Then
+                'SINGLEFILE MODE
+                ext = fName.Substring(fName.LastIndexOf("."))
+                If src_dir = dst_dir Then
+                    'src is in HS folder
+                    If create_sub_folder Then dst_dir = dst_dir + "\" + gameName
 
-                        If Form1.AssocOption_fileInHsFolder_copy.Checked Then
-                            'Copy (duplicate)
-                            op.Add({"FILECOPY", src + "\" + l2, dst + "\" + l1 + ext})
-                        ElseIf Form1.AssocOption_fileInHsFolder_move.Checked Then
-                            'Move (rename)
-                            op.Add({"FILERENAME", src + "\" + l2, dst + "\" + l1 + ext})
-                        End If
-                    Else
-                        'src is in different folder
-                        If Form1.AssocOption_fileInDiffFolder_copy.Checked Then
-                            'Copy in place
-                            op.Add({"FILECOPY", src + "\" + l2, src + "\" + l1 + ext})
-                        ElseIf Form1.AssocOption_fileInDiffFolder_move.Checked Then
-                            'Move in place
-                            op.Add({"FILERENAME", src + "\" + l2, src + "\" + l1 + ext})
-                        ElseIf Form1.AssocOption_fileInDiffFolder_copyToHS.Checked Then
-                            'Copy to HS folder
-                            op.Add({"FILECOPY", src + "\" + l2, dst + "\" + l1 + ext})
-                        ElseIf Form1.AssocOption_fileInDiffFolder_moveToHS.Checked Then
-                            'Move to HS folder
-                            op.Add({"FILERENAME", src + "\" + l2, dst + "\" + l1 + ext})
-                        End If
+                    If Form1.AssocOption_fileInHsFolder_copy.Checked Then
+                        'Copy (duplicate)
+                        op.Add({"FILECOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
+                    ElseIf Form1.AssocOption_fileInHsFolder_move.Checked Then
+                        'Move (rename)
+                        op.Add({"FILERENAME", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
                     End If
                 Else
-                    'SUBFOLDERED MODE
-                    ext = list.Item(0).Substring(list.Item(0).LastIndexOf("."))
-                    Dim filename As String = list.Item(0).Substring(list.Item(0).LastIndexOf("\") + 1)
-
-                    If src = dst Then
-                        'src is in HS folder
-                        If Form1.AssocOption_fileInHsFolder_copy.Checked Then
-                            'Copy (duplicate)
-                            op.Add({"DIRCOPY", src + "\" + l2, dst + "\" + l1 + "\"})
-                            Dim res0 As String = associate_fileOP(op)
-                            If res0 <> "" Then Return {res0, ext}
-                            op = New List(Of String())
-                            op.Add({"FILERENAME", dst + "\" + l1 + "\" + filename, dst + "\" + l1 + "\" + l1 + ext, "0"})
-                        ElseIf Form1.AssocOption_fileInHsFolder_move.Checked Then
-                            'Move (rename)
-                            op.Add({"FILERENAME", list.Item(0), dst + "\" + l2 + "\" + l1 + ext, "0"})
-                            op.Add({"DIRRENAME", src + "\" + l2, l1, "0"})
-                        End If
-                    Else
-                        'src is in different folder
-                        If Form1.AssocOption_fileInDiffFolder_copy.Checked Then
-                            'Copy in place
-                            op.Add({"DIRCOPY", src + "\" + l2, src + "\" + l1 + "\"})
-                            Dim res0 As String = associate_fileOP(op)
-                            If res0 <> "" Then Return {res0, ext}
-                            op = New List(Of String())
-                            op.Add({"FILERENAME", src + "\" + l1 + "\" + filename, src + "\" + l1 + "\" + l1 + ext, "0"})
-                        ElseIf Form1.AssocOption_fileInDiffFolder_move.Checked Then
-                            'Move in place
-                            op.Add({"FILERENAME", list.Item(0), src + "\" + l2 + "\" + l1 + ext, "0"})
-                            op.Add({"DIRRENAME", src + "\" + l2, l1, "0"})
-                        ElseIf Form1.AssocOption_fileInDiffFolder_copyToHS.Checked Then
-                            'Copy to HS folder
-                            op.Add({"DIRCOPY", src + "\" + l2, dst + "\" + l1 + "\"})
-                            Dim res0 As String = associate_fileOP(op)
-                            If res0 <> "" Then Return {res0, ext}
-                            op = New List(Of String())
-                            op.Add({"FILERENAME", dst + "\" + l1 + "\" + filename, dst + "\" + l1 + "\" + l1 + ext, "0"})
-                        ElseIf Form1.AssocOption_fileInDiffFolder_moveToHS.Checked Then
-                            'Move to HS folder
-
-                        End If
+                    'src is in different folder
+                    If Form1.AssocOption_fileInDiffFolder_copy.Checked Then
+                        'Copy in place
+                        op.Add({"FILECOPY", src_dir + "\" + fName, src_dir + "\" + gameName + ext})
+                    ElseIf Form1.AssocOption_fileInDiffFolder_move.Checked Then
+                        'Move in place
+                        op.Add({"FILERENAME", src_dir + "\" + fName, src_dir + "\" + gameName + ext})
+                    ElseIf Form1.AssocOption_fileInDiffFolder_copyToHS.Checked Then
+                        'Copy to HS folder
+                        op.Add({"FILECOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
+                    ElseIf Form1.AssocOption_fileInDiffFolder_moveToHS.Checked Then
+                        'Move to HS folder
+                        op.Add({"FILERENAME", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
                     End If
                 End If
+            Else
+                'SUBFOLDERED MODE
+                Dim list As New List(Of String)
+                Dim wildcards() As String = getCurMediaExtensionWildcards()
+                list = FileSystem.GetFiles(src_dir + "\" + fName, FileIO.SearchOption.SearchTopLevelOnly, wildcards).ToList
+                If list.Count = 0 Then Return {"This folder does not contain any files that match rom's extensions.", ""}
+                If list.Count > 1 Then Return {"This folder contains multiple files that match rom's extensions. This situation is not handled yet, sorry." + vbCrLf + "The program simply doesn't know what file need to be renamed. Try use 'Override Extension' in options.", ""}
 
-                Dim res As String = associate_fileOP(op)
-                If res <> "" Then Return {res, ext}
-            Catch ex As Exception
-                Return {ex.Message, ext}
-            End Try
-            Return {"", ext}
-        End With
+                ext = list.Item(0).Substring(list.Item(0).LastIndexOf("."))
+                Dim filename As String = list.Item(0).Substring(list.Item(0).LastIndexOf("\") + 1)
+
+                If src_dir = dst_dir Then
+                    'src is in HS folder
+                    If Form1.AssocOption_fileInHsFolder_copy.Checked Then
+                        'Copy (duplicate)
+                        op.Add({"DIRCOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + "\"})
+                        Dim res0 As String = associate_fileOP(op)
+                        If res0 <> "" Then Return {res0, ext}
+                        op = New List(Of String())
+                        op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
+                    ElseIf Form1.AssocOption_fileInHsFolder_move.Checked Then
+                        'Move (rename)
+                        op.Add({"FILERENAME", list.Item(0), dst_dir + "\" + fName + "\" + gameName + ext, "0"})
+                        op.Add({"DIRRENAME", src_dir + "\" + fName, gameName, "0"})
+                    End If
+                Else
+                    'src is in different folder
+                    If Form1.AssocOption_fileInDiffFolder_copy.Checked Then
+                        'Copy in place
+                        op.Add({"DIRCOPY", src_dir + "\" + fName, src_dir + "\" + gameName + "\"})
+                        Dim res0 As String = associate_fileOP(op)
+                        If res0 <> "" Then Return {res0, ext}
+                        op = New List(Of String())
+                        op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, src_dir + "\" + gameName + "\" + gameName + ext, "0"})
+                    ElseIf Form1.AssocOption_fileInDiffFolder_move.Checked Then
+                        'Move in place
+                        op.Add({"FILERENAME", list.Item(0), src_dir + "\" + fName + "\" + gameName + ext, "0"})
+                        op.Add({"DIRRENAME", src_dir + "\" + fName, gameName, "0"})
+                    ElseIf Form1.AssocOption_fileInDiffFolder_copyToHS.Checked Then
+                        'Copy to HS folder
+                        op.Add({"DIRCOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + "\"})
+                        Dim res0 As String = associate_fileOP(op)
+                        If res0 <> "" Then Return {res0, ext}
+                        op = New List(Of String())
+                        op.Add({"FILERENAME", dst_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
+                    ElseIf Form1.AssocOption_fileInDiffFolder_moveToHS.Checked Then
+                        'Move to HS folder
+                        'TODO
+                    End If
+                End If
+            End If
+
+            Dim res As String = associate_fileOP(op)
+            If res <> "" Then Return {res, ext}
+        Catch ex As Exception
+            Return {ex.Message, ext}
+        End Try
+        Return {"", ext}
     End Function
 
     'Associate SUB - checks .cue and actual performing files operations

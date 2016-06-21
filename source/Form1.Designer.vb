@@ -181,20 +181,9 @@ Partial Class Form1
         Me.Button19 = New System.Windows.Forms.Button()
         Me.TextBox28 = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox14 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton18 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton19 = New System.Windows.Forms.RadioButton()
-        Me.GroupBox13 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton16 = New System.Windows.Forms.RadioButton()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.CheckBox26 = New System.Windows.Forms.CheckBox()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox24 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox23 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.CheckBox16 = New System.Windows.Forms.CheckBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -284,6 +273,7 @@ Partial Class Form1
         Me.AutofilterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AutofilterRegexConstructorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssociationTablesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenresFavoritesManagerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripSeparator()
@@ -311,7 +301,10 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AssociationTablesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox23 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox24 = New System.Windows.Forms.CheckBox()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -331,15 +324,12 @@ Partial Class Form1
         Me.TabPage5.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
-        Me.GroupBox12.SuspendLayout()
-        Me.GroupBox14.SuspendLayout()
-        Me.GroupBox13.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -1903,7 +1893,6 @@ Partial Class Form1
         Me.TabPage5.BackColor = System.Drawing.Color.Transparent
         Me.TabPage5.Controls.Add(Me.GroupBox10)
         Me.TabPage5.Controls.Add(Me.GroupBox7)
-        Me.TabPage5.Controls.Add(Me.GroupBox12)
         Me.TabPage5.Controls.Add(Me.GroupBox9)
         Me.TabPage5.Controls.Add(Me.GroupBox8)
         Me.TabPage5.Controls.Add(Me.GroupBox6)
@@ -2058,83 +2047,6 @@ Partial Class Form1
         Me.Label50.TabIndex = 0
         Me.Label50.Text = "UltraISO path (used to convert CD images):"
         '
-        'GroupBox12
-        '
-        Me.GroupBox12.Controls.Add(Me.GroupBox14)
-        Me.GroupBox12.Controls.Add(Me.GroupBox13)
-        Me.GroupBox12.Location = New System.Drawing.Point(218, 231)
-        Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Size = New System.Drawing.Size(447, 102)
-        Me.GroupBox12.TabIndex = 8
-        Me.GroupBox12.TabStop = False
-        Me.GroupBox12.Text = "Associations:"
-        '
-        'GroupBox14
-        '
-        Me.GroupBox14.Controls.Add(Me.RadioButton18)
-        Me.GroupBox14.Controls.Add(Me.RadioButton19)
-        Me.GroupBox14.Location = New System.Drawing.Point(239, 19)
-        Me.GroupBox14.Name = "GroupBox14"
-        Me.GroupBox14.Size = New System.Drawing.Size(202, 77)
-        Me.GroupBox14.TabIndex = 9
-        Me.GroupBox14.TabStop = False
-        Me.GroupBox14.Text = "When file is in different folder:"
-        '
-        'RadioButton18
-        '
-        Me.RadioButton18.AutoSize = True
-        Me.RadioButton18.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton18.Name = "RadioButton18"
-        Me.RadioButton18.Size = New System.Drawing.Size(52, 17)
-        Me.RadioButton18.TabIndex = 14
-        Me.RadioButton18.Text = "Move"
-        Me.RadioButton18.UseVisualStyleBackColor = True
-        '
-        'RadioButton19
-        '
-        Me.RadioButton19.AutoSize = True
-        Me.RadioButton19.Checked = True
-        Me.RadioButton19.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton19.Name = "RadioButton19"
-        Me.RadioButton19.Size = New System.Drawing.Size(49, 17)
-        Me.RadioButton19.TabIndex = 13
-        Me.RadioButton19.TabStop = True
-        Me.RadioButton19.Text = "Copy"
-        Me.RadioButton19.UseVisualStyleBackColor = True
-        '
-        'GroupBox13
-        '
-        Me.GroupBox13.Controls.Add(Me.RadioButton17)
-        Me.GroupBox13.Controls.Add(Me.RadioButton16)
-        Me.GroupBox13.Location = New System.Drawing.Point(6, 19)
-        Me.GroupBox13.Name = "GroupBox13"
-        Me.GroupBox13.Size = New System.Drawing.Size(227, 77)
-        Me.GroupBox13.TabIndex = 8
-        Me.GroupBox13.TabStop = False
-        Me.GroupBox13.Text = "When file already in the destination folder:"
-        '
-        'RadioButton17
-        '
-        Me.RadioButton17.AutoSize = True
-        Me.RadioButton17.Checked = True
-        Me.RadioButton17.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton17.Name = "RadioButton17"
-        Me.RadioButton17.Size = New System.Drawing.Size(96, 17)
-        Me.RadioButton17.TabIndex = 17
-        Me.RadioButton17.TabStop = True
-        Me.RadioButton17.Text = "Move (rename)"
-        Me.RadioButton17.UseVisualStyleBackColor = True
-        '
-        'RadioButton16
-        '
-        Me.RadioButton16.AutoSize = True
-        Me.RadioButton16.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton16.Name = "RadioButton16"
-        Me.RadioButton16.Size = New System.Drawing.Size(101, 17)
-        Me.RadioButton16.TabIndex = 16
-        Me.RadioButton16.Text = "Copy (duplicate)"
-        Me.RadioButton16.UseVisualStyleBackColor = True
-        '
         'GroupBox9
         '
         Me.GroupBox9.Controls.Add(Me.Label40)
@@ -2164,52 +2076,6 @@ Partial Class Form1
         Me.CheckBox26.TabIndex = 0
         Me.CheckBox26.Text = "Use rom path from HL settings"
         Me.CheckBox26.UseVisualStyleBackColor = True
-        '
-        'GroupBox8
-        '
-        Me.GroupBox8.Controls.Add(Me.CheckBox24)
-        Me.GroupBox8.Controls.Add(Me.CheckBox23)
-        Me.GroupBox8.Controls.Add(Me.CheckBox22)
-        Me.GroupBox8.Location = New System.Drawing.Point(457, 139)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(208, 86)
-        Me.GroupBox8.TabIndex = 9
-        Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "Clones use Parents vids && themes"
-        '
-        'CheckBox24
-        '
-        Me.CheckBox24.AutoSize = True
-        Me.CheckBox24.Enabled = False
-        Me.CheckBox24.Location = New System.Drawing.Point(17, 63)
-        Me.CheckBox24.Name = "CheckBox24"
-        Me.CheckBox24.Size = New System.Drawing.Size(153, 17)
-        Me.CheckBox24.TabIndex = 2
-        Me.CheckBox24.Text = "Clones use parents themes"
-        Me.CheckBox24.UseVisualStyleBackColor = True
-        '
-        'CheckBox23
-        '
-        Me.CheckBox23.AutoSize = True
-        Me.CheckBox23.Enabled = False
-        Me.CheckBox23.Location = New System.Drawing.Point(17, 40)
-        Me.CheckBox23.Name = "CheckBox23"
-        Me.CheckBox23.Size = New System.Drawing.Size(150, 17)
-        Me.CheckBox23.TabIndex = 1
-        Me.CheckBox23.Text = "Clones use parents videos"
-        Me.CheckBox23.UseVisualStyleBackColor = True
-        '
-        'CheckBox22
-        '
-        Me.CheckBox22.AutoSize = True
-        Me.CheckBox22.Checked = True
-        Me.CheckBox22.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox22.Location = New System.Drawing.Point(6, 17)
-        Me.CheckBox22.Name = "CheckBox22"
-        Me.CheckBox22.Size = New System.Drawing.Size(136, 17)
-        Me.CheckBox22.TabIndex = 0
-        Me.CheckBox22.Text = "Use HyperSpin settings"
-        Me.CheckBox22.UseVisualStyleBackColor = True
         '
         'GroupBox6
         '
@@ -2920,6 +2786,12 @@ Partial Class Form1
         Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
         '
+        'AssociationTablesToolStripMenuItem
+        '
+        Me.AssociationTablesToolStripMenuItem.Name = "AssociationTablesToolStripMenuItem"
+        Me.AssociationTablesToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
+        Me.AssociationTablesToolStripMenuItem.Text = "Association Tables ..."
+        '
         'CheckHyperLaunch3rdPartyPathsToolStripMenuItem
         '
         Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem.Name = "CheckHyperLaunch3rdPartyPathsToolStripMenuItem"
@@ -3082,11 +2954,51 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader ..."
         '
-        'AssociationTablesToolStripMenuItem
+        'CheckBox22
         '
-        Me.AssociationTablesToolStripMenuItem.Name = "AssociationTablesToolStripMenuItem"
-        Me.AssociationTablesToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
-        Me.AssociationTablesToolStripMenuItem.Text = "Association Tables ..."
+        Me.CheckBox22.AutoSize = True
+        Me.CheckBox22.Checked = True
+        Me.CheckBox22.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox22.Location = New System.Drawing.Point(6, 17)
+        Me.CheckBox22.Name = "CheckBox22"
+        Me.CheckBox22.Size = New System.Drawing.Size(136, 17)
+        Me.CheckBox22.TabIndex = 0
+        Me.CheckBox22.Text = "Use HyperSpin settings"
+        Me.CheckBox22.UseVisualStyleBackColor = True
+        '
+        'CheckBox23
+        '
+        Me.CheckBox23.AutoSize = True
+        Me.CheckBox23.Enabled = False
+        Me.CheckBox23.Location = New System.Drawing.Point(17, 40)
+        Me.CheckBox23.Name = "CheckBox23"
+        Me.CheckBox23.Size = New System.Drawing.Size(150, 17)
+        Me.CheckBox23.TabIndex = 1
+        Me.CheckBox23.Text = "Clones use parents videos"
+        Me.CheckBox23.UseVisualStyleBackColor = True
+        '
+        'CheckBox24
+        '
+        Me.CheckBox24.AutoSize = True
+        Me.CheckBox24.Enabled = False
+        Me.CheckBox24.Location = New System.Drawing.Point(17, 63)
+        Me.CheckBox24.Name = "CheckBox24"
+        Me.CheckBox24.Size = New System.Drawing.Size(153, 17)
+        Me.CheckBox24.TabIndex = 2
+        Me.CheckBox24.Text = "Clones use parents themes"
+        Me.CheckBox24.UseVisualStyleBackColor = True
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.CheckBox24)
+        Me.GroupBox8.Controls.Add(Me.CheckBox23)
+        Me.GroupBox8.Controls.Add(Me.CheckBox22)
+        Me.GroupBox8.Location = New System.Drawing.Point(457, 139)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(208, 86)
+        Me.GroupBox8.TabIndex = 9
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "Clones use Parents vids && themes"
         '
         'Form1
         '
@@ -3140,15 +3052,8 @@ Partial Class Form1
         Me.GroupBox10.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
-        Me.GroupBox12.ResumeLayout(False)
-        Me.GroupBox14.ResumeLayout(False)
-        Me.GroupBox14.PerformLayout()
-        Me.GroupBox13.ResumeLayout(False)
-        Me.GroupBox13.PerformLayout()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -3157,6 +3062,8 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3304,10 +3211,6 @@ Partial Class Form1
     Friend WithEvents Label39 As System.Windows.Forms.Label
     Friend WithEvents Button24 As System.Windows.Forms.Button
     Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
-    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
-    Friend WithEvents CheckBox22 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox24 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox23 As System.Windows.Forms.CheckBox
     Friend WithEvents Button27 As System.Windows.Forms.Button
     Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
     Friend WithEvents CheckBox26 As System.Windows.Forms.CheckBox
@@ -3338,13 +3241,6 @@ Partial Class Form1
     Friend WithEvents UseCustomFolderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CheckBox27 As System.Windows.Forms.CheckBox
     Friend WithEvents AlwaysShowDetailedTotalStatusToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox14 As System.Windows.Forms.GroupBox
-    Friend WithEvents RadioButton18 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton19 As System.Windows.Forms.RadioButton
-    Friend WithEvents GroupBox13 As System.Windows.Forms.GroupBox
-    Friend WithEvents RadioButton17 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton16 As System.Windows.Forms.RadioButton
     Friend WithEvents ShowHideColumnsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CommitDbEditionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button36 As System.Windows.Forms.Button
@@ -3450,4 +3346,8 @@ Partial Class Form1
     Friend WithEvents Label55 As Label
     Friend WithEvents CheckBox21 As CheckBox
     Friend WithEvents AssociationTablesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents CheckBox24 As CheckBox
+    Friend WithEvents CheckBox23 As CheckBox
+    Friend WithEvents CheckBox22 As CheckBox
 End Class

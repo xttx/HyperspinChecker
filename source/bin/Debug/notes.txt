@@ -1,3 +1,76 @@
+Tree to check in matcher
+subfoldered
+  same dir
+    copy
+      renaming .cue
+        renaming simple
+        renaming pair
+      renaming .bin or .iso (check for .cue)
+        renaming simple
+        renaming pair
+      renaming simple
+        renaming simple
+        renaming pair
+    move
+        renaming simple
+        renaming pair
+  other dir
+    copy in place
+      renaming .cue
+        renaming simple
+        renaming pair
+      renaming .bin or .iso (check for .cue)
+        renaming simple
+        renaming pair
+      renaming simple
+        renaming simple
+        renaming pair
+    move
+        renaming simple
+        renaming pair
+    move in place
+      renaming .cue
+        renaming simple
+        renaming pair
+      renaming .bin or .iso (check for .cue)
+        renaming simple
+        renaming pair
+      renaming simple
+        renaming simple
+        renaming pair
+    move
+        renaming simple
+        renaming pair
+    copy to hs folder
+      renaming .cue
+        renaming simple
+        renaming pair
+      renaming .bin or .iso (check for .cue)
+        renaming simple
+        renaming pair
+      renaming simple
+        renaming simple
+        renaming pair
+    move
+        renaming simple
+        renaming pair
+    move to hs folder
+      renaming .cue
+        renaming simple
+        renaming pair
+      renaming .bin or .iso (check for .cue)
+        renaming simple
+        renaming pair
+      renaming simple
+        renaming simple
+        renaming pair
+    move
+        renaming simple
+        renaming pair
+not subfoldered
+  ...All of above
+
+
 TODO:
 - strange bug - launch without config, set HS path, set use HL, check any system
 - association tables
