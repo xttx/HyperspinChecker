@@ -116,6 +116,7 @@ Public Class Form1
     Friend subfoldered As Boolean = False
     Friend subfoldered2 As Boolean = False
     Friend undo As New List(Of List(Of String))
+    Friend undo_humanReadable As New List(Of List(Of String))
     Private romExtensions() As String = {""}
     Private oldCombo4Value As Integer = 0
     Private useParentVids, useParentThemes As Boolean
@@ -1294,6 +1295,11 @@ Public Class Form1
         If FormD_matcher_autofilter_constructor.Visible Then Exit Sub
         Dim f As New FormD_matcher_autofilter_constructor
         f.ShowDialog(Me)
+    End Sub
+    'Undo History
+    Private Sub UndoHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UndoHistoryToolStripMenuItem.Click
+        Dim frm As New FormH_undoHistory
+        frm.Show()
     End Sub
 
     'Tools / Association tables

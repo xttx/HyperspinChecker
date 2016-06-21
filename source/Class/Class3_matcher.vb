@@ -236,10 +236,10 @@ Public Class Class3_matcher
     'Associate SUB - creating file operation array
     Private Function associate_copyMove(src_dir As String, dst_dir As String, gameName As String, fName As String, Optional subfoldered_mode As Boolean = False, Optional create_sub_folder As Boolean = False) As String()
         Dim ext As String = ""
-        'Dim l1 As String = .ListBox1.SelectedItem.ToString
-        'Dim l2 As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
         Dim op As New List(Of String())
         Try
+            src_dir = FileSystem.GetDirectoryInfo(src_dir).FullName.ToLower
+            dst_dir = FileSystem.GetDirectoryInfo(dst_dir).FullName.ToLower
             If Not subfoldered_mode Then
                 'SINGLEFILE MODE
                 ext = fName.Substring(fName.LastIndexOf("."))
@@ -429,38 +429,57 @@ Public Class Class3_matcher
 
         'Actual performing file operations and undo array fill
         Form1.undo.Add(New List(Of String))
+        Form1.undo_humanReadable.Add(New List(Of String))
+        Dim undoIndex = Form1.undo.Count - 1
         If tmp.Count > 0 Then op.InsertRange(1, tmp)
         Try
             For Each o In op
                 If o(0) = "FILECOPY" Then
                     FileSystem.CopyFile(o(1), o(2))
                     If o(1).Substring(o(1).LastIndexOf(".") + 1).ToLower = "cue" And restoreCue Then
-                        Form1.undo(Form1.undo.Count - 1).Add("RESTORECUE?" + o(1))
-                        Form1.undo(Form1.undo.Count - 1).Add("FILEREMOVE?" + o(2))
+                        Form1.undo(undoIndex).Add("RESTORECUE?" + o(1))
+                        Form1.undo(undoIndex).Add("FILEREMOVE?" + o(2))
+                        Form1.undo_humanReadable(undoIndex).Add("Copy File")
+                        Form1.undo_humanReadable(undoIndex).Add("- rewrote .cue" + o(1))
+                        Form1.undo_humanReadable(undoIndex).Add("- copy " + o(1) + " to " + o(2))
                     Else
-                        Form1.undo(Form1.undo.Count - 1).Add("FILEREMOVE?" + o(2))
+                        Form1.undo(undoIndex).Add("FILEREMOVE?" + o(2))
+                        Form1.undo_humanReadable(undoIndex).Add("Copy File " + o(1) + " to " + o(2))
                     End If
                 End If
                 If o(0) = "FILERENAME" Then
                     FileSystem.MoveFile(o(1), o(2))
                     If o(1).Substring(o(1).LastIndexOf(".") + 1).ToLower = "cue" And restoreCue Then
-                        Form1.undo(Form1.undo.Count - 1).Add("RESTORECUE?" + o(1))
-                        Form1.undo(Form1.undo.Count - 1).Add("FILEREMOVE?" + o(2))
+                        Form1.undo(undoIndex).Add("RESTORECUE?" + o(1))
+                        Form1.undo(undoIndex).Add("FILEREMOVE?" + o(2))
+                        Form1.undo_humanReadable(undoIndex).Add("Move File")
+                        Form1.undo_humanReadable(undoIndex).Add("- rewrote .cue" + o(1))
+                        Form1.undo_humanReadable(undoIndex).Add("- move " + o(1) + " to " + o(2))
                     Else
-                        Form1.undo(Form1.undo.Count - 1).Add("FILERENAME?" + o(2) + "?" + o(1))
+                        Form1.undo(undoIndex).Add("FILERENAME?" + o(2) + "?" + o(1))
+                        Form1.undo_humanReadable(undoIndex).Add("Move File " + o(1) + " to " + o(2))
                     End If
                 End If
-                If o(0) = "DIRCOPY" Then FileSystem.CopyDirectory(o(1), o(2)) : Form1.undo(Form1.undo.Count - 1).Add("DIRREMOVE?" + o(2))
-                If o(0) = "DIRMOVE" Then FileSystem.MoveDirectory(o(1), o(2)) : Form1.undo(Form1.undo.Count - 1).Add("DIRMOVE?" + o(2) + "?" + o(1))
+                If o(0) = "DIRCOPY" Then
+                    FileSystem.CopyDirectory(o(1), o(2))
+                    Form1.undo(undoIndex).Add("DIRREMOVE?" + o(2))
+                    Form1.undo_humanReadable(undoIndex).Add("Copy Directory " + o(1) + " to " + o(2))
+                End If
+                If o(0) = "DIRMOVE" Then
+                    FileSystem.MoveDirectory(o(1), o(2))
+                    Form1.undo(undoIndex).Add("DIRMOVE?" + o(2) + "?" + o(1))
+                    Form1.undo_humanReadable(undoIndex).Add("Move Directory " + o(1) + " to " + o(2))
+                End If
                 If o(0) = "DIRRENAME" Then
                     FileSystem.RenameDirectory(o(1), o(2))
                     Dim name As String = o(1).Substring(o(1).LastIndexOf("\") + 1)
                     Dim path As String = o(1).Substring(0, o(1).LastIndexOf("\") + 1)
-                    Form1.undo(Form1.undo.Count - 1).Add("DIRRENAME?" + path + o(2) + "?" + name)
+                    Form1.undo(undoIndex).Add("DIRRENAME?" + path + o(2) + "?" + name)
+                    Form1.undo_humanReadable(undoIndex).Add("Rename Directory " + o(1) + " to " + o(2))
                 End If
             Next
         Catch ex As Exception
-            If Form1.undo(Form1.undo.Count - 1).Count = 0 Then Form1.undo.RemoveAt(Form1.undo.Count - 1)
+            If Form1.undo(undoIndex).Count = 0 Then Form1.undo.RemoveAt(undoIndex) : Form1.undo_humanReadable.RemoveAt(undoIndex)
             Return ex.Message
         End Try
         Return ""
@@ -540,9 +559,10 @@ Public Class Class3_matcher
     'UNDO click
     Private Sub associate_undo() Handles ButtonStrip1.Click
         If Form1.undo.Count = 0 Then MsgBox("Nothing to undo.") : Exit Sub
+        Dim undoIndex As Integer = Form1.undo.Count - 1
         Dim msg As String = "The following operations will be executed:" + vbCrLf
-        For i As Integer = Form1.undo(Form1.undo.Count - 1).Count - 1 To 0 Step -1
-            Dim m() As String = Form1.undo(Form1.undo.Count - 1)(i).Split("?"c)
+        For i As Integer = Form1.undo(undoIndex).Count - 1 To 0 Step -1
+            Dim m() As String = Form1.undo(undoIndex)(i).Split("?"c)
             m(1) = m(1).Replace("\\", "\")
             If m(0) = "FILEREMOVE" Then msg = msg + "Remove file: " + m(1) + vbCrLf
             If m(0) = "FILERENAME" Then msg = msg + "Rename file: " + m(1) + " to " + m(2).Replace("\\", "\") + vbCrLf
@@ -553,13 +573,16 @@ Public Class Class3_matcher
         Next
         msg = msg + "Is it OK?"
         If MsgBox(msg, MsgBoxStyle.YesNo) = MsgBoxResult.No Then
-            If MsgBox("Remove this operation from undo list?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then Form1.undo.RemoveAt(Form1.undo.Count - 1)
+            If MsgBox("Remove this operation from undo list?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                Form1.undo.RemoveAt(undoIndex)
+                Form1.undo_humanReadable.RemoveAt(undoIndex)
+            End If
             Exit Sub
         End If
 
-        For i As Integer = Form1.undo(Form1.undo.Count - 1).Count - 1 To 0 Step -1
+        For i As Integer = Form1.undo(undoIndex).Count - 1 To 0 Step -1
             Try
-                Dim o() As String = Form1.undo(Form1.undo.Count - 1)(i).Split("?"c)
+                Dim o() As String = Form1.undo(undoIndex)(i).Split("?"c)
                 If o(0) = "FILEREMOVE" Then FileSystem.DeleteFile(o(1))
                 If o(0) = "FILERENAME" Then FileSystem.MoveFile(o(1), o(2))
                 If o(0) = "DIRREMOVE" Then FileSystem.DeleteDirectory(o(1), DeleteDirectoryOption.DeleteAllContents)
@@ -579,7 +602,8 @@ Public Class Class3_matcher
                 MsgBox(ex.Message, MsgBoxStyle.Exclamation)
             End Try
         Next
-        Form1.undo.RemoveAt(Form1.undo.Count - 1)
+        Form1.undo.RemoveAt(undoIndex)
+        Form1.undo_humanReadable.RemoveAt(undoIndex)
         MsgBox("You have to reCheck to reflect changes")
     End Sub
 

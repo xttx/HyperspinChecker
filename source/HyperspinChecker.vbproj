@@ -239,6 +239,12 @@
     <Compile Include="FormG_associationTables.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormH_undoHistory.Designer.vb">
+      <DependentUpon>FormH_undoHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormH_undoHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.designer.vb">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
     </Compile>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormG_associationTables.resx">
       <DependentUpon>FormG_associationTables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormH_undoHistory.resx">
+      <DependentUpon>FormH_undoHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.resx">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>

@@ -6219,3 +6219,13 @@
 8:50:8 - Loading config
 8:50:8 - Init classes
 8:50:8 - Done init
+10:2:37 - Initializing...
+10:2:37 - Creating menus
+10:2:37 - Loading config
+10:2:37 - Init classes
+10:2:37 - Done init
+10:24:39 - Initializing...
+10:24:39 - Creating menus
+10:24:39 - Loading config
+10:24:39 - Init classes
+10:24:39 - Done init

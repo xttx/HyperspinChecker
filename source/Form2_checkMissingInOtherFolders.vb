@@ -253,8 +253,6 @@ Public Class Form2_checkMissingInOtherFolders
                         End If
                     End If
                 End If
-                'ProgressBar1.Value += 1
-                'If ProgressBar1.Value Mod 3 = 0 Then ProgressBar1.Refresh()
                 progress += 1
                 If progress Mod 3 = 0 Then bg_rename.ReportProgress(progress)
             Next

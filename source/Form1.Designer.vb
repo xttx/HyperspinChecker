@@ -305,6 +305,8 @@ Partial Class Form1
         Me.CheckBox23 = New System.Windows.Forms.CheckBox()
         Me.CheckBox24 = New System.Windows.Forms.CheckBox()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripSeparator()
+        Me.UndoHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -2654,7 +2656,7 @@ Partial Class Form1
         '
         'MatcherToolStripMenuItem
         '
-        Me.MatcherToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AutorenamerToolStripMenuItem, Me.ToolStripMenuItem2, Me.MediaFolderToolStripMenuItem, Me.AssociateToolStripMenuItem, Me.AlwaysShowDetailedTotalStatusToolStripMenuItem, Me.ToolStripMenuItem11, Me.ShowFiltersToolStripMenuItem, Me.AutofilterToolStripMenuItem, Me.AutofilterRegexConstructorToolStripMenuItem})
+        Me.MatcherToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AutorenamerToolStripMenuItem, Me.ToolStripMenuItem2, Me.MediaFolderToolStripMenuItem, Me.AssociateToolStripMenuItem, Me.AlwaysShowDetailedTotalStatusToolStripMenuItem, Me.ToolStripMenuItem11, Me.ShowFiltersToolStripMenuItem, Me.AutofilterToolStripMenuItem, Me.AutofilterRegexConstructorToolStripMenuItem, Me.ToolStripMenuItem12, Me.UndoHistoryToolStripMenuItem})
         Me.MatcherToolStripMenuItem.Name = "MatcherToolStripMenuItem"
         Me.MatcherToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
         Me.MatcherToolStripMenuItem.Text = "Matcher"
@@ -2999,6 +3001,17 @@ Partial Class Form1
         Me.GroupBox8.TabIndex = 9
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Clones use Parents vids && themes"
+        '
+        'ToolStripMenuItem12
+        '
+        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
+        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(245, 6)
+        '
+        'UndoHistoryToolStripMenuItem
+        '
+        Me.UndoHistoryToolStripMenuItem.Name = "UndoHistoryToolStripMenuItem"
+        Me.UndoHistoryToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.UndoHistoryToolStripMenuItem.Text = "Undo History"
         '
         'Form1
         '
@@ -3350,4 +3363,6 @@ Partial Class Form1
     Friend WithEvents CheckBox24 As CheckBox
     Friend WithEvents CheckBox23 As CheckBox
     Friend WithEvents CheckBox22 As CheckBox
+    Friend WithEvents ToolStripMenuItem12 As ToolStripSeparator
+    Friend WithEvents UndoHistoryToolStripMenuItem As ToolStripMenuItem
 End Class
