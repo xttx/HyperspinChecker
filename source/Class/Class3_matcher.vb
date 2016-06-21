@@ -157,70 +157,70 @@ Public Class Class3_matcher
             If .ListBox2.SelectedIndex < 0 Then MsgBox("Select a file to associate to selected database entry.") : Exit Sub
 
             Dim ext As String = ""
-            Dim l1 As String = .ListBox1.SelectedItem.ToString
-            'Dim l2 As String = .ListBox2.SelectedItem.ToString
-            Dim l2 As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
+            Dim l1_selected_game As String = .ListBox1.SelectedItem.ToString
+            Dim l2_selected_file As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
 
-            Dim src As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(.TextBox4.Text).FullName.ToLower
-            Dim dst As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(getPath()).FullName.ToLower
-            If Not src.EndsWith("\") Then src = src + "\" : If Not dst.EndsWith("\") Then dst = dst + "\"
+            Dim src_dir As String = FileSystem.GetDirectoryInfo(.TextBox4.Text).FullName.ToLower
+            Dim dst_dir As String = FileSystem.GetDirectoryInfo(get_HS_Path_of_selected_media()).FullName.ToLower
+            If Not src_dir.EndsWith("\") Then src_dir = src_dir + "\" : If Not dst_dir.EndsWith("\") Then dst_dir = dst_dir + "\"
 
             '''''''''''HANDLE SUBFOLDERED MODE
-            Dim list As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = Nothing
+            Dim list As New List(Of String)
             If .CheckBox3.Checked Then
-                Dim wildcards() As String = strToWildcards()
-                list = FileSystem.GetFiles(.TextBox4.Text + "\" + l2, FileIO.SearchOption.SearchTopLevelOnly, wildcards)
+                'subfoldered mode on
+                Dim wildcards() As String = getCurMediaExtensionWildcards()
+                list = FileSystem.GetFiles(.TextBox4.Text + "\" + l2_selected_file, FileIO.SearchOption.SearchTopLevelOnly, wildcards).ToList
                 If list.Count = 0 Then MsgBox("This folder does not contain any files that match rom's extensions.") : Exit Sub
                 If list.Count > 1 Then MsgBox("This folder contains multiple files that match rom's extensions. This situation is not handled yet, sorry." + vbCrLf + "The program simply doesn't know what file need to be renamed. Try use 'Override Extension' in options.") : Exit Sub
             Else
-                Dim tmpList = New List(Of String) : tmpList.Add(l2)
-                list = New System.Collections.ObjectModel.ReadOnlyCollection(Of String)(tmpList)
-                ext = l2.Substring(l2.LastIndexOf("."))
+                'subfoldered mode off
+                list.Add(l2_selected_file)
+                ext = l2_selected_file.Substring(l2_selected_file.LastIndexOf("."))
             End If
             '''''''''''END HANDLER OF SUBFOLDERED MODE
 
             '''''''''''Actual Copy/Rename
-            Dim res() As String = associate_copyMove(src, dst, list)
+            .Label20.Text = "Renaming..." : .Label20.BackColor = Color.Red : .Label20.Refresh()
+            Dim res() As String = associate_copyMove(src_dir, dst_dir, list)
             If res(0) <> "" Then
-                MsgBox(res(0)) : .Label20.Text = "READY" : .Label20.BackColor = Color.LightGreen : .Label20.Refresh() : Exit Sub
+                MsgBox(res(0)) : .Label20.Text = "Ready" : .Label20.BackColor = Color.LightGreen : .Label20.Refresh() : Exit Sub
             End If
             '''''''''''END Actual Copy/Rename
 
-            'remove from found if needed
+            'If we have renamed a good named file, we have to remove it from found
             'TODO TEST LOGIC WITH "subFOLDERED MODE"
-            Dim l2woext As String = l2
-            If Not .CheckBox3.Checked Then l2woext = l2.Substring(0, l2.LastIndexOf(".")).ToLower
-            If src = dst And Class1.romlist.Contains(l2woext) Then
+            Dim l2_selected_file_woExt As String = l2_selected_file.ToLower
+            If Not .CheckBox3.Checked Then l2_selected_file_woExt = l2_selected_file.Substring(0, l2_selected_file.LastIndexOf("."))
+            If src_dir = dst_dir And Class1.romlist.Contains(l2_selected_file_woExt) Then
                 Dim exist As Boolean = False
-                For Each s As String In strToWildcards()
-                    s = s.Replace("*", l2woext)
-                    If FileSystem.FileExists(src + "\" + s) Then exist = True : Exit For
+                For Each s As String In getCurMediaExtensionWildcards()
+                    s = s.Replace("*", l2_selected_file_woExt)
+                    If FileSystem.FileExists(src_dir + "\" + s) Then exist = True : Exit For
                 Next
-                If Not exist Then Button20_markAsFound_sub(l2woext, Button20_markAsFound_comboToCol(), True)
+                If Not exist Then Button20_markAsFound_sub(l2_selected_file_woExt, Button20_markAsFound_comboToCol(), True)
             End If
             'add to found if needed
             Dim copyToHsFolder As Boolean = .AssocOption_fileInDiffFolder_copyToHS.Checked Or .AssocOption_fileInDiffFolder_moveToHS.Checked
-            If src = dst Or copyToHsFolder Then Button20_markAsFound_sub(l1, Button20_markAsFound_comboToCol())
+            If src_dir = dst_dir Or copyToHsFolder Then Button20_markAsFound_sub(l1_selected_game, Button20_markAsFound_comboToCol())
 
-            'Moving selected index
-            'on box2 (filelist)
+            'Moving selected index on box2 (filelist)
             Dim currentTopIndex As Integer = .ListBox2.TopIndex
-            Dim currentSelectedIndex As Integer
-            'V svoey direktorii ILI (NE v svoey i NE kopiruem)
-            'If (src = dst Or Not .CheckStrip1.Checked) Then
+            Dim currentSelectedIndex As Integer = .ListBox2.SelectedIndex
             .ListBox2.BeginUpdate()
-            If (src = dst Or Not copyToHsFolder) Then
-                If .RadioButton5.Checked Then 'show unmatched files
-                    currentSelectedIndex = .ListBox2.SelectedIndex
-                    '.ListBox2.Items.RemoveAt(.ListBox2.SelectedIndex)
+            If (src_dir = dst_dir Or Not copyToHsFolder) Then
+                'V svoey direktorii ILI (NE v svoey i NE kopiruem) - i.e. src filename is changed
+                If .RadioButton5.Checked Then
+                    'show unmatched files (need to remove file from list)
                     dt_files.Rows.Remove(DirectCast(.ListBox2.SelectedItem, DataRowView).Row)
-                Else 'show matched or both files
-                    '.ListBox2.Items(.ListBox2.SelectedIndex) = l1 + ext
-                    DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0) = l1 + ext
+                Else
+                    'show matched or both files (just need to select next file)
+                    DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0) = l1_selected_game + ext
                     currentTopIndex += 1
-                    currentSelectedIndex = .ListBox2.SelectedIndex + 1
+                    currentSelectedIndex += 1
                 End If
             Else
+                'V drugoy directorii ili v svoey no copiruem - i.e. src filename is not changed
+                currentTopIndex += 1
                 currentSelectedIndex = .ListBox2.SelectedIndex + 1
             End If
             Dim b As New BindingContext : b(dt_files).EndCurrentEdit()
@@ -228,8 +228,8 @@ Public Class Class3_matcher
             If .ListBox2.Items.Count > currentSelectedIndex Then .ListBox2.SelectedIndex = currentSelectedIndex Else .ListBox2.SelectedIndex = currentSelectedIndex - 1
             .ListBox2.EndUpdate()
 
-            'on box1 (DB entry list)
-            If .RadioButton2.Checked And (src = dst Or copyToHsFolder) Then
+            'Moving selected index on box1 (DB entry list)
+            If .RadioButton2.Checked And (src_dir = dst_dir Or copyToHsFolder) Then
                 currentSelectedIndex = .ListBox1.SelectedIndex
                 .ListBox1.Items.RemoveAt(.ListBox1.SelectedIndex)
             Else
@@ -239,29 +239,25 @@ Public Class Class3_matcher
 
             countFound += 1 : countNotFound -= 1
             countMatchesFiles += 1 : countNotMatchesFiles -= 1 : matcher_update_total_labels()
-            '.Label7.Text = "Total: " + .ListBox1.Items.Count.ToString
-            '.Label9.Text = "Total: " + .ListBox2.Items.Count.ToString
-            .Label20.Text = "READY" : .Label20.BackColor = Color.LightGreen : .Label20.Refresh()
+            .Label20.Text = "Ready" : .Label20.BackColor = Color.LightGreen : .Label20.Refresh()
         End With
     End Sub
 
     'Associate SUB - creating file operation array
-    Private Function associate_copyMove(ByVal src As String, ByVal dst As String, Optional ByVal list As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = Nothing) As String()
+    Private Function associate_copyMove(src As String, dst As String, Optional list As List(Of String) = Nothing) As String()
         With Form1
             Dim ext As String = ""
             Dim l1 As String = .ListBox1.SelectedItem.ToString
-            'Dim l2 As String = .ListBox2.SelectedItem.ToString
             Dim l2 As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
             Dim op As New List(Of String())
             Try
                 If Not .CheckBox3.Checked Then
                     'SINGLEFILE MODE
                     ext = l2.Substring(l2.LastIndexOf("."))
-
                     If src = dst Then
+                        'src is in HS folder
                         If .CheckBox10.Checked Then dst = dst + "\" + l1
 
-                        'src is in HS folder
                         If Form1.AssocOption_fileInHsFolder_copy.Checked Then
                             'Copy (duplicate)
                             op.Add({"FILECOPY", src + "\" + l2, dst + "\" + l1 + ext})
@@ -503,7 +499,7 @@ Public Class Class3_matcher
         Return list
     End Function
 
-    'Associate SUB
+    'Associate SUB - rewrite .cue
     Private Sub associate_rewriteCue(ByVal filename As String, ByVal replaceImageBy As String)
         Dim line As String
         Dim firstBinaryHandled As Boolean = False
@@ -594,7 +590,7 @@ Public Class Class3_matcher
     End Sub
 
     'get path to media based on matcher mediaselect Combobox
-    Private Function getPath() As String
+    Private Function get_HS_Path_of_selected_media() As String
         With Form1
             If .ComboBox3.SelectedIndex = 0 Then
                 'TODO Better handle multiple rompaths
@@ -648,7 +644,7 @@ Public Class Class3_matcher
                     Dim f As String = fi.Substring(fi.LastIndexOf("\") + 1)
                     If .CheckBox3.Checked Then
                         fWoExt = f
-                        If FileSystem.GetFiles(fi, SearchOption.SearchTopLevelOnly, strToWildcards).Count = 0 Then Continue For
+                        If FileSystem.GetFiles(fi, SearchOption.SearchTopLevelOnly, getCurMediaExtensionWildcards).Count = 0 Then Continue For
                     Else
                         fWoExt = f.Substring(0, f.LastIndexOf("."))
                     End If
@@ -714,7 +710,7 @@ Public Class Class3_matcher
         Return False
     End Function
 
-    Private Function strToWildcards() As String()
+    Private Function getCurMediaExtensionWildcards() As String()
         If Form1.ComboBox3.SelectedIndex = 1 Then
             Dim t As String = ""
             If Form1.CheckBox11.Checked Then t = "*.flv"
@@ -762,11 +758,11 @@ Public Class Class3_matcher
 
                 Dim dst As String = ""
                 Dim src As String = FileSystem.GetDirectoryInfo(.TextBox4.Text).FullName.ToLower
-                If .ComboBox3.SelectedIndex >= 0 Then dst = FileSystem.GetDirectoryInfo(getPath()).FullName.ToLower
+                If .ComboBox3.SelectedIndex >= 0 Then dst = FileSystem.GetDirectoryInfo(get_HS_Path_of_selected_media()).FullName.ToLower
 
                 If Not src.EndsWith("\") Then src = src + "\" : If Not dst.EndsWith("\") Then dst = dst + "\"
 
-                Dim w() As String = strToWildcards()
+                Dim w() As String = getCurMediaExtensionWildcards()
                 Dim list As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = Nothing
                 If w(0) <> "" Then
                     If .CheckBox3.Checked Then
