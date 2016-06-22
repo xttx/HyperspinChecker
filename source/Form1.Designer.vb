@@ -168,6 +168,8 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox29 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox28 = New System.Windows.Forms.CheckBox()
         Me.Label55 = New System.Windows.Forms.Label()
         Me.TextBox30 = New System.Windows.Forms.TextBox()
         Me.Label52 = New System.Windows.Forms.Label()
@@ -242,10 +244,10 @@ Partial Class Form1
         Me.F8 = New System.Windows.Forms.ToolStripMenuItem()
         Me.F9 = New System.Windows.Forms.ToolStripMenuItem()
         Me.F10 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F11 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F12 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F14 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F19 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F20 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F21 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F22 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.FPresetChecker = New System.Windows.Forms.ToolStripMenuItem()
         Me.FPresetEditor = New System.Windows.Forms.ToolStripMenuItem()
@@ -307,8 +309,15 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox28 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox29 = New System.Windows.Forms.CheckBox()
+        Me.ShowHideColumnsToolStripMenuItemHL = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F11 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F12 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F13 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F14 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F15 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F16 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F17 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F18 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -1934,6 +1943,27 @@ Partial Class Form1
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Compression"
         '
+        'CheckBox29
+        '
+        Me.CheckBox29.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CheckBox29.Location = New System.Drawing.Point(11, 48)
+        Me.CheckBox29.Name = "CheckBox29"
+        Me.CheckBox29.Size = New System.Drawing.Size(117, 41)
+        Me.CheckBox29.TabIndex = 14
+        Me.CheckBox29.Text = "Remove unneeded files from archive"
+        Me.CheckBox29.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CheckBox29.UseVisualStyleBackColor = True
+        '
+        'CheckBox28
+        '
+        Me.CheckBox28.AutoSize = True
+        Me.CheckBox28.Location = New System.Drawing.Point(11, 21)
+        Me.CheckBox28.Name = "CheckBox28"
+        Me.CheckBox28.Size = New System.Drawing.Size(120, 17)
+        Me.CheckBox28.TabIndex = 13
+        Me.CheckBox28.Text = "Rename in archives"
+        Me.CheckBox28.UseVisualStyleBackColor = True
+        '
         'Label55
         '
         Me.Label55.Location = New System.Drawing.Point(73, 122)
@@ -2517,7 +2547,7 @@ Partial Class Form1
         '
         'ShowHideColumnsToolStripMenuItem
         '
-        Me.ShowHideColumnsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.F0, Me.F1, Me.ToolStripMenuItem3, Me.F2, Me.F3, Me.F4, Me.F5, Me.F6, Me.F7, Me.F8, Me.F9, Me.F10, Me.F11, Me.F12, Me.F13, Me.F14, Me.ToolStripMenuItem4, Me.FPresetChecker, Me.FPresetEditor})
+        Me.ShowHideColumnsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.F0, Me.F1, Me.ToolStripMenuItem3, Me.F2, Me.F3, Me.F4, Me.F5, Me.F6, Me.F7, Me.F8, Me.F9, Me.F10, Me.ShowHideColumnsToolStripMenuItemHL, Me.F19, Me.F20, Me.F21, Me.F22, Me.ToolStripMenuItem4, Me.FPresetChecker, Me.FPresetEditor})
         Me.ShowHideColumnsToolStripMenuItem.Name = "ShowHideColumnsToolStripMenuItem"
         Me.ShowHideColumnsToolStripMenuItem.Size = New System.Drawing.Size(257, 22)
         Me.ShowHideColumnsToolStripMenuItem.Text = "Show / Hide Columns"
@@ -2617,29 +2647,29 @@ Partial Class Form1
         Me.F10.Size = New System.Drawing.Size(184, 22)
         Me.F10.Text = "Show Sounds"
         '
-        'F11
+        'F19
         '
-        Me.F11.Name = "F11"
-        Me.F11.Size = New System.Drawing.Size(184, 22)
-        Me.F11.Text = "Show CRC"
+        Me.F19.Name = "F19"
+        Me.F19.Size = New System.Drawing.Size(184, 22)
+        Me.F19.Text = "Show CRC"
         '
-        'F12
+        'F20
         '
-        Me.F12.Name = "F12"
-        Me.F12.Size = New System.Drawing.Size(184, 22)
-        Me.F12.Text = "Show Manufacturer"
+        Me.F20.Name = "F20"
+        Me.F20.Size = New System.Drawing.Size(184, 22)
+        Me.F20.Text = "Show Manufacturer"
         '
-        'F13
+        'F21
         '
-        Me.F13.Name = "F13"
-        Me.F13.Size = New System.Drawing.Size(184, 22)
-        Me.F13.Text = "Show Year"
+        Me.F21.Name = "F21"
+        Me.F21.Size = New System.Drawing.Size(184, 22)
+        Me.F21.Text = "Show Year"
         '
-        'F14
+        'F22
         '
-        Me.F14.Name = "F14"
-        Me.F14.Size = New System.Drawing.Size(184, 22)
-        Me.F14.Text = "Show Genre"
+        Me.F22.Name = "F22"
+        Me.F22.Size = New System.Drawing.Size(184, 22)
+        Me.F22.Text = "Show Genre"
         '
         'ToolStripMenuItem4
         '
@@ -3017,26 +3047,60 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader ..."
         '
-        'CheckBox28
+        'ShowHideColumnsToolStripMenuItemHL
         '
-        Me.CheckBox28.AutoSize = True
-        Me.CheckBox28.Location = New System.Drawing.Point(11, 21)
-        Me.CheckBox28.Name = "CheckBox28"
-        Me.CheckBox28.Size = New System.Drawing.Size(120, 17)
-        Me.CheckBox28.TabIndex = 13
-        Me.CheckBox28.Text = "Rename in archives"
-        Me.CheckBox28.UseVisualStyleBackColor = True
+        Me.ShowHideColumnsToolStripMenuItemHL.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.F11, Me.F12, Me.F13, Me.F14, Me.F15, Me.F16, Me.F17, Me.F18})
+        Me.ShowHideColumnsToolStripMenuItemHL.Name = "ShowHideColumnsToolStripMenuItemHL"
+        Me.ShowHideColumnsToolStripMenuItemHL.Size = New System.Drawing.Size(184, 22)
+        Me.ShowHideColumnsToolStripMenuItemHL.Text = "Show HL Media"
         '
-        'CheckBox29
+        'F11
         '
-        Me.CheckBox29.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CheckBox29.Location = New System.Drawing.Point(11, 48)
-        Me.CheckBox29.Name = "CheckBox29"
-        Me.CheckBox29.Size = New System.Drawing.Size(117, 41)
-        Me.CheckBox29.TabIndex = 14
-        Me.CheckBox29.Text = "Remove unneeded files from archive"
-        Me.CheckBox29.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CheckBox29.UseVisualStyleBackColor = True
+        Me.F11.Name = "F11"
+        Me.F11.Size = New System.Drawing.Size(193, 22)
+        Me.F11.Text = "Show HL Artworks"
+        '
+        'F12
+        '
+        Me.F12.Name = "F12"
+        Me.F12.Size = New System.Drawing.Size(193, 22)
+        Me.F12.Text = "Show HL Backgrounds"
+        '
+        'F13
+        '
+        Me.F13.Name = "F13"
+        Me.F13.Size = New System.Drawing.Size(193, 22)
+        Me.F13.Text = "Show HL Bezels"
+        '
+        'F14
+        '
+        Me.F14.Name = "F14"
+        Me.F14.Size = New System.Drawing.Size(193, 22)
+        Me.F14.Text = "Show HL Fades"
+        '
+        'F15
+        '
+        Me.F15.Name = "F15"
+        Me.F15.Size = New System.Drawing.Size(193, 22)
+        Me.F15.Text = "Show HL Guides"
+        '
+        'F16
+        '
+        Me.F16.Name = "F16"
+        Me.F16.Size = New System.Drawing.Size(193, 22)
+        Me.F16.Text = "Show HL Manuals"
+        '
+        'F17
+        '
+        Me.F17.Name = "F17"
+        Me.F17.Size = New System.Drawing.Size(193, 22)
+        Me.F17.Text = "Show HL Music"
+        '
+        'F18
+        '
+        Me.F18.Name = "F18"
+        Me.F18.Size = New System.Drawing.Size(193, 22)
+        Me.F18.Text = "Show HL Videos"
         '
         'Form1
         '
@@ -3323,10 +3387,10 @@ Partial Class Form1
     Friend WithEvents F8 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents F9 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents F10 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents F11 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents F12 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents F13 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents F14 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F19 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F20 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F21 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents F22 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents FPresetChecker As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FPresetEditor As System.Windows.Forms.ToolStripMenuItem
@@ -3392,4 +3456,13 @@ Partial Class Form1
     Friend WithEvents UndoHistoryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CheckBox28 As CheckBox
     Friend WithEvents CheckBox29 As CheckBox
+    Friend WithEvents ShowHideColumnsToolStripMenuItemHL As ToolStripMenuItem
+    Friend WithEvents F11 As ToolStripMenuItem
+    Friend WithEvents F12 As ToolStripMenuItem
+    Friend WithEvents F13 As ToolStripMenuItem
+    Friend WithEvents F14 As ToolStripMenuItem
+    Friend WithEvents F15 As ToolStripMenuItem
+    Friend WithEvents F16 As ToolStripMenuItem
+    Friend WithEvents F17 As ToolStripMenuItem
+    Friend WithEvents F18 As ToolStripMenuItem
 End Class

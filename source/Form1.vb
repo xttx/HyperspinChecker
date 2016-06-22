@@ -4,6 +4,7 @@ Imports System.Runtime.InteropServices
 Imports System.ComponentModel
 
 Public Class Form1
+    'TODO Use file extentions from hyperlaunch when check/list roms in matcher
     'TODO After autorenaming something, and then reopen autorenamer and collect info, crash on Form6_autorenamer.vb-line145 cause file not found
     'REQUEST [desrop69 #105] case sensitive crc
     'REQUEST [Acidnine #108] When I check the master snes .xml db file it says there's an error loading it. When I tell it to fix it, it replaces all the ampersands '&' with '&amp;' in the <game name=""> tag. Is this wanted? because now I have to rename my roms with ampersands in them to match the name tag.
@@ -144,10 +145,18 @@ Public Class Form1
     Dim WithEvents CheckStrip2_8 As New CheckBox With {.Name = "08", .Text = "Show Artwork3", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True}
     Dim WithEvents CheckStrip2_9 As New CheckBox With {.Name = "09", .Text = "Show Artwork4", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True}
     Dim WithEvents CheckStrip2_10 As New CheckBox With {.Name = "10", .Text = "Show Sounds", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True}
-    Dim WithEvents CheckStrip2_11 As New CheckBox With {.Name = "11", .Text = "Show CRC", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
-    Dim WithEvents CheckStrip2_12 As New CheckBox With {.Name = "12", .Text = "Show Manufacturer", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
-    Dim WithEvents CheckStrip2_13 As New CheckBox With {.Name = "13", .Text = "Show Year", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
-    Dim WithEvents CheckStrip2_14 As New CheckBox With {.Name = "14", .Text = "Show Genre", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_11 As New CheckBox With {.Name = "11", .Text = "Show HL Artwork", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_12 As New CheckBox With {.Name = "12", .Text = "Show HL Backgrounds", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_13 As New CheckBox With {.Name = "13", .Text = "Show HL Bezels", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_14 As New CheckBox With {.Name = "14", .Text = "Show HL Fade", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_15 As New CheckBox With {.Name = "15", .Text = "Show HL Guides", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_16 As New CheckBox With {.Name = "16", .Text = "Show HL Manuals", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_17 As New CheckBox With {.Name = "17", .Text = "Show HL Music", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_18 As New CheckBox With {.Name = "18", .Text = "Show HL Videos", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_19 As New CheckBox With {.Name = "19", .Text = "Show CRC", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_20 As New CheckBox With {.Name = "20", .Text = "Show Manufacturer", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_21 As New CheckBox With {.Name = "21", .Text = "Show Year", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
+    Dim WithEvents CheckStrip2_22 As New CheckBox With {.Name = "22", .Text = "Show Genre", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False}
 
     Dim WithEvents CheckStrip3_1 As New CheckBox With {.Name = "01", .Text = "Main Menu Database Entry", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
     Dim WithEvents CheckStrip3_2 As New CheckBox With {.Name = "02", .Text = "Database", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
@@ -175,8 +184,119 @@ Public Class Form1
         ComboBox7.Width = TextBox4.Width - 10
         ComboBox8.SelectedIndex = 0
         ComboBox9.SelectedIndex = 0
-        Class1.Log("Creating menus")
 
+        'Init Table Columns
+        Form1_Load_Sub_initTableColumns()
+
+        'Init Context Menus
+        Class1.Log("Creating menus")
+        Form1_Load_Sub_initContextMenus()
+
+        'Convert current DB to clrmame pro dat - options panel
+        Panel2.Left = -100000
+        Panel2.BackColor = Color.FromArgb(0, 255, 0, 0)
+        Dim CheckHost22 As New ToolStripControlHost(Panel2)
+        myContextMenu6.Items.Add(CheckHost22)
+
+        ComboBox4.SelectedIndex = 0
+        ComboBox2.SelectedIndex = 0
+
+        Class1.Log("Loading config")
+        If Not Microsoft.VisualBasic.FileIO.FileSystem.FileExists(Class1.confPath) Then
+            Dim fd As New FolderBrowserDialog
+            fd.Description = "Select hyperspin folder"
+            fd.ShowDialog()
+            FileOpen(1, Class1.confPath, OpenMode.Output)
+            PrintLine(1, "[main]")
+            PrintLine(1, "HyperSpin_Path = " + fd.SelectedPath)
+            PrintLine(1, "rename_just_cue = 1")
+            PrintLine(1, "search_cue_for = bin, iso")
+            PrintLine(1, "useHLv3 = 0")
+            PrintLine(1, "")
+            PrintLine(1, "[handle_together]")
+            PrintLine(1, "mds, mds")
+            FileClose(1)
+        End If
+
+        'Load config
+        Dim v As Boolean
+        Dim s As String = ""
+        Dim ini2 As New IniFileApi
+        ini2.IniFile(Class1.confPath)
+        TextBox14.Text = ini2.IniReadValue("main", "HyperSpin_Path")
+        TextBox16.Text = ini2.IniReadValue("main", "search_cue_for")
+        TextBox28.Text = ini2.IniReadValue("3rd_Party_Tools", "UltraISO")
+        If Not ini2.IniReadValue("main", "rename_just_CUE") = "1" Then CheckBox6.Checked = False
+        If ini2.IniReadValue("main", "archives_rename_inside") = "1" Then CheckBox28.Checked = True
+        If ini2.IniReadValue("main", "archives_remove_unneeded") = "1" Then CheckBox29.Checked = True
+        If ini2.IniReadValue("main", "usehlv3") = "1" Then CheckBox26.Checked = True
+        Dim i As Integer = 1
+        Do While ini2.IniReadValue("handle_together", i.ToString) <> ""
+            ListBox4.Items.Add(ini2.IniReadValue("handle_together", i.ToString))
+            i += 1
+        Loop
+        'Main table startup config
+        For c As Integer = 0 To DataGridView1.ColumnCount - 1
+            s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_visible")
+            If s <> "" Then
+                If s = "0" Then v = False Else v = True
+                DirectCast(myContextMenu4.Controls(Format(c, "00")), CheckBox).Checked = v
+            End If
+
+            s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_Width")
+            If s <> "" Then DataGridView1.Columns(c).Width = CInt(s)
+        Next
+        'System table startup config
+        For c As Integer = 1 To DataGridView2.ColumnCount - 1
+            s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_visible")
+            If s <> "" Then
+                If s = "0" Then v = False Else v = True
+                'DataGridView2.Columns(c).Visible = v
+                DirectCast(myContextMenu8.Controls(Format(c, "00")), CheckBox).Checked = v
+            End If
+
+            s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_Width")
+            If s <> "" Then DataGridView2.Columns(c).Width = CInt(s)
+        Next
+        'Main_window_size
+        s = ini2.IniReadValue("Main", "Main_window_size")
+        If s <> "" Then
+            Me.Width = CInt(s.Split({"x"c})(0))
+            Me.Height = CInt(s.Split({"x"c})(1))
+        End If
+        'Freeze HL Path
+        s = ini2.IniReadValue("Main", "Freeze_HL_path")
+        If s <> "" Then
+            CheckBox21.Checked = True
+            TextBox18.Text = s
+        End If
+        'Compression
+        s = ini2.IniReadValue("Main", "Compression_type")
+        If s <> "" Then ComboBox10.Text = s Else ComboBox10.SelectedIndex = 0
+        s = ini2.IniReadValue("Main", "Compression_method")
+        If s <> "" Then ComboBox11.Text = s Else ComboBox11.SelectedIndex = 0
+        s = ini2.IniReadValue("Main", "Compression_level")
+        If s <> "" Then ComboBox12.Text = s Else ComboBox12.SelectedIndex = 5
+        s = ini2.IniReadValue("Main", "Compression_temp")
+        If s <> "" Then TextBox30.Text = s
+
+        If Not FileSystem.FileExists(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml") Then
+            MsgBox("Can't find '" + Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml'. Check hyperspin path under 'settings' tab, or in the config.conf")
+        Else
+            If Not FileSystem.FileExists(Class1.HyperspinPath + "\Settings\Settings.ini") Then
+                MsgBox("Can't find '" + Class1.HyperspinPath + "\Settings\Settings.ini'. Check hyperspin path under 'settings' tab, or in the config.conf")
+            End If
+        End If
+
+        Class1.Log("Init classes")
+        xml_class = New Class2_xml
+        matcher_class = New Class3_matcher
+        isoChecker = New ISOChecker
+        clrmame_class = New Class4_clrmamepro
+        system_manager_class = New Class5_system_manager
+        Class1.Log("Done init")
+    End Sub
+    Private Sub Form1_Load_Sub_initTableColumns()
         'Main table columns set up
         DataGridView1.Columns.Add("col0", "Database entry")
         DataGridView1.Columns.Add("col1", "RomName")
@@ -189,10 +309,18 @@ Public Class Form1
         DataGridView1.Columns.Add("col8", "Art3")
         DataGridView1.Columns.Add("col9", "Art4")
         DataGridView1.Columns.Add("col10", "Snd")
-        DataGridView1.Columns.Add("col11", "crc")
-        DataGridView1.Columns.Add("col12", "Manufacturer")
-        DataGridView1.Columns.Add("col13", "Year")
-        DataGridView1.Columns.Add("col14", "Genre")
+        DataGridView1.Columns.Add("col11", "HL Artwork")
+        DataGridView1.Columns.Add("col12", "HL Backgrounds")
+        DataGridView1.Columns.Add("col13", "HL Bezels")
+        DataGridView1.Columns.Add("col14", "HL Fade")
+        DataGridView1.Columns.Add("col15", "HL Guides")
+        DataGridView1.Columns.Add("col16", "HL Manuals")
+        DataGridView1.Columns.Add("col17", "HL Music")
+        DataGridView1.Columns.Add("col18", "HL Videos")
+        DataGridView1.Columns.Add("col19", "crc")
+        DataGridView1.Columns.Add("col20", "Manufacturer")
+        DataGridView1.Columns.Add("col21", "Year")
+        DataGridView1.Columns.Add("col22", "Genre")
         DataGridView1.Columns(0).Width = 300 : DataGridView1.Columns(0).ReadOnly = False
         DataGridView1.Columns(1).Width = 100 : DataGridView1.Columns(1).ReadOnly = True
         DataGridView1.Columns(2).Width = 50 : DataGridView1.Columns(2).ReadOnly = True
@@ -204,10 +332,18 @@ Public Class Form1
         DataGridView1.Columns(8).Width = 50 : DataGridView1.Columns(8).ReadOnly = True
         DataGridView1.Columns(9).Width = 50 : DataGridView1.Columns(9).ReadOnly = True
         DataGridView1.Columns(10).Width = 50 : DataGridView1.Columns(10).ReadOnly = True
-        DataGridView1.Columns(11).Width = 75 : DataGridView1.Columns(11).ReadOnly = False : DataGridView1.Columns(11).Visible = False
-        DataGridView1.Columns(12).Width = 180 : DataGridView1.Columns(12).ReadOnly = False : DataGridView1.Columns(12).Visible = False
-        DataGridView1.Columns(13).Width = 65 : DataGridView1.Columns(13).ReadOnly = False : DataGridView1.Columns(13).Visible = False
-        DataGridView1.Columns(14).Width = 120 : DataGridView1.Columns(14).ReadOnly = False : DataGridView1.Columns(14).Visible = False
+        DataGridView1.Columns(11).Width = 50 : DataGridView1.Columns(11).ReadOnly = True : DataGridView1.Columns(11).Visible = False
+        DataGridView1.Columns(12).Width = 50 : DataGridView1.Columns(12).ReadOnly = True : DataGridView1.Columns(12).Visible = False
+        DataGridView1.Columns(13).Width = 50 : DataGridView1.Columns(13).ReadOnly = True : DataGridView1.Columns(13).Visible = False
+        DataGridView1.Columns(14).Width = 50 : DataGridView1.Columns(14).ReadOnly = True : DataGridView1.Columns(14).Visible = False
+        DataGridView1.Columns(15).Width = 50 : DataGridView1.Columns(15).ReadOnly = True : DataGridView1.Columns(15).Visible = False
+        DataGridView1.Columns(16).Width = 50 : DataGridView1.Columns(16).ReadOnly = True : DataGridView1.Columns(16).Visible = False
+        DataGridView1.Columns(17).Width = 50 : DataGridView1.Columns(17).ReadOnly = True : DataGridView1.Columns(17).Visible = False
+        DataGridView1.Columns(18).Width = 50 : DataGridView1.Columns(18).ReadOnly = True : DataGridView1.Columns(18).Visible = False
+        DataGridView1.Columns(19).Width = 75 : DataGridView1.Columns(19).ReadOnly = False : DataGridView1.Columns(19).Visible = False
+        DataGridView1.Columns(20).Width = 180 : DataGridView1.Columns(20).ReadOnly = False : DataGridView1.Columns(20).Visible = False
+        DataGridView1.Columns(21).Width = 65 : DataGridView1.Columns(21).ReadOnly = False : DataGridView1.Columns(21).Visible = False
+        DataGridView1.Columns(22).Width = 120 : DataGridView1.Columns(22).ReadOnly = False : DataGridView1.Columns(22).Visible = False
         Dim t As Type = DataGridView1.GetType
         Dim pi As Reflection.PropertyInfo = t.GetProperty("DoubleBuffered", Reflection.BindingFlags.Instance Or Reflection.BindingFlags.NonPublic)
         pi.SetValue(DataGridView1, True, Nothing)
@@ -245,7 +381,8 @@ Public Class Form1
         DataGridView2.Columns(12).Width = 90 : DataGridView2.Columns(12).Visible = False
         DataGridView2.Columns(13).Width = 90 : DataGridView2.Columns(13).Visible = False
         DataGridView2.Columns(14).Width = 90 : DataGridView2.Columns(14).Visible = False
-
+    End Sub
+    Private Sub Form1_Load_Sub_initContextMenus()
         'Context menu - check missing rom or media in another folder
         myContextMenu.Items.Add("check for missing Roms")
         myContextMenu.Items.Add(New ToolStripSeparator)
@@ -331,6 +468,14 @@ Public Class Form1
         Dim CheckStripHost2_12 As New ToolStripControlHost(CheckStrip2_12)
         Dim CheckStripHost2_13 As New ToolStripControlHost(CheckStrip2_13)
         Dim CheckStripHost2_14 As New ToolStripControlHost(CheckStrip2_14)
+        Dim CheckStripHost2_15 As New ToolStripControlHost(CheckStrip2_15)
+        Dim CheckStripHost2_16 As New ToolStripControlHost(CheckStrip2_16)
+        Dim CheckStripHost2_17 As New ToolStripControlHost(CheckStrip2_17)
+        Dim CheckStripHost2_18 As New ToolStripControlHost(CheckStrip2_18)
+        Dim CheckStripHost2_19 As New ToolStripControlHost(CheckStrip2_19)
+        Dim CheckStripHost2_20 As New ToolStripControlHost(CheckStrip2_20)
+        Dim CheckStripHost2_21 As New ToolStripControlHost(CheckStrip2_21)
+        Dim CheckStripHost2_22 As New ToolStripControlHost(CheckStrip2_22)
         myContextMenu4.Items.Add(CheckStripHost2_0)
         myContextMenu4.Items.Add(CheckStripHost2_1)
         myContextMenu4.Items.Add(New ToolStripSeparator)
@@ -347,9 +492,18 @@ Public Class Form1
         myContextMenu4.Items.Add(CheckStripHost2_12)
         myContextMenu4.Items.Add(CheckStripHost2_13)
         myContextMenu4.Items.Add(CheckStripHost2_14)
+        myContextMenu4.Items.Add(CheckStripHost2_15)
+        myContextMenu4.Items.Add(CheckStripHost2_16)
+        myContextMenu4.Items.Add(CheckStripHost2_17)
+        myContextMenu4.Items.Add(CheckStripHost2_18)
+        myContextMenu4.Items.Add(CheckStripHost2_19)
+        myContextMenu4.Items.Add(CheckStripHost2_20)
+        myContextMenu4.Items.Add(CheckStripHost2_21)
+        myContextMenu4.Items.Add(CheckStripHost2_22)
         myContextMenu4.Items.Add(New ToolStripSeparator)
         myContextMenu4.Items.Add(Preset_Checker)
         myContextMenu4.Items.Add(Preset_Editor)
+        myContextMenu4.Items.Add(Preset_HL)
         myContextMenu4.Items.Add(New ToolStripSeparator)
         myContextMenu4.Items.Add(Save_current_cols_conf_as_startup)
 
@@ -389,112 +543,6 @@ Public Class Form1
         myContextMenu8.Items.Add(Preset_SysMngr_Full)
         myContextMenu8.Items.Add(New ToolStripSeparator)
         myContextMenu8.Items.Add(Save_current_cols_conf_as_startup)
-
-        'Convert current DB to clrmame pro dat - options panel
-        Panel2.Left = -100000
-        Panel2.BackColor = Color.FromArgb(0, 255, 0, 0)
-        Dim CheckHost22 As New ToolStripControlHost(Panel2)
-        myContextMenu6.Items.Add(CheckHost22)
-
-        ComboBox4.SelectedIndex = 0
-        ComboBox2.SelectedIndex = 0
-
-        Class1.Log("Loading config")
-        If Not Microsoft.VisualBasic.FileIO.FileSystem.FileExists(Class1.confPath) Then
-            Dim fd As New FolderBrowserDialog
-            fd.Description = "Select hyperspin folder"
-            fd.ShowDialog()
-            FileOpen(1, Class1.confPath, OpenMode.Output)
-            PrintLine(1, "[main]")
-            PrintLine(1, "HyperSpin_Path = " + fd.SelectedPath)
-            PrintLine(1, "rename_just_cue = 1")
-            PrintLine(1, "search_cue_for = bin, iso")
-            PrintLine(1, "useHLv3 = 0")
-            PrintLine(1, "")
-            PrintLine(1, "[handle_together]")
-            PrintLine(1, "mds, mds")
-            FileClose(1)
-        End If
-
-        'Load config
-        Dim v As Boolean
-        Dim s As String = ""
-        Dim ini2 As New IniFileApi
-        ini2.IniFile(Class1.confPath)
-        TextBox14.Text = ini2.IniReadValue("main", "HyperSpin_Path")
-        TextBox16.Text = ini2.IniReadValue("main", "search_cue_for")
-        TextBox28.Text = ini2.IniReadValue("3rd_Party_Tools", "UltraISO")
-        If Not ini2.IniReadValue("main", "rename_just_CUE") = "1" Then CheckBox6.Checked = False
-        If ini2.IniReadValue("main", "archives_rename_inside") = "1" Then CheckBox28.Checked = True
-        If ini2.IniReadValue("main", "archives_remove_unneeded") = "1" Then CheckBox29.Checked = True
-        If ini2.IniReadValue("main", "usehlv3") = "1" Then CheckBox26.Checked = True
-        Dim i As Integer = 1
-        Do While ini2.IniReadValue("handle_together", i.ToString) <> ""
-            ListBox4.Items.Add(ini2.IniReadValue("handle_together", i.ToString))
-            i += 1
-        Loop
-        'Main table startup config
-        For c As Integer = 0 To DataGridView1.ColumnCount - 1
-            s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_visible")
-            If s <> "" Then
-                If s = "0" Then v = False Else v = True
-                'DataGridView1.Columns(c).Visible = v
-                'DirectCast(ShowHideColumnsToolStripMenuItem.DropDownItems("F" + c.ToString), ToolStripMenuItem).Checked = v
-                DirectCast(myContextMenu4.Controls(Format(c, "00")), CheckBox).Checked = v
-            End If
-
-            s = ini2.IniReadValue("Main_Table_Columns_Config", "Col_" + c.ToString + "_Width")
-            If s <> "" Then DataGridView1.Columns(c).Width = CInt(s)
-        Next
-        'System table startup config
-        For c As Integer = 1 To DataGridView2.ColumnCount - 1
-            s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_visible")
-            If s <> "" Then
-                If s = "0" Then v = False Else v = True
-                'DataGridView2.Columns(c).Visible = v
-                DirectCast(myContextMenu8.Controls(Format(c, "00")), CheckBox).Checked = v
-            End If
-
-            s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_Width")
-            If s <> "" Then DataGridView2.Columns(c).Width = CInt(s)
-        Next
-        'Main_window_size
-        s = ini2.IniReadValue("Main", "Main_window_size")
-        If s <> "" Then
-            Me.Width = CInt(s.Split({"x"c})(0))
-            Me.Height = CInt(s.Split({"x"c})(1))
-        End If
-        'Freeze HL Path
-        s = ini2.IniReadValue("Main", "Freeze_HL_path")
-        If s <> "" Then
-            CheckBox21.Checked = True
-            TextBox18.Text = s
-        End If
-        'Compression
-        s = ini2.IniReadValue("Main", "Compression_type")
-        If s <> "" Then ComboBox10.Text = s Else ComboBox10.SelectedIndex = 0
-        s = ini2.IniReadValue("Main", "Compression_method")
-        If s <> "" Then ComboBox11.Text = s Else ComboBox11.SelectedIndex = 0
-        s = ini2.IniReadValue("Main", "Compression_level")
-        If s <> "" Then ComboBox12.Text = s Else ComboBox12.SelectedIndex = 5
-        s = ini2.IniReadValue("Main", "Compression_temp")
-        If s <> "" Then TextBox30.Text = s
-
-        If Not FileSystem.FileExists(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml") Then
-            MsgBox("Can't find '" + Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml'. Check hyperspin path under 'settings' tab, or in the config.conf")
-        Else
-            If Not FileSystem.FileExists(Class1.HyperspinPath + "\Settings\Settings.ini") Then
-                MsgBox("Can't find '" + Class1.HyperspinPath + "\Settings\Settings.ini'. Check hyperspin path under 'settings' tab, or in the config.conf")
-            End If
-        End If
-
-        Class1.Log("Init classes")
-        xml_class = New Class2_xml
-        matcher_class = New Class3_matcher
-        isoChecker = New ISOChecker
-        clrmame_class = New Class4_clrmamepro
-        system_manager_class = New Class5_system_manager
-        Class1.Log("Done init")
     End Sub
 
     'Form closing - this is handled to save window size in config
@@ -561,7 +609,7 @@ Public Class Form1
         bg_check.RunWorkerAsync(param)
     End Sub
     Private Sub check_bg(sender As Object, e As DoWorkEventArgs) Handles bg_check.DoWork
-        Dim a(10) As String
+        Dim a(18) As String
         Dim romName As String
         Dim tempStr As String
         Dim progress As Integer = 0
@@ -583,13 +631,13 @@ Public Class Form1
 
             'Check rom
             a(2) = ""
-            If Not Class1.romPath.Contains("|") Then 'Handle HL multiple paths
-                'tempPath = Class1.romPath + romName
+            If Not Class1.romPath.Contains("|") Then
+                'Simple path
                 If tryToFindRom(Class1.romPath, romExtensions, romName) Then a(2) = "YES"
-            Else 'Multiple paths routine
+            Else
+                'HL Multiple paths routine
                 For Each temppath2 As String In Class1.romPath.Split({"|"c}, StringSplitOptions.RemoveEmptyEntries)
                     If Not temppath2.EndsWith("\") Then temppath2 = temppath2 + "\"
-                    'temppath2 = temppath2 + romName
                     If tryToFindRom(temppath2, romExtensions, romName) Then a(2) = "YES" : Exit For
                 Next
             End If
@@ -635,11 +683,42 @@ Public Class Form1
             If FileSystem.FileExists(p + "\Images\Artwork4\" + romName + ".png") Or FileSystem.FileExists(p + "\Images\Artwork4\" + romName + ".jpg") Then a(9) = "YES" : counters(8) += 1 Else a(9) = "NO"
             If FileSystem.FileExists(p + "\Sound\Background Music\" + romName + ".mp3") Then a(10) = "YES" : counters(9) += 1 Else a(10) = "NO"
 
+            'Check HL/RL Media
+            If FileSystem.DirectoryExists(Class1.HyperlaunchPath + "\Media") Then
+                a(11) = "NO" : a(12) = "NO" : a(13) = "NO" : a(14) = "NO" : a(15) = "NO" : a(16) = "NO" : a(17) = "NO" : a(18) = "NO"
+                Dim media_fld As String = Class1.HyperlaunchPath + "\Media\"
+                If FileSystem.DirectoryExists(media_fld + "Artwork\" + param.sys + "\" + romName) Then
+                    If FileSystem.GetFiles(media_fld + "Artwork\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.png"}).Count > 0 Then a(11) = "YES"
+                End If
+                If FileSystem.DirectoryExists(media_fld + "Backgrounds\" + param.sys + "\" + romName) Then
+                    If FileSystem.GetFiles(media_fld + "Backgrounds\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".png"}).Count > 0 Then a(12) = "YES"
+                End If
+                If FileSystem.DirectoryExists(media_fld + "Bezels\" + param.sys + "\" + romName) Then
+                    If FileSystem.GetFiles(media_fld + "Bezels\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Bezel.png"}).Count > 0 Then a(13) = "YES"
+                End If
+                If FileSystem.DirectoryExists(media_fld + "Fade\" + param.sys + "\" + romName) Then
+                    If FileSystem.GetFiles(media_fld + "Fade\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Layer 1*.png"}).Count > 0 Then a(14) = "YES"
+                End If
+                If FileSystem.DirectoryExists(media_fld + "Guides\" + param.sys + "\" + romName) Then
+                    If FileSystem.GetFiles(media_fld + "Guides\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.*"}).Count > 0 Then a(15) = "YES"
+                End If
+                If FileSystem.DirectoryExists(media_fld + "Manuals\" + param.sys + "\" + romName) Then
+                    If FileSystem.GetFiles(media_fld + "Manuals\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.pdf"}).Count > 0 Then a(16) = "YES"
+                End If
+                If FileSystem.DirectoryExists(media_fld + "Music\" + param.sys + "\" + romName) Then
+                    If FileSystem.GetFiles(media_fld + "Music\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".m3u"}).Count > 0 Then a(17) = "YES"
+                End If
+                If FileSystem.DirectoryExists(media_fld + "Videos\" + param.sys + "\" + romName) Then
+                    If FileSystem.GetFiles(media_fld + "Videos\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.avi", "*.mp4"}).Count > 0 Then a(18) = "YES"
+                End If
+            End If
+
             'Add row
             Dim r As New DataGridViewRow
-            r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a_crc, a_manufacturer, a_year, a_genre})
+            'r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a_crc, a_manufacturer, a_year, a_genre})
+            r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a(11), a(12), a(13), a(14), a(15), a(16), a(17), a(18), a_crc, a_manufacturer, a_year, a_genre})
             tempStr = ""
-            For i As Integer = 2 To 10
+            For i As Integer = 2 To 18
                 If a(i) = "YES" Then r.Cells(i).Style.BackColor = Class1.colorYES Else r.Cells(i).Style.BackColor = Class1.colorNO
                 tempStr = tempStr + a(i).Substring(0, 1)
             Next
@@ -647,10 +726,8 @@ Public Class Form1
             If useThemeFromParent And a(4) = "YES" Then r.Cells(4).Style.BackColor = Class1.colorPAR
             Class1.data.Add(tempStr)
             Class1.data_crc.Add(a_crc.ToUpper)
-            'DataGridView1.Rows.Add(r)
             DataGridView1.BeginInvoke(Sub() DataGridView1.Rows.Add(r))
             progress += 1 : If progress Mod 50 = 0 Then bg_check.ReportProgress(progress)
-            'ProgressBar1.Value = ProgressBar1.Value + 1 : If ProgressBar1.Value Mod 50 = 0 Then ProgressBar1.Refresh()
         Next
 
         'save lastCheckResult
@@ -1172,7 +1249,7 @@ Public Class Form1
     End Sub
 
     'Table / ShowHide columns
-    Private Sub FilterColumns_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles F0.Click, F1.Click, F2.Click, F3.Click, F4.Click, F5.Click, F6.Click, F7.Click, F8.Click, F9.Click, F10.Click, F11.Click, F12.Click, F13.Click, F14.Click
+    Private Sub FilterColumns_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles F0.Click, F1.Click, F2.Click, F3.Click, F4.Click, F5.Click, F6.Click, F7.Click, F8.Click, F9.Click, F10.Click, F19.Click, F20.Click, F21.Click, F22.Click
         Dim tsmi As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
         If tsmi.Checked Then tsmi.Checked = False Else tsmi.Checked = True
         Dim i As Integer = CInt(tsmi.Name.Substring(1))
@@ -1457,11 +1534,23 @@ Public Class Form1
     End Sub
 
     'Main Table - Show/hide columns checked_change
-    Private Sub ShowHideCol(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckStrip2_0.CheckedChanged, CheckStrip2_1.CheckedChanged, CheckStrip2_2.CheckedChanged, CheckStrip2_3.CheckedChanged, CheckStrip2_4.CheckedChanged, CheckStrip2_5.CheckedChanged, CheckStrip2_6.CheckedChanged, CheckStrip2_7.CheckedChanged, CheckStrip2_8.CheckedChanged, CheckStrip2_9.CheckedChanged, CheckStrip2_10.CheckedChanged, CheckStrip2_11.CheckedChanged, CheckStrip2_12.CheckedChanged, CheckStrip2_13.CheckedChanged, CheckStrip2_14.CheckedChanged
+    Private Sub ShowHideCol(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles _
+        CheckStrip2_0.CheckedChanged, CheckStrip2_1.CheckedChanged, CheckStrip2_2.CheckedChanged,
+        CheckStrip2_3.CheckedChanged, CheckStrip2_4.CheckedChanged, CheckStrip2_5.CheckedChanged,
+        CheckStrip2_6.CheckedChanged, CheckStrip2_7.CheckedChanged, CheckStrip2_8.CheckedChanged,
+        CheckStrip2_9.CheckedChanged, CheckStrip2_10.CheckedChanged, CheckStrip2_11.CheckedChanged,
+        CheckStrip2_12.CheckedChanged, CheckStrip2_13.CheckedChanged, CheckStrip2_14.CheckedChanged,
+        CheckStrip2_15.CheckedChanged, CheckStrip2_16.CheckedChanged, CheckStrip2_17.CheckedChanged,
+        CheckStrip2_18.CheckedChanged, CheckStrip2_19.CheckedChanged, CheckStrip2_20.CheckedChanged,
+        CheckStrip2_21.CheckedChanged, CheckStrip2_22.CheckedChanged
+
         Dim cb As CheckBox = DirectCast(sender, CheckBox)
         Dim i As Integer = CInt(cb.Name)
-        DirectCast(ShowHideColumnsToolStripMenuItem.DropDownItems("F" + i.ToString), ToolStripMenuItem).Checked = cb.Checked
-
+        If ShowHideColumnsToolStripMenuItem.DropDownItems("F" + i.ToString) IsNot Nothing Then
+            DirectCast(ShowHideColumnsToolStripMenuItem.DropDownItems("F" + i.ToString), ToolStripMenuItem).Checked = cb.Checked
+        Else
+            DirectCast(ShowHideColumnsToolStripMenuItemHL.DropDownItems("F" + i.ToString), ToolStripMenuItem).Checked = cb.Checked
+        End If
         DataGridView1.Columns(i).Visible = cb.Checked
     End Sub
 
@@ -1493,8 +1582,39 @@ Public Class Form1
             CheckStrip2_12.Checked = False
             CheckStrip2_13.Checked = False
             CheckStrip2_14.Checked = False
+            CheckStrip2_15.Checked = False
+            CheckStrip2_16.Checked = False
+            CheckStrip2_17.Checked = False
+            CheckStrip2_18.Checked = False
+            CheckStrip2_19.Checked = False
+            CheckStrip2_20.Checked = False
+            CheckStrip2_21.Checked = False
+            CheckStrip2_22.Checked = False
         End If
         If e.ClickedItem.Text = Preset_Editor Then
+            CheckStrip2_2.Checked = False
+            CheckStrip2_3.Checked = False
+            CheckStrip2_4.Checked = False
+            CheckStrip2_5.Checked = False
+            CheckStrip2_6.Checked = False
+            CheckStrip2_7.Checked = False
+            CheckStrip2_8.Checked = False
+            CheckStrip2_9.Checked = False
+            CheckStrip2_10.Checked = False
+            CheckStrip2_11.Checked = False
+            CheckStrip2_12.Checked = False
+            CheckStrip2_13.Checked = False
+            CheckStrip2_14.Checked = False
+            CheckStrip2_15.Checked = False
+            CheckStrip2_16.Checked = False
+            CheckStrip2_17.Checked = False
+            CheckStrip2_18.Checked = False
+            CheckStrip2_19.Checked = True
+            CheckStrip2_20.Checked = True
+            CheckStrip2_21.Checked = True
+            CheckStrip2_22.Checked = True
+        End If
+        If e.ClickedItem.Text = Preset_HL Then
             CheckStrip2_2.Checked = False
             CheckStrip2_3.Checked = False
             CheckStrip2_4.Checked = False
@@ -1508,6 +1628,14 @@ Public Class Form1
             CheckStrip2_12.Checked = True
             CheckStrip2_13.Checked = True
             CheckStrip2_14.Checked = True
+            CheckStrip2_15.Checked = True
+            CheckStrip2_16.Checked = True
+            CheckStrip2_17.Checked = True
+            CheckStrip2_18.Checked = True
+            CheckStrip2_19.Checked = False
+            CheckStrip2_20.Checked = False
+            CheckStrip2_21.Checked = False
+            CheckStrip2_22.Checked = False
         End If
         If e.ClickedItem.Text = Save_current_cols_conf_as_startup Then
             ini.IniFile(Class1.confPath)
