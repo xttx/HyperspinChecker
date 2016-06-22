@@ -189,6 +189,11 @@ Public Class Form2_checkMissingInOtherFolders
             If Not c.Name.ToUpper.StartsWith("LISTBOX") Then c.Enabled = False
         Next
 
+        Class7_archives.lastRespons_rename = MsgBoxResult.Retry
+        Class7_archives.lastRespons_keepOne = MsgBoxResult.Retry
+        Class7_archives.rename = Class7_archives.answer.ask_once
+        Class7_archives.keep_only_one = Class7_archives.answer.ask_once
+
         'Ovverwride matcher copy mode
         Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
         override_copy_mode(0) = frm.AssocOption_fileInDiffFolder_copy.Checked
@@ -227,11 +232,7 @@ Public Class Form2_checkMissingInOtherFolders
             'crc mode
             ProgressBar1.Invoke(Sub() ProgressBar1.Maximum = corresponding_games.Count)
 
-            Dim z As New Class7_archives
-            Class7_archives.lastRespons_rename = MsgBoxResult.Retry
-            Class7_archives.lastRespons_keepOne = MsgBoxResult.Retry
-            Class7_archives.rename = Class7_archives.answer.ask_once
-            Class7_archives.keep_only_one = Class7_archives.answer.ask_once
+            'Dim z As New Class7_archives
 
             Dim realdir As String = Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(TextBox1.Text).FullName.ToUpper
             If Not realdir.EndsWith("\") Then realdir = realdir + "\"

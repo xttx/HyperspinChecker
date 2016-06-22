@@ -7,6 +7,7 @@ Imports Microsoft.VisualBasic.FileIO.FileSystem
 Public Class Form6_autorenamer
     'Dim local_list1 As New List(Of String)
     'Dim local_list2 As New List(Of String)
+    Dim override_copy_mode(5) As Boolean
     Dim WithEvents bg_scaner As New BackgroundWorker()
     Dim WithEvents bg_scaner_crc As New BackgroundWorker()
     Dim WithEvents bg_renamer As New BackgroundWorker()
@@ -193,6 +194,26 @@ Public Class Form6_autorenamer
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Button2.Enabled = False : Button3.Enabled = False
 
+        Class7_archives.lastRespons_rename = MsgBoxResult.Retry
+        Class7_archives.lastRespons_keepOne = MsgBoxResult.Retry
+        Class7_archives.rename = Class7_archives.answer.ask_once
+        Class7_archives.keep_only_one = Class7_archives.answer.ask_once
+
+        'Ovverwride matcher copy mode
+        Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
+        override_copy_mode(0) = frm.AssocOption_fileInDiffFolder_copy.Checked
+        override_copy_mode(1) = frm.AssocOption_fileInDiffFolder_copyToHS.Checked
+        override_copy_mode(2) = frm.AssocOption_fileInDiffFolder_move.Checked
+        override_copy_mode(3) = frm.AssocOption_fileInDiffFolder_moveToHS.Checked
+        override_copy_mode(4) = frm.AssocOption_fileInHsFolder_copy.Checked
+        override_copy_mode(5) = frm.AssocOption_fileInHsFolder_move.Checked
+        frm.AssocOption_fileInDiffFolder_copy.Checked = False
+        frm.AssocOption_fileInDiffFolder_copyToHS.Checked = True
+        frm.AssocOption_fileInDiffFolder_move.Checked = False
+        frm.AssocOption_fileInDiffFolder_moveToHS.Checked = False
+        frm.AssocOption_fileInHsFolder_copy.Checked = False
+        frm.AssocOption_fileInHsFolder_move.Checked = True
+
         ProgressBar1.Minimum = 0
         ProgressBar1.Maximum = DataGridView1.Rows.Count
         ProgressBar1.Value = 0
@@ -207,53 +228,57 @@ Public Class Form6_autorenamer
         Dim path As String = e.Argument.ToString
         Dim progress As Integer = 0
         Dim z As New Class7_archives
+        Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
         If Not path.EndsWith("\") Then path = path + "\"
         For Each r As DataGridViewRow In DataGridView1.Rows
             If r.Cells(3).Value.ToString = "X" Then
                 Try
                     Dim f = GetFiles(path, FileIO.SearchOption.SearchTopLevelOnly, {r.Cells(1).Value.ToString + ".*"})
-                    If f.Count > 0 Then
+                    If f.Count = 1 Then
                         fname = f(0)
                         ext = fname.Substring(fname.LastIndexOf("."))
-                        Rename(fname, path + r.Cells(0).Value.ToString + ext)
-                        If z.isArchive(path + r.Cells(0).Value.ToString + ext) Then
-                            'Handle archives
-                            Dim realFilePath As String = GetFileInfo(path + r.Cells(0).Value.ToString + ext).FullName.ToUpper
-                            z.setFile(realFilePath)
-                            If fileCrc.ContainsKey(GetFileInfo(f(0)).FullName.ToUpper) Then
-                                For Each a In z.ArchiveFileData
-                                    If Hex(a.Crc).ToUpper = fileCrc(GetFileInfo(f(0)).FullName.ToUpper) Then
-                                        Dim a_fName As String = a.FileName
-                                        If a_fName.Contains("\") Then a_fName = a_fName.Substring(a_fName.LastIndexOf("\") + 1)
-                                        Dim a_fNameWoExt As String = a_fName
-                                        If a_fNameWoExt.Contains(".") Then a_fNameWoExt = a_fNameWoExt.Substring(0, a_fNameWoExt.LastIndexOf("."))
-                                        If a_fNameWoExt.ToUpper <> r.Cells(0).Value.ToString.ToUpper Then
-                                            If allowRenameInsideArchive = MsgBoxResult.Retry Then
-                                                allowRenameInsideArchive = MsgBox("At least one of files, INSIDE ARCHIVE have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
-                                            End If
-                                            If allowRenameInsideArchive = MsgBoxResult.Yes Then
-                                                Dim realfNameWoExt As String = realFilePath
-                                                If realfNameWoExt.Contains(".") Then realfNameWoExt = realfNameWoExt.Substring(0, realfNameWoExt.LastIndexOf("."))
-                                                If z.ArchiveFileData.Count > 1 Then
-                                                    If allowKeepOnlyNeeded = MsgBoxResult.Retry Then
-                                                        allowKeepOnlyNeeded = MsgBox("At least one of archive contains more than one files. Do you want to remove other files and only keep needed file?", MsgBoxStyle.YesNo)
-                                                    End If
-                                                    If allowKeepOnlyNeeded = MsgBoxResult.Yes Then
-                                                        'rename inside arch and keep only crc
-                                                        z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper), True)
-                                                    Else
-                                                        'jest rename inside arch
-                                                        z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper))
-                                                    End If
-                                                Else
-                                                    z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper))
-                                                End If
-                                            End If
-                                        End If
-                                    End If
-                                Next
-                            End If
-                        End If
+                        'Rename(fname, path + r.Cells(0).Value.ToString + ext)
+
+                        frm.matcher_class.associate_copyMove(frm.TextBox4.Text, frm.TextBox4.Text, r.Cells(0).Value.ToString, fname.Substring(fname.LastIndexOf("\") + 1))
+
+                        'If z.isArchive(path + r.Cells(0).Value.ToString + ext) Then
+                        '    'Handle archives
+                        '    Dim realFilePath As String = GetFileInfo(path + r.Cells(0).Value.ToString + ext).FullName.ToUpper
+                        '    z.setFile(realFilePath)
+                        '    If fileCrc.ContainsKey(GetFileInfo(f(0)).FullName.ToUpper) Then
+                        '        For Each a In z.ArchiveFileData
+                        '            If Hex(a.Crc).ToUpper = fileCrc(GetFileInfo(f(0)).FullName.ToUpper) Then
+                        '                Dim a_fName As String = a.FileName
+                        '                If a_fName.Contains("\") Then a_fName = a_fName.Substring(a_fName.LastIndexOf("\") + 1)
+                        '                Dim a_fNameWoExt As String = a_fName
+                        '                If a_fNameWoExt.Contains(".") Then a_fNameWoExt = a_fNameWoExt.Substring(0, a_fNameWoExt.LastIndexOf("."))
+                        '                If a_fNameWoExt.ToUpper <> r.Cells(0).Value.ToString.ToUpper Then
+                        '                    If allowRenameInsideArchive = MsgBoxResult.Retry Then
+                        '                        allowRenameInsideArchive = MsgBox("At least one of files, INSIDE ARCHIVE have incorrect name, do you want to rename files while copying?", MsgBoxStyle.YesNo)
+                        '                    End If
+                        '                    If allowRenameInsideArchive = MsgBoxResult.Yes Then
+                        '                        Dim realfNameWoExt As String = realFilePath
+                        '                        If realfNameWoExt.Contains(".") Then realfNameWoExt = realfNameWoExt.Substring(0, realfNameWoExt.LastIndexOf("."))
+                        '                        If z.ArchiveFileData.Count > 1 Then
+                        '                            If allowKeepOnlyNeeded = MsgBoxResult.Retry Then
+                        '                                allowKeepOnlyNeeded = MsgBox("At least one of archive contains more than one files. Do you want to remove other files and only keep needed file?", MsgBoxStyle.YesNo)
+                        '                            End If
+                        '                            If allowKeepOnlyNeeded = MsgBoxResult.Yes Then
+                        '                                'rename inside arch and keep only crc
+                        '                                z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper), True)
+                        '                            Else
+                        '                                'jest rename inside arch
+                        '                                z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper))
+                        '                            End If
+                        '                        Else
+                        '                            z.renameInArchive(realfNameWoExt, r.Cells(0).Value.ToString, fileCrc(GetFileInfo(f(0)).FullName.ToUpper))
+                        '                        End If
+                        '                    End If
+                        '                End If
+                        '            End If
+                        '        Next
+                        '    End If
+                        'End If
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
@@ -266,6 +291,15 @@ Public Class Form6_autorenamer
     Private Sub Button3_Click_BGWork_complete() Handles bg_renamer.RunWorkerCompleted
         ProgressBar1.Value = 0
         Button2.Enabled = True
+
+        Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
+        frm.AssocOption_fileInDiffFolder_copy.Checked = override_copy_mode(0)
+        frm.AssocOption_fileInDiffFolder_copyToHS.Checked = override_copy_mode(1)
+        frm.AssocOption_fileInDiffFolder_move.Checked = override_copy_mode(2)
+        frm.AssocOption_fileInDiffFolder_moveToHS.Checked = override_copy_mode(3)
+        frm.AssocOption_fileInHsFolder_copy.Checked = override_copy_mode(4)
+        frm.AssocOption_fileInHsFolder_move.Checked = override_copy_mode(5)
+
         MsgBox("Done!")
         Me.Close()
     End Sub

@@ -477,8 +477,11 @@ Public Class Class3_matcher
                         If gameName.Contains(".") Then gameName = gameName.Substring(0, gameName.LastIndexOf("."))
                         archive_handled = z.renameInArchiveIfNeeded(archNameWoExt, crc_for_archs)
                         If archive_handled Then
+                            FileSystem.DeleteFile(o(1))
                             frm.undo(undoIndex).Add("ARCHIVE?" + o(1) + "?" + o(2))
                             frm.undo_humanReadable(undoIndex).Add("Recompressed Archive " + o(1) + " to " + o(2))
+                            frm.undo(undoIndex).Add("DELETE?" + o(1))
+                            frm.undo_humanReadable(undoIndex).Add("Delete " + o(1))
                         End If
                     End If
 

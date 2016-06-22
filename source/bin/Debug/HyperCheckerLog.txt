@@ -8783,3 +8783,180 @@
 18:43:45 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
 18:43:45 - Archive Handler - CRC NOT supplied, rename needed
 18:43:45 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+19:28:34 - Initializing...
+19:28:34 - Creating menus
+19:28:34 - Loading config
+19:28:34 - Init classes
+19:28:34 - Done init
+22:53:58 - Initializing...
+22:53:58 - Creating menus
+22:53:58 - Loading config
+22:53:58 - Init classes
+22:53:58 - Done init
+22:54:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\32 in 1 (USA)asdfasdf.zip
+22:54:35 - Archive Handler - CRC NOT supplied, rename needed
+22:54:35 - Archive Handler - nothing done, exiting.
+22:54:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ace of Aces (USA)gvbrew.zip
+22:54:35 - Archive Handler - CRC NOT supplied, rename needed
+22:54:35 - Archive Handler - nothing done, exiting.
+22:54:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Alien Brigade (USA)bvre.zip
+22:54:35 - Archive Handler - CRC NOT supplied, rename needed
+22:54:35 - Archive Handler - nothing done, exiting.
+22:54:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Asteroids (USA)fwer.zip
+22:54:35 - Archive Handler - CRC NOT supplied, rename needed
+22:54:35 - Archive Handler - nothing done, exiting.
+22:54:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Ballblazer (USA)fweg.zip
+22:54:35 - Archive Handler - CRC NOT supplied, rename needed
+22:54:35 - Archive Handler - nothing done, exiting.
+22:54:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Barnyard Blaster (USA)fdwqwfas.zip
+22:54:35 - Archive Handler - CRC NOT supplied, rename needed
+22:54:35 - Archive Handler - nothing done, exiting.
+22:54:35 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Basketbrawl (USA)gfewqert.zip
+22:54:35 - Archive Handler - CRC NOT supplied, rename needed
+22:54:35 - Archive Handler - nothing done, exiting.
+22:54:36 - Archive Handler - Archive name is - o:\hyperspin project[b_hl3]\roms\consoles\atari 7800\Centipede (USA)fgdqw.zip
+22:54:36 - Archive Handler - CRC NOT supplied, rename needed
+22:54:36 - Archive Handler - nothing done, exiting.
+23:1:4 - Initializing...
+23:1:4 - Creating menus
+23:1:4 - Loading config
+23:1:4 - Init classes
+23:1:4 - Done init
+23:2:13 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\32 in 1 (USA)asdfasdf.zip
+23:2:13 - Archive Handler - CRC NOT supplied, rename needed
+23:2:25 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+23:2:25 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\Ace of Aces (USA)gvbrew.zip
+23:2:25 - Archive Handler - CRC NOT supplied, rename needed
+23:2:50 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+23:3:17 - Initializing...
+23:3:17 - Creating menus
+23:3:17 - Loading config
+23:3:17 - Init classes
+23:3:17 - Done init
+23:4:51 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\asd.zip
+23:4:51 - Archive Handler - CRC NOT supplied, rename needed
+23:4:52 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+23:4:53 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\asdgBSDF.zip
+23:4:53 - Archive Handler - CRC NOT supplied, rename needed
+23:4:53 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+23:4:53 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\ASDGERW.zip
+23:4:53 - Archive Handler - CRC NOT supplied, rename needed
+23:4:55 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+23:4:55 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\asDVzasdv.zip
+23:4:55 - Archive Handler - CRC NOT supplied, rename needed
+23:4:55 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+23:4:56 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\SDFHBDF.zip
+23:4:56 - Archive Handler - CRC NOT supplied, rename needed
+23:4:56 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+23:4:56 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\sdfVASDF.zip
+23:4:56 - Archive Handler - CRC NOT supplied, rename needed
+23:4:57 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:38:7 - Initializing...
+8:38:7 - Creating menus
+8:38:7 - Loading config
+8:38:7 - Init classes
+8:38:7 - Done init
+8:40:32 - Initializing...
+8:40:32 - Creating menus
+8:40:32 - Loading config
+8:40:32 - Init classes
+8:40:32 - Done init
+8:41:37 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\asd.zip
+8:41:37 - Archive Handler - CRC NOT supplied, rename needed
+8:41:43 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:41:43 - Archive Handler - nothing done, exiting.
+8:41:43 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\asdgBSDF.zip
+8:41:43 - Archive Handler - CRC NOT supplied, rename needed
+8:41:48 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:41:48 - Archive Handler - nothing done, exiting.
+8:41:48 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\ASDGERW.zip
+8:41:48 - Archive Handler - CRC NOT supplied, rename needed
+8:41:49 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:41:49 - Archive Handler - nothing done, exiting.
+8:41:49 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\asDVzasdv.zip
+8:41:49 - Archive Handler - CRC NOT supplied, rename needed
+8:41:50 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:41:50 - Archive Handler - nothing done, exiting.
+8:41:50 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\SDFHBDF.zip
+8:41:50 - Archive Handler - CRC NOT supplied, rename needed
+8:41:50 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:41:50 - Archive Handler - nothing done, exiting.
+8:41:50 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\sdfVASDF.zip
+8:41:50 - Archive Handler - CRC NOT supplied, rename needed
+8:41:54 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:41:54 - Archive Handler - nothing done, exiting.
+8:44:19 - Initializing...
+8:44:19 - Creating menus
+8:44:20 - Loading config
+8:44:20 - Init classes
+8:44:20 - Done init
+8:44:38 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\asdfgsd.zip
+8:44:38 - Archive Handler - CRC NOT supplied, rename needed
+8:44:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:44:41 - Archive Handler - nothing done, exiting.
+8:44:41 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\gdsf.zip
+8:44:41 - Archive Handler - CRC NOT supplied, rename needed
+8:44:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:44:41 - Archive Handler - nothing done, exiting.
+8:44:41 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\grew.zip
+8:44:41 - Archive Handler - CRC NOT supplied, rename needed
+8:44:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:44:41 - Archive Handler - nothing done, exiting.
+8:44:41 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\hgrew.zip
+8:44:41 - Archive Handler - CRC NOT supplied, rename needed
+8:44:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:44:41 - Archive Handler - nothing done, exiting.
+8:44:41 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\sadfgs.zip
+8:44:41 - Archive Handler - CRC NOT supplied, rename needed
+8:44:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:44:41 - Archive Handler - nothing done, exiting.
+8:44:41 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\yrew.zip
+8:44:41 - Archive Handler - CRC NOT supplied, rename needed
+8:44:41 - Archive Handler - Asked to allow rename files inside archive. Response - No
+8:44:41 - Archive Handler - nothing done, exiting.
+8:45:12 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\bfd.zip
+8:45:12 - Archive Handler - CRC NOT supplied, rename needed
+8:45:14 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:45:14 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\bfds.zip
+8:45:14 - Archive Handler - CRC NOT supplied, rename needed
+8:45:14 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:45:14 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\ghfes.zip
+8:45:14 - Archive Handler - CRC NOT supplied, rename needed
+8:45:14 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:45:14 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\hre.zip
+8:45:14 - Archive Handler - CRC NOT supplied, rename needed
+8:45:14 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:45:14 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\htreds.zip
+8:45:14 - Archive Handler - CRC NOT supplied, rename needed
+8:45:14 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:45:14 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\nmhtr.zip
+8:45:14 - Archive Handler - CRC NOT supplied, rename needed
+8:45:14 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:48:6 - Initializing...
+8:48:6 - Creating menus
+8:48:6 - Loading config
+8:48:6 - Init classes
+8:48:6 - Done init
+8:49:17 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\bfd.zip
+8:49:17 - Archive Handler - CRC NOT supplied, rename needed
+8:49:18 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:49:18 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\bfds.zip
+8:49:18 - Archive Handler - CRC NOT supplied, rename needed
+8:49:18 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:49:18 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\ghfes.zip
+8:49:18 - Archive Handler - CRC NOT supplied, rename needed
+8:49:18 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:49:18 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\hre.zip
+8:49:18 - Archive Handler - CRC NOT supplied, rename needed
+8:49:18 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:49:18 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\htreds.zip
+8:49:18 - Archive Handler - CRC NOT supplied, rename needed
+8:49:18 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:49:19 - Archive Handler - Archive name is - o:\test - atari 7800 (zipped, crc)\\nmhtr.zip
+8:49:19 - Archive Handler - CRC NOT supplied, rename needed
+8:49:19 - Archive Handler - Asked to allow rename files inside archive. Response - Yes
+8:52:1 - Initializing...
+8:52:1 - Creating menus
+8:52:1 - Loading config
+8:52:1 - Init classes
+8:52:1 - Done init
