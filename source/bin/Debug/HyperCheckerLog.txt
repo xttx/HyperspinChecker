@@ -9386,3 +9386,8 @@
 9:29:23 - Loading config
 9:29:23 - Init classes
 9:29:23 - Done init
+9:39:57 - Initializing...
+9:39:57 - Creating menus
+9:39:58 - Loading config
+9:39:58 - Init classes
+9:39:58 - Done init

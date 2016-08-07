@@ -339,4 +339,12 @@ Public Class Form2_checkMissingInOtherFolders
             End If
         End If
     End Sub
+
+    'button ...
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim fb As New FolderBrowserDialog
+        If fb.ShowDialog = DialogResult.OK Then
+            TextBox1.Text = fb.SelectedPath
+        End If
+    End Sub
 End Class
