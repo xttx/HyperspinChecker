@@ -13,4 +13,8 @@
         Dim fd As New FolderBrowserDialog : fd.Description = "Select folder" : fd.ShowDialog()
         TextBox2.Text = fd.SelectedPath
     End Sub
+
+    Private Sub Form7_dualFolderOperations_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
 End Class

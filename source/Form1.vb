@@ -185,6 +185,60 @@ Public Class Form1
         ComboBox8.SelectedIndex = 0
         ComboBox9.SelectedIndex = 0
 
+        If FileSystem.DirectoryExists(".\Localization") Then
+            For Each file In FileSystem.GetFiles(".\Localization", SearchOption.SearchTopLevelOnly, {"*.ini"})
+                Dim f As String = file.Substring(file.LastIndexOf("\") + 1)
+                f = f.Substring(0, f.LastIndexOf("."))
+                ComboBox13.Items.Add(f)
+            Next
+        End If
+        'If Not FileIO.FileSystem.DirectoryExists(".\Localization") Then FileIO.FileSystem.CreateDirectory(".\Localization")
+        'Dim sw As New IO.StreamWriter(".\Localization\English.ini")
+        'sw.WriteLine("[Main]")
+        'localization_create(Me, sw)
+        'Dim f2 As New Form2_checkMissingInOtherFolders
+        'localization_create(f2, sw)
+        'Dim f3 As New Form3_mameFoldersFilter
+        'localization_create(f3, sw)
+        'Dim f4 As New Form4_genres_favorites
+        'localization_create(f4, sw)
+        'Dim f4a As New Form4_genres_favorites_preview
+        'localization_create(f4a, sw)
+        'Dim f5 As New Form5_videoDownloader
+        'localization_create(f5, sw)
+        'Dim f6 As New Form6_autorenamer
+        'localization_create(f6, sw)
+        'Dim f7 As New Form7_dualFolderOperations
+        'localization_create(f7, sw)
+        'Dim f8 As New Form8_systemProperties
+        'localization_create(f8, sw)
+        'Dim f9 As New Form9_database_statistic
+        'localization_create(f9, sw)
+        'Dim f9a As New Form9_database_statistic_comparer
+        'localization_create(f9a, sw)
+        'Dim fa As New FormA_hyperlaunch_3rd_party_paths
+        'localization_create(fa, sw)
+        'Dim fb As New FormB_PCSX2_createIndex
+        'localization_create(fb, sw)
+        'Dim fc As New FormC_mameRomListBuilder
+        'localization_create(fc, sw)
+        'Dim fda As New FormD_matcher_autofilter_constructor
+        'localization_create(fda, sw)
+        'Dim fe As New FormE_Create_database_XML_from_folder
+        'localization_create(fe, sw)
+        'Dim ff1 As New FormF_createNewHL_system
+        'localization_create(ff1, sw)
+        'Dim ff2 As New FormF_systemManager_addSystem
+        'localization_create(ff2, sw)
+        'Dim ff3 As New FormF_systemManager_exclusions
+        'localization_create(ff3, sw)
+        'Dim fg As New FormG_associationTables
+        'localization_create(fg, sw)
+        'Dim fh As New FormH_undoHistory
+        'localization_create(fh, sw)
+        'sw.Close()
+
+
         'Init Table Columns
         Form1_Load_Sub_initTableColumns()
 
@@ -279,10 +333,19 @@ Public Class Form1
         If s <> "" Then ComboBox12.Text = s Else ComboBox12.SelectedIndex = 5
         s = ini2.IniReadValue("Main", "Compression_temp")
         If s <> "" Then TextBox30.Text = s
+        'Localization
+        s = ini2.IniReadValue("Main", "Language")
+        If s.Trim = "" Then
+            ComboBox13.SelectedIndex = 0
+        Else
+            For t As Integer = 0 To ComboBox13.Items.Count - 1
+                If s.Trim.ToUpper = ComboBox13.Items(t).ToString.Trim.ToUpper Then ComboBox13.SelectedIndex = t : Exit For
+            Next
+        End If
 
         If Not FileSystem.FileExists(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml") Then
             MsgBox("Can't find '" + Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml'. Check hyperspin path under 'settings' tab, or in the config.conf")
-        Else
+            Else
             If Not FileSystem.FileExists(Class1.HyperspinPath + "\Settings\Settings.ini") Then
                 MsgBox("Can't find '" + Class1.HyperspinPath + "\Settings\Settings.ini'. Check hyperspin path under 'settings' tab, or in the config.conf")
             End If
@@ -1105,6 +1168,13 @@ Public Class Form1
         ini.IniWriteValue("Main", "Compression_level", ComboBox12.SelectedItem.ToString)
         ini.IniWriteValue("Main", "Compression_temp", TextBox30.Text)
 
+        'Language
+        If ComboBox13.SelectedIndex = 0 Then
+            ini.IniWriteValue("Main", "Language", "")
+        Else
+            ini.IniWriteValue("Main", "Language", ComboBox13.SelectedItem.ToString)
+        End If
+
         Label23.BackColor = Color.LightBlue
         Label23.Text = "Config.conf Saved"
     End Sub
@@ -1193,6 +1263,92 @@ Public Class Form1
     'Update UltraISO path
     Private Sub TextBox28_TextChanged(sender As System.Object, e As System.EventArgs) Handles TextBox28.TextChanged
         If FileSystem.FileExists(TextBox28.Text) Then TextBox28.BackColor = Class1.colorYES Else TextBox28.BackColor = Class1.colorNO
+    End Sub
+
+    'Language change
+    Private Sub ComboBox13_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox13.SelectedIndexChanged
+        Dim iniLang As New IniFileApi
+        iniLang.path = ".\Localization\" + ComboBox13.SelectedItem.ToString + ".ini"
+
+        Language.strings.Clear()
+        For Each k In iniLang.IniListKey("Main")
+            Dim val As String = iniLang.IniReadValue("Main", k).Replace("{CRLF}", vbCrLf)
+            Language.strings.Add(k, val)
+        Next
+
+        Language.localize(Me)
+
+        'For Each k In iniLang.IniListKey("Main")
+        '    'For Each k In iniLang.IniListKey("Main")
+        '    Dim s() = k.Split({"."c})
+        '    Dim val As String = iniLang.IniReadValue("Main", k).Replace("{CRLF}", vbCrLf)
+
+        '    Dim tmp As Control = Nothing
+        '    Dim tmp_menu_item As ToolStripItem = Nothing
+        '    For Each c In s
+        '        If c.ToUpper = "FORM1" Then
+        '            tmp = Me
+        '        ElseIf c.ToUpper = "FORM2_CHECKMISSINGINOTHERFOLDERS" Then
+        '            tmp = Form2_checkMissingInOtherFolders
+        '        ElseIf c.ToUpper = "FORM3" Then
+        '            tmp = Form3_mameFoldersFilter
+        '        ElseIf c.ToUpper = "Form4_genres_favorites".ToUpper Then
+        '            tmp = Form4_genres_favorites
+        '        ElseIf c.ToUpper = "Form4_genres_favorites_preview".ToUpper Then
+        '            tmp = Form4_genres_favorites_preview
+        '        ElseIf c.ToUpper = "Form5_videoDownloader".ToUpper Then
+        '            tmp = Form5_videoDownloader
+        '        ElseIf c.ToUpper = "Form6_autorenamer".ToUpper Then
+        '            tmp = Form6_autorenamer
+        '        ElseIf c.ToUpper = "Form7_dualFolderOperations".ToUpper Then
+        '            tmp = Form7_dualFolderOperations
+        '        ElseIf c.ToUpper = "Form8_systemProperties".ToUpper Then
+        '            tmp = Form8_systemProperties
+        '        ElseIf c.ToUpper = "Form9_database_statistic".ToUpper Then
+        '            tmp = Form9_database_statistic
+        '        ElseIf c.ToUpper = "FormA_hyperlaunch_3rd_party_paths".ToUpper Then
+        '            tmp = FormA_hyperlaunch_3rd_party_paths
+        '        ElseIf c.ToUpper = "FormB_PCSX2_createIndex".ToUpper Then
+        '            tmp = FormB_PCSX2_createIndex
+        '        ElseIf c.ToUpper = "FormC_mameRomListBuilder".ToUpper Then
+        '            tmp = FormC_mameRomListBuilder
+        '        ElseIf c.ToUpper = "FormD_matcher_autofilter_constructor".ToUpper Then
+        '            tmp = FormD_matcher_autofilter_constructor
+        '        ElseIf c.ToUpper = "FormE_Create_database_XML_from_folder".ToUpper Then
+        '            tmp = FormE_Create_database_XML_from_folder
+        '        ElseIf c.ToUpper = "FormF_createNewHL_system".ToUpper Then
+        '            tmp = FormF_createNewHL_system
+        '        ElseIf c.ToUpper = "FormF_systemManager_addSystem".ToUpper Then
+        '            tmp = FormF_systemManager_addSystem
+        '        ElseIf c.ToUpper = "FormF_systemManager_exclusions".ToUpper Then
+        '            tmp = FormF_systemManager_exclusions
+        '        ElseIf c.ToUpper = "FormG_associationTables".ToUpper Then
+        '            tmp = FormG_associationTables
+        '        Else
+        '            If tmp_menu_item IsNot Nothing Then
+        '                tmp_menu_item = DirectCast(tmp_menu_item, ToolStripMenuItem).DropDownItems(c)
+        '            Else
+        '                If TypeOf tmp Is MenuStrip Then
+        '                    tmp_menu_item = DirectCast(tmp, MenuStrip).Items(c)
+        '                Else
+        '                    tmp = tmp.Controls(c)
+        '                End If
+        '            End If
+
+        '            If tmp.Name.ToUpper = "SPLITCONTAINER1" Then
+        '                Dim tmp2 = DirectCast(tmp, SplitContainer)
+        '                tmp2.Panel1.Name = "Panel1"
+        '                tmp2.Panel2.Name = "Panel2"
+        '            End If
+        '        End If
+        '    Next
+
+        '    If tmp_menu_item IsNot Nothing Then
+        '        tmp_menu_item.Text = val
+        '    Else
+        '        tmp.Text = val
+        '    End If
+        'Next
     End Sub
 #End Region
 
@@ -1836,4 +1992,80 @@ Public Class Form1
 
     'Show Database statistic
 #End Region
+
+    Private Sub localization_create(ctrl As Control, sw As IO.StreamWriter)
+        Dim control_path As String = ctrl.Name
+        Dim tmp As Control = ctrl
+        Do While tmp.Parent IsNot Nothing
+            tmp = tmp.Parent
+            control_path = tmp.Name + "." + control_path
+        Loop
+
+        'sw.WriteLine("//" + control_path + " - Labels")
+        For Each l As Label In ctrl.Controls.OfType(Of Label)
+            sw.WriteLine(control_path + "." + l.Name + " = " + l.Text.Replace(vbCrLf, "{CRLF}"))
+        Next
+        'sw.WriteLine("//" + control_path + " - Buttons")
+        For Each b As Button In ctrl.Controls.OfType(Of Button)
+            sw.WriteLine(control_path + "." + b.Name + " = " + b.Text)
+        Next
+        'sw.WriteLine("//" + control_path + " - Checkboxes")
+        For Each c As CheckBox In ctrl.Controls.OfType(Of CheckBox)
+            sw.WriteLine(control_path + "." + c.Name + " = " + c.Text)
+        Next
+        'sw.WriteLine("//" + control_path + " - RadioButtons")
+        For Each r As RadioButton In Me.Controls.OfType(Of RadioButton)
+            sw.WriteLine(control_path + "." + r.Name + " = " + r.Text)
+        Next
+        sw.WriteLine("")
+
+        For Each tabControl In ctrl.Controls.OfType(Of TabControl)
+            For Each tabpage As TabPage In tabControl.TabPages
+                localization_create(tabpage, sw)
+                sw.WriteLine("")
+            Next
+        Next
+
+        For Each spl In ctrl.Controls.OfType(Of SplitContainer)
+            spl.Panel1.Name = "Panel1"
+            spl.Panel2.Name = "Panel2"
+            localization_create(spl.Panel1, sw)
+            sw.WriteLine("")
+            localization_create(spl.Panel2, sw)
+            sw.WriteLine("")
+        Next
+
+        For Each panel In ctrl.Controls.OfType(Of Panel)
+            localization_create(panel, sw)
+            sw.WriteLine("")
+        Next
+
+        For Each grp In ctrl.Controls.OfType(Of GroupBox)
+            localization_create(grp, sw)
+            sw.WriteLine("")
+        Next
+
+        For Each item In ctrl.Controls.OfType(Of MenuStrip)
+            For Each item2 In item.Items
+                If TypeOf item2 Is ToolStripSeparator Then Continue For
+                Dim item2a = DirectCast(item2, ToolStripMenuItem)
+                sw.WriteLine(control_path + "." + item.Name + "." + item2a.Name + " = " + item2a.Text)
+                For Each item3 In item2a.DropDownItems
+                    If TypeOf item3 Is ToolStripSeparator Then Continue For
+                    Dim item3a = DirectCast(item3, ToolStripMenuItem)
+                    sw.WriteLine(control_path + "." + item.Name + "." + item2a.Name + "." + item3a.Name + " = " + item3a.Text)
+                    For Each item4 In item3a.DropDownItems
+                        If TypeOf item4 Is ToolStripSeparator Then Continue For
+                        Dim item4a = DirectCast(item4, ToolStripMenuItem)
+                        sw.WriteLine(control_path + "." + item.Name + "." + item2a.Name + "." + item3a.Name + "." + item4a.Name + " = " + item4a.Text)
+                        For Each item5 In item4a.DropDownItems
+                            If TypeOf item5 Is ToolStripSeparator Then Continue For
+                            Dim item5a = DirectCast(item5, ToolStripMenuItem)
+                            sw.WriteLine(control_path + "." + item.Name + "." + item2a.Name + "." + item3a.Name + "." + item4a.Name + "." + item5a.Name + " = " + item5a.Text)
+                        Next
+                    Next
+                Next
+            Next
+        Next
+    End Sub
 End Class

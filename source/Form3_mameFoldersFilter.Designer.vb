@@ -64,7 +64,7 @@ Partial Class Form3_mameFoldersFilter
         Me.Button3.Text = "OK"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Form3
+        'Form3_mameFoldersFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -77,7 +77,7 @@ Partial Class Form3_mameFoldersFilter
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Form3"
+        Me.Name = "Form3_mameFoldersFilter"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mame Folders Filters"

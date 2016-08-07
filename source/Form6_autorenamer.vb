@@ -434,6 +434,12 @@ Public Class Form6_autorenamer
         Button2.Enabled = True
         DataGridView1.Rows.Clear()
     End Sub
+
+    'Load localize
+    Private Sub Form6_autorenamer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
+
     'Form Close
     Private Sub Form6_autorenamer_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Dim enable As Boolean = True

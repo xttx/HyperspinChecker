@@ -244,6 +244,15 @@ Partial Class Form1
         Me.F8 = New System.Windows.Forms.ToolStripMenuItem()
         Me.F9 = New System.Windows.Forms.ToolStripMenuItem()
         Me.F10 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShowHideColumnsToolStripMenuItemHL = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F11 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F12 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F13 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F14 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F15 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F16 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F17 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.F18 = New System.Windows.Forms.ToolStripMenuItem()
         Me.F19 = New System.Windows.Forms.ToolStripMenuItem()
         Me.F20 = New System.Windows.Forms.ToolStripMenuItem()
         Me.F21 = New System.Windows.Forms.ToolStripMenuItem()
@@ -309,15 +318,8 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ShowHideColumnsToolStripMenuItemHL = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F11 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F12 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F14 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F15 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F16 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F17 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.F18 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -343,6 +345,7 @@ Partial Class Form1
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -1904,6 +1907,7 @@ Partial Class Form1
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage5.Controls.Add(Me.GroupBox11)
         Me.TabPage5.Controls.Add(Me.GroupBox10)
         Me.TabPage5.Controls.Add(Me.GroupBox7)
         Me.TabPage5.Controls.Add(Me.GroupBox9)
@@ -2242,7 +2246,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.Label24)
         Me.GroupBox4.Location = New System.Drawing.Point(20, 45)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(192, 246)
+        Me.GroupBox4.Size = New System.Drawing.Size(192, 288)
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Matcher"
@@ -2496,7 +2500,7 @@ Partial Class Form1
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'MainTableToolStripMenuItem
@@ -2646,6 +2650,61 @@ Partial Class Form1
         Me.F10.Name = "F10"
         Me.F10.Size = New System.Drawing.Size(184, 22)
         Me.F10.Text = "Show Sounds"
+        '
+        'ShowHideColumnsToolStripMenuItemHL
+        '
+        Me.ShowHideColumnsToolStripMenuItemHL.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.F11, Me.F12, Me.F13, Me.F14, Me.F15, Me.F16, Me.F17, Me.F18})
+        Me.ShowHideColumnsToolStripMenuItemHL.Name = "ShowHideColumnsToolStripMenuItemHL"
+        Me.ShowHideColumnsToolStripMenuItemHL.Size = New System.Drawing.Size(184, 22)
+        Me.ShowHideColumnsToolStripMenuItemHL.Text = "Show HL Media"
+        '
+        'F11
+        '
+        Me.F11.Name = "F11"
+        Me.F11.Size = New System.Drawing.Size(193, 22)
+        Me.F11.Text = "Show HL Artworks"
+        '
+        'F12
+        '
+        Me.F12.Name = "F12"
+        Me.F12.Size = New System.Drawing.Size(193, 22)
+        Me.F12.Text = "Show HL Backgrounds"
+        '
+        'F13
+        '
+        Me.F13.Name = "F13"
+        Me.F13.Size = New System.Drawing.Size(193, 22)
+        Me.F13.Text = "Show HL Bezels"
+        '
+        'F14
+        '
+        Me.F14.Name = "F14"
+        Me.F14.Size = New System.Drawing.Size(193, 22)
+        Me.F14.Text = "Show HL Fades"
+        '
+        'F15
+        '
+        Me.F15.Name = "F15"
+        Me.F15.Size = New System.Drawing.Size(193, 22)
+        Me.F15.Text = "Show HL Guides"
+        '
+        'F16
+        '
+        Me.F16.Name = "F16"
+        Me.F16.Size = New System.Drawing.Size(193, 22)
+        Me.F16.Text = "Show HL Manuals"
+        '
+        'F17
+        '
+        Me.F17.Name = "F17"
+        Me.F17.Size = New System.Drawing.Size(193, 22)
+        Me.F17.Text = "Show HL Music"
+        '
+        'F18
+        '
+        Me.F18.Name = "F18"
+        Me.F18.Size = New System.Drawing.Size(193, 22)
+        Me.F18.Text = "Show HL Videos"
         '
         'F19
         '
@@ -3047,60 +3106,25 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader ..."
         '
-        'ShowHideColumnsToolStripMenuItemHL
+        'GroupBox11
         '
-        Me.ShowHideColumnsToolStripMenuItemHL.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.F11, Me.F12, Me.F13, Me.F14, Me.F15, Me.F16, Me.F17, Me.F18})
-        Me.ShowHideColumnsToolStripMenuItemHL.Name = "ShowHideColumnsToolStripMenuItemHL"
-        Me.ShowHideColumnsToolStripMenuItemHL.Size = New System.Drawing.Size(184, 22)
-        Me.ShowHideColumnsToolStripMenuItemHL.Text = "Show HL Media"
+        Me.GroupBox11.Controls.Add(Me.ComboBox13)
+        Me.GroupBox11.Location = New System.Drawing.Point(218, 231)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(233, 63)
+        Me.GroupBox11.TabIndex = 8
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "Localizations:"
         '
-        'F11
+        'ComboBox13
         '
-        Me.F11.Name = "F11"
-        Me.F11.Size = New System.Drawing.Size(193, 22)
-        Me.F11.Text = "Show HL Artworks"
-        '
-        'F12
-        '
-        Me.F12.Name = "F12"
-        Me.F12.Size = New System.Drawing.Size(193, 22)
-        Me.F12.Text = "Show HL Backgrounds"
-        '
-        'F13
-        '
-        Me.F13.Name = "F13"
-        Me.F13.Size = New System.Drawing.Size(193, 22)
-        Me.F13.Text = "Show HL Bezels"
-        '
-        'F14
-        '
-        Me.F14.Name = "F14"
-        Me.F14.Size = New System.Drawing.Size(193, 22)
-        Me.F14.Text = "Show HL Fades"
-        '
-        'F15
-        '
-        Me.F15.Name = "F15"
-        Me.F15.Size = New System.Drawing.Size(193, 22)
-        Me.F15.Text = "Show HL Guides"
-        '
-        'F16
-        '
-        Me.F16.Name = "F16"
-        Me.F16.Size = New System.Drawing.Size(193, 22)
-        Me.F16.Text = "Show HL Manuals"
-        '
-        'F17
-        '
-        Me.F17.Name = "F17"
-        Me.F17.Size = New System.Drawing.Size(193, 22)
-        Me.F17.Text = "Show HL Music"
-        '
-        'F18
-        '
-        Me.F18.Name = "F18"
-        Me.F18.Size = New System.Drawing.Size(193, 22)
-        Me.F18.Text = "Show HL Videos"
+        Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox13.FormattingEnabled = True
+        Me.ComboBox13.Items.AddRange(New Object() {"Built-in (English)"})
+        Me.ComboBox13.Location = New System.Drawing.Point(6, 19)
+        Me.ComboBox13.Name = "ComboBox13"
+        Me.ComboBox13.Size = New System.Drawing.Size(221, 21)
+        Me.ComboBox13.TabIndex = 0
         '
         'Form1
         '
@@ -3166,6 +3190,7 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.GroupBox11.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3465,4 +3490,6 @@ Partial Class Form1
     Friend WithEvents F16 As ToolStripMenuItem
     Friend WithEvents F17 As ToolStripMenuItem
     Friend WithEvents F18 As ToolStripMenuItem
+    Friend WithEvents GroupBox11 As GroupBox
+    Friend WithEvents ComboBox13 As ComboBox
 End Class

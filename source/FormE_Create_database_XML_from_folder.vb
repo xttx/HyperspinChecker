@@ -1,6 +1,7 @@
 ﻿Public Class FormE_Create_database_XML_from_folder
 
     Private Sub FormE_Create_database_XML_from_folder_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         Me.Height = 160
         ComboBox12.SelectedIndex = 0
         ComboBox13.SelectedIndex = 0

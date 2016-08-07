@@ -227,4 +227,8 @@ Public Class Form4_genres_favorites
             If ListBox2.Items.Count > 0 Then ListBox2.SelectedIndex = ListBox2.Items.Count - 1
         End If
     End Sub 'Delete from listbox2
+
+    Private Sub Form4_genres_favorites_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
 End Class

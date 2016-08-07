@@ -63,6 +63,7 @@ Public Class FormC_mameRomListBuilder
 
     'Form load
     Private Sub FormC_mameRomListBuilder_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         ini.IniFile(Class1.confPath)
         TextBox1.Text = ini.IniReadValue("TOOL_mame_rom_builder", "MAME_exe_path")
         TextBox2.Text = ini.IniReadValue("TOOL_mame_rom_builder", "MAME_xml_path")

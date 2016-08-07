@@ -67,4 +67,8 @@
         Next
         Return tmpList
     End Function
+
+    Private Sub Form9_database_statistic_comparer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
 End Class

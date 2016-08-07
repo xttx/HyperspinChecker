@@ -8,6 +8,7 @@ Public Class FormA_hyperlaunch_3rd_party_paths
     Dim doNotUpdate As Boolean = False
 
     Private Sub FormA_hyperlaunch_3rd_party_paths_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         HLPath = Form1.TextBox18.Text.Replace("\\", "\").Replace("\\", "\").Trim
         If HLPath.ToUpper.EndsWith("EXE") Then HLPathNoExt = HLPath.Substring(0, HLPath.LastIndexOf("\")).Trim Else HLPathNoExt = HLPath.Trim
         If Not HLPathNoExt.EndsWith("\") Then HLPathNoExt = HLPathNoExt + "\"

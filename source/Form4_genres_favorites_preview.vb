@@ -7,4 +7,8 @@
             Me.TopMost = False
         End If
     End Sub
+
+    Private Sub Form4_genres_favorites_preview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
 End Class

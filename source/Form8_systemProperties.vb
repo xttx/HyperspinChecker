@@ -531,8 +531,9 @@ Public Class Form8_systemProperties
         insert_new_system_at = -1
     End Sub
 
-    Private Sub Form8_systemProperties_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 #End Region
+
+    Private Sub Form8_systemProperties_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
 End Class

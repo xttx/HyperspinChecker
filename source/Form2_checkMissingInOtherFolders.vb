@@ -20,6 +20,7 @@ Public Class Form2_checkMissingInOtherFolders
     Dim WithEvents bg_rename As New BackgroundWorker() With {.WorkerReportsProgress = True}
 
     Private Sub Form2_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         ProgressBar1.Value = 0
         ComboBox1.SelectedIndex = Class1.i : refr = False
         Select Case ComboBox1.SelectedIndex

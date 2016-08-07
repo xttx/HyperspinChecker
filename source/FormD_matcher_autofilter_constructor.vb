@@ -4,6 +4,7 @@ Public Class FormD_matcher_autofilter_constructor
     Dim regexList As New List(Of String)
 
     Private Sub FormD_matcher_autofilter_constructor_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         If Class3_matcher.autofilter_regex_options(0) Then CheckBox1.Checked = True Else CheckBox1.Checked = False
         If Class3_matcher.autofilter_regex_options(1) Then CheckBox2.Checked = True Else CheckBox2.Checked = False
 

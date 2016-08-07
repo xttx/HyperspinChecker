@@ -5,6 +5,7 @@ Public Class Form9_database_statistic
     Private frm As Form9_database_statistic_comparer
 
     Private Sub Form9_database_statistic_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         TextBox1.Text = Class1.HyperspinPath + "\Databases"
         TextBox2.Text = "MainDB"
         LoadExcludeList() 'Reload exclude list

@@ -27,4 +27,8 @@
         value = ""
         Me.Close()
     End Sub
+
+    Private Sub FormF_systemManager_addSystem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
 End Class

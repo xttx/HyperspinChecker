@@ -17,6 +17,7 @@ Public Class FormG_associationTables
 
     'Load form - fill system list
     Private Sub FormG_associationTables_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         For Each sys As String In Form1.ComboBox1.Items
             ComboBox1.Items.Add(sys)
         Next

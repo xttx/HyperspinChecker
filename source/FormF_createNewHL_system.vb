@@ -23,4 +23,8 @@ Public Class FormF_createNewHL_system
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
     End Sub
+
+    Private Sub FormF_createNewHL_system_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
 End Class

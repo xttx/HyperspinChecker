@@ -2,6 +2,7 @@
     Dim ini As New IniFileApi()
 
     Private Sub FormF_systemManager_exclusions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         ini.path = ".\Config.conf"
 
         Dim tmp As String = ""

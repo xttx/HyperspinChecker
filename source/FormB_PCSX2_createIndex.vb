@@ -107,6 +107,7 @@ Public Class FormB_PCSX2_createIndex
 
     Dim ini As New IniFileApi With {.path = ".\Config.conf"}
     Private Sub FormB_PCSX2_createIndex_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Language.localize(Me)
         TextBox1.Text = ini.IniReadValue("Tool_PCSX2_indexer", "exe")
         TextBox2.Text = ini.IniReadValue("Tool_PCSX2_indexer", "iso_path")
     End Sub

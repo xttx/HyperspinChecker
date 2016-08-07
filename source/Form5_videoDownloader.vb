@@ -13,6 +13,7 @@ Public Class Form5_videoDownloader
     Dim WithEvents ListView1 As New myListView
 
     Private Sub Form5_videoDownloader_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Language.localize(Me)
         Me.Controls.Add(ListView1)
         ListView1.Location = New Point(15, 88)
         ListView1.Size = New Size(459, 200)

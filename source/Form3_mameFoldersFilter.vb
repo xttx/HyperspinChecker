@@ -51,4 +51,8 @@
         Next
         Me.Close()
     End Sub
+
+    Private Sub Form3_mameFoldersFilter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Language.localize(Me)
+    End Sub
 End Class

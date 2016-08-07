@@ -37,8 +37,10 @@ Public Class IniFileApi
     End Function
 
     Public Function IniListKey(Optional section As String = Nothing) As String()
-        Dim temp As New String(" "c, 4096)
-        Dim i As Integer = GetPrivateProfileString(section, Nothing, "", temp, 4096, path)
+        'Dim temp As New String(" "c, 4096)
+        Dim temp As New String(" "c, 65536)
+        'Dim i As Integer = GetPrivateProfileString(section, Nothing, "", temp, 4096, path)
+        Dim i As Integer = GetPrivateProfileString(section, Nothing, "", temp, 65536, path)
         Dim l As List(Of String) = temp.Split(Chr(0)).ToList
         l.RemoveRange(l.Count - 2, 2)
         Return l.ToArray
