@@ -420,6 +420,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="bin\Release\A-Tables\Acorn Archimedes.atbl" />
+    <None Include="bin\Release\A-Tables\Acorn Atom.atbl" />
+    <None Include="bin\Release\A-Tables\Atari ST.atbl" />
+    <None Include="bin\Release\Config.conf" />
+    <None Include="bin\Release\HyperspinChecker.exe.config" />
+    <None Include="bin\Release\HyperspinChecker.vshost.exe.config" />
+    <None Include="bin\Release\HyperspinChecker.vshost.exe.manifest" />
+    <None Include="bin\Release\Localization\English.ini" />
+    <None Include="bin\Release\Localization\Russian.ini" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -468,6 +477,23 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Release\7z.dll" />
+    <Content Include="bin\Release\AxInterop.AXVLC.dll" />
+    <Content Include="bin\Release\AxInterop.ShockwaveFlashObjects.dll" />
+    <Content Include="bin\Release\AxInterop.WMPLib.dll" />
+    <Content Include="bin\Release\DBExcludeList.txt" />
+    <Content Include="bin\Release\diff.txt" />
+    <Content Include="bin\Release\Exclusions.txt" />
+    <Content Include="bin\Release\HyperCheckerLog.txt" />
+    <Content Include="bin\Release\HyperspinChecker.exe" />
+    <Content Include="bin\Release\HyperspinChecker.pdb" />
+    <Content Include="bin\Release\HyperspinChecker.vshost.exe" />
+    <Content Include="bin\Release\Interop.AXVLC.dll" />
+    <Content Include="bin\Release\Interop.ShockwaveFlashObjects.dll" />
+    <Content Include="bin\Release\Interop.WMPLib.dll" />
+    <Content Include="bin\Release\notes.txt" />
+    <Content Include="bin\Release\player.swf" />
+    <Content Include="bin\Release\SevenZipSharp.dll" />
     <Content Include="checker.ico" />
     <Content Include="kubic.ico" />
   </ItemGroup>
