@@ -192,6 +192,7 @@ Public Class Form1
                 ComboBox13.Items.Add(f)
             Next
         End If
+
         'If Not FileIO.FileSystem.DirectoryExists(".\Localization") Then FileIO.FileSystem.CreateDirectory(".\Localization")
         'Dim sw As New IO.StreamWriter(".\Localization\English.ini")
         'sw.WriteLine("[Main]")
@@ -2014,13 +2015,14 @@ Public Class Form1
             sw.WriteLine(control_path + "." + c.Name + " = " + c.Text)
         Next
         'sw.WriteLine("//" + control_path + " - RadioButtons")
-        For Each r As RadioButton In Me.Controls.OfType(Of RadioButton)
+        For Each r As RadioButton In ctrl.Controls.OfType(Of RadioButton)
             sw.WriteLine(control_path + "." + r.Name + " = " + r.Text)
         Next
         sw.WriteLine("")
 
         For Each tabControl In ctrl.Controls.OfType(Of TabControl)
             For Each tabpage As TabPage In tabControl.TabPages
+                sw.WriteLine(control_path + "." + tabControl.Name + "." + tabpage.Name + " = " + tabpage.Text)
                 localization_create(tabpage, sw)
                 sw.WriteLine("")
             Next
@@ -2041,6 +2043,7 @@ Public Class Form1
         Next
 
         For Each grp In ctrl.Controls.OfType(Of GroupBox)
+            sw.WriteLine(control_path + "." + grp.Name + " = " + grp.Text)
             localization_create(grp, sw)
             sw.WriteLine("")
         Next
