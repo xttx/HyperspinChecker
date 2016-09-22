@@ -193,6 +193,7 @@ Public Class Form1
             Next
         End If
 
+        'Create localiztion files
         'If Not FileIO.FileSystem.DirectoryExists(".\Localization") Then FileIO.FileSystem.CreateDirectory(".\Localization")
         'Dim sw As New IO.StreamWriter(".\Localization\English.ini")
         'sw.WriteLine("[Main]")

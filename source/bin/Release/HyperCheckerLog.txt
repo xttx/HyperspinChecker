@@ -143,3 +143,43 @@
 9:53:57 - Loading config
 9:53:57 - Init classes
 9:53:57 - Done init
+9:58:23 - Initializing...
+9:58:23 - Creating menus
+9:58:23 - Loading config
+9:58:23 - Init classes
+9:58:23 - Done init
+9:58:58 - Initializing...
+9:58:58 - Creating menus
+9:58:58 - Loading config
+9:58:58 - Init classes
+9:58:58 - Done init
+10:1:35 - Initializing...
+10:1:35 - Creating menus
+10:1:35 - Loading config
+10:1:35 - Init classes
+10:1:35 - Done init
+10:7:22 - Initializing...
+10:7:22 - Creating menus
+10:7:22 - Loading config
+10:7:22 - Init classes
+10:7:22 - Done init
+9:16:11 - Initializing...
+9:16:11 - Creating menus
+9:16:11 - Loading config
+9:16:12 - Init classes
+9:16:12 - Done init
+9:20:32 - Initializing...
+9:20:32 - Creating menus
+9:20:32 - Loading config
+9:20:32 - Init classes
+9:20:32 - Done init
+18:40:33 - Initializing...
+18:40:33 - Creating menus
+18:40:33 - Loading config
+18:40:33 - Init classes
+18:40:33 - Done init
+9:10:4 - Initializing...
+9:10:4 - Creating menus
+9:10:4 - Loading config
+9:10:14 - Init classes
+9:10:14 - Done init
