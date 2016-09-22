@@ -167,6 +167,8 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.CheckBox29 = New System.Windows.Forms.CheckBox()
         Me.CheckBox28 = New System.Windows.Forms.CheckBox()
@@ -318,8 +320,8 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox30 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox31 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -337,6 +339,7 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
@@ -345,7 +348,6 @@ Partial Class Form1
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox11.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -1927,6 +1929,26 @@ Partial Class Form1
         Me.TabPage5.Text = "Program settings"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.ComboBox13)
+        Me.GroupBox11.Location = New System.Drawing.Point(218, 231)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(233, 63)
+        Me.GroupBox11.TabIndex = 8
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "Localizations:"
+        '
+        'ComboBox13
+        '
+        Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox13.FormattingEnabled = True
+        Me.ComboBox13.Items.AddRange(New Object() {"Built-in (English)"})
+        Me.ComboBox13.Location = New System.Drawing.Point(6, 19)
+        Me.ComboBox13.Name = "ComboBox13"
+        Me.ComboBox13.Size = New System.Drawing.Size(221, 21)
+        Me.ComboBox13.TabIndex = 0
+        '
         'GroupBox10
         '
         Me.GroupBox10.Controls.Add(Me.CheckBox29)
@@ -2089,11 +2111,13 @@ Partial Class Form1
         '
         'GroupBox9
         '
+        Me.GroupBox9.Controls.Add(Me.CheckBox31)
+        Me.GroupBox9.Controls.Add(Me.CheckBox30)
         Me.GroupBox9.Controls.Add(Me.Label40)
         Me.GroupBox9.Controls.Add(Me.CheckBox26)
         Me.GroupBox9.Location = New System.Drawing.Point(457, 45)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(208, 88)
+        Me.GroupBox9.Size = New System.Drawing.Size(208, 180)
         Me.GroupBox9.TabIndex = 9
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "HyperLaunch v3.x"
@@ -2122,7 +2146,7 @@ Partial Class Form1
         Me.GroupBox8.Controls.Add(Me.CheckBox24)
         Me.GroupBox8.Controls.Add(Me.CheckBox23)
         Me.GroupBox8.Controls.Add(Me.CheckBox22)
-        Me.GroupBox8.Location = New System.Drawing.Point(457, 139)
+        Me.GroupBox8.Location = New System.Drawing.Point(457, 231)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(208, 86)
         Me.GroupBox8.TabIndex = 9
@@ -2500,7 +2524,7 @@ Partial Class Form1
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'MainTableToolStripMenuItem
@@ -3106,25 +3130,25 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader ..."
         '
-        'GroupBox11
+        'CheckBox30
         '
-        Me.GroupBox11.Controls.Add(Me.ComboBox13)
-        Me.GroupBox11.Location = New System.Drawing.Point(218, 231)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(233, 63)
-        Me.GroupBox11.TabIndex = 8
-        Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "Localizations:"
+        Me.CheckBox30.AutoSize = True
+        Me.CheckBox30.Location = New System.Drawing.Point(6, 98)
+        Me.CheckBox30.Name = "CheckBox30"
+        Me.CheckBox30.Size = New System.Drawing.Size(168, 17)
+        Me.CheckBox30.TabIndex = 2
+        Me.CheckBox30.Text = "Check for HL/RL game media"
+        Me.CheckBox30.UseVisualStyleBackColor = True
         '
-        'ComboBox13
+        'CheckBox31
         '
-        Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox13.FormattingEnabled = True
-        Me.ComboBox13.Items.AddRange(New Object() {"Built-in (English)"})
-        Me.ComboBox13.Location = New System.Drawing.Point(6, 19)
-        Me.ComboBox13.Name = "ComboBox13"
-        Me.ComboBox13.Size = New System.Drawing.Size(221, 21)
-        Me.ComboBox13.TabIndex = 0
+        Me.CheckBox31.AutoSize = True
+        Me.CheckBox31.Location = New System.Drawing.Point(6, 121)
+        Me.CheckBox31.Name = "CheckBox31"
+        Me.CheckBox31.Size = New System.Drawing.Size(174, 17)
+        Me.CheckBox31.TabIndex = 3
+        Me.CheckBox31.Text = "Check for HL/RL system media"
+        Me.CheckBox31.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -3174,6 +3198,7 @@ Partial Class Form1
         Me.GroupBox2.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        Me.GroupBox11.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
@@ -3190,7 +3215,6 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.GroupBox11.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3492,4 +3516,6 @@ Partial Class Form1
     Friend WithEvents F18 As ToolStripMenuItem
     Friend WithEvents GroupBox11 As GroupBox
     Friend WithEvents ComboBox13 As ComboBox
+    Friend WithEvents CheckBox31 As CheckBox
+    Friend WithEvents CheckBox30 As CheckBox
 End Class

@@ -682,6 +682,7 @@ Public Class Form1
         Dim x As Xml.XmlDocument = param.x
         Dim counters() As Integer = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         Dim a_crc, a_manufacturer, a_year, a_genre, a_cloneof As String
+        a(11) = "Not checked" : a(12) = "Not checked" : a(13) = "Not checked" : a(14) = "Not checked" : a(15) = "Not checked" : a(16) = "Not checked" : a(17) = "Not checked" : a(18) = "Not checked"
         For Each node As Xml.XmlNode In x.SelectNodes("/menu/game")
             If node.SelectSingleNode("crc") IsNot Nothing Then a_crc = node.SelectSingleNode("crc").InnerText Else a_crc = ""
             If node.SelectSingleNode("manufacturer") IsNot Nothing Then a_manufacturer = node.SelectSingleNode("manufacturer").InnerText Else a_manufacturer = ""
@@ -749,42 +750,45 @@ Public Class Form1
             If FileSystem.FileExists(p + "\Sound\Background Music\" + romName + ".mp3") Then a(10) = "YES" : counters(9) += 1 Else a(10) = "NO"
 
             'Check HL/RL Media
-            If FileSystem.DirectoryExists(Class1.HyperlaunchPath + "\Media") Then
-                a(11) = "NO" : a(12) = "NO" : a(13) = "NO" : a(14) = "NO" : a(15) = "NO" : a(16) = "NO" : a(17) = "NO" : a(18) = "NO"
-                Dim media_fld As String = Class1.HyperlaunchPath + "\Media\"
-                If FileSystem.DirectoryExists(media_fld + "Artwork\" + param.sys + "\" + romName) Then
-                    If FileSystem.GetFiles(media_fld + "Artwork\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.png"}).Count > 0 Then a(11) = "YES"
-                End If
-                If FileSystem.DirectoryExists(media_fld + "Backgrounds\" + param.sys + "\" + romName) Then
-                    If FileSystem.GetFiles(media_fld + "Backgrounds\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".png"}).Count > 0 Then a(12) = "YES"
-                End If
-                If FileSystem.DirectoryExists(media_fld + "Bezels\" + param.sys + "\" + romName) Then
-                    If FileSystem.GetFiles(media_fld + "Bezels\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Bezel.png"}).Count > 0 Then a(13) = "YES"
-                End If
-                If FileSystem.DirectoryExists(media_fld + "Fade\" + param.sys + "\" + romName) Then
-                    If FileSystem.GetFiles(media_fld + "Fade\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Layer 1*.png"}).Count > 0 Then a(14) = "YES"
-                End If
-                If FileSystem.DirectoryExists(media_fld + "Guides\" + param.sys + "\" + romName) Then
-                    If FileSystem.GetFiles(media_fld + "Guides\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.*"}).Count > 0 Then a(15) = "YES"
-                End If
-                If FileSystem.DirectoryExists(media_fld + "Manuals\" + param.sys + "\" + romName) Then
-                    If FileSystem.GetFiles(media_fld + "Manuals\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.pdf"}).Count > 0 Then a(16) = "YES"
-                End If
-                If FileSystem.DirectoryExists(media_fld + "Music\" + param.sys + "\" + romName) Then
-                    If FileSystem.GetFiles(media_fld + "Music\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".m3u"}).Count > 0 Then a(17) = "YES"
-                End If
-                If FileSystem.DirectoryExists(media_fld + "Videos\" + param.sys + "\" + romName) Then
-                    If FileSystem.GetFiles(media_fld + "Videos\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.avi", "*.mp4"}).Count > 0 Then a(18) = "YES"
+            If CheckBox30.Checked Then
+                If FileSystem.DirectoryExists(Class1.HyperlaunchPath + "\Media") Then
+                    a(11) = "NO" : a(12) = "NO" : a(13) = "NO" : a(14) = "NO" : a(15) = "NO" : a(16) = "NO" : a(17) = "NO" : a(18) = "NO"
+                    Dim media_fld As String = Class1.HyperlaunchPath + "\Media\"
+                    If FileSystem.DirectoryExists(media_fld + "Artwork\" + param.sys + "\" + romName) Then
+                        If FileSystem.GetFiles(media_fld + "Artwork\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.png"}).Count > 0 Then a(11) = "YES"
+                    End If
+                    If FileSystem.DirectoryExists(media_fld + "Backgrounds\" + param.sys + "\" + romName) Then
+                        If FileSystem.GetFiles(media_fld + "Backgrounds\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".png"}).Count > 0 Then a(12) = "YES"
+                    End If
+                    If FileSystem.DirectoryExists(media_fld + "Bezels\" + param.sys + "\" + romName) Then
+                        If FileSystem.GetFiles(media_fld + "Bezels\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Bezel.png"}).Count > 0 Then a(13) = "YES"
+                    End If
+                    If FileSystem.DirectoryExists(media_fld + "Fade\" + param.sys + "\" + romName) Then
+                        If FileSystem.GetFiles(media_fld + "Fade\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Layer 1*.png"}).Count > 0 Then a(14) = "YES"
+                    End If
+                    If FileSystem.DirectoryExists(media_fld + "Guides\" + param.sys + "\" + romName) Then
+                        If FileSystem.GetFiles(media_fld + "Guides\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.*"}).Count > 0 Then a(15) = "YES"
+                    End If
+                    If FileSystem.DirectoryExists(media_fld + "Manuals\" + param.sys + "\" + romName) Then
+                        If FileSystem.GetFiles(media_fld + "Manuals\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.pdf"}).Count > 0 Then a(16) = "YES"
+                    End If
+                    If FileSystem.DirectoryExists(media_fld + "Music\" + param.sys + "\" + romName) Then
+                        If FileSystem.GetFiles(media_fld + "Music\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".m3u"}).Count > 0 Then a(17) = "YES"
+                    End If
+                    If FileSystem.DirectoryExists(media_fld + "Videos\" + param.sys + "\" + romName) Then
+                        If FileSystem.GetFiles(media_fld + "Videos\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.avi", "*.mp4"}).Count > 0 Then a(18) = "YES"
+                    End If
                 End If
             End If
 
+
             'Add row
             Dim r As New DataGridViewRow
-            'r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a_crc, a_manufacturer, a_year, a_genre})
             r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a(11), a(12), a(13), a(14), a(15), a(16), a(17), a(18), a_crc, a_manufacturer, a_year, a_genre})
             tempStr = ""
             For i As Integer = 2 To 18
                 If a(i) = "YES" Then r.Cells(i).Style.BackColor = Class1.colorYES Else r.Cells(i).Style.BackColor = Class1.colorNO
+                If i >= 11 And i <= 18 And Not CheckBox30.Checked Then r.Cells(i).Style.BackColor = Color.White
                 tempStr = tempStr + a(i).Substring(0, 1)
             Next
             If useVidFromParent And a(3) = "YES" Then r.Cells(3).Style.BackColor = Class1.colorPAR
