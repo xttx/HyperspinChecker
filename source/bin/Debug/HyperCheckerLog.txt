@@ -9414,3 +9414,40 @@
 9:59:45 - Loading config
 9:59:45 - Init classes
 9:59:45 - Done init
+9:34:54 - Initializing...
+9:34:54 - Creating menus
+9:34:54 - Loading config
+9:34:54 - Init classes
+9:34:54 - Done init
+9:36:3 - Initializing...
+9:36:3 - Creating menus
+9:36:3 - Loading config
+9:36:3 - Init classes
+9:36:33 - Initializing...
+9:36:33 - Creating menus
+9:36:33 - Loading config
+9:36:33 - Init classes
+9:36:33 - Done init
+9:38:21 - Initializing...
+9:38:21 - Creating menus
+9:38:21 - Loading config
+9:38:21 - Init classes
+9:38:21 - Done init
+9:38:33 - Checking file: O:\Hyperspin Project[b_hl3]\Media\AAE\Themes\default.zip
+9:43:16 - Initializing...
+9:43:16 - Creating menus
+9:43:16 - Loading config
+9:43:16 - Init classes
+9:43:16 - Done init
+9:43:27 - Checking file: O:\Hyperspin Project[b_hl3]\Media\AAE\Themes\default.zip
+9:44:7 - Initializing...
+9:44:7 - Creating menus
+9:44:7 - Loading config
+9:44:7 - Init classes
+9:44:7 - Done init
+9:44:13 - Checking file: O:\Hyperspin Project[b_hl3]\Media\AAE\Themes\default - копия (2).zip
+9:44:13 - Checking file: O:\Hyperspin Project[b_hl3]\Media\AAE\Themes\default - копия (3).zip
+9:44:13 - Checking file: O:\Hyperspin Project[b_hl3]\Media\AAE\Themes\default - копия (4).zip
+9:44:13 - Checking file: O:\Hyperspin Project[b_hl3]\Media\AAE\Themes\default - копия.zip
+9:44:13 - Checking file: O:\Hyperspin Project[b_hl3]\Media\AAE\Themes\default.zip
+9:44:13 - default.zip is found on exclusion list. Skipped

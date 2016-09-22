@@ -4,6 +4,7 @@ Imports System.Runtime.InteropServices
 Imports System.ComponentModel
 
 Public Class Form1
+    'TODO Add 'Reset columns size' to both tables context menu
     'TODO Use file extentions from hyperlaunch when check/list roms in matcher
     'TODO After autorenaming something, and then reopen autorenamer and collect info, crash on Form6_autorenamer.vb-line145 cause file not found
     'REQUEST [desrop69 #105] case sensitive crc
@@ -286,6 +287,8 @@ Public Class Form1
         If ini2.IniReadValue("main", "archives_rename_inside") = "1" Then CheckBox28.Checked = True
         If ini2.IniReadValue("main", "archives_remove_unneeded") = "1" Then CheckBox29.Checked = True
         If ini2.IniReadValue("main", "usehlv3") = "1" Then CheckBox26.Checked = True
+        If ini2.IniReadValue("main", "check_hl_game_media") = "1" Then CheckBox30.Checked = True
+        If ini2.IniReadValue("main", "check_hl_system_media") = "1" Then CheckBox31.Checked = True
         Dim i As Integer = 1
         Do While ini2.IniReadValue("handle_together", i.ToString) <> ""
             ListBox4.Items.Add(ini2.IniReadValue("handle_together", i.ToString))
@@ -347,7 +350,7 @@ Public Class Form1
 
         If Not FileSystem.FileExists(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml") Then
             MsgBox("Can't find '" + Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml'. Check hyperspin path under 'settings' tab, or in the config.conf")
-            Else
+        Else
             If Not FileSystem.FileExists(Class1.HyperspinPath + "\Settings\Settings.ini") Then
                 MsgBox("Can't find '" + Class1.HyperspinPath + "\Settings\Settings.ini'. Check hyperspin path under 'settings' tab, or in the config.conf")
             End If
@@ -1002,7 +1005,6 @@ Public Class Form1
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2_moveUnneeded.Click
         myContextMenu3.Show(Cursor.Position.X, Cursor.Position.Y)
     End Sub
-
     'MoveUnneeded SUBItems click
     Private Sub contextMenuMoveRoms(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu3.ItemClicked
         Dim mediaID As Integer = 0
@@ -1019,7 +1021,7 @@ Public Class Form1
 
         'Exclusion list
         Dim exclusionList As New List(Of String)
-        If mediaID = 7 Then exclusionList.Add("default")
+        If mediaID = 7 Then exclusionList.Add("DEFAULT")
         If mediaID = 0 Then
             If Microsoft.VisualBasic.FileIO.FileSystem.FileExists(".\Exclusions.txt") Then
                 Dim s As String = ""
@@ -1156,6 +1158,8 @@ Public Class Form1
         ini.IniWriteValue("MAIN", "rename_just_cue", DirectCast(IIf(CheckBox6.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "search_cue_for", TextBox16.Text)
         ini.IniWriteValue("MAIN", "useHLv3", DirectCast(IIf(CheckBox26.Checked, "1", "0"), String))
+        ini.IniWriteValue("MAIN", "check_hl_game_media", DirectCast(IIf(CheckBox30.Checked, "1", "0"), String))
+        ini.IniWriteValue("MAIN", "check_hl_system_media", DirectCast(IIf(CheckBox31.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "archives_rename_inside", DirectCast(IIf(CheckBox28.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "archives_remove_unneeded", DirectCast(IIf(CheckBox29.Checked, "1", "0"), String))
         ini.IniWriteValue("3rd_Party_Tools", "UltraISO", TextBox28.Text.Trim)
