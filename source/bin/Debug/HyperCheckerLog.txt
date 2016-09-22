@@ -9707,3 +9707,23 @@
 12:38:36 - Loading config
 12:38:36 - Init classes
 12:38:36 - Done init
+12:39:23 - Initializing...
+12:39:23 - Creating menus
+12:39:23 - Loading config
+12:39:24 - Init classes
+12:39:24 - Done init
+12:48:53 - Initializing...
+12:48:53 - Creating menus
+12:48:53 - Loading config
+12:48:53 - Init classes
+12:48:53 - Done init
+12:50:44 - Initializing...
+12:50:44 - Creating menus
+12:50:44 - Loading config
+12:50:44 - Init classes
+12:50:44 - Done init
+12:52:14 - Initializing...
+12:52:14 - Creating menus
+12:52:15 - Loading config
+12:52:15 - Init classes
+12:52:15 - Done init

@@ -258,7 +258,7 @@ Public Class Class5_system_manager
                     If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Bezels\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"Bezel.png"}).Count > 0 Then Systems(k).Add("%HLMEDIA_BEZEL%")
                 End If
                 If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Fade\" + sys + "\_Default") Then
-                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Fade\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"Layer 1*.png"}).Count > 0 Then Systems(k).Add("%HLMEDIA_FADE%")
+                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Fade\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"Layer *.png"}).Count > 0 Then Systems(k).Add("%HLMEDIA_FADE%")
                 End If
                 If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Guides\" + sys + "\_Default") Then
                     If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Guides\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"*.*"}).Count > 0 Then Systems(k).Add("%HLMEDIA_GUIDE%")
@@ -339,14 +339,14 @@ Public Class Class5_system_manager
         If l.Contains("%7%") Then x(7) = "X" : fnd_n += 1 Else x(7) = ""
         If l.Contains("%8%") Then x(8) = "X" : fnd_n += 1 Else x(8) = ""
         If l.Contains("%9%") Then x(9) = "X" : fnd_n += 1 Else x(9) = ""
-        If l.Contains("%HLMEDIA_ARTWORK%") Then x(10) = "X" : fnd_n += 1 Else x(10) = ""
-        If l.Contains("%HLMEDIA_BACKG%") Then x(11) = "X" : fnd_n += 1 Else x(11) = ""
-        If l.Contains("%HLMEDIA_BEZEL%") Then x(12) = "X" : fnd_n += 1 Else x(12) = ""
-        If l.Contains("%HLMEDIA_FADE%") Then x(13) = "X" : fnd_n += 1 Else x(13) = ""
-        If l.Contains("%HLMEDIA_GUIDE%") Then x(14) = "X" : fnd_n += 1 Else x(14) = ""
-        If l.Contains("%HLMEDIA_MANUAL%") Then x(15) = "X" : fnd_n += 1 Else x(15) = ""
-        If l.Contains("%HLMEDIA_MUSIC%") Then x(16) = "X" : fnd_n += 1 Else x(16) = ""
-        If l.Contains("%HLMEDIA_VIDEO%") Then x(17) = "X" : fnd_n += 1 Else x(17) = ""
+        If l.Contains("%HLMEDIA_ARTWORK%") Then x(10) = "X" Else x(10) = ""
+        If l.Contains("%HLMEDIA_BACKG%") Then x(11) = "X" Else x(11) = ""
+        If l.Contains("%HLMEDIA_BEZEL%") Then x(12) = "X" Else x(12) = ""
+        If l.Contains("%HLMEDIA_FADE%") Then x(13) = "X" Else x(13) = ""
+        If l.Contains("%HLMEDIA_GUIDE%") Then x(14) = "X" Else x(14) = ""
+        If l.Contains("%HLMEDIA_MANUAL%") Then x(15) = "X" Else x(15) = ""
+        If l.Contains("%HLMEDIA_MUSIC%") Then x(16) = "X" Else x(16) = ""
+        If l.Contains("%HLMEDIA_VIDEO%") Then x(17) = "X" Else x(17) = ""
 
         Dim req As Boolean = True
         If req_ml IsNot Nothing Then
