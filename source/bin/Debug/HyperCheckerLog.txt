@@ -9491,3 +9491,76 @@
 9:52:29 - Loading config
 9:52:29 - Init classes
 9:52:29 - Done init
+9:54:53 - Initializing...
+9:54:53 - Creating menus
+9:54:53 - Loading config
+9:54:53 - Init classes
+9:54:53 - Done init
+10:0:4 - Initializing...
+10:0:4 - Creating menus
+10:0:4 - Loading config
+10:0:4 - Init classes
+10:0:4 - Done init
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\alienst.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\armora.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\astdelux.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\asteroid.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\barrier.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\boxingb.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\bwidow.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\bzone.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\demon.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\elim2.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\gravitar.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\llander.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\lunarbat.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\meteorts.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\mhavoc.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\omegrace.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\quantum.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\redbaron.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\ripoff.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\solarq.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\spacduel.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\spacewar.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\spacfury.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\speedfrk.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\starcas.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\starhawk.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\startrek.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\starwars.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\sundance.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\tacscan.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\tailg.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\tempest.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\vbreak.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\vortex.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\warrior.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\wotw.zip
+10:0:11 - Checking file: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\zektor.zip
+10:0:11 - Checking folder: O:\Hyperspin Project[b_hl3]\Roms\Arcade\AAE\Unneeded
+10:2:29 - Initializing...
+10:2:29 - Creating menus
+10:2:29 - Loading config
+10:2:29 - Init classes
+10:2:29 - Done init
+10:2:41 - Initializing...
+10:2:41 - Creating menus
+10:2:41 - Loading config
+10:2:41 - Init classes
+10:2:41 - Done init
+10:4:49 - Initializing...
+10:4:49 - Creating menus
+10:4:49 - Loading config
+10:4:49 - Init classes
+10:4:49 - Done init
+10:5:21 - Initializing...
+10:5:21 - Creating menus
+10:5:21 - Loading config
+10:5:21 - Init classes
+10:5:21 - Done init
+10:6:39 - Initializing...
+10:6:39 - Creating menus
+10:6:39 - Loading config
+10:6:39 - Init classes
+10:6:39 - Done init

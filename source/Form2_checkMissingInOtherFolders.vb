@@ -41,6 +41,14 @@ Public Class Form2_checkMissingInOtherFolders
             Case 7
                 TextBox1.Text = Class1.HyperspinPath + "Media\" + Form1.ComboBox1.SelectedItem.ToString + "\Images\Artwork4\"
         End Select
+
+        If ComboBox1.SelectedIndex = 0 Then
+            CheckBox1.Enabled = True : CheckBox1.Tag = ""
+            CheckBox2.Enabled = True : CheckBox2.Tag = ""
+        Else
+            CheckBox1.Enabled = False : CheckBox1.Tag = "DISABLED"
+            CheckBox2.Enabled = False : CheckBox2.Tag = "DISABLED"
+        End If
     End Sub
 
     'Change combobox - Media Type
@@ -48,11 +56,11 @@ Public Class Form2_checkMissingInOtherFolders
         If refr Then Exit Sub
         fillList()
         If ComboBox1.SelectedIndex = 0 Then
-            CheckBox1.Enabled = True
-            CheckBox2.Enabled = True
+            CheckBox1.Enabled = True : CheckBox1.Tag = ""
+            CheckBox2.Enabled = True : CheckBox2.Tag = ""
         Else
-            CheckBox1.Enabled = False
-            CheckBox2.Enabled = False
+            CheckBox1.Enabled = False : CheckBox1.Tag = "DISABLED"
+            CheckBox2.Enabled = False : CheckBox2.Tag = "DISABLED"
         End If
     End Sub
 
@@ -130,7 +138,7 @@ Public Class Form2_checkMissingInOtherFolders
     End Sub
     Private Sub fillList_BG_complete() Handles bg_fillist.RunWorkerCompleted
         For Each c As Control In Me.Controls
-            c.Enabled = True
+            If c.Tag Is Nothing OrElse c.Tag.ToString <> "DISABLED" Then c.Enabled = True
         Next
         If restore_textbox_focus Then TextBox1.Focus()
         ProgressBar1.Value = 0
