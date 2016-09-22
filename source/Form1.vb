@@ -461,6 +461,7 @@ Public Class Form1
         myContextMenu.Items.Add("check for missing Artwork2")
         myContextMenu.Items.Add("check for missing Artwork3")
         myContextMenu.Items.Add("check for missing Artwork4")
+        myContextMenu.Items.Add("check for missing Themes")
 
         'Context menu - move unneeded to sub folder
         myContextMenu3.Items.Add("move unneeded Roms")
@@ -998,6 +999,7 @@ Public Class Form1
         If e.ClickedItem Is myContextMenu.Items(6) Then Class1.i = 5
         If e.ClickedItem Is myContextMenu.Items(7) Then Class1.i = 6
         If e.ClickedItem Is myContextMenu.Items(8) Then Class1.i = 7
+        If e.ClickedItem Is myContextMenu.Items(9) Then Class1.i = 2
         Form2_checkMissingInOtherFolders.Show()
     End Sub
 
