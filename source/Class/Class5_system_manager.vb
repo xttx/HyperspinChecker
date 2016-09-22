@@ -12,6 +12,7 @@ Public Class Class5_system_manager
     Private frm As New Form8_systemProperties
     Private Systems As New Dictionary(Of String, List(Of String))
     Private status_Label As Label = Form1.Label41
+    Private need_check_hl_media As CheckBox = Form1.CheckBox31
     Private WithEvents Btn_add As Button = Form1.Button23
     Private WithEvents Btn_scan As Button = Form1.Button33
     Private WithEvents Btn_prop As Button = Form1.Button34
@@ -55,16 +56,6 @@ Public Class Class5_system_manager
         tmp = ini.IniReadValue("SystemManager", "required_media_list")
         If tmp <> "" Then required_media_list = tmp.Split({","c}, StringSplitOptions.RemoveEmptyEntries)
 
-        'Get HL Path
-        'iniClass.Load(Class1.HyperspinPath + "\Settings\Settings.ini")
-        'Dim HL_Path As String = iniClass.GetKeyValue("Main", "Hyperlaunch_Path").Trim
-        'If Not HL_Path = "" Then
-        'If HL_Path.ToUpper.EndsWith(".EXE") Then HL_Path = HL_Path.Substring(0, HL_Path.LastIndexOf("\") + 1)
-
-        'Dim t1 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\HyperLaunch.exe")
-        'Dim t2 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\RocketLauncher.exe")
-        'If Not t1 And Not t2 Then HL_Path = ""
-        'End If
         Dim HL_Path As String = Class1.HyperlaunchPath
         Dim t1 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\HyperLaunch.exe")
         Dim t2 As Boolean = FileIO.FileSystem.FileExists(HL_Path + "\RocketLauncher.exe")
@@ -252,8 +243,41 @@ Public Class Class5_system_manager
             status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 9/10] Scanning Hyperspin Settings.ini... " + c.ToString + " of " + files.Count.ToString)
         Next
 
+        'Check for HL/RL Media
+        If need_check_hl_media.Checked And HL_Path <> "" Then
+            status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 10/10] Check for HL/RL Media... ")
+            For Each k In Systems.Keys
+                sys = Systems(k)(0)
+                If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Artwork\" + sys + "\_Default") Then
+                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Artwork\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"*.png"}).Count > 0 Then Systems(k).Add("%HLMEDIA_ARTWORK%")
+                End If
+
+                If FileIO.FileSystem.FileExists(HL_Path + "\Media\Backgrounds\" + sys + "\_Default\default.png") Then Systems(k).Add("%HLMEDIA_BACKG%")
+
+                If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Bezels\" + sys + "\_Default") Then
+                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Bezels\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"Bezel.png"}).Count > 0 Then Systems(k).Add("%HLMEDIA_BEZEL%")
+                End If
+                If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Fade\" + sys + "\_Default") Then
+                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Fade\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"Layer 1*.png"}).Count > 0 Then Systems(k).Add("%HLMEDIA_FADE%")
+                End If
+                If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Guides\" + sys + "\_Default") Then
+                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Guides\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"*.*"}).Count > 0 Then Systems(k).Add("%HLMEDIA_GUIDE%")
+                End If
+                If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Manuals\" + sys + "\_Default") Then
+                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Manuals\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"*.pdf", "*.txt"}).Count > 0 Then Systems(k).Add("%HLMEDIA_MANUAL%")
+                End If
+                If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Music\" + sys + "\_Default") Then
+                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Music\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"*.mp3"}).Count > 0 Then Systems(k).Add("%HLMEDIA_MUSIC%")
+                End If
+                If FileIO.FileSystem.DirectoryExists(HL_Path + "\Media\Videos\" + sys + "\_Default") Then
+                    If FileIO.FileSystem.GetFiles(HL_Path + "\Media\Videos\" + sys + "\_Default", FileIO.SearchOption.SearchAllSubDirectories, {"*.mp4", "*.avi"}).Count > 0 Then Systems(k).Add("%HLMEDIA_VIDEO%")
+                End If
+
+            Next
+        End If
+
         'FILL GRID
-        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task 10/10] Filling grid... ")
+        status_Label.BeginInvoke(Sub() status_Label.Text = "[Task Final] Filling grid... ")
         For Each l As List(Of String) In Systems.Values
             Dim r As DataGridViewRow = scan_FillRowSub(l, required_media_list, dont_show_completed, required_media_number)
             If r IsNot Nothing Then
@@ -264,13 +288,13 @@ Public Class Class5_system_manager
                     Dim arr_int = arr.ToList.ConvertAll(Function(str) Int32.Parse(str))
 
                     For i As Integer = 1 To 4
-                        r.Cells(i + 9).Value = arr_int(i).ToString + " \ " + arr_int(0).ToString
+                        r.Cells(i + 17).Value = arr_int(i).ToString + " \ " + arr_int(0).ToString
                         If arr_int(i) = arr_int(0) Then
-                            r.Cells(i + 9).Style.BackColor = Class1.colorYES
+                            r.Cells(i + 17).Style.BackColor = Class1.colorYES
                         ElseIf arr_int(i) = 0 Then
-                            r.Cells(i + 9).Style.BackColor = Class1.colorNO
+                            r.Cells(i + 17).Style.BackColor = Class1.colorNO
                         Else
-                            r.Cells(i + 9).Style.BackColor = Color.Yellow
+                            r.Cells(i + 17).Style.BackColor = Color.Yellow
                         End If
                     Next
                     'Artworks handle
@@ -285,22 +309,22 @@ Public Class Class5_system_manager
                         End If
                     Next
                     If Not tmp = "" Then tmp = tmp + " \ " + arr_int(0).ToString Else tmp = "none"
-                    r.Cells(14).Value = tmp
-                    If atLeastOneIncomplete Then r.Cells(14).Style.BackColor = Color.Yellow
-                    If Not atLeastOneIncomplete And atLeastOneComplete Then r.Cells(14).Style.BackColor = Class1.colorYES
-                    If Not atLeastOneIncomplete And Not atLeastOneComplete Then r.Cells(14).Style.BackColor = Class1.colorNO
+                    r.Cells(22).Value = tmp
+                    If atLeastOneIncomplete Then r.Cells(22).Style.BackColor = Color.Yellow
+                    If Not atLeastOneIncomplete And atLeastOneComplete Then r.Cells(22).Style.BackColor = Class1.colorYES
+                    If Not atLeastOneIncomplete And Not atLeastOneComplete Then r.Cells(22).Style.BackColor = Class1.colorNO
                 End If
                 'add row to grid
                 grid.BeginInvoke(Sub() grid.Rows.Add(r))
             End If
         Next
-        'Form1.Label41.Text = "System count: " + Form1.DataGridView2.Rows.Count.ToString + ", Active:" + activeCount.ToString
+        'Form1.Label41.Text = "System count:  " + Form1.DataGridView2.Rows.Count.ToString + ", Active:" + activeCount.ToString
         status_Label.BeginInvoke(Sub() status_Label.Text = "System count: " + grid.Rows.Count.ToString + ", Active:" + activeCount.ToString)
         checked = True
     End Sub
 
     Private Function scan_FillRowSub(l As List(Of String), Optional req_ml As String() = Nothing, Optional req_notCompleted As Boolean = False, Optional req_N As Integer = 0) As DataGridViewRow
-        Dim x(9) As String
+        Dim x(17) As String
         x(0) = l(0)
         Dim fnd_n As Integer = 0
         If l.Contains("%1%") Then x(1) = "X" : fnd_n += 1 Else x(1) = ""
@@ -315,6 +339,14 @@ Public Class Class5_system_manager
         If l.Contains("%7%") Then x(7) = "X" : fnd_n += 1 Else x(7) = ""
         If l.Contains("%8%") Then x(8) = "X" : fnd_n += 1 Else x(8) = ""
         If l.Contains("%9%") Then x(9) = "X" : fnd_n += 1 Else x(9) = ""
+        If l.Contains("%HLMEDIA_ARTWORK%") Then x(10) = "X" : fnd_n += 1 Else x(10) = ""
+        If l.Contains("%HLMEDIA_BACKG%") Then x(11) = "X" : fnd_n += 1 Else x(11) = ""
+        If l.Contains("%HLMEDIA_BEZEL%") Then x(12) = "X" : fnd_n += 1 Else x(12) = ""
+        If l.Contains("%HLMEDIA_FADE%") Then x(13) = "X" : fnd_n += 1 Else x(13) = ""
+        If l.Contains("%HLMEDIA_GUIDE%") Then x(14) = "X" : fnd_n += 1 Else x(14) = ""
+        If l.Contains("%HLMEDIA_MANUAL%") Then x(15) = "X" : fnd_n += 1 Else x(15) = ""
+        If l.Contains("%HLMEDIA_MUSIC%") Then x(16) = "X" : fnd_n += 1 Else x(16) = ""
+        If l.Contains("%HLMEDIA_VIDEO%") Then x(17) = "X" : fnd_n += 1 Else x(17) = ""
 
         Dim req As Boolean = True
         If req_ml IsNot Nothing Then
@@ -335,7 +367,7 @@ Public Class Class5_system_manager
         If req And (req_N = 0 OrElse req_N < fnd_n) Then
             Dim r As New DataGridViewRow()
             r.CreateCells(grid, x)
-            For i As Integer = 1 To 9
+            For i As Integer = 1 To 17
                 If x(i) = "X" Or x(i) = "HL" Then
                     r.Cells(i).Style.BackColor = Class1.colorYES
                 Else
@@ -347,6 +379,7 @@ Public Class Class5_system_manager
                         Dim f As Font = New Font(Control.DefaultFont.FontFamily, 6, FontStyle.Regular)
                         r.Cells(i).Style.Font = f
                     End If
+                    If i >= 10 And i <= 17 And Not need_check_hl_media.Checked Then r.Cells(i).Value = "not checked" : r.Cells(i).Style.BackColor = Color.White
                 End If
             Next
             Return r

@@ -168,11 +168,19 @@ Public Class Form1
     Dim WithEvents CheckStrip3_7 As New CheckBox With {.Name = "07", .Text = "Rom Path", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = True, .Enabled = True}
     Dim WithEvents CheckStrip3_8 As New CheckBox With {.Name = "08", .Text = "Main Menu Wheel", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
     Dim WithEvents CheckStrip3_9 As New CheckBox With {.Name = "09", .Text = "Main Menu Video", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
-    Dim WithEvents CheckStrip3_10 As New CheckBox With {.Name = "10", .Text = "Roms", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
-    Dim WithEvents CheckStrip3_11 As New CheckBox With {.Name = "11", .Text = "Videos", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
-    Dim WithEvents CheckStrip3_12 As New CheckBox With {.Name = "12", .Text = "Themes", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
-    Dim WithEvents CheckStrip3_13 As New CheckBox With {.Name = "13", .Text = "Wheels", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
-    Dim WithEvents CheckStrip3_14 As New CheckBox With {.Name = "14", .Text = "Artworks", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_10 As New CheckBox With {.Name = "10", .Text = "HL Artwork", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_11 As New CheckBox With {.Name = "11", .Text = "HL Background", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_12 As New CheckBox With {.Name = "12", .Text = "HL Bezel", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_13 As New CheckBox With {.Name = "13", .Text = "HL Fade", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_14 As New CheckBox With {.Name = "14", .Text = "HL Guide", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_15 As New CheckBox With {.Name = "15", .Text = "HL Manual", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_16 As New CheckBox With {.Name = "16", .Text = "HL Music", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_17 As New CheckBox With {.Name = "17", .Text = "HL Video", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_18 As New CheckBox With {.Name = "18", .Text = "Roms", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_19 As New CheckBox With {.Name = "19", .Text = "Videos", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_20 As New CheckBox With {.Name = "20", .Text = "Themes", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_21 As New CheckBox With {.Name = "21", .Text = "Wheels", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
+    Dim WithEvents CheckStrip3_22 As New CheckBox With {.Name = "22", .Text = "Artworks", .BackColor = Color.FromArgb(0, 255, 0, 0), .Checked = False, .Enabled = True}
     <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)> Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As UInteger, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     End Function
 #End Region
@@ -310,7 +318,6 @@ Public Class Form1
             s = ini2.IniReadValue("System_Table_Columns_Config", "Col_" + c.ToString + "_visible")
             If s <> "" Then
                 If s = "0" Then v = False Else v = True
-                'DataGridView2.Columns(c).Visible = v
                 DirectCast(myContextMenu8.Controls(Format(c, "00")), CheckBox).Checked = v
             End If
 
@@ -427,11 +434,19 @@ Public Class Form1
         DataGridView2.Columns.Add("col7", "Rom Path")
         DataGridView2.Columns.Add("col8", "Main Menu Wheel")
         DataGridView2.Columns.Add("col9", "Main Menu Video")
-        DataGridView2.Columns.Add("col10", "Roms")
-        DataGridView2.Columns.Add("col11", "Videos")
-        DataGridView2.Columns.Add("col12", "Themes")
-        DataGridView2.Columns.Add("col13", "Wheels")
-        DataGridView2.Columns.Add("col14", "Artworks")
+        DataGridView2.Columns.Add("col10", "HL Artworks")
+        DataGridView2.Columns.Add("col11", "HL Background")
+        DataGridView2.Columns.Add("col12", "HL Bezel")
+        DataGridView2.Columns.Add("col13", "HL Fade")
+        DataGridView2.Columns.Add("col14", "HL Guide")
+        DataGridView2.Columns.Add("col15", "HL Manual")
+        DataGridView2.Columns.Add("col16", "HL Music")
+        DataGridView2.Columns.Add("col17", "HL Video")
+        DataGridView2.Columns.Add("col18", "Roms")
+        DataGridView2.Columns.Add("col19", "Videos")
+        DataGridView2.Columns.Add("col20", "Themes")
+        DataGridView2.Columns.Add("col21", "Wheels")
+        DataGridView2.Columns.Add("col22", "Artworks")
         DataGridView2.Columns(0).Width = 250
         DataGridView2.Columns(1).Width = 80 : DataGridView2.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView2.Columns(2).Width = 80 : DataGridView2.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -444,11 +459,19 @@ Public Class Form1
         DataGridView2.Columns(9).Width = 90 : DataGridView2.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView2.Columns(8).DisplayIndex = 3 : DataGridView2.Columns(8).Visible = False
         DataGridView2.Columns(9).DisplayIndex = 5 : DataGridView2.Columns(9).Visible = False
-        DataGridView2.Columns(10).Width = 90 : DataGridView2.Columns(10).Visible = False
-        DataGridView2.Columns(11).Width = 90 : DataGridView2.Columns(11).Visible = False
-        DataGridView2.Columns(12).Width = 90 : DataGridView2.Columns(12).Visible = False
-        DataGridView2.Columns(13).Width = 90 : DataGridView2.Columns(13).Visible = False
-        DataGridView2.Columns(14).Width = 90 : DataGridView2.Columns(14).Visible = False
+        DataGridView2.Columns(10).Width = 80 : DataGridView2.Columns(10).Visible = False : DataGridView2.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(11).Width = 80 : DataGridView2.Columns(11).Visible = False : DataGridView2.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(12).Width = 80 : DataGridView2.Columns(12).Visible = False : DataGridView2.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(13).Width = 80 : DataGridView2.Columns(13).Visible = False : DataGridView2.Columns(13).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(14).Width = 80 : DataGridView2.Columns(14).Visible = False : DataGridView2.Columns(14).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(15).Width = 80 : DataGridView2.Columns(15).Visible = False : DataGridView2.Columns(15).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(16).Width = 80 : DataGridView2.Columns(16).Visible = False : DataGridView2.Columns(16).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(17).Width = 80 : DataGridView2.Columns(17).Visible = False : DataGridView2.Columns(17).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView2.Columns(18).Width = 90 : DataGridView2.Columns(18).Visible = False
+        DataGridView2.Columns(19).Width = 90 : DataGridView2.Columns(19).Visible = False
+        DataGridView2.Columns(20).Width = 90 : DataGridView2.Columns(20).Visible = False
+        DataGridView2.Columns(21).Width = 90 : DataGridView2.Columns(21).Visible = False
+        DataGridView2.Columns(22).Width = 90 : DataGridView2.Columns(22).Visible = False
     End Sub
     Private Sub Form1_Load_Sub_initContextMenus()
         'Context menu - check missing rom or media in another folder
@@ -591,6 +614,14 @@ Public Class Form1
         Dim CheckStripHost3_12 As New ToolStripControlHost(CheckStrip3_12)
         Dim CheckStripHost3_13 As New ToolStripControlHost(CheckStrip3_13)
         Dim CheckStripHost3_14 As New ToolStripControlHost(CheckStrip3_14)
+        Dim CheckStripHost3_15 As New ToolStripControlHost(CheckStrip3_15)
+        Dim CheckStripHost3_16 As New ToolStripControlHost(CheckStrip3_16)
+        Dim CheckStripHost3_17 As New ToolStripControlHost(CheckStrip3_17)
+        Dim CheckStripHost3_18 As New ToolStripControlHost(CheckStrip3_18)
+        Dim CheckStripHost3_19 As New ToolStripControlHost(CheckStrip3_19)
+        Dim CheckStripHost3_20 As New ToolStripControlHost(CheckStrip3_20)
+        Dim CheckStripHost3_21 As New ToolStripControlHost(CheckStrip3_21)
+        Dim CheckStripHost3_22 As New ToolStripControlHost(CheckStrip3_22)
         myContextMenu8.Items.Add(CheckStripHost3_1)
         myContextMenu8.Items.Add(CheckStripHost3_2)
         myContextMenu8.Items.Add(CheckStripHost3_3)
@@ -605,10 +636,19 @@ Public Class Form1
         myContextMenu8.Items.Add(CheckStripHost3_12)
         myContextMenu8.Items.Add(CheckStripHost3_13)
         myContextMenu8.Items.Add(CheckStripHost3_14)
+        myContextMenu8.Items.Add(CheckStripHost3_15)
+        myContextMenu8.Items.Add(CheckStripHost3_16)
+        myContextMenu8.Items.Add(CheckStripHost3_17)
+        myContextMenu8.Items.Add(CheckStripHost3_18)
+        myContextMenu8.Items.Add(CheckStripHost3_19)
+        myContextMenu8.Items.Add(CheckStripHost3_20)
+        myContextMenu8.Items.Add(CheckStripHost3_21)
+        myContextMenu8.Items.Add(CheckStripHost3_22)
         myContextMenu8.Items.Add(New ToolStripSeparator)
         myContextMenu8.Items.Add(Preset_SysMngr_Default)
         myContextMenu8.Items.Add(Preset_SysMngr_Checker)
         myContextMenu8.Items.Add(Preset_SysMngr_Manager)
+        myContextMenu8.Items.Add(Preset_SysMngr_HLMedia)
         myContextMenu8.Items.Add(Preset_SysMngr_Full)
         myContextMenu8.Items.Add(New ToolStripSeparator)
         myContextMenu8.Items.Add(Save_current_cols_conf_as_startup)
@@ -774,7 +814,7 @@ Public Class Form1
                         If FileSystem.GetFiles(media_fld + "Guides\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.*"}).Count > 0 Then a(15) = "YES"
                     End If
                     If FileSystem.DirectoryExists(media_fld + "Manuals\" + param.sys + "\" + romName) Then
-                        If FileSystem.GetFiles(media_fld + "Manuals\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.pdf"}).Count > 0 Then a(16) = "YES"
+                        If FileSystem.GetFiles(media_fld + "Manuals\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.pdf", "*.txt"}).Count > 0 Then a(16) = "YES"
                     End If
                     If FileSystem.DirectoryExists(media_fld + "Music\" + param.sys + "\" + romName) Then
                         If FileSystem.GetFiles(media_fld + "Music\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".m3u"}).Count > 0 Then a(17) = "YES"
@@ -1727,7 +1767,9 @@ Public Class Form1
         CheckStrip3_2.CheckedChanged, CheckStrip3_3.CheckedChanged, CheckStrip3_4.CheckedChanged, CheckStrip3_5.CheckedChanged,
         CheckStrip3_6.CheckedChanged, CheckStrip3_7.CheckedChanged, CheckStrip3_8.CheckedChanged, CheckStrip3_9.CheckedChanged,
         CheckStrip3_10.CheckedChanged, CheckStrip3_11.CheckedChanged, CheckStrip3_12.CheckedChanged, CheckStrip3_13.CheckedChanged,
-        CheckStrip3_14.CheckedChanged
+        CheckStrip3_14.CheckedChanged, CheckStrip3_15.CheckedChanged, CheckStrip3_16.CheckedChanged, CheckStrip3_17.CheckedChanged,
+        CheckStrip3_18.CheckedChanged, CheckStrip3_19.CheckedChanged, CheckStrip3_20.CheckedChanged, CheckStrip3_21.CheckedChanged,
+        CheckStrip3_22.CheckedChanged
 
         Dim cb As CheckBox = DirectCast(sender, CheckBox)
         Dim i As Integer = CInt(cb.Name)
@@ -1833,6 +1875,14 @@ Public Class Form1
             CheckStrip3_12.Checked = False
             CheckStrip3_13.Checked = False
             CheckStrip3_14.Checked = False
+            CheckStrip3_15.Checked = False
+            CheckStrip3_16.Checked = False
+            CheckStrip3_17.Checked = False
+            CheckStrip3_18.Checked = False
+            CheckStrip3_19.Checked = False
+            CheckStrip3_20.Checked = False
+            CheckStrip3_21.Checked = False
+            CheckStrip3_22.Checked = False
         End If
         If e.ClickedItem.Text = Preset_SysMngr_Checker Then
             CheckStrip3_1.Checked = True
@@ -1849,6 +1899,14 @@ Public Class Form1
             CheckStrip3_12.Checked = False
             CheckStrip3_13.Checked = False
             CheckStrip3_14.Checked = False
+            CheckStrip3_15.Checked = False
+            CheckStrip3_16.Checked = False
+            CheckStrip3_17.Checked = False
+            CheckStrip3_18.Checked = False
+            CheckStrip3_19.Checked = False
+            CheckStrip3_20.Checked = False
+            CheckStrip3_21.Checked = False
+            CheckStrip3_22.Checked = False
         End If
         If e.ClickedItem.Text = Preset_SysMngr_Manager Then
             CheckStrip3_1.Checked = True
@@ -1865,6 +1923,38 @@ Public Class Form1
             CheckStrip3_12.Checked = False
             CheckStrip3_13.Checked = False
             CheckStrip3_14.Checked = False
+            CheckStrip3_15.Checked = False
+            CheckStrip3_16.Checked = False
+            CheckStrip3_17.Checked = False
+            CheckStrip3_18.Checked = False
+            CheckStrip3_19.Checked = False
+            CheckStrip3_20.Checked = False
+            CheckStrip3_21.Checked = False
+            CheckStrip3_22.Checked = False
+        End If
+        If e.ClickedItem.Text = Preset_SysMngr_HLMedia Then
+            CheckStrip3_1.Checked = False
+            CheckStrip3_2.Checked = False
+            CheckStrip3_3.Checked = False
+            CheckStrip3_4.Checked = False
+            CheckStrip3_5.Checked = False
+            CheckStrip3_6.Checked = False
+            CheckStrip3_7.Checked = False
+            CheckStrip3_8.Checked = False
+            CheckStrip3_9.Checked = False
+            CheckStrip3_10.Checked = True
+            CheckStrip3_11.Checked = True
+            CheckStrip3_12.Checked = True
+            CheckStrip3_13.Checked = True
+            CheckStrip3_14.Checked = True
+            CheckStrip3_15.Checked = True
+            CheckStrip3_16.Checked = True
+            CheckStrip3_17.Checked = True
+            CheckStrip3_18.Checked = False
+            CheckStrip3_19.Checked = False
+            CheckStrip3_20.Checked = False
+            CheckStrip3_21.Checked = False
+            CheckStrip3_22.Checked = False
         End If
         If e.ClickedItem.Text = Preset_SysMngr_Full Then
             CheckStrip3_1.Checked = True
@@ -1881,6 +1971,14 @@ Public Class Form1
             CheckStrip3_12.Checked = True
             CheckStrip3_13.Checked = True
             CheckStrip3_14.Checked = True
+            CheckStrip3_15.Checked = True
+            CheckStrip3_16.Checked = True
+            CheckStrip3_17.Checked = True
+            CheckStrip3_18.Checked = True
+            CheckStrip3_19.Checked = True
+            CheckStrip3_20.Checked = True
+            CheckStrip3_21.Checked = True
+            CheckStrip3_22.Checked = True
         End If
         If e.ClickedItem.Text = Save_current_cols_conf_as_startup Then
             ini.IniFile(Class1.confPath)
