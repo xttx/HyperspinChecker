@@ -14,6 +14,7 @@ Public Class Form8_systemProperties
     Dim HL_Path As String = ""
     Dim current_module As String = ""
     Public Shared Event paths_updated(system As String)
+    Public Shared Event dropped_updated(system As String, action As Integer, files() As String)
 
     'Data property set/get to interchange data with main form
     Public Property data As List(Of String)
@@ -536,4 +537,32 @@ Public Class Form8_systemProperties
     Private Sub Form8_systemProperties_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Language.localize(Me)
     End Sub
+
+#Region "Drag'n'drop"
+    Private Sub drag_enter(sender As Object, e As Windows.Forms.DragEventArgs) Handles Label1.DragEnter, Label2.DragEnter, Label3.DragEnter, Label4.DragEnter, Label5.DragEnter
+        Dim l As Label = DirectCast(sender, Label)
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Move
+            l.Tag = l.BackColor
+            l.BackColor = Color.LightGoldenrodYellow
+        End If
+    End Sub
+    Private Sub drag_leave(sender As Object, e As System.EventArgs) Handles Label1.DragLeave, Label2.DragLeave, Label3.DragLeave, Label4.DragLeave, Label5.DragLeave
+        Dim l As Label = DirectCast(sender, Label)
+        If l.Tag IsNot Nothing Then l.BackColor = DirectCast(l.Tag, Color)
+    End Sub
+    Private Sub drag_drop(sender As Object, e As Windows.Forms.DragEventArgs) Handles Label1.DragDrop, Label2.DragDrop, Label3.DragDrop, Label4.DragDrop, Label5.DragDrop
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            Dim l As Label = DirectCast(sender, Label)
+            Dim action As Integer = -1
+            If l.Name.EndsWith("1") Then action = 3
+            If l.Name.EndsWith("2") Then action = 4
+            If l.Name.EndsWith("3") Then action = 8
+            If l.Name.EndsWith("4") Then action = 9
+            If l.Name.EndsWith("5") Then action = 2
+            If l.Tag IsNot Nothing Then l.BackColor = DirectCast(l.Tag, Color) : l.Tag = Nothing
+            If action > 0 Then RaiseEvent dropped_updated(sysNormalCase, action, DirectCast(e.Data.GetData(DataFormats.FileDrop), String()))
+        End If
+    End Sub
+#End Region
 End Class

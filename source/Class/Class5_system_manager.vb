@@ -24,6 +24,7 @@ Public Class Class5_system_manager
     'Constructor (just add handler here)
     Public Sub New()
         AddHandler Form8_systemProperties.paths_updated, AddressOf SystemPathUpdated
+        AddHandler Form8_systemProperties.dropped_updated, AddressOf drag_drop_action
     End Sub
 
     'Main Scan Systems
@@ -659,171 +660,181 @@ Public Class Class5_system_manager
             Dim clientPoint As Point = grid.PointToClient(New Point(e.X, e.Y))
             Dim hitTest As DataGridView.HitTestInfo = grid.HitTest(clientPoint.X, clientPoint.Y)
 
-            Dim failed As New List(Of String)
             Dim files As String() = DirectCast(e.Data.GetData(DataFormats.FileDrop), String())
             If hitTest.RowIndex >= 0 And files.Count > 0 Then
-                Select Case hitTest.ColumnIndex
-                    Case 2 'Database
-                        If files.Count > 1 Then MsgBox("You can not set multiple files as database.") : Exit Select
-                        Dim file = files(0)
-                        Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
-                        Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
-                        Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
-
-                        If Not file_no_path.ToUpper.EndsWith(".XML") Then
-                            Dim res = MsgBox("You filename have different extension then .xml. Are you sure you want to set it as database (it will be renamed to .xml)?", MsgBoxStyle.YesNo)
-                            If res = MsgBoxResult.No Then Exit Select
-                        End If
-                        If file_no_ext.ToUpper <> sys.ToUpper And Systems.Keys.Contains(file_no_ext.ToUpper) Then
-                            Dim res = MsgBox("You filename correspond to system:" + vbCrLf + file_no_ext + vbCrLf + "but you dragged it on:" + vbCrLf + sys + vbCrLf + vbCrLf + "Do you want to use it on " + sys + " (press Yes) or on " + file_no_ext + " (press No)?", MsgBoxStyle.YesNoCancel)
-                            If res = MsgBoxResult.Cancel Then Exit Select
-                            If res = MsgBoxResult.No Then sys = file_no_ext
-                        End If
-                        Dim dest = (Class1.HyperspinPath + "\Databases\" + sys + "\" + sys + ".xml").Replace("\\", "\")
-                        If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself.") : Exit Select
-                        If Not DirectoryExists(Class1.HyperspinPath + "\Databases\" + sys) Then CreateDirectory(Class1.HyperspinPath + "\Databases\" + sys)
-                        If FileExists(dest) Then
-                            Dim fname = sys + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".xml"
-                            fname = IO.Path.GetDirectoryName(dest) + "\" + fname
-                            MoveFile(dest, fname)
-                        End If
-                        FileCopy(file, dest)
-
-                        For i As Integer = 0 To grid.Rows.Count - 1
-                            If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
-                                grid.Rows(i).Cells(2).Value = "NEW"
-                                grid.Rows(i).Cells(2).Style.BackColor = Class1.colorYES
-                                Exit For
-                            End If
-                        Next
-                    Case 3 'Main menu theme
-                        If files.Count > 1 Then MsgBox("You can not set multiple files as main menu theme.") : Exit Select
-                        Dim file = files(0)
-                        Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
-                        Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
-                        Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
-                        If Not file_no_path.ToUpper.EndsWith(".ZIP") Then
-                            Dim res = MsgBox("You filename have different extension then .zip. Unzipped themes not allowed yet.")
-                            Exit Select
-                        End If
-                        If file_no_ext.ToUpper <> sys.ToUpper And Systems.Keys.Contains(file_no_ext.ToUpper) Then
-                            Dim res = MsgBox("You filename correspond to system:" + vbCrLf + file_no_ext + vbCrLf + "but you dragged it on:" + vbCrLf + sys + vbCrLf + vbCrLf + "Do you want to use it on " + sys + " (press Yes) or on " + file_no_ext + " (press No)?", MsgBoxStyle.YesNoCancel)
-                            If res = MsgBoxResult.Cancel Then Exit Select
-                            If res = MsgBoxResult.No Then sys = file_no_ext
-                        End If
-                        Dim dest = (Class1.HyperspinPath + "\Media\Main Menu\Themes\" + sys + ".zip").Replace("\\", "\")
-                        If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself.") : Exit Select
-                        If Not DirectoryExists(Class1.HyperspinPath + "\Media\Main Menu\Themes") Then CreateDirectory(Class1.HyperspinPath + "\Media\Main Menu\Themes")
-                        If FileExists(dest) Then
-                            Dim fname = sys + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".zip"
-                            fname = IO.Path.GetDirectoryName(dest) + "\" + fname
-                            MoveFile(dest, fname)
-                        End If
-                        FileCopy(file, dest)
-
-                        For i As Integer = 0 To grid.Rows.Count - 1
-                            If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
-                                grid.Rows(i).Cells(3).Value = "NEW"
-                                grid.Rows(i).Cells(3).Style.BackColor = Class1.colorYES
-                                Exit For
-                            End If
-                        Next
-                    Case 4 'System Theme
-                        Dim not_zip_message_shown As Boolean = False
-                        For Each file As String In files
-                            If Not file.ToUpper.EndsWith(".ZIP") Then
-                                If Not not_zip_message_shown Then
-                                    MsgBox("At least one of dragged files was not .zip. All no zip files will be ignored.")
-                                    not_zip_message_shown = True
-                                End If
-                                Continue For
-                            End If
-
-                            Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
-                            Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
-                            Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
-                            Dim dest = (Class1.HyperspinPath + "\Media\" + sys + "\Themes\" + file_no_path).Replace("\\", "\")
-                            If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself. Abort.") : Exit Select
-                            If FileExists(dest) Then
-                                Dim fname = file_no_ext + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".zip"
-                                fname = IO.Path.GetDirectoryName(dest) + "\" + fname
-                                MoveFile(dest, fname)
-                            End If
-                            FileCopy(file, dest)
-
-                            grid.Rows(hitTest.RowIndex).Cells(4).Value = "NEW"
-                            grid.Rows(hitTest.RowIndex).Cells(4).Style.BackColor = Class1.colorYES
-                        Next
-                    Case 8 'Main Menu Wheel
-                        If files.Count > 1 Then MsgBox("You can not set multiple files as main menu wheel.") : Exit Select
-                        Dim file = files(0)
-                        Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
-                        Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
-                        Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
-                        If Not file_no_path.ToUpper.EndsWith(".PNG") Then
-                            Dim res = MsgBox("You filename have different extension then .png. Aborting.")
-                            Exit Select
-                        End If
-                        If file_no_ext.ToUpper <> sys.ToUpper And Systems.Keys.Contains(file_no_ext.ToUpper) Then
-                            Dim res = MsgBox("You filename correspond to system:" + vbCrLf + file_no_ext + vbCrLf + "but you dragged it on:" + vbCrLf + sys + vbCrLf + vbCrLf + "Do you want to use it on " + sys + " (press Yes) or on " + file_no_ext + " (press No)?", MsgBoxStyle.YesNoCancel)
-                            If res = MsgBoxResult.Cancel Then Exit Select
-                            If res = MsgBoxResult.No Then sys = file_no_ext
-                        End If
-                        Dim dest = (Class1.HyperspinPath + "\Media\Main Menu\Images\Wheel\" + sys + ".png").Replace("\\", "\")
-                        If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself.") : Exit Select
-                        If Not DirectoryExists(Class1.HyperspinPath + "\Media\Main Menu\Images\Wheel") Then CreateDirectory(Class1.HyperspinPath + "\Media\Main Menu\Images\Wheel")
-                        If FileExists(dest) Then
-                            Dim fname = sys + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".png"
-                            fname = IO.Path.GetDirectoryName(dest) + "\" + fname
-                            MoveFile(dest, fname)
-                        End If
-                        FileCopy(file, dest)
-
-                        For i As Integer = 0 To grid.Rows.Count - 1
-                            If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
-                                grid.Rows(i).Cells(8).Value = "NEW"
-                                grid.Rows(i).Cells(8).Style.BackColor = Class1.colorYES
-                                Exit For
-                            End If
-                        Next
-                    Case 9 'Main Menu Video
-                        If files.Count > 1 Then MsgBox("You can not set multiple files as main menu video.") : Exit Select
-                        Dim file = files(0)
-                        Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
-                        Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
-                        Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
-                        If Not file_no_path.ToUpper.EndsWith(".MP4") Then
-                            Dim res = MsgBox("You filename have different extension then .png. Aborting.")
-                            Exit Select
-                        End If
-                        If file_no_ext.ToUpper <> sys.ToUpper And Systems.Keys.Contains(file_no_ext.ToUpper) Then
-                            Dim res = MsgBox("You filename correspond to system:" + vbCrLf + file_no_ext + vbCrLf + "but you dragged it on:" + vbCrLf + sys + vbCrLf + vbCrLf + "Do you want to use it on " + sys + " (press Yes) or on " + file_no_ext + " (press No)?", MsgBoxStyle.YesNoCancel)
-                            If res = MsgBoxResult.Cancel Then Exit Select
-                            If res = MsgBoxResult.No Then sys = file_no_ext
-                        End If
-                        Dim dest = (Class1.HyperspinPath + "\Media\Main Menu\Video\" + sys + ".mp4").Replace("\\", "\")
-                        If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself.") : Exit Select
-                        If Not DirectoryExists(Class1.HyperspinPath + "\Media\Main Menu\Video") Then CreateDirectory(Class1.HyperspinPath + "\Media\Main Menu\Video")
-                        If FileExists(dest) Then
-                            Dim fname = sys + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".mp4"
-                            fname = IO.Path.GetDirectoryName(dest) + "\" + fname
-                            MoveFile(dest, fname)
-                        End If
-                        FileCopy(file, dest)
-
-                        For i As Integer = 0 To grid.Rows.Count - 1
-                            If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
-                                grid.Rows(i).Cells(9).Value = "NEW"
-                                grid.Rows(i).Cells(9).Style.BackColor = Class1.colorYES
-                                Exit For
-                            End If
-                        Next
-                End Select
+                Dim sys As String = grid.Rows(hitTest.RowIndex).Cells(0).Value.ToString
+                drag_drop_action(sys, hitTest.ColumnIndex, files)
             End If
 
             grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
             If hitTest.RowIndex >= 0 And hitTest.ColumnIndex >= 0 Then grid.Rows(hitTest.RowIndex).Selected = True
         End If
+    End Sub
+    Private Sub drag_drop_action(sys As String, action As Integer, files() As String)
+        Select Case action
+            Case 2 'Database
+                If files.Count > 1 Then MsgBox("You can not set multiple files as database.") : Exit Select
+                Dim file = files(0)
+                Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
+                Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
+
+                If Not file_no_path.ToUpper.EndsWith(".XML") Then
+                    Dim res = MsgBox("You filename have different extension then .xml. Are you sure you want to set it as database (it will be renamed to .xml)?", MsgBoxStyle.YesNo)
+                    If res = MsgBoxResult.No Then Exit Select
+                End If
+                If file_no_ext.ToUpper <> sys.ToUpper And Systems.Keys.Contains(file_no_ext.ToUpper) Then
+                    Dim res = MsgBox("You filename correspond to system:" + vbCrLf + file_no_ext + vbCrLf + "but you dragged it on:" + vbCrLf + sys + vbCrLf + vbCrLf + "Do you want to use it on " + sys + " (press Yes) or on " + file_no_ext + " (press No)?", MsgBoxStyle.YesNoCancel)
+                    If res = MsgBoxResult.Cancel Then Exit Select
+                    If res = MsgBoxResult.No Then sys = file_no_ext
+                End If
+                Dim dest = (Class1.HyperspinPath + "\Databases\" + sys + "\" + sys + ".xml").Replace("\\", "\")
+                If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself.") : Exit Select
+                If Not DirectoryExists(Class1.HyperspinPath + "\Databases\" + sys) Then CreateDirectory(Class1.HyperspinPath + "\Databases\" + sys)
+                If FileExists(dest) Then
+                    Dim fname = sys + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".xml"
+                    fname = IO.Path.GetDirectoryName(dest) + "\" + fname
+                    MoveFile(dest, fname)
+                End If
+                FileCopy(file, dest)
+
+                For i As Integer = 0 To grid.Rows.Count - 1
+                    If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
+                        grid.Rows(i).Cells(2).Value = "NEW"
+                        grid.Rows(i).Cells(2).Style.BackColor = Class1.colorYES
+                        If Not Systems(sys.ToUpper).Contains("%2%") Then Systems(sys.ToUpper).Add("%2%")
+                        Exit For
+                    End If
+                Next
+            Case 3 'Main menu theme
+                If files.Count > 1 Then MsgBox("You can not set multiple files as main menu theme.") : Exit Select
+                Dim file = files(0)
+                Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
+                Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
+                If Not file_no_path.ToUpper.EndsWith(".ZIP") Then
+                    Dim res = MsgBox("You filename have different extension then .zip. Unzipped themes not allowed yet.")
+                    Exit Select
+                End If
+                If file_no_ext.ToUpper <> sys.ToUpper And Systems.Keys.Contains(file_no_ext.ToUpper) Then
+                    Dim res = MsgBox("You filename correspond to system:" + vbCrLf + file_no_ext + vbCrLf + "but you dragged it on:" + vbCrLf + sys + vbCrLf + vbCrLf + "Do you want to use it on " + sys + " (press Yes) or on " + file_no_ext + " (press No)?", MsgBoxStyle.YesNoCancel)
+                    If res = MsgBoxResult.Cancel Then Exit Select
+                    If res = MsgBoxResult.No Then sys = file_no_ext
+                End If
+                Dim dest = (Class1.HyperspinPath + "\Media\Main Menu\Themes\" + sys + ".zip").Replace("\\", "\")
+                If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself.") : Exit Select
+                If Not DirectoryExists(Class1.HyperspinPath + "\Media\Main Menu\Themes") Then CreateDirectory(Class1.HyperspinPath + "\Media\Main Menu\Themes")
+                If FileExists(dest) Then
+                    Dim fname = sys + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".zip"
+                    fname = IO.Path.GetDirectoryName(dest) + "\" + fname
+                    MoveFile(dest, fname)
+                End If
+                FileCopy(file, dest)
+
+                For i As Integer = 0 To grid.Rows.Count - 1
+                    If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
+                        grid.Rows(i).Cells(3).Value = "NEW"
+                        grid.Rows(i).Cells(3).Style.BackColor = Class1.colorYES
+                        If Not Systems(sys.ToUpper).Contains("%3%") Then Systems(sys.ToUpper).Add("%3%")
+                        Exit For
+                    End If
+                Next
+            Case 4 'System Theme
+                Dim not_zip_message_shown As Boolean = False
+                For Each file As String In files
+                    If Not file.ToUpper.EndsWith(".ZIP") Then
+                        If Not not_zip_message_shown Then
+                            MsgBox("At least one of dragged files was not .zip. All no zip files will be ignored.")
+                            not_zip_message_shown = True
+                        End If
+                        Continue For
+                    End If
+
+                    Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
+                    Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
+                    Dim dest = (Class1.HyperspinPath + "\Media\" + sys + "\Themes\" + file_no_path).Replace("\\", "\")
+                    If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself. Abort.") : Exit Select
+                    If Not DirectoryExists(Class1.HyperspinPath + "\Media\" + sys + "\Themes") Then CreateDirectory(Class1.HyperspinPath + "\Media\" + sys + "\Themes")
+                    If FileExists(dest) Then
+                        Dim fname = file_no_ext + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".zip"
+                        fname = IO.Path.GetDirectoryName(dest) + "\" + fname
+                        MoveFile(dest, fname)
+                    End If
+                    FileCopy(file, dest)
+
+                    For i As Integer = 0 To grid.Rows.Count - 1
+                        If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
+                            grid.Rows(i).Cells(4).Value = "NEW"
+                            grid.Rows(i).Cells(4).Style.BackColor = Class1.colorYES
+                            If Not Systems(sys.ToUpper).Contains("%4%") Then Systems(sys.ToUpper).Add("%4%")
+                            Exit For
+                        End If
+                    Next
+                Next
+            Case 8 'Main Menu Wheel
+                If files.Count > 1 Then MsgBox("You can not set multiple files as main menu wheel.") : Exit Select
+                Dim file = files(0)
+                Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
+                Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
+                If Not file_no_path.ToUpper.EndsWith(".PNG") Then
+                    Dim res = MsgBox("You filename have different extension then .png. Aborting.")
+                    Exit Select
+                End If
+                If file_no_ext.ToUpper <> sys.ToUpper And Systems.Keys.Contains(file_no_ext.ToUpper) Then
+                    Dim res = MsgBox("You filename correspond to system:" + vbCrLf + file_no_ext + vbCrLf + "but you dragged it on:" + vbCrLf + sys + vbCrLf + vbCrLf + "Do you want to use it on " + sys + " (press Yes) or on " + file_no_ext + " (press No)?", MsgBoxStyle.YesNoCancel)
+                    If res = MsgBoxResult.Cancel Then Exit Select
+                    If res = MsgBoxResult.No Then sys = file_no_ext
+                End If
+                Dim dest = (Class1.HyperspinPath + "\Media\Main Menu\Images\Wheel\" + sys + ".png").Replace("\\", "\")
+                If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself.") : Exit Select
+                If Not DirectoryExists(Class1.HyperspinPath + "\Media\Main Menu\Images\Wheel") Then CreateDirectory(Class1.HyperspinPath + "\Media\Main Menu\Images\Wheel")
+                If FileExists(dest) Then
+                    Dim fname = sys + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".png"
+                    fname = IO.Path.GetDirectoryName(dest) + "\" + fname
+                    MoveFile(dest, fname)
+                End If
+                FileCopy(file, dest)
+
+                For i As Integer = 0 To grid.Rows.Count - 1
+                    If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
+                        grid.Rows(i).Cells(8).Value = "NEW"
+                        grid.Rows(i).Cells(8).Style.BackColor = Class1.colorYES
+                        If Not Systems(sys.ToUpper).Contains("%8%") Then Systems(sys.ToUpper).Add("%8%")
+                        Exit For
+                    End If
+                Next
+            Case 9 'Main Menu Video
+                If files.Count > 1 Then MsgBox("You can not set multiple files as main menu video.") : Exit Select
+                Dim file = files(0)
+                Dim file_no_path = file.Substring(file.LastIndexOf("\") + 1)
+                Dim file_no_ext = file_no_path.Substring(0, file_no_path.LastIndexOf("."))
+                If Not file_no_path.ToUpper.EndsWith(".MP4") Then
+                    Dim res = MsgBox("You filename have different extension then .png. Aborting.")
+                    Exit Select
+                End If
+                If file_no_ext.ToUpper <> sys.ToUpper And Systems.Keys.Contains(file_no_ext.ToUpper) Then
+                    Dim res = MsgBox("You filename correspond to system:" + vbCrLf + file_no_ext + vbCrLf + "but you dragged it on:" + vbCrLf + sys + vbCrLf + vbCrLf + "Do you want to use it on " + sys + " (press Yes) or on " + file_no_ext + " (press No)?", MsgBoxStyle.YesNoCancel)
+                    If res = MsgBoxResult.Cancel Then Exit Select
+                    If res = MsgBoxResult.No Then sys = file_no_ext
+                End If
+                Dim dest = (Class1.HyperspinPath + "\Media\Main Menu\Video\" + sys + ".mp4").Replace("\\", "\")
+                If file.ToUpper = dest.ToUpper Then MsgBox("Can't copy file to itself.") : Exit Select
+                If Not DirectoryExists(Class1.HyperspinPath + "\Media\Main Menu\Video") Then CreateDirectory(Class1.HyperspinPath + "\Media\Main Menu\Video")
+                If FileExists(dest) Then
+                    Dim fname = sys + " " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss.fff") + ".mp4"
+                    fname = IO.Path.GetDirectoryName(dest) + "\" + fname
+                    MoveFile(dest, fname)
+                End If
+                FileCopy(file, dest)
+
+                For i As Integer = 0 To grid.Rows.Count - 1
+                    If grid.Rows(i).Cells(0).Value.ToString.ToUpper = sys.ToUpper Then
+                        grid.Rows(i).Cells(9).Value = "NEW"
+                        grid.Rows(i).Cells(9).Style.BackColor = Class1.colorYES
+                        If Not Systems(sys.ToUpper).Contains("%9%") Then Systems(sys.ToUpper).Add("%9%")
+                        Exit For
+                    End If
+                Next
+        End Select
+        If frm.Visible Then setPropertiesFormData()
     End Sub
 #End Region
 End Class
