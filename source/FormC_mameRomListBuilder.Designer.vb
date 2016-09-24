@@ -67,6 +67,7 @@ Partial Class FormC_mameRomListBuilder
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.Button23 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Button21 = New System.Windows.Forms.Button()
@@ -119,7 +120,7 @@ Partial Class FormC_mameRomListBuilder
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(696, 71)
+        Me.GroupBox1.Size = New System.Drawing.Size(755, 71)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Get listxml"
@@ -127,7 +128,7 @@ Partial Class FormC_mameRomListBuilder
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(657, 41)
+        Me.Button2.Location = New System.Drawing.Point(716, 41)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(33, 20)
         Me.Button2.TabIndex = 6
@@ -140,13 +141,13 @@ Partial Class FormC_mameRomListBuilder
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox2.Location = New System.Drawing.Point(195, 41)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(456, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(515, 20)
         Me.TextBox2.TabIndex = 5
         '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(657, 19)
+        Me.Button1.Location = New System.Drawing.Point(716, 19)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(33, 20)
         Me.Button1.TabIndex = 4
@@ -181,7 +182,7 @@ Partial Class FormC_mameRomListBuilder
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.Location = New System.Drawing.Point(195, 19)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(456, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(515, 20)
         Me.TextBox1.TabIndex = 1
         '
         'Button3
@@ -244,27 +245,26 @@ Partial Class FormC_mameRomListBuilder
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.ListBox1)
-        Me.GroupBox2.Enabled = False
         Me.GroupBox2.Location = New System.Drawing.Point(12, 118)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(696, 404)
+        Me.GroupBox2.Size = New System.Drawing.Size(755, 404)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Select roms"
         '
         'Button13
         '
-        Me.Button13.Location = New System.Drawing.Point(537, 367)
+        Me.Button13.Location = New System.Drawing.Point(602, 367)
         Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(123, 24)
+        Me.Button13.Size = New System.Drawing.Size(140, 24)
         Me.Button13.TabIndex = 29
-        Me.Button13.Text = "select all"
+        Me.Button13.Text = "Sorted: Alphabetically"
         Me.Button13.UseVisualStyleBackColor = True
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(534, 211)
+        Me.Label11.Location = New System.Drawing.Point(599, 211)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(86, 13)
         Me.Label11.TabIndex = 28
@@ -273,25 +273,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox10
         '
         Me.ListBox10.FormattingEnabled = True
-        Me.ListBox10.Location = New System.Drawing.Point(537, 227)
+        Me.ListBox10.Location = New System.Drawing.Point(602, 227)
         Me.ListBox10.Name = "ListBox10"
         Me.ListBox10.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox10.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox10.Size = New System.Drawing.Size(140, 134)
         Me.ListBox10.TabIndex = 27
         '
         'Button12
         '
-        Me.Button12.Location = New System.Drawing.Point(408, 367)
+        Me.Button12.Location = New System.Drawing.Point(456, 367)
         Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(123, 24)
+        Me.Button12.Size = New System.Drawing.Size(140, 24)
         Me.Button12.TabIndex = 26
-        Me.Button12.Text = "select all"
+        Me.Button12.Text = "Sorted: Alphabetically"
         Me.Button12.UseVisualStyleBackColor = True
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(405, 211)
+        Me.Label10.Location = New System.Drawing.Point(453, 211)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(39, 13)
         Me.Label10.TabIndex = 25
@@ -300,25 +300,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox9
         '
         Me.ListBox9.FormattingEnabled = True
-        Me.ListBox9.Location = New System.Drawing.Point(408, 227)
+        Me.ListBox9.Location = New System.Drawing.Point(456, 227)
         Me.ListBox9.Name = "ListBox9"
         Me.ListBox9.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox9.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox9.Size = New System.Drawing.Size(140, 134)
         Me.ListBox9.TabIndex = 24
         '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(278, 367)
+        Me.Button11.Location = New System.Drawing.Point(310, 367)
         Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(123, 24)
+        Me.Button11.Size = New System.Drawing.Size(140, 24)
         Me.Button11.TabIndex = 23
-        Me.Button11.Text = "select all"
+        Me.Button11.Text = "Sorted: Alphabetically"
         Me.Button11.UseVisualStyleBackColor = True
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(275, 211)
+        Me.Label9.Location = New System.Drawing.Point(307, 211)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(58, 13)
         Me.Label9.TabIndex = 22
@@ -327,25 +327,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox8
         '
         Me.ListBox8.FormattingEnabled = True
-        Me.ListBox8.Location = New System.Drawing.Point(278, 227)
+        Me.ListBox8.Location = New System.Drawing.Point(310, 227)
         Me.ListBox8.Name = "ListBox8"
         Me.ListBox8.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox8.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox8.Size = New System.Drawing.Size(140, 134)
         Me.ListBox8.TabIndex = 21
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(150, 367)
+        Me.Button10.Location = New System.Drawing.Point(164, 367)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(123, 24)
+        Me.Button10.Size = New System.Drawing.Size(140, 24)
         Me.Button10.TabIndex = 20
-        Me.Button10.Text = "select all"
+        Me.Button10.Text = "Sorted: Alphabetically"
         Me.Button10.UseVisualStyleBackColor = True
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(147, 211)
+        Me.Label8.Location = New System.Drawing.Point(161, 211)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(62, 13)
         Me.Label8.TabIndex = 19
@@ -354,25 +354,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox7
         '
         Me.ListBox7.FormattingEnabled = True
-        Me.ListBox7.Location = New System.Drawing.Point(150, 227)
+        Me.ListBox7.Location = New System.Drawing.Point(164, 227)
         Me.ListBox7.Name = "ListBox7"
         Me.ListBox7.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox7.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox7.Size = New System.Drawing.Size(140, 134)
         Me.ListBox7.TabIndex = 18
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(537, 175)
+        Me.Button9.Location = New System.Drawing.Point(602, 175)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(123, 24)
+        Me.Button9.Size = New System.Drawing.Size(140, 24)
         Me.Button9.TabIndex = 17
-        Me.Button9.Text = "select all"
+        Me.Button9.Text = "Sorted: Alphabetically"
         Me.Button9.UseVisualStyleBackColor = True
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(534, 19)
+        Me.Label7.Location = New System.Drawing.Point(599, 19)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(41, 13)
         Me.Label7.TabIndex = 16
@@ -381,25 +381,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox6
         '
         Me.ListBox6.FormattingEnabled = True
-        Me.ListBox6.Location = New System.Drawing.Point(537, 35)
+        Me.ListBox6.Location = New System.Drawing.Point(602, 35)
         Me.ListBox6.Name = "ListBox6"
         Me.ListBox6.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox6.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox6.Size = New System.Drawing.Size(140, 134)
         Me.ListBox6.TabIndex = 15
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(408, 175)
+        Me.Button8.Location = New System.Drawing.Point(456, 175)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(123, 24)
+        Me.Button8.Size = New System.Drawing.Size(140, 24)
         Me.Button8.TabIndex = 14
-        Me.Button8.Text = "select all"
+        Me.Button8.Text = "Sorted: Alphabetically"
         Me.Button8.UseVisualStyleBackColor = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(405, 19)
+        Me.Label6.Location = New System.Drawing.Point(453, 19)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(27, 13)
         Me.Label6.TabIndex = 13
@@ -408,25 +408,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox5
         '
         Me.ListBox5.FormattingEnabled = True
-        Me.ListBox5.Location = New System.Drawing.Point(408, 35)
+        Me.ListBox5.Location = New System.Drawing.Point(456, 35)
         Me.ListBox5.Name = "ListBox5"
         Me.ListBox5.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox5.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox5.Size = New System.Drawing.Size(140, 134)
         Me.ListBox5.TabIndex = 12
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(279, 175)
+        Me.Button7.Location = New System.Drawing.Point(311, 175)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(123, 24)
+        Me.Button7.Size = New System.Drawing.Size(140, 24)
         Me.Button7.TabIndex = 11
-        Me.Button7.Text = "select all"
+        Me.Button7.Text = "Sorted: Alphabetically"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(276, 19)
+        Me.Label5.Location = New System.Drawing.Point(308, 19)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(29, 13)
         Me.Label5.TabIndex = 10
@@ -435,25 +435,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox4
         '
         Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(279, 35)
+        Me.ListBox4.Location = New System.Drawing.Point(311, 35)
         Me.ListBox4.Name = "ListBox4"
         Me.ListBox4.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox4.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox4.Size = New System.Drawing.Size(140, 134)
         Me.ListBox4.TabIndex = 9
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(150, 175)
+        Me.Button6.Location = New System.Drawing.Point(164, 175)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(123, 24)
+        Me.Button6.Size = New System.Drawing.Size(140, 24)
         Me.Button6.TabIndex = 8
-        Me.Button6.Text = "select all"
+        Me.Button6.Text = "Sorted: Alphabetically"
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(147, 19)
+        Me.Label4.Location = New System.Drawing.Point(161, 19)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(70, 13)
         Me.Label4.TabIndex = 7
@@ -462,25 +462,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox3
         '
         Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(150, 35)
+        Me.ListBox3.Location = New System.Drawing.Point(164, 35)
         Me.ListBox3.Name = "ListBox3"
         Me.ListBox3.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox3.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox3.Size = New System.Drawing.Size(140, 134)
         Me.ListBox3.TabIndex = 6
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(21, 367)
+        Me.Button5.Location = New System.Drawing.Point(18, 367)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(123, 24)
+        Me.Button5.Size = New System.Drawing.Size(140, 24)
         Me.Button5.TabIndex = 5
-        Me.Button5.Text = "select all"
+        Me.Button5.Text = "Sorted: Alphabetically"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 211)
+        Me.Label3.Location = New System.Drawing.Point(15, 211)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 13)
         Me.Label3.TabIndex = 4
@@ -489,25 +489,25 @@ Partial Class FormC_mameRomListBuilder
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(21, 227)
+        Me.ListBox2.Location = New System.Drawing.Point(18, 227)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox2.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox2.Size = New System.Drawing.Size(140, 134)
         Me.ListBox2.TabIndex = 3
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(21, 175)
+        Me.Button4.Location = New System.Drawing.Point(18, 175)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(123, 24)
+        Me.Button4.Size = New System.Drawing.Size(140, 24)
         Me.Button4.TabIndex = 2
-        Me.Button4.Text = "select all"
+        Me.Button4.Text = "Sorted: Alphabetically"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(18, 19)
+        Me.Label2.Location = New System.Drawing.Point(15, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 13)
         Me.Label2.TabIndex = 1
@@ -516,14 +516,15 @@ Partial Class FormC_mameRomListBuilder
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(21, 35)
+        Me.ListBox1.Location = New System.Drawing.Point(18, 35)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox1.Size = New System.Drawing.Size(123, 134)
+        Me.ListBox1.Size = New System.Drawing.Size(140, 134)
         Me.ListBox1.TabIndex = 0
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label29)
         Me.GroupBox3.Controls.Add(Me.Button23)
         Me.GroupBox3.Controls.Add(Me.Button22)
         Me.GroupBox3.Controls.Add(Me.Button21)
@@ -557,13 +558,22 @@ Partial Class FormC_mameRomListBuilder
         Me.GroupBox3.Controls.Add(Me.TextBox3)
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.Button15)
-        Me.GroupBox3.Location = New System.Drawing.Point(69, 64)
+        Me.GroupBox3.Location = New System.Drawing.Point(89, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(582, 407)
+        Me.GroupBox3.Size = New System.Drawing.Size(582, 412)
         Me.GroupBox3.TabIndex = 30
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "File operations"
         Me.GroupBox3.Visible = False
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(192, 225)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(77, 13)
+        Me.Label29.TabIndex = 33
+        Me.Label29.Text = "Known games:"
         '
         'Button23
         '
@@ -595,7 +605,7 @@ Partial Class FormC_mameRomListBuilder
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(16, 290)
+        Me.Label28.Location = New System.Drawing.Point(192, 360)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(184, 13)
         Me.Label28.TabIndex = 29
@@ -604,7 +614,7 @@ Partial Class FormC_mameRomListBuilder
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(16, 275)
+        Me.Label27.Location = New System.Drawing.Point(192, 345)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(141, 13)
         Me.Label27.TabIndex = 28
@@ -612,7 +622,7 @@ Partial Class FormC_mameRomListBuilder
         '
         'Button_uncheck_all
         '
-        Me.Button_uncheck_all.Location = New System.Drawing.Point(381, 377)
+        Me.Button_uncheck_all.Location = New System.Drawing.Point(104, 380)
         Me.Button_uncheck_all.Name = "Button_uncheck_all"
         Me.Button_uncheck_all.Size = New System.Drawing.Size(82, 24)
         Me.Button_uncheck_all.TabIndex = 27
@@ -621,7 +631,7 @@ Partial Class FormC_mameRomListBuilder
         '
         'Button_check_all
         '
-        Me.Button_check_all.Location = New System.Drawing.Point(293, 377)
+        Me.Button_check_all.Location = New System.Drawing.Point(16, 380)
         Me.Button_check_all.Name = "Button_check_all"
         Me.Button_check_all.Size = New System.Drawing.Size(82, 24)
         Me.Button_check_all.TabIndex = 26
@@ -653,7 +663,7 @@ Partial Class FormC_mameRomListBuilder
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(16, 230)
+        Me.Label26.Location = New System.Drawing.Point(192, 300)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(201, 13)
         Me.Label26.TabIndex = 23
@@ -661,7 +671,7 @@ Partial Class FormC_mameRomListBuilder
         '
         'Button20
         '
-        Me.Button20.Location = New System.Drawing.Point(395, 89)
+        Me.Button20.Location = New System.Drawing.Point(118, 92)
         Me.Button20.Name = "Button20"
         Me.Button20.Size = New System.Drawing.Size(68, 30)
         Me.Button20.TabIndex = 22
@@ -671,14 +681,14 @@ Partial Class FormC_mameRomListBuilder
         'TreeView1
         '
         Me.TreeView1.CheckBoxes = True
-        Me.TreeView1.Location = New System.Drawing.Point(293, 125)
+        Me.TreeView1.Location = New System.Drawing.Point(16, 128)
         Me.TreeView1.Name = "TreeView1"
         Me.TreeView1.Size = New System.Drawing.Size(170, 246)
         Me.TreeView1.TabIndex = 20
         '
         'Button19
         '
-        Me.Button19.Location = New System.Drawing.Point(293, 89)
+        Me.Button19.Location = New System.Drawing.Point(16, 92)
         Me.Button19.Name = "Button19"
         Me.Button19.Size = New System.Drawing.Size(94, 30)
         Me.Button19.TabIndex = 21
@@ -691,7 +701,7 @@ Partial Class FormC_mameRomListBuilder
         Me.Label25.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label25.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label25.Location = New System.Drawing.Point(253, 290)
+        Me.Label25.Location = New System.Drawing.Point(429, 360)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(34, 13)
         Me.Label25.TabIndex = 19
@@ -703,7 +713,7 @@ Partial Class FormC_mameRomListBuilder
         Me.Label24.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label24.Location = New System.Drawing.Point(253, 275)
+        Me.Label24.Location = New System.Drawing.Point(429, 345)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(34, 13)
         Me.Label24.TabIndex = 18
@@ -715,7 +725,7 @@ Partial Class FormC_mameRomListBuilder
         Me.Label23.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label23.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label23.Location = New System.Drawing.Point(253, 170)
+        Me.Label23.Location = New System.Drawing.Point(429, 240)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(34, 13)
         Me.Label23.TabIndex = 17
@@ -724,7 +734,7 @@ Partial Class FormC_mameRomListBuilder
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(16, 260)
+        Me.Label22.Location = New System.Drawing.Point(192, 330)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(166, 13)
         Me.Label22.TabIndex = 16
@@ -733,7 +743,7 @@ Partial Class FormC_mameRomListBuilder
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(16, 245)
+        Me.Label21.Location = New System.Drawing.Point(192, 315)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(123, 13)
         Me.Label21.TabIndex = 15
@@ -742,7 +752,7 @@ Partial Class FormC_mameRomListBuilder
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(16, 215)
+        Me.Label20.Location = New System.Drawing.Point(192, 285)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(183, 13)
         Me.Label20.TabIndex = 14
@@ -751,7 +761,7 @@ Partial Class FormC_mameRomListBuilder
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(16, 200)
+        Me.Label19.Location = New System.Drawing.Point(192, 270)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(162, 13)
         Me.Label19.TabIndex = 13
@@ -760,7 +770,7 @@ Partial Class FormC_mameRomListBuilder
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(16, 185)
+        Me.Label18.Location = New System.Drawing.Point(192, 255)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(92, 13)
         Me.Label18.TabIndex = 12
@@ -769,7 +779,7 @@ Partial Class FormC_mameRomListBuilder
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(16, 170)
+        Me.Label17.Location = New System.Drawing.Point(192, 240)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(77, 13)
         Me.Label17.TabIndex = 11
@@ -778,7 +788,7 @@ Partial Class FormC_mameRomListBuilder
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(16, 155)
+        Me.Label16.Location = New System.Drawing.Point(192, 210)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(64, 13)
         Me.Label16.TabIndex = 10
@@ -787,7 +797,7 @@ Partial Class FormC_mameRomListBuilder
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(16, 125)
+        Me.Label15.Location = New System.Drawing.Point(192, 180)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(86, 13)
         Me.Label15.TabIndex = 9
@@ -796,7 +806,7 @@ Partial Class FormC_mameRomListBuilder
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(16, 140)
+        Me.Label14.Location = New System.Drawing.Point(192, 195)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(55, 13)
         Me.Label14.TabIndex = 8
@@ -804,9 +814,9 @@ Partial Class FormC_mameRomListBuilder
         '
         'Button18
         '
-        Me.Button18.Location = New System.Drawing.Point(19, 89)
+        Me.Button18.Location = New System.Drawing.Point(195, 92)
         Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(74, 30)
+        Me.Button18.Size = New System.Drawing.Size(268, 85)
         Me.Button18.TabIndex = 7
         Me.Button18.Text = "Analyze"
         Me.Button18.UseVisualStyleBackColor = True
@@ -887,7 +897,7 @@ Partial Class FormC_mameRomListBuilder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(720, 534)
+        Me.ClientSize = New System.Drawing.Size(779, 534)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Button14)
         Me.Controls.Add(Me.GroupBox2)
@@ -985,4 +995,5 @@ Partial Class FormC_mameRomListBuilder
     Friend WithEvents Button23 As System.Windows.Forms.Button
     Friend WithEvents Button22 As System.Windows.Forms.Button
     Friend WithEvents Button21 As System.Windows.Forms.Button
+    Friend WithEvents Label29 As Label
 End Class

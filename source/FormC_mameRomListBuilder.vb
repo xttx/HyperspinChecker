@@ -52,6 +52,8 @@ Public Class FormC_mameRomListBuilder
         Dim graphic As status
         Dim color As status
         Dim sound As status
+
+        Dim fileSize As Long
     End Structure
     Public Enum status
         preliminary
@@ -95,6 +97,60 @@ Public Class FormC_mameRomListBuilder
         ini.IniWriteValue("TOOL_mame_rom_builder", "generate_from_exe", tmp.ToString)
         tmp = DirectCast(IIf(RadioButton3.Checked, 1, 0), Integer)
         ini.IniWriteValue("TOOL_mame_rom_builder", "split_romet", tmp.ToString)
+    End Sub
+
+    'Form resize
+    Private Sub FormC_mameRomListBuilder_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        Dim w = GroupBox2.Width - 18 - (6 * 4) - 13
+        Dim lw = CInt(w / 5)
+        ListBox1.Width = lw
+        ListBox2.Width = lw
+        Button4.Width = lw
+        Button5.Width = lw
+
+        ListBox3.Width = lw
+        ListBox7.Width = lw
+        ListBox3.Left = ListBox1.Left + ListBox1.Width + 6
+        ListBox7.Left = ListBox1.Left + ListBox1.Width + 6
+        Label4.Left = ListBox3.Left
+        Label8.Left = ListBox3.Left
+        Button6.Width = lw
+        Button10.Width = lw
+        Button6.Left = ListBox3.Left
+        Button10.Left = ListBox3.Left
+
+        ListBox4.Width = lw
+        ListBox8.Width = lw
+        ListBox4.Left = ListBox3.Left + ListBox3.Width + 6
+        ListBox8.Left = ListBox3.Left + ListBox3.Width + 6
+        Label5.Left = ListBox4.Left
+        Label9.Left = ListBox4.Left
+        Button7.Width = lw
+        Button11.Width = lw
+        Button7.Left = ListBox4.Left
+        Button11.Left = ListBox4.Left
+
+        ListBox5.Width = lw
+        ListBox9.Width = lw
+        ListBox5.Left = ListBox4.Left + ListBox4.Width + 6
+        ListBox9.Left = ListBox4.Left + ListBox4.Width + 6
+        Label6.Left = ListBox5.Left
+        Label10.Left = ListBox5.Left
+        Button8.Width = lw
+        Button12.Width = lw
+        Button8.Left = ListBox5.Left
+        Button12.Left = ListBox5.Left
+
+        ListBox6.Width = lw
+        ListBox10.Width = lw
+        ListBox6.Left = ListBox5.Left + ListBox5.Width + 6
+        ListBox10.Left = ListBox5.Left + ListBox5.Width + 6
+        Label7.Left = ListBox6.Left
+        Label11.Left = ListBox6.Left
+        Button9.Width = lw
+        Button13.Width = lw
+        Button9.Left = ListBox6.Left
+        Button13.Left = ListBox6.Left
     End Sub
 
 #Region "Main form"
@@ -326,7 +382,7 @@ Public Class FormC_mameRomListBuilder
             Dim _list As New List(Of item)
 
             count = 0
-            lists(i).Items.Clear()
+            'lists(i).Items.Clear()
             For Each item As item In props_obj(i + 1)
                 _list.Add(item)
                 count += item.count
@@ -375,13 +431,17 @@ Public Class FormC_mameRomListBuilder
             End If
 
             'Manufacturer
+            tmp = m.manufacturer.ToUpper
+            If tmp = "" Then tmp = undef
             If list(1).Count > 0 Then
-                If Not list(1).Contains(m.manufacturer.ToUpper) Then Continue For
+                If Not list(1).Contains(tmp.ToUpper) Then Continue For
             End If
 
             'Year
+            tmp = m.year.ToUpper
+            If tmp = "" Then tmp = undef
             If list(2).Count > 0 Then
-                If Not list(2).Contains(m.year.ToUpper) Then Continue For
+                If Not list(2).Contains(tmp.ToUpper) Then Continue For
             End If
 
             'Bios
@@ -424,8 +484,10 @@ Public Class FormC_mameRomListBuilder
             End If
 
             'Emulation status (list 10)
+            tmp = m.emulation2.ToUpper
+            If tmp = "" Then tmp = undef
             If list(9).Count > 0 Then
-                If Not list(9).Contains(m.emulation2.ToUpper) Then Continue For
+                If Not list(9).Contains(tmp.ToUpper) Then Continue For
             End If
 
             machines_choosen.Add(m)
@@ -433,6 +495,9 @@ Public Class FormC_mameRomListBuilder
 
         GroupBox1.Enabled = False
         GroupBox2.Enabled = False
+        GroupBox3.Parent = Me
+        GroupBox3.Top = CInt(Me.Height / 2 - GroupBox3.Height / 2)
+        GroupBox3.Left = CInt(Me.Width / 2 - GroupBox3.Width / 2)
         GroupBox3.Visible = True
         Label15.Text = "Games selected: " + machines_choosen.Count.ToString
     End Sub
@@ -485,6 +550,72 @@ Public Class FormC_mameRomListBuilder
             Button1.Enabled = False : Button2.Enabled = True
             TextBox1.Enabled = False : TextBox2.Enabled = True
         End If
+    End Sub
+
+    'Sort button
+    Private Sub sortList(sender As Object, e As EventArgs) Handles Button4.Click, Button5.Click, Button6.Click, Button7.Click, Button8.Click, Button9.Click, Button10.Click, Button11.Click, Button12.Click, Button13.Click
+        Dim b As Button = DirectCast(sender, Button)
+        Dim n As Integer = 0
+        If IsNumeric(Microsoft.VisualBasic.Right(b.Name, 2)) Then n = CInt(Microsoft.VisualBasic.Right(b.Name, 2)) Else n = CInt(Microsoft.VisualBasic.Right(b.Name, 1))
+
+        Dim cmp As IComparer(Of WindowsApplication1.item) = New ComparerStd
+        Select Case b.Text
+            Case "Sorted: Alphabetically"
+                b.Text = "Sorted: By Count"
+                cmp = New ComparerCount
+            Case "Sorted: By Count"
+                b.Text = "Sorted: By Size"
+                cmp = New ComparerSize()
+            Case "Sorted: By Size"
+                b.Text = "Sorted: Alphabetically"
+                If n = 11 Or n = 12 Then cmp = New ComparerNumber Else cmp = New ComparerStd
+        End Select
+
+        Dim listboxes() As ListBox = {ListBox1, ListBox3, ListBox4, ListBox5, ListBox6,
+                                      ListBox2, ListBox7, ListBox8, ListBox9, ListBox10}
+
+        Select Case n
+            Case 4
+                n = 0
+            Case 6
+                n = 1
+            Case 7
+                n = 2
+            Case 8
+                n = 3
+            Case 9
+                n = 4
+            Case 5
+                n = 5
+            Case 10
+                n = 6
+            Case 11
+                n = 7
+            Case 12
+                n = 8
+            Case 13
+                n = 9
+        End Select
+
+        Dim topind = listboxes(n).TopIndex
+        Dim selected = New List(Of String)
+        For Each sel As item In listboxes(n).SelectedItems
+            selected.Add(sel.name)
+        Next
+
+        Dim _list = DirectCast(listboxes(n).DataSource, List(Of item))
+        If _list IsNot Nothing Then
+            listboxes(n).DataSource = Nothing
+            _list.Sort(cmp)
+            listboxes(n).DataSource = _list
+        End If
+
+        'restore selection
+        listboxes(n).SelectedIndex = -1
+        For i As Integer = 0 To listboxes(n).Items.Count - 1
+            If selected.Contains(DirectCast(listboxes(n).Items(i), item).name) Then listboxes(n).SetSelected(i, True)
+        Next
+        listboxes(n).TopIndex = topind
     End Sub
 #End Region
 
@@ -543,6 +674,7 @@ Public Class FormC_mameRomListBuilder
 
         Dim fNameWOExt As String = ""
         Dim n_known_files As Integer = 0
+        Dim n_known_games As Integer = 0
         Dim n_unKnown_files As Integer = 0
         Dim n_space_total As Long = 0
         Dim n_space_known_files As Long = 0
@@ -556,16 +688,20 @@ Public Class FormC_mameRomListBuilder
         For Each f As FileInfo In filesInfo
             fNameWOExt = f.Name.ToUpper.Replace(f.Extension.ToUpper, "")
 
-            If m_all.Contains(fNameWOExt) Then
+            Dim ind = m_all.IndexOf(fNameWOExt)
+            If ind >= 0 Then
                 n_known_files += 1
-                n_space_known_files += f.Length
+                n_known_games += 1
                 list_foundGames.Add(f.Name)
+                Dim length = f.Length
+                n_space_known_files += length
+                Dim m = machines(ind) : m.fileSize = length : machines(ind) = m
 
                 'If merged romset add clones to foundlist
                 If RadioButton4.Checked Then
                     If m_clones.ContainsKey(fNameWOExt) Then
                         For Each s As String In m_clones(fNameWOExt)
-                            n_known_files += 1
+                            n_known_games += 1
                             list_foundGames.Add(s + ".clone")
 
                             If m_chosen.Contains(s.ToUpper) Then
@@ -588,19 +724,77 @@ Public Class FormC_mameRomListBuilder
             n_space_total += f.Length
         Next
 
-        n_games_not_found = m_all.Count - n_known_files
+        fillListSizes()
+
+        n_games_not_found = m_all.Count - n_known_games
         Label15.Text = "Games selected: " + m_chosen.Count.ToString
         Label14.Text = "Total files: " + filesInfo.Count.ToString
         Label16.Text = "Known files: " + n_known_files.ToString
+        Label29.Text = "Known games: " + n_known_games.ToString
         Label17.Text = "Unknown files: " + n_unKnown_files.ToString
         Label18.Text = "Total space used: " + Math.Round(n_space_total / 1024 / 1024, 1).ToString + "mb"
         Label19.Text = "Total space used by known files: " + Math.Round(n_space_known_files / 1024 / 1024, 1).ToString + "mb"
         Label20.Text = "Total space used by selected games: " + Math.Round(n_space_selected_games / 1024 / 1024, 1).ToString + "mb"
         Label26.Text = "Total space used by not selected games: " + Math.Round((n_space_known_files - n_space_selected_games) / 1024 / 1024, 1).ToString + "mb"
-        Label21.Text = "Number of found games: " + n_known_files.ToString
+        Label21.Text = "Number of found games: " + n_known_games.ToString
         Label22.Text = "Number of found selected games: " + n_selected_found.ToString
         Label27.Text = "Number of not found games: " + n_games_not_found.ToString
         Label28.Text = "Number of not found selected games: " + (m_chosen.Count - n_selected_found).ToString
+    End Sub
+    Private Sub fillListSizes()
+        Static _comparerStd As System.Collections.Generic.IComparer(Of item) = New ComparerStd()
+        Static _comparerNum As System.Collections.Generic.IComparer(Of item) = New ComparerNumber()
+
+        Dim sizes(9) As Dictionary(Of String, Long)
+        For i As Integer = 0 To 9
+            sizes(i) = New Dictionary(Of String, Long)
+            For Each item In props_obj(i + 1)
+                sizes(i).Add(item.name, 0)
+            Next
+        Next
+
+        For Each m As machine In machines
+            sizes(0)(m.driver) += m.fileSize
+            If m.cloneof = "" Then sizes(1)("Parent") += m.fileSize Else sizes(1)("Clone") += m.fileSize
+            If m.manufacturer = "" Then sizes(2)("<undefined>") += m.fileSize Else sizes(2)(m.manufacturer) += m.fileSize
+            If m.year = "" Then sizes(3)("<undefined>") += m.fileSize Else sizes(3)(m.year) += m.fileSize
+            If m.bios = "" Then sizes(4)("<undefined>") += m.fileSize Else sizes(4)(m.bios) += m.fileSize
+            If m.device = "" Then sizes(5)("<undefined>") += m.fileSize Else sizes(5)(m.device) += m.fileSize
+            If m.mechanical Then sizes(6)("Mechanical") += m.fileSize Else sizes(6)("Non mechanical") += m.fileSize
+            sizes(7)(m.cpu_clock.ToString) += m.fileSize
+            If m.rotate = -1 Then sizes(8)("<undefined>") += m.fileSize Else sizes(8)(m.rotate.ToString) += m.fileSize
+            If m.emulation2 = "" Then sizes(9)("<undefined>") += m.fileSize Else sizes(9)(m.emulation2) += m.fileSize
+        Next
+
+        Dim count As Integer = 0
+        Dim topind As Integer = 0
+        Dim lists() As ListBox = {ListBox1, ListBox2, ListBox3, ListBox4, ListBox5, ListBox6, ListBox7, ListBox8, ListBox9, ListBox10}
+        Dim selected As New List(Of String)
+        For n = 0 To 9
+            topind = lists(n).TopIndex
+            selected = New List(Of String)
+            For Each sel As item In lists(n).SelectedItems
+                selected.Add(sel.name)
+            Next
+
+            count = 0
+            Dim _list As New List(Of item)
+            For Each i As item In props_obj(n + 1)
+                i.size = sizes(n)(i.name)
+                _list.Add(i)
+                count += i.count
+            Next
+            _list.Add(New item With {.count = count, .name = "ALL"})
+            If n = 7 Or n = 8 Then _list.Sort(_comparerNum) Else _list.Sort(_comparerStd)
+            lists(n).DataSource = Nothing : lists(n).DataSource = _list
+
+            'restore selection
+            lists(n).SelectedIndex = -1
+            For i As Integer = 0 To lists(n).Items.Count - 1
+                If selected.Contains(DirectCast(lists(n).Items(i), item).name) Then lists(n).SetSelected(i, True)
+            Next
+            lists(n).TopIndex = topind
+        Next
     End Sub
 
     'File operations - Label - UnKnown files click
@@ -628,7 +822,7 @@ Public Class FormC_mameRomListBuilder
             If ind >= 0 Then
                 m_all.RemoveAt(ind)
             Else
-                MsgBox("Strange behaviour with game '" + i + "'")
+                MsgBox("Strange behaviour with game '" + i + "'" + vbCrLf + "It often means, you have both GAME.7z and GAME_CLONE.7z in merged set, in other words, your set is not proper.")
             End If
         Next
 
@@ -676,6 +870,9 @@ Public Class FormC_mameRomListBuilder
         fb.ShowDialog()
         lastopened_fld = fb.FileName.Substring(0, fb.FileName.LastIndexOf("\") + 1)
         If Not FileExists(fb.FileName) Then Exit Sub
+
+        treehash.Clear()
+        TreeView1.Nodes.Clear()
 
         Dim ini As New IniFile()
         ini.Load(fb.FileName)
@@ -788,6 +985,105 @@ Public Class FormC_mameRomListBuilder
         lastopened_dst = fb.SelectedPath
         TextBox4.Text = fb.SelectedPath
     End Sub
+
+    'Copy selected
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        If Not DirectoryExists(TextBox3.Text) Then MsgBox("Source (romset) directory not exist.") : Exit Sub
+        If Not DirectoryExists(TextBox4.Text) Then MsgBox("Destination directory not exist.") : Exit Sub
+
+        Dim m_chosen As New List(Of String)
+        For Each m As machine In machines_choosen
+            m_chosen.Add(m.name.ToUpper)
+        Next
+
+        'remove from local m_choosen list all games deselected from treeview
+        If treehash.Count > 0 Then
+            Dim ind As Integer = 0
+            For Each n As nodeAndList In treehash.Values
+                If n.node.Checked Then Continue For
+                For Each s As String In n.list
+                    ind = m_chosen.IndexOf(s.ToUpper)
+                    If ind >= 0 Then m_chosen.RemoveAt(ind)
+                Next
+            Next
+        End If
+
+        For Each m In m_chosen
+            Dim files = GetFiles(TextBox3.Text, FileIO.SearchOption.SearchTopLevelOnly, {m + ".*"})
+            For Each file In files
+                FileCopy(file, TextBox4.Text + "\" + IO.Path.GetFileName(file))
+            Next
+        Next
+        MsgBox("Done.")
+    End Sub
+    'Move selected
+    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+        If Not DirectoryExists(TextBox3.Text) Then MsgBox("Source (romset) directory not exist.") : Exit Sub
+        If Not DirectoryExists(TextBox4.Text) Then MsgBox("Destination directory not exist.") : Exit Sub
+
+        Dim m_chosen As New List(Of String)
+        For Each m As machine In machines_choosen
+            m_chosen.Add(m.name.ToUpper)
+        Next
+
+        'remove from local m_choosen list all games deselected from treeview
+        If treehash.Count > 0 Then
+            Dim ind As Integer = 0
+            For Each n As nodeAndList In treehash.Values
+                If n.node.Checked Then Continue For
+                For Each s As String In n.list
+                    ind = m_chosen.IndexOf(s.ToUpper)
+                    If ind >= 0 Then m_chosen.RemoveAt(ind)
+                Next
+            Next
+        End If
+
+        For Each m In m_chosen
+            Dim files = GetFiles(TextBox3.Text, FileIO.SearchOption.SearchTopLevelOnly, {m + ".*"})
+            For Each file In files
+                MoveFile(file, TextBox4.Text + "\" + IO.Path.GetFileName(file))
+            Next
+        Next
+        MsgBox("Done.")
+    End Sub
+    'Generate bat to delete
+    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+        If Not DirectoryExists(TextBox3.Text) Then MsgBox("Source (romset) directory not exist.") : Exit Sub
+
+        Dim m_chosen As New List(Of String)
+        For Each m As machine In machines_choosen
+            m_chosen.Add(m.name.ToUpper)
+        Next
+
+        'remove from local m_choosen list all games deselected from treeview
+        If treehash.Count > 0 Then
+            Dim ind As Integer = 0
+            For Each n As nodeAndList In treehash.Values
+                If n.node.Checked Then Continue For
+                For Each s As String In n.list
+                    ind = m_chosen.IndexOf(s.ToUpper)
+                    If ind >= 0 Then m_chosen.RemoveAt(ind)
+                Next
+            Next
+        End If
+
+        Dim del As New List(Of String)
+        For Each m In m_chosen
+            Dim files = GetFiles(TextBox3.Text, FileIO.SearchOption.SearchTopLevelOnly, {m + ".*"})
+            For Each file In files
+                del.Add(file)
+            Next
+        Next
+        del.Sort()
+
+        FileOpen(1, TextBox3.Text + "\!del.bat", OpenMode.Output)
+        For Each f As String In del
+            PrintLine(1, "del """ + f + """")
+        Next
+        FileClose(1)
+
+        MsgBox("Done. File '!del.bat' saved to romset dir.")
+    End Sub
 #End Region
 End Class
 
@@ -795,11 +1091,16 @@ Public Class item
     Public name As String = ""
     Public tag As String = ""
     Public count As Integer = 1
+    Public size As Long = -1
 
     Public Overrides Function ToString() As String
         'Return MyBase.ToString()
         If name = "" Or name = "-1" Then name = FormC_mameRomListBuilder.undef
-        Return name + " (" + count.ToString + ")"
+        If size = -1 Then
+            Return name + " (" + count.ToString + ")"
+        Else
+            Return name + " (" + count.ToString + ")(" + Math.Round(size / 1024 / 1024, 1).ToString + "mb)"
+        End If
     End Function
 End Class
 
@@ -922,5 +1223,25 @@ Class ComparerNumber
             Return a.CompareTo(b)
         End If
         Return x.name.CompareTo(y.name)
+    End Function
+End Class
+Class ComparerSize
+    Implements IComparer(Of WindowsApplication1.item)
+
+    Public Function Compare(ByVal x As item, ByVal y As item) As Integer Implements System.Collections.Generic.IComparer(Of item).Compare
+        If x.name.ToUpper = "ALL" And y.name.ToUpper = "ALL" Then Return 0
+        If x.name.ToUpper = "ALL" Then Return -1
+        If y.name.ToUpper = "ALL" Then Return 1
+        Return x.size.CompareTo(y.size)
+    End Function
+End Class
+Class ComparerCount
+    Implements IComparer(Of WindowsApplication1.item)
+
+    Public Function Compare(ByVal x As item, ByVal y As item) As Integer Implements System.Collections.Generic.IComparer(Of item).Compare
+        If x.name.ToUpper = "ALL" And y.name.ToUpper = "ALL" Then Return 0
+        If x.name.ToUpper = "ALL" Then Return -1
+        If y.name.ToUpper = "ALL" Then Return 1
+        Return x.count.CompareTo(y.count)
     End Function
 End Class
