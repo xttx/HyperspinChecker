@@ -245,6 +245,12 @@
     <Compile Include="FormH_undoHistory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormZ_about.Designer.vb">
+      <DependentUpon>FormZ_about.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormZ_about.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.designer.vb">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>
     </Compile>
@@ -380,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormH_undoHistory.resx">
       <DependentUpon>FormH_undoHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormZ_about.resx">
+      <DependentUpon>FormZ_about.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ISO Fix Dialog Forms\ISOFixAsk_cueWoBin.resx">
       <DependentUpon>ISOFixAsk_cueWoBin.vb</DependentUpon>

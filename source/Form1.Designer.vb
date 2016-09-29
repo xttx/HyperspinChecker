@@ -186,6 +186,8 @@ Partial Class Form1
         Me.TextBox28 = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox31 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox30 = New System.Windows.Forms.CheckBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.CheckBox26 = New System.Windows.Forms.CheckBox()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
@@ -320,8 +322,8 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox30 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox31 = New System.Windows.Forms.CheckBox()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -2122,6 +2124,26 @@ Partial Class Form1
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "HyperLaunch v3.x"
         '
+        'CheckBox31
+        '
+        Me.CheckBox31.AutoSize = True
+        Me.CheckBox31.Location = New System.Drawing.Point(6, 121)
+        Me.CheckBox31.Name = "CheckBox31"
+        Me.CheckBox31.Size = New System.Drawing.Size(174, 17)
+        Me.CheckBox31.TabIndex = 3
+        Me.CheckBox31.Text = "Check for HL/RL system media"
+        Me.CheckBox31.UseVisualStyleBackColor = True
+        '
+        'CheckBox30
+        '
+        Me.CheckBox30.AutoSize = True
+        Me.CheckBox30.Location = New System.Drawing.Point(6, 98)
+        Me.CheckBox30.Name = "CheckBox30"
+        Me.CheckBox30.Size = New System.Drawing.Size(168, 17)
+        Me.CheckBox30.TabIndex = 2
+        Me.CheckBox30.Text = "Check for HL/RL game media"
+        Me.CheckBox30.UseVisualStyleBackColor = True
+        '
         'Label40
         '
         Me.Label40.Location = New System.Drawing.Point(6, 39)
@@ -2507,7 +2529,7 @@ Partial Class Form1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.MainTableToolStripMenuItem, Me.MatcherToolStripMenuItem, Me.ToolsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.MainTableToolStripMenuItem, Me.MatcherToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1023, 24)
@@ -3130,25 +3152,18 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader ..."
         '
-        'CheckBox30
+        'AboutToolStripMenuItem
         '
-        Me.CheckBox30.AutoSize = True
-        Me.CheckBox30.Location = New System.Drawing.Point(6, 98)
-        Me.CheckBox30.Name = "CheckBox30"
-        Me.CheckBox30.Size = New System.Drawing.Size(168, 17)
-        Me.CheckBox30.TabIndex = 2
-        Me.CheckBox30.Text = "Check for HL/RL game media"
-        Me.CheckBox30.UseVisualStyleBackColor = True
+        Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem1})
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.AboutToolStripMenuItem.Text = "Help"
         '
-        'CheckBox31
+        'AboutToolStripMenuItem1
         '
-        Me.CheckBox31.AutoSize = True
-        Me.CheckBox31.Location = New System.Drawing.Point(6, 121)
-        Me.CheckBox31.Name = "CheckBox31"
-        Me.CheckBox31.Size = New System.Drawing.Size(174, 17)
-        Me.CheckBox31.TabIndex = 3
-        Me.CheckBox31.Text = "Check for HL/RL system media"
-        Me.CheckBox31.UseVisualStyleBackColor = True
+        Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem1.Text = "About"
         '
         'Form1
         '
@@ -3518,4 +3533,6 @@ Partial Class Form1
     Friend WithEvents ComboBox13 As ComboBox
     Friend WithEvents CheckBox31 As CheckBox
     Friend WithEvents CheckBox30 As CheckBox
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem1 As ToolStripMenuItem
 End Class

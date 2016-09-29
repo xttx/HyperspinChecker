@@ -828,6 +828,7 @@ Public Class Form1
 
             'Add row
             Dim r As New DataGridViewRow
+            counters(0) += 1
             r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a(11), a(12), a(13), a(14), a(15), a(16), a(17), a(18), a_crc, a_manufacturer, a_year, a_genre})
             tempStr = ""
             For i As Integer = 2 To 18
@@ -844,7 +845,6 @@ Public Class Form1
         Next
 
         'save lastCheckResult
-        counters(0) = DataGridView1.Rows.Count
         ini.path = Class1.confPath
         ini.IniWriteValue("LastCheckResult", param.sys, String.Join(",", counters))
     End Sub
@@ -1638,6 +1638,12 @@ Public Class Form1
     Private Sub MAMERomsetReducerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MAMERomsetReducerToolStripMenuItem.Click
         Dim f As New FormC_mameRomListBuilder
         f.Show(Me)
+    End Sub
+
+    'About
+    Private Sub AboutToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem1.Click
+        Dim a As New FormZ_about
+        a.ShowDialog(Me)
     End Sub
 #End Region
 

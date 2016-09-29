@@ -212,7 +212,6 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Rele
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Release\Interop.WMPLib.dll
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Release\AxInterop.ShockwaveFlashObjects.dll
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Release\AxInterop.WMPLib.dll
-D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\HyperspinChecker.vbprojResolveAssemblyReference.cache
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form4_genres_favorites.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form4_genres_favorites_preview.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form5_videoDownloader.resources
@@ -244,3 +243,5 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.Form2_checkMissingInOtherFolders.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormG_associationTables.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormH_undoHistory.resources
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormZ_about.resources
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\HyperspinChecker.vbprojResolveAssemblyReference.cache

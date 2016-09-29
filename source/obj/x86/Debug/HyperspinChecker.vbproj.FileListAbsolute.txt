@@ -175,3 +175,4 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.FormG_associationTables.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.FormH_undoHistory.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Debug\SevenZipSharp.dll
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Debug\WindowsApplication1.FormZ_about.resources
