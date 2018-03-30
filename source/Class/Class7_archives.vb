@@ -50,7 +50,7 @@ Public Class Class7_archives
     Public Shared lastRespons_keepOne As MsgBoxResult = MsgBoxResult.Retry
     Public Function renameInArchiveIfNeeded(newArchiveFileWoExtension As String, Optional crc As String = "") As Boolean
         Dim gameName As String = FileSystem.GetFileInfo(newArchiveFileWoExtension).Name
-        If gameName.Contains(".") Then gameName = gameName.Substring(0, gameName.LastIndexOf("."))
+        'If gameName.Contains(".") Then gameName = gameName.Substring(0, gameName.LastIndexOf("."))
 
         Class1.Log("Archive Handler - Archive name is - " + z.FileName)
         Dim rename_needed As Boolean = False

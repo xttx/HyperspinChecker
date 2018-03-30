@@ -384,9 +384,12 @@ Public Class Class3_matcher
                     For Each e As String In frm.TextBox16.Text.ToLower.Split(","c)
                         If e.Trim = tmpExt.ToLower Then
                             For Each f As String In FileSystem.GetFiles(tmppath, SearchOption.SearchTopLevelOnly, {"*.cue"})
-                                listFilesInCue = associate_listFilesFromCue(tmppath + tmpfileNameWOext + ".cue", listaudio)
+                                'listFilesInCue = associate_listFilesFromCue(tmppath + tmpfileNameWOext + ".cue", listaudio)
+                                listFilesInCue = associate_listFilesFromCue(f, listaudio)
                                 If listFilesInCue(0)(0).ToLower = tmpfileName.ToLower Then
-                                    tmp.Add({o(0), f, newpath + f.Substring(f.LastIndexOf("\") + 1)})
+                                    'tmp.Add({o(0), f, newpath + f.Substring(f.LastIndexOf("\") + 1)})
+                                    tmp.Add({o(0), f, newpath + newfileNameWOext + ".cue"})
+                                    associate_rewriteCue(f, newfileNameWOext + "." + tmpExt)
                                     For Each fA As String In listFilesInCue(1)
                                         tmp.Add({o(0), tmppath + fA, newpath + fA})
                                     Next
