@@ -310,7 +310,13 @@ Public Class FormC_mameRomListBuilder
             Else
                 cur_machine.display_type = getNodeAttr(display, "type")
                 cur_machine.resolution = getNodeAttr(display, "width") + "x" + getNodeAttr(display, "height")
-                cur_machine.rotate = CInt(getNodeAttr(display, "rotate"))
+
+                Dim rotate As String = getNodeAttr(display, "rotate")
+                If IsNumeric(rotate) Then
+                    cur_machine.rotate = CInt(rotate)
+                Else
+                    cur_machine.rotate = -1
+                End If
             End If
 
             If getNodeAttr(x, "ismechanical").Trim.ToLower = "yes" Then

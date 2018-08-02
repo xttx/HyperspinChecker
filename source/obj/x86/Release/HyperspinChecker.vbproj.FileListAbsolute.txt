@@ -245,3 +245,5 @@ D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormH_undoHistory.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormZ_about.resources
 D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\HyperspinChecker.vbprojResolveAssemblyReference.cache
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\HyperspinChecker.vbproj.CoreCompileInputs.cache
+D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\obj\x86\Release\WindowsApplication1.FormI_RLFadePreview.resources

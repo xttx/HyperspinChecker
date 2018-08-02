@@ -168,6 +168,9 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
         Me.ComboBox13 = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.CheckBox29 = New System.Windows.Forms.CheckBox()
@@ -324,6 +327,7 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox32 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -342,6 +346,7 @@ Partial Class Form1
         Me.GroupBox2.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.GroupBox11.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
@@ -805,7 +810,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"roms", "Video", "Wheels", "Artwork1", "Artwork2", "Artwork3", "Artwork4", "Themes", "Sounds"})
+        Me.ComboBox3.Items.AddRange(New Object() {"roms", "Video", "Wheels", "Artwork1", "Artwork2", "Artwork3", "Artwork4", "Themes", "Sounds", "HL/RL Artwork", "HL/RL Background", "HL/RL Bezel", "HL/RL Fade", "HL/RL Guide", "HL/RL Manual", "HL/RL Music", "HL/RL Video"})
         Me.ComboBox3.Location = New System.Drawing.Point(5, 3)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(391, 21)
@@ -1933,20 +1938,51 @@ Partial Class Form1
         '
         'GroupBox11
         '
+        Me.GroupBox11.Controls.Add(Me.CheckBox32)
+        Me.GroupBox11.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox11.Controls.Add(Me.Label57)
+        Me.GroupBox11.Controls.Add(Me.Label56)
         Me.GroupBox11.Controls.Add(Me.ComboBox13)
-        Me.GroupBox11.Location = New System.Drawing.Point(218, 231)
+        Me.GroupBox11.Location = New System.Drawing.Point(218, 212)
         Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(233, 63)
+        Me.GroupBox11.Size = New System.Drawing.Size(233, 121)
         Me.GroupBox11.TabIndex = 8
         Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "Localizations:"
+        Me.GroupBox11.Text = "User Interface:"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(169, 60)
+        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {6, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(58, 20)
+        Me.NumericUpDown1.TabIndex = 3
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Location = New System.Drawing.Point(3, 65)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(111, 13)
+        Me.Label57.TabIndex = 2
+        Me.Label57.Text = "Matcher lists font size:"
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Location = New System.Drawing.Point(3, 17)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(71, 13)
+        Me.Label56.TabIndex = 1
+        Me.Label56.Text = "Localizations:"
         '
         'ComboBox13
         '
         Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox13.FormattingEnabled = True
         Me.ComboBox13.Items.AddRange(New Object() {"Built-in (English)"})
-        Me.ComboBox13.Location = New System.Drawing.Point(6, 19)
+        Me.ComboBox13.Location = New System.Drawing.Point(6, 33)
         Me.ComboBox13.Name = "ComboBox13"
         Me.ComboBox13.Size = New System.Drawing.Size(221, 21)
         Me.ComboBox13.TabIndex = 0
@@ -2119,7 +2155,7 @@ Partial Class Form1
         Me.GroupBox9.Controls.Add(Me.CheckBox26)
         Me.GroupBox9.Location = New System.Drawing.Point(457, 45)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(208, 180)
+        Me.GroupBox9.Size = New System.Drawing.Size(208, 161)
         Me.GroupBox9.TabIndex = 9
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "HyperLaunch v3.x"
@@ -2168,9 +2204,9 @@ Partial Class Form1
         Me.GroupBox8.Controls.Add(Me.CheckBox24)
         Me.GroupBox8.Controls.Add(Me.CheckBox23)
         Me.GroupBox8.Controls.Add(Me.CheckBox22)
-        Me.GroupBox8.Location = New System.Drawing.Point(457, 231)
+        Me.GroupBox8.Location = New System.Drawing.Point(457, 212)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(208, 86)
+        Me.GroupBox8.Size = New System.Drawing.Size(208, 105)
         Me.GroupBox8.TabIndex = 9
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Clones use Parents vids && themes"
@@ -2214,7 +2250,7 @@ Partial Class Form1
         Me.GroupBox6.Controls.Add(Me.CheckBox16)
         Me.GroupBox6.Location = New System.Drawing.Point(218, 139)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(233, 86)
+        Me.GroupBox6.Size = New System.Drawing.Size(233, 67)
         Me.GroupBox6.TabIndex = 7
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Confirmations:"
@@ -2553,7 +2589,7 @@ Partial Class Form1
         '
         Me.MainTableToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlowEditToolStripMenuItem, Me.ReorderGamesWhileUpdatingXmlToolStripMenuItem, Me.ShowHideColumnsToolStripMenuItem, Me.CommitDbEditionsToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExportToExelToolStripMenuItem})
         Me.MainTableToolStripMenuItem.Name = "MainTableToolStripMenuItem"
-        Me.MainTableToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.MainTableToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.MainTableToolStripMenuItem.Text = "Table"
         '
         'AlowEditToolStripMenuItem
@@ -2981,7 +3017,7 @@ Partial Class Form1
         '
         Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssociationTablesToolStripMenuItem, Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem, Me.GenresFavoritesManagerToolStripMenuItem, Me.ToolStripMenuItem6, Me.ShowDatabaseStatisticToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem, Me.ConvertersToolStripMenuItem, Me.ToolStripMenuItem7, Me.RemoveClonesFromCurrentDBToolStripMenuItem, Me.DIFFToolToolStripMenuItem, Me.DualFolderOperationsToolStripMenuItem, Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem, Me.ToolStripMenuItem8, Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem, Me.MAMERomsetReducerToolStripMenuItem, Me.VideoDownloaderToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
         '
         'AssociationTablesToolStripMenuItem
@@ -3162,8 +3198,18 @@ Partial Class Form1
         'AboutToolStripMenuItem1
         '
         Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
-        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem1.Text = "About"
+        '
+        'CheckBox32
+        '
+        Me.CheckBox32.AutoSize = True
+        Me.CheckBox32.Location = New System.Drawing.Point(6, 93)
+        Me.CheckBox32.Name = "CheckBox32"
+        Me.CheckBox32.Size = New System.Drawing.Size(169, 17)
+        Me.CheckBox32.TabIndex = 5
+        Me.CheckBox32.Text = "Sort System List Alphabetically"
+        Me.CheckBox32.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -3214,6 +3260,8 @@ Partial Class Form1
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
         Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
@@ -3535,4 +3583,8 @@ Partial Class Form1
     Friend WithEvents CheckBox30 As CheckBox
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Label57 As Label
+    Friend WithEvents Label56 As Label
+    Friend WithEvents CheckBox32 As CheckBox
 End Class

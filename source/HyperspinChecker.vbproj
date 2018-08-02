@@ -128,6 +128,7 @@
     <Compile Include="Class\Class4_clrmamepro.vb" />
     <Compile Include="Class\Class5_system_manager.vb" />
     <Compile Include="Class\Class6_hash.vb" />
+    <Compile Include="Class\Module1_Extensions.vb" />
     <Compile Include="Form3_mameFoldersFilter.Designer.vb">
       <DependentUpon>Form3_mameFoldersFilter.vb</DependentUpon>
     </Compile>
@@ -243,6 +244,12 @@
       <DependentUpon>FormH_undoHistory.vb</DependentUpon>
     </Compile>
     <Compile Include="FormH_undoHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormI_RLFadePreview.Designer.vb">
+      <DependentUpon>FormI_RLFadePreview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormI_RLFadePreview.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormZ_about.Designer.vb">
@@ -386,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormH_undoHistory.resx">
       <DependentUpon>FormH_undoHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormI_RLFadePreview.resx">
+      <DependentUpon>FormI_RLFadePreview.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormZ_about.resx">
       <DependentUpon>FormZ_about.vb</DependentUpon>

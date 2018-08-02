@@ -58,8 +58,8 @@ Public Class Form6_autorenamer
         Dim list_of_added_games = New List(Of String)
         Dim lists As listboxes_local_lists = DirectCast(e.Argument, listboxes_local_lists)
         'For Each item As String In Form1.ListBox1.Items
-        For Each item As String In lists.list1
-            curGameName = item.ToUpper.Trim
+        For Each item As DataRowView In lists.list1
+            curGameName = item.Item(0).ToString.ToUpper.Trim
             If CheckBox1.Checked Then curGameName = Remove_paranteses(curGameName)
             If CheckBox2.Checked Then curGameName = Remove_brackets(curGameName)
             If CheckBox3.Checked Then curGameName = Remove_Special(curGameName)
@@ -98,9 +98,7 @@ Public Class Form6_autorenamer
                     similarity = 100 * (commonList.Count * 2) / (stringSplit1.Length + stringSplit2.Length)
                     If similarity >= min_ratio Then
                         Dim X As String = "X"
-                        't1 = Form1.ListBox1.Items(counter1).ToString
-                        t1 = lists.list1(counter1).ToString
-                        't2 = DirectCast(Form1.ListBox2.Items(counter2), DataRowView).Item(0).ToString
+                        t1 = DirectCast(lists.list1(counter1), DataRowView).Item(0).ToString
                         t2 = DirectCast(lists.list2(counter2), DataRowView).Item(0).ToString
                         If list_of_added_roms.Contains(t2) Then X = "" 'Else list_of_added_roms.Add(t2)
                         If list_of_added_games.Contains(t1) Then X = "" 'Else list_of_added_games.Add(t1)

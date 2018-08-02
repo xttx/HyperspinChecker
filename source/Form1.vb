@@ -34,8 +34,24 @@ Public Class Form1
     'TODO check/verify all possibilities while associating in matcher (copy, move, in/from different folders, and check listBoxex behaviour)
     'TODO when move roms in subfolder in NOT subfoldered mode, filelist don't reflect changes
 
-    'TODO matcher filters
     'TODO 'handle-together' in 'move unneeded to subfolder'
+
+    'TODO - RL fade preview and editor
+    'TODO - move mode when in another directory, in subfoldered mode is missing (code is missing)
+    'TODO - copy (duplicate) mode in the same folder, just rename file in filelist instead of duplicating
+    'TODO - sort systems
+    'TODO - renaming history to file
+    'TODO - better renaming log
+    'TODO - drag & drop in system manager
+    'TODO - while in edit mode in the cell, click Or right click on another cell - error - can't reproduce
+    'TODO - create db from files/folders - disable fill crc by default if folder is selected
+    'TODO - create db from files/folders - automatically suggest output name, based on output folder And output filename
+    'TODO - when renaming in another folder (copy or move), and only show unmatched files, files not disappear when renaming
+    'TODO - Copy rom from another folder - ask to rename files in every archive
+    'TODO - subfoldered mode - matched/unmatched should have option (enabled by default) to match a FILE inside a FOLDER, Not only folder name
+    'TODO - move copy/move/rename/duplicate controls from options menu to main matcher window
+    'TODO - Hide CHECK button (And other controls) when checking
+    'TODO - deplay emulator pack and customize emu video and controls and module settings, and paths
 
     'MOSTLY DONE TODO relative HL path not working ('Hyperlaunch path changed, 'HS path changing)
     'MOSTLY DONE TODO flames #153 - print check table on printer or exel export
@@ -100,10 +116,24 @@ Public Class Form1
     'DONE TODO To see if hs path is set, system manager refers to Label23.color, which can be not necessary green but purple, if path is ok, but config.save clicked.
     'DONE TODO REQUEST [MadCoder] Dreamcast CDI to ISO ability, and ISO fixer
     'DONE TODO can't change hl module in sys properties. It's just not updated.
+
+    'DONE TODO save last check result and show it in system manager table
+    'DONE TODO fix auto selection change in listbox when renaming
+    'DONE TODO after showing any defaultly hided column and saving table config, after program restart, column Is shown, but menu item does not checked
+    'DONE TODO ajustable font size in matcher listboxes
+    'DONE TODO hotkey (ctrl+enter or F2) to enter in cell edit mode
+    'DONE TODO ctrl+c should copy a single cell, not an entire line in the table, when in edit mode
+    'DONE TODO MSU auto audio track and related files renaming
+    'DONE TODO adding entry in 'handle theese extension togeether' list in options does not clear textbox
+    'DONE TODO filter in game list in matcher not working
+    'DONE TODO find-as-you-type in matcher listboxes
+    'DONE TODO If a disk does not exist (i.e. network drive), and multiple paths are set in RL - continue in another path, not abort
+
 #Region "Declarations"
     Structure check_param
         Dim x As Xml.XmlDocument
         Dim sys As String
+        Dim path As String
     End Structure
     Public xmlPath As String = ""
     Private ini As New IniFileApi
@@ -112,6 +142,7 @@ Public Class Form1
     Private system_manager_class As Class5_system_manager
     Private isoChecker As ISOChecker
     Private clrmame_class As Class4_clrmamepro
+    Private system_list As New DataTable
     Public editor_delete_command_list As New List(Of DataGridViewRow)
     Public editor_insert_command_list As New List(Of DataGridViewRow)
     Public editor_update_command_list As New Dictionary(Of DataGridViewRow, String)
@@ -193,6 +224,7 @@ Public Class Form1
         ComboBox7.Width = TextBox4.Width - 10
         ComboBox8.SelectedIndex = 0
         ComboBox9.SelectedIndex = 0
+        system_list.Columns.Add("system")
 
         If FileSystem.DirectoryExists(".\Localization") Then
             For Each file In FileSystem.GetFiles(".\Localization", SearchOption.SearchTopLevelOnly, {"*.ini"})
@@ -201,54 +233,6 @@ Public Class Form1
                 ComboBox13.Items.Add(f)
             Next
         End If
-
-        'Create localiztion files
-        'If Not FileIO.FileSystem.DirectoryExists(".\Localization") Then FileIO.FileSystem.CreateDirectory(".\Localization")
-        'Dim sw As New IO.StreamWriter(".\Localization\English.ini")
-        'sw.WriteLine("[Main]")
-        'localization_create(Me, sw)
-        'Dim f2 As New Form2_checkMissingInOtherFolders
-        'localization_create(f2, sw)
-        'Dim f3 As New Form3_mameFoldersFilter
-        'localization_create(f3, sw)
-        'Dim f4 As New Form4_genres_favorites
-        'localization_create(f4, sw)
-        'Dim f4a As New Form4_genres_favorites_preview
-        'localization_create(f4a, sw)
-        'Dim f5 As New Form5_videoDownloader
-        'localization_create(f5, sw)
-        'Dim f6 As New Form6_autorenamer
-        'localization_create(f6, sw)
-        'Dim f7 As New Form7_dualFolderOperations
-        'localization_create(f7, sw)
-        'Dim f8 As New Form8_systemProperties
-        'localization_create(f8, sw)
-        'Dim f9 As New Form9_database_statistic
-        'localization_create(f9, sw)
-        'Dim f9a As New Form9_database_statistic_comparer
-        'localization_create(f9a, sw)
-        'Dim fa As New FormA_hyperlaunch_3rd_party_paths
-        'localization_create(fa, sw)
-        'Dim fb As New FormB_PCSX2_createIndex
-        'localization_create(fb, sw)
-        'Dim fc As New FormC_mameRomListBuilder
-        'localization_create(fc, sw)
-        'Dim fda As New FormD_matcher_autofilter_constructor
-        'localization_create(fda, sw)
-        'Dim fe As New FormE_Create_database_XML_from_folder
-        'localization_create(fe, sw)
-        'Dim ff1 As New FormF_createNewHL_system
-        'localization_create(ff1, sw)
-        'Dim ff2 As New FormF_systemManager_addSystem
-        'localization_create(ff2, sw)
-        'Dim ff3 As New FormF_systemManager_exclusions
-        'localization_create(ff3, sw)
-        'Dim fg As New FormG_associationTables
-        'localization_create(fg, sw)
-        'Dim fh As New FormH_undoHistory
-        'localization_create(fh, sw)
-        'sw.Close()
-
 
         'Init Table Columns
         Form1_Load_Sub_initTableColumns()
@@ -345,6 +329,12 @@ Public Class Form1
         If s <> "" Then ComboBox12.Text = s Else ComboBox12.SelectedIndex = 5
         s = ini2.IniReadValue("Main", "Compression_temp")
         If s <> "" Then TextBox30.Text = s
+
+        'Matcher Font Size
+        s = ini2.IniReadValue("Main", "MatcherFontSize")
+        Dim fs As Single
+        If Single.TryParse(s, fs) Then NumericUpDown1.Value = CInt(fs)
+
         'Localization
         s = ini2.IniReadValue("Main", "Language")
         If s.Trim = "" Then
@@ -396,6 +386,7 @@ Public Class Form1
         DataGridView1.Columns.Add("col20", "Manufacturer")
         DataGridView1.Columns.Add("col21", "Year")
         DataGridView1.Columns.Add("col22", "Genre")
+        DataGridView1.Columns.Add("col23", "Rating")
         DataGridView1.Columns(0).Width = 300 : DataGridView1.Columns(0).ReadOnly = False
         DataGridView1.Columns(1).Width = 100 : DataGridView1.Columns(1).ReadOnly = True
         DataGridView1.Columns(2).Width = 50 : DataGridView1.Columns(2).ReadOnly = True
@@ -419,6 +410,7 @@ Public Class Form1
         DataGridView1.Columns(20).Width = 180 : DataGridView1.Columns(20).ReadOnly = False : DataGridView1.Columns(20).Visible = False
         DataGridView1.Columns(21).Width = 65 : DataGridView1.Columns(21).ReadOnly = False : DataGridView1.Columns(21).Visible = False
         DataGridView1.Columns(22).Width = 120 : DataGridView1.Columns(22).ReadOnly = False : DataGridView1.Columns(22).Visible = False
+        DataGridView1.Columns(23).Width = 120 : DataGridView1.Columns(23).ReadOnly = False : DataGridView1.Columns(23).Visible = False
         Dim t As Type = DataGridView1.GetType
         Dim pi As Reflection.PropertyInfo = t.GetProperty("DoubleBuffered", Reflection.BindingFlags.Instance Or Reflection.BindingFlags.NonPublic)
         pi.SetValue(DataGridView1, True, Nothing)
@@ -677,8 +669,11 @@ Public Class Form1
         ComboBox3.SelectedIndex = -1
         If ComboBox1.SelectedIndex < 0 Then MsgBox("Please, select a system.") : Exit Sub
 
-        'Get and check rom path(s)
+        'Get rom path(s)
         retrieve_rom_path_from_HL()
+
+        'Check rom path(s)
+        Dim romPath As String = ""
         If Class1.romPath = "" Or Class1.romPath = "\" Then MsgBox("Can't retrive rom path.") : Exit Sub
         If Not Class1.romPath.Contains("|") Then 'Handle HL multiple paths
             'Single path
@@ -687,16 +682,28 @@ Public Class Form1
                 Dim ex As Boolean = FileIO.FileSystem.Drives.Any(Function(drv) drv.Name = p_drv And drv.DriveType <> IO.DriveType.CDRom)
                 If Not ex Then MsgBox("Rompath refers to drive " + p_drv + ", but it does not exist or is CDRom." + vbCrLf + "You can fix rom paths in system manager.") : Exit Sub
             End If
+            romPath = Class1.romPath
         Else
             'Multiple paths routine
+            Dim DriveNoExistMessageWasShown As Boolean = False
             For Each temppath2 As String In Class1.romPath.Split({"|"c}, StringSplitOptions.RemoveEmptyEntries)
                 If Not temppath2.EndsWith("\") Then temppath2 = temppath2 + "\"
                 If temppath2.Substring(1, 2) = ":\" Then
-                    Dim p_drv As String = Class1.romPath.Substring(0, 3).ToUpper
+                    Dim p_drv As String = temppath2.Substring(0, 3).ToUpper
                     Dim ex As Boolean = FileIO.FileSystem.Drives.Any(Function(drv) drv.Name = p_drv And drv.DriveType <> IO.DriveType.CDRom)
-                    If Not ex Then MsgBox("One of rompaths refers to drive " + p_drv + ", but it does not exist or is CDRom." + vbCrLf + "You can fix rom paths in system manager.") : Exit Sub
+                    If Not ex Then
+                        If Not DriveNoExistMessageWasShown Then
+                            MsgBox("One of rompaths refers to drive " + p_drv + ", but it does not exist or is CDRom." + vbCrLf + "You can fix rom paths in system manager.")
+                            DriveNoExistMessageWasShown = True
+                        End If
+                    Else
+                        romPath += temppath2 + "|"
+                    End If
                 End If
             Next
+
+            If romPath.EndsWith("|") Then romPath = romPath.Substring(0, romPath.Length - 1)
+            If romPath.Trim = "" Then MsgBox("No suitable rom paths found.") : Exit Sub
         End If
 
         Dim x As New Xml.XmlDocument
@@ -714,7 +721,7 @@ Public Class Form1
 
         ProgressBar1.Value = 0
         ProgressBar1.Maximum = x.SelectNodes("/menu/game").Count
-        Dim param As New check_param With {.x = x, .sys = ComboBox1.SelectedItem.ToString}
+        Dim param As New check_param With {.x = x, .sys = ComboBox1.SelectedItem.ToString, .path = romPath}
         bg_check.RunWorkerAsync(param)
     End Sub
     Private Sub check_bg(sender As Object, e As DoWorkEventArgs) Handles bg_check.DoWork
@@ -725,13 +732,14 @@ Public Class Form1
         Dim param = DirectCast(e.Argument, check_param)
         Dim x As Xml.XmlDocument = param.x
         Dim counters() As Integer = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-        Dim a_crc, a_manufacturer, a_year, a_genre, a_cloneof As String
+        Dim a_crc, a_manufacturer, a_year, a_genre, a_cloneof, a_rating As String
         a(11) = "Not checked" : a(12) = "Not checked" : a(13) = "Not checked" : a(14) = "Not checked" : a(15) = "Not checked" : a(16) = "Not checked" : a(17) = "Not checked" : a(18) = "Not checked"
         For Each node As Xml.XmlNode In x.SelectNodes("/menu/game")
             If node.SelectSingleNode("crc") IsNot Nothing Then a_crc = node.SelectSingleNode("crc").InnerText Else a_crc = ""
             If node.SelectSingleNode("manufacturer") IsNot Nothing Then a_manufacturer = node.SelectSingleNode("manufacturer").InnerText Else a_manufacturer = ""
             If node.SelectSingleNode("year") IsNot Nothing Then a_year = node.SelectSingleNode("year").InnerText Else a_year = ""
             If node.SelectSingleNode("genre") IsNot Nothing Then a_genre = node.SelectSingleNode("genre").InnerText Else a_genre = ""
+            If node.SelectSingleNode("rating") IsNot Nothing Then a_rating = node.SelectSingleNode("rating").InnerText Else a_rating = ""
             If node.SelectSingleNode("cloneof") IsNot Nothing Then a_cloneof = node.SelectSingleNode("cloneof").InnerText Else a_cloneof = ""
 
             'Get romname and description
@@ -741,12 +749,12 @@ Public Class Form1
 
             'Check rom
             a(2) = ""
-            If Not Class1.romPath.Contains("|") Then
+            If Not param.path.Contains("|") Then
                 'Simple path
-                If tryToFindRom(Class1.romPath, romExtensions, romName) Then a(2) = "YES"
+                If tryToFindRom(param.path, romExtensions, romName) Then a(2) = "YES"
             Else
                 'HL Multiple paths routine
-                For Each temppath2 As String In Class1.romPath.Split({"|"c}, StringSplitOptions.RemoveEmptyEntries)
+                For Each temppath2 As String In param.path.Split({"|"c}, StringSplitOptions.RemoveEmptyEntries)
                     If Not temppath2.EndsWith("\") Then temppath2 = temppath2 + "\"
                     If tryToFindRom(temppath2, romExtensions, romName) Then a(2) = "YES" : Exit For
                 Next
@@ -802,13 +810,13 @@ Public Class Form1
                         If FileSystem.GetFiles(media_fld + "Artwork\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.png"}).Count > 0 Then a(11) = "YES"
                     End If
                     If FileSystem.DirectoryExists(media_fld + "Backgrounds\" + param.sys + "\" + romName) Then
-                        If FileSystem.GetFiles(media_fld + "Backgrounds\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".png"}).Count > 0 Then a(12) = "YES"
+                        If FileSystem.GetFiles(media_fld + "Backgrounds\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {romName + ".png", "Layer 1*.png"}).Count > 0 Then a(12) = "YES"
                     End If
                     If FileSystem.DirectoryExists(media_fld + "Bezels\" + param.sys + "\" + romName) Then
                         If FileSystem.GetFiles(media_fld + "Bezels\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Bezel.png"}).Count > 0 Then a(13) = "YES"
                     End If
                     If FileSystem.DirectoryExists(media_fld + "Fade\" + param.sys + "\" + romName) Then
-                        If FileSystem.GetFiles(media_fld + "Fade\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Layer 1*.png"}).Count > 0 Then a(14) = "YES"
+                        If FileSystem.GetFiles(media_fld + "Fade\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"Layer 1*.png", "Layer 1*.jpg"}).Count > 0 Then a(14) = "YES"
                     End If
                     If FileSystem.DirectoryExists(media_fld + "Guides\" + param.sys + "\" + romName) Then
                         If FileSystem.GetFiles(media_fld + "Guides\" + param.sys + "\" + romName, SearchOption.SearchAllSubDirectories, {"*.*"}).Count > 0 Then a(15) = "YES"
@@ -829,7 +837,7 @@ Public Class Form1
             'Add row
             Dim r As New DataGridViewRow
             counters(0) += 1
-            r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a(11), a(12), a(13), a(14), a(15), a(16), a(17), a(18), a_crc, a_manufacturer, a_year, a_genre})
+            r.CreateCells(DataGridView1, {a(0), romName, a(2), a(3), a(4), a(5), a(6), a(7), a(8), a(9), a(10), a(11), a(12), a(13), a(14), a(15), a(16), a(17), a(18), a_crc, a_manufacturer, a_year, a_genre, a_rating})
             tempStr = ""
             For i As Integer = 2 To 18
                 If a(i) = "YES" Then r.Cells(i).Style.BackColor = Class1.colorYES Else r.Cells(i).Style.BackColor = Class1.colorNO
@@ -839,7 +847,7 @@ Public Class Form1
             If useVidFromParent And a(3) = "YES" Then r.Cells(3).Style.BackColor = Class1.colorPAR
             If useThemeFromParent And a(4) = "YES" Then r.Cells(4).Style.BackColor = Class1.colorPAR
             Class1.data.Add(tempStr)
-            Class1.data_crc.Add(a_crc.ToUpper)
+            Class1.data_crc.Add(a_crc.PadLeft(8, "0"c).ToUpper)
             DataGridView1.BeginInvoke(Sub() DataGridView1.Rows.Add(r))
             progress += 1 : If progress Mod 50 = 0 Then bg_check.ReportProgress(progress)
         Next
@@ -1127,7 +1135,7 @@ Public Class Form1
     End Sub
 #End Region
 
-#Region "System properties"
+#Region "System properties and Program Settings"
     'HS path changing
     Private Sub TextBox14_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox14.TextChanged
         Class1.data.Clear()
@@ -1152,10 +1160,17 @@ Public Class Form1
             End If
 
             Dim x As New Xml.XmlDocument
+            'ComboBox1.BeginUpdate()
+            system_list.Clear()
             x.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
             For Each node As Xml.XmlNode In x.SelectNodes("/menu/game")
+                'system_list.Rows.Add({node.Attributes.GetNamedItem("name").Value})
                 ComboBox1.Items.Add(node.Attributes.GetNamedItem("name").Value)
             Next
+            'ComboBox1.DataSource = system_list
+            'ComboBox1.DisplayMember = "system"
+            'ComboBox1.ValueMember = "system"
+            'ComboBox1.EndUpdate()
 
             'Get hyperlaunch path from settings.ini
             If Not CheckBox21.Checked AndAlso FileSystem.FileExists(Class1.HyperspinPath + "\Settings\Settings.ini") Then
@@ -1220,6 +1235,9 @@ Public Class Form1
         ini.IniWriteValue("Main", "Compression_level", ComboBox12.SelectedItem.ToString)
         ini.IniWriteValue("Main", "Compression_temp", TextBox30.Text)
 
+        'Matcher font size
+        ini.IniWriteValue("Main", "MatcherFontSize", ListBox1.Font.Size.ToString)
+
         'Language
         If ComboBox13.SelectedIndex = 0 Then
             ini.IniWriteValue("Main", "Language", "")
@@ -1235,6 +1253,7 @@ Public Class Form1
     Private Sub Button5_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
         If TextBox15.Text.Contains(",") Then
             ListBox4.Items.Add(TextBox15.Text)
+            TextBox15.Text = ""
         Else
             MsgBox("extensions must be separated by "",""")
         End If
@@ -1266,20 +1285,6 @@ Public Class Form1
         Else
             Class1.videoPath = Class1.videoPathOrig
         End If
-    End Sub
-
-    'Inline Editor enable/disable OLD code
-    Private Sub CheckBox17_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Exit Sub
-        'DataGridView1.ReadOnly = Not CheckBox17.Checked
-        'If CheckBox17.Checked Then
-        'Button21.Text = "UPDATE HyperSpin Database"
-        'Else
-        'Button21.Text = "Delete selected rom from database"
-        'End If
-        'For i As Integer = 1 To 10
-        'DataGridView1.Columns(i).ReadOnly = True
-        'Next
     End Sub
 
     'Change checkbox 'use HS settings for clones/parents' 
@@ -1401,6 +1406,14 @@ Public Class Form1
         '        tmp.Text = val
         '    End If
         'Next
+    End Sub
+
+    'Matcher lists font size
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+        Dim v As Single = CSng(NumericUpDown1.Value)
+        If v = 8 Then v = 8.25
+        ListBox1.Font = New Font(ListBox1.Font.FontFamily, v)
+        ListBox2.Font = New Font(ListBox2.Font.FontFamily, v)
     End Sub
 #End Region
 
@@ -1535,9 +1548,11 @@ Public Class Form1
         If ComboBox3.SelectedIndex < 0 Then MsgBox("Select media you want autorename (roms/video/artwork/wheels/themes...).") : Exit Sub
         RadioButton2.Checked = True
         RadioButton5.Checked = True
-        If ListBox1.Items.Count = 1 Then
-            If ListBox1.Items(0).ToString.StartsWith("No missing") Then MsgBox(ListBox1.Items(0).ToString + " found. Nothing to do.") : Exit Sub
-        End If
+        'If ListBox1.Items.Count = 1 Then
+        'We don't use this "no missing" message any more
+        '    If DirectCast(ListBox1.Items(0), DataRowView).Item(0).ToString.StartsWith("No missing") Then MsgBox(ListBox1.Items(0).ToString + " found. Nothing to do.") : Exit Sub
+        'End If
+        If ListBox1.Items.Count = 0 Then MsgBox("No missing media found. Nothing to do.") : Exit Sub
         If ListBox2.Items.Count = 0 Then MsgBox("There is no unmatched media. Nothing to do.") : Exit Sub
         Form6_autorenamer.Show()
     End Sub
@@ -1647,7 +1662,7 @@ Public Class Form1
     End Sub
 #End Region
 
-#Region "Table headers, columns sho/hide and painting"
+#Region "Table headers, columns show/hide and painting"
     'Table Filter
     Private Sub ComboBox4_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox4.SelectedIndexChanged
         Dim counter1 As Integer = 0
@@ -1727,24 +1742,6 @@ Public Class Form1
     Private Sub DataGridView2_ColumnHeaderMouseClick(sender As Object, e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DataGridView2.ColumnHeaderMouseClick
         If e.Button <> Windows.Forms.MouseButtons.Right Then Exit Sub
         myContextMenu8.Show(Cursor.Position.X, Cursor.Position.Y)
-    End Sub
-
-    'Cell context menu (start game)
-    Dim romname_to_start As String = ""
-    Private Sub DataGridView1_CellMouseClick(sender As Object, e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseClick
-        If e.Button <> Windows.Forms.MouseButtons.Right Then Exit Sub
-        If e.RowIndex < 0 Then Exit Sub
-        myContextMenu7.Items.Clear()
-        romname_to_start = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString
-        myContextMenu7.Items.Add("Start '" + romname_to_start + "' using HyperSpin settings")
-        myContextMenu7.Items.Add("Start '" + romname_to_start + "' using HyperLaunch settings")
-
-        If DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString.ToUpper <> "YES" Then
-            myContextMenu7.Items(0).Enabled = False : myContextMenu7.Items(1).Enabled = False
-        End If
-        If Not Class1.HyperspinIniCursysEmuExist Then myContextMenu7.Items(0).Enabled = False
-
-        myContextMenu7.Show(Cursor.Position.X, Cursor.Position.Y)
     End Sub
 
     'Main Table - Show/hide columns checked_change
@@ -1997,6 +1994,29 @@ Public Class Form1
         End If
     End Sub
 
+    'Cell context menu (start game / Fade preview)
+    Dim romname_to_start As String = ""
+    Dim context_menu_row As DataGridViewRow = Nothing
+    Private Sub DataGridView1_CellMouseClick(sender As Object, e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseClick
+        If e.Button <> Windows.Forms.MouseButtons.Right Then Exit Sub
+        If e.RowIndex < 0 Then Exit Sub
+        myContextMenu7.Items.Clear()
+        romname_to_start = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString
+        myContextMenu7.Items.Add("Start '" + romname_to_start + "' using HyperSpin settings")
+        myContextMenu7.Items.Add("Start '" + romname_to_start + "' using HyperLaunch settings")
+        myContextMenu7.Items.Add("-")
+        myContextMenu7.Items.Add("Rocket Launcher Fade Preview")
+
+        context_menu_row = DataGridView1.Rows(e.RowIndex)
+        If context_menu_row.Cells(2).Value.ToString.ToUpper <> "YES" Then
+            myContextMenu7.Items(0).Enabled = False : myContextMenu7.Items(1).Enabled = False
+        End If
+        If Not Class1.HyperspinIniCursysEmuExist Then myContextMenu7.Items(0).Enabled = False
+
+        myContextMenu7.Show(Cursor.Position.X, Cursor.Position.Y)
+    End Sub
+
+    'Cell context menu (start game / Fade preview) item click
     Private Sub contextMenuStartGame(ByVal sender As Object, ByVal e As ToolStripItemClickedEventArgs) Handles myContextMenu7.ItemClicked
         If myContextMenu7.Items.IndexOf(e.ClickedItem) = 0 Then
             'Start with HyperSpin settings
@@ -2007,6 +2027,27 @@ Public Class Form1
             If Class1.HyperlaunchExeName <> "" Then HLexe = Class1.HyperlaunchExeName
             Dim pStart As New ProcessStartInfo(Class1.HyperlaunchPath + "\" + HLexe, "-s """ + ComboBox1.SelectedItem.ToString + """ -r """ + romname_to_start + """")
             Process.Start(pStart)
+        ElseIf myContextMenu7.Items.IndexOf(e.ClickedItem) = 3 Then
+            Dim descr = context_menu_row.Cells(0).Value.ToString
+            Dim publisher = context_menu_row.Cells(20).Value.ToString
+            Dim year = context_menu_row.Cells(21).Value.ToString
+            Dim genre = context_menu_row.Cells(22).Value.ToString
+            Dim rating = context_menu_row.Cells(23).Value.ToString
+            Dim f As New FormI_RLFadePreview(ComboBox1.SelectedItem.ToString, romname_to_start, {descr, year, genre, publisher, rating})
+            f.Show()
+        End If
+    End Sub
+
+    'Cell ctrl+c in edit mode - copy cell content to clipboard (instead of while line)
+    Private Sub DataGridView1_KeyDown(sender As Object, e As KeyEventArgs) Handles DataGridView1.KeyDown
+        If AlowEditToolStripMenuItem.Checked AndAlso DataGridView1.CurrentCell IsNot Nothing Then
+            If e.Control AndAlso e.KeyCode = Keys.C Then
+                Clipboard.SetText(DataGridView1.CurrentCell.Value.ToString)
+                e.Handled = True
+            ElseIf e.Control AndAlso (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
+                DataGridView1.BeginEdit(False)
+                e.Handled = True
+            End If
         End If
     End Sub
 

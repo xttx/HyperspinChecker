@@ -117,15 +117,21 @@ Public Class Form2_checkMissingInOtherFolders
                         'if it is archive
                         z.setFile(f)
                         For Each fileInfo In z.ArchiveFileData
-                            If crc_cache(realdir).ContainsKey(f.ToUpper) Then crc = crc_cache(realdir)(f.ToUpper) Else crc = Hex(fileInfo.Crc).ToUpper : crc_cache(realdir).Add(f.ToUpper, crc)
-                            index = Class1.data_crc.IndexOf(crc)
-                            fillList_addToList(index, f)
+                            If crc_cache(realdir).ContainsKey(f.ToUpper) Then crc = crc_cache(realdir)(f.ToUpper) Else crc = Hex(fileInfo.Crc).PadLeft(8, "0"c).ToUpper : crc_cache(realdir).Add(f.ToUpper, crc)
+                            'index = Class1.data_crc.IndexOf(crc)
+                            'fillList_addToList(index, f)
+                            For Each ind In Class1.data_crc.AllIndexesOf(crc)
+                                fillList_addToList(ind, f)
+                            Next
                         Next
                     ElseIf CheckBox1.Checked Then
                         'if it is NOT an archive
-                        If crc_cache(realdir).ContainsKey(f.ToUpper) Then crc = crc_cache(realdir)(f.ToUpper) Else crc = Class6_hash.GetCRC32(f).ToUpper : crc_cache(realdir).Add(f.ToUpper, crc)
-                        index = Class1.data_crc.IndexOf(crc)
-                        fillList_addToList(index, f)
+                        If crc_cache(realdir).ContainsKey(f.ToUpper) Then crc = crc_cache(realdir)(f.ToUpper) Else crc = Class6_hash.GetCRC32(f).PadLeft(8, "0"c).ToUpper : crc_cache(realdir).Add(f.ToUpper, crc)
+                        'index = Class1.data_crc.IndexOf(crc)
+                        'fillList_addToList(index, f)
+                        For Each ind In Class1.data_crc.AllIndexesOf(crc)
+                            fillList_addToList(ind, f)
+                        Next
                     End If
                 End If
                 'ProgressBar1.Value += 1

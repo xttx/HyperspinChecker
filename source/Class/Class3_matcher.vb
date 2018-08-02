@@ -3,6 +3,7 @@ Imports System.Text.RegularExpressions
 
 Public Class Class3_matcher
 #Region "Declarations"
+    Dim dt_games As New DataTable
     Dim dt_files As New DataTable
     Public crc_for_archs As String = ""
     Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
@@ -21,6 +22,7 @@ Public Class Class3_matcher
     Private WithEvents CheckBox11 As CheckBox = frm.CheckBox11
     Private WithEvents CheckBox12 As CheckBox = frm.CheckBox12
     Private WithEvents CheckBox13 As CheckBox = frm.CheckBox13
+    Private WithEvents TextBox26 As TextBox = frm.TextBox26
     Private WithEvents TextBox27 As TextBox = frm.TextBox27
 
     Private WithEvents RadioStrip1 As RadioButton = frm.RadioStrip1
@@ -38,26 +40,36 @@ Public Class Class3_matcher
     'Friend WithEvents myContextMenu7 As New ToolStripDropDownMenu 'autorenamer
     Public Shared autofilter_regex As String = "%[A-Za-z]{4}[A-Za-z]*"
     Public Shared autofilter_regex_options() As Boolean = {False, False}
+
+    Dim listbox_searchAsYouTypeStr As String = ""
+    Dim WithEvents listbox_searchAsYouTypeTimer As New Timer With {.Interval = 1000, .Enabled = False}
 #End Region
 
     'Constructor
     Sub New()
+        dt_games.Columns.Add("name")
         dt_files.Columns.Add("name")
         dt_files.Columns.Add("nameWithoutHyphen")
     End Sub
 
-    'matcher - remplir database
+    'matcher - fill database
     Public Sub matcher_remplirDatabaseEntryList()
         countAll = 0
         countFound = 0
         countNotFound = 0
         With frm
-            .ListBox1.Items.Clear()
+            .ListBox1.DataSource = Nothing
+            .ListBox1.BeginUpdate()
+            dt_games.Clear()
+
             If .ComboBox3.SelectedIndex < 0 Then Exit Sub
             If .ComboBox1.SelectedIndex < 0 Then Exit Sub
             If .DataGridView1.Rows.Count = 0 Then
-                .ListBox1.Items.Add("...Please, make ""check"" in summary page,")
-                .ListBox1.Items.Add("before using this future") : Exit Sub
+                dt_games.Rows.Add({"...Please, make ""check"" in summary page,"})
+                dt_games.Rows.Add({"before using this future"})
+                .ListBox1.DataSource = dt_games
+                .ListBox1.DisplayMember = "name" : .ListBox1.ValueMember = "name"
+                .ListBox1.EndUpdate() : Exit Sub
             End If
             .Label20.Text = "Refreshing Database Entry" : .Label20.BackColor = Color.Red : .Label20.Refresh()
             Dim cellindex As Integer
@@ -80,11 +92,33 @@ Public Class Class3_matcher
                     cellindex = 4
                 ElseIf .ComboBox3.SelectedIndex = 8 Then
                     cellindex = 10
+                ElseIf .ComboBox3.SelectedIndex = 9 Then
+                    cellindex = 11
+                ElseIf .ComboBox3.SelectedIndex = 10 Then
+                    cellindex = 12
+                ElseIf .ComboBox3.SelectedIndex = 11 Then
+                    cellindex = 13
+                ElseIf .ComboBox3.SelectedIndex = 12 Then
+                    cellindex = 14
+                ElseIf .ComboBox3.SelectedIndex = 13 Then
+                    cellindex = 15
+                ElseIf .ComboBox3.SelectedIndex = 14 Then
+                    cellindex = 16
+                ElseIf .ComboBox3.SelectedIndex = 15 Then
+                    cellindex = 17
+                ElseIf .ComboBox3.SelectedIndex = 16 Then
+                    cellindex = 18
+
                 End If
                 Dim retVal As Boolean = matcher_remplirDatabaseEntryList_addRow(row, cellindex)
                 If retVal Then countFound += 1 Else countNotFound += 1
                 countAll += 1
             Next
+
+            .ListBox1.DataSource = dt_games
+            .ListBox1.DisplayMember = "name"
+            .ListBox1.ValueMember = "name"
+            .ListBox1.EndUpdate()
 
             matcher_update_total_labels()
             'If .ListBox1.Items.Count = 0 And .RadioButton1.Checked Then .ListBox1.Items.Add("No matched " + .ComboBox3.SelectedItem.ToString)
@@ -94,14 +128,14 @@ Public Class Class3_matcher
         End With
     End Sub
 
-    'matcher - remplir database SUB
+    'matcher - fill database SUB - add db entry to listbox if it's needed in current show mode
     Private Function matcher_remplirDatabaseEntryList_addRow(ByVal row As DataGridViewRow, ByVal cellIndex As Integer) As Boolean
         Dim retVal As Boolean = False
         With frm
             If row.Cells(cellIndex).Value.ToString = "YES" Then retVal = True
-            If .RadioButton1.Checked Then If row.Cells(cellIndex).Value.ToString = "YES" Then .ListBox1.Items.Add(row.Cells(1).Value)
-            If .RadioButton2.Checked Then If row.Cells(cellIndex).Value.ToString = "NO" Then .ListBox1.Items.Add(row.Cells(1).Value)
-            If .RadioButton3.Checked Then .ListBox1.Items.Add(row.Cells(1).Value)
+            If .RadioButton1.Checked Then If row.Cells(cellIndex).Value.ToString = "YES" Then dt_games.Rows.Add({row.Cells(1).Value})
+            If .RadioButton2.Checked Then If row.Cells(cellIndex).Value.ToString = "NO" Then dt_games.Rows.Add({row.Cells(1).Value})
+            If .RadioButton3.Checked Then dt_games.Rows.Add({row.Cells(1).Value})
         End With
         Return retVal
     End Function
@@ -161,7 +195,7 @@ Public Class Class3_matcher
             Class7_archives.rename = Class7_archives.answer.useDefaultForm1Settings
             Class7_archives.keep_only_one = Class7_archives.answer.useDefaultForm1Settings
             Dim ext As String = ""
-            Dim l1_selected_game As String = .ListBox1.SelectedItem.ToString
+            Dim l1_selected_game As String = DirectCast(.ListBox1.SelectedItem, DataRowView).Item(0).ToString
             Dim l2_selected_file As String = DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0).ToString
 
             Dim src_dir As String = FileSystem.GetDirectoryInfo(.TextBox4.Text).FullName.ToLower
@@ -225,7 +259,7 @@ Public Class Class3_matcher
             'Moving selected index on box1 (DB entry list)
             If .RadioButton2.Checked And (src_dir = dst_dir Or copyToHsFolder) Then
                 currentSelectedIndex = .ListBox1.SelectedIndex
-                .ListBox1.Items.RemoveAt(.ListBox1.SelectedIndex)
+                dt_games.Rows.Remove(DirectCast(.ListBox1.SelectedItem, DataRowView).Row)
             Else
                 currentSelectedIndex = .ListBox1.SelectedIndex + 1
             End If
@@ -239,6 +273,9 @@ Public Class Class3_matcher
 
     'Associate SUB - creating file operation array
     Public Function associate_copyMove(src_dir As String, dst_dir As String, gameName As String, fName As String, Optional subfoldered_mode As Boolean = False, Optional create_sub_folder As Boolean = False) As String()
+        'In RL mode we just copy (or rename) directory, and don't bother with what is inside
+        Dim RL_Mode = subfoldered_mode And frm.ComboBox3.SelectedIndex >= 9
+
         Dim ext As String = ""
         Dim op As New List(Of String())
         Try
@@ -280,7 +317,7 @@ Public Class Class3_matcher
                 Dim wildcards() As String = getCurMediaExtensionWildcards()
                 list = FileSystem.GetFiles(src_dir + "\" + fName, FileIO.SearchOption.SearchTopLevelOnly, wildcards).ToList
                 If list.Count = 0 Then Return {"This folder does not contain any files that match rom's extensions.", ""}
-                If list.Count > 1 Then Return {"This folder contains multiple files that match rom's extensions. This situation is not handled yet, sorry." + vbCrLf + "The program simply doesn't know what file need to be renamed. Try use 'Override Extension' in options.", ""}
+                If list.Count > 1 And Not RL_Mode Then Return {"This folder contains multiple files that match rom's extensions. This situation is not handled yet, sorry." + vbCrLf + "The program simply doesn't know what file need to be renamed. Try use 'Override Extension' in options.", ""}
 
                 ext = list.Item(0).Substring(list.Item(0).LastIndexOf("."))
                 Dim filename As String = list.Item(0).Substring(list.Item(0).LastIndexOf("\") + 1)
@@ -290,13 +327,16 @@ Public Class Class3_matcher
                     If frm.AssocOption_fileInHsFolder_copy.Checked Then
                         'Copy (duplicate)
                         op.Add({"DIRCOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + "\"})
-                        Dim res0 As String = associate_fileOP(op)
-                        If res0 <> "" Then Return {res0, ext}
-                        op = New List(Of String())
-                        op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
+
+                        If Not RL_Mode Then
+                            Dim res0 As String = associate_fileOP(op)
+                            If res0 <> "" Then Return {res0, ext}
+                            op = New List(Of String())
+                            op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
+                        End If
                     ElseIf frm.AssocOption_fileInHsFolder_move.Checked Then
                         'Move (rename)
-                        op.Add({"FILERENAME", list.Item(0), dst_dir + "\" + fName + "\" + gameName + ext, "0"})
+                        If Not RL_Mode Then op.Add({"FILERENAME", list.Item(0), dst_dir + "\" + fName + "\" + gameName + ext, "0"})
                         op.Add({"DIRRENAME", src_dir + "\" + fName, gameName, "0"})
                     End If
                 Else
@@ -304,24 +344,31 @@ Public Class Class3_matcher
                     If frm.AssocOption_fileInDiffFolder_copy.Checked Then
                         'Copy in place
                         op.Add({"DIRCOPY", src_dir + "\" + fName, src_dir + "\" + gameName + "\"})
-                        Dim res0 As String = associate_fileOP(op)
-                        If res0 <> "" Then Return {res0, ext}
-                        op = New List(Of String())
-                        op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, src_dir + "\" + gameName + "\" + gameName + ext, "0"})
+
+                        If Not RL_Mode Then
+                            Dim res0 As String = associate_fileOP(op)
+                            If res0 <> "" Then Return {res0, ext}
+                            op = New List(Of String())
+                            op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, src_dir + "\" + gameName + "\" + gameName + ext, "0"})
+                        End If
                     ElseIf frm.AssocOption_fileInDiffFolder_move.Checked Then
                         'Move in place
-                        op.Add({"FILERENAME", list.Item(0), src_dir + "\" + fName + "\" + gameName + ext, "0"})
+                        If Not RL_Mode Then op.Add({"FILERENAME", list.Item(0), src_dir + "\" + fName + "\" + gameName + ext, "0"})
                         op.Add({"DIRRENAME", src_dir + "\" + fName, gameName, "0"})
                     ElseIf frm.AssocOption_fileInDiffFolder_copyToHS.Checked Then
                         'Copy to HS folder
                         op.Add({"DIRCOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + "\"})
-                        Dim res0 As String = associate_fileOP(op)
-                        If res0 <> "" Then Return {res0, ext}
-                        op = New List(Of String())
-                        op.Add({"FILERENAME", dst_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
+
+                        If Not RL_Mode Then
+                            Dim res0 As String = associate_fileOP(op)
+                            If res0 <> "" Then Return {res0, ext}
+                            op = New List(Of String())
+                            op.Add({"FILERENAME", dst_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
+                        End If
                     ElseIf frm.AssocOption_fileInDiffFolder_moveToHS.Checked Then
                         'Move to HS folder
                         'TODO
+                        MsgBox("Moving directory is not yet implimented.")
                     End If
                 End If
             End If
@@ -411,6 +458,15 @@ Public Class Class3_matcher
                         Next
                     End If
                 Next
+
+                'MSU-1 - pcm files
+                If tmpExt.ToLower = "sfc" Or tmpExt.ToLower = "smc" Then
+                    Dim pcm_files = FileSystem.GetFiles(tmppath, SearchOption.SearchTopLevelOnly, {tmpfileNameWOext + "-*.pcm"})
+                    For Each pcm In pcm_files
+                        Dim newfile = o(2).Substring(0, o(2).LastIndexOf(".")) + pcm.Substring(pcm.LastIndexOf("-"))
+                        tmp.Add({o(0), pcm, newfile})
+                    Next
+                End If
             End If
             If o(0) = "DIRCOPY" Then
                 If Not FileSystem.DirectoryExists(o(1)) Then msg = "Source directory: """ + o(1) + """ does not exist." : Exit For
@@ -454,6 +510,7 @@ Public Class Class3_matcher
                         If archive_handled Then
                             frm.undo(undoIndex).Add("ARCHIVE?" + o(1) + "?" + o(2))
                             frm.undo_humanReadable(undoIndex).Add("Recompressed Archive " + o(1) + " to " + o(2))
+                            Class1.Log("Recompressed Archive " + o(1) + " to " + o(2))
                         End If
                     End If
 
@@ -465,9 +522,11 @@ Public Class Class3_matcher
                             frm.undo_humanReadable(undoIndex).Add("Copy File")
                             frm.undo_humanReadable(undoIndex).Add("- rewrote .cue" + o(1))
                             frm.undo_humanReadable(undoIndex).Add("- copy " + o(1) + " to " + o(2))
+                            Class1.Log("Copy File - Rewrote .CUE " + o(1) + ", copy " + o(1) + " to " + o(2))
                         Else
                             frm.undo(undoIndex).Add("FILEREMOVE?" + o(2))
                             frm.undo_humanReadable(undoIndex).Add("Copy File " + o(1) + " to " + o(2))
+                            Class1.Log("Copy File " + o(1) + " to " + o(2))
                         End If
                     End If
                 End If
@@ -485,6 +544,8 @@ Public Class Class3_matcher
                             frm.undo_humanReadable(undoIndex).Add("Recompressed Archive " + o(1) + " to " + o(2))
                             frm.undo(undoIndex).Add("DELETE?" + o(1))
                             frm.undo_humanReadable(undoIndex).Add("Delete " + o(1))
+                            Class1.Log("Recompressed Archive " + o(1) + " to " + o(2))
+                            Class1.Log("Delete " + o(1))
                         End If
                     End If
 
@@ -496,9 +557,11 @@ Public Class Class3_matcher
                             frm.undo_humanReadable(undoIndex).Add("Move File")
                             frm.undo_humanReadable(undoIndex).Add("- rewrote .cue" + o(1))
                             frm.undo_humanReadable(undoIndex).Add("- move " + o(1) + " to " + o(2))
+                            Class1.Log("Move File - Rewrote .CUE " + o(1) + ", move " + o(1) + " to " + o(2))
                         Else
                             frm.undo(undoIndex).Add("FILERENAME?" + o(2) + "?" + o(1))
                             frm.undo_humanReadable(undoIndex).Add("Move File " + o(1) + " to " + o(2))
+                            Class1.Log("Move File " + o(1) + " to " + o(2))
                         End If
                     End If
                 End If
@@ -506,11 +569,13 @@ Public Class Class3_matcher
                     FileSystem.CopyDirectory(o(1), o(2))
                     frm.undo(undoIndex).Add("DIRREMOVE?" + o(2))
                     frm.undo_humanReadable(undoIndex).Add("Copy Directory " + o(1) + " to " + o(2))
+                    Class1.Log("Copy Directory " + o(1) + " to " + o(2))
                 End If
                 If o(0) = "DIRMOVE" Then
                     FileSystem.MoveDirectory(o(1), o(2))
                     frm.undo(undoIndex).Add("DIRMOVE?" + o(2) + "?" + o(1))
                     frm.undo_humanReadable(undoIndex).Add("Move Directory " + o(1) + " to " + o(2))
+                    Class1.Log("Move Directory " + o(1) + " to " + o(2))
                 End If
                 If o(0) = "DIRRENAME" Then
                     FileSystem.RenameDirectory(o(1), o(2))
@@ -518,6 +583,7 @@ Public Class Class3_matcher
                     Dim path As String = o(1).Substring(0, o(1).LastIndexOf("\") + 1)
                     frm.undo(undoIndex).Add("DIRRENAME?" + path + o(2) + "?" + name)
                     frm.undo_humanReadable(undoIndex).Add("Rename Directory " + o(1) + " to " + o(2))
+                    Class1.Log("Rename Directory " + o(1) + " to " + o(2))
                 End If
             Next
         Catch ex As Exception
@@ -675,6 +741,22 @@ Public Class Class3_matcher
                 Return Class1.HyperspinPath + "Media\" + .ComboBox1.SelectedItem.ToString + "\Themes\"
             ElseIf .ComboBox3.SelectedIndex = 8 Then
                 Return Class1.HyperspinPath + "Media\" + .ComboBox1.SelectedItem.ToString + "\Sound\Background Music\"
+            ElseIf .ComboBox3.SelectedIndex = 9 Then
+                Return Class1.HyperlaunchPath + "\Media\Artwork\" + .ComboBox1.SelectedItem.ToString + "\"
+            ElseIf .ComboBox3.SelectedIndex = 10 Then
+                Return Class1.HyperlaunchPath + "\Media\Backgrounds\" + .ComboBox1.SelectedItem.ToString + "\"
+            ElseIf .ComboBox3.SelectedIndex = 11 Then
+                Return Class1.HyperlaunchPath + "\Media\Bezels\" + .ComboBox1.SelectedItem.ToString + "\"
+            ElseIf .ComboBox3.SelectedIndex = 12 Then
+                Return Class1.HyperlaunchPath + "\Media\Fade\" + .ComboBox1.SelectedItem.ToString + "\"
+            ElseIf .ComboBox3.SelectedIndex = 13 Then
+                Return Class1.HyperlaunchPath + "\Media\Guides\" + .ComboBox1.SelectedItem.ToString + "\"
+            ElseIf .ComboBox3.SelectedIndex = 14 Then
+                Return Class1.HyperlaunchPath + "\Media\Manuals\" + .ComboBox1.SelectedItem.ToString + "\"
+            ElseIf .ComboBox3.SelectedIndex = 15 Then
+                Return Class1.HyperlaunchPath + "\Media\Music\" + .ComboBox1.SelectedItem.ToString + "\"
+            ElseIf .ComboBox3.SelectedIndex = 16 Then
+                Return Class1.HyperlaunchPath + "\Media\Videos\" + .ComboBox1.SelectedItem.ToString + "\"
             End If
             Return ""
         End With
@@ -727,6 +809,14 @@ Public Class Class3_matcher
         If frm.ComboBox3.SelectedIndex = 6 Then Return 9
         If frm.ComboBox3.SelectedIndex = 7 Then Return 4
         If frm.ComboBox3.SelectedIndex = 8 Then Return 10
+        If frm.ComboBox3.SelectedIndex = 9 Then Return 11
+        If frm.ComboBox3.SelectedIndex = 10 Then Return 12
+        If frm.ComboBox3.SelectedIndex = 11 Then Return 13
+        If frm.ComboBox3.SelectedIndex = 12 Then Return 14
+        If frm.ComboBox3.SelectedIndex = 13 Then Return 15
+        If frm.ComboBox3.SelectedIndex = 14 Then Return 16
+        If frm.ComboBox3.SelectedIndex = 15 Then Return 17
+        If frm.ComboBox3.SelectedIndex = 16 Then Return 18
         Return 0
     End Function
 
@@ -780,6 +870,17 @@ Public Class Class3_matcher
         End If
         If frm.ComboBox3.SelectedIndex = 7 Then Return {"*.zip"}
         If frm.ComboBox3.SelectedIndex = 8 Then Return {"*.mp3"}
+
+        'RL Media
+        If frm.ComboBox3.SelectedIndex = 9 Then Return {"*.png", "*.jpg"}
+        If frm.ComboBox3.SelectedIndex = 10 Then Return {"*.png", "*.jpg"}
+        If frm.ComboBox3.SelectedIndex = 11 Then Return {"Bezel*.ini"}
+        If frm.ComboBox3.SelectedIndex = 12 Then Return {"Layer*.png", "Layer*.jpg"}
+        If frm.ComboBox3.SelectedIndex = 13 Then Return {"*.*"}
+        If frm.ComboBox3.SelectedIndex = 14 Then Return {"*.pdf", "*.txt", "page*.png", "page*.jpg"}
+        If frm.ComboBox3.SelectedIndex = 15 Then Return {"*.mp3"}
+        If frm.ComboBox3.SelectedIndex = 16 Then Return {"*.avi", "*.mp4"}
+
         If frm.ComboBox3.SelectedIndex <> 0 Then Return {"*.png"}
 
         Dim str As String
@@ -807,7 +908,6 @@ Public Class Class3_matcher
             .Button20_markAsFound.Enabled = False
             Dim fWoExt As String = ""
 
-            '.ListBox2.Items.Clear()
             .ListBox2.DataSource = Nothing
             .ListBox2.BeginUpdate()
             dt_files.Clear()
@@ -837,9 +937,14 @@ Public Class Class3_matcher
                     For Each fi As String In list
                         c = True
                         Dim f As String = fi.Substring(fi.LastIndexOf("\") + 1)
-                        'WE NEED TO CHECK FILES INSIDE FOLDERS WHEN subFoldered mode
                         If .CheckBox3.Checked Then
                             fWoExt = f
+
+                            'In subFoldered mode, we need to check if file exist inside a folder 
+
+                            'If not rl media, we have to alter wildecards to include romName to search in subfolder
+                            If frm.ComboBox3.SelectedIndex <= 8 Then w = (From t In w Select t.Replace("*.", f + ".")).ToArray
+
                             If FileSystem.GetFiles(fi, SearchOption.SearchTopLevelOnly, w).Count = 0 Then c = False
                         Else
                             If f.Contains(".") Then
@@ -882,7 +987,6 @@ Public Class Class3_matcher
             .Label20.Text = "Ready" : .Label20.BackColor = Color.LightGreen
         End With
     End Sub
-
     'Matcher custom dir keyUP
     Private Sub TextBox4_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox4.KeyUp
         If e.KeyCode = Keys.Enter Then
@@ -895,23 +999,23 @@ Public Class Class3_matcher
         TextBox4_TextChanged(sender, New System.EventArgs)
     End Sub
 
-    'Subfoldered1
+    'Subfoldered - mode switch
     Private Sub CheckBox3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox3.CheckedChanged
         frm.subfoldered = frm.CheckBox3.Checked
         frm.CheckBox10.Checked = frm.CheckBox3.Checked
         If frm.subfoldered Then frm.CheckBox10.Enabled = False Else frm.CheckBox10.Enabled = True
         TextBox4_TextChanged(sender, New System.EventArgs)
     End Sub
-
-    'Subfoldered2
+    'Subfoldered - create subfolder for rom
     Private Sub CheckBox10_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox10.CheckedChanged
         frm.subfoldered2 = frm.CheckBox10.Checked
     End Sub
 
+    'Show database switch (with media/without media/both)
     Private Sub RadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged, RadioButton3.CheckedChanged
         If DirectCast(sender, RadioButton).Checked = True Then matcher_remplirDatabaseEntryList()
     End Sub
-
+    'Show files switch (matched/unmatched/both)
     Private Sub RadioButton4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton4.CheckedChanged, RadioButton5.CheckedChanged, RadioButton6.CheckedChanged
         If DirectCast(sender, RadioButton).Checked = True Then TextBox4_TextChanged(sender, New System.EventArgs)
     End Sub
@@ -926,13 +1030,17 @@ Public Class Class3_matcher
         With frm
             .TextBox4.Visible = True
             .ComboBox7.Visible = False
-            .ListBox1.Items.Clear()
+
+            .ListBox1.DataSource = Nothing
+            .ListBox1.BeginUpdate() : dt_games.Clear() : .ListBox1.EndUpdate()
+
             CheckBox3.Enabled = False
             Dim tmpSubFoldered As Boolean = .subfoldered : CheckBox3.Checked = False : .subfoldered = tmpSubFoldered
             Dim tmpSubFoldered2 As Boolean = .subfoldered2 : CheckBox10.Checked = False : .subfoldered2 = tmpSubFoldered2 : CheckBox10.Enabled = False
             If .ComboBox3.SelectedIndex < 0 Then countFound = -1 : countNotFound = -1 : countAll = -1 : matcher_update_total_labels() : Exit Sub
             If .ComboBox1.SelectedIndex < 0 Then MsgBox("Please, select a system.") : .ComboBox3.SelectedIndex = -1 : Exit Sub
             If .ComboBox3.SelectedIndex = 0 Then CheckBox3.Enabled = True : CheckBox10.Enabled = True : CheckBox3.Checked = .subfoldered : CheckBox10.Checked = .subfoldered2
+            If .ComboBox3.SelectedIndex >= 9 Then CheckBox3.Checked = True : CheckBox10.Checked = True 'RL Media always subfoldered
 
             If .RadioStrip1.Checked = True Then
                 If .ComboBox3.SelectedIndex = 0 Then
@@ -965,6 +1073,22 @@ Public Class Class3_matcher
                     TextBox4.Text = Class1.HyperspinPath + "Media\" + .ComboBox1.SelectedItem.ToString + "\Themes\"
                 ElseIf .ComboBox3.SelectedIndex = 8 Then
                     TextBox4.Text = Class1.HyperspinPath + "Media\" + .ComboBox1.SelectedItem.ToString + "\Sound\Background Music\"
+                ElseIf .ComboBox3.SelectedIndex = 9 Then
+                    TextBox4.Text = Class1.HyperlaunchPath + "\Media\Artwork\" + .ComboBox1.SelectedItem.ToString + "\"
+                ElseIf .ComboBox3.SelectedIndex = 10 Then
+                    TextBox4.Text = Class1.HyperlaunchPath + "\Media\Backgrounds\" + .ComboBox1.SelectedItem.ToString + "\"
+                ElseIf .ComboBox3.SelectedIndex = 11 Then
+                    TextBox4.Text = Class1.HyperlaunchPath + "\Media\\Bezels\" + .ComboBox1.SelectedItem.ToString + "\"
+                ElseIf .ComboBox3.SelectedIndex = 12 Then
+                    TextBox4.Text = Class1.HyperlaunchPath + "\Media\Fade\" + .ComboBox1.SelectedItem.ToString + "\"
+                ElseIf .ComboBox3.SelectedIndex = 13 Then
+                    TextBox4.Text = Class1.HyperlaunchPath + "\Media\Guides\" + .ComboBox1.SelectedItem.ToString + "\"
+                ElseIf .ComboBox3.SelectedIndex = 14 Then
+                    TextBox4.Text = Class1.HyperlaunchPath + "\Media\Manuals\" + .ComboBox1.SelectedItem.ToString + "\"
+                ElseIf .ComboBox3.SelectedIndex = 15 Then
+                    TextBox4.Text = Class1.HyperlaunchPath + "\Media\Music\" + .ComboBox1.SelectedItem.ToString + "\"
+                ElseIf .ComboBox3.SelectedIndex = 16 Then
+                    TextBox4.Text = Class1.HyperlaunchPath + "\Media\Videos\" + .ComboBox1.SelectedItem.ToString + "\"
                 End If
             End If
             matcher_remplirDatabaseEntryList()
@@ -1032,6 +1156,14 @@ Public Class Class3_matcher
         End If
     End Sub
 
+    'Filter change - DB filter
+    Private Sub textbox26_textChange(sender As System.Object, e As System.EventArgs) Handles TextBox26.TextChanged
+        Try
+            dt_games.DefaultView.RowFilter = "[name] Like '" + TextBox26.Text.Replace("'", "''") + "%'"
+        Catch ex As Exception
+
+        End Try
+    End Sub
     'Filter change - FileFilter
     Private Sub textbox27_textChange(sender As System.Object, e As System.EventArgs) Handles TextBox27.TextChanged
         Try
@@ -1081,6 +1213,40 @@ Public Class Class3_matcher
             'If word.Length > 3 Then TextBox27.Text = "%" + word : Exit Sub
             'Next
         End If
+    End Sub
+
+    'Listbox search as you type logic
+    Private Sub ListBox_KeyDown(sender As Object, e As KeyEventArgs) Handles listbox1.KeyDown, listbox2.KeyDown
+        Dim n As Integer
+        Dim l = DirectCast(sender, ListBox)
+        If l.Name.EndsWith("1") Then n = 1 Else n = 2
+        If Not listbox_searchAsYouTypeStr.StartsWith(n.ToString) Then listbox_searchAsYouTypeStr = ""
+        If listbox_searchAsYouTypeStr = "" Then listbox_searchAsYouTypeStr = n.ToString
+
+        Dim ch = ChrW(e.KeyCode)
+        If Char.IsLetterOrDigit(ch) Then
+            listbox_searchAsYouTypeStr += ch.ToString.ToUpper
+
+            Dim start = 0
+            For i As Integer = start To DirectCast(sender, ListBox).Items.Count - 1
+                Dim name = CType(l.Items(i), DataRowView).Row.Item("name").ToString.ToUpper
+                If name.StartsWith(listbox_searchAsYouTypeStr.Substring(1)) Then
+                    l.SelectedIndex = i : Exit For
+                End If
+            Next
+
+            e.Handled = True
+            e.SuppressKeyPress = True
+            listbox_searchAsYouTypeTimer.Enabled = False
+            listbox_searchAsYouTypeTimer.Enabled = True
+        Else
+            listbox_searchAsYouTypeStr = ""
+            listbox_searchAsYouTypeTimer.Enabled = False
+        End If
+    End Sub
+    Private Sub ListBox1_SearchAsYouTypeTimer() Handles listbox_searchAsYouTypeTimer.Tick
+        listbox_searchAsYouTypeStr = ""
+        listbox_searchAsYouTypeTimer.Enabled = False
     End Sub
 
     'Show autorenamer context menu
