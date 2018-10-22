@@ -1,4 +1,7 @@
-﻿Imports System.IO
+﻿'TODO - direct link api http://josemicoronil.hol.es/youtube_get_video_url.php?url=https://www.youtube.com/watch?v=YGCLs9Bt_KY
+'TODO - direct link api alt https://you-link.herokuapp.com/?url=https://www.youtube.com/watch?v=FsyvokrChmg
+
+Imports System.IO
 Imports System.Net
 Imports System.Text.RegularExpressions
 Public Class Form5_videoDownloader
@@ -314,9 +317,14 @@ Public Class Form5_videoDownloader
             Button5.Enabled = True : Label6.ForeColor = SystemColors.ControlText
         End If
     End Sub
+
     Private Sub TrackBar1_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrackBar1.Scroll
         'AxVLCPlugin21.input.Position = TrackBar1.Value / 1000
     End Sub
+End Class
+
+Public Class YouTubeDownloader2
+
 End Class
 
 Public Class YouTubeDownloader

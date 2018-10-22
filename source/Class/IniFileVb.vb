@@ -9,16 +9,26 @@ Imports System.Diagnostics
 
 ' IniFile class used to read and write ini files by loading the file into memory
 Public Class IniFile
+    Implements INI_File_Class_Interface
+
     ' List of IniSection objects keeps track of all the sections in the INI file
     Private m_sections As Hashtable
 
+    Private loadedFileName As String = ""
+    Private section_order As New List(Of String)
+    Private use_sections As Boolean = True
+    Private mame_ini_separator As Char = Nothing
+
     ' Public constructor
     Public Sub New()
+        section_order = New List(Of String)
         m_sections = New Hashtable(StringComparer.InvariantCultureIgnoreCase)
     End Sub
 
     ' Loads the Reads the data in the ini file into the IniFile object
     Public Sub Load(ByVal sFileName As String, Optional ByVal bMerge As Boolean = False)
+        use_sections = True : mame_ini_separator = Nothing
+
         If Not bMerge Then
             RemoveAllSections()
         End If
@@ -34,10 +44,11 @@ Public Class IniFile
             Dim line As String = oReader.ReadLine()
             If line <> String.Empty Then
                 Dim m As Match = Nothing
-                If regexcomment.Match(line).Success Then
-                    m = regexcomment.Match(line)
-                    'Trace.WriteLine(String.Format("Skipping Comment: {0}", m.Groups(0).Value))
-                ElseIf regexsection.Match(line).Success Then
+                'If regexcomment.Match(line).Success Then
+                '    m = regexcomment.Match(line)
+                '    section_order.Add(line)
+                '    'Trace.WriteLine(String.Format("Skipping Comment: {0}", m.Groups(0).Value))
+                If regexsection.Match(line).Success Then
                     m = regexsection.Match(line)
                     'Trace.WriteLine(String.Format("Adding section [{0}]", m.Groups(1).Value))
                     tempsection = AddSection(m.Groups(1).Value)
@@ -48,31 +59,102 @@ Public Class IniFile
                 ElseIf tempsection IsNot Nothing Then
                     '  Handle Key without value
                     'Trace.WriteLine(String.Format("Adding Key [{0}]", line))
-                    tempsection.AddKey(line)
+                    tempsection.AddKey(line, True)
                 Else
                     '  This should not occur unless the tempsection is not created yet...
                     'Trace.WriteLine(String.Format("Skipping unknown type of data: {0}", line))
+                    section_order.Add(line)
                 End If
             End If
         End While
         oReader.Close()
+        loadedFileName = sFileName
+    End Sub
+
+    'Non-standard ini - no sections, no '=' separator between key and value.
+    Public Sub LoadMame(ByVal sFileName As String, separator As Char, Optional ByVal bMerge As Boolean = False)
+        use_sections = False : mame_ini_separator = separator
+
+        If Not bMerge Then
+            '  Clear the object... 
+            RemoveAllSections()
+        End If
+
+        Dim tempsection As IniSection = Nothing
+        Dim oReader As New StreamReader(sFileName)
+
+        While Not oReader.EndOfStream
+            'Dim handled As Boolean = False
+            Dim line As String = oReader.ReadLine().Trim
+            'If line <> String.Empty AndAlso Not line.StartsWith("#") Then
+            'Dim arr = line.Split({separator}, StringSplitOptions.RemoveEmptyEntries)
+            Dim arr = Regex.Matches(line, "[\""].+?[\""]|[^" + separator + "]+").Cast(Of Match).Select(Function(m) m.Value).ToArray
+            If line <> String.Empty AndAlso Not line.StartsWith("#") AndAlso arr.Count = 2 Then
+                If tempsection Is Nothing Then tempsection = AddSection("Main")
+                tempsection.AddKey(arr(0).Trim).Value = arr(1).Trim
+                'handled = True
+                'ElseIf arr.Count = 1 Then
+                '    '  Handle Key without value
+                '    tempsection.AddKey(arr(0).Trim)
+                '    handled = True
+            ElseIf tempsection IsNot Nothing Then
+                '  Handle Key without value, comments and other stuff
+                tempsection.AddKey(line, True)
+            Else
+                section_order.Add(line)
+            End If
+            'End If
+
+            'If Not handled Then section_order.Add(line)
+        End While
+        oReader.Close()
+        loadedFileName = sFileName
     End Sub
 
     ' Used to save the data back to the file or your choice
     Public Sub Save(ByVal sFileName As String)
+        Dim sep = "="c
+        If mame_ini_separator <> Nothing Then sep = mame_ini_separator
+
         Dim oWriter As New StreamWriter(sFileName, False)
-        For Each s As IniSection In Sections
-            'Trace.WriteLine(String.Format("Writing Section: [{0}]", s.Name))
-            oWriter.WriteLine(String.Format("[{0}]", s.Name))
-            For Each k As IniSection.IniKey In s.Keys
-                If k.Value <> String.Empty Then
-                    'Trace.WriteLine(String.Format("Writing Key: {0}={1}", k.Name, k.Value))
-                    oWriter.WriteLine(String.Format("{0}={1}", k.Name, k.Value))
-                Else
-                    'Trace.WriteLine(String.Format("Writing Key: {0}", k.Name))
-                    oWriter.WriteLine(String.Format("{0}", k.Name))
-                End If
-            Next
+        'For Each s As IniSection In Sections
+        '    'Trace.WriteLine(String.Format("Writing Section: [{0}]", s.Name))
+        '    oWriter.WriteLine(String.Format("[{0}]", s.Name))
+        '    For Each k As IniSection.IniKey In s.Keys
+        '        If k.Value <> String.Empty Then
+        '            'Trace.WriteLine(String.Format("Writing Key: {0}={1}", k.Name, k.Value))
+        '            oWriter.WriteLine(String.Format("{0}={1}", k.Name, k.Value))
+        '        Else
+        '            'Trace.WriteLine(String.Format("Writing Key: {0}", k.Name))
+        '            oWriter.WriteLine(String.Format("{0}", k.Name))
+        '        End If
+        '    Next
+        'Next
+
+        For Each s In section_order
+            If m_sections.ContainsKey(s) Then
+                Dim sec = GetSection(s)
+                If use_sections Then oWriter.WriteLine(String.Format("[{0}]", sec.Name))
+
+                For Each k In sec.key_order
+                    Dim key = sec.GetKey(k)
+                    If key IsNot Nothing AndAlso key.Value <> String.Empty Then
+                        oWriter.WriteLine(String.Format("{0}" + sep + "{1}", key.Name, key.Value))
+                    Else
+                        oWriter.WriteLine(String.Format("{0}", k))
+                    End If
+                Next
+                'For Each k As IniSection.IniKey In sec.Keys
+                '    If k.Value <> String.Empty Then
+                '        oWriter.WriteLine(String.Format("{0}" + sep + "{1}", k.Name, k.Value))
+                '    Else
+                '        oWriter.WriteLine(String.Format("{0}", k.Name))
+                '    End If
+                'Next
+            Else
+                'It's a comment, just write it as is
+                oWriter.WriteLine(String.Format("{0}", s))
+            End If
         Next
         oWriter.Close()
     End Sub
@@ -93,6 +175,7 @@ Public Class IniFile
             s = DirectCast(m_sections(sSection), IniSection)
         Else
             s = New IniSection(Me, sSection)
+            section_order.Add(sSection)
             m_sections(sSection) = s
         End If
         Return s
@@ -108,6 +191,7 @@ Public Class IniFile
     Public Function RemoveSection(ByVal Section As IniSection) As Boolean
         If Section IsNot Nothing Then
             Try
+                section_order.Remove(Section.Name)
                 m_sections.Remove(Section.Name)
                 Return True
             Catch ex As Exception
@@ -117,9 +201,10 @@ Public Class IniFile
         Return False
     End Function
 
-    '  Removes all existing sections, returns trus on success
+    ' Removes all existing sections, returns trus on success
     Public Function RemoveAllSections() As Boolean
         m_sections.Clear()
+        section_order.Clear()
         Return (m_sections.Count = 0)
     End Function
 
@@ -133,8 +218,8 @@ Public Class IniFile
         Return Nothing
     End Function
 
-    '  Returns a KeyValue in a certain section
-    Public Function GetKeyValue(ByVal sSection As String, ByVal sKey As String) As String
+    ' Returns a KeyValue in a certain section
+    Public Function GetKeyValue(ByVal sSection As String, ByVal sKey As String) As String Implements INI_File_Class_Interface.IniReadValue
         Dim s As IniSection = GetSection(sSection)
         If s IsNot Nothing Then
             Dim k As IniSection.IniKey = s.GetKey(sKey)
@@ -191,6 +276,35 @@ Public Class IniFile
         Return False
     End Function
 
+    Public Sub Interface_IniWriteValue(Section As String, Key As String, Value As String) Implements INI_File_Class_Interface.IniWriteValue
+        If Key Is Nothing Then
+            RemoveSection(Section)
+        ElseIf Value Is Nothing Then
+            RemoveKey(Section, Key)
+        Else
+            SetKeyValue(Section, Key, Value)
+        End If
+    End Sub
+    Function Interface_IniListKey(Optional section As String = Nothing) As String() Implements INI_File_Class_Interface.IniListKey
+        Dim list As New List(Of String)
+        If section Is Nothing Then
+            For Each o In Me.Sections
+                Dim sect = DirectCast(o, IniSection)
+                list.Add(sect.Name)
+            Next
+        Else
+            Dim sect = GetSection(section)
+            For Each o In sect.Keys
+                Dim k = DirectCast(o, IniSection.IniKey)
+                list.Add(k.Name)
+            Next
+        End If
+        Return list.ToArray
+    End Function
+    Public Sub Interface_Save() Implements INI_File_Class_Interface.save
+        If loadedFileName <> "" Then Save(loadedFileName)
+    End Sub
+
     ' IniSection class 
     Public Class IniSection
         '  IniFile IniFile object instance
@@ -199,6 +313,8 @@ Public Class IniFile
         Private m_sSection As String
         '  List of IniKeys in the section
         Private m_keys As Hashtable
+
+        Public key_order As New List(Of String)
 
         ' Constuctor so objects are internally managed
         Protected Friend Sub New(ByVal parent As IniFile, ByVal sSection As String)
@@ -222,16 +338,20 @@ Public Class IniFile
         End Property
 
         ' Adds a key to the IniSection object, returns a IniKey object to the new or existing object
-        Public Function AddKey(ByVal sKey As String) As IniKey
+        Public Function AddKey(ByVal sKey As String, Optional force As Boolean = False) As IniKey
             sKey = sKey.Trim()
             Dim k As IniSection.IniKey = Nothing
             If sKey.Length <> 0 Then
                 If m_keys.ContainsKey(sKey) Then
+                    If force Then key_order.Add(sKey)
                     k = DirectCast(m_keys(sKey), IniKey)
                 Else
+                    key_order.Add(sKey)
                     k = New IniSection.IniKey(Me, sKey)
                     m_keys(sKey) = k
                 End If
+            Else
+                If force Then key_order.Add(sKey)
             End If
             Return k
         End Function
@@ -246,6 +366,7 @@ Public Class IniFile
             If Key IsNot Nothing Then
                 Try
                     m_keys.Remove(Key.Name)
+                    key_order.Remove(Key.Name)
                     Return True
                 Catch ex As Exception
                     Trace.WriteLine(ex.Message)
@@ -257,13 +378,14 @@ Public Class IniFile
         ' Removes all the keys in the section
         Public Function RemoveAllKeys() As Boolean
             m_keys.Clear()
+            key_order.Clear()
             Return (m_keys.Count = 0)
         End Function
 
         ' Returns a IniKey object to the key by name, NULL if it was not found
         Public Function GetKey(ByVal sKey As String) As IniKey
             sKey = sKey.Trim()
-            If m_keys.ContainsKey(sKey) Then
+            If sKey <> "" AndAlso m_keys.ContainsKey(sKey) Then
                 Return DirectCast(m_keys(sKey), IniKey)
             End If
             Return Nothing
@@ -280,6 +402,10 @@ Public Class IniFile
                     Return False
                 End If
                 Try
+                    ' Rename in section order list
+                    Dim ind = m_pIniFile.section_order.FindIndex(Function(a) a.ToUpper = m_sSection.ToUpper)
+                    m_pIniFile.section_order(ind) = sSection
+
                     ' Remove the current section
                     m_pIniFile.m_sections.Remove(m_sSection)
                     ' Set the new section name to this object
@@ -350,6 +476,10 @@ Public Class IniFile
                         Return False
                     End If
                     Try
+                        ' Rename in keys order list
+                        Dim ind = m_section.key_order.FindIndex(Function(a) a.ToUpper = m_sKey.ToUpper)
+                        m_section.key_order(ind) = sKey
+
                         ' Remove the current key
                         m_section.m_keys.Remove(m_sKey)
                         ' Set the new key name to this object

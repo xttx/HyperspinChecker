@@ -31,6 +31,14 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label_Stat7 = New System.Windows.Forms.Label()
+        Me.Label_Stat0 = New System.Windows.Forms.Label()
+        Me.Label_Stat6 = New System.Windows.Forms.Label()
+        Me.Label_Stat5 = New System.Windows.Forms.Label()
+        Me.Label_Stat4 = New System.Windows.Forms.Label()
+        Me.Label_Stat3 = New System.Windows.Forms.Label()
+        Me.Label_Stat2 = New System.Windows.Forms.Label()
+        Me.Label_Stat1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.Button24 = New System.Windows.Forms.Button()
@@ -52,8 +60,8 @@ Partial Class Form1
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TextBox26 = New System.Windows.Forms.TextBox()
@@ -63,6 +71,9 @@ Partial Class Form1
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox34 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox33 = New System.Windows.Forms.CheckBox()
+        Me.Button29 = New System.Windows.Forms.Button()
         Me.TextBox27 = New System.Windows.Forms.TextBox()
         Me.ComboBox7 = New System.Windows.Forms.ComboBox()
         Me.Label47 = New System.Windows.Forms.Label()
@@ -168,6 +179,7 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox32 = New System.Windows.Forms.CheckBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.Label56 = New System.Windows.Forms.Label()
@@ -281,10 +293,10 @@ Partial Class Form1
         Me.UseDefaultHyperspinFolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UseCustomFolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssociateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssocOption_fileInHsFolder = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssocOption_fileInHsFolder_copy = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssocOption_fileInHsFolder_move = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WhenFileIsInDifferentFolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssocOption_fileInDiffFolder = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssocOption_fileInDiffFolder_copy = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssocOption_fileInDiffFolder_move = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssocOption_fileInDiffFolder_copyToHS = New System.Windows.Forms.ToolStripMenuItem()
@@ -293,6 +305,7 @@ Partial Class Form1
         Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripSeparator()
         Me.ShowFiltersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AutofilterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AutofilterRomDBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AutofilterRegexConstructorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripSeparator()
         Me.UndoHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -325,9 +338,11 @@ Partial Class Form1
         Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MAMERomsetReducerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VideoDownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripSeparator()
+        Me.PackSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UnpackSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox32 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -391,7 +406,7 @@ Partial Class Form1
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(889, 311)
+        Me.DataGridView1.Size = New System.Drawing.Size(889, 392)
         Me.DataGridView1.TabIndex = 2
         '
         'Button1
@@ -419,7 +434,7 @@ Partial Class Form1
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 323)
+        Me.Label2.Location = New System.Drawing.Point(6, 400)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 13)
         Me.Label2.TabIndex = 5
@@ -439,16 +454,24 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(12, 60)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(999, 367)
+        Me.TabControl1.Size = New System.Drawing.Size(999, 444)
         Me.TabControl1.TabIndex = 6
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label_Stat7)
+        Me.TabPage1.Controls.Add(Me.Label_Stat0)
+        Me.TabPage1.Controls.Add(Me.Label_Stat6)
+        Me.TabPage1.Controls.Add(Me.Label_Stat5)
+        Me.TabPage1.Controls.Add(Me.Label_Stat4)
+        Me.TabPage1.Controls.Add(Me.Label_Stat3)
+        Me.TabPage1.Controls.Add(Me.Label_Stat2)
+        Me.TabPage1.Controls.Add(Me.Label_Stat1)
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Controls.Add(Me.Button21)
         Me.TabPage1.Controls.Add(Me.Button18)
-        Me.TabPage1.Controls.Add(Me.Button4)
         Me.TabPage1.Controls.Add(Me.ProgressBar1)
+        Me.TabPage1.Controls.Add(Me.Button4)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Button2_moveUnneeded)
         Me.TabPage1.Controls.Add(Me.DataGridView1)
@@ -456,10 +479,90 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(991, 341)
+        Me.TabPage1.Size = New System.Drawing.Size(991, 418)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Summary"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label_Stat7
+        '
+        Me.Label_Stat7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Stat7.AutoSize = True
+        Me.Label_Stat7.Location = New System.Drawing.Point(901, 340)
+        Me.Label_Stat7.Name = "Label_Stat7"
+        Me.Label_Stat7.Size = New System.Drawing.Size(64, 13)
+        Me.Label_Stat7.TabIndex = 20
+        Me.Label_Stat7.Text = "Wheel: N/A"
+        '
+        'Label_Stat0
+        '
+        Me.Label_Stat0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Stat0.AutoSize = True
+        Me.Label_Stat0.Location = New System.Drawing.Point(901, 310)
+        Me.Label_Stat0.Name = "Label_Stat0"
+        Me.Label_Stat0.Size = New System.Drawing.Size(57, 13)
+        Me.Label_Stat0.TabIndex = 19
+        Me.Label_Stat0.Text = "Total: N/A"
+        '
+        'Label_Stat6
+        '
+        Me.Label_Stat6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Stat6.AutoSize = True
+        Me.Label_Stat6.Location = New System.Drawing.Point(901, 415)
+        Me.Label_Stat6.Name = "Label_Stat6"
+        Me.Label_Stat6.Size = New System.Drawing.Size(75, 13)
+        Me.Label_Stat6.TabIndex = 18
+        Me.Label_Stat6.Text = "Artwork4: N/A"
+        '
+        'Label_Stat5
+        '
+        Me.Label_Stat5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Stat5.AutoSize = True
+        Me.Label_Stat5.Location = New System.Drawing.Point(901, 400)
+        Me.Label_Stat5.Name = "Label_Stat5"
+        Me.Label_Stat5.Size = New System.Drawing.Size(75, 13)
+        Me.Label_Stat5.TabIndex = 17
+        Me.Label_Stat5.Text = "Artwork3: N/A"
+        '
+        'Label_Stat4
+        '
+        Me.Label_Stat4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Stat4.AutoSize = True
+        Me.Label_Stat4.Location = New System.Drawing.Point(901, 385)
+        Me.Label_Stat4.Name = "Label_Stat4"
+        Me.Label_Stat4.Size = New System.Drawing.Size(75, 13)
+        Me.Label_Stat4.TabIndex = 16
+        Me.Label_Stat4.Text = "Artwork2: N/A"
+        '
+        'Label_Stat3
+        '
+        Me.Label_Stat3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Stat3.AutoSize = True
+        Me.Label_Stat3.Location = New System.Drawing.Point(901, 370)
+        Me.Label_Stat3.Name = "Label_Stat3"
+        Me.Label_Stat3.Size = New System.Drawing.Size(75, 13)
+        Me.Label_Stat3.TabIndex = 15
+        Me.Label_Stat3.Text = "Artwork1: N/A"
+        '
+        'Label_Stat2
+        '
+        Me.Label_Stat2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Stat2.AutoSize = True
+        Me.Label_Stat2.Location = New System.Drawing.Point(901, 355)
+        Me.Label_Stat2.Name = "Label_Stat2"
+        Me.Label_Stat2.Size = New System.Drawing.Size(65, 13)
+        Me.Label_Stat2.TabIndex = 14
+        Me.Label_Stat2.Text = "Videos: N/A"
+        '
+        'Label_Stat1
+        '
+        Me.Label_Stat1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Stat1.AutoSize = True
+        Me.Label_Stat1.Location = New System.Drawing.Point(901, 325)
+        Me.Label_Stat1.Name = "Label_Stat1"
+        Me.Label_Stat1.Size = New System.Drawing.Size(60, 13)
+        Me.Label_Stat1.TabIndex = 13
+        Me.Label_Stat1.Text = "Roms: N/A"
         '
         'Panel2
         '
@@ -665,6 +768,15 @@ Partial Class Form1
         Me.Button18.Text = "Crop XML to only found games"
         Me.Button18.UseVisualStyleBackColor = True
         '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ProgressBar1.Location = New System.Drawing.Point(144, 400)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(751, 12)
+        Me.ProgressBar1.TabIndex = 6
+        '
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -676,15 +788,6 @@ Partial Class Form1
         Me.Button4.Text = "Check missing roms or media in another folder"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ProgressBar1.Location = New System.Drawing.Point(144, 323)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(751, 12)
-        Me.ProgressBar1.TabIndex = 6
-        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.SplitContainer1)
@@ -692,7 +795,7 @@ Partial Class Form1
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(0)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(991, 341)
+        Me.TabPage2.Size = New System.Drawing.Size(991, 418)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Matcher"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -716,6 +819,9 @@ Partial Class Form1
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.CheckBox34)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.CheckBox33)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Button29)
         Me.SplitContainer1.Panel2.Controls.Add(Me.TextBox27)
         Me.SplitContainer1.Panel2.Controls.Add(Me.ComboBox7)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label47)
@@ -733,7 +839,7 @@ Partial Class Form1
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.ListBox2)
         Me.SplitContainer1.Panel2.Controls.Add(Me.TextBox4)
-        Me.SplitContainer1.Size = New System.Drawing.Size(985, 335)
+        Me.SplitContainer1.Size = New System.Drawing.Size(985, 412)
         Me.SplitContainer1.SplitterDistance = 403
         Me.SplitContainer1.TabIndex = 12
         '
@@ -741,7 +847,7 @@ Partial Class Form1
         '
         Me.TextBox26.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox26.Location = New System.Drawing.Point(5, 292)
+        Me.TextBox26.Location = New System.Drawing.Point(5, 369)
         Me.TextBox26.Name = "TextBox26"
         Me.TextBox26.Size = New System.Drawing.Size(391, 20)
         Me.TextBox26.TabIndex = 6
@@ -751,7 +857,7 @@ Partial Class Form1
         '
         Me.Label44.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(194, 315)
+        Me.Label44.Location = New System.Drawing.Point(194, 392)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(45, 13)
         Me.Label44.TabIndex = 5
@@ -762,7 +868,7 @@ Partial Class Form1
         '
         Me.Label43.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(133, 315)
+        Me.Label43.Location = New System.Drawing.Point(133, 392)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(45, 13)
         Me.Label43.TabIndex = 4
@@ -774,7 +880,7 @@ Partial Class Form1
         Me.Label42.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label42.Location = New System.Drawing.Point(73, 315)
+        Me.Label42.Location = New System.Drawing.Point(73, 392)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(45, 13)
         Me.Label42.TabIndex = 3
@@ -790,7 +896,7 @@ Partial Class Form1
         Me.ListBox1.IntegralHeight = False
         Me.ListBox1.Location = New System.Drawing.Point(5, 30)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(391, 282)
+        Me.ListBox1.Size = New System.Drawing.Size(391, 359)
         Me.ListBox1.Sorted = True
         Me.ListBox1.TabIndex = 1
         '
@@ -798,7 +904,7 @@ Partial Class Form1
         '
         Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(4, 315)
+        Me.Label7.Location = New System.Drawing.Point(4, 392)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(34, 13)
         Me.Label7.TabIndex = 2
@@ -816,11 +922,41 @@ Partial Class Form1
         Me.ComboBox3.Size = New System.Drawing.Size(391, 21)
         Me.ComboBox3.TabIndex = 0
         '
+        'CheckBox34
+        '
+        Me.CheckBox34.AutoSize = True
+        Me.CheckBox34.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CheckBox34.Location = New System.Drawing.Point(93, 356)
+        Me.CheckBox34.Name = "CheckBox34"
+        Me.CheckBox34.Size = New System.Drawing.Size(48, 17)
+        Me.CheckBox34.TabIndex = 23
+        Me.CheckBox34.Text = "Auto"
+        Me.CheckBox34.UseVisualStyleBackColor = True
+        '
+        'CheckBox33
+        '
+        Me.CheckBox33.AutoSize = True
+        Me.CheckBox33.Location = New System.Drawing.Point(3, 356)
+        Me.CheckBox33.Name = "CheckBox33"
+        Me.CheckBox33.Size = New System.Drawing.Size(48, 17)
+        Me.CheckBox33.TabIndex = 22
+        Me.CheckBox33.Text = "Auto"
+        Me.CheckBox33.UseVisualStyleBackColor = True
+        '
+        'Button29
+        '
+        Me.Button29.Location = New System.Drawing.Point(3, 326)
+        Me.Button29.Name = "Button29"
+        Me.Button29.Size = New System.Drawing.Size(138, 24)
+        Me.Button29.TabIndex = 21
+        Me.Button29.Text = "Show/Hide filter"
+        Me.Button29.UseVisualStyleBackColor = True
+        '
         'TextBox27
         '
         Me.TextBox27.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox27.Location = New System.Drawing.Point(148, 292)
+        Me.TextBox27.Location = New System.Drawing.Point(148, 369)
         Me.TextBox27.Name = "TextBox27"
         Me.TextBox27.Size = New System.Drawing.Size(421, 20)
         Me.TextBox27.TabIndex = 7
@@ -843,7 +979,7 @@ Partial Class Form1
         Me.Label47.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label47.Location = New System.Drawing.Point(332, 315)
+        Me.Label47.Location = New System.Drawing.Point(332, 392)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(45, 13)
         Me.Label47.TabIndex = 17
@@ -855,7 +991,7 @@ Partial Class Form1
         Me.Label46.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label46.Location = New System.Drawing.Point(255, 315)
+        Me.Label46.Location = New System.Drawing.Point(255, 392)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(45, 13)
         Me.Label46.TabIndex = 16
@@ -867,7 +1003,7 @@ Partial Class Form1
         Me.Label45.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label45.Location = New System.Drawing.Point(188, 315)
+        Me.Label45.Location = New System.Drawing.Point(188, 392)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(45, 13)
         Me.Label45.TabIndex = 6
@@ -890,7 +1026,7 @@ Partial Class Form1
         Me.Label20.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label20.AutoSize = True
         Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label20.Location = New System.Drawing.Point(4, 314)
+        Me.Label20.Location = New System.Drawing.Point(4, 391)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(44, 13)
         Me.Label20.TabIndex = 14
@@ -954,7 +1090,7 @@ Partial Class Form1
         Me.CheckBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Enabled = False
-        Me.CheckBox3.Location = New System.Drawing.Point(457, 314)
+        Me.CheckBox3.Location = New System.Drawing.Point(457, 391)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(112, 17)
         Me.CheckBox3.TabIndex = 12
@@ -995,7 +1131,7 @@ Partial Class Form1
         '
         Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(145, 315)
+        Me.Label9.Location = New System.Drawing.Point(145, 392)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 11
@@ -1054,7 +1190,7 @@ Partial Class Form1
         Me.ListBox2.IntegralHeight = False
         Me.ListBox2.Location = New System.Drawing.Point(148, 30)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(421, 282)
+        Me.ListBox2.Size = New System.Drawing.Size(421, 359)
         Me.ListBox2.TabIndex = 5
         '
         'TextBox4
@@ -1098,7 +1234,7 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.CheckBox1)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(991, 341)
+        Me.TabPage4.Size = New System.Drawing.Size(991, 418)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "CD Image check/fix"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -1403,7 +1539,7 @@ Partial Class Form1
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(991, 341)
+        Me.TabPage7.Size = New System.Drawing.Size(991, 418)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Systems Manager"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1430,8 +1566,8 @@ Partial Class Form1
         '
         'Button22
         '
-        Me.Button22.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button22.Location = New System.Drawing.Point(887, 282)
+        Me.Button22.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button22.Location = New System.Drawing.Point(887, 231)
         Me.Button22.Name = "Button22"
         Me.Button22.Size = New System.Drawing.Size(84, 36)
         Me.Button22.TabIndex = 7
@@ -1452,7 +1588,7 @@ Partial Class Form1
         '
         Me.Label41.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(6, 321)
+        Me.Label41.Location = New System.Drawing.Point(6, 402)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(217, 13)
         Me.Label41.TabIndex = 5
@@ -1484,7 +1620,7 @@ Partial Class Form1
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(875, 312)
+        Me.DataGridView2.Size = New System.Drawing.Size(875, 393)
         Me.DataGridView2.TabIndex = 3
         '
         'TabPage3
@@ -1506,7 +1642,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.Label3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(991, 341)
+        Me.TabPage3.Size = New System.Drawing.Size(991, 418)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "HyperSpin system settings"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1931,7 +2067,7 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.Label22)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(991, 341)
+        Me.TabPage5.Size = New System.Drawing.Size(991, 418)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Program settings"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1949,6 +2085,16 @@ Partial Class Form1
         Me.GroupBox11.TabIndex = 8
         Me.GroupBox11.TabStop = False
         Me.GroupBox11.Text = "User Interface:"
+        '
+        'CheckBox32
+        '
+        Me.CheckBox32.AutoSize = True
+        Me.CheckBox32.Location = New System.Drawing.Point(6, 93)
+        Me.CheckBox32.Name = "CheckBox32"
+        Me.CheckBox32.Size = New System.Drawing.Size(169, 17)
+        Me.CheckBox32.TabIndex = 5
+        Me.CheckBox32.Text = "Sort System List Alphabetically"
+        Me.CheckBox32.UseVisualStyleBackColor = True
         '
         'NumericUpDown1
         '
@@ -2877,7 +3023,7 @@ Partial Class Form1
         '
         'MatcherToolStripMenuItem
         '
-        Me.MatcherToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AutorenamerToolStripMenuItem, Me.ToolStripMenuItem2, Me.MediaFolderToolStripMenuItem, Me.AssociateToolStripMenuItem, Me.AlwaysShowDetailedTotalStatusToolStripMenuItem, Me.ToolStripMenuItem11, Me.ShowFiltersToolStripMenuItem, Me.AutofilterToolStripMenuItem, Me.AutofilterRegexConstructorToolStripMenuItem, Me.ToolStripMenuItem12, Me.UndoHistoryToolStripMenuItem})
+        Me.MatcherToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AutorenamerToolStripMenuItem, Me.ToolStripMenuItem2, Me.MediaFolderToolStripMenuItem, Me.AssociateToolStripMenuItem, Me.AlwaysShowDetailedTotalStatusToolStripMenuItem, Me.ToolStripMenuItem11, Me.ShowFiltersToolStripMenuItem, Me.AutofilterToolStripMenuItem, Me.AutofilterRomDBToolStripMenuItem, Me.AutofilterRegexConstructorToolStripMenuItem, Me.ToolStripMenuItem12, Me.UndoHistoryToolStripMenuItem})
         Me.MatcherToolStripMenuItem.Name = "MatcherToolStripMenuItem"
         Me.MatcherToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
         Me.MatcherToolStripMenuItem.Text = "Matcher"
@@ -2914,17 +3060,17 @@ Partial Class Form1
         '
         'AssociateToolStripMenuItem
         '
-        Me.AssociateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WToolStripMenuItem, Me.WhenFileIsInDifferentFolderToolStripMenuItem})
+        Me.AssociateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssocOption_fileInHsFolder, Me.AssocOption_fileInDiffFolder})
         Me.AssociateToolStripMenuItem.Name = "AssociateToolStripMenuItem"
         Me.AssociateToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.AssociateToolStripMenuItem.Text = "Associate"
         '
-        'WToolStripMenuItem
+        'AssocOption_fileInHsFolder
         '
-        Me.WToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssocOption_fileInHsFolder_copy, Me.AssocOption_fileInHsFolder_move})
-        Me.WToolStripMenuItem.Name = "WToolStripMenuItem"
-        Me.WToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
-        Me.WToolStripMenuItem.Text = "When file is already in destination folder"
+        Me.AssocOption_fileInHsFolder.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssocOption_fileInHsFolder_copy, Me.AssocOption_fileInHsFolder_move})
+        Me.AssocOption_fileInHsFolder.Name = "AssocOption_fileInHsFolder"
+        Me.AssocOption_fileInHsFolder.Size = New System.Drawing.Size(285, 22)
+        Me.AssocOption_fileInHsFolder.Text = "When file is already in destination folder"
         '
         'AssocOption_fileInHsFolder_copy
         '
@@ -2940,12 +3086,12 @@ Partial Class Form1
         Me.AssocOption_fileInHsFolder_move.Size = New System.Drawing.Size(162, 22)
         Me.AssocOption_fileInHsFolder_move.Text = "Move (rename)"
         '
-        'WhenFileIsInDifferentFolderToolStripMenuItem
+        'AssocOption_fileInDiffFolder
         '
-        Me.WhenFileIsInDifferentFolderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssocOption_fileInDiffFolder_copy, Me.AssocOption_fileInDiffFolder_move, Me.AssocOption_fileInDiffFolder_copyToHS, Me.AssocOption_fileInDiffFolder_moveToHS})
-        Me.WhenFileIsInDifferentFolderToolStripMenuItem.Name = "WhenFileIsInDifferentFolderToolStripMenuItem"
-        Me.WhenFileIsInDifferentFolderToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
-        Me.WhenFileIsInDifferentFolderToolStripMenuItem.Text = "When file is in different folder"
+        Me.AssocOption_fileInDiffFolder.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssocOption_fileInDiffFolder_copy, Me.AssocOption_fileInDiffFolder_move, Me.AssocOption_fileInDiffFolder_copyToHS, Me.AssocOption_fileInDiffFolder_moveToHS})
+        Me.AssocOption_fileInDiffFolder.Name = "AssocOption_fileInDiffFolder"
+        Me.AssocOption_fileInDiffFolder.Size = New System.Drawing.Size(285, 22)
+        Me.AssocOption_fileInDiffFolder.Text = "When file is in different folder"
         '
         'AssocOption_fileInDiffFolder_copy
         '
@@ -2994,7 +3140,13 @@ Partial Class Form1
         '
         Me.AutofilterToolStripMenuItem.Name = "AutofilterToolStripMenuItem"
         Me.AutofilterToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
-        Me.AutofilterToolStripMenuItem.Text = "Autofilter"
+        Me.AutofilterToolStripMenuItem.Text = "Autofilter DB -> Rom"
+        '
+        'AutofilterRomDBToolStripMenuItem
+        '
+        Me.AutofilterRomDBToolStripMenuItem.Name = "AutofilterRomDBToolStripMenuItem"
+        Me.AutofilterRomDBToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.AutofilterRomDBToolStripMenuItem.Text = "Autofilter Rom -> DB"
         '
         'AutofilterRegexConstructorToolStripMenuItem
         '
@@ -3015,7 +3167,7 @@ Partial Class Form1
         '
         'ToolsToolStripMenuItem
         '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssociationTablesToolStripMenuItem, Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem, Me.GenresFavoritesManagerToolStripMenuItem, Me.ToolStripMenuItem6, Me.ShowDatabaseStatisticToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem, Me.ConvertersToolStripMenuItem, Me.ToolStripMenuItem7, Me.RemoveClonesFromCurrentDBToolStripMenuItem, Me.DIFFToolToolStripMenuItem, Me.DualFolderOperationsToolStripMenuItem, Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem, Me.ToolStripMenuItem8, Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem, Me.MAMERomsetReducerToolStripMenuItem, Me.VideoDownloaderToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssociationTablesToolStripMenuItem, Me.CheckHyperLaunch3rdPartyPathsToolStripMenuItem, Me.GenresFavoritesManagerToolStripMenuItem, Me.ToolStripMenuItem6, Me.ShowDatabaseStatisticToolStripMenuItem, Me.CreateDatabaseXMLFromRomFolderToolStripMenuItem, Me.ConvertersToolStripMenuItem, Me.ToolStripMenuItem7, Me.RemoveClonesFromCurrentDBToolStripMenuItem, Me.DIFFToolToolStripMenuItem, Me.DualFolderOperationsToolStripMenuItem, Me.MoveRomsInProvidedListtxtToSubfolderToolStripMenuItem, Me.ToolStripMenuItem8, Me.PCSX2CreateIndexFilesForCompressedIsoToolStripMenuItem, Me.MAMERomsetReducerToolStripMenuItem, Me.VideoDownloaderToolStripMenuItem, Me.ToolStripMenuItem13, Me.PackSystemToolStripMenuItem, Me.UnpackSystemToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
         Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
@@ -3188,6 +3340,23 @@ Partial Class Form1
         Me.VideoDownloaderToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
         Me.VideoDownloaderToolStripMenuItem.Text = "Video Downloader ..."
         '
+        'ToolStripMenuItem13
+        '
+        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
+        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(370, 6)
+        '
+        'PackSystemToolStripMenuItem
+        '
+        Me.PackSystemToolStripMenuItem.Name = "PackSystemToolStripMenuItem"
+        Me.PackSystemToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
+        Me.PackSystemToolStripMenuItem.Text = "Pack System ..."
+        '
+        'UnpackSystemToolStripMenuItem
+        '
+        Me.UnpackSystemToolStripMenuItem.Name = "UnpackSystemToolStripMenuItem"
+        Me.UnpackSystemToolStripMenuItem.Size = New System.Drawing.Size(373, 22)
+        Me.UnpackSystemToolStripMenuItem.Text = "Unpack System ..."
+        '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem1})
@@ -3201,21 +3370,11 @@ Partial Class Form1
         Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem1.Text = "About"
         '
-        'CheckBox32
-        '
-        Me.CheckBox32.AutoSize = True
-        Me.CheckBox32.Location = New System.Drawing.Point(6, 93)
-        Me.CheckBox32.Name = "CheckBox32"
-        Me.CheckBox32.Size = New System.Drawing.Size(169, 17)
-        Me.CheckBox32.TabIndex = 5
-        Me.CheckBox32.Text = "Sort System List Alphabetically"
-        Me.CheckBox32.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1023, 439)
+        Me.ClientSize = New System.Drawing.Size(1023, 508)
         Me.Controls.Add(Me.Button30)
         Me.Controls.Add(Me.CheckBox13)
         Me.Controls.Add(Me.CheckBox12)
@@ -3474,10 +3633,10 @@ Partial Class Form1
     Friend WithEvents SemicolonExcelDefaultToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CommaFormatDefaultToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssociateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AssocOption_fileInHsFolder As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssocOption_fileInHsFolder_copy As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssocOption_fileInHsFolder_move As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WhenFileIsInDifferentFolderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AssocOption_fileInDiffFolder As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssocOption_fileInDiffFolder_copy As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssocOption_fileInDiffFolder_move As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssocOption_fileInDiffFolder_copyToHS As System.Windows.Forms.ToolStripMenuItem
@@ -3587,4 +3746,19 @@ Partial Class Form1
     Friend WithEvents Label57 As Label
     Friend WithEvents Label56 As Label
     Friend WithEvents CheckBox32 As CheckBox
+    Friend WithEvents ToolStripMenuItem13 As ToolStripSeparator
+    Friend WithEvents PackSystemToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UnpackSystemToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AutofilterRomDBToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label_Stat6 As Label
+    Friend WithEvents Label_Stat5 As Label
+    Friend WithEvents Label_Stat4 As Label
+    Friend WithEvents Label_Stat3 As Label
+    Friend WithEvents Label_Stat2 As Label
+    Friend WithEvents Label_Stat1 As Label
+    Friend WithEvents Label_Stat0 As Label
+    Friend WithEvents Label_Stat7 As Label
+    Friend WithEvents CheckBox34 As CheckBox
+    Friend WithEvents CheckBox33 As CheckBox
+    Friend WithEvents Button29 As Button
 End Class

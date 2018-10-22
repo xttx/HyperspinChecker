@@ -82,9 +82,9 @@ Partial Class FormZ_about
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(298, 18)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(80, 13)
+        Me.Label5.Size = New System.Drawing.Size(68, 13)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "v0.11.1u2 Beta"
+        Me.Label5.Text = "v0.12.0 Beta"
         '
         'FormZ_about
         '

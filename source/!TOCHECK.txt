@@ -8,3 +8,13 @@ ffmpeg -i INFILE.mp4 -vcodec copy -acodec copy -ss 00:01:00.000 -t 00:00:10.000 
 
 You can use seconds or hh:mm:ss[.xxx] as arguments for the start time and duration, i prefer the second option.
  The options -vcodec copy and -acodec copy are used to only cut the video and disable the re-encoding, this really speed things up. ;) 
+
+
+Checking all renaming branches:
+- All dir modes (copy, move, src_dir, dst_dir)
+- Folder mode
+- If destination file exist
+- Archive with and without renaming inside, with and without multiple files inside
+- mdf/mds or other pairs
+- cue/bin (special pair case)
+- 

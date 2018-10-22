@@ -118,7 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label1.Text" xml:space="preserve">
-    <value>  This software is in no way commercial and has been created for the benefit of humankind and emulators. But humankind, unlike emulators need not only CPU power, but also a biological food. If you, or your emulator like this tool, you can greatly help it by transfering a little amount of human money to my paypal. I will transfer it in a biological food and this will motivate me to create more benefits for humankind and its emulators.</value>
+    <value>  If you find the software useful and would like to support my efforts, please consider donating what you think the software is worth. It will help to keep development alive. Your requests will also be prioritized.
+  You can donate via Paypal: xttx1temp@mail.ru</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

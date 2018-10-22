@@ -34,12 +34,11 @@ Public Class Form1
     'TODO check/verify all possibilities while associating in matcher (copy, move, in/from different folders, and check listBoxex behaviour)
     'TODO when move roms in subfolder in NOT subfoldered mode, filelist don't reflect changes
 
-    'TODO 'handle-together' in 'move unneeded to subfolder'
+    'TODO - 'handle-together' in 'move unneeded to subfolder'
 
     'TODO - RL fade preview and editor
     'TODO - move mode when in another directory, in subfoldered mode is missing (code is missing)
     'TODO - copy (duplicate) mode in the same folder, just rename file in filelist instead of duplicating
-    'TODO - sort systems
     'TODO - renaming history to file
     'TODO - better renaming log
     'TODO - drag & drop in system manager
@@ -51,7 +50,17 @@ Public Class Form1
     'TODO - subfoldered mode - matched/unmatched should have option (enabled by default) to match a FILE inside a FOLDER, Not only folder name
     'TODO - move copy/move/rename/duplicate controls from options menu to main matcher window
     'TODO - Hide CHECK button (And other controls) when checking
-    'TODO - deplay emulator pack and customize emu video and controls and module settings, and paths
+    'TODO - deploy emulator pack and customize emu video and controls and module settings, and paths
+
+    'TODO - Mark items in table as found, when renaming in autorenamer
+    'TODO - Mark items in listboxes as found, when renaming in autorenamer
+    'TODO - more parsing expressions in regex constructor regex parsing
+
+    'TODO - Wrong matcher stats update when copying (duplicated)
+    'TODO - Move checkboxes of matcher file operation options (copy/move...) to matcher main tab
+    'TODO - Wheel/box creator
+    'TODO - Youtube downloader not working
+    'TODO - While trying to test an expression, in regex constructor - replace\((".*?"),(".*?")\) - unexpected behaviour: multiple singles was collapsing to one, after entering first closing paranthesis. (have to enter expression by type for this to happens)
 
     'MOSTLY DONE TODO relative HL path not working ('Hyperlaunch path changed, 'HS path changing)
     'MOSTLY DONE TODO flames #153 - print check table on printer or exel export
@@ -117,6 +126,7 @@ Public Class Form1
     'DONE TODO REQUEST [MadCoder] Dreamcast CDI to ISO ability, and ISO fixer
     'DONE TODO can't change hl module in sys properties. It's just not updated.
 
+
     'DONE TODO save last check result and show it in system manager table
     'DONE TODO fix auto selection change in listbox when renaming
     'DONE TODO after showing any defaultly hided column and saving table config, after program restart, column Is shown, but menu item does not checked
@@ -128,6 +138,16 @@ Public Class Form1
     'DONE TODO filter in game list in matcher not working
     'DONE TODO find-as-you-type in matcher listboxes
     'DONE TODO If a disk does not exist (i.e. network drive), and multiple paths are set in RL - continue in another path, not abort
+    'DONE TODO RocketLauncher media renaming
+    'DONE TODO Save association matcher options
+    'DONE TODO Autorenamer - better word removing. Sometimes word is removed in the midle of word (snowmobiLES). Sometimes does not at all (wii, spyro - down of THE dragon)
+    'DONE TODO Save regexp options
+    'DONE TODO Quick stats, at right of the main table, under buttons - how many items was found and how many still missing of each category
+    'DONE TODO add "NOT" to regexp options (letter, number)
+    'DONE TODO When using Roms->Db way autofilter (the inversed one), with show unmatched only for roms and db, can cause NullReference in matcher line 279 (.ListBox1.SelectedIndex)
+    'DONE TODO Sort systems list alphabetically - WARNING, some code depends on system order, including add system in system manager and unpack system
+
+    'MOSTLY DONE TODO - 2way autofilter (making it work both way in same time will confuse matcher when listboxes selection will change after association)
 
 #Region "Declarations"
     Structure check_param
@@ -142,7 +162,7 @@ Public Class Form1
     Private system_manager_class As Class5_system_manager
     Private isoChecker As ISOChecker
     Private clrmame_class As Class4_clrmamepro
-    Private system_list As New DataTable
+    Public system_list As New DataTable
     Public editor_delete_command_list As New List(Of DataGridViewRow)
     Public editor_insert_command_list As New List(Of DataGridViewRow)
     Public editor_update_command_list As New Dictionary(Of DataGridViewRow, String)
@@ -219,6 +239,19 @@ Public Class Form1
 #Region "Main Form Actions (loadForm, system select, main check)"
     'FORM LOAD
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Test zipping block
+        'Dim zc As New SevenZip.SevenZipCompressor
+        'zc.ArchiveFormat = SevenZip.OutArchiveFormat.SevenZip
+        'zc.CompressionMethod = SevenZip.CompressionMethod.Default
+        'zc.CompressionLevel = SevenZip.CompressionLevel.High
+        'Dim files As New Dictionary(Of String, String)
+        'files.Add("VGhlIHBhdGgtbGVuZ3RoIHByb2JsZW0gaXMgY29tcGxldGVseSB1bnJlbGF0ZWQgdG8gdGhlIEZBVCBsaW1pdGF0aW9uLgoKTlRGUyBjYW4gYWN0dWFsbHkgc3VwcG9ydCBwYXRobmFtZXMgdXAgdG8gMzIsMDAwIGNoYXJhY3RlcnMgaW4gbGVuZ3RoLgoKTWljcm9zb2Z0J3MgdG9vbHMsIG9uIHRoZSBvdGhlciBoYW5kIChleHBsb3Jlci5leGUsIGRpciwgZXRjLikgYXJlIGNvZGVkIHRvIHRoZSBBTlNJIHNwZWMgZm9yIHdyaXRpbmcgcGF0aHMsIHNvIHRoZXkgY3JhcC1vdXQgYXQgMjYwIGNoYXJhY3RlcnMuICBJJ20gbm90IGV2ZW4gc3VyZSBpZiB0aGF0IGZhaWx1cmUgd2lsbCBzaG93IHVwIGluIEZpbGVtb24uICBJIHRoaW5rIHRoZSBjYWxsIGNyYXBzIG91dCBiZWZvcmUgaXQgZXZlbiBnZXRzIGRvd24gdG8gdGhlIGZpbHRlciBkcml2ZXIuCgpBbnl3YXksIHRoZXJlJ3MgYSBmZXcgdG9vbHMgeW91IGNhbiBnZXQgdG8gd29yayBhcm91bmQgdGhlIDI2MCBjaGFyYWN0ZXIgbGltaXQgdGhhdCBoYXMgYmVlbiB3aXRoIHVzIHNpbmNlIDE5OTQuICBEZWxpbW9uLCBXaW4zMkV4cGxvcmVyLCBhbmQgYWJvdXQgdGhlIE9OTFkgdG9vbCB0aGF0IGlzIGNhcGFibGUgb2YgYXJjaGl2aW5nIG9yIHppcHBpbmcg.txt", "D:\1\Planetside.Software.Terragen.Professional.v4.1.21.X64-AMPED.rar")
+        'files.Add("2", "D:\1\Planetside.Software.Terragen.Professional.v4.1.21.X64-AMPED.rar")
+        'files.Add("3", "D:\1\Planetside.Software.Terragen.Professional.v4.1.21.X64-AMPED.rar")
+        'files.Add("4", "D:\1\Planetside.Software.Terragen.Professional.v4.1.21.X64-AMPED.rar")
+        'files.Add("5", "D:\1\Planetside.Software.Terragen.Professional.v4.1.21.X64-AMPED.rar")
+        'zc.CompressFileDictionary(files, "D:\Documents\My_Progs\HyperspinChecker\git_MSVS\HyperspinChecker\source\bin\Debug\SystemPackages\test.zip")
+
         Class1.Log("Initializing...")
         ComboBox7.Left = TextBox4.Left
         ComboBox7.Width = TextBox4.Width - 10
@@ -279,6 +312,7 @@ Public Class Form1
         If ini2.IniReadValue("main", "archives_rename_inside") = "1" Then CheckBox28.Checked = True
         If ini2.IniReadValue("main", "archives_remove_unneeded") = "1" Then CheckBox29.Checked = True
         If ini2.IniReadValue("main", "usehlv3") = "1" Then CheckBox26.Checked = True
+        If ini2.IniReadValue("main", "sort_systems") = "1" Then CheckBox32.Checked = True
         If ini2.IniReadValue("main", "check_hl_game_media") = "1" Then CheckBox30.Checked = True
         If ini2.IniReadValue("main", "check_hl_system_media") = "1" Then CheckBox31.Checked = True
         Dim i As Integer = 1
@@ -334,6 +368,36 @@ Public Class Form1
         s = ini2.IniReadValue("Main", "MatcherFontSize")
         Dim fs As Single
         If Single.TryParse(s, fs) Then NumericUpDown1.Value = CInt(fs)
+
+        'Top menu - Matcher options
+        s = ini2.IniReadValue("Main", "AssocOption_fileInHsFolder")
+        If s <> "" Then
+            For Each t As ToolStripMenuItem In AssocOption_fileInHsFolder.DropDownItems
+                If t.Name.ToUpper = s.ToUpper Then t.PerformClick() : Exit For
+            Next
+        End If
+        s = ini2.IniReadValue("Main", "AssocOption_fileInDiffFolder")
+        If s <> "" Then
+            For Each t As ToolStripMenuItem In AssocOption_fileInDiffFolder.DropDownItems
+                If t.Name.ToUpper = s.ToUpper Then t.PerformClick() : Exit For
+            Next
+        End If
+
+        'Regular expression - active and presets
+        s = ini2.IniReadValue("RegEx", "active")
+        If s <> "" Then Class3_matcher.autofilter_regex = s
+        s = ini2.IniReadValue("RegEx", "opt_strip_br")
+        If s.ToUpper = "TRUE" Then Class3_matcher.autofilter_regex_options(0) = True
+        s = ini2.IniReadValue("RegEx", "opt_strip_pr")
+        If s.ToUpper = "TRUE" Then Class3_matcher.autofilter_regex_options(1) = True
+        s = ini2.IniReadValue("RegEx", "opt_out_group")
+        If IsNumeric(s) Then Class3_matcher.autofilter_regex_opt_outGroup = CInt(s)
+        For Each k In ini2.IniListKey("RegEx")
+            If k.ToLower.StartsWith("preset") Then
+                Dim p = ini2.IniReadValue("RegEx", k).Trim.Split({"^^^"}, StringSplitOptions.RemoveEmptyEntries)
+                If p.Count = 5 Then Class3_matcher.autofilter_regex_presets.Add(p(0).Trim, p(1).Trim + "^^^" + p(2).Trim + "^^^" + p(3).Trim + "^^^" + p(4).Trim)
+            End If
+        Next
 
         'Localization
         s = ini2.IniReadValue("Main", "Language")
@@ -650,6 +714,7 @@ Public Class Form1
     Private Sub Form1_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         ini.IniFile(Class1.confPath)
         ini.IniWriteValue("Main", "Main_window_size", Me.Width.ToString + "x" + Me.Height.ToString)
+        Application.Exit()
     End Sub
 
     'Main Check
@@ -699,6 +764,12 @@ Public Class Form1
                     Else
                         romPath += temppath2 + "|"
                     End If
+                ElseIf temppath2.StartsWith("\\") Then
+                    'Network path
+                    Label2.Text = "Checking network path..." : Label2.Refresh()
+                    If IO.Directory.Exists(temppath2) Then
+                        romPath += temppath2 + "|"
+                    End If
                 End If
             Next
 
@@ -719,6 +790,7 @@ Public Class Form1
             End Try
         End Try
 
+        Label2.Text = "..."
         ProgressBar1.Value = 0
         ProgressBar1.Maximum = x.SelectNodes("/menu/game").Count
         Dim param As New check_param With {.x = x, .sys = ComboBox1.SelectedItem.ToString, .path = romPath}
@@ -852,6 +924,23 @@ Public Class Form1
             progress += 1 : If progress Mod 50 = 0 Then bg_check.ReportProgress(progress)
         Next
 
+        'Update stat labels
+        Me.BeginInvoke(Sub() Label_Stat0.Text = "Total: " + counters(0).ToString)
+        Dim arr_labels = {Label_Stat1, Label_Stat2, Label_Stat3, Label_Stat4, Label_Stat5, Label_Stat6, Label_Stat7}
+        Dim arr_labels_txt = {"Roms", "Videos", "Artwork1", "Artwork2", "Artwork3", "Artwork4", "Wheel"}
+        Dim arr_counter_indices = {1, 2, 5, 6, 7, 8, 4}
+        For i As Integer = 0 To arr_labels.Length - 1
+            Dim ind = i
+            Me.BeginInvoke(Sub() arr_labels(ind).Text = arr_labels_txt(ind) + ": " + counters(arr_counter_indices(ind)).ToString)
+            If counters(arr_counter_indices(ind)) = 0 Then
+                Me.BeginInvoke(Sub() arr_labels(ind).BackColor = Class1.colorNO)
+            ElseIf counters(arr_counter_indices(ind)) = counters(0) Then
+                Me.BeginInvoke(Sub() arr_labels(ind).BackColor = Class1.colorYES)
+            Else
+                Me.BeginInvoke(Sub() arr_labels(ind).BackColor = Color.Yellow)
+            End If
+        Next
+
         'save lastCheckResult
         ini.path = Class1.confPath
         ini.IniWriteValue("LastCheckResult", param.sys, String.Join(",", counters))
@@ -901,6 +990,16 @@ Public Class Form1
         Class1.HyperspinIniCursysEmuExe = ""
         Class1.HyperspinIniCursysEmuPath = ""
         Class1.HyperspinIniCursysEmuExist = False
+
+        Label_Stat0.BackColor = Color.Transparent : Label_Stat0.Text = "Total: N/A"
+        Label_Stat1.BackColor = Color.Transparent : Label_Stat1.Text = "Roms: N/A"
+        Label_Stat2.BackColor = Color.Transparent : Label_Stat2.Text = "Videos: N/A"
+        Label_Stat3.BackColor = Color.Transparent : Label_Stat3.Text = "Artwork1: N/A"
+        Label_Stat4.BackColor = Color.Transparent : Label_Stat4.Text = "Artwork2: N/A"
+        Label_Stat5.BackColor = Color.Transparent : Label_Stat5.Text = "Artwork3: N/A"
+        Label_Stat6.BackColor = Color.Transparent : Label_Stat6.Text = "Artwork4: N/A"
+        Label_Stat7.BackColor = Color.Transparent : Label_Stat7.Text = "Wheel: N/A"
+
 
         ComboBox3.SelectedIndex = -1
         DataGridView1.Rows.Clear()
@@ -1164,7 +1263,7 @@ Public Class Form1
             system_list.Clear()
             x.Load(Class1.HyperspinPath + "\Databases\Main Menu\Main Menu.xml")
             For Each node As Xml.XmlNode In x.SelectNodes("/menu/game")
-                'system_list.Rows.Add({node.Attributes.GetNamedItem("name").Value})
+                system_list.Rows.Add({node.Attributes.GetNamedItem("name").Value})
                 ComboBox1.Items.Add(node.Attributes.GetNamedItem("name").Value)
             Next
             'ComboBox1.DataSource = system_list
@@ -1186,7 +1285,7 @@ Public Class Form1
     'Hyperlaunch path changed
     Private Sub TextBox18_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox18.TextChanged
         Dim ok As Boolean = False
-        If TextBox18.Text.StartsWith(".") Then TextBox18.Text = (Class1.HyperspinPath + "\" + TextBox18.Text) : Exit Sub
+        If TextBox18.Text.StartsWith(".") Then TextBox18.Text = IO.Path.GetFullPath(Class1.HyperspinPath + "\" + TextBox18.Text) : Exit Sub
         Dim str As String = TextBox18.Text
 
 
@@ -1215,6 +1314,7 @@ Public Class Form1
         ini.IniWriteValue("MAIN", "rename_just_cue", DirectCast(IIf(CheckBox6.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "search_cue_for", TextBox16.Text)
         ini.IniWriteValue("MAIN", "useHLv3", DirectCast(IIf(CheckBox26.Checked, "1", "0"), String))
+        ini.IniWriteValue("MAIN", "sort_systems", DirectCast(IIf(CheckBox32.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "check_hl_game_media", DirectCast(IIf(CheckBox30.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "check_hl_system_media", DirectCast(IIf(CheckBox31.Checked, "1", "0"), String))
         ini.IniWriteValue("MAIN", "archives_rename_inside", DirectCast(IIf(CheckBox28.Checked, "1", "0"), String))
@@ -1244,6 +1344,14 @@ Public Class Form1
         Else
             ini.IniWriteValue("Main", "Language", ComboBox13.SelectedItem.ToString)
         End If
+
+        'Top menu - Matcher options
+        For Each t As ToolStripItem In AssocOption_fileInHsFolder.DropDownItems
+            If DirectCast(t, ToolStripMenuItem).Checked Then ini.IniWriteValue("Main", "AssocOption_fileInHsFolder", t.Name)
+        Next
+        For Each t As ToolStripItem In AssocOption_fileInDiffFolder.DropDownItems
+            If DirectCast(t, ToolStripMenuItem).Checked Then ini.IniWriteValue("Main", "AssocOption_fileInDiffFolder", t.Name)
+        Next
 
         Label23.BackColor = Color.LightBlue
         Label23.Text = "Config.conf Saved"
@@ -1304,17 +1412,25 @@ Public Class Form1
         End If
         TextBox18.Text = TextBox18.Text.Replace("\\", "\").Replace("\\", "\")
         ini.path = Class1.HyperspinPath + "\Settings\Settings.ini"
-        ini.IniWriteValue("main", "Hyperlaunch_Path", TextBox18.Text)
+        If IO.File.Exists(TextBox18.Text + "RocketLauncher.exe") Then
+            ini.IniWriteValue("main", "Hyperlaunch_Path", TextBox18.Text + "RocketLauncher.exe")
+        ElseIf IO.File.Exists(TextBox18.Text + "HyperLaunch.exe") Then
+            ini.IniWriteValue("main", "Hyperlaunch_Path", TextBox18.Text)
+        End If
+
 
         TextBox1.Text = TextBox1.Text.Trim
         TextBox3.Text = TextBox3.Text.Trim
         TextBox2.Text = TextBox2.Text.Trim
         If Not TextBox1.Text = "" AndAlso Not TextBox1.Text.EndsWith("\") Then TextBox1.Text = TextBox1.Text + "\"
         If Not TextBox2.Text = "" AndAlso Not TextBox2.Text.EndsWith("\") Then TextBox2.Text = TextBox2.Text + "\"
-        ini.path = Class1.HyperspinPath + "\Settings\" + ComboBox1.SelectedItem.ToString + ".ini"
-        ini.IniWriteValue("exe info", "rompath", TextBox1.Text)
-        ini.IniWriteValue("exe info", "romextension", TextBox3.Text)
-        ini.IniWriteValue("video defaults", "path", TextBox2.Text)
+
+        If ComboBox1.SelectedIndex >= 0 Then
+            ini.path = Class1.HyperspinPath + "\Settings\" + ComboBox1.SelectedItem.ToString + ".ini"
+            ini.IniWriteValue("exe info", "rompath", TextBox1.Text)
+            ini.IniWriteValue("exe info", "romextension", TextBox3.Text)
+            ini.IniWriteValue("video defaults", "path", TextBox2.Text)
+        End If
     End Sub
 
     'Update UltraISO path
@@ -1414,6 +1530,24 @@ Public Class Form1
         If v = 8 Then v = 8.25
         ListBox1.Font = New Font(ListBox1.Font.FontFamily, v)
         ListBox2.Font = New Font(ListBox2.Font.FontFamily, v)
+    End Sub
+
+    'Sort system alphabetically
+    Private Sub CheckBox32_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox32.CheckedChanged
+        Dim cur_sys = ""
+        If ComboBox1.SelectedItem IsNot Nothing Then cur_sys = ComboBox1.SelectedItem.ToString
+
+        ComboBox1.Sorted = CheckBox32.Checked
+
+        'Refresh system list, if going from sorted to non_sorted
+        If Not CheckBox32.Checked Then
+            ComboBox1.Items.Clear()
+            For Each r As DataRow In system_list.Rows
+                ComboBox1.Items.Add(r.Item(0))
+            Next
+        End If
+
+        If cur_sys <> "" Then ComboBox1.SelectedItem = cur_sys
     End Sub
 #End Region
 
@@ -1573,7 +1707,7 @@ Public Class Form1
         i.Checked = True
     End Sub
     'Macher / Show filters
-    Private Sub ShowFiltersToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ShowFiltersToolStripMenuItem.Click
+    Private Sub ShowFiltersToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ShowFiltersToolStripMenuItem.Click, Button29.Click
         If ShowFiltersToolStripMenuItem.Checked = False Then ShowFiltersToolStripMenuItem.Checked = True Else ShowFiltersToolStripMenuItem.Checked = False
 
         If ShowFiltersToolStripMenuItem.Checked Then
@@ -1591,14 +1725,39 @@ Public Class Form1
         End If
     End Sub
     'Macher / Autofilter
-    Private Sub AutofilterToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AutofilterToolStripMenuItem.Click
-        If AutofilterToolStripMenuItem.Checked = False Then AutofilterToolStripMenuItem.Checked = True Else AutofilterToolStripMenuItem.Checked = False
+    Private Sub AutofilterToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AutofilterToolStripMenuItem.Click, AutofilterRomDBToolStripMenuItem.Click
+        Dim t = DirectCast(sender, ToolStripMenuItem)
+
+        If t.Checked = False Then
+            AutofilterToolStripMenuItem.Checked = False
+            AutofilterRomDBToolStripMenuItem.Checked = False
+            t.Checked = True
+
+            CheckBox33.Checked = AutofilterToolStripMenuItem.Checked
+            CheckBox34.Checked = AutofilterRomDBToolStripMenuItem.Checked
+        Else
+            t.Checked = False
+            CheckBox33.Checked = False
+            CheckBox34.Checked = False
+        End If
     End Sub
     'Macher / Autofilter regex constructor
     Private Sub AutofilterRegexConstructorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AutofilterRegexConstructorToolStripMenuItem.Click
         If FormD_matcher_autofilter_constructor.Visible Then Exit Sub
         Dim f As New FormD_matcher_autofilter_constructor
         f.ShowDialog(Me)
+
+        'Resave current regex and preset to ini
+        ini.IniFile(Class1.confPath)
+        ini.IniWriteValue("RegEx", "active", Class3_matcher.autofilter_regex)
+        ini.IniWriteValue("RegEx", "opt_strip_br", Class3_matcher.autofilter_regex_options(0).ToString.ToUpper)
+        ini.IniWriteValue("RegEx", "opt_strip_pr", Class3_matcher.autofilter_regex_options(1).ToString.ToUpper)
+        ini.IniWriteValue("RegEx", "opt_out_group", Class3_matcher.autofilter_regex_opt_outGroup.ToString)
+        Dim c As Integer = 1
+        For Each k In Class3_matcher.autofilter_regex_presets
+            ini.IniWriteValue("RegEx", "preset" + c.ToString, k.Key + "^^^" + k.Value)
+            c += 1
+        Next
     End Sub
     'Undo History
     Private Sub UndoHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UndoHistoryToolStripMenuItem.Click
@@ -1652,6 +1811,16 @@ Public Class Form1
     'Tools / Mame romset reducer
     Private Sub MAMERomsetReducerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MAMERomsetReducerToolStripMenuItem.Click
         Dim f As New FormC_mameRomListBuilder
+        f.Show(Me)
+    End Sub
+    'Tools / Pack System
+    Private Sub PackSystemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PackSystemToolStripMenuItem.Click
+        Dim f As New FormJa_PackSystem
+        f.Show(Me)
+    End Sub
+    'Tools / UnPack System
+    Private Sub UnpackSystemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UnpackSystemToolStripMenuItem.Click
+        Dim f As New FormJb_UnPackSystem
         f.Show(Me)
     End Sub
 
@@ -2089,7 +2258,7 @@ Public Class Form1
     End Sub
 #End Region
 
-#Region "All the '...' buttons (open file browser), Notes, Autorenamer"
+#Region "All the '...' buttons (open file browser), Notes, Autorenamer, Autofilter toggles"
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         Dim fd As New FolderBrowserDialog : fd.Description = "Select folder" : fd.ShowDialog()
         TextBox4.Text = fd.SelectedPath
@@ -2121,7 +2290,8 @@ Public Class Form1
 
     'Set HL folder to \Hyperspin\Hyperlaunch
     Private Sub Button37_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button37.Click
-        TextBox18.Text = (Class1.HyperspinPath + "\Hyperlaunch\").Replace("\\", "\").Replace("\\", "\")
+        'TextBox18.Text = (Class1.HyperspinPath + "\Hyperlaunch\").Replace("\\", "\").Replace("\\", "\")
+        TextBox18.Text = (Class1.HyperspinPath + "\RocketLauncher\").Replace("\\", "\").Replace("\\", "\")
     End Sub
 
     'Open Notes
@@ -2132,6 +2302,14 @@ Public Class Form1
     'Iso Converter output to orig dir
     Private Sub CheckBox18_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckBox18.CheckedChanged
         TextBox29.Enabled = Not CheckBox18.Checked
+    End Sub
+
+    'Autofilter toggles in matcher
+    Private Sub CheckBox33_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox33.Click
+        AutofilterToolStripMenuItem.PerformClick()
+    End Sub
+    Private Sub CheckBox34_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox34.Click
+        AutofilterRomDBToolStripMenuItem.PerformClick()
     End Sub
 
     'Show autorenamer

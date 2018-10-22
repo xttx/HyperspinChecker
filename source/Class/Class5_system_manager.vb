@@ -453,17 +453,18 @@ Public Class Class5_system_manager
             If Form1.ComboBox1.SelectedItem IsNot Nothing Then selectedSys = Form1.ComboBox1.SelectedItem.ToString
 
             mainMenu.Clear()
-            Form1.ComboBox1.Items.Clear()
+            Form1.ComboBox1.Items.Clear() : Form1.system_list.Clear()
             For Each x As Xml.XmlNode In mainMenuXml.SelectNodes("/menu/game")
                 mainMenu.Add(x.Attributes("name").Value)
                 Form1.ComboBox1.Items.Add(x.Attributes("name").Value)
+                Form1.system_list.Rows.Add({x.Attributes("name").Value})
             Next
             If Not Systems(sys).Contains("%1%") Then Systems(sys).Add("%1%")
 
             If selectedSys <> "" Then Form1.ComboBox1.SelectedItem = selectedSys
             Form1.ComboBox1.Tag = "0"
         Else
-            'Remove a system to main menu
+            'Remove a system from main menu
             ind = Systems(sys).IndexOf("%1%")
             If ind >= 0 Then Systems(sys).RemoveAt(ind)
             If mainMenu.IndexOf(sysNormalCase) <> -1 Then mainMenu.Remove(sysNormalCase)

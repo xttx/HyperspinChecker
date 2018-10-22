@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -13,7 +13,7 @@
     <AssemblyName>HyperspinChecker</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
   </PropertyGroup>
@@ -32,6 +32,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -48,6 +49,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -72,6 +74,7 @@
     </NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -85,12 +88,13 @@
     <WarningsAsErrors>
     </WarningsAsErrors>
     <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>checker.ico</ApplicationIcon>
+    <ApplicationIcon>images\checker.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SevenZipSharp">
@@ -128,7 +132,9 @@
     <Compile Include="Class\Class4_clrmamepro.vb" />
     <Compile Include="Class\Class5_system_manager.vb" />
     <Compile Include="Class\Class6_hash.vb" />
-    <Compile Include="Class\Module1_Extensions.vb" />
+    <Compile Include="Class\Module1_Extensions.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form3_mameFoldersFilter.Designer.vb">
       <DependentUpon>Form3_mameFoldersFilter.vb</DependentUpon>
     </Compile>
@@ -250,6 +256,30 @@
       <DependentUpon>FormI_RLFadePreview.vb</DependentUpon>
     </Compile>
     <Compile Include="FormI_RLFadePreview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJa2b_RegistryBrowser.Designer.vb">
+      <DependentUpon>FormJa2b_RegistryBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormJa2b_RegistryBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJa2_ScriptConstructor.Designer.vb">
+      <DependentUpon>FormJa2_ScriptConstructor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormJa2_ScriptConstructor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJa_PackSystem.Designer.vb">
+      <DependentUpon>FormJa_PackSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormJa_PackSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJb_UnPackSystem.Designer.vb">
+      <DependentUpon>FormJb_UnPackSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormJb_UnPackSystem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormZ_about.Designer.vb">
@@ -397,6 +427,18 @@
     <EmbeddedResource Include="FormI_RLFadePreview.resx">
       <DependentUpon>FormI_RLFadePreview.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormJa2b_RegistryBrowser.resx">
+      <DependentUpon>FormJa2b_RegistryBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJa2_ScriptConstructor.resx">
+      <DependentUpon>FormJa2_ScriptConstructor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJa_PackSystem.resx">
+      <DependentUpon>FormJa_PackSystem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJb_UnPackSystem.resx">
+      <DependentUpon>FormJb_UnPackSystem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormZ_about.resx">
       <DependentUpon>FormZ_about.vb</DependentUpon>
     </EmbeddedResource>
@@ -513,8 +555,14 @@
     <Content Include="bin\Release\notes.txt" />
     <Content Include="bin\Release\player.swf" />
     <Content Include="bin\Release\SevenZipSharp.dll" />
-    <Content Include="checker.ico" />
-    <Content Include="kubic.ico" />
+    <Content Include="images\checker.ico" />
+    <None Include="images\Sign-Info-icon3.png" />
+    <None Include="images\Sign-Info-icon4.png" />
+    <None Include="Resources\info.png" />
+    <None Include="images\smile.gif" />
+    <None Include="images\check.png" />
+    <None Include="images\no.png" />
+    <None Include="images\saving.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

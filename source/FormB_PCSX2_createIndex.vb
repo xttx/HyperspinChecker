@@ -1,5 +1,13 @@
-﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
+﻿Imports System.Runtime.InteropServices
+Imports Microsoft.VisualBasic.FileIO.FileSystem
 Public Class FormB_PCSX2_createIndex
+    <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)>
+    Private Shared Function FindWindow(ByVal lpClassName As String, ByVal lpWindowName As String) As IntPtr
+    End Function
+    <DllImport("user32.dll", CharSet:=CharSet.Auto)>
+    Public Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByRef lParam As IntPtr) As IntPtr
+    End Function
+
     'Private waitHandle As New System.Threading.AutoResetEvent(False)
     Private waitHandle As Boolean = False
     'Private curIsoFile As String = ""
@@ -62,6 +70,24 @@ Public Class FormB_PCSX2_createIndex
                     Application.DoEvents()
                 Loop
 
+                'p.CloseMainWindow()
+                'Do While p IsNot Nothing
+                '    Dim hndl = FindWindow("wxWindowNR", Nothing)
+                '    If hndl.ToInt64 > 0 Then SendMessage(hndl, &H112, &HF060, IntPtr.Zero)
+
+                '    waitHandle = False
+                '    threadWait = New Threading.Thread(AddressOf threadWaitSub)
+                '    threadWait.Start()
+                '    Do While waitHandle = False
+                '        Application.DoEvents()
+                '    Loop
+
+                '    If Process.GetProcessesByName("PCSX2").Count > 0 Then
+                '        p = Process.GetProcessesByName("PCSX2")(0)
+                '    Else
+                '        p = Nothing
+                '    End If
+                'Loop
                 p.Kill()
                 log("Created")
 

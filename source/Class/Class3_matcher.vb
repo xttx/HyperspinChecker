@@ -3,12 +3,15 @@ Imports System.Text.RegularExpressions
 
 Public Class Class3_matcher
 #Region "Declarations"
+    Dim refr As Boolean = False
     Dim dt_games As New DataTable
     Dim dt_files As New DataTable
     Public crc_for_archs As String = ""
     Dim frm As Form1 = DirectCast(Application.OpenForms("Form1"), Form1)
     Dim countAll As Integer = -1, countFound As Integer = -1, countNotFound As Integer = -1
     Dim countMatchesFiles As Integer = -1, countNotMatchesFiles As Integer = -1, countAllFiles As Integer = -1
+    Dim extra_renamed_files As New List(Of String())
+    Dim lastSelectedList As ListBox = Form1.ListBox1
     Private WithEvents Button5_Associate As Button = frm.Button5_Associate
     Private WithEvents ButtonStrip1 As Button = frm.ButtonStrip1
     Private WithEvents Button7 As Button = frm.Button7
@@ -39,7 +42,9 @@ Public Class Class3_matcher
     Private WithEvents listbox2 As ListBox = frm.ListBox2
     'Friend WithEvents myContextMenu7 As New ToolStripDropDownMenu 'autorenamer
     Public Shared autofilter_regex As String = "%[A-Za-z]{4}[A-Za-z]*"
+    Public Shared autofilter_regex_presets As New Dictionary(Of String, String)
     Public Shared autofilter_regex_options() As Boolean = {False, False}
+    Public Shared autofilter_regex_opt_outGroup As Integer = 0
 
     Dim listbox_searchAsYouTypeStr As String = ""
     Dim WithEvents listbox_searchAsYouTypeTimer As New Timer With {.Interval = 1000, .Enabled = False}
@@ -192,6 +197,7 @@ Public Class Class3_matcher
             If .ListBox1.SelectedIndex < 0 Then MsgBox("Select a database entry to associate a file to.") : Exit Sub
             If .ListBox2.SelectedIndex < 0 Then MsgBox("Select a file to associate to selected database entry.") : Exit Sub
             crc_for_archs = ""
+            extra_renamed_files.Clear()
             Class7_archives.rename = Class7_archives.answer.useDefaultForm1Settings
             Class7_archives.keep_only_one = Class7_archives.answer.useDefaultForm1Settings
             Dim ext As String = ""
@@ -215,7 +221,7 @@ Public Class Class3_matcher
             End If
             '''''''''''END Actual Copy/Rename
 
-            'If we have renamed a good named file, we have to remove it from found
+            'If we have renamed a file, which already had a correct name - we have to remove it from found
             'TODO TEST LOGIC WITH "subFOLDERED MODE"
             Dim l2_selected_file_woExt As String = l2_selected_file.ToLower
             If Not .CheckBox3.Checked Then l2_selected_file_woExt = l2_selected_file.Substring(0, l2_selected_file.LastIndexOf("."))
@@ -231,50 +237,83 @@ Public Class Class3_matcher
             Dim copyToHsFolder As Boolean = .AssocOption_fileInDiffFolder_copyToHS.Checked Or .AssocOption_fileInDiffFolder_moveToHS.Checked
             If src_dir = dst_dir Or copyToHsFolder Then Button20_markAsFound_sub(l1_selected_game, Button20_markAsFound_comboToCol())
 
-            'Moving selected index on box2 (filelist)
-            Dim currentTopIndex As Integer = .ListBox2.TopIndex
-            Dim currentSelectedIndex As Integer = .ListBox2.SelectedIndex
-            .ListBox2.BeginUpdate()
-            If (src_dir = dst_dir Or Not copyToHsFolder) Then
-                'V svoey direktorii ILI (NE v svoey i NE kopiruem) - i.e. src filename is changed
-                If .RadioButton5.Checked Then
-                    'show unmatched files (need to remove file from list)
-                    dt_files.Rows.Remove(DirectCast(.ListBox2.SelectedItem, DataRowView).Row)
-                Else
-                    'show matched or both files (need to change filename and select next file)
-                    DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0) = l1_selected_game + ext
-                    currentTopIndex += 1
-                    currentSelectedIndex += 1
-                End If
+            'Moving selected index on listboxes
+            If .AutofilterRomDBToolStripMenuItem.Checked Then
+                associate_listboxSelectionChange(1, src_dir, dst_dir, l1_selected_game, ext)
+                associate_listboxSelectionChange(2, src_dir, dst_dir, l1_selected_game, ext)
             Else
-                'V drugoy directorii ili v svoey no copiruem - i.e. src filename is not changed
-                currentTopIndex += 1
-                currentSelectedIndex = .ListBox2.SelectedIndex + 1
+                associate_listboxSelectionChange(2, src_dir, dst_dir, l1_selected_game, ext)
+                associate_listboxSelectionChange(1, src_dir, dst_dir, l1_selected_game, ext)
             End If
-            Dim b As New BindingContext : b(dt_files).EndCurrentEdit()
-            If currentTopIndex >= 0 Then .ListBox2.TopIndex = currentTopIndex
-            If .ListBox2.Items.Count > currentSelectedIndex Then .ListBox2.SelectedIndex = currentSelectedIndex Else .ListBox2.SelectedIndex = currentSelectedIndex - 1
-            .ListBox2.EndUpdate()
 
-            'Moving selected index on box1 (DB entry list)
-            If .RadioButton2.Checked And (src_dir = dst_dir Or copyToHsFolder) Then
-                currentSelectedIndex = .ListBox1.SelectedIndex
-                dt_games.Rows.Remove(DirectCast(.ListBox1.SelectedItem, DataRowView).Row)
-            Else
-                currentSelectedIndex = .ListBox1.SelectedIndex + 1
-            End If
-            If .ListBox1.Items.Count > currentSelectedIndex Then .ListBox1.SelectedIndex = currentSelectedIndex Else .ListBox1.SelectedIndex = currentSelectedIndex - 1
+            ''Moving selected index on box2 (filelist)
+            'Dim currentTopIndex2 As Integer = .ListBox2.TopIndex
+            'Dim currentSelectedIndex As Integer = .ListBox2.SelectedIndex
+            '.ListBox2.BeginUpdate()
+            'If (src_dir = dst_dir Or Not copyToHsFolder) Then
+            '    'V svoey direktorii ILI (NE v svoey i NE kopiruem) - i.e. src filename is changed
+            '    If .RadioButton5.Checked Then
+            '        'show unmatched files (need to remove file from list)
+            '        dt_files.Rows.Remove(DirectCast(.ListBox2.SelectedItem, DataRowView).Row)
+            '        For Each extra In extra_renamed_files
+            '            Dim found_rows = dt_files.AsEnumerable.Where(Function(r) r.Item(0).ToString.ToUpper = extra(0).ToUpper)
+            '            If found_rows.Count > 0 Then dt_files.Rows.Remove(found_rows(0))
+            '        Next
+            '    Else
+            '        'show matched or both files (need to change filename and select next file)
+            '        DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0) = l1_selected_game + ext
+            '        For Each extra In extra_renamed_files
+            '            Dim found_rows = dt_files.AsEnumerable.Where(Function(r) r.Item(0).ToString.ToUpper = extra(0).ToUpper)
+            '            If found_rows.Count > 0 Then found_rows(0).Item(0) = extra(1)
+            '        Next
+
+            '        currentTopIndex2 += 1
+            '        currentSelectedIndex += 1
+            '    End If
+            'Else
+            '    'V drugoy directorii ili v svoey no copiruem - i.e. src filename is not changed
+            '    currentTopIndex2 += 1
+            '    currentSelectedIndex = .ListBox2.SelectedIndex + 1
+            'End If
+            'Dim b As New BindingContext : b(dt_files).EndCurrentEdit()
+            'If currentTopIndex2 >= 0 Then .ListBox2.TopIndex = currentTopIndex2
+            'If .ListBox2.Items.Count > currentSelectedIndex Then .ListBox2.SelectedIndex = currentSelectedIndex : listbox_selection_change(listbox2, New EventArgs) Else .ListBox2.SelectedIndex = .ListBox2.Items.Count - 1
+            '.ListBox2.EndUpdate()
+            ''The selected item of listbox is not updated even after source.EndCurrentEdit() and ListBox.EndUpdate(). This line is a tricky way to update it. Better ways here: https://stackoverflow.com/questions/61421/how-do-i-make-a-listbox-refresh-its-item-text
+            'GetType(ListBox).InvokeMember("RefreshItems", Reflection.BindingFlags.NonPublic Or Reflection.BindingFlags.Instance Or Reflection.BindingFlags.InvokeMethod, Nothing, .ListBox2, New Object() {})
+            ''DirectCast(.ListBox2.DataSource, BindingSource).ResetBindings(False)
+
+            ''Moving selected index on box1 (DB entry list)
+            'Dim currentTopIndex1 As Integer = .ListBox1.TopIndex
+            'If .RadioButton2.Checked And (src_dir = dst_dir Or copyToHsFolder) Then
+            '    currentSelectedIndex = .ListBox1.SelectedIndex
+            '    dt_games.Rows.Remove(DirectCast(.ListBox1.SelectedItem, DataRowView).Row)
+            'Else
+            '    currentTopIndex1 += 1
+            '    currentSelectedIndex = .ListBox1.SelectedIndex + 1
+            'End If
+            'If currentTopIndex1 >= 0 Then .ListBox1.TopIndex = currentTopIndex1
+            'If .ListBox1.Items.Count > currentSelectedIndex Then .ListBox1.SelectedIndex = currentSelectedIndex : listbox_selection_change(listbox1, New EventArgs) Else .ListBox1.SelectedIndex = .ListBox1.Items.Count - 1
+
 
             countFound += 1 : countNotFound -= 1
             countMatchesFiles += 1 : countNotMatchesFiles -= 1 : matcher_update_total_labels()
             .Label20.Text = "Ready" : .Label20.BackColor = Color.LightGreen : .Label20.Refresh()
+            lastSelectedList.Focus()
         End With
     End Sub
-
-    'Associate SUB - creating file operation array
+    'Associate SUB - creating primary file operation array (just for selected file yet)
     Public Function associate_copyMove(src_dir As String, dst_dir As String, gameName As String, fName As String, Optional subfoldered_mode As Boolean = False, Optional create_sub_folder As Boolean = False) As String()
         'In RL mode we just copy (or rename) directory, and don't bother with what is inside
-        Dim RL_Mode = subfoldered_mode And frm.ComboBox3.SelectedIndex >= 9
+        Dim RL_Mode = subfoldered_mode And DirectCast(frm.Invoke(Function() frm.ComboBox3.SelectedIndex >= 9), Boolean)
+
+        'We need to get options from main form using invoke, because this sub is called from background thread (i.e. from autorenamer)
+        Dim AssocOption_fileInHsFolder_copy As Boolean = DirectCast(frm.Invoke(Function() frm.AssocOption_fileInHsFolder_copy.Checked), Boolean)
+        Dim AssocOption_fileInHsFolder_move As Boolean = DirectCast(frm.Invoke(Function() frm.AssocOption_fileInHsFolder_move.Checked), Boolean)
+        Dim AssocOption_fileInDiffFolder_copy As Boolean = DirectCast(frm.Invoke(Function() frm.AssocOption_fileInDiffFolder_copy.Checked), Boolean)
+        Dim AssocOption_fileInDiffFolder_move As Boolean = DirectCast(frm.Invoke(Function() frm.AssocOption_fileInDiffFolder_move.Checked), Boolean)
+        Dim AssocOption_fileInDiffFolder_copyToHS As Boolean = DirectCast(frm.Invoke(Function() frm.AssocOption_fileInDiffFolder_copyToHS.Checked), Boolean)
+        Dim AssocOption_fileInDiffFolder_moveToHS As Boolean = DirectCast(frm.Invoke(Function() frm.AssocOption_fileInDiffFolder_moveToHS.Checked), Boolean)
 
         Dim ext As String = ""
         Dim op As New List(Of String())
@@ -288,25 +327,25 @@ Public Class Class3_matcher
                     'src is in HS folder
                     If create_sub_folder Then dst_dir = dst_dir + "\" + gameName
 
-                    If frm.AssocOption_fileInHsFolder_copy.Checked Then
+                    If AssocOption_fileInHsFolder_copy Then
                         'Copy (duplicate)
                         op.Add({"FILECOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
-                    ElseIf frm.AssocOption_fileInHsFolder_move.Checked Then
+                    ElseIf AssocOption_fileInHsFolder_move Then
                         'Move (rename)
                         op.Add({"FILERENAME", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
                     End If
                 Else
                     'src is in different folder
-                    If frm.AssocOption_fileInDiffFolder_copy.Checked Then
+                    If AssocOption_fileInDiffFolder_copy Then
                         'Copy in place
                         op.Add({"FILECOPY", src_dir + "\" + fName, src_dir + "\" + gameName + ext})
-                    ElseIf frm.AssocOption_fileInDiffFolder_move.Checked Then
+                    ElseIf AssocOption_fileInDiffFolder_move Then
                         'Move in place
                         op.Add({"FILERENAME", src_dir + "\" + fName, src_dir + "\" + gameName + ext})
-                    ElseIf frm.AssocOption_fileInDiffFolder_copyToHS.Checked Then
+                    ElseIf AssocOption_fileInDiffFolder_copyToHS Then
                         'Copy to HS folder
                         op.Add({"FILECOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
-                    ElseIf frm.AssocOption_fileInDiffFolder_moveToHS.Checked Then
+                    ElseIf AssocOption_fileInDiffFolder_moveToHS Then
                         'Move to HS folder
                         op.Add({"FILERENAME", src_dir + "\" + fName, dst_dir + "\" + gameName + ext})
                     End If
@@ -324,7 +363,7 @@ Public Class Class3_matcher
 
                 If src_dir = dst_dir Then
                     'src is in HS folder
-                    If frm.AssocOption_fileInHsFolder_copy.Checked Then
+                    If AssocOption_fileInHsFolder_copy Then
                         'Copy (duplicate)
                         op.Add({"DIRCOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + "\"})
 
@@ -334,14 +373,14 @@ Public Class Class3_matcher
                             op = New List(Of String())
                             op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
                         End If
-                    ElseIf frm.AssocOption_fileInHsFolder_move.Checked Then
+                    ElseIf AssocOption_fileInHsFolder_move Then
                         'Move (rename)
                         If Not RL_Mode Then op.Add({"FILERENAME", list.Item(0), dst_dir + "\" + fName + "\" + gameName + ext, "0"})
                         op.Add({"DIRRENAME", src_dir + "\" + fName, gameName, "0"})
                     End If
                 Else
                     'src is in different folder
-                    If frm.AssocOption_fileInDiffFolder_copy.Checked Then
+                    If AssocOption_fileInDiffFolder_copy Then
                         'Copy in place
                         op.Add({"DIRCOPY", src_dir + "\" + fName, src_dir + "\" + gameName + "\"})
 
@@ -351,11 +390,11 @@ Public Class Class3_matcher
                             op = New List(Of String())
                             op.Add({"FILERENAME", src_dir + "\" + gameName + "\" + filename, src_dir + "\" + gameName + "\" + gameName + ext, "0"})
                         End If
-                    ElseIf frm.AssocOption_fileInDiffFolder_move.Checked Then
+                    ElseIf AssocOption_fileInDiffFolder_move Then
                         'Move in place
                         If Not RL_Mode Then op.Add({"FILERENAME", list.Item(0), src_dir + "\" + fName + "\" + gameName + ext, "0"})
                         op.Add({"DIRRENAME", src_dir + "\" + fName, gameName, "0"})
-                    ElseIf frm.AssocOption_fileInDiffFolder_copyToHS.Checked Then
+                    ElseIf AssocOption_fileInDiffFolder_copyToHS Then
                         'Copy to HS folder
                         op.Add({"DIRCOPY", src_dir + "\" + fName, dst_dir + "\" + gameName + "\"})
 
@@ -365,7 +404,7 @@ Public Class Class3_matcher
                             op = New List(Of String())
                             op.Add({"FILERENAME", dst_dir + "\" + gameName + "\" + filename, dst_dir + "\" + gameName + "\" + gameName + ext, "0"})
                         End If
-                    ElseIf frm.AssocOption_fileInDiffFolder_moveToHS.Checked Then
+                    ElseIf AssocOption_fileInDiffFolder_moveToHS Then
                         'Move to HS folder
                         'TODO
                         MsgBox("Moving directory is not yet implimented.")
@@ -380,7 +419,6 @@ Public Class Class3_matcher
         End Try
         Return {"", ext}
     End Function
-
     'Associate SUB - checks .cue and actual performing files operations
     Private Function associate_fileOP(ByVal op As List(Of String())) As String
         Dim msg As String = ""
@@ -414,6 +452,7 @@ Public Class Class3_matcher
                     'Rename image itself
                     Dim foundFileExt = listFilesInCue(0)(0).Substring(listFilesInCue(0)(0).LastIndexOf(".") + 1)
                     tmp.Add({o(0), tmppath + listFilesInCue(0)(0), newpath + newfileNameWOext + "." + foundFileExt})
+                    extra_renamed_files.Add({listFilesInCue(0)(0), newfileNameWOext + "." + foundFileExt})
 
                     'Rename imageName in .CUE
                     associate_rewriteCue(o(1), newfileNameWOext + "." + foundFileExt)
@@ -421,6 +460,7 @@ Public Class Class3_matcher
                     'if FILECOPY this will copy audio files
                     For Each f As String In listFilesInCue(1)
                         tmp.Add({o(0), tmppath + f, newpath + f})
+                        extra_renamed_files.Add({f, f})
                     Next
 
                     'just to put 'restore cue from backup' action in UNDO list
@@ -436,9 +476,11 @@ Public Class Class3_matcher
                                 If listFilesInCue(0)(0).ToLower = tmpfileName.ToLower Then
                                     'tmp.Add({o(0), f, newpath + f.Substring(f.LastIndexOf("\") + 1)})
                                     tmp.Add({o(0), f, newpath + newfileNameWOext + ".cue"})
+                                    extra_renamed_files.Add({IO.Path.GetFileName(f), newfileNameWOext + ".cue"})
                                     associate_rewriteCue(f, newfileNameWOext + "." + tmpExt)
                                     For Each fA As String In listFilesInCue(1)
                                         tmp.Add({o(0), tmppath + fA, newpath + fA})
+                                        extra_renamed_files.Add({fA, fA})
                                     Next
                                 End If
                             Next
@@ -448,12 +490,14 @@ Public Class Class3_matcher
 
                 'check pairs (mdf/mds list)
                 For Each l As String In frm.ListBox4.Items
-                    If l.ToLower.Contains(tmpExt.ToLower) Then
+                    l = l.Replace(" ", "")
+                    If l.ToLower.Split(","c).Contains(tmpExt.ToLower) Then
                         For Each ext As String In l.Split(","c)
                             If ext.Trim.ToLower = tmpExt.ToLower Then Continue For
                             If FileSystem.FileExists(tmppath + tmpfileNameWOext + "." + ext) Then
                                 Dim newfile = o(2).Substring(0, o(2).LastIndexOf(".") + 1) + ext
                                 tmp.Add({o(0), tmppath + tmpfileNameWOext + "." + ext, newfile})
+                                extra_renamed_files.Add({tmpfileNameWOext + "." + ext, IO.Path.GetFileName(newfile)})
                             End If
                         Next
                     End If
@@ -465,6 +509,7 @@ Public Class Class3_matcher
                     For Each pcm In pcm_files
                         Dim newfile = o(2).Substring(0, o(2).LastIndexOf(".")) + pcm.Substring(pcm.LastIndexOf("-"))
                         tmp.Add({o(0), pcm, newfile})
+                        extra_renamed_files.Add({IO.Path.GetFileName(pcm), IO.Path.GetFileName(newfile)})
                     Next
                 End If
             End If
@@ -592,7 +637,6 @@ Public Class Class3_matcher
         End Try
         Return ""
     End Function
-
     'Associate SUB - list files listed in .cue
     Private Function associate_listFilesFromCue(ByVal filename As String, Optional ByVal listAudio As Boolean = True) As List(Of String)()
         Dim line As String
@@ -619,7 +663,6 @@ Public Class Class3_matcher
         FileClose(1)
         Return list
     End Function
-
     'Associate SUB - rewrite .cue
     Private Sub associate_rewriteCue(ByVal filename As String, ByVal replaceImageBy As String)
         Dim line As String
@@ -662,6 +705,67 @@ Public Class Class3_matcher
             PrintLine(1, s)
         Next
         FileClose(1)
+    End Sub
+    'Associate SUB - listboxes selection changing
+    Private Sub associate_listboxSelectionChange(ind As Integer, src_dir As String, dst_dir As String, selected_game As String, ext As String)
+        With Form1
+            Dim copyToHsFolder As Boolean = .AssocOption_fileInDiffFolder_copyToHS.Checked Or .AssocOption_fileInDiffFolder_moveToHS.Checked
+
+            If ind = 1 Then
+                'Moving selected index on box1 (DB entry list)
+                Dim currentSelectedIndex As Integer = -1
+                Dim currentTopIndex1 As Integer = .ListBox1.TopIndex
+                If .RadioButton2.Checked And (src_dir = dst_dir Or copyToHsFolder) Then
+                    currentSelectedIndex = .ListBox1.SelectedIndex
+                    dt_games.Rows.Remove(DirectCast(.ListBox1.SelectedItem, DataRowView).Row)
+                Else
+                    currentTopIndex1 += 1
+                    currentSelectedIndex = .ListBox1.SelectedIndex + 1
+                End If
+                If currentTopIndex1 >= 0 Then .ListBox1.TopIndex = currentTopIndex1
+                If .ListBox1.Items.Count > currentSelectedIndex Then .ListBox1.SelectedIndex = currentSelectedIndex : listbox_selection_change(listbox1, New EventArgs) Else .ListBox1.SelectedIndex = .ListBox1.Items.Count - 1
+            End If
+
+            If ind = 2 Then
+                'Moving selected index on box2 (filelist)
+                Dim currentTopIndex2 As Integer = .ListBox2.TopIndex
+                Dim currentSelectedIndex As Integer = .ListBox2.SelectedIndex
+                .ListBox2.BeginUpdate()
+                If (src_dir = dst_dir Or Not copyToHsFolder) Then
+                    'V svoey direktorii ILI (NE v svoey i NE kopiruem) - i.e. src filename is changed
+                    If .RadioButton5.Checked Then
+                        'show unmatched files (need to remove file from list)
+                        dt_files.Rows.Remove(DirectCast(.ListBox2.SelectedItem, DataRowView).Row)
+                        For Each extra In extra_renamed_files
+                            Dim found_rows = dt_files.AsEnumerable.Where(Function(r) r.Item(0).ToString.ToUpper = extra(0).ToUpper)
+                            If found_rows.Count > 0 Then dt_files.Rows.Remove(found_rows(0))
+                        Next
+                    Else
+                        'show matched or both files (need to change filename and select next file)
+                        DirectCast(.ListBox2.SelectedItem, DataRowView).Item(0) = selected_game + ext
+                        For Each extra In extra_renamed_files
+                            Dim found_rows = dt_files.AsEnumerable.Where(Function(r) r.Item(0).ToString.ToUpper = extra(0).ToUpper)
+                            If found_rows.Count > 0 Then found_rows(0).Item(0) = extra(1)
+                        Next
+
+                        currentTopIndex2 += 1
+                        currentSelectedIndex += 1
+                    End If
+                Else
+                    'V drugoy directorii ili v svoey no copiruem - i.e. src filename is not changed
+                    currentTopIndex2 += 1
+                    currentSelectedIndex = .ListBox2.SelectedIndex + 1
+                End If
+                Dim b As New BindingContext : b(dt_files).EndCurrentEdit()
+                If .ListBox2.Items.Count > currentSelectedIndex Then .ListBox2.SelectedIndex = currentSelectedIndex : listbox_selection_change(listbox2, New EventArgs) Else .ListBox2.SelectedIndex = .ListBox2.Items.Count - 1
+                .ListBox2.EndUpdate()
+                'The selected item of listbox is not updated even after source.EndCurrentEdit() and ListBox.EndUpdate(). This line is a tricky way to update it. Better ways here: https://stackoverflow.com/questions/61421/how-do-i-make-a-listbox-refresh-its-item-text
+                GetType(ListBox).InvokeMember("RefreshItems", Reflection.BindingFlags.NonPublic Or Reflection.BindingFlags.Instance Or Reflection.BindingFlags.InvokeMethod, Nothing, .ListBox2, New Object() {})
+                'DirectCast(.ListBox2.DataSource, BindingSource).ResetBindings(False)
+
+                If currentTopIndex2 >= 0 Then .ListBox2.TopIndex = currentTopIndex2
+            End If
+        End With
     End Sub
 
     'UNDO click
@@ -1174,45 +1278,51 @@ Public Class Class3_matcher
     End Sub
 
     'Autofilter
-    Private Sub listbox1_selection_change(sender As Object, e As System.EventArgs) Handles listbox1.SelectedIndexChanged
-        If frm.AutofilterToolStripMenuItem.Checked Then
-            If frm.ComboBox3.SelectedIndex = -1 Then Exit Sub
-            If countAll <= 0 Then Exit Sub
-            If listbox1.SelectedIndex < 0 Then Exit Sub
+    Private Sub listbox_selection_change(sender As Object, e As System.EventArgs) Handles listbox1.SelectedIndexChanged, listbox2.SelectedIndexChanged
+        If refr Then Exit Sub
+        Dim l = DirectCast(sender, ListBox)
 
-            Dim s = listbox1.SelectedItem.ToString
+        If l Is listbox1 And Not frm.AutofilterToolStripMenuItem.Checked Then Exit Sub
+        If l Is listbox2 And Not frm.AutofilterRomDBToolStripMenuItem.Checked Then Exit Sub
 
-            Dim tmpl As String = ""
-            Dim regex As String = autofilter_regex
-            If regex.StartsWith("%") Then regex = regex.Substring(1) : tmpl = "%"
-            Dim rgx As New System.Text.RegularExpressions.Regex(regex)
-            Dim m As MatchCollection = rgx.Matches(s)
-            If m.Count = 0 Then TextBox27.Text = "" : Exit Sub
-            If m.Item(0).Groups.Count > 1 Then
-                tmpl = tmpl + m.Item(0).Groups(1).Value
-            Else
-                tmpl = tmpl + m.Item(0).Groups(0).Value
-            End If
+        If frm.ComboBox3.SelectedIndex = -1 Then Exit Sub
+        If countAll <= 0 Then Exit Sub
+        If l.SelectedIndex < 0 Then Exit Sub
 
-            If autofilter_regex_options(0) = True Then
-                If tmpl.IndexOf("[") > 0 Then tmpl = tmpl.Substring(0, tmpl.LastIndexOf("["))
-            End If
-            If autofilter_regex_options(1) = True Then
-                If tmpl.IndexOf("(") > 0 Then tmpl = tmpl.Substring(0, tmpl.LastIndexOf("("))
-            End If
-            TextBox27.Text = tmpl.Trim
+        Dim s = DirectCast(l.SelectedItem, DataRowView).Item(0).ToString
 
-            'Old realisation
-            'If s.IndexOf("(") >= 0 Then s = s.Substring(0, s.IndexOf("("))
-            'If s.IndexOf("[") >= 0 Then s = s.Substring(0, s.IndexOf("["))
-
-            'Dim rgx As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9 -]")
-            's = rgx.Replace(s, "")
-
-            'For Each word As String In s.Split({" "}, StringSplitOptions.None)
-            'If word.Length > 3 Then TextBox27.Text = "%" + word : Exit Sub
-            'Next
+        Dim tmpl As String = ""
+        Dim regex As String = autofilter_regex
+        If regex.StartsWith("%") Then regex = regex.Substring(1) : tmpl = "%"
+        Dim rgx As New System.Text.RegularExpressions.Regex(regex)
+        Dim m As MatchCollection = rgx.Matches(s)
+        If m.Count = 0 Then TextBox27.Text = "" : Exit Sub
+        If m.Item(0).Groups.Count > 1 Then
+            tmpl = tmpl + m.Item(0).Groups(1).Value
+        Else
+            tmpl = tmpl + m.Item(0).Groups(0).Value
         End If
+
+        If autofilter_regex_options(0) = True Then
+            If tmpl.IndexOf("[") > 0 Then tmpl = tmpl.Substring(0, tmpl.LastIndexOf("["))
+        End If
+        If autofilter_regex_options(1) = True Then
+            If tmpl.IndexOf("(") > 0 Then tmpl = tmpl.Substring(0, tmpl.LastIndexOf("("))
+        End If
+
+        If l Is listbox1 Then refr = True : TextBox27.Text = tmpl.Trim : refr = False
+        If l Is listbox2 Then refr = True : TextBox26.Text = tmpl.Trim : refr = False
+
+        'Old realisation
+        'If s.IndexOf("(") >= 0 Then s = s.Substring(0, s.IndexOf("("))
+        'If s.IndexOf("[") >= 0 Then s = s.Substring(0, s.IndexOf("["))
+
+        'Dim rgx As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9 -]")
+        's = rgx.Replace(s, "")
+
+        'For Each word As String In s.Split({" "}, StringSplitOptions.None)
+        'If word.Length > 3 Then TextBox27.Text = "%" + word : Exit Sub
+        'Next
     End Sub
 
     'Listbox search as you type logic
@@ -1247,6 +1357,11 @@ Public Class Class3_matcher
     Private Sub ListBox1_SearchAsYouTypeTimer() Handles listbox_searchAsYouTypeTimer.Tick
         listbox_searchAsYouTypeStr = ""
         listbox_searchAsYouTypeTimer.Enabled = False
+    End Sub
+
+    'LastFocusedListbox changed
+    Private Sub LastFocusedListboxChanged(sender As Object, e As EventArgs) Handles listbox1.GotFocus, listbox2.GotFocus
+        lastSelectedList = DirectCast(sender, ListBox)
     End Sub
 
     'Show autorenamer context menu

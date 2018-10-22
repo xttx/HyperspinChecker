@@ -4,7 +4,10 @@
 
     Dim aspect As Double = 0
     Dim aspect_adjust_height As Integer = 0
+    Dim Fade_Base_Resolution_Width As Integer = 0
+    Dim Fade_Base_Resolution_Height As Integer = 0
 
+    Dim base_fade_aspect As Double = 1
     Dim l4_current_frame As Integer = 0
     Dim WithEvents l4_timer As New Timer With {.Enabled = False}
 
@@ -52,8 +55,8 @@
         ini_glb.path = Class1.HyperlaunchPath + "\Settings\Global RocketLauncher.ini"
         ini_sys.path = Class1.HyperlaunchPath + "\Settings\" + sys + "\RocketLauncher.ini"
 
-        Dim Fade_Base_Resolution_Width = getFromIni("Fade", "Fade_Base_Resolution_Width", 1920)
-        Dim Fade_Base_Resolution_Height = getFromIni("Fade", "Fade_Base_Resolution_Height", 1080)
+        Fade_Base_Resolution_Width = getFromIni("Fade", "Fade_Base_Resolution_Width", 1920)
+        Fade_Base_Resolution_Height = getFromIni("Fade", "Fade_Base_Resolution_Height", 1080)
         layer_params(1).c = ColorTranslator.FromHtml("#" + getFromIni("Fade", "Fade_Layer_1_Color", "FF000000")) 'argb
         Dim Fade_Layer_1_Align_Image = getFromIni("Fade", "Fade_Layer_1_Align_Image", "Align to Top Left")
         Dim Fade_Layer_2_Prefix = getFromIni("Fade", "Fade_Layer_2_Prefix", "Layer 2")
@@ -94,6 +97,7 @@
         Dim Fade_Layer_4_Padding = getFromIni("Fade", "Fade_Layer_4_Padding", 0)
         Dim Fade_Layer_4_FPS = getFromIni("Fade", "Fade_Layer_4_FPS", 10)
         Dim Fade_Animated_Gif_Transparent_Color = getFromIni("Fade", "Fade_Animated_Gif_Transparent_Color", "FFFFFF")
+        base_fade_aspect = Fade_Base_Resolution_Width / Fade_Base_Resolution_Height
 
         Dim txt_ind = 0
         Dim Fade_Font = getFromIni("Fade", "Fade_Font", "Arial")
@@ -141,6 +145,7 @@
                 Dim subfolder = txt_name
                 If subfolder.ToLower = "system_name" Then subfolder = "system"
                 tb = getImage(sys, rom, subfolder, param.txt)
+                param.type = "IMAGE"
             Else
                 Dim tg = Graphics.FromImage(tb)
                 Dim ts = tg.MeasureString(param.txt, param.f)
@@ -148,34 +153,35 @@
                 tg = Graphics.FromImage(tb)
                 tg.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAlias
                 tg.DrawString(param.txt, param.f, Brushes.White, 1, 1)
+                param.type = "TEXT"
             End If
 
             If tb IsNot Nothing Then
                 'tb.Save("D:\Documents\My_Progs\HyperspinChecker\RL_FADE_TEST_" + txt_name + ".png", Imaging.ImageFormat.Png)
                 If param.bounds.Width <> 0 Or param.bounds.Height <> 0 Then
-                    Dim w, h As Integer
-                    Dim aspect = tb.Width / tb.Height
-                    If param.bounds.Width <> 0 And param.bounds.Width < tb.Width Then w = param.bounds.Width Else w = tb.Width
-                    If param.bounds.Height <> 0 And param.bounds.Height < tb.Height Then h = param.bounds.Height Else h = tb.Height
+                    'Dim w, h As Integer
+                    'Dim aspect = tb.Width / tb.Height
+                    'If param.bounds.Width <> 0 And param.bounds.Width < tb.Width Then w = param.bounds.Width Else w = tb.Width
+                    'If param.bounds.Height <> 0 And param.bounds.Height < tb.Height Then h = param.bounds.Height Else h = tb.Height
 
-                    Dim ttb As Bitmap
-                    Dim calculated_w = CInt(h * aspect)
-                    Dim calculated_h = CInt(w / aspect)
-                    If calculated_w <= w Then
-                        ttb = New Bitmap(calculated_w, h)
-                    Else
-                        ttb = New Bitmap(w, calculated_h)
-                    End If
+                    'Dim ttb As Bitmap
+                    'Dim calculated_w = CInt(h * aspect)
+                    'Dim calculated_h = CInt(w / aspect)
+                    'If calculated_w <= w Then
+                    '    ttb = New Bitmap(calculated_w, h)
+                    'Else
+                    '    ttb = New Bitmap(w, calculated_h)
+                    'End If
 
-                    Dim g = Graphics.FromImage(ttb)
-                    'set high quality resizing
-                    g.CompositingMode = Drawing2D.CompositingMode.SourceCopy
-                    g.CompositingQuality = Drawing2D.CompositingQuality.HighQuality
-                    g.InterpolationMode = Drawing2D.InterpolationMode.HighQualityBicubic
-                    g.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
-                    g.PixelOffsetMode = Drawing2D.PixelOffsetMode.HighQuality
-                    g.DrawImage(tb, New Rectangle(0, 0, ttb.Width, ttb.Height))
-                    tb = ttb
+                    'Dim g = Graphics.FromImage(ttb)
+                    ''set high quality resizing
+                    'g.CompositingMode = Drawing2D.CompositingMode.SourceCopy
+                    'g.CompositingQuality = Drawing2D.CompositingQuality.HighQuality
+                    'g.InterpolationMode = Drawing2D.InterpolationMode.HighQualityBicubic
+                    'g.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+                    'g.PixelOffsetMode = Drawing2D.PixelOffsetMode.HighQuality
+                    'g.DrawImage(tb, New Rectangle(0, 0, ttb.Width, ttb.Height))
+                    'tb = ttb
                 End If
 
                 'tb.Save("D:\Documents\My_Progs\HyperspinChecker\RL_FADE_TEST_" + txt_name + "_resized.png", Imaging.ImageFormat.Png)
@@ -192,9 +198,13 @@
 
         b = New Bitmap(Fade_Base_Resolution_Width, Fade_Base_Resolution_Height)
         g = Graphics.FromImage(b)
+        'g.CompositingQuality = Drawing2D.CompositingQuality.HighQuality
+        'g.InterpolationMode = Drawing2D.InterpolationMode.
+        'g.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        'g.PixelOffsetMode = Drawing2D.PixelOffsetMode.HighQuality
 
         'Layer 1
-        l1 = getImage(sys, rom, "", "layer1")
+        l1 = getImage(sys, rom, "", "layer 1")
         'Layer 2
         If Fade_Layer_2_Prefix <> "" Then l2 = getImage(sys, rom, "", Fade_Layer_2_Prefix)
         'Layer 3 static
@@ -217,30 +227,89 @@
         End If
 
         Me.BackgroundImage = b
-        Me.BackgroundImageLayout = ImageLayout.Stretch
+        'Me.BackgroundImageLayout = ImageLayout.Stretch
+        Me.BackgroundImageLayout = ImageLayout.None
         drawAllLayers()
     End Sub
 
     Sub drawAllLayers()
+        Dim currentAspect = Me.Width / Me.Height
+
+        'TEST NEW
+        g.Clear(layer_params(1).c)
+        If l1 IsNot Nothing Then g.DrawImage(l1, 0, 0, Me.Width, Me.Height)
+        drawLayer(l2, layer_params(2).align, New Rectangle(layer_params(2).bounds.X, layer_params(2).bounds.Y, layer_params(2).bounds.Width, layer_params(2).bounds.Height))
+        drawLayer(l3s, layer_params(3).align, New Rectangle(layer_params(3).bounds.X, layer_params(3).bounds.Y, layer_params(3).bounds.Width, layer_params(3).bounds.Height))
+        drawLayer(l3a, layer_params(4).align, New Rectangle(layer_params(4).bounds.X, layer_params(4).bounds.Y, layer_params(4).bounds.Width, layer_params(4).bounds.Height))
+        If l4 IsNot Nothing Then drawLayer(l4(l4_current_frame), layer_params(5).align, New Rectangle(layer_params(5).bounds.X, layer_params(5).bounds.Y, layer_params(5).bounds.Width, layer_params(5).bounds.Height), True)
+
+        'INFO Layers
+        For n As Integer = 0 To text_params.Count - 1
+            Dim w, h As Integer
+            Dim newBounds As Rectangle = text_params(n).bounds
+            Dim scale = New PointF(CSng(Me.Width / Fade_Base_Resolution_Width), CSng(Me.Height / Fade_Base_Resolution_Height))
+            Dim scale_factor As Double = 1
+
+            If text_params(n).type = "TEXT" Then
+                w = CInt(lt(n).Width * scale.X)
+                h = CInt(lt(n).Height * scale.Y)
+            ElseIf text_params(n).bounds.Width <> 0 And text_params(n).bounds.Height <> 0 Then
+                w = CInt(text_params(n).bounds.Width * scale.X)
+                h = CInt(text_params(n).bounds.Height * scale.Y)
+            ElseIf text_params(n).bounds.Width <> 0 Then
+                scale_factor = text_params(n).bounds.Width / lt(n).Width * scale.X
+                w = CInt(lt(n).Width * scale_factor)
+                h = CInt(lt(n).Height * scale_factor)
+            ElseIf text_params(n).bounds.Height <> 0 Then
+                scale_factor = text_params(n).bounds.Height / lt(n).Height * scale.Y
+                w = CInt(lt(n).Width * scale_factor)
+                h = CInt(lt(n).Height * scale_factor)
+            Else
+                w = CInt(lt(n).Width * scale.X)
+                h = CInt(lt(n).Height * scale.Y)
+            End If
+
+            'Draw image
+            newBounds = rescaleBounds(newBounds, Scale)
+            g.DrawImage(lt(n), newBounds.X, newBounds.Y, w, h)
+        Next
+
+        Me.Refresh()
+        Exit Sub
+        'END TEST
+
         g.Clear(layer_params(1).c)
         If l1 IsNot Nothing Then g.DrawImage(l1, 0, 0, b.Width, b.Height)
         drawLayer(l2, layer_params(2).align, New Rectangle(layer_params(2).bounds.X, layer_params(2).bounds.Y, layer_params(2).bounds.Width, layer_params(2).bounds.Height))
         drawLayer(l3s, layer_params(3).align, New Rectangle(layer_params(3).bounds.X, layer_params(3).bounds.Y, layer_params(3).bounds.Width, layer_params(3).bounds.Height))
         drawLayer(l3a, layer_params(4).align, New Rectangle(layer_params(4).bounds.X, layer_params(4).bounds.Y, layer_params(4).bounds.Width, layer_params(4).bounds.Height))
-        If l4 IsNot Nothing Then drawLayer(l4(l4_current_frame), layer_params(5).align, New Rectangle(layer_params(5).bounds.X, layer_params(5).bounds.Y, layer_params(5).bounds.Width, layer_params(5).bounds.Height))
+        If l4 IsNot Nothing Then drawLayer(l4(l4_current_frame), layer_params(5).align, New Rectangle(layer_params(5).bounds.X, layer_params(5).bounds.Y, layer_params(5).bounds.Width, layer_params(5).bounds.Height), True)
 
+        'Info layers
         For n As Integer = 0 To text_params.Count - 1
-            g.DrawImage(lt(n), text_params(n).bounds.X, text_params(n).bounds.Y)
+            'ASPECT CORRECTION
+            Dim new_h = CInt(lt(n).Height / base_fade_aspect * currentAspect)
+
+            'Draw image
+            g.DrawImage(lt(n), text_params(n).bounds.X, text_params(n).bounds.Y, lt(n).Width, new_h)
         Next
 
         Me.Refresh()
     End Sub
-
-    Sub drawLayer(l As Bitmap, align As String, bounds As Rectangle)
+    Function rescaleBounds(r As Rectangle, scale As PointF) As Rectangle
+        Return New Rectangle(CInt(Math.Round(r.X * scale.X)), CInt(Math.Round(r.Y * scale.Y)), CInt(Math.Round(r.Width * scale.X)), CInt(Math.Round(r.Height * scale.Y)))
+    End Function
+    Sub drawLayer(l As Bitmap, align As String, bounds As Rectangle, Optional dont_rescale As Boolean = False)
         If l Is Nothing Then Exit Sub
 
-        Dim center_X = CInt(b.Width / 2)
-        Dim center_Y = CInt(b.Height / 2)
+        'TEST NEW ROUTINE
+        Dim scale = New PointF(CSng(Me.Width / Fade_Base_Resolution_Width), CSng(Me.Height / Fade_Base_Resolution_Height))
+        bounds = rescaleBounds(bounds, scale)
+
+        'Dim center_X = CInt(b.Width / 2)
+        'Dim center_Y = CInt(b.Height / 2)
+        Dim center_X = CInt(Me.Width / 2)
+        Dim center_Y = CInt(Me.Height / 2)
 
         Select Case align.ToUpper
             Case "Stretch and Lose Aspect".ToUpper
@@ -256,7 +325,10 @@
                 End If
                 g.DrawImage(l, 0, 0, CInt(b.Width * scale_factor), CInt(b.Height * scale_factor))
             Case "Center".ToUpper
-                g.DrawImage(l, center_X - CInt(l.Width / 2), center_Y - CInt(l.Height / 2), l.Width, l.Height)
+                Dim w = CInt(l.Width * scale.X)
+                Dim h = CInt(l.Height * scale.Y)
+                'g.DrawImage(l, center_X - CInt(l.Width / 2), center_Y - CInt(l.Height / 2), l.Width, l.Height)
+                g.DrawImage(l, center_X - CInt(w / 2), center_Y - CInt(h / 2), w, h)
             Case "Top Left".ToUpper
                 g.DrawImage(l, 0, 0, l.Width, l.Height)
             Case "Top Right".ToUpper
@@ -278,6 +350,12 @@
                 Dim h = bounds.Height
                 If w = 0 Then w = l.Width
                 If h = 0 Then h = l.Height
+
+                If Not dont_rescale Then
+                    w = CInt(w * scale.X)
+                    h = CInt(h * scale.Y)
+                End If
+
                 g.DrawImage(l, bounds.X, bounds.Y, w, h)
         End Select
     End Sub
@@ -290,6 +368,7 @@
 
     Function getImage(sys As String, rom As String, subfolder As String, prefix As String) As Bitmap
         Dim fade_path As New List(Of String)
+        fade_path.Add(Class1.HyperlaunchPath + "\Media\" + subfolder + "\_Default")
         fade_path.Add(Class1.HyperlaunchPath + "\Media\Fade\" + sys + "\" + rom + "\" + subfolder)
         fade_path.Add(Class1.HyperlaunchPath + "\Media\Fade\" + sys + "\_Default\" + subfolder)
         fade_path.Add(Class1.HyperlaunchPath + "\Media\Fade\_Default\" + subfolder)
@@ -325,7 +404,7 @@
         Return Double.Parse(t)
     End Function
 
-    'Resize aspect
+    'Resize form - keep aspect
     Private Sub FormI_RLFadePreview_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.FormBorderStyle = FormBorderStyle.None Then Exit Sub
         Height = CInt(Width * aspect) + aspect_adjust_height

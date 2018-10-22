@@ -35,6 +35,7 @@ Partial Class FormD_matcher_autofilter_constructor
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -48,7 +49,12 @@ Partial Class FormD_matcher_autofilter_constructor
         Me.Button9 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -138,7 +144,7 @@ Partial Class FormD_matcher_autofilter_constructor
         '
         Me.Button1.Location = New System.Drawing.Point(6, 19)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 24)
+        Me.Button1.Size = New System.Drawing.Size(83, 24)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "Number"
         Me.Button1.UseVisualStyleBackColor = True
@@ -147,7 +153,7 @@ Partial Class FormD_matcher_autofilter_constructor
         '
         Me.Button2.Location = New System.Drawing.Point(6, 49)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(106, 24)
+        Me.Button2.Size = New System.Drawing.Size(83, 24)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Letter"
         Me.Button2.UseVisualStyleBackColor = True
@@ -163,6 +169,8 @@ Partial Class FormD_matcher_autofilter_constructor
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button14)
+        Me.GroupBox1.Controls.Add(Me.Button13)
         Me.GroupBox1.Controls.Add(Me.Button10)
         Me.GroupBox1.Controls.Add(Me.Button8)
         Me.GroupBox1.Controls.Add(Me.Button7)
@@ -176,15 +184,24 @@ Partial Class FormD_matcher_autofilter_constructor
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 105)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(284, 213)
+        Me.GroupBox1.Size = New System.Drawing.Size(325, 213)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.GroupBox1.Text = "RegEx parts"
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(6, 79)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(107, 24)
+        Me.Button10.TabIndex = 20
+        Me.Button10.Text = "Any Character"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'Button8
         '
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button8.Location = New System.Drawing.Point(140, 88)
+        Me.Button8.Location = New System.Drawing.Point(192, 88)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(127, 24)
         Me.Button8.TabIndex = 19
@@ -221,7 +238,7 @@ Partial Class FormD_matcher_autofilter_constructor
         'RadioButton5
         '
         Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(141, 65)
+        Me.RadioButton5.Location = New System.Drawing.Point(192, 65)
         Me.RadioButton5.Name = "RadioButton5"
         Me.RadioButton5.Size = New System.Drawing.Size(98, 17)
         Me.RadioButton5.TabIndex = 15
@@ -231,7 +248,7 @@ Partial Class FormD_matcher_autofilter_constructor
         'RadioButton4
         '
         Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(141, 42)
+        Me.RadioButton4.Location = New System.Drawing.Point(192, 42)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(61, 17)
         Me.RadioButton4.TabIndex = 14
@@ -242,7 +259,7 @@ Partial Class FormD_matcher_autofilter_constructor
         '
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Checked = True
-        Me.RadioButton3.Location = New System.Drawing.Point(141, 19)
+        Me.RadioButton3.Location = New System.Drawing.Point(192, 19)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(54, 17)
         Me.RadioButton3.TabIndex = 13
@@ -304,20 +321,68 @@ Partial Class FormD_matcher_autofilter_constructor
         Me.CheckBox2.Text = "Strip ( )"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
-        'Button10
+        'ComboBox1
         '
-        Me.Button10.Location = New System.Drawing.Point(6, 79)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(106, 24)
-        Me.Button10.TabIndex = 20
-        Me.Button10.Text = "Any Character"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(87, 362)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(150, 21)
+        Me.ComboBox1.TabIndex = 19
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 365)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(45, 13)
+        Me.Label6.TabIndex = 20
+        Me.Label6.Text = "Presets:"
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(243, 362)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(44, 21)
+        Me.Button11.TabIndex = 21
+        Me.Button11.Text = "Load"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(293, 362)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(44, 21)
+        Me.Button12.TabIndex = 22
+        Me.Button12.Text = "Save"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(95, 19)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(83, 24)
+        Me.Button13.TabIndex = 21
+        Me.Button13.Text = "Not Number"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(96, 49)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(82, 24)
+        Me.Button14.TabIndex = 22
+        Me.Button14.Text = "Not Letter"
+        Me.Button14.UseVisualStyleBackColor = True
         '
         'FormD_matcher_autofilter_constructor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(544, 397)
+        Me.Controls.Add(Me.Button12)
+        Me.Controls.Add(Me.Button11)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button9)
@@ -371,4 +436,10 @@ Partial Class FormD_matcher_autofilter_constructor
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents Button10 As System.Windows.Forms.Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Button11 As Button
+    Friend WithEvents Button12 As Button
+    Friend WithEvents Button14 As Button
+    Friend WithEvents Button13 As Button
 End Class

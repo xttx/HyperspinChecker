@@ -1,7 +1,10 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Text
+Imports WindowsApplication1
 
 Public Class IniFileApi
+    Implements INI_File_Class_Interface
+
     Public path As String
     <DllImport("kernel32.dll", SetLastError:=True)> Private Shared Function WritePrivateProfileString(ByVal lpAppName As String, ByVal lpKeyName As String, ByVal lpString As String, ByVal lpFileName As String) As Boolean
     End Function
@@ -15,11 +18,11 @@ Public Class IniFileApi
         path = INIPath
     End Sub
 
-    Public Sub IniWriteValue(Section As String, Key As String, Value As String)
+    Public Sub IniWriteValue(Section As String, Key As String, Value As String) Implements INI_File_Class_Interface.IniWriteValue
         WritePrivateProfileString(Section, Key, Value, path)
     End Sub
 
-    Public Function IniReadValue(Section As String, Key As String) As String
+    Public Function IniReadValue(Section As String, Key As String) As String Implements INI_File_Class_Interface.IniReadValue
         'Dim temp As New StringBuilder(255)
         Dim temp As New String(" "c, 255)
         Dim i As Integer = GetPrivateProfileString(Section, Key, "", temp, 255, path)
@@ -36,7 +39,7 @@ Public Class IniFileApi
         Return t.Trim
     End Function
 
-    Public Function IniListKey(Optional section As String = Nothing) As String()
+    Public Function IniListKey(Optional section As String = Nothing) As String() Implements INI_File_Class_Interface.IniListKey
         'Dim temp As New String(" "c, 4096)
         Dim temp As New String(" "c, 65536)
         'Dim i As Integer = GetPrivateProfileString(section, Nothing, "", temp, 4096, path)
@@ -45,4 +48,8 @@ Public Class IniFileApi
         l.RemoveRange(l.Count - 2, 2)
         Return l.ToArray
     End Function
+
+    Public Sub empty() Implements INI_File_Class_Interface.save
+        'save is done in real time, so no need for this
+    End Sub
 End Class

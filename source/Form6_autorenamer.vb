@@ -70,6 +70,7 @@ Public Class Form6_autorenamer
         'For Each item As DataRowView In Form1.ListBox2.Items
         For Each item As DataRowView In lists.list2
             curRomName = item.Item(0).ToString.ToUpper.Trim
+            curRomName = IO.Path.GetFileNameWithoutExtension(curRomName)
             If CheckBox1.Checked Then curRomName = Remove_paranteses(curRomName)
             If CheckBox2.Checked Then curRomName = Remove_brackets(curRomName)
             If CheckBox3.Checked Then curRomName = Remove_Special(curRomName)
@@ -94,8 +95,10 @@ Public Class Form6_autorenamer
                 If CheckBox7.Checked Then numbersInGameName = Regex.Replace(curGameName, "[^\d]", "")
                 If numbersInRomName = numbersInGameName Then
                     stringSplit2 = curGameName.Split(" "c)
-                    commonList = stringSplit1.Intersect(stringSplit2)
-                    similarity = 100 * (commonList.Count * 2) / (stringSplit1.Length + stringSplit2.Length)
+                    'commonList = stringSplit1.Intersect(stringSplit2)
+                    'similarity = 100 * (commonList.Count * 2) / (stringSplit1.Length + stringSplit2.Length)
+                    commonList = stringSplit1.Where(Function(x) stringSplit2.Contains(x)).Concat(stringSplit2.Where(Function(y) stringSplit1.Contains(y)))
+                    similarity = 100 * (commonList.Count) / (stringSplit1.Length + stringSplit2.Length)
                     If similarity >= min_ratio Then
                         Dim X As String = "X"
                         t1 = DirectCast(lists.list1(counter1), DataRowView).Item(0).ToString
@@ -354,7 +357,10 @@ Public Class Form6_autorenamer
         If TextBox2.Text.Trim = "" Then Return s
         For Each w As String In TextBox2.Text.Trim.Split({","}, StringSplitOptions.RemoveEmptyEntries)
             w = w.Trim.ToUpper
-            If w <> "" Then s = s.Replace(" " + w, " ").Replace(w + " ", " ")
+            If w <> "" Then
+                's = s.Replace(" " + w, " ").Replace(w + " ", " ")
+                s = Regex.Replace(s, "\b" + w + "\b", "")
+            End If
         Next
         Return s
     End Function
@@ -399,7 +405,7 @@ Public Class Form6_autorenamer
         Return result.ToString
     End Function
     Private Function Remove_spaces(s As String) As String
-        Return s.Replace("      ", " ").Replace("     ", " ").Replace("    ", " ").Replace("   ", " ").Replace("  ", " ")
+        Return s.Replace("      ", " ").Replace("     ", " ").Replace("    ", " ").Replace("   ", " ").Replace("  ", " ").Trim
     End Function
 
     Private Sub BGWork_progress(sender As Object, p As ProgressChangedEventArgs) Handles bg_renamer.ProgressChanged, bg_scaner.ProgressChanged, bg_scaner_crc.ProgressChanged

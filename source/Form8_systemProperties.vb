@@ -370,28 +370,6 @@ Public Class Form8_systemProperties
         RaiseEvent paths_updated(sys) : Me.Close() : Exit Sub
     End Sub
 
-    'Absolute_Path_to_Relative
-    Private Function Absolute_Path_to_Relative(path_from As String, path_to As String) As String
-        If path_to.StartsWith(".") Then Return path_to
-        If String.IsNullOrEmpty(path_from) Then Return ""
-        If String.IsNullOrEmpty(path_to) Then Return ""
-
-        If path_to.Substring(0, 1).ToUpper <> path_from.Substring(0, 1).ToUpper Then Return path_to
-        Dim UriFrom = New Uri(path_from)
-        Dim UriTo = New Uri(path_to)
-
-        If UriFrom.Scheme <> UriTo.Scheme Then Return path_to
-
-        Dim UriRelative As Uri = UriFrom.MakeRelativeUri(UriTo)
-        Dim relativePath As String = Uri.UnescapeDataString(UriRelative.ToString)
-
-        If UriTo.Scheme.ToUpperInvariant = "FILE" Then
-            relativePath = relativePath.Replace(System.IO.Path.AltDirectorySeparatorChar, System.IO.Path.DirectorySeparatorChar)
-        End If
-        If Not relativePath.StartsWith(".") Then relativePath = ".\" + relativePath
-        Return relativePath
-    End Function
-
     'Always on top checkbox
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
         Me.TopMost = CheckBox3.Checked
